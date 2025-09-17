@@ -1,30 +1,15 @@
 import { Metadata, Viewport } from 'next'
 
-import { TokGuide } from '@/app/_source/components/tok-guide'
-import { TokGuideTriggerButton } from '@/app/_source/components/tok-guide-trigger-button'
-import { DrawerBasis as TokGuideDrawer } from '@/components/@drawer/drawer-basis'
 import { PageLayout } from '@/components/@layout/page-layout'
-import { ColorModeButton } from '@/components/ui/color-mode'
 import { Provider as ThemeProvider } from '@/components/ui/provider'
 import { ENV } from '@/configs/env'
 import { pretendard } from '@/generated/fonts/next-fonts'
 import { AppProvider } from '@/providers/app-provider'
 
-// import { GoogleAnalytics } from "@next/third-parties/google";
-
-/**
- *
- * @see https://nextjs.org/docs/app/api-reference/functions/generate-viewport
- */
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1.0,
 }
-
-/**
- *
- * @see https://nextjs.org/docs/app/building-your-application/optimizing/metadata
- */
 
 export const metadata: Metadata = {
   ...(ENV.DOMAIN && { metadataBase: new URL(ENV.DOMAIN) }),
@@ -103,19 +88,10 @@ export default function RootLayout({
       className={`${pretendard.variable}`}
       suppressHydrationWarning
     >
-      <head>{/* <GoogleAnalytics gaId={ENV.GA_KEY || ""} /> */}</head>
       <body>
         <AppProvider>
           <ThemeProvider>
-            <PageLayout>
-              {children}
-              <ColorModeButton />
-              <TokGuideDrawer
-                size="md"
-                trigger={<TokGuideTriggerButton />}
-                content={<TokGuide />}
-              />
-            </PageLayout>
+            <PageLayout>{children}</PageLayout>
           </ThemeProvider>
         </AppProvider>
       </body>

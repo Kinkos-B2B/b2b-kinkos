@@ -9,7 +9,6 @@ export const PageLayoutFooter = ({ ...props }: ContainerProps) => {
   return (
     <Container
       w={'100%'}
-      basis
       display={'flex'}
       alignItems="center"
       flexDirection={'column'}
