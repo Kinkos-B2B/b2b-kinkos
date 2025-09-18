@@ -28,11 +28,11 @@ export interface BadgeProps extends ChakraBadgeProps {
 
 const BadgeColorPalette = {
   primary: {
-    solid: {
+    subtle: {
       bg: 'primary.1',
       color: 'primary.4',
     },
-    subtle: {
+    solid: {
       bg: 'primary.4',
       color: 'grey.0',
     },
@@ -90,6 +90,7 @@ export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
     return (
       <ChakraBadge
         ref={ref}
+        lineHeight="1 !important"
         size={size}
         variant={variant}
         colorPalette={colorPalette}

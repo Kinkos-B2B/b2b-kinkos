@@ -12,7 +12,7 @@ export const buttonRecipe = defineRecipe({
     whiteSpace: 'nowrap',
     verticalAlign: 'middle',
     borderWidth: '1px',
-    borderColor: 'transparent',
+    borderColor: 'grey.0',
     cursor: 'button',
     flexShrink: '0',
     outline: '0',
@@ -26,6 +26,7 @@ export const buttonRecipe = defineRecipe({
       layerStyle: 'disabled',
       cursor: 'not-allowed',
       opacity: 0.4,
+      bg: 'grey.4',
     },
     _icon: {
       flexShrink: '0',
@@ -101,7 +102,7 @@ export const buttonRecipe = defineRecipe({
         borderWidth: '1px',
         borderColor: 'primary.4',
         color: 'primary.4',
-        bg: 'transparent',
+        bg: 'grey.0',
         _hover: {
           bg: 'primary.1', // #f3f6ff
         },
@@ -114,7 +115,7 @@ export const buttonRecipe = defineRecipe({
       },
       ghost: {
         color: 'primary.4',
-        bg: 'transparent',
+        bg: 'grey.0',
         _hover: {
           bg: 'primary.1',
         },
@@ -126,6 +127,7 @@ export const buttonRecipe = defineRecipe({
         },
       },
       capsule: {
+        border: 'none',
         borderRadius: '9999px',
         px: '28px',
         bg: 'primary.4', // #013ffc
@@ -145,7 +147,7 @@ export const buttonRecipe = defineRecipe({
         borderWidth: '1px',
         borderColor: 'primary.4',
         color: 'primary.4',
-        bg: 'transparent',
+        bg: 'grey.0',
         borderRadius: '9999px',
         px: '28px',
         _hover: {
@@ -169,6 +171,28 @@ export const buttonRecipe = defineRecipe({
         },
         _expanded: {
           bg: 'primary.1',
+        },
+      },
+      'grey-capsule': {
+        border: 'none',
+        borderRadius: '9999px',
+        px: '28px',
+        bg: 'grey.10',
+        color: 'grey.0',
+      },
+      'grey-outline': {
+        borderWidth: '1px',
+        borderColor: 'grey.3',
+        color: 'grey.8',
+        bg: 'grey.0',
+        _hover: {
+          bg: 'grey.1',
+        },
+        _active: {
+          bg: 'grey.2',
+        },
+        _expanded: {
+          bg: 'grey.1',
         },
       },
     },

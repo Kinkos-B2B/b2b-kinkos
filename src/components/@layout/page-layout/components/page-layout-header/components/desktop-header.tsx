@@ -146,7 +146,6 @@ export const DesktopHeader = () => {
             >
               <Flex gap="28px" px="0" py="0" justify="center" w="100%">
                 {activeSubMenu.subItems.map((category, categoryIndex) => {
-                  console.log(category)
                   if ('items' in category) {
                     return (
                       <VStack key={categoryIndex} gap="8px" align="stretch">
@@ -188,7 +187,7 @@ export const DesktopHeader = () => {
                   }
 
                   return (
-                    <VStack key={categoryIndex} align="stretch">
+                    <Link href={category.href!} key={categoryIndex}>
                       <Text
                         textStyle="pre-body-3"
                         color="grey.10"
@@ -207,7 +206,7 @@ export const DesktopHeader = () => {
                       >
                         {category.title}
                       </Text>
-                    </VStack>
+                    </Link>
                   )
                 })}
               </Flex>

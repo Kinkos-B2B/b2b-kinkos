@@ -11,6 +11,7 @@ export const badgeRecipe = defineRecipe({
     fontFamily: 'Pretendard Variable, sans-serif',
     whiteSpace: 'nowrap',
     userSelect: 'none',
+    lineHeight: '1 !important',
     _icon: {
       flexShrink: '0',
     },
@@ -77,6 +78,16 @@ export const badgeRecipe = defineRecipe({
         subtle: {
           bg: 'secondary.1',
           color: 'secondary.4',
+        },
+      },
+      white: {
+        solid: {
+          bg: 'grey.0',
+          color: 'secondary.4',
+        },
+        subtle: {
+          bg: 'secondary.4',
+          color: 'grey.0',
         },
       },
     },

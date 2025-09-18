@@ -146,3 +146,63 @@ export const SunIcon = (props: IconProps) => (
     </svg>
   </Icon>
 )
+
+export const TextAlignCenterIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M3 6h18M7 12h10M5 18h14"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </Icon>
+)
+
+export const LightbulbIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zM12 2C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z" />
+    </svg>
+  </Icon>
+)
+
+export const ChatCenteredDotsIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+      <circle cx="9" cy="12" r="1" fill="white" />
+      <circle cx="15" cy="12" r="1" fill="white" />
+    </svg>
+  </Icon>
+)
+
+export const NewspaperClippingIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2z" />
+      <path
+        d="M7 8h10M7 12h10M7 16h4"
+        stroke="white"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  </Icon>
+)
+
+export const CrownSimpleIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z" />
+      <path
+        d="M5 16h14"
+        stroke="white"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  </Icon>
+)
