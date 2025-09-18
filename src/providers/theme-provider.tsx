@@ -8,9 +8,5 @@ import { ColorModeProvider } from '@/components/ui/color-mode'
 import { system } from '@/configs/theme'
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <ChakraProvider value={system}>
-      <ColorModeProvider>{children}</ColorModeProvider>
-    </ChakraProvider>
-  )
+  return <ChakraProvider value={system}>{children}</ChakraProvider>
 }

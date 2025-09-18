@@ -227,34 +227,34 @@ export const colorSchema = {
     value: '#272339',
   },
   'brandprimary.50': {
-    value: '#f6f6fe',
+    value: '#f3f6ff',
   },
   'brandprimary.100': {
-    value: '#e3e3fc',
+    value: '#cad7ff',
   },
   'brandprimary.200': {
-    value: '#c1c2f8',
+    value: '#88a5ff',
   },
   'brandprimary.300': {
-    value: '#a2a4f5',
+    value: '#5a83fe',
   },
   'brandprimary.400': {
-    value: '#8083f1',
+    value: '#2d60fe',
   },
   'brandprimary.500': {
-    value: '#4950ff',
+    value: '#013ffc',
   },
   'brandprimary.600': {
-    value: '#3840e3',
+    value: '#0136d8',
   },
   'brandprimary.700': {
-    value: '#212ab8',
+    value: '#012db5',
   },
   'brandprimary.800': {
-    value: '#141b82',
+    value: '#012491',
   },
   'brandprimary.900': {
-    value: '#080c4f',
+    value: '#001b6e',
   },
   'whitetransparent.50': {
     value: '#ffffffD',
@@ -317,34 +317,34 @@ export const colorSchema = {
     value: '#1b1c1dE5',
   },
   'brandsecondary.50': {
-    value: '#fef4f0',
+    value: '#ffeee5',
   },
   'brandsecondary.100': {
-    value: '#feeae1',
+    value: '#ffd7c2',
   },
   'brandsecondary.200': {
-    value: '#fdd5c0',
+    value: '#ffc09e',
   },
   'brandsecondary.300': {
-    value: '#fcc3a2',
+    value: '#ffa97a',
   },
   'brandsecondary.400': {
-    value: '#fbac76',
+    value: '#ff9157',
   },
   'brandsecondary.500': {
-    value: '#fb9630',
+    value: '#ff7a33',
   },
   'brandsecondary.600': {
-    value: '#c77521',
+    value: '#ff5900',
   },
   'brandsecondary.700': {
-    value: '#915415',
+    value: '#cc4700',
   },
   'brandsecondary.800': {
-    value: '#60360a',
+    value: '#993500',
   },
   'brandsecondary.900': {
-    value: '#351b03',
+    value: '#662400',
   },
 }
 

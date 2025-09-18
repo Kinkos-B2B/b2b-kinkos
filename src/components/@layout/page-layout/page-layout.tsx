@@ -15,12 +15,6 @@ interface PageLayoutProps {
   footer?: React.ReactNode
   containerProps?: ContainerProps
 }
-const bounceAnimation = keyframes`
-  0% {  transform: translateY(-100px); }
-  60% {  transform: translateY(10px); }
-  80% {  transform: translateY(-5px); }
-  100% {  transform: translateY(0px); }
-`
 
 export const PageLayout = ({
   //
@@ -34,23 +28,6 @@ export const PageLayout = ({
   const handleScroll = useCallback(() => {
     setIsScroll(window.scrollY > 66)
   }, [])
-
-  const scrollConfig: GridItemProps =
-    isScroll ?
-      {
-        top: `-10px`,
-        h: `calc(${LAYOUT.HEADER.HEIGHT} + 10px)`,
-        boxShadow: 'card',
-        pt: '10px',
-        animation: `${bounceAnimation} 0.8s`,
-      }
-    : {
-        top: 0,
-        h: LAYOUT.HEADER.HEIGHT,
-        boxShadow: 'none',
-        pt: '0',
-        animation: 'none',
-      }
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -79,7 +56,6 @@ export const PageLayout = ({
         display="flex"
         justifyContent={'center'}
         pt={isScroll ? '10px' : '0'}
-        {...scrollConfig}
       >
         {header}
       </GridItem>

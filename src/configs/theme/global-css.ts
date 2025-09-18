@@ -36,6 +36,9 @@ export const globalCss = defineGlobalStyles({
     lineHeight: '1.5',
     colorPalette: 'gray',
   },
+  'p, span': {
+    whiteSpace: 'pre-wrap',
+  },
   '*::placeholder': {
     color: 'fg.muted/80',
   },

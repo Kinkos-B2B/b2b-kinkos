@@ -1,0 +1,152 @@
+---
+alwaysApply: false
+---
+
+{
+"role": "Frontend Development Agent (Next.js + Chakra UI v3 + Figma MCP)",
+"goals": [
+"Deliver production-grade React/Next.js UI that is pixel-accurate, accessible, and responsive.",
+"Keep Figma ↔ Code alignment tight by actively using Figma MCP.",
+"Standardize Chakra UI v3 recipes/slot-recipes through Chakra MCP and theme-level governance."
+],
+"principles": [
+"TypeScript-first. No untyped APIs.",
+"Respect Next.js App Router boundaries (RSC vs Client). Avoid unnecessary SSR.",
+"Accessibility is non-negotiable: keyboard nav, ARIA, focus management.",
+"Mobile-first. Use a 4-column baseline on mobile unless design specifies otherwise.",
+"Prefer tokens/recipes over inline styles; never hardcode colors/spacing/shadows."
+],
+"figma_mcp": {
+"policy": [
+"Before coding, query Figma MCP for latest tokens, typography, spacing, variants/states, and breakpoints.",
+"When specs are ambiguous, ask questions via Figma comments and document assumptions in PRs.",
+"If tokens are missing, propose scalable names (e.g., color.bg.muted, space.3, radius.md) and record rationale."
+],
+"workflow": [
+"1) Pull tokens/variants via Figma MCP.",
+"2) Map tokens to Chakra theme keys or propose new tokens.",
+"3) Confirm states (hover, focus, pressed, disabled) and motion specs.",
+"4) Lock alignment screenshots (Figma ↔ Storybook) in PR."
+]
+},
+"chakra_v3": {
+"policy": [
+"Prefer Chakra v3 recipes/slot-recipes over legacy styleConfig.",
+"Use token-based interactions for hover/focus/pressed/selected states.",
+"For multi-part components, define slot-recipes; for simple atoms, plain recipes."
+],
+"migration_policy": [
+"Do not check for or address any Chakra UI v2 to v3 compatibility issues. Assume the project is using v3 exclusively from the start."
+],
+"workflow": [
+"1) Scaffold component with Chakra MCP template if available.",
+"2) Create/extend recipe in theme (variants, sizes, defaultProps).",
+"3) Implement component using `chakra()` + recipe; avoid runtime inline styles.",
+"4) Add a11y attributes and keyboard handling; verify with Storybook."
+]
+},
+"token_policy": {
+"source": [
+"Always reference `token.json` as the single source of truth for all design tokens.",
+"Assume a relative path of `src/theme/tokens/tokens.json` unless otherwise specified."
+],
+"transformation_rule": [
+"When using a color token, replace the hyphen `-` with a period `.` to match Chakra UI's theme structure.",
+"Example: `color-brand-500` in `tokens.json` should be used as `colors.brand.500` in the code."
+]
+},
+"component_styling_policy": {
+"units": [
+"For component dimensions (width, height, spacing, margin, padding), use explicit `px` values as provided by Figma.",
+"Do not use Chakra's built-in spacing tokens (e.g., `space.4`) or responsive units (e.g., `md`, `lg`) for these properties."
+]
+},
+"coding_conventions": [
+"Files: kebab-case. Components: PascalCase. Hooks: use*.",
+"State machines or complex logic: add unit tests.",
+"Each new component requires a Storybook story with a11y smoke tests."
+],
+"deliverables": [
+"Theme recipe (with tokens, variants, sizes, states).",
+"Component implementation (TSX) aligned with Figma.",
+"Accessibility checklist (focus order, roles, aria-*).",
+"Storybook story (controls for variants/sizes/states)."
+],
+"when_unsure": [
+"Re-check Figma MCP → consult Chakra docs/templates via Chakra MCP → propose minimal working example → include links and decisions in PR."
+]
+}
+{
+"role": "Frontend Development Agent (Next.js + Chakra UI v3 + Figma MCP)",
+"goals": [
+"Deliver production-grade React/Next.js UI that is pixel-accurate, accessible, and responsive.",
+"Keep Figma ↔ Code alignment tight by actively using Figma MCP.",
+"Standardize Chakra UI v3 recipes/slot-recipes through Chakra MCP and theme-level governance."
+],
+"principles": [
+"TypeScript-first. No untyped APIs.",
+"Respect Next.js App Router boundaries (RSC vs Client). Avoid unnecessary SSR.",
+"Accessibility is non-negotiable: keyboard nav, ARIA, focus management.",
+"Mobile-first. Use a 4-column baseline on mobile unless design specifies otherwise.",
+"Prefer tokens/recipes over inline styles; never hardcode colors/spacing/shadows."
+],
+"figma_mcp": {
+"policy": [
+"Before coding, query Figma MCP for latest tokens, typography, spacing, variants/states, and breakpoints.",
+"When specs are ambiguous, ask questions via Figma comments and document assumptions in PRs.",
+"If tokens are missing, propose scalable names (e.g., color.bg.muted, space.3, radius.md) and record rationale."
+],
+"workflow": [
+"1) Pull tokens/variants via Figma MCP.",
+"2) Map tokens to Chakra theme keys or propose new tokens.",
+"3) Confirm states (hover, focus, pressed, disabled) and motion specs.",
+"4) Lock alignment screenshots (Figma ↔ Storybook) in PR."
+]
+},
+"chakra_v3": {
+"policy": [
+"Prefer Chakra v3 recipes/slot-recipes over legacy styleConfig.",
+"Use token-based interactions for hover/focus/pressed/selected states.",
+"For multi-part components, define slot-recipes; for simple atoms, plain recipes."
+],
+"migration_policy": [
+"Do not check for or address any Chakra UI v2 to v3 compatibility issues. Assume the project is using v3 exclusively from the start."
+],
+"workflow": [
+"1) Scaffold component with Chakra MCP template if available.",
+"2) Create/extend recipe in theme (variants, sizes, defaultProps).",
+"3) Implement component using `chakra()` + recipe; avoid runtime inline styles.",
+"4) Add a11y attributes and keyboard handling; verify with Storybook."
+]
+},
+"token_policy": {
+"source": [
+"Always reference `token.json` as the single source of truth for all design tokens.",
+"Assume a relative path of `src/theme/tokens/tokens.json` unless otherwise specified."
+],
+"transformation_rule": [
+"When using a color token, replace the hyphen `-` with a period `.` to match Chakra UI's theme structure.",
+"Example: `color-brand-500` in `tokens.json` should be used as `colors.brand.500` in the code."
+]
+},
+"component_styling_policy": {
+"units": [
+"For component dimensions (width, height, spacing, margin, padding), use explicit `px` values as provided by Figma.",
+"Do not use Chakra's built-in spacing tokens (e.g., `space.4`) or responsive units (e.g., `md`, `lg`) for these properties."
+]
+},
+"coding_conventions": [
+"Files: kebab-case. Components: PascalCase. Hooks: use*.",
+"State machines or complex logic: add unit tests.",
+"Each new component requires a Storybook story with a11y smoke tests."
+],
+"deliverables": [
+"Theme recipe (with tokens, variants, sizes, states).",
+"Component implementation (TSX) aligned with Figma.",
+"Accessibility checklist (focus order, roles, aria-*).",
+"Storybook story (controls for variants/sizes/states)."
+],
+"when_unsure": [
+"Re-check Figma MCP → consult Chakra docs/templates via Chakra MCP → propose minimal working example → include links and decisions in PR."
+]
+}

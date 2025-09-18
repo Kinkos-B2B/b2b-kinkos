@@ -1,6 +1,6 @@
 import { Metadata, Viewport } from 'next'
 
-import { PageLayout } from '@/components/@layout/page-layout'
+import { PageLayout } from '@/components/@layout/page-layout/page-layout'
 import { Provider as ThemeProvider } from '@/components/ui/provider'
 import { ENV } from '@/configs/env'
 import { pretendard } from '@/generated/fonts/next-fonts'

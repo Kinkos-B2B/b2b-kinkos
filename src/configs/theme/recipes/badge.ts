@@ -5,63 +5,85 @@ export const badgeRecipe = defineRecipe({
   base: {
     display: 'inline-flex',
     alignItems: 'center',
-    borderRadius: 'l2',
-    gap: '1',
-    fontWeight: 'medium',
-    fontVariantNumeric: 'tabular-nums',
+    justifyContent: 'center',
+    borderRadius: '6px',
+    fontWeight: '600', // SemiBold
+    fontFamily: 'Pretendard Variable, sans-serif',
     whiteSpace: 'nowrap',
     userSelect: 'none',
+    _icon: {
+      flexShrink: '0',
+    },
   },
   variants: {
-    variant: {
-      solid: {
-        bg: 'colorPalette.solid',
-        color: 'colorPalette.contrast',
-      },
-      subtle: {
-        bg: 'colorPalette.subtle',
-        color: 'colorPalette.fg',
-      },
-      outline: {
-        color: 'colorPalette.fg',
-        shadow: 'inset 0 0 0px 1px var(--shadow-color)',
-        shadowColor: 'colorPalette.muted',
-      },
-      surface: {
-        bg: 'colorPalette.subtle',
-        color: 'colorPalette.fg',
-        shadow: 'inset 0 0 0px 1px var(--shadow-color)',
-        shadowColor: 'colorPalette.muted',
-      },
-      plain: {
-        color: 'colorPalette.fg',
-      },
-    },
     size: {
-      xs: {
-        textStyle: '2xs',
-        px: '1',
-        minH: '4',
-      },
-      sm: {
-        textStyle: 'xs',
-        px: '1.5',
-        minH: '5',
-      },
       md: {
-        textStyle: 'sm',
-        px: '2',
-        minH: '6',
+        textStyle: 'pre-caption-1', // 12px, 600, -2% letter-spacing
+        px: '6px',
+        gap: '2px',
+        minH: '20px',
+        _icon: {
+          width: '16px',
+          height: '16px',
+        },
       },
       lg: {
-        textStyle: 'sm',
-        px: '2.5',
-        minH: '7',
+        textStyle: 'pre-caption-1', // 12px, 600, -2% letter-spacing
+        px: '10px',
+        gap: '4px',
+        minH: '24px',
+        _icon: {
+          width: '16px',
+          height: '16px',
+        },
+      },
+      xl: {
+        textStyle: 'pre-heading-4', // 18px, 700, -1% letter-spacing
+        px: '10px',
+        gap: '4px',
+        minH: '36px',
+        _icon: {
+          width: '16px',
+          height: '16px',
+        },
+      },
+    },
+    variant: {
+      solid: {
+        bg: 'primary.1',
+        color: 'primary.4',
+      },
+      subtle: {
+        bg: 'primary.4',
+        color: 'grey.0',
+      },
+    },
+    colorPalette: {
+      primary: {
+        solid: {
+          bg: 'primary.1',
+          color: 'primary.4',
+        },
+        subtle: {
+          bg: 'primary.4',
+          color: 'grey.0',
+        },
+      },
+      secondary: {
+        solid: {
+          bg: 'secondary.1',
+          color: 'secondary.4',
+        },
+        subtle: {
+          bg: 'secondary.1',
+          color: 'secondary.4',
+        },
       },
     },
   },
+
   defaultVariants: {
-    variant: 'subtle',
-    size: 'sm',
+    size: 'lg',
+    variant: 'solid',
   },
 })

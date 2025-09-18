@@ -9,7 +9,6 @@ export const buttonRecipe = defineRecipe({
     justifyContent: 'center',
     userSelect: 'none',
     position: 'relative',
-    borderRadius: 'l2',
     whiteSpace: 'nowrap',
     verticalAlign: 'middle',
     borderWidth: '1px',
@@ -17,159 +16,166 @@ export const buttonRecipe = defineRecipe({
     cursor: 'button',
     flexShrink: '0',
     outline: '0',
-    lineHeight: '1.2',
     isolation: 'isolate',
-    fontWeight: 'medium',
+    fontWeight: '600', // SemiBold
+    fontFamily: 'Pretendard Variable, sans-serif',
     transitionProperty: 'common',
     transitionDuration: 'moderate',
     focusVisibleRing: 'outside',
     _disabled: {
       layerStyle: 'disabled',
+      cursor: 'not-allowed',
+      opacity: 0.4,
     },
     _icon: {
       flexShrink: '0',
     },
   },
+
   variants: {
     size: {
-      '2xs': {
-        h: '6',
-        minW: '6',
-        textStyle: 'xs',
-        px: '2',
-        gap: '1',
-        _icon: {
-          width: '3.5',
-          height: '3.5',
-        },
-      },
-      xs: {
-        h: '8',
-        minW: '8',
-        textStyle: 'xs',
-        px: '2.5',
-        gap: '1',
-        _icon: {
-          width: '4',
-          height: '4',
-        },
-      },
       sm: {
-        h: '9',
-        minW: '9',
-        px: '3.5',
-        textStyle: 'sm',
-        gap: '2',
+        h: '32px',
+        minW: '32px',
+        textStyle: 'pre-caption-1', // 12px, 600, -2% letter-spacing
+        px: '12px',
+        gap: '4px',
+        borderRadius: '6px',
         _icon: {
-          width: '4',
-          height: '4',
+          width: '18px',
+          height: '18px',
         },
       },
       md: {
-        h: '10',
-        minW: '10',
-        textStyle: 'sm',
-        px: '4',
-        gap: '2',
+        h: '40px',
+        minW: '40px',
+        textStyle: 'pre-body-5', // 14px, 600, -2% letter-spacing
+        px: '16px',
+        gap: '6px',
+        borderRadius: '8px',
         _icon: {
-          width: '5',
-          height: '5',
+          width: '20px',
+          height: '20px',
         },
       },
       lg: {
-        h: '11',
-        minW: '11',
-        textStyle: 'md',
-        px: '5',
-        gap: '3',
+        h: '48px',
+        minW: '48px',
+        textStyle: 'pre-body-3', // 16px, 600, -2% letter-spacing
+        px: '24px',
+        gap: '8px',
+        borderRadius: '10px',
         _icon: {
-          width: '5',
-          height: '5',
+          width: '24px',
+          height: '24px',
         },
       },
       xl: {
-        h: '12',
-        minW: '12',
-        textStyle: 'md',
-        px: '5',
-        gap: '2.5',
+        h: '58px',
+        minW: '58px',
+        textStyle: 'pre-body-1', // 18px, 600, -2% letter-spacing
+        px: '28px',
+        gap: '8px',
+        borderRadius: '10px',
         _icon: {
-          width: '5',
-          height: '5',
-        },
-      },
-      '2xl': {
-        h: '16',
-        minW: '16',
-        textStyle: 'lg',
-        px: '7',
-        gap: '3',
-        _icon: {
-          width: '6',
-          height: '6',
+          width: '24px',
+          height: '24px',
         },
       },
     },
     variant: {
       solid: {
-        bg: 'colorPalette.solid',
-        color: 'colorPalette.contrast',
+        bg: 'primary.4', // #013ffc
+        color: 'grey.0', // #ffffff
         _hover: {
-          bg: 'colorPalette.solid/90',
+          bg: 'primary.5', // #0136d8
+        },
+        _active: {
+          bg: 'primary.6', // #012db5
         },
         _expanded: {
-          bg: 'colorPalette.solid/90',
-        },
-      },
-      subtle: {
-        bg: 'colorPalette.subtle',
-        color: 'colorPalette.fg',
-        _hover: {
-          bg: 'colorPalette.muted',
-        },
-        _expanded: {
-          bg: 'colorPalette.muted',
-        },
-      },
-      surface: {
-        bg: 'colorPalette.subtle',
-        color: 'colorPalette.fg',
-        shadow: '0 0 0px 1px var(--shadow-color)',
-        shadowColor: 'colorPalette.muted',
-        _hover: {
-          bg: 'colorPalette.muted',
-        },
-        _expanded: {
-          bg: 'colorPalette.muted',
+          bg: 'primary.5',
         },
       },
       outline: {
         borderWidth: '1px',
-        borderColor: 'colorPalette.muted',
-        color: 'colorPalette.fg',
+        borderColor: 'primary.4',
+        color: 'primary.4',
+        bg: 'transparent',
         _hover: {
-          bg: 'colorPalette.subtle',
+          bg: 'primary.1', // #f3f6ff
+        },
+        _active: {
+          bg: 'primary.2', // #cad7ff
         },
         _expanded: {
-          bg: 'colorPalette.subtle',
+          bg: 'primary.1',
         },
       },
       ghost: {
-        color: 'colorPalette.fg',
+        color: 'primary.4',
+        bg: 'transparent',
         _hover: {
-          bg: 'colorPalette.subtle',
+          bg: 'primary.1',
+        },
+        _active: {
+          bg: 'primary.2',
         },
         _expanded: {
-          bg: 'colorPalette.subtle',
+          bg: 'primary.1',
         },
       },
-      plain: {
-        color: 'colorPalette.fg',
+      capsule: {
+        borderRadius: '9999px',
+        px: '28px',
+        bg: 'primary.4', // #013ffc
+        color: 'grey.0', // #ffffff
+        _hover: {
+          bg: 'primary.5', // #0136d8
+        },
+        _active: {
+          bg: 'primary.6', // #012db5
+        },
+        _expanded: {
+          bg: 'primary.5',
+        },
+      },
+
+      'capsule-outline': {
+        borderWidth: '1px',
+        borderColor: 'primary.4',
+        color: 'primary.4',
+        bg: 'transparent',
+        borderRadius: '9999px',
+        px: '28px',
+        _hover: {
+          bg: 'primary.1', // #f3f6ff
+        },
+        _active: {
+          bg: 'primary.2', // #cad7ff
+        },
+        _expanded: {
+          bg: 'primary.1',
+        },
+      },
+      'capsule-ghost': {
+        borderRadius: '9999px',
+        px: '28px',
+        _hover: {
+          bg: 'primary.1',
+        },
+        _active: {
+          bg: 'primary.2',
+        },
+        _expanded: {
+          bg: 'primary.1',
+        },
       },
     },
   },
+
   defaultVariants: {
-    size: 'md',
+    size: 'lg',
     variant: 'solid',
   },
 })

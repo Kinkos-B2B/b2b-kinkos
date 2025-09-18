@@ -2,8 +2,8 @@ import Link from 'next/link'
 
 import { Container, ContainerProps } from '@chakra-ui/react'
 
+import { ROUTES } from '@/constants/routes'
 import { LogoIcon } from '@/generated/icons/MyIcons'
-import { ROUTES } from '@/generated/path/routes'
 
 export const PageLayoutFooter = ({ ...props }: ContainerProps) => {
   return (
@@ -15,7 +15,7 @@ export const PageLayoutFooter = ({ ...props }: ContainerProps) => {
       justifyContent={'center'}
       {...props}
     >
-      <Link href={ROUTES.MAIN}>
+      <Link href={ROUTES.HOME}>
         <LogoIcon boxSize={'50px'} color={'icon.tertiary'} />
       </Link>
     </Container>

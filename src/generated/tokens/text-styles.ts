@@ -33,7 +33,7 @@ export const textStyles = {
         sm: '48px',
         md: '64px',
       },
-      lineHeight: 1.3,
+      lineHeight: 1.4,
       letterSpacing: '-0.01em',
     },
   },

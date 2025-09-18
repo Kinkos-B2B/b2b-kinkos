@@ -34,10 +34,16 @@ export const tabsSlotRecipe = defineSlotRecipe({
       height: 'var(--tabs-height)',
       display: 'flex',
       alignItems: 'center',
-      fontWeight: 'medium',
+      justifyContent: 'center',
+      fontWeight: 600,
       position: 'relative',
       cursor: 'button',
-      gap: '2',
+      gap: 'var(--tabs-gap)',
+      fontFamily: 'Pretendard Variable',
+      lineHeight: 1.6,
+      letterSpacing: '-0.02em',
+      whiteSpace: 'nowrap',
+      transition: 'all 0.2s ease-in-out',
       _focusVisible: {
         zIndex: 1,
         outline: '2px solid',
@@ -45,7 +51,7 @@ export const tabsSlotRecipe = defineSlotRecipe({
       },
       _disabled: {
         cursor: 'not-allowed',
-        opacity: 0.5,
+        opacity: 0.4,
       },
     },
     content: {
@@ -99,37 +105,46 @@ export const tabsSlotRecipe = defineSlotRecipe({
       },
     },
     size: {
-      sm: {
+      small: {
         root: {
-          '--tabs-height': 'sizes.9',
+          '--tabs-height': '32px',
+          '--tabs-gap': '4px',
           '--tabs-content-padding': 'spacing.3',
         },
         trigger: {
-          py: '1',
-          px: '3',
-          textStyle: 'sm',
+          px: '10px',
+          py: '0px',
+          fontSize: '14px',
+          letterSpacing: '-0.28px',
+          minHeight: '32px',
         },
       },
-      md: {
+      medium: {
         root: {
-          '--tabs-height': 'sizes.10',
+          '--tabs-height': '40px',
+          '--tabs-gap': '6px',
           '--tabs-content-padding': 'spacing.4',
         },
         trigger: {
-          py: '2',
-          px: '4',
-          textStyle: 'sm',
+          px: '12px',
+          py: '0px',
+          fontSize: '16px',
+          letterSpacing: '-0.32px',
+          minHeight: '40px',
         },
       },
-      lg: {
+      large: {
         root: {
-          '--tabs-height': 'sizes.11',
+          '--tabs-height': '52px',
+          '--tabs-gap': '8px',
           '--tabs-content-padding': 'spacing.4.5',
         },
         trigger: {
-          py: '2',
-          px: '4.5',
-          textStyle: 'md',
+          px: '16px',
+          py: '0px',
+          fontSize: '18px',
+          letterSpacing: '-0.36px',
+          minHeight: '52px',
         },
       },
     },
@@ -137,7 +152,7 @@ export const tabsSlotRecipe = defineSlotRecipe({
       line: {
         list: {
           display: 'flex',
-          borderColor: 'border',
+          borderColor: 'colors.grey.2',
           _horizontal: {
             borderBottomWidth: '1px',
           },
@@ -146,22 +161,60 @@ export const tabsSlotRecipe = defineSlotRecipe({
           },
         },
         trigger: {
-          color: 'fg.muted',
+          color: 'colors.grey.7',
           _disabled: {
             _active: {
               bg: 'initial',
             },
           },
           _selected: {
-            color: 'fg',
+            color: 'colors.grey.10',
             _horizontal: {
-              layerStyle: 'indicator.bottom',
-              '--indicator-offset-y': '-1px',
-              '--indicator-color': 'colors.colorPalette.solid',
+              _before: {
+                content: '""',
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                height: '1.5px',
+                backgroundColor: 'colors.grey.10',
+              },
             },
             _vertical: {
-              layerStyle: 'indicator.end',
-              '--indicator-offset-x': '-1px',
+              _before: {
+                content: '""',
+                position: 'absolute',
+                right: 0,
+                top: 0,
+                bottom: 0,
+                width: '1.5px',
+                backgroundColor: 'colors.grey.10',
+              },
+            },
+          },
+          _hover: {
+            color: 'colors.grey.10',
+            _horizontal: {
+              _before: {
+                content: '""',
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                height: '1px',
+                backgroundColor: 'colors.grey.2',
+              },
+            },
+            _vertical: {
+              _before: {
+                content: '""',
+                position: 'absolute',
+                right: 0,
+                top: 0,
+                bottom: 0,
+                width: '1px',
+                backgroundColor: 'colors.grey.2',
+              },
             },
           },
         },
@@ -169,28 +222,35 @@ export const tabsSlotRecipe = defineSlotRecipe({
       subtle: {
         trigger: {
           borderRadius: 'var(--tabs-trigger-radius)',
-          color: 'fg.muted',
+          color: 'colors.grey.7',
           _selected: {
-            bg: 'colorPalette.subtle',
-            color: 'colorPalette.fg',
+            bg: 'colors.grey.10',
+            color: 'colors.grey.0',
+          },
+          _hover: {
+            bg: 'colors.grey.transparent.1',
+            color: 'colors.grey.7',
           },
         },
       },
       enclosed: {
         list: {
-          bg: 'bg.muted',
-          padding: '1',
-          borderRadius: 'l3',
-          minH: 'calc(var(--tabs-height) - 4px)',
+          bg: 'colors.grey.2',
+          padding: '4px',
+          borderRadius: '12px',
+          minH: 'calc(var(--tabs-height) + 8px)',
         },
         trigger: {
           justifyContent: 'center',
-          color: 'fg.muted',
+          color: 'colors.grey.7',
           borderRadius: 'var(--tabs-trigger-radius)',
           _selected: {
-            bg: 'bg',
-            color: 'colorPalette.fg',
-            shadow: 'xs',
+            bg: 'colors.grey.10',
+            color: 'colors.grey.0',
+          },
+          _hover: {
+            bg: 'colors.grey.transparent.1',
+            color: 'colors.grey.7',
           },
         },
       },
@@ -269,8 +329,94 @@ export const tabsSlotRecipe = defineSlotRecipe({
       },
     },
   },
+  compoundVariants: [
+    // Line variant with different sizes
+    {
+      variant: 'line',
+      size: 'small',
+      css: {
+        trigger: {
+          borderRadius: '6px',
+        },
+      },
+    },
+    {
+      variant: 'line',
+      size: 'medium',
+      css: {
+        trigger: {
+          borderRadius: '8px',
+        },
+      },
+    },
+    {
+      variant: 'line',
+      size: 'large',
+      css: {
+        trigger: {
+          borderRadius: '10px',
+        },
+      },
+    },
+    // Subtle variant with different sizes
+    {
+      variant: 'subtle',
+      size: 'small',
+      css: {
+        trigger: {
+          borderRadius: '6px',
+        },
+      },
+    },
+    {
+      variant: 'subtle',
+      size: 'medium',
+      css: {
+        trigger: {
+          borderRadius: '8px',
+        },
+      },
+    },
+    {
+      variant: 'subtle',
+      size: 'large',
+      css: {
+        trigger: {
+          borderRadius: '10px',
+        },
+      },
+    },
+    // Enclosed variant with different sizes
+    {
+      variant: 'enclosed',
+      size: 'small',
+      css: {
+        trigger: {
+          borderRadius: '6px',
+        },
+      },
+    },
+    {
+      variant: 'enclosed',
+      size: 'medium',
+      css: {
+        trigger: {
+          borderRadius: '8px',
+        },
+      },
+    },
+    {
+      variant: 'enclosed',
+      size: 'large',
+      css: {
+        trigger: {
+          borderRadius: '10px',
+        },
+      },
+    },
+  ],
   defaultVariants: {
-    size: 'md',
+    size: 'medium',
     variant: 'line',
   },
 })
