@@ -72,11 +72,6 @@ export const metadata: Metadata = {
   },
 }
 
-/**
- *
- * @see https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#layouts
- */
-
 export default function RootLayout({
   children,
 }: {

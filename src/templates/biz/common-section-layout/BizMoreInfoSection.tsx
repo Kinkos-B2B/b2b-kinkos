@@ -1,14 +1,20 @@
 import * as React from 'react'
 
 import { Box, Container, Grid, Text, VStack } from '@chakra-ui/react'
-
-import { InfoCard } from '@/components/ui/info-card'
 import {
   ChatCenteredDotsIcon,
   CrownSimpleIcon,
   LightbulbIcon,
   NewspaperClippingIcon,
   TextAlignCenterIcon,
+} from '@phosphor-icons/react/dist/ssr'
+
+import { InfoCard } from '@/components/view/MoreInfoCard'
+import {
+  MoreInfoCardCustomerReviewIcon,
+  MoreInfoCardExpertIcon,
+  MoreInfoCardProblemSolveIcon,
+  MoreInfoCardSolutionIcon,
 } from '@/generated/icons/MyIcons'
 
 export interface BizMoreInfoSectionProps {
@@ -54,24 +60,7 @@ export const BizMoreInfoSection = React.forwardRef<
                 onButtonClick={onSolutionClick}
                 icon={
                   <Box position="relative" w="60px" h="60px">
-                    <TextAlignCenterIcon
-                      position="absolute"
-                      top="50%"
-                      left="50%"
-                      transform="translate(-50%, -50%)"
-                      w="60px"
-                      h="60px"
-                      color="primary.4"
-                    />
-                    <LightbulbIcon
-                      position="absolute"
-                      top="50%"
-                      left="50%"
-                      transform="translate(-50%, -50%)"
-                      w="60px"
-                      h="60px"
-                      color="primary.4"
-                    />
+                    <MoreInfoCardSolutionIcon />
                   </Box>
                 }
                 iconBgColor="accent.blue1"
@@ -85,24 +74,7 @@ export const BizMoreInfoSection = React.forwardRef<
                 onButtonClick={onReviewClick}
                 icon={
                   <Box position="relative" w="60px" h="60px">
-                    <TextAlignCenterIcon
-                      position="absolute"
-                      top="50%"
-                      left="50%"
-                      transform="translate(-50%, -50%)"
-                      w="60px"
-                      h="60px"
-                      color="primary.4"
-                    />
-                    <ChatCenteredDotsIcon
-                      position="absolute"
-                      top="50%"
-                      left="50%"
-                      transform="translate(-50%, -50%)"
-                      w="60px"
-                      h="60px"
-                      color="primary.4"
-                    />
+                    <MoreInfoCardCustomerReviewIcon />
                   </Box>
                 }
                 iconBgColor="accent.violet1"
@@ -119,24 +91,7 @@ export const BizMoreInfoSection = React.forwardRef<
                 onButtonClick={onProblemClick}
                 icon={
                   <Box position="relative" w="60px" h="60px">
-                    <TextAlignCenterIcon
-                      position="absolute"
-                      top="50%"
-                      left="50%"
-                      transform="translate(-50%, -50%)"
-                      w="60px"
-                      h="60px"
-                      color="primary.4"
-                    />
-                    <NewspaperClippingIcon
-                      position="absolute"
-                      top="50%"
-                      left="50%"
-                      transform="translate(-50%, -50%)"
-                      w="60px"
-                      h="60px"
-                      color="primary.4"
-                    />
+                    <MoreInfoCardProblemSolveIcon />
                   </Box>
                 }
                 iconBgColor="accent.pink1"
@@ -149,24 +104,7 @@ export const BizMoreInfoSection = React.forwardRef<
                 onButtonClick={onExpertClick}
                 icon={
                   <Box position="relative" w="60px" h="60px">
-                    <TextAlignCenterIcon
-                      position="absolute"
-                      top="50%"
-                      left="50%"
-                      transform="translate(-50%, -50%)"
-                      w="60px"
-                      h="60px"
-                      color="primary.4"
-                    />
-                    <CrownSimpleIcon
-                      position="absolute"
-                      top="50%"
-                      left="50%"
-                      transform="translate(-50%, -50%)"
-                      w="60px"
-                      h="60px"
-                      color="primary.4"
-                    />
+                    <MoreInfoCardExpertIcon />
                   </Box>
                 }
                 iconBgColor="accent.yellow1"

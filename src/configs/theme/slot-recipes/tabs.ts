@@ -20,7 +20,9 @@ export const tabsSlotRecipe = defineSlotRecipe({
       isolation: 'isolate',
       '--tabs-indicator-shadow': 'shadows.xs',
       '--tabs-indicator-bg': 'colors.bg',
-      minH: 'var(--tabs-height)',
+      height: '56px',
+      alignItems: 'center',
+
       _horizontal: {
         flexDirection: 'row',
       },
@@ -31,7 +33,6 @@ export const tabsSlotRecipe = defineSlotRecipe({
     trigger: {
       outline: '0',
       minW: 'var(--tabs-height)',
-      height: 'var(--tabs-height)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -107,16 +108,19 @@ export const tabsSlotRecipe = defineSlotRecipe({
     size: {
       small: {
         root: {
-          '--tabs-height': '32px',
           '--tabs-gap': '4px',
           '--tabs-content-padding': 'spacing.3',
+        },
+        list: {
+          gap: '8px',
+          height: '56px',
         },
         trigger: {
           px: '10px',
           py: '0px',
           fontSize: '14px',
           letterSpacing: '-0.28px',
-          minHeight: '32px',
+          h: '32px',
         },
       },
       medium: {
@@ -222,14 +226,14 @@ export const tabsSlotRecipe = defineSlotRecipe({
       subtle: {
         trigger: {
           borderRadius: 'var(--tabs-trigger-radius)',
-          color: 'colors.grey.7',
+          color: 'grey.7',
           _selected: {
-            bg: 'colors.grey.10',
-            color: 'colors.grey.0',
+            bg: 'grey.10',
+            color: 'grey.0',
           },
           _hover: {
-            bg: 'colors.grey.transparent.1',
-            color: 'colors.grey.7',
+            bg: 'grey.transparent.1',
+            color: 'grey.7',
           },
         },
       },

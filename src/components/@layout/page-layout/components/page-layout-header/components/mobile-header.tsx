@@ -17,7 +17,7 @@ import {
 import { LAYOUT } from '@/constants/layout'
 import { ROUTES } from '@/constants/routes'
 
-import { navigationItems } from '../header-navigation-constant'
+import { HEADER_NAVIGATION_ITEMS } from '../header-navigation-constant'
 import { LogoButton } from './logo-button'
 
 export const MobileHeader = () => {
@@ -125,7 +125,7 @@ export const MobileHeader = () => {
             </Flex>
 
             <VStack gap="0" align="stretch">
-              {navigationItems.map((item) => (
+              {HEADER_NAVIGATION_ITEMS.map((item) => (
                 <Box key={item.label}>
                   {item.subItems ?
                     <Box>

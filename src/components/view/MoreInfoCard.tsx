@@ -1,6 +1,8 @@
 import * as React from 'react'
 
-import { Box, Button, HStack, Text, VStack } from '@chakra-ui/react'
+import { Box, HStack, Text, VStack } from '@chakra-ui/react'
+
+import { Button } from '@/components/ui/button'
 
 export interface InfoCardProps {
   title: string

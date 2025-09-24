@@ -98,40 +98,42 @@ export const BizProductionTemplate = () => {
   }, [])
 
   return (
-    <VStack gap={'0px'}>
-      <VStack w={'100%'}>
-        {/* <Box
-          position={'fixed'}
-          top={'90px'}
+    <VStack gap={'0px'} position={'relative'}>
+      <VStack w={'100%'} position={'sticky'} top={'90px'}>
+        <BizHeroSection {...heroSectionMockData} />
+        <Box
+          position={'absolute'}
+          top={'0px'}
           left={'0'}
           right={'0'}
           bottom={'0'}
           bg={'greytransparent.4'}
-          zIndex={'10000'}
-        ></Box> */}
-        <BizHeroSection {...heroSectionMockData} />
+          zIndex={'1'}
+          opacity={isScrolled ? 1 : 0}
+          transition={'opacity 0.3s ease-in-out'}
+          pointerEvents={isScrolled ? 'auto' : 'none'}
+        ></Box>
       </VStack>
-      <BizDescriptionBanner
-        title={bizDescriptionBannerMockData.title}
-        badgeText={bizDescriptionBannerMockData.badgeText}
-        description={bizDescriptionBannerMockData.description}
-      />
+      <VStack gap={'0px'} zIndex={'sticky'} bg={'white'} w={'100%'}>
+        <BizDescriptionBanner
+          title={bizDescriptionBannerMockData.title}
+          badgeText={bizDescriptionBannerMockData.badgeText}
+          description={bizDescriptionBannerMockData.description}
+        />
+        <BizOrderedDescriptionSection data={bizDescriptionMockData} />
+        <BizViedoSection />
+        <BizDescriptionWithBannerSection
+          banner={bizDescriptionWithBannerMockData.banner}
+          descriptionItem={bizDescriptionWithBannerMockData.descriptionItem}
+        />
 
-      <BizOrderedDescriptionSection data={bizDescriptionMockData} />
-
-      <BizViedoSection />
-
-      <BizDescriptionWithBannerSection
-        banner={bizDescriptionWithBannerMockData.banner}
-        descriptionItem={bizDescriptionWithBannerMockData.descriptionItem}
-      />
-
-      <BizMoreInfoSection
-        onSolutionClick={() => console.log('솔루션 클릭')}
-        onReviewClick={() => console.log('고객후기 클릭')}
-        onProblemClick={() => console.log('고민해결 클릭')}
-        onExpertClick={() => console.log('전문가 클릭')}
-      />
+        <BizMoreInfoSection
+          onSolutionClick={() => console.log('솔루션 클릭')}
+          onReviewClick={() => console.log('고객후기 클릭')}
+          onProblemClick={() => console.log('고민해결 클릭')}
+          onExpertClick={() => console.log('전문가 클릭')}
+        />
+      </VStack>
     </VStack>
   )
 }

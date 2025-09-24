@@ -2,15 +2,6 @@ import * as React from 'react'
 
 import { Box, Container, Grid, Text, VStack } from '@chakra-ui/react'
 
-import { InfoCard } from '@/components/ui/info-card'
-import {
-  ChatCenteredDotsIcon,
-  CrownSimpleIcon,
-  LightbulbIcon,
-  NewspaperClippingIcon,
-  TextAlignCenterIcon,
-} from '@/generated/icons/MyIcons'
-
 import { BizDescriptionBanner } from './components/BizDescriptionBanner'
 import { BizDescriptionBannerProps } from './components/BizDescriptionBanner'
 import {
@@ -28,7 +19,7 @@ export const BizDescriptionWithBannerSection = ({
   descriptionItem,
 }: Props) => {
   return (
-    <Container maxW={'1280px'}>
+    <Container maxW={'1280px'} py={'160px'}>
       <BizDescriptionBanner
         title={banner.title}
         badgeText={banner.badgeText}

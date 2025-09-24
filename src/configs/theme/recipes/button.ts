@@ -32,8 +32,12 @@ export const buttonRecipe = defineRecipe({
       flexShrink: '0',
     },
   },
-
   variants: {
+    colorPalette: {
+      primary: {},
+      secondary: {},
+      grey: {},
+    },
     size: {
       sm: {
         h: '32px',
@@ -197,7 +201,61 @@ export const buttonRecipe = defineRecipe({
       },
     },
   },
+  compoundVariants: [
+    {
+      variant: 'solid',
+      colorPalette: 'grey',
+      css: {
+        bg: 'grey.2',
+        color: 'grey.8',
+        _hover: {
+          bg: 'grey.3',
+        },
+        _active: {
+          bg: 'grey.4',
+        },
+      },
+    },
+    {
+      variant: 'outline',
+      colorPalette: 'grey',
+      css: {
+        borderColor: 'grey.3',
+        color: 'grey.8',
+      },
+    },
+    {
+      variant: 'solid',
+      colorPalette: 'grey',
+      css: {
+        border: 'none',
+        bg: 'grey.2',
+        color: 'grey.8',
+        _hover: {
+          bg: 'grey.3',
+        },
+        _active: {
+          bg: 'grey.4',
+        },
+      },
+    },
 
+    {
+      variant: 'solid',
+      colorPalette: 'secondary',
+      css: {
+        border: 'none',
+        bg: 'secondary.4',
+        color: 'grey.0',
+        _hover: {
+          bg: 'secondary.5',
+        },
+        _active: {
+          bg: 'secondary.6',
+        },
+      },
+    },
+  ],
   defaultVariants: {
     size: 'lg',
     variant: 'solid',
