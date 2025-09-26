@@ -9,7 +9,6 @@ import { useInView } from 'react-intersection-observer'
 
 import { Button } from '@/components/ui/button'
 
-import { SolutionHeaderNavigation } from '../../common/SolutionHeaderNavigation'
 import { SolutionHeroSection } from '../../common/SolutionHeroSection'
 import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 
@@ -73,12 +72,29 @@ export const SolutionCorporatePrintingTemplate = () => {
 
   return (
     <VStack position={'relative'} gap={'0px'}>
-      <SolutionHeaderNavigation />
       <Box w={'100%'}>
         <SolutionHeroSection introBlockData={mockData} />
       </Box>
 
       <Box py={'160px'} ref={ref}>
+        <Container>
+          <SoultionCardsSection {...cardsMockData} />
+        </Container>
+      </Box>
+
+      <Box py={'160px'}>
+        <Container>
+          <SoultionCardsSection {...cardsMockData} />
+        </Container>
+      </Box>
+
+      <Box py={'160px'}>
+        <Container>
+          <SoultionCardsSection {...cardsMockData} />
+        </Container>
+      </Box>
+
+      <Box py={'160px'}>
         <Container>
           <SoultionCardsSection {...cardsMockData} />
         </Container>
@@ -100,7 +116,7 @@ export const SolutionCorporatePrintingTemplate = () => {
           <Text color={'grey.0'} textStyle={'pre-body-2'}>
             브랜딩 전문가와 바로 연결되고 싶다면?
           </Text>
-          <Button colorPalette={'secondary'} variant={'solid'} w={'240px'}>
+          <Button colorPalette="secondary" variant={'solid'} w={'240px'}>
             지금 전문가 연결하기
           </Button>
         </HStack>

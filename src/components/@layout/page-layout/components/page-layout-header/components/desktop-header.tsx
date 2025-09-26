@@ -8,7 +8,6 @@ import { Box, Button, Flex, HStack, Text, VStack } from '@chakra-ui/react'
 
 import { LAYOUT } from '@/constants/layout'
 import { ROUTES } from '@/constants/routes'
-import { SolutionHeaderNavigation } from '@/templates/solutions/common/SolutionHeaderNavigation'
 
 import {
   HEADER_NAVIGATION_ITEMS,

@@ -123,53 +123,6 @@ export const SolutionHeroSection = ({
     })
   })
 
-  //   ScrollTrigger.create({
-  //     trigger: imageBoxRef.current,
-  //     start: 'top top',
-  //     end: 'bottom bottom',
-  //     endTrigger: sectionRef.current,
-  //     pin: true,
-  //     anticipatePin: 1,
-  //     invalidateOnRefresh: true,
-  //   })
-
-  //   gsap.to(imageRef.current, {
-  //     width: '100dvw',
-  //     height: '100dvh',
-  //     borderRadius: 0,
-  //     ease: 'none',
-  //     scrollTrigger: {
-  //       trigger: imageBoxRef.current,
-  //       start: 'top top',
-  //       end: '+=300px',
-  //       scrub: true,
-  //     },
-  //   })
-
-  //   gsap.to(dimOverlayRef.current, {
-  //     opacity: 1,
-  //     scrollTrigger: {
-  //       markers: true,
-  //       trigger: imageBoxRef.current,
-  //       start: 'top+=301px top+=300px',
-  //       end: '+=400px top',
-  //       scrub: true,
-  //     },
-  //   })
-
-  //   gsap.to(dimOverlayTextRef.current, {
-  //     y: 0,
-  //     opacity: 1,
-  //     ease: 'none',
-  //     scrollTrigger: {
-  //       trigger: imageBoxRef.current,
-  //       start: 'top+=200px top',
-  //       end: '+=400px top',
-  //       scrub: true,
-  //     },
-  //   })
-  // })
-
   return (
     <VStack
       w="100%"
