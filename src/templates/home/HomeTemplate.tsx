@@ -1,3 +1,5 @@
+'use client'
+
 import { Container, VStack } from '@chakra-ui/react'
 
 import { HomeSearchSection } from './section/1/HomeSearchSection'
@@ -19,14 +21,8 @@ export const HomeTemplate = () => {
       >
         <HomeSearchSection />
       </Container>
-      <Container
-        css={{
-          pt: '120px',
-          pb: '140px',
-        }}
-      >
-        <HomeIntroduceSolution />
-      </Container>
+      <HomeIntroduceSolution />
+
       <Container
         css={{
           py: '160px',

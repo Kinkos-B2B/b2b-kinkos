@@ -25,7 +25,7 @@ const problemCards = [
   },
   {
     id: 2,
-    image: '/images/home/solve-problem/card-1.png',
+    image: '/images/home/solve-problem/card-1.svg',
     logo: '/images/home/solve-problem/logo.svg',
     title: '롯데건설, 현장에서 바로 주문하고 당일 배송으로 명함을 받습니다.',
     date: '2025. 09. 10',

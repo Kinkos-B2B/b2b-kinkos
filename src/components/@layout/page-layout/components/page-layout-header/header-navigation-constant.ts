@@ -69,8 +69,16 @@ export const SOLUTION_NAVIGATION_ITEMS: NavigationItem = {
       ],
     },
     {
-      title: '통합 제작 솔루션',
+      title: '인쇄 제작 솔루션',
       items: [
+        {
+          label: '안전사인물 제작관리',
+          href: ROUTES.SOLUTIONS.PRODUCTION.SAFETY_SIGN,
+        },
+        {
+          label: '시즌성 인쇄물 제작관리',
+          href: ROUTES.SOLUTIONS.PRODUCTION.SEASONAL_PRINTING,
+        },
         {
           label: '통합제작 All-in-One',
           href: ROUTES.SOLUTIONS.PRODUCTION.ALL_IN_ONE,

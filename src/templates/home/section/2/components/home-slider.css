@@ -1,0 +1,19 @@
+.center .slick-slide {
+  opacity: 0.56;
+  transform: scale(0.8);
+  transition: all 300ms ease;
+}
+.center .slick-center {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.slick-list {
+  overflow: visible;
+}
+
+.slick-slider {
+  .slick-arrow {
+    display: none !important;
+  }
+}

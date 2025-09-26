@@ -16,6 +16,8 @@ export const ROUTES = {
       VMD_3D: '/solutions/design/vmd-3d',
     },
     PRODUCTION: {
+      SAFETY_SIGN: '/solutions/production/safety-sign',
+      SEASONAL_PRINTING: '/solutions/production/seasonal-printing',
       ALL_IN_ONE: '/solutions/production/all-in-one',
       LOGISTICS: '/solutions/production/logistics',
     },
