@@ -21,7 +21,8 @@ const config: RootConfig<{
     basePath: '/images',
   },
   'gen:api': {
-    swaggerSchemaUrl: 'https://sales-api-dev.pluuug.com/openapi.json/',
+    swaggerSchemaUrl:
+      'http://kinkos-dev-alb-791024275.ap-northeast-2.elb.amazonaws.com/v3/api-docs/1.%20%EC%9D%BC%EB%B0%98%20API',
     httpClientType: 'fetch',
     instancePath: '@/configs/fetch/fetch-extend',
   },
