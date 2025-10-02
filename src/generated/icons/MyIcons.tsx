@@ -257,6 +257,40 @@ export const MoreInfoCardSolutionIcon = (props: IconProps) => (
   </Icon>
 )
 
+export const MoreInfoCardSystemIcon = (props: IconProps) => (
+  <Icon {...props}>
+    <svg viewBox="0 0 46 46" fill="none">
+      <g clipPath="url(#clip0_14511_14838)">
+        <path
+          d="M38.2622 7.73828H7.73716C7.00118 7.73828 6.29535 8.03065 5.77494 8.55106C5.25452 9.07147 4.96216 9.77731 4.96216 10.5133V35.4883C4.96216 36.2243 5.25452 36.9301 5.77494 37.4505C6.29535 37.9709 7.00118 38.2633 7.73716 38.2633H38.2622C38.9981 38.2633 39.704 37.9709 40.2244 37.4505C40.7448 36.9301 41.0372 36.2243 41.0372 35.4883V10.5133C41.0372 9.77731 40.7448 9.07147 40.2244 8.55106C39.704 8.03065 38.9981 7.73828 38.2622 7.73828ZM38.2622 10.5133V16.0633H7.73716V10.5133H38.2622Z"
+          fill="url(#paint0_linear_14511_14838)"
+        />
+      </g>
+      <defs>
+        <linearGradient
+          id="paint0_linear_14511_14838"
+          x1="11.3272"
+          y1="0.297117"
+          x2="41.9746"
+          y2="37.6332"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#1D7AFC" />
+          <stop offset="1" stopColor="#A3D8F0" />
+        </linearGradient>
+        <clipPath id="clip0_14511_14838">
+          <rect
+            width="44.4"
+            height="44.4"
+            fill="white"
+            transform="translate(0.799683 0.800781)"
+          />
+        </clipPath>
+      </defs>
+    </svg>
+  </Icon>
+)
+
 export const SunIcon = (props: IconProps) => (
   <Icon {...props}>
     <svg viewBox="0 0 24 24" fill="none">

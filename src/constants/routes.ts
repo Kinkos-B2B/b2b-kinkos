@@ -32,31 +32,11 @@ export const ROUTES = {
     },
   },
   CUSTOMER_REVIEW: '/customer-review',
-  PROBLEM: {
-    CONTRACT: {
-      CORPORATE: '/problem/contract/corporate',
-      PAYMENT: '/problem/contract/payment',
-    },
-    PRODUCTION: {
-      DESIGN: '/problem/production/design',
-      POP: '/problem/production/pop',
-      VIDEO: '/problem/production/video',
-    },
-    ORDER: {
-      SITE: '/problem/order/site',
-      MANAGEMENT: '/problem/order/management',
-    },
-    DELIVERY: {
-      PACKAGING: '/problem/delivery/packaging',
-      SHIPPING: '/problem/delivery/shipping',
-      STORAGE: '/problem/delivery/storage',
-    },
-    COST: {
-      EFFECTIVENESS: '/problem/cost/effectiveness',
-      MANAGEMENT: '/problem/cost/management',
-    },
-  },
-  EXPERT: '/portfolio',
+  CUSTOMER_REVIEW_DETAIL: '/customer-review/:id',
+
+  PROBLEM: '/problem-solve',
+  PROBLEM_DETAIL: '/problem-solve/:id',
+  EXPERT: '/expert',
   SUPPORT: '/support',
   FAQ: '/faq',
 } as const

@@ -1,5 +1,8 @@
 import { defineSlotRecipe } from '@chakra-ui/react'
 
+import { colors } from '@/generated/tokens/colors'
+import { textStyles } from '@/generated/tokens/text-styles'
+
 export const selectSlotRecipe = defineSlotRecipe({
   className: 'chakra-select',
   slots: [
@@ -26,26 +29,34 @@ export const selectSlotRecipe = defineSlotRecipe({
       flexDirection: 'column',
       gap: '1.5',
       width: 'full',
+      flex: 1,
+      minW: 0,
     },
+    clearTrigger: {
+      pointerEvents: 'auto',
+      focusVisibleRing: 'inside',
+      focusRingWidth: '2px',
+    },
+
     trigger: {
+      cursor: 'pointer',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
       width: 'full',
-      minH: 'var(--select-trigger-height)',
-      px: 'var(--select-trigger-padding-x)',
-      borderRadius: 'l2',
+      borderRadius: '10px',
       userSelect: 'none',
       textAlign: 'start',
       focusVisibleRing: 'inside',
       _placeholderShown: {
-        color: 'fg.muted/80',
+        color: colors['grey.5'].value,
       },
+
       _disabled: {
         layerStyle: 'disabled',
       },
       _invalid: {
-        borderColor: 'border.error',
+        borderColor: colors['accent.red2'].value,
       },
     },
     indicatorGroup: {
@@ -53,32 +64,36 @@ export const selectSlotRecipe = defineSlotRecipe({
       alignItems: 'center',
       gap: '1',
       pos: 'absolute',
-      right: '0',
+      right: '12px',
       top: '0',
       bottom: '0',
-      px: 'var(--select-trigger-padding-x)',
       pointerEvents: 'none',
     },
+
     indicator: {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      color: {
-        base: 'fg.muted',
-        _disabled: 'fg.subtle',
-        _invalid: 'fg.error',
+      flexGrow: 0,
+      flexShrink: 0,
+      _readOnly: {
+        display: 'none',
       },
     },
     content: {
+      maxH: '200px',
       background: 'bg.panel',
+      bg: 'white',
+      boxShadow: '0px 4px 16px 0px rgba(0, 0, 0, 0.08)',
       display: 'flex',
       flexDirection: 'column',
-      zIndex: 'dropdown',
-      borderRadius: 'l2',
+      zIndex: 'popover',
+      borderRadius: '10px',
+      border: '1px solid',
+      borderColor: colors['grey.2'].value,
       outline: 0,
-      maxH: '96',
+      gap: '8px',
       overflowY: 'auto',
-      boxShadow: 'md',
       _open: {
         animationStyle: 'slide-fade-in',
         animationDuration: 'fast',
@@ -88,27 +103,31 @@ export const selectSlotRecipe = defineSlotRecipe({
         animationDuration: 'fastest',
       },
     },
+
     item: {
       position: 'relative',
       userSelect: 'none',
       display: 'flex',
       alignItems: 'center',
-      gap: '2',
-      cursor: 'option',
+      cursor: 'pointer',
       justifyContent: 'space-between',
       flex: '1',
       textAlign: 'start',
-      borderRadius: 'l1',
-      _highlighted: {
-        bg: 'bg.emphasized/60',
+      p: '10px 12px',
+
+      _hover: {
+        bg: colors['grey.1'].value,
       },
+
+      _selected: {
+        // 이 값 안먹음
+        // bg: colors['background.basic.3'].value,
+        bg: '#1b1c1d0d',
+      },
+
       _disabled: {
         pointerEvents: 'none',
-        opacity: '0.5',
-      },
-      _icon: {
-        width: '4',
-        height: '4',
+        opacity: 0.4,
       },
     },
     control: {
@@ -118,13 +137,14 @@ export const selectSlotRecipe = defineSlotRecipe({
       flex: '1',
     },
     itemGroup: {
-      _first: {
-        mt: '0',
-      },
+      mb: '0px',
     },
     itemGroupLabel: {
-      py: '1',
-      fontWeight: 'medium',
+      px: '12px',
+      pt: '10px',
+      ...textStyles['pre-caption-1'].value,
+      color: colors['grey.5'].value,
+      mt: '2px',
     },
     label: {
       fontWeight: 'medium',
@@ -139,68 +159,112 @@ export const selectSlotRecipe = defineSlotRecipe({
       maxW: '80%',
     },
   },
+
   variants: {
     variant: {
-      outline: {
+      solid: {
         trigger: {
-          bg: 'transparent',
-          borderWidth: '1px',
-          borderColor: 'border',
+          color: colors['grey.8'].value,
+          bg: colors['grey.1'].value,
+          borderRadius: '10px',
+
+          _open: {
+            bg: colors['primary.1'].value,
+            outline: '1px solid',
+            outlineColor: colors['primary.4'].value,
+          },
+
+          _invalid: {
+            border: '1px solid',
+            bg: colors['accent.red2'].value,
+          },
+
+          _disabled: {
+            opacity: 0.64,
+            bg: colors['grey.1'].value,
+          },
+
           _expanded: {
-            borderColor: 'border.emphasized',
+            borderColor: colors['primary.4'].value,
           },
         },
       },
-      subtle: {
+      outline: {
         trigger: {
-          borderWidth: '1px',
-          borderColor: 'transparent',
-          bg: 'bg.muted',
+          border: '1px solid',
+          borderColor: colors['grey.2'].value,
+          bg: colors['grey.0'].value,
+          borderRadius: '10px',
+
+          _placeholder: {
+            color: colors['grey.5'].value,
+          },
+
+          _typed: {
+            color: colors['grey.8'].value,
+          },
+
+          _open: {
+            border: '1px solid',
+            borderColor: colors['primary.4'].value,
+            bg: colors['grey.0'].value,
+          },
+
+          _invalid: {
+            border: '1px solid',
+            bg: colors['grey.0'].value,
+          },
+
+          _disabled: {
+            border: '1px solid',
+            borderColor: colors['grey.2'].value,
+            opacity: 0.64,
+            bg: colors['background.basic.2'].value,
+          },
+        },
+      },
+      flushed: {
+        indicatorGroup: {
+          right: 0,
+        },
+        trigger: {
+          borderRadius: '0',
+          borderBottom: '1px solid',
+          borderBottomColor: colors['grey.2'].value,
+          bg: 'transparent',
+
+          px: '0',
+
+          _placeholder: {
+            color: colors['grey.5'].value,
+          },
+          _typed: {
+            color: colors['grey.8'].value,
+          },
+
+          _open: {
+            borderBottom: '1px solid',
+            borderBottomColor: colors['primary.4'].value,
+          },
+
+          _invalid: {
+            borderBottomColor: colors['accent.red2'].value,
+          },
+
+          _disabled: {
+            borderBottom: '1px solid',
+            borderBottomColor: colors['grey.2'].value,
+            opacity: 0.64,
+          },
         },
       },
     },
     size: {
-      xs: {
-        root: {
-          '--select-trigger-height': 'sizes.8',
-          '--select-trigger-padding-x': 'spacing.2',
-        },
-        content: {
-          p: '1',
-          gap: '1',
-          textStyle: 'xs',
-        },
-        trigger: {
-          textStyle: 'xs',
-          gap: '1',
-        },
-        item: {
-          py: '1',
-          px: '2',
-        },
-        itemGroupLabel: {
-          py: '1',
-          px: '2',
-        },
-        indicator: {
-          _icon: {
-            width: '3.5',
-            height: '3.5',
-          },
-        },
-      },
       sm: {
-        root: {
-          '--select-trigger-height': 'sizes.9',
-          '--select-trigger-padding-x': 'spacing.2.5',
-        },
-        content: {
-          p: '1',
-          textStyle: 'sm',
-        },
         trigger: {
-          textStyle: 'sm',
-          gap: '1',
+          height: '32px',
+          padding: '0 8px',
+          ...textStyles['pre-caption-2'].value,
         },
         indicator: {
           _icon: {
@@ -209,46 +273,30 @@ export const selectSlotRecipe = defineSlotRecipe({
           },
         },
         item: {
-          py: '1',
-          px: '1.5',
-        },
-        itemGroup: {
-          mt: '1',
-        },
-        itemGroupLabel: {
-          py: '1',
-          px: '1.5',
+          padding: '4px 8px',
+          gap: '4px',
+          ...textStyles['pre-caption-2'].value,
         },
       },
       md: {
-        root: {
-          '--select-trigger-height': 'sizes.10',
-          '--select-trigger-padding-x': 'spacing.3',
-        },
-        content: {
-          p: '1',
-          textStyle: 'sm',
-        },
-        itemGroup: {
-          mt: '1.5',
-        },
         item: {
-          py: '1.5',
-          px: '2',
+          gap: '6px',
+          padding: '8px 10px',
+          ...textStyles['pre-body-6'].value,
         },
+
         itemIndicator: {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
         },
-        itemGroupLabel: {
-          py: '1.5',
-          px: '2',
-        },
+
         trigger: {
-          textStyle: 'sm',
-          gap: '2',
+          height: '40px',
+          padding: '0 10px',
+          ...textStyles['pre-body-6'].value,
         },
+
         indicator: {
           _icon: {
             width: '4',
@@ -257,35 +305,25 @@ export const selectSlotRecipe = defineSlotRecipe({
         },
       },
       lg: {
-        root: {
-          '--select-trigger-height': 'sizes.12',
-          '--select-trigger-padding-x': 'spacing.4',
-        },
-        content: {
-          p: '1.5',
-          textStyle: 'md',
-        },
-        itemGroup: {
-          mt: '2',
-        },
-        item: {
-          py: '2',
-          px: '3',
-        },
-        itemGroupLabel: {
-          py: '2',
-          px: '3',
-        },
         trigger: {
-          textStyle: 'md',
-          py: '3',
-          gap: '2',
+          height: '48px',
+          padding: '0 12px',
+          ...textStyles['pre-body-6'].value,
         },
+
         indicator: {
           _icon: {
             width: '5',
             height: '5',
           },
+        },
+        item: {
+          display: 'flex',
+          padding: '10px 12px',
+          justifyContent: 'flex-start',
+          alignItems: 'center',
+          gap: '8px',
+          ...textStyles['pre-body-6'].value,
         },
       },
     },

@@ -37,6 +37,7 @@ export const buttonRecipe = defineRecipe({
       primary: {},
       secondary: {},
       grey: {},
+      black: {},
     },
     size: {
       sm: {

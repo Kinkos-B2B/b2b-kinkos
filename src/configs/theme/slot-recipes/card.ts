@@ -29,7 +29,6 @@ export const cardSlotRecipe = defineSlotRecipe({
       gap: '1.5',
     },
     body: {
-      padding: 'var(--card-padding)',
       flex: '1',
       display: 'flex',
       flexDirection: 'column',

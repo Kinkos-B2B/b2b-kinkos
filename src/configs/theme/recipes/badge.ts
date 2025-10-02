@@ -58,6 +58,20 @@ export const badgeRecipe = defineRecipe({
         bg: 'primary.4',
         color: 'grey.0',
       },
+      circular: {
+        bg: 'grey.9',
+        color: 'grey.0',
+        borderRadius: '9999px',
+        width: '20px',
+        height: '20px',
+        minW: '20px',
+        minH: '20px',
+        p: '0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textStyle: 'pre-caption-1',
+      },
     },
     colorPalette: {
       primary: {
@@ -88,6 +102,16 @@ export const badgeRecipe = defineRecipe({
         subtle: {
           bg: 'secondary.4',
           color: 'grey.0',
+        },
+      },
+      grey: {
+        solid: {
+          bg: 'grey.2',
+          color: 'grey.7',
+        },
+        subtle: {
+          bg: 'grey.2',
+          color: 'grey.7',
         },
       },
     },
