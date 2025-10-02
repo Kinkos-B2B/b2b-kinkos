@@ -216,6 +216,7 @@ export interface ResponseDTOListGetHomeExpertResponseType {
 export interface GetAllHelpArticleResponseType {
   /** @format int64 */
   id?: number
+  type?: GetAllHelpArticleResponseTypeEnumType
   thumbnailImage?: ImageInfoType
   title?: string
   /** @format date-time */
@@ -608,6 +609,45 @@ export interface ResponseDTOGetAllExpertSearchResponseType {
   data?: GetAllExpertSearchResponseType
 }
 
+export interface GetExpertMainCustomerReviewExpertInfoType {
+  /** @format int64 */
+  id?: number
+  nickname?: string
+  profileImageUrl?: ImageInfoType
+  industryList?: string[]
+}
+
+export interface GetExpertMainCustomerReviewResponseType {
+  /** @format int64 */
+  id?: number
+  title?: string
+  body?: string
+  expert?: GetExpertMainCustomerReviewExpertInfoType
+}
+
+/**
+ * 데이터
+ */
+export interface GetExpertMainResponseType {
+  customerReview?: GetExpertMainCustomerReviewResponseType[]
+}
+
+export interface ResponseDTOGetExpertMainResponseType {
+  /**
+   * HttpStatusCode
+   * @format int32
+   * @example 200
+   */
+  statusCode?: number
+  /**
+   * 응답 메시지
+   * @example "성공"
+   */
+  message?: string
+  /** 데이터 */
+  data?: GetExpertMainResponseType
+}
+
 export interface GetAllCustomerReviewResponseType {
   /**
    * 아이디
@@ -779,6 +819,8 @@ export interface GetCustomerReviewRelationType {
    * @format int64
    */
   id: number
+  /** 기업명 */
+  companyName: string
   thumbnailImageUrl: ImageInfoType
   /** 제목 */
   title: string
@@ -847,6 +889,14 @@ export interface ResponseDTOGetCustomerReviewMainConfigType {
   /** 데이터 */
   data?: GetCustomerReviewMainConfigType
 }
+
+export type GetAllHelpArticleResponseTypeEnumType =
+  | 'CONTRACT'
+  | 'PRODUCTION'
+  | 'ORDER'
+  | 'DELIVERY_INSTALLATION'
+  | 'COST'
+  | 'ETC' // X-enumName Values Missing
 
 export type GetAllFaqResponseCategoryEnumType =
   | 'SERVICE'

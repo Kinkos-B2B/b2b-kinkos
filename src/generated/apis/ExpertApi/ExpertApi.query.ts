@@ -38,6 +38,8 @@ export const QUERY_KEY_EXPERT_API_API = {
   GET_ALL_EXPERT_SEARCH_TYPE: (
     variables?: Parameter<typeof expertApiApi.getAllExpertSearchType>,
   ) => ['GET_ALL_EXPERT_SEARCH_TYPE', variables].filter(isDefined),
+  GET_EXPERT_MAIN: (variables?: Parameter<typeof expertApiApi.getExpertMain>) =>
+    ['GET_EXPERT_MAIN', variables].filter(isDefined),
 }
 
 /**
@@ -116,6 +118,32 @@ export const useGetAllExpertSearchTypeQuery = <
   return useQuery({
     queryKey,
     queryFn: () => expertApiApi.getAllExpertSearchType(params?.variables),
+    ...params?.options,
+  })
+}
+
+/**
+ * No description
+ *
+ * @tags [Expert API]
+ * @name GetExpertMain
+ * @summary 전문가 - 메인 화면
+ * @request GET:/api/v1/expert/main
+ * @secure    */
+
+export const useGetExpertMainQuery = <
+  TData = RequestFnReturn<typeof expertApiApi.getExpertMain>,
+>(
+  params?: QueryHookParams<
+    typeof expertApiApi.getExpertMain,
+    { error: ErrorResponseDTOCommonType },
+    TData
+  >,
+) => {
+  const queryKey = QUERY_KEY_EXPERT_API_API.GET_EXPERT_MAIN(params?.variables)
+  return useQuery({
+    queryKey,
+    queryFn: () => expertApiApi.getExpertMain(params?.variables),
     ...params?.options,
   })
 }

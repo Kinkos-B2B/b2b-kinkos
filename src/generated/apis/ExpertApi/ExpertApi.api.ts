@@ -2,6 +2,7 @@ import { HttpClient, RequestParams } from '../@http-client'
 import {
   ErrorResponseDTOCommonType,
   ResponseDTOGetAllExpertSearchResponseType,
+  ResponseDTOGetExpertMainResponseType,
   ResponseDTOGetExpertResponseType,
   ResponseDTOPageResponseDTOGetAllExpertResponseType,
 } from '../@types/data-contracts'
@@ -107,6 +108,29 @@ export class ExpertApiApi<
           `/api/v1/expert`,
           `/api/v1/expert/search-type`,
         ],
+      },
+    }) /**
+   * No description
+   *
+   * @tags [Expert API]
+   * @name GetExpertMain
+   * @summary 전문가 - 메인 화면
+   * @request GET:/api/v1/expert/main
+   * @secure
+   */
+
+  getExpertMain = (variables?: { params?: RequestParams }) =>
+    this.request<
+      ResponseDTOGetExpertMainResponseType,
+      ErrorResponseDTOCommonType
+    >({
+      path: `/api/v1/expert/main`,
+      method: 'GET',
+      secure: true,
+      ...variables?.params,
+      next: {
+        ...variables?.params?.next,
+        tags: [`/api`, `/api/v1`, `/api/v1/expert`, `/api/v1/expert/main`],
       },
     })
 }
