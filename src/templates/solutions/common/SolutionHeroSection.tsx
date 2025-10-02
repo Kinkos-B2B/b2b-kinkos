@@ -69,9 +69,8 @@ export const SolutionHeroSection = ({
     // 섹션 pin 애니메이션
     ScrollTrigger.create({
       trigger: introBlockRef.current,
-      start: 'top top+=296px',
+      start: 'top top+=240px',
       end: '+=100%',
-      markers: true,
       pin: true,
       invalidateOnRefresh: true,
     })
@@ -86,7 +85,6 @@ export const SolutionHeroSection = ({
       anticipatePin: 1,
       pinSpacing: true,
       invalidateOnRefresh: true,
-      // markers: true,
     })
 
     // 2) 단계 시퀀스: 300px(이미지) → 100px(dim) → 100px(text)
@@ -97,7 +95,6 @@ export const SolutionHeroSection = ({
         start: 'top top',
         end: '+=500', // 총 500px 구간만 진행(핀은 위에서 더 길게 유지 가능)
         scrub: true,
-        // markers: true,
       },
     })
 

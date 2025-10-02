@@ -9,7 +9,10 @@ import { useInView } from 'react-intersection-observer'
 
 import { Button } from '@/components/ui/button'
 
+import { SolutionFeatureSection } from '../../common/SolutionFeatureSection'
 import { SolutionHeroSection } from '../../common/SolutionHeroSection'
+import { SolutionMoreInfoSection } from '../../common/SolutionMoreInfoSection'
+import { SolutionReleatedExportSection } from '../../common/SolutionReleatedExportSection'
 import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 
 const mockData = {
@@ -82,22 +85,16 @@ export const SolutionCorporatePrintingTemplate = () => {
         </Container>
       </Box>
 
-      <Box py={'160px'}>
-        <Container>
-          <SoultionCardsSection {...cardsMockData} />
-        </Container>
+      <Box bg={'primary.2'} w={'100%'}>
+        <SolutionFeatureSection />
       </Box>
 
-      <Box py={'160px'}>
-        <Container>
-          <SoultionCardsSection {...cardsMockData} />
-        </Container>
+      <Box py={'160px 120px'} w={'100%'}>
+        <SolutionReleatedExportSection />
       </Box>
 
-      <Box py={'160px'}>
-        <Container>
-          <SoultionCardsSection {...cardsMockData} />
-        </Container>
+      <Box py="80px" w={'100%'} bg="primary.1">
+        <SolutionMoreInfoSection />
       </Box>
 
       <Box

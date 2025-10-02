@@ -50,7 +50,7 @@ export const SoultionCardsSection = ({ title, cards }: Props) => {
               aria-describedby={`card-description-${index}`}
               tabIndex={0}
             >
-              <Card.Body gap="12px">
+              <Card.Body gap="12px" p={'0px'}>
                 <Box
                   boxSize={'40px'}
                   bg={'secondary.4'}
