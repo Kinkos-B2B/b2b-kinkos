@@ -14,7 +14,7 @@ interface ButtonLoadingProps {
 }
 
 export interface ButtonProps extends ChakraButtonProps, ButtonLoadingProps {
-  colorPalette?: 'primary' | 'secondary' | 'grey'
+  colorPalette?: 'primary' | 'secondary' | 'grey' | 'black'
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(

@@ -1,0 +1,34 @@
+'use client'
+
+import { Box, Container, VStack } from '@chakra-ui/react'
+
+import { PluuugCTA } from '@/components/view/PluuugCTA'
+import { RecentPost } from '@/components/view/RecentPost'
+
+import { ProblemSolveIntroBanner } from './components/ProblemSolveIntroBanner'
+import { ProblemSolvePostList } from './components/ProblemSolvePostList'
+
+export const ProblemSolveTemplate = () => {
+  return (
+    <VStack w="100%" pt={'20px'}>
+      <Box w={'100%'} pb={'80px'}>
+        <ProblemSolveIntroBanner />
+      </Box>
+      <Box w={'100%'} pb={'120px'}>
+        <RecentPost title="최신 고민 해결 사례" />
+      </Box>
+      <Box w={'100%'} pb={'120px'}>
+        <ProblemSolvePostList />
+      </Box>
+      <Container>
+        <PluuugCTA
+          text={'혼자 고민하지 마시고,\n킨코스와 해결하세요!'}
+          buttons={[
+            { text: '전문가 선택하기', onClick: () => {} },
+            { text: '고객 후기 알아보기', onClick: () => {} },
+          ]}
+        />
+      </Container>
+    </VStack>
+  )
+}
