@@ -36,7 +36,6 @@ export const PageLayout = ({
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      console.log(window.scrollY)
       if (window.scrollY > 91) {
         headerRef.current?.setAttribute('data-scrolled', 'true')
       } else {
@@ -113,7 +112,7 @@ export const PageLayout = ({
       >
         {children}
       </GridItem>
-      <GridItem area={'footer'} as={'footer'} h={'100%'} w={'100%'} py={'30px'}>
+      <GridItem area={'footer'} as={'footer'} h={'100%'} w={'100%'}>
         {footer}
       </GridItem>
     </Grid>

@@ -1,22 +1,18 @@
 'use client'
 
-import { useBreakpointValue } from '@chakra-ui/react'
+import { useBreakpointValue, useMediaQuery } from '@chakra-ui/react'
 
 import { DesktopHeader } from './components/desktop-header'
 import { MobileHeader } from './components/mobile-header'
 
 export const PageLayoutHeader = () => {
-  const isMobile = useBreakpointValue({ base: true, md: false })
-  const isDesktop = useBreakpointValue({ base: false, md: true })
+  const isMobile = useMediaQuery(['(max-width: 768px)'], {
+    ssr: false,
+  })[0]
 
   if (isMobile) {
     return <MobileHeader />
-  }
-
-  if (isDesktop) {
+  } else {
     return <DesktopHeader />
   }
-
-  // 태블릿의 경우 데스크톱 헤더 사용
-  return <DesktopHeader />
 }

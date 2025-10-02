@@ -110,7 +110,7 @@ export const SOLUTION_NAVIGATION_ITEMS: NavigationItem = {
       title: '온라인 주문 솔루션',
       items: [
         {
-          label: '명함 주문 사이트',
+          label: '온라인  명함 주문 관리',
           href: ROUTES.SOLUTIONS.ONLINE_ORDER.BUSINESS_CARD,
         },
         {
@@ -122,69 +122,31 @@ export const SOLUTION_NAVIGATION_ITEMS: NavigationItem = {
   ],
 }
 
-export const PROBLEM_SOLVE_NAVIGATION_ITEMS: NavigationItem = {
+export const CUSTOMER_REVIEW_NAVIGATION_ITEM: NavigationItem = {
+  label: '고객후기',
+  href: ROUTES.CUSTOMER_REVIEW,
+}
+
+export const PROBLEM_SOLVE_NAVIGATION_ITEM: NavigationItem = {
   label: '고민해결',
-  subItems: [
-    {
-      title: '계약고민',
-      items: [
-        {
-          label: '법인 계약 고민',
-          href: ROUTES.PROBLEM.CONTRACT.CORPORATE,
-        },
-        {
-          label: '결제 방법 고민',
-          href: ROUTES.PROBLEM.CONTRACT.PAYMENT,
-        },
-      ],
-    },
-    {
-      title: '제작고민',
-      items: [
-        {
-          label: '디자인 고민',
-          href: ROUTES.PROBLEM.PRODUCTION.DESIGN,
-        },
-        { label: 'POP 고민', href: ROUTES.PROBLEM.PRODUCTION.POP },
-        { label: '영상 고민', href: ROUTES.PROBLEM.PRODUCTION.VIDEO },
-      ],
-    },
-    {
-      title: '주문고민',
-      items: [
-        { label: '사이트 고민', href: ROUTES.PROBLEM.ORDER.SITE },
-        {
-          label: '주문 관리 고민',
-          href: ROUTES.PROBLEM.ORDER.MANAGEMENT,
-        },
-      ],
-    },
-    {
-      title: '배송/설치고민',
-      items: [
-        { label: '포장 고민', href: ROUTES.PROBLEM.DELIVERY.PACKAGING },
-        { label: '배송 고민', href: ROUTES.PROBLEM.DELIVERY.SHIPPING },
-        { label: '보관 고민', href: ROUTES.PROBLEM.DELIVERY.STORAGE },
-      ],
-    },
-    {
-      title: '비용 고민',
-      items: [
-        { label: '효과 고민', href: ROUTES.PROBLEM.COST.EFFECTIVENESS },
-        {
-          label: '비용 관리 고민',
-          href: ROUTES.PROBLEM.COST.MANAGEMENT,
-        },
-      ],
-    },
-  ],
+  href: ROUTES.PROBLEM,
+}
+
+export const EXPERT_NAVIGATION_ITEM: NavigationItem = {
+  label: '전문가',
+  href: ROUTES.EXPERT,
+}
+
+export const FAQ_NAVIGATION_ITEM: NavigationItem = {
+  label: '주요질문',
+  href: ROUTES.FAQ,
 }
 
 export const HEADER_NAVIGATION_ITEMS: NavigationItem[] = [
   BIZ_NAVIGATION_ITEMS,
   SOLUTION_NAVIGATION_ITEMS,
-  { label: '고객후기', href: ROUTES.CUSTOMER_REVIEW },
-  PROBLEM_SOLVE_NAVIGATION_ITEMS,
-  { label: '전문가', href: ROUTES.EXPERT },
-  { label: '주요질문', href: ROUTES.FAQ },
+  CUSTOMER_REVIEW_NAVIGATION_ITEM,
+  PROBLEM_SOLVE_NAVIGATION_ITEM,
+  EXPERT_NAVIGATION_ITEM,
+  FAQ_NAVIGATION_ITEM,
 ]
