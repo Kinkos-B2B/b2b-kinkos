@@ -136,136 +136,118 @@ const defaultFaqData: FaqData[] = [
 ]
 
 //@TODO Pagenaition
-export const FaqTemplate = React.forwardRef<HTMLDivElement, FaqTemplateProps>(
-  function FaqTemplate(props, ref) {
-    const {
-      faqData = defaultFaqData,
-      tabs = defaultTabs,
-      currentTab = 'top-faq',
-      onTabChange,
-      currentPage = 1,
-      totalPages = 7,
-      onPageChange,
-      ...rest
-    } = props
+export const FaqTemplate = (props: FaqTemplateProps) => {
+  const {
+    faqData = defaultFaqData,
+    tabs = defaultTabs,
+    currentTab = 'top-faq',
+    onTabChange,
+    currentPage = 1,
+    totalPages = 7,
+    onPageChange,
+    ...rest
+  } = props
 
-    const [selectedTab, setSelectedTab] = React.useState(currentTab)
+  const [selectedTab, setSelectedTab] = React.useState(currentTab)
 
-    const handleTabChange = React.useCallback(
-      (value: string | null) => {
-        if (value) {
-          setSelectedTab(value)
-          onTabChange?.(value)
-        }
-      },
-      [onTabChange],
-    )
+  const handleTabChange = React.useCallback(
+    (value: string | null) => {
+      if (value) {
+        setSelectedTab(value)
+        onTabChange?.(value)
+      }
+    },
+    [onTabChange],
+  )
 
-    const handlePageChange = React.useCallback(
-      (page: number) => {
-        onPageChange?.(page)
-      },
-      [onPageChange],
-    )
-
-    return (
-      <Container>
-        <Box ref={ref} w="full" {...rest} pt={'80px'}>
-          <VStack gap="56px" align="stretch">
-            {/* 헤더 섹션 */}
-            <VStack gap="40px" align="center">
-              <Heading
-                as="h1"
-                fontSize="48px"
-                fontWeight="bold"
-                color="grey.10"
-                textAlign="center"
-                letterSpacing="-0.48px"
-                lineHeight="1.4"
+  return (
+    <Container>
+      <Box w="full" {...rest} pt={'80px'}>
+        <VStack gap="56px" align="stretch">
+          {/* 헤더 섹션 */}
+          <VStack gap="40px" align="center">
+            <Heading
+              as="h1"
+              fontSize="48px"
+              fontWeight="bold"
+              color="grey.10"
+              textAlign="center"
+              letterSpacing="-0.48px"
+              lineHeight="1.4"
+            >
+              주요 질문
+            </Heading>
+            {/* 탭 네비게이션 */}
+            <Box w="full" position="relative">
+              <Tabs.Root
+                value={selectedTab}
+                onValueChange={(e) => handleTabChange(e.value)}
+                variant="enclosed"
               >
-                주요 질문
-              </Heading>
-              {/* 탭 네비게이션 */}
-              <Box w="full" position="relative">
-                <Tabs.Root
-                  value={selectedTab}
-                  onValueChange={(e) => handleTabChange(e.value)}
-                  variant="enclosed"
-                >
-                  <Tabs.List
-                    gap="8px"
-                    h="48px"
-                    overflow="hidden"
-                    position="relative"
-                    w="full"
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                  >
-                    {tabs.map((tab) => (
-                      <Tabs.Trigger
-                        key={tab.id}
-                        value={tab.id}
-                        h="48px"
-                        px="16px"
-                        py="0"
-                        borderRadius="10px"
-                        fontSize="18px"
-                        fontWeight="600"
-                        letterSpacing="-0.36px"
-                        lineHeight="1.6"
-                        _selected={{
-                          bg: 'grey.10',
-                          color: 'grey.0',
-                        }}
-                        _hover={{
-                          opacity: 0.8,
-                        }}
-                      >
-                        {tab.label}
-                      </Tabs.Trigger>
-                    ))}
-                  </Tabs.List>
-                </Tabs.Root>
-
-                {/* 그라데이션 오버레이 */}
-                <Box
-                  position="absolute"
-                  top="0"
-                  right="0"
-                  w="30px"
+                <Tabs.List
+                  gap="8px"
                   h="48px"
-                  bgGradient="linear(to-l, grey.0, rgba(255, 255, 255, 0))"
-                  pointerEvents="none"
+                  overflow="hidden"
+                  position="relative"
+                  w="full"
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                >
+                  {tabs.map((tab) => (
+                    <Tabs.Trigger
+                      key={tab.id}
+                      value={tab.id}
+                      h="48px"
+                      px="16px"
+                      py="0"
+                      borderRadius="10px"
+                      fontSize="18px"
+                      fontWeight="600"
+                      letterSpacing="-0.36px"
+                      lineHeight="1.6"
+                      _selected={{
+                        bg: 'grey.10',
+                        color: 'grey.0',
+                      }}
+                      _hover={{
+                        opacity: 0.8,
+                      }}
+                    >
+                      {tab.label}
+                    </Tabs.Trigger>
+                  ))}
+                </Tabs.List>
+              </Tabs.Root>
+
+              {/* 그라데이션 오버레이 */}
+              <Box
+                position="absolute"
+                top="0"
+                right="0"
+                w="30px"
+                h="48px"
+                bgGradient="linear(to-l, grey.0, rgba(255, 255, 255, 0))"
+                pointerEvents="none"
+              />
+            </Box>
+          </VStack>
+
+          <VStack gap="64px" align="center">
+            <VStack gap="0" align="stretch" w="full">
+              {faqData.map((faq) => (
+                <FaqItem
+                  currentTab={selectedTab}
+                  key={faq.id}
+                  question={faq.question}
+                  answer={faq.answer}
+                  category={faq.category}
                 />
-              </Box>
-            </VStack>
-
-            {/* FAQ 목록 */}
-            <VStack gap="64px" align="center">
-              <VStack gap="0" align="stretch" w="full">
-                {faqData.map((faq) => (
-                  <FaqItem
-                    currentTab={selectedTab}
-                    key={faq.id}
-                    question={faq.question}
-                    answer={faq.answer}
-                    category={faq.category}
-                  />
-                ))}
-              </VStack>
-
-              {/* 페이지네이션 */}
-              {/* <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={handlePageChange}
-              size="lg"
-            /> */}
+              ))}
             </VStack>
           </VStack>
-        </Box>
-      </Container>
-    )
-  },
-)
+        </VStack>
+      </Box>
+    </Container>
+  )
+}
