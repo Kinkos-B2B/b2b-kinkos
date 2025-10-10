@@ -2,6 +2,7 @@
 
 import { Box, Container } from '@chakra-ui/react'
 
+import { useGetHomeConfigHelpArticleQuery } from '@/generated/apis/HomeApi/HomeApi.query'
 import { HomeSolutionSlider } from '@/templates/home/section/2/components/HomeSolutionSlider'
 
 // 샘플 데이터

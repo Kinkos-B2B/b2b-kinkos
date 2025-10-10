@@ -4,31 +4,16 @@ import Image from 'next/image'
 
 import { Badge, Box, Flex, Text, VStack } from '@chakra-ui/react'
 
-export interface ExpertCardProps {
-  /**
-   * 전문가 이미지 URL
-   */
-  imageUrl: string
-  /**
-   * 전문가 이름/제목
-   */
-  title: string
-  /**
-   * 전문가 설명
-   */
-  description: string
-  /**
-   * 전문 분야 태그들
-   */
-  tags: string[]
-  /**
-   * 카드 클릭 핸들러
-   */
+import { GetHomeExpertResponseType } from '@/generated/apis/@types/data-contracts'
+
+export interface Props {
+  expert: GetHomeExpertResponseType
   onClick?: () => void
 }
 
-export const ExpertCard = React.forwardRef<HTMLDivElement, ExpertCardProps>(
-  function ExpertCard({ imageUrl, title, description, tags, onClick }, ref) {
+export const ExpertCard = React.forwardRef<HTMLDivElement, Props>(
+  function ExpertCard({ expert, onClick }, ref) {
+    console.log(expert)
     return (
       <Box
         ref={ref}
@@ -40,21 +25,22 @@ export const ExpertCard = React.forwardRef<HTMLDivElement, ExpertCardProps>(
         w="320px"
       >
         <Box h="257px" overflow="hidden" position="relative" w="full">
-          <Image
-            alt={title}
-            height={480}
-            width={320}
-            objectFit="cover"
-            src={imageUrl}
-          />
+          {expert.profileImage?.url && (
+            <Image
+              alt={expert.nickname}
+              fill
+              objectFit="contain"
+              src={expert.profileImage?.url || ''}
+            />
+          )}
         </Box>
         <VStack align="start" gap="16px" px={'30px'} py={'24px'}>
           <VStack align="start" gap="4px" w="full">
             <Text color="grey.9" textStyle="pre-heading-3">
-              {title}
+              {expert.nickname}
             </Text>
             <Text color="grey.7" pr="20px" textStyle="pre-body-6">
-              {description}
+              {expert.description}
             </Text>
           </VStack>
 
@@ -66,20 +52,15 @@ export const ExpertCard = React.forwardRef<HTMLDivElement, ExpertCardProps>(
             justify="start"
             w="full"
           >
-            {tags.map((tag, index) => (
+            {expert.industryList.map((industry, index) => (
               <Badge
                 key={index}
-                bg="grey.2"
-                borderRadius="6px"
                 color="grey.7"
-                h="24px"
-                px="6px"
-                py="0"
-                variant="solid"
-                colorPalette="secondary"
+                variant="subtle"
+                colorPalette="grey"
                 textStyle="pre-caption-1"
               >
-                {tag}
+                {industry.name}
               </Badge>
             ))}
           </Flex>

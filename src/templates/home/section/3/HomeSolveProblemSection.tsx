@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import {
+  Box,
   Button,
   Container,
   GridItem,
@@ -11,8 +12,13 @@ import {
   VStack,
 } from '@chakra-ui/react'
 
+import dayjs from 'dayjs'
+import { orderBy } from 'lodash'
+
 import { ImageAsNext } from '@/components/image-as-next'
 import { Badge } from '@/components/ui/badge'
+import { GetHomeConfigHelpArticleResponseType } from '@/generated/apis/@types/data-contracts'
+import { useGetHomeConfigHelpArticleQuery } from '@/generated/apis/HomeApi/HomeApi.query'
 
 // Figma에서 다운로드한 이미지 데이터
 const problemCards = [
@@ -47,11 +53,10 @@ const problemCards = [
 ]
 
 const ProblemCard = ({
-  image,
-  logo,
+  thumbnailImageUrl,
   title,
-  date,
-}: (typeof problemCards)[0]) => {
+  createdAt,
+}: GetHomeConfigHelpArticleResponseType) => {
   return (
     <VStack align="stretch" gap="16px" w="100%">
       {/* 이미지 카드 */}
@@ -63,31 +68,26 @@ const ProblemCard = ({
         overflow="hidden"
         bg="grey.100"
       >
-        <Image src={image} alt={title} fill objectFit="cover" />
+        <Image
+          src={thumbnailImageUrl?.url || ''}
+          alt={title}
+          fill
+          objectFit="cover"
+        />
       </VStack>
 
       {/* 카드 정보 */}
       <VStack align="stretch" gap="16px">
         <VStack align="stretch" gap="8px">
-          {/* 로고 */}
-          <HStack h="30px">
-            <Image src={logo} alt="로고" width={56} height={18} />
-          </HStack>
-
-          {/* 제목 */}
-          <Heading
-            as="h3"
-            textStyle="pre-heading-3"
-            color="grey.9"
-            lineHeight="1.4"
-          >
+          <Text textStyle={'pre-body-3'}>똑똑한 개발자</Text>
+          <Heading as="h3" textStyle="pre-heading-3" color="grey.9">
             {title}
           </Heading>
         </VStack>
 
         {/* 날짜 */}
         <Text textStyle="pre-body-6" color="grey.7">
-          {date}
+          {dayjs(createdAt).format('YYYY. MM. DD')}
         </Text>
       </VStack>
     </VStack>
@@ -95,6 +95,12 @@ const ProblemCard = ({
 }
 
 export const HomeSolveProblemSection = () => {
+  const { data } = useGetHomeConfigHelpArticleQuery()
+
+  console.log(data)
+
+  const orderedArticles = orderBy(data?.data, 'displayOrder', 'desc')
+
   return (
     <Container maxW="container.xl">
       <VStack align="stretch" gap="48px">
@@ -131,11 +137,11 @@ export const HomeSolveProblemSection = () => {
             templateColumns={'1fr 2fr'}
           >
             <SimpleGrid gap="24px" w="100%">
-              <ProblemCard {...problemCards[0]} />
+              <ProblemCard {...orderedArticles[0]} />
             </SimpleGrid>
 
             <SimpleGrid columns={{ base: 1, md: 2 }} gap="24px" w="100%">
-              {problemCards.map((card, index) => (
+              {orderedArticles.slice(1).map((card, index) => (
                 <ProblemCard {...card} key={index} />
               ))}
             </SimpleGrid>

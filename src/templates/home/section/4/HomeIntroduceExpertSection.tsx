@@ -5,6 +5,7 @@ import { Marquee } from '@devnomic/marquee'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { useGetHomeExpertQuery } from '@/generated/apis/HomeApi/HomeApi.query'
 
 import { ExpertCard } from './components/ExportCard'
 import './vertical-marquee.css'
@@ -46,6 +47,9 @@ const expertData = [
 ]
 
 export const HomeIntroduceExpertSection = () => {
+  const { data } = useGetHomeExpertQuery()
+  const experts = data?.data || []
+
   return (
     <Box
       bg="secondary.1"
@@ -107,27 +111,15 @@ export const HomeIntroduceExpertSection = () => {
           <Flex w={'100%'} h={'100%'} justifyContent={'end'} gap={'24px'}>
             <Marquee direction="up" style={{ width: 'fit-content' }}>
               <VStack gap="24px" mb={'24px'}>
-                {expertData.map((expert) => (
-                  <ExpertCard
-                    key={expert.id}
-                    description={expert.description}
-                    imageUrl={expert.imageUrl}
-                    tags={expert.tags}
-                    title={expert.title}
-                  />
+                {experts.map((expert, index) => (
+                  <ExpertCard key={index} expert={expert} />
                 ))}
               </VStack>
             </Marquee>
             <Marquee direction="up" reverse>
               <VStack gap="24px" mb={'24px'}>
-                {expertData.map((expert) => (
-                  <ExpertCard
-                    key={`row2-${expert.id}`}
-                    description={expert.description}
-                    imageUrl={expert.imageUrl}
-                    tags={expert.tags}
-                    title={expert.title}
-                  />
+                {experts.map((expert, index) => (
+                  <ExpertCard key={index} expert={expert} />
                 ))}
               </VStack>
             </Marquee>
