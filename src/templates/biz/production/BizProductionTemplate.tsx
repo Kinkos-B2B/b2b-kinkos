@@ -103,7 +103,7 @@ export const BizProductionTemplate = () => {
         <BizHeroSection {...heroSectionMockData} />
         <Box
           position={'absolute'}
-          top={'0px'}
+          top={'-90px'}
           left={'0'}
           right={'0'}
           bottom={'0'}
@@ -114,6 +114,7 @@ export const BizProductionTemplate = () => {
           pointerEvents={isScrolled ? 'auto' : 'none'}
         ></Box>
       </VStack>
+
       <VStack gap={'0px'} zIndex={'sticky'} bg={'white'} w={'100%'}>
         <BizDescriptionBanner
           title={bizDescriptionBannerMockData.title}

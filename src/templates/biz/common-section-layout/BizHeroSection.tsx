@@ -22,8 +22,6 @@ export const BizHeroSection = ({
       width="100%"
       backgroundColor="background.basic.1"
       gap={'0px'}
-      // position="fixed"
-      // top="90px"
       h={'calc(100vh - 90px)'}
       pt={'80px'}
     >

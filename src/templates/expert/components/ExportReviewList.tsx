@@ -2,14 +2,7 @@ import { Box } from '@chakra-ui/react'
 
 import Marquee from 'react-fast-marquee'
 
-import {
-  GetAllExpertResponseType,
-  GetHomeExpertResponseType,
-  PageResponseDTOGetAllExpertResponseType,
-} from '@/generated/apis/@types/data-contracts'
 import { useGetExpertMainQuery } from '@/generated/apis/ExpertApi/ExpertApi.query'
-import { useGetHomeExpertQuery } from '@/generated/apis/HomeApi/HomeApi.query'
-import { useGetSolutionExpertListQuery } from '@/generated/apis/SolutionApi/SolutionApi.query'
 import { ExpertReviewCardItem } from '@/templates/expert/components/ExpertReviewCardItem'
 
 const mockData = {
