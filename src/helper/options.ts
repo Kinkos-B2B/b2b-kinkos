@@ -79,7 +79,7 @@ export const enum GetAllHelpArticleParamsTypeEnumType {
   ETC = 'ETC',
 }
 
-export const enum GetAllFaqParamsCategoryEnumType {
+export enum GetAllFaqParamsCategoryEnumType {
   SERVICE = 'SERVICE',
   MEMBER = 'MEMBER',
   PRICE = 'PRICE',

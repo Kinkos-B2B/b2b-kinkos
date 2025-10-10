@@ -3,9 +3,12 @@
 import * as React from 'react'
 
 import { Box, Container, Flex, Heading, Tabs, VStack } from '@chakra-ui/react'
+import { keepPreviousData } from '@tanstack/react-query'
 
 import { FaqItem } from '@/components/faq/faq-item'
 import { Pagination } from '@/components/pagination'
+import { useGetAllFaqQuery } from '@/generated/apis/FaqApi/FaqApi.query'
+import { GetAllFaqParamsCategoryEnumType } from '@/helper/options'
 
 export interface FaqData {
   id: string
@@ -48,132 +51,71 @@ export interface FaqTemplateProps {
   onPageChange?: (page: number) => void
 }
 
+export const CATEGORY_LABELS: Record<GetAllFaqParamsCategoryEnumType, string> =
+  {
+    [GetAllFaqParamsCategoryEnumType.SERVICE]: '서비스',
+    [GetAllFaqParamsCategoryEnumType.MEMBER]: '회원',
+    [GetAllFaqParamsCategoryEnumType.PRICE]: '요금',
+    [GetAllFaqParamsCategoryEnumType.SOLUTION]: '솔루션',
+    [GetAllFaqParamsCategoryEnumType.ETC]: '기타',
+    [GetAllFaqParamsCategoryEnumType.INCIDENT]: '장애',
+  }
+
 const defaultTabs = [
-  { id: 'top-faq', label: 'TOP / FAQ' },
-  { id: 'service', label: '서비스' },
-  { id: 'member', label: '회원' },
-  { id: 'pricing', label: '요금' },
-  { id: 'solution', label: '솔루션' },
-  { id: 'etc', label: '기타' },
-  { id: 'issue', label: '장애' },
+  { id: 'TOP', label: 'TOP / FAQ' },
+  { id: GetAllFaqParamsCategoryEnumType.SERVICE, label: '서비스' },
+  { id: GetAllFaqParamsCategoryEnumType.MEMBER, label: '회원' },
+  { id: GetAllFaqParamsCategoryEnumType.PRICE, label: '요금' },
+  { id: GetAllFaqParamsCategoryEnumType.SOLUTION, label: '솔루션' },
+  { id: GetAllFaqParamsCategoryEnumType.ETC, label: '기타' },
+  { id: GetAllFaqParamsCategoryEnumType.INCIDENT, label: '장애' },
 ]
 
-const defaultFaqData: FaqData[] = [
-  {
-    id: '1',
-    question: '전국 지점/매장에서 동일한 품질로 제작/배송이 가능한가요?',
-    answer:
-      '답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.',
-    category: '서비스',
-  },
-  {
-    id: '2',
-    question: '해외 지사나 글로벌 전시회로도 직접 배송할 수 있나요?',
-    answer:
-      '답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.',
-    category: '서비스',
-  },
-  {
-    id: '3',
-    question:
-      '기업용 보안 인쇄(계약서, 내부 문서, 인증 자료 등)는 어떻게 관리하나요?',
-    answer:
-      '답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.',
-    category: '서비스',
-  },
-  {
-    id: '4',
-    question: '브랜드 디자인부터 매장 POP까지 통합 기획이 가능한가요?',
-    answer:
-      '답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.',
-    category: '솔루션',
-  },
-  {
-    id: '5',
-    question:
-      '영상/AR 솔루션은 온라인 주문 솔루션(주문 사이트, 기업 인쇄몰)의 장점은 무엇인가요?',
-    answer:
-      '답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.',
-    category: '솔루션',
-  },
-  {
-    id: '6',
-    question: '데이터 보안이 중요한 문서도 안전하게 출력할 수 있나요?',
-    answer:
-      '답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.',
-    category: '솔루션',
-  },
-  {
-    id: '7',
-    question: 'EX감성 분석이 뭔가요?',
-    answer:
-      '답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.',
-    category: '솔루션',
-  },
-  {
-    id: '8',
-    question: '전문가들은 어떤 경력과 자격을 갖고 있나요?',
-    answer:
-      '답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.',
-    category: '솔루션',
-  },
-  {
-    id: '9',
-    question:
-      '특정 산업(제약, 금융, 제조 등)에 특화된 경험이 있는 전문가를 배정받을 수 있나요?',
-    answer:
-      '답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.',
-    category: '솔루션',
-  },
-  {
-    id: '10',
-    question:
-      '전문가 연결 시 1회성인지, 프로젝트 전담으로 지속 관리가 가능한가요?',
-    answer:
-      '답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.\n답변 내용이 들어가게 됩니다.',
-    category: '솔루션',
-  },
-]
-
-//@TODO Pagenaition
 export const FaqTemplate = (props: FaqTemplateProps) => {
-  const {
-    faqData = defaultFaqData,
-    tabs = defaultTabs,
-    currentTab = 'top-faq',
-    onTabChange,
-    currentPage = 1,
-    totalPages = 7,
-    onPageChange,
-    ...rest
-  } = props
+  const [selectedTab, setSelectedTab] = React.useState<
+    GetAllFaqParamsCategoryEnumType | 'TOP'
+  >('TOP')
 
-  const [selectedTab, setSelectedTab] = React.useState(currentTab)
+  const [currentPage, setCurrentPage] = React.useState(1)
 
-  const handleTabChange = React.useCallback(
-    (value: string | null) => {
-      if (value) {
-        setSelectedTab(value)
-        onTabChange?.(value)
-      }
+  const { data } = useGetAllFaqQuery({
+    variables: {
+      query: {
+        page: currentPage - 1,
+        count: 10,
+        isTop: selectedTab === 'TOP',
+        category: selectedTab === 'TOP' ? undefined : selectedTab,
+      },
     },
-    [onTabChange],
-  )
+    options: {
+      placeholderData: keepPreviousData,
+    },
+  })
+
+  React.useEffect(() => {
+    setCurrentPage(1)
+  }, [selectedTab])
+
+  const totalPages =
+    data?.data?.totalElements ?
+      Math.ceil(data.data.totalElements / (data.data.size || 10))
+    : 1
 
   return (
-    <Container>
-      <Box w="full" {...rest} pt={'80px'}>
+    <Container
+      maxW={'1280px'}
+      pt={{ base: '56px', md: '80px' }}
+      pb={{ base: '140px', md: '160px' }}
+    >
+      <Box w="full">
         <VStack gap="56px" align="stretch">
           {/* 헤더 섹션 */}
           <VStack gap="40px" align="center">
             <Heading
               as="h1"
-              fontSize="48px"
-              fontWeight="bold"
               color="grey.10"
+              textStyle="pre-display-3"
               textAlign="center"
-              letterSpacing="-0.48px"
-              lineHeight="1.4"
             >
               주요 질문
             </Heading>
@@ -181,7 +123,11 @@ export const FaqTemplate = (props: FaqTemplateProps) => {
             <Box w="full" position="relative">
               <Tabs.Root
                 value={selectedTab}
-                onValueChange={(e) => handleTabChange(e.value)}
+                onValueChange={({ value }) =>
+                  setSelectedTab(
+                    value as GetAllFaqParamsCategoryEnumType | 'TOP',
+                  )
+                }
                 variant="enclosed"
               >
                 <Tabs.List
@@ -194,7 +140,7 @@ export const FaqTemplate = (props: FaqTemplateProps) => {
                   alignItems="center"
                   justifyContent="center"
                 >
-                  {tabs.map((tab) => (
+                  {defaultTabs.map((tab) => (
                     <Tabs.Trigger
                       key={tab.id}
                       value={tab.id}
@@ -234,17 +180,28 @@ export const FaqTemplate = (props: FaqTemplateProps) => {
           </VStack>
 
           <VStack gap="64px" align="center">
-            <VStack gap="0" align="stretch" w="full">
-              {faqData.map((faq) => (
+            <VStack
+              gap="0"
+              align="stretch"
+              w="full"
+              borderTop="1px solid"
+              borderColor="border.basic.1"
+            >
+              {data?.data?.content?.map((faq) => (
                 <FaqItem
                   currentTab={selectedTab}
                   key={faq.id}
-                  question={faq.question}
-                  answer={faq.answer}
+                  title={faq.title}
+                  body={faq.body}
                   category={faq.category}
                 />
               ))}
             </VStack>
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
+            />
           </VStack>
         </VStack>
       </Box>

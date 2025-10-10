@@ -2,7 +2,15 @@
 
 import * as React from 'react'
 
-import { Box, Button, Flex, HStack, Text, chakra } from '@chakra-ui/react'
+import {
+  Box,
+  Button,
+  Flex,
+  HStack,
+  IconButton,
+  Text,
+  chakra,
+} from '@chakra-ui/react'
 import {
   CaretLeftIcon as CaretLeftIconPhosphor,
   CaretRightIcon as CaretRightIconPhosphor,
@@ -121,29 +129,22 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
     return (
       <Flex ref={ref} gap="8px" align="center" {...rest}>
         {/* 이전 버튼 */}
-        <Button
+        <IconButton
           variant="ghost"
-          size="sm"
           onClick={handlePrevious}
+          _disabled={{
+            opacity: 0.5,
+            bg: 'transparent',
+            cursor: 'not-allowed',
+          }}
+          color={'grey.8'}
           disabled={currentPage <= 1}
           w={buttonSize.w}
           h={buttonSize.h}
           minW={buttonSize.w}
-          p="0"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          borderRadius="10px"
-          _hover={{
-            bg: 'grey.1',
-          }}
-          _disabled={{
-            opacity: 0.5,
-            cursor: 'not-allowed',
-          }}
         >
           <CaretLeftIcon w="24px" h="24px" />
-        </Button>
+        </IconButton>
 
         {/* 페이지 번호들 */}
         <HStack gap="8px">
@@ -194,12 +195,12 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
                 minW={buttonSize.w}
                 p="0"
                 display="flex"
+                textStyle="pre-body-3"
                 alignItems="center"
+                color={isSelected ? 'grey.0' : 'grey.8'}
                 justifyContent="center"
                 borderRadius="10px"
                 fontSize={buttonSize.fontSize}
-                fontWeight="600"
-                letterSpacing={size === 'sm' ? '-0.24px' : '-0.32px'}
                 _hover={{
                   bg: isSelected ? 'primary.4' : 'grey.1',
                 }}
@@ -211,29 +212,22 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
         </HStack>
 
         {/* 다음 버튼 */}
-        <Button
+        <IconButton
           variant="ghost"
-          size="sm"
           onClick={handleNext}
+          _disabled={{
+            opacity: 0.5,
+            bg: 'transparent',
+            cursor: 'not-allowed',
+          }}
+          color={'grey.8'}
           disabled={currentPage >= totalPages}
           w={buttonSize.w}
           h={buttonSize.h}
           minW={buttonSize.w}
-          p="0"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          borderRadius="10px"
-          _hover={{
-            bg: 'grey.1',
-          }}
-          _disabled={{
-            opacity: 0.5,
-            cursor: 'not-allowed',
-          }}
         >
           <CaretRightIcon w="24px" h="24px" />
-        </Button>
+        </IconButton>
       </Flex>
     )
   },

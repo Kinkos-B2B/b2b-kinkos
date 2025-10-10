@@ -12,13 +12,13 @@ export const containerRecipe = defineRecipe({
       lg: '1280px', // 대형 데스크톱
       xl: '1280px', // 초대형 데스크톱
     },
-    // px: {
-    //   base: '20px',
-    //   sm: '40px',
-    //   md: '80px',
-    //   lg: '80px',
-    //   xl: '80px',
-    // },
+    px: {
+      base: '20px',
+      sm: '40px',
+      md: '0px',
+      // lg: '80px',
+      // xl: '80px',
+    },
   },
   variants: {
     basis: {

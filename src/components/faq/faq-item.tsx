@@ -2,41 +2,37 @@
 
 import * as React from 'react'
 
-import { Box, Collapsible, Flex, HStack, Text, chakra } from '@chakra-ui/react'
+import {
+  Box,
+  BoxProps,
+  Collapsible,
+  Flex,
+  HStack,
+  Text,
+  chakra,
+} from '@chakra-ui/react'
 import { CaretDownIcon as CaretDownIconPhosphor } from '@phosphor-icons/react/dist/ssr'
 
 import { Badge } from '@/components/ui/badge'
+import { GetAllFaqResponseCategoryEnumType } from '@/generated/apis/@types/data-contracts'
+import { CATEGORY_LABELS } from '@/templates/faq/FaqTemplate'
 
 export interface FaqItemProps {
-  /**
-   * FAQ 질문
-   */
-  question: string
-  /**
-   * FAQ 답변
-   */
-  answer: string
-  /**
-   * 카테고리 배지
-   */
-  category?: string
-  /**
-   * 초기 열림 상태
-   * @default false
-   */
+  id?: number
+  category?: GetAllFaqResponseCategoryEnumType
+  title?: string
+  body?: string
+
   defaultOpen?: boolean
   /**
    * 열림 상태 (제어됨)
    */
 
-  currentTab?: string
+  currentTab?: GetAllFaqResponseCategoryEnumType | 'TOP'
 
   isOpen?: boolean
-  /**
-   * 열림 상태 변경 핸들러
-   *
-   *
-   */
+
+  boxStyle?: BoxProps
 
   onToggle?: (isOpen: boolean) => void
 }
@@ -46,14 +42,15 @@ const CaretDownIcon = chakra(CaretDownIconPhosphor)
 export const FaqItem = React.forwardRef<HTMLDivElement, FaqItemProps>(
   function FaqItem(props, ref) {
     const {
-      question,
-      answer,
+      id,
+      title,
+      body,
       currentTab,
       category,
       defaultOpen = false,
       isOpen: controlledIsOpen,
       onToggle,
-      ...rest
+      boxStyle,
     } = props
 
     const [internalIsOpen, setInternalIsOpen] = React.useState(defaultOpen)
@@ -70,14 +67,14 @@ export const FaqItem = React.forwardRef<HTMLDivElement, FaqItemProps>(
     return (
       <Box
         ref={ref}
+        {...boxStyle}
         borderBottom="1px solid"
         borderColor="border.basic.1"
-        py="30px"
-        {...rest}
+        py={{ base: '20px', sm: '30px' }}
       >
         <Flex direction="column" gap="4px">
           <Box>
-            {currentTab === 'top-faq' && (
+            {currentTab === 'TOP' && category && (
               <Badge
                 variant="subtle"
                 colorPalette="primary"
@@ -85,12 +82,12 @@ export const FaqItem = React.forwardRef<HTMLDivElement, FaqItemProps>(
                 showLeftIcon={false}
                 showRightIcon={false}
               >
-                {category}
+                {CATEGORY_LABELS[category]}
               </Badge>
             )}
           </Box>
           <HStack
-            gap="200px"
+            gap="80px"
             align="center"
             cursor="pointer"
             onClick={handleToggle}
@@ -106,26 +103,21 @@ export const FaqItem = React.forwardRef<HTMLDivElement, FaqItemProps>(
               opacity: 0.8,
             }}
           >
-            <Flex gap="8px" align="center" flex="1">
+            <Flex gap="8px" align="start" flex="1" w="full">
               <Text
                 color="primary.4"
-                fontSize="20px"
-                fontWeight="bold"
-                lineHeight="1.4"
-                letterSpacing="-0.2px"
+                textStyle={'pre-heading-3'}
                 flexShrink={0}
               >
                 Q
               </Text>
               <Text
                 color="grey.10"
-                fontSize="20px"
-                fontWeight="bold"
-                lineHeight="1.4"
-                letterSpacing="-0.2px"
+                textStyle={'pre-heading-3'}
                 flex="1"
+                w="full"
               >
-                {question}
+                {title}
               </Text>
             </Flex>
 
@@ -150,15 +142,9 @@ export const FaqItem = React.forwardRef<HTMLDivElement, FaqItemProps>(
 
         <Collapsible.Root open={isOpen}>
           <Collapsible.Content>
-            <Box pl="20px" pr="0" py="0" pt={'30px'}>
-              <Text
-                color="grey.7"
-                fontSize="18px"
-                fontWeight="normal"
-                lineHeight="1.6"
-                letterSpacing="-0.36px"
-              >
-                {answer}
+            <Box pl="20px" pr="0" py="0" pt={{ base: '20px', sm: '30px' }}>
+              <Text color="grey.7" textStyle="pre-body-2" fontWeight="normal">
+                {body}
               </Text>
             </Box>
           </Collapsible.Content>

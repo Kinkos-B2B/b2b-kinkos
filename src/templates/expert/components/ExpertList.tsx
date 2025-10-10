@@ -13,7 +13,7 @@ import {
   PrintCostBracketTypeType,
 } from '@/generated/apis/@types/data-contracts'
 
-import { ExpertCard, type ExpertCardProps } from './ExpertCard'
+import { ExpertCard } from './ExpertCard'
 import {
   ExpertFilterSection,
   type ExpertFilterSectionProps,
