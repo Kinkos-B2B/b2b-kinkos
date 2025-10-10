@@ -13,11 +13,11 @@ import {
 } from '@chakra-ui/react'
 
 import PluuugCTA from '@/components/view/PluuugCTA'
+import { PostHeader } from '@/components/view/PostDetail/PostHeader'
 import { useGetCustomerReviewDetailQuery } from '@/generated/apis/CustomerReviewApi/CustomerReviewApi.query'
 
 import { RelatedReviewList } from './components/RelatedReviewList'
 import { ReviewDetailContent } from './components/ReviewDetailContent'
-import { ReviewDetailHeader } from './components/ReviewDetailHeader'
 import { ReviewSolutionCardList } from './components/ReviewSolutionCardList'
 
 interface CustomerReviewDetailTemplateProps {
@@ -35,7 +35,7 @@ export const CustomerReviewDetailTemplate = ({
 
   return (
     <VStack>
-      <ReviewDetailHeader header={data?.data?.header ?? {}} />
+      <PostHeader header={data?.data?.header ?? {}} />
       <Box py={'80px 120px'} position={'relative'}>
         <ReviewDetailContent content={data?.data} />
       </Box>

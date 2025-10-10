@@ -73,6 +73,7 @@ export const badgeRecipe = defineRecipe({
         textStyle: 'pre-caption-1',
       },
     },
+
     colorPalette: {
       primary: {
         solid: {
@@ -116,6 +117,16 @@ export const badgeRecipe = defineRecipe({
       },
     },
   },
+  compoundVariants: [
+    {
+      variant: 'subtle',
+      colorPalette: 'grey',
+      css: {
+        bg: 'grey.2',
+        color: 'grey.7',
+      },
+    },
+  ],
 
   defaultVariants: {
     size: 'lg',

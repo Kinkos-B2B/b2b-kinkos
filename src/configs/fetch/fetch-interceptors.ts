@@ -30,6 +30,7 @@ const requestInterceptor: (
   fetch: NonNullable<FetchHelperDefaultOptions['fetch']>,
 ) => Promise<FetchArgs> = async (args) => {
   const [url, options] = args
+
   const headers = new Headers(options?.headers)
   const authorizationHeader = await setAuthorizationHeader()
 
