@@ -8,6 +8,7 @@ import { Box, Flex, Grid, VStack } from '@chakra-ui/react'
 
 import { Pagination } from '@/components/pagination'
 import {
+  GetAllExpertResponseType,
   IndustryTypeType,
   PrintCostBracketTypeType,
 } from '@/generated/apis/@types/data-contracts'
@@ -33,7 +34,7 @@ export interface ExpertListProps
   /**
    * 전문가 목록
    */
-  experts: ExpertCardProps[]
+  experts: GetAllExpertResponseType[]
 
   industryOptions: IndustryTypeType[]
   printOptions: PrintCostBracketTypeType[]
@@ -76,7 +77,7 @@ export const ExpertList = React.forwardRef<HTMLDivElement, ExpertListProps>(
             {experts.map((expert) => (
               <Link href={`/expert/${expert.id}`} key={expert.id}>
                 <Box>
-                  <ExpertCard {...expert} />
+                  <ExpertCard expert={expert} />
                 </Box>
               </Link>
             ))}

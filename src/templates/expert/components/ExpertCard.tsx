@@ -4,43 +4,24 @@ import * as React from 'react'
 
 import Image from 'next/image'
 
-import { Box, Flex, HStack, Text, VStack } from '@chakra-ui/react'
+import { Badge, Box, Flex, HStack, Text, VStack } from '@chakra-ui/react'
+
+import { GetAllExpertResponseType } from '@/generated/apis/@types/data-contracts'
 
 export interface ExpertCardProps {
-  /**
-   * 전문가 ID
-   */
-  id: number
-  /**
-   * 전문가 이미지 URL
-   */
-  imageUrl: string
-  /**
-   * 전문가 닉네임
-   */
-  nickname: string
-  /**
-   * 전문가 소개
-   */
-  description: string
-  /**
-   * 관련 분야 태그 목록
-   */
-  tags: string[]
-  /**
-   * 클릭 핸들러
-   */
+  expert: GetAllExpertResponseType
+
   onClick?: (id: number) => void
 }
 
 export const ExpertCard = React.forwardRef<HTMLDivElement, ExpertCardProps>(
   function ExpertCard(props, ref) {
-    const { id, imageUrl, nickname, description, tags, onClick, ...rest } =
-      props
+    const { expert, onClick, ...rest } = props
 
     const handleClick = React.useCallback(() => {
-      onClick?.(id)
-    }, [id, onClick])
+      if (!expert.id) return
+      onClick?.(expert.id)
+    }, [expert.id, onClick])
 
     return (
       <VStack
@@ -81,8 +62,8 @@ export const ExpertCard = React.forwardRef<HTMLDivElement, ExpertCardProps>(
           bg="grey.2"
         >
           <Image
-            src={imageUrl}
-            alt={`${nickname}의 프로필 이미지`}
+            src={expert.thumbnailImage?.url || ''}
+            alt={`${expert.nickname}의 프로필 이미지`}
             fill
             style={{ objectFit: 'cover' }}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -98,7 +79,7 @@ export const ExpertCard = React.forwardRef<HTMLDivElement, ExpertCardProps>(
               color="grey.9"
               letterSpacing="-0.2px"
             >
-              {nickname}
+              {expert.nickname}
             </Text>
             <Text
               textStyle="pre-body-2"
@@ -106,32 +87,20 @@ export const ExpertCard = React.forwardRef<HTMLDivElement, ExpertCardProps>(
               letterSpacing="-0.36px"
               lineHeight="1.6"
             >
-              {description}
+              {expert.description}
             </Text>
           </VStack>
 
           {/* 태그 */}
           <HStack gap="8px" flexWrap="wrap">
-            {tags.map((tag, index) => (
-              <Box
+            {expert.industryList?.map((tag, index) => (
+              <Badge
                 key={`${tag}-${index}`}
-                as="span"
-                bg="grey.2"
-                color="grey.7"
-                px="6px"
-                py="0"
-                h="24px"
-                display="inline-flex"
-                alignItems="center"
-                justifyContent="center"
-                borderRadius="6px"
-                fontSize="12px"
-                fontWeight="600"
-                letterSpacing="-0.24px"
-                lineHeight="1.6"
+                colorPalette={'grey'}
+                variant={'subtle'}
               >
                 {tag}
-              </Box>
+              </Badge>
             ))}
           </HStack>
         </VStack>

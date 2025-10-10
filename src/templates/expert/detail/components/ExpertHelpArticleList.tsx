@@ -25,10 +25,10 @@ export const ExpertHelpArticleList = ({ articles }: Props) => {
       </Text>
 
       <HStack gap={'24px'} flex={1}>
-        {articles.map((article, index) => (
+        {articles.map((article) => (
           <Link
-            href={`/problem-solve/${index}`}
-            key={index}
+            href={`/problem-solve/${article.id}`}
+            key={article.id}
             display={'flex'}
             flex={1}
           >

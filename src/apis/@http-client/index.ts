@@ -1,3 +1,5 @@
+import { ENV } from '@/configs/env'
+
 export type QueryParamsType = Record<string | number, any>
 export type ResponseFormat = keyof Omit<Body, 'body' | 'bodyUsed'>
 
@@ -49,7 +51,7 @@ export enum ContentType {
 }
 
 export class HttpClient<SecurityDataType = unknown> {
-  public baseUrl: string = ''
+  public baseUrl: string = ENV.API_BASE_URL || ''
   private securityData: SecurityDataType | null = null
   private securityWorker?: ApiConfig<SecurityDataType>['securityWorker']
   private abortControllers = new Map<CancelToken, AbortController>()
@@ -193,7 +195,7 @@ export class HttpClient<SecurityDataType = unknown> {
     const requestParams = this.mergeRequestParams(params, secureParams)
     const queryString = query && this.toQueryString(query)
     const payloadFormatter = this.contentFormatters[type || ContentType.Json]
-    const responseFormat = format || requestParams.format
+    const responseFormat = format || requestParams.format || 'json'
 
     return this.customFetch(
       `${baseUrl || this.baseUrl || ''}${path}${
