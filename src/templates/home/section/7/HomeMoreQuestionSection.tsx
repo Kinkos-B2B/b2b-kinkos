@@ -2,7 +2,15 @@
 
 import { useEffect, useRef } from 'react'
 
-import { Box, Container, Flex, Heading, Text, VStack } from '@chakra-ui/react'
+import {
+  Box,
+  Container,
+  Flex,
+  Heading,
+  Image,
+  Text,
+  VStack,
+} from '@chakra-ui/react'
 import { CaretRightIcon } from '@phosphor-icons/react/dist/ssr'
 
 import gsap from 'gsap'
@@ -133,27 +141,27 @@ export const HomeMoreQuestionSection = () => {
                   position="relative"
                   mb={{ base: '20px', md: '30px' }}
                   overflow="hidden"
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
                 >
-                  <Box
-                    position="absolute"
-                    top="50%"
-                    left="50%"
-                    transform="translate(-50%, -50%)"
-                    w={{ base: '48px', md: '64px' }}
-                    h={{ base: '48px', md: '64px' }}
-                    bgImage={`url(${card.icon})`}
-                    bgSize="contain"
-                    bgRepeat="no-repeat"
-                    backgroundPosition="center"
+                  <Image
+                    src={card.icon}
+                    alt={card.title}
+                    w={{
+                      base: '80px',
+                      md: card.id === 'review' ? '60px' : '80px',
+                    }}
+                    h={{
+                      base: '80px',
+                      md: card.id === 'review' ? '60px' : '80px',
+                    }}
+                    objectFit="contain"
                   />
                 </Box>
 
                 {/* 텍스트 영역 */}
-                <VStack
-                  gap="8px"
-                  align="start"
-                  mb={{ base: '20px', md: '30px' }}
-                >
+                <VStack gap="8px" align="start">
                   <Heading as="h3" textStyle="pre-heading-2" color="grey.9">
                     {card.title}
                   </Heading>
@@ -179,10 +187,10 @@ export const HomeMoreQuestionSection = () => {
                   alignItems="center"
                   justifyContent="center"
                   cursor="pointer"
-                  _hover={{
-                    bg: 'primary.5',
-                    transition: 'background-color 0.2s ease-in-out',
-                  }}
+                  // _hover={{
+                  //   bg: 'primary.5',
+                  //   transition: 'background-color 0.2s ease-in-out',
+                  // }}
                 >
                   <CaretRightIcon size={24} color="white" />
                 </Box>
