@@ -448,6 +448,8 @@ export interface ResponseDTOPageResponseDTOGetAllFaqResponseType {
 }
 
 export interface GetAllExpertResponseType {
+  /** @format int64 */
+  id?: number
   thumbnailImage?: ImageInfoType
   nickname?: string
   description?: string
@@ -523,6 +525,10 @@ export interface ExpertProfileType {
  * 관련 고민해결
  */
 export interface ExpertRelationHelpArticleType {
+  /** @format int64 */
+  id?: number
+  type?: ExpertRelationHelpArticleTypeEnumType
+  typeDisplayName?: string
   thumbnailImage?: ImageInfoType
   title?: string
   /** @format date-time */
@@ -905,6 +911,14 @@ export type GetAllFaqResponseCategoryEnumType =
   | 'SOLUTION'
   | 'ETC'
   | 'INCIDENT' // X-enumName Values Missing
+
+export type ExpertRelationHelpArticleTypeEnumType =
+  | 'CONTRACT'
+  | 'PRODUCTION'
+  | 'ORDER'
+  | 'DELIVERY_INSTALLATION'
+  | 'COST'
+  | 'ETC' // X-enumName Values Missing
 
 export type PrintCostBracketTypeCategoryEnumType =
   | 'SMALL'
