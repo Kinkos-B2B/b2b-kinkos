@@ -82,7 +82,7 @@ export const PageLayout = ({
       bg={'background.basic.1'}
       gridTemplateRows={{
         base: `${LAYOUT.HEADER.HEIGHT_MOBILE} 1fr auto`,
-        md: `${LAYOUT.HEADER.HEIGHT} 1fr auto`,
+        lg: `${LAYOUT.HEADER.HEIGHT} 1fr auto`,
       }}
       templateAreas={`"header" "main" "footer"`}
     >

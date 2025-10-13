@@ -22,17 +22,17 @@ export const SolutionReleatedExportCard = ({
       p={{
         base: '24px',
         sm: '32px',
-        md: '36px',
+        lg: '36px',
       }}
       pb={{
         base: '28px',
         sm: '36px',
-        md: '40px',
+        lg: '40px',
       }}
       pt={{
         base: '24px',
         sm: '32px',
-        md: '36px',
+        lg: '36px',
       }}
       boxShadow="0px 20px 48px 0px rgba(1, 45, 181, 0.12)"
       w="100%"
@@ -46,12 +46,12 @@ export const SolutionReleatedExportCard = ({
           w={{
             base: '100px',
             sm: '110px',
-            md: '125px',
+            lg: '125px',
           }}
           h={{
             base: '100px',
             sm: '110px',
-            md: '125px',
+            lg: '125px',
           }}
         >
           <Avatar.Root
@@ -60,12 +60,12 @@ export const SolutionReleatedExportCard = ({
             w={{
               base: '100px',
               sm: '110px',
-              md: '125px',
+              lg: '125px',
             }}
             h={{
               base: '100px',
               sm: '110px',
-              md: '125px',
+              lg: '125px',
             }}
           >
             {solutionExpert.profileImage?.url && (

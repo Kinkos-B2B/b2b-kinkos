@@ -27,21 +27,21 @@ export const PageLayoutFooter = () => {
     <Box
       as="footer"
       bg="background.inverse.1"
-      py={{ base: '32px', md: '48px' }}
-      px={{ base: '20px', md: '40px' }}
+      py={{ base: '32px', lg: '48px' }}
+      px={{ base: '20px', lg: '40px' }}
       w="100%"
       role="contentinfo"
       aria-label="사이트 푸터"
     >
       <Container maxW="1280px" px={0}>
-        <VStack gap={{ base: '24px', md: '40px' }} align="stretch">
+        <VStack gap={{ base: '24px', lg: '40px' }} align="stretch">
           {/* 메인 네비게이션 */}
           <Flex
             as="nav"
             justify="space-between"
             align="flex-start"
             wrap="wrap"
-            gap={{ base: '24px', md: '32px' }}
+            gap={{ base: '24px', lg: '32px' }}
             direction={{ base: 'column', lg: 'row' }}
             role="navigation"
             aria-label="주요 네비게이션"
@@ -114,7 +114,7 @@ export const PageLayoutFooter = () => {
                 {SOLUTION_NAVIGATION_ITEMS.label}
               </Text>
               <Flex
-                gap={{ base: '16px', md: '32px' }}
+                gap={{ base: '16px', lg: '32px' }}
                 wrap="wrap"
                 direction={{ base: 'column', sm: 'row' }}
                 role="list"

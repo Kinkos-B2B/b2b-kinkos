@@ -104,8 +104,8 @@ export const FaqTemplate = (props: FaqTemplateProps) => {
   return (
     <Container
       maxW={'1280px'}
-      pt={{ base: '56px', md: '80px' }}
-      pb={{ base: '140px', md: '160px' }}
+      pt={{ base: '56px', lg: '80px' }}
+      pb={{ base: '140px', lg: '160px' }}
     >
       <Box w="full">
         <VStack gap="56px" align="stretch">

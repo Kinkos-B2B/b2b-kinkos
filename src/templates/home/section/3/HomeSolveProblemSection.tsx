@@ -130,7 +130,7 @@ export const HomeSolveProblemSection = () => {
         {/* 카드 그리드 */}
         <VStack align="stretch" gap="56px">
           <SimpleGrid
-            columns={{ base: 1, md: 2 }}
+            columns={{ base: 1, lg: 2 }}
             gap="24px"
             w="100%"
             h={'852px'}
@@ -140,7 +140,7 @@ export const HomeSolveProblemSection = () => {
               <ProblemCard {...orderedArticles[0]} />
             </SimpleGrid>
 
-            <SimpleGrid columns={{ base: 1, md: 2 }} gap="24px" w="100%">
+            <SimpleGrid columns={{ base: 1, lg: 2 }} gap="24px" w="100%">
               {orderedArticles.slice(1).map((card, index) => (
                 <ProblemCard {...card} key={index} />
               ))}

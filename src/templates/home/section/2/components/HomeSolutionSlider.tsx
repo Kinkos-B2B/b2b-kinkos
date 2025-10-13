@@ -69,7 +69,7 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
 
         <Flex justify="space-between" align="center" width="100%">
           <Text
-            fontSize={{ base: '32px', md: '40px', lg: '48px' }}
+            fontSize={{ base: '32px', sm: '40px', lg: '48px' }}
             fontWeight="700"
             color="grey.10"
             letterSpacing="-0.48px"

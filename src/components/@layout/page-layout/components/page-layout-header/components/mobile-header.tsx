@@ -47,7 +47,7 @@ export const MobileHeader = () => {
         px={{ base: '20px', sm: '40px' }}
         alignItems="center"
         justifyContent="space-between"
-        h={{ base: LAYOUT.HEADER.HEIGHT_MOBILE, md: LAYOUT.HEADER.HEIGHT }}
+        h={{ base: LAYOUT.HEADER.HEIGHT_MOBILE }}
         position="relative"
       >
         {/* Logo */}

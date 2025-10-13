@@ -52,7 +52,7 @@ export const SolutionMoreInfoSection = React.forwardRef<
 
           <VStack gap="24px" align="stretch">
             <Grid
-              templateColumns={{ base: '1fr', md: '1fr 1fr 1fr' }}
+              templateColumns={{ base: '1fr', lg: '1fr 1fr 1fr' }}
               gap="24px"
             >
               <PageLinkCard

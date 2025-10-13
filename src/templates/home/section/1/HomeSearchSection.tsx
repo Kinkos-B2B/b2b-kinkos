@@ -145,8 +145,8 @@ const SearchBanner = () => {
     <Flex
       bgGradient="linear-gradient(90deg, #013FFC 0%, #835CF7 80%, #AA2DFE 100%)"
       borderRadius="28px"
-      px={{ base: '24px', md: '64px' }}
-      py={{ base: '24px', md: '40px' }}
+      px={{ base: '24px', lg: '64px' }}
+      py={{ base: '24px', lg: '40px' }}
       position="relative"
       overflow="hidden"
       data-node-id="14279:2568"
@@ -154,16 +154,16 @@ const SearchBanner = () => {
       aria-label="상담 문의 섹션"
     >
       <HStack
-        gap={{ base: '12px', md: '18px' }}
+        gap={{ base: '12px', lg: '18px' }}
         align="end"
         flex="1"
-        direction={{ base: 'column', md: 'row' }}
+        direction={{ base: 'column', lg: 'row' }}
       >
         <Text
           textStyle="pre-heading-2"
           color="white"
           whiteSpace="pre"
-          textAlign={{ base: 'center', md: 'left' }}
+          textAlign={{ base: 'center', lg: 'left' }}
         >
           고민 중이세요?{'\n'}바로 상담해 드릴게요.
         </Text>
@@ -174,13 +174,13 @@ const SearchBanner = () => {
       </HStack>
       <Box
         position="absolute"
-        right={{ base: '20px', md: '60px' }}
+        right={{ base: '20px', lg: '60px' }}
         top="50%"
         transform="translateY(-50%)"
-        w={{ base: '60px', md: '100px' }}
-        h={{ base: '60px', md: '100px' }}
+        w={{ base: '60px', lg: '100px' }}
+        h={{ base: '60px', lg: '100px' }}
         data-node-id="14279:2572"
-        display={{ base: 'none', md: 'block' }}
+        display={{ base: 'none', lg: 'block' }}
         aria-hidden="true"
       >
         <Image

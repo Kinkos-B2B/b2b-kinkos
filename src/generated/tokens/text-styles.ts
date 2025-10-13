@@ -17,7 +17,7 @@ export const textStyles = {
       fontSize: {
         base: '48px',
         sm: '64px',
-        md: '80px',
+        lg: '80px',
       },
       lineHeight: 1.3,
       letterSpacing: '-0.01em',
@@ -31,7 +31,7 @@ export const textStyles = {
       fontSize: {
         base: '40px',
         sm: '48px',
-        md: '64px',
+        lg: '64px',
       },
       lineHeight: 1.4,
       letterSpacing: '-0.01em',
@@ -45,7 +45,7 @@ export const textStyles = {
       fontSize: {
         base: '32px',
         sm: '40px',
-        md: '48px',
+        lg: '48px',
       },
       lineHeight: 1.4,
       letterSpacing: '-0.01em',
@@ -59,7 +59,7 @@ export const textStyles = {
       fontSize: {
         base: '28px',
         sm: '36px',
-        md: '40px',
+        lg: '40px',
       },
       lineHeight: 1.4,
       letterSpacing: '-0.01em',
@@ -73,7 +73,7 @@ export const textStyles = {
       fontSize: {
         base: '24px',
         sm: '24px',
-        md: '32px',
+        lg: '32px',
       },
       lineHeight: 1.4,
       letterSpacing: '-0.01em',
@@ -87,7 +87,7 @@ export const textStyles = {
       fontSize: {
         base: '20px',
         sm: '20px',
-        md: '24px',
+        lg: '24px',
       },
       lineHeight: 1.4,
       letterSpacing: '-0.01em',
@@ -101,7 +101,7 @@ export const textStyles = {
       fontSize: {
         base: '18px',
         sm: '18px',
-        md: '20px',
+        lg: '20px',
       },
       lineHeight: 1.4,
       letterSpacing: '-0.01em',
@@ -115,7 +115,7 @@ export const textStyles = {
       fontSize: {
         base: '16px',
         sm: '18px',
-        md: '18px',
+        lg: '18px',
       },
       lineHeight: 1.4,
       letterSpacing: '-0.01em',
@@ -129,7 +129,7 @@ export const textStyles = {
       fontSize: {
         base: '16px',
         sm: '16px',
-        md: '16px',
+        lg: '16px',
       },
       lineHeight: 1.4,
       letterSpacing: '-0.01em',
@@ -143,7 +143,7 @@ export const textStyles = {
       fontSize: {
         base: '16px',
         sm: '18px',
-        md: '18px',
+        lg: '18px',
       },
       lineHeight: 1.6,
       letterSpacing: '-0.02em',
@@ -157,7 +157,7 @@ export const textStyles = {
       fontSize: {
         base: '16px',
         sm: '18px',
-        md: '18px',
+        lg: '18px',
       },
       lineHeight: 1.6,
       letterSpacing: '-0.02em',
@@ -171,7 +171,7 @@ export const textStyles = {
       fontSize: {
         base: '16px',
         sm: '16px',
-        md: '16px',
+        lg: '16px',
       },
       lineHeight: 1.6,
       letterSpacing: '-0.02em',
@@ -185,7 +185,7 @@ export const textStyles = {
       fontSize: {
         base: '16px',
         sm: '16px',
-        md: '16px',
+        lg: '16px',
       },
       lineHeight: 1.6,
       letterSpacing: '-0.02em',
@@ -199,7 +199,7 @@ export const textStyles = {
       fontSize: {
         base: '14px',
         sm: '14px',
-        md: '14px',
+        lg: '14px',
       },
       lineHeight: 1.6,
       letterSpacing: '-0.02em',
@@ -213,7 +213,7 @@ export const textStyles = {
       fontSize: {
         base: '14px',
         sm: '14px',
-        md: '14px',
+        lg: '14px',
       },
       lineHeight: 1.6,
       letterSpacing: '-0.02em',
@@ -227,7 +227,7 @@ export const textStyles = {
       fontSize: {
         base: '12px',
         sm: '12px',
-        md: '12px',
+        lg: '12px',
       },
       lineHeight: 1.6,
       letterSpacing: '-0.02em',
@@ -241,7 +241,7 @@ export const textStyles = {
       fontSize: {
         base: '12px',
         sm: '12px',
-        md: '12px',
+        lg: '12px',
       },
       lineHeight: 1.6,
       letterSpacing: '-0.02em',
@@ -255,7 +255,7 @@ export const textStyles = {
       fontSize: {
         base: '10px',
         sm: '10px',
-        md: '10px',
+        lg: '10px',
       },
       lineHeight: 1.6,
       letterSpacing: '-0.02em',
@@ -269,7 +269,7 @@ export const textStyles = {
       fontSize: {
         base: '10px',
         sm: '10px',
-        md: '10px',
+        lg: '10px',
       },
       lineHeight: 1.6,
       letterSpacing: '-0.02em',

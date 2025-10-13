@@ -66,8 +66,8 @@ export const CustomerReviewSolutionEffect = () => {
         flexDirection="column"
         alignItems="center"
         gap={{ base: '40px', lg: '56px' }}
-        w={{ base: '100%', md: '90%', lg: '1280px' }}
-        px={{ base: '16px', md: '24px', lg: '0' }}
+        w={{ base: '100%', sm: '90%', lg: '1280px' }}
+        px={{ base: '16px', sm: '24px', lg: '0' }}
         data-node-id="14676:16079"
       >
         {/* 제목 */}

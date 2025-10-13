@@ -110,21 +110,21 @@ export const HomeMoreQuestionSection = () => {
           <Flex
             ref={cardListRef}
             gap="24px"
-            direction={{ base: 'column', md: 'row' }}
+            direction={{ base: 'column', lg: 'row' }}
             wrap="wrap"
             w="100%"
           >
             {cardData.map((card) => (
               <Box
                 key={card.id}
-                flex={{ base: '1', md: '1' }}
-                minW={{ base: '100%', md: '300px' }}
-                maxW={{ base: '100%', md: '400px' }}
+                flex={{ base: '1', lg: '1' }}
+                minW={{ base: '100%', lg: '300px' }}
+                maxW={{ base: '100%', lg: '400px' }}
                 bg="grey.0"
                 borderRadius="28px"
-                p={{ base: '24px', md: '36px' }}
-                pt={{ base: '24px', md: '36px' }}
-                pb={{ base: '32px', md: '48px' }}
+                p={{ base: '24px', lg: '36px' }}
+                pt={{ base: '24px', lg: '36px' }}
+                pb={{ base: '32px', lg: '48px' }}
                 position="relative"
                 boxShadow="0px 20px 48px 0px rgba(1, 63, 252, 0.12)"
                 _hover={{
@@ -134,12 +134,12 @@ export const HomeMoreQuestionSection = () => {
               >
                 {/* 아이콘 영역 */}
                 <Box
-                  w={{ base: '80px', md: '100px' }}
-                  h={{ base: '80px', md: '100px' }}
+                  w={{ base: '80px', lg: '100px' }}
+                  h={{ base: '80px', lg: '100px' }}
                   bg={card.bgColor}
                   borderRadius="20px"
                   position="relative"
-                  mb={{ base: '20px', md: '30px' }}
+                  mb={{ base: '20px', lg: '30px' }}
                   overflow="hidden"
                   display="flex"
                   alignItems="center"
@@ -150,11 +150,11 @@ export const HomeMoreQuestionSection = () => {
                     alt={card.title}
                     w={{
                       base: '80px',
-                      md: card.id === 'review' ? '60px' : '80px',
+                      lg: card.id === 'review' ? '60px' : '80px',
                     }}
                     h={{
                       base: '80px',
-                      md: card.id === 'review' ? '60px' : '80px',
+                      lg: card.id === 'review' ? '60px' : '80px',
                     }}
                     objectFit="contain"
                   />
@@ -177,10 +177,10 @@ export const HomeMoreQuestionSection = () => {
                 {/* 화살표 버튼 */}
                 <Box
                   position="absolute"
-                  top={{ base: '16px', md: '20px' }}
-                  right={{ base: '16px', md: '20px' }}
-                  w={{ base: '40px', md: '48px' }}
-                  h={{ base: '40px', md: '48px' }}
+                  top={{ base: '16px', lg: '20px' }}
+                  right={{ base: '16px', lg: '20px' }}
+                  w={{ base: '40px', lg: '48px' }}
+                  h={{ base: '40px', lg: '48px' }}
                   bg="primary.4"
                   borderRadius="full"
                   display="flex"

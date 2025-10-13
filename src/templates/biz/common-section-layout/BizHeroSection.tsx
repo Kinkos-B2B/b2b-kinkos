@@ -27,7 +27,7 @@ export const BizHeroSection = ({
     >
       <Flex
         width="100%"
-        paddingX={{ base: '20px', md: '0' }}
+        paddingX={{ base: '20px', lg: '0' }}
         flexDirection="column"
         gap="24px"
         alignItems="center"
@@ -36,7 +36,7 @@ export const BizHeroSection = ({
         <VStack
           gap="10px"
           alignItems="center"
-          width={{ base: '100%', md: '515px' }}
+          width={{ base: '100%', lg: '515px' }}
           maxWidth="515px"
         >
           <Badge size="lg" colorPalette="secondary">

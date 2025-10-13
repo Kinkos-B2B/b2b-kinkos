@@ -23,7 +23,7 @@ export const ExpertIntroBanner = () => {
           <Box
             position="relative"
             w="100%"
-            h={{ md: '480px' }}
+            h={{ lg: '480px' }}
             overflow="hidden"
           >
             <Flex
