@@ -1,20 +1,19 @@
 import { Box, Container, HStack, Image, Text, VStack } from '@chakra-ui/react'
 
-const imgImage = '/images/customer-review/best-review-image-mock.png'
+import dayjs from 'dayjs'
 
-const mock = {
-  title: '롯데건설, 현장에서 바로 주문하고 당일 배송으로 명함을 받습니다.',
-  date: '2025. 09. 10',
-  author: '똑똑한개발자',
-  image: imgImage,
-}
+const imgImage = '/images/customer-review/best-review-image-mock.png'
 
 interface Props {
   title: string
-  data?: typeof mock
+  article?: {
+    title: string
+    createdAt: string
+    thumbnailImageUrl: string
+  }
 }
 
-export const RecentPost = ({ data = mock, title }: Props) => {
+export const RecentPost = ({ article, title }: Props) => {
   return (
     <Container maxW={'1280px'}>
       <VStack
@@ -67,7 +66,7 @@ export const RecentPost = ({ data = mock, title }: Props) => {
               overflow="hidden"
             >
               <Image
-                src={data.image}
+                src={article?.thumbnailImageUrl}
                 alt="고객 후기 이미지"
                 w="full"
                 h="full"
@@ -99,7 +98,7 @@ export const RecentPost = ({ data = mock, title }: Props) => {
                 >
                   {/* 작성자 */}
                   <Text textStyle="pre-body-3" color="grey.9" w="full">
-                    {data.author}
+                    {'더미 작성자'}
                   </Text>
 
                   {/* 제목 */}
@@ -112,19 +111,13 @@ export const RecentPost = ({ data = mock, title }: Props) => {
                     fontSize={{ base: '24px', md: '28px', lg: '32px' }}
                     lineHeight={{ base: '1.3', md: '1.35', lg: '1.4' }}
                   >
-                    {data.title}
+                    {article?.title}
                   </Text>
                 </VStack>
 
                 {/* 날짜 */}
-                <Text
-                  as="time"
-                  textStyle="pre-body-4"
-                  color="grey.7"
-                  w="full"
-                  {...({ dateTime: '2025-09-10' } as any)}
-                >
-                  {data.date}
+                <Text as="time" textStyle="pre-body-4" color="grey.7" w="full">
+                  {dayjs(article?.createdAt).format('YYYY.MM.DD')}
                 </Text>
               </VStack>
             </VStack>

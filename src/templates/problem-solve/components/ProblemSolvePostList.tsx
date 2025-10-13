@@ -1,29 +1,14 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-import Link from 'next/link'
+import Image from 'next/image'
 
-import {
-  Box,
-  Card,
-  Container,
-  Flex,
-  Grid,
-  HStack,
-  Image,
-  Tabs,
-  Text,
-  VStack,
-} from '@chakra-ui/react'
+import { Center, Container, Grid, Tabs, Text, VStack } from '@chakra-ui/react'
 
-import { CustomSelect } from '@/components/CustomSelect'
 import { Pagination } from '@/components/pagination'
-import { Select } from '@/components/select'
-import { Button } from '@/components/ui/button'
+import { EmptyViewWrapper } from '@/components/view/EmptyViewWrapper'
 import { PostCardItem } from '@/components/view/PostCardItem'
 import { ROUTES } from '@/constants/routes'
-import { useGetAllCustomerReviewQuery } from '@/generated/apis/CustomerReviewApi/CustomerReviewApi.query'
 import { useGetAllHelpArticleQuery } from '@/generated/apis/HelpArticleApi/HelpArticleApi.query'
-import { getCustomerReviewOptions } from '@/helper/getCustomerReviewOptions'
 import { getProblemSolveOptions } from '@/helper/getProblemSolveOptions'
 import { GetAllHelpArticleParamsTypeEnumType } from '@/helper/options'
 
@@ -33,18 +18,27 @@ export const ProblemSolvePostList = () => {
   const [selectedTab, setSelectedTab] =
     useState<GetAllHelpArticleParamsTypeEnumType>(problemSolveOptions[0].value)
 
+  const [currentPage, setCurrentPage] = useState<number>(1)
+
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [selectedTab])
+
   const { data } = useGetAllHelpArticleQuery({
     variables: {
       query: {
         type: selectedTab,
-        page: 0,
+        page: currentPage - 1,
         count: 9,
       },
     },
     options: {
-      select: (data) => data.data?.content ?? [],
+      select: (data) => data.data,
     },
   })
+
+  const totalPages =
+    data?.totalElements ? Math.ceil(data.totalElements / (data.size ?? 9)) : 1
 
   return (
     <Container maxW={'1280px'}>
@@ -91,26 +85,43 @@ export const ProblemSolvePostList = () => {
             ))}
           </Tabs.List>
         </Tabs.Root>
-        <Grid
-          templateColumns={'repeat(3, 1fr)'}
-          gap={'24px'}
-          rowGap={'48px'}
+        <Center
+          w={'100%'}
+          gap={'64px'}
+          display={'flex'}
           mt={'40px'}
+          flexDirection={'column'}
         >
-          {data?.map((article, index) => (
-            <PostCardItem
-              key={index}
-              href={ROUTES.PROBLEM_DETAIL.replace(
-                ':id',
-                article.id?.toString() ?? '',
-              )}
-              image={article.thumbnailImage?.url ?? ''}
-              author={article.title ?? ''}
-              title={article.title ?? ''}
-              date={article.createdAt ?? ''}
+          <EmptyViewWrapper
+            isEmpty={data?.content?.length === 0}
+            description="관련 내용이 준비될 예정이에요!"
+          >
+            <Grid
+              templateColumns={'repeat(3, 1fr)'}
+              gap={'24px'}
+              rowGap={'48px'}
+            >
+              {data?.content?.map((article, index) => (
+                <PostCardItem
+                  key={index}
+                  href={ROUTES.PROBLEM_DETAIL.replace(
+                    ':id',
+                    article.id?.toString() ?? '',
+                  )}
+                  image={article.thumbnailImage?.url ?? ''}
+                  author={article.title ?? ''}
+                  title={article.title ?? ''}
+                  date={article.createdAt ?? ''}
+                />
+              ))}
+            </Grid>
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
             />
-          ))}
-        </Grid>
+          </EmptyViewWrapper>
+        </Center>
       </VStack>
     </Container>
   )

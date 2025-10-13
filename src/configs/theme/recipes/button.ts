@@ -240,6 +240,41 @@ export const buttonRecipe = defineRecipe({
         },
       },
     },
+    {
+      variant: 'solid',
+      colorPalette: 'black',
+      css: {
+        bg: 'grey.10',
+        color: 'grey.0',
+        border: 'none',
+        _hover: {
+          bg: 'greytransparent.1',
+          color: 'grey.7',
+          border: 'none',
+        },
+        _active: {
+          bg: 'grey.10',
+          color: 'grey.0',
+        },
+      },
+    },
+    {
+      variant: 'outline',
+      colorPalette: 'black',
+      css: {
+        bg: 'grey.0',
+        color: 'grey.7',
+        border: 'none',
+        _hover: {
+          bg: 'greytransparent.1',
+          color: 'grey.7',
+        },
+        _active: {
+          bg: 'greytransparent.1',
+          color: 'grey.7',
+        },
+      },
+    },
 
     {
       variant: 'solid',
