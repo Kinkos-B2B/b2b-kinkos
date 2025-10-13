@@ -3,7 +3,6 @@
  *
  * 스크립트가 실행될때, 파일을 항상 새로 쓰기 때문에 파일 수정시 작성내용이 제거 될 수 있습니다.
  */
-import { ENV } from '@/configs/env'
 
 export type QueryParamsType = Record<string | number, any>
 export type ResponseFormat = keyof Omit<Body, 'body' | 'bodyUsed'>
@@ -58,7 +57,7 @@ export enum ContentType {
 }
 
 export class HttpClient<SecurityDataType = unknown> {
-  public baseUrl: string = ENV.API_BASE_URL || ''
+  public baseUrl: string = '/'
   private securityData: SecurityDataType | null = null
   private securityWorker?: ApiConfig<SecurityDataType>['securityWorker']
   private abortControllers = new Map<CancelToken, AbortController>()
@@ -200,7 +199,7 @@ export class HttpClient<SecurityDataType = unknown> {
     const requestParams = this.mergeRequestParams(params, secureParams)
     const queryString = query && this.toQueryString(query)
     const payloadFormatter = this.contentFormatters[type || ContentType.Json]
-    const responseFormat = format || requestParams.format || 'json'
+    const responseFormat = format || requestParams.format
 
     return this.customFetch(
       `${baseUrl || this.baseUrl || ''}${path}${queryString ? `?${queryString}` : ''}`,

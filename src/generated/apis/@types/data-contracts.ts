@@ -146,6 +146,15 @@ export interface ResponseDTOListGetHomeSearchAutocompleteResponseType {
  */
 export interface GetHomeConfigHelpArticleResponseType {
   /**
+   * 아이디값
+   * @format int64
+   */
+  id: number
+  /** 고민타입 */
+  type: GetHomeConfigHelpArticleResponseTypeEnumType
+  /** 고민타입 화면 표시 */
+  typeDisplayName: string
+  /**
    * 노출 순서
    * @format int32
    */
@@ -217,6 +226,7 @@ export interface GetAllHelpArticleResponseType {
   /** @format int64 */
   id?: number
   type?: GetAllHelpArticleResponseTypeEnumType
+  typeDisplayName?: string
   thumbnailImage?: ImageInfoType
   title?: string
   /** @format date-time */
@@ -388,6 +398,10 @@ export interface GetHelpArticleMainConfigType {
 }
 
 export interface GetMainConfigArticleDetailType {
+  /** @format int64 */
+  id?: number
+  type?: GetMainConfigArticleDetailTypeEnumType
+  typeDisplayName?: string
   thumbnailImageUrl?: ImageInfoType
   title?: string
   /** @format date-time */
@@ -870,6 +884,8 @@ export interface GetCustomerReviewMainConfigType {
  * 메인 고객리뷰
  */
 export interface GetMainConfigReviewDetailType {
+  /** 기업명 */
+  companyName: string
   thumbnailImageUrl: ImageInfoType
   /** 제목 */
   title: string
@@ -896,7 +912,26 @@ export interface ResponseDTOGetCustomerReviewMainConfigType {
   data?: GetCustomerReviewMainConfigType
 }
 
+/**
+ * 고민타입
+ */
+export type GetHomeConfigHelpArticleResponseTypeEnumType =
+  | 'CONTRACT'
+  | 'PRODUCTION'
+  | 'ORDER'
+  | 'DELIVERY_INSTALLATION'
+  | 'COST'
+  | 'ETC' // X-enumName Values Missing
+
 export type GetAllHelpArticleResponseTypeEnumType =
+  | 'CONTRACT'
+  | 'PRODUCTION'
+  | 'ORDER'
+  | 'DELIVERY_INSTALLATION'
+  | 'COST'
+  | 'ETC' // X-enumName Values Missing
+
+export type GetMainConfigArticleDetailTypeEnumType =
   | 'CONTRACT'
   | 'PRODUCTION'
   | 'ORDER'
