@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Box, Container, Flex, Text } from '@chakra-ui/react'
+import { Box, Container, Flex, Grid, GridItem, Text } from '@chakra-ui/react'
 
 import { StatCard } from './StatCard'
 import { StatDivider } from './StatDivider'
@@ -52,20 +52,20 @@ export const CustomerReviewSolutionEffect = () => {
   return (
     <Box
       bg={'background.basic.2'}
-      h={'640px'}
+      h={{ base: 'auto', lg: '640px' }}
+      py={{ base: '80px', sm: '100px', lg: '0px' }}
       display="flex"
       alignItems="center"
       justifyContent="center"
       flexDirection="column"
       position="relative"
       w="100%"
-      data-node-id="14676:16078"
     >
       <Container
         display="flex"
         flexDirection="column"
         alignItems="center"
-        gap={'56px'}
+        gap={{ base: '40px', lg: '56px' }}
         w={{ base: '100%', md: '90%', lg: '1280px' }}
         px={{ base: '16px', md: '24px', lg: '0' }}
         data-node-id="14676:16079"
@@ -83,11 +83,30 @@ export const CustomerReviewSolutionEffect = () => {
           고객이 직접 체감하는 확실한 결과
         </Text>
 
-        {/* 통계 카드들 */}
+        <Grid
+          gridTemplateColumns={'repeat(2, 1fr)'}
+          gridTemplateRows={'repeat(2, 1fr)'}
+          display={{ base: 'grid', lg: 'none' }}
+          gap={'30px'}
+          w="100%"
+        >
+          {STATISTICS_DATA.map((stat, index) => (
+            <GridItem key={stat.id}>
+              <StatCard
+                icon={stat.icon}
+                iconAlt={stat.iconAlt}
+                value={stat.value}
+                description={stat.description}
+                suffix={stat.suffix}
+                index={index}
+              />
+            </GridItem>
+          ))}
+        </Grid>
         <Flex
           gap={'40px'}
           align="center"
-          direction={{ base: 'column', lg: 'row' }}
+          display={{ base: 'none', lg: 'flex' }}
           w="100%"
         >
           {STATISTICS_DATA.map((stat, index) => (

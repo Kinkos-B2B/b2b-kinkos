@@ -40,7 +40,7 @@ export const PostCardItem = ({
           src={image}
           alt={title}
           width="411px"
-          height="260px"
+          height={{ base: '211px', lg: '260px' }}
           objectFit="cover"
           borderRadius="28px"
         />

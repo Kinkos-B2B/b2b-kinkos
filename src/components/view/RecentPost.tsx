@@ -7,6 +7,7 @@ const imgImage = '/images/customer-review/best-review-image-mock.png'
 interface Props {
   title: string
   article?: {
+    author?: string
     title: string
     createdAt: string
     thumbnailImageUrl: string
@@ -15,9 +16,9 @@ interface Props {
 
 export const RecentPost = ({ article, title }: Props) => {
   return (
-    <Container maxW={'1280px'}>
+    <Container w={'100%'} px={'0px'}>
       <VStack
-        gap={{ base: '24px', md: '32px' }}
+        gap={{ base: '24px', sm: '32px' }}
         align="stretch"
         w={'100%'}
         role="region"
@@ -28,15 +29,14 @@ export const RecentPost = ({ article, title }: Props) => {
           as="h2"
           textStyle="pre-heading-1"
           color="grey.10"
-          textAlign={{ base: 'center', md: 'left' }}
+          textAlign={'left'}
         >
           {title}
         </Text>
-
         <Box
           as="article"
           bg="white"
-          borderRadius={{ base: '16px', md: '28px' }}
+          borderRadius={{ base: '16px', sm: '28px' }}
           position="relative"
           overflow="hidden"
           boxShadow="0px 20px 80px 0px rgba(27, 28, 29, 0.04), 0px 4px 10px 0px rgba(27, 28, 29, 0.04)"
@@ -46,9 +46,11 @@ export const RecentPost = ({ article, title }: Props) => {
             inset: 0,
             border: '1px solid',
             borderColor: 'border.basic.1',
-            borderRadius: { base: '16px', md: '28px' },
+            borderRadius: { base: '16px', sm: '28px' },
             pointerEvents: 'none',
           }}
+          display={'flex'}
+          flexDirection={{ base: 'column', lg: 'row' }}
           role="article"
           aria-labelledby="review-title"
         >
@@ -56,11 +58,11 @@ export const RecentPost = ({ article, title }: Props) => {
             align="stretch"
             w="full"
             gap={'0px'}
-            direction={{ base: 'column', lg: 'row' }}
+            flexDirection={{ base: 'column', lg: 'row' }}
           >
             <Box
-              w={{ base: 'full', md: '680px' }}
-              h={{ base: '240px', md: '300px', lg: '431px' }}
+              w={{ base: 'full', lg: '680px' }}
+              h={{ base: 'auto', lg: '431px' }}
               flexShrink={0}
               position="relative"
               overflow="hidden"
@@ -80,25 +82,25 @@ export const RecentPost = ({ article, title }: Props) => {
               gap="10px"
               align="stretch"
               justify="center"
-              px={{ base: '24px', md: '40px', lg: '80px' }}
-              py={{ base: '24px', md: '32px', lg: 0 }}
+              px={{ base: '24px', sm: '48px', lg: '80px' }}
+              py={{ base: '24px', sm: '48px', lg: 0 }}
               w={{ base: 'full', lg: '600px' }}
               h={{ base: 'auto', lg: '431px' }}
               flexShrink={0}
             >
               <VStack
-                gap={{ base: '20px', md: '24px', lg: '28px' }}
+                gap={{ base: '24px', sm: '28px' }}
                 align="stretch"
                 w="full"
               >
                 <VStack
-                  gap={{ base: '12px', md: '14px', lg: '16px' }}
+                  gap={{ base: '12px', sm: '16px' }}
                   align="stretch"
                   w="full"
                 >
                   {/* 작성자 */}
                   <Text textStyle="pre-body-3" color="grey.9" w="full">
-                    {'더미 작성자'}
+                    {article?.author}
                   </Text>
 
                   {/* 제목 */}
@@ -108,8 +110,6 @@ export const RecentPost = ({ article, title }: Props) => {
                     textStyle="pre-heading-1"
                     color="grey.9"
                     w="full"
-                    fontSize={{ base: '24px', md: '28px', lg: '32px' }}
-                    lineHeight={{ base: '1.3', md: '1.35', lg: '1.4' }}
                   >
                     {article?.title}
                   </Text>

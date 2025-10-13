@@ -22,6 +22,7 @@ export const ProblemSolveTemplate = () => {
         <RecentPost
           title="최신 고민 해결 사례"
           article={{
+            author: data?.data?.helpArticle?.typeDisplayName ?? '',
             thumbnailImageUrl:
               data?.data?.helpArticle?.thumbnailImageUrl?.url ?? '',
             title: data?.data?.helpArticle?.title ?? '',

@@ -44,7 +44,7 @@ export const MobileHeader = () => {
     >
       {/* Main Header */}
       <Flex
-        px="20px"
+        px={{ base: '20px', sm: '40px' }}
         alignItems="center"
         justifyContent="space-between"
         h={{ base: LAYOUT.HEADER.HEIGHT_MOBILE, md: LAYOUT.HEADER.HEIGHT }}

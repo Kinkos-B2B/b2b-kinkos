@@ -37,11 +37,11 @@ export const CustomerReviewPostList = () => {
       },
     },
     options: {
-      select: (data) => data.data?.content ?? [],
+      select: (data) => data.data,
     },
   })
 
-  const totalPages = Math.ceil(data?.length ?? 0 / 9)
+  const totalPages = Math.ceil((data?.totalElements ?? 0) / 9)
 
   return (
     <Container maxW={'1280px'}>
@@ -62,25 +62,29 @@ export const CustomerReviewPostList = () => {
         </Box>
         <Center w={'100%'} flexDirection={'column'} gap={'64px'} mt={'28px'}>
           <EmptyViewWrapper
-            isEmpty={data?.length === 0}
+            isEmpty={data?.content?.length === 0}
             description="관련 내용이 준비될 예정이에요!"
           >
             <Grid
-              templateColumns={'repeat(3, 1fr)'}
+              templateColumns={{
+                lg: 'repeat(3, 1fr)',
+                sm: 'repeat(2, 1fr)',
+                base: '1fr',
+              }}
               gap={'24px'}
-              rowGap={'48px'}
+              rowGap={{ base: '40px', lg: '48px' }}
             >
-              {data?.map((review, index) => (
+              {data?.content?.map((review, index) => (
                 <PostCardItem
                   key={index}
                   href={ROUTES.CUSTOMER_REVIEW_DETAIL.replace(
                     ':id',
-                    review.id.toString(),
+                    review.id?.toString() ?? '',
                   )}
-                  image={review.thumbnailImageUrl.url ?? ''}
-                  author={review.companyName}
-                  title={review.companyName}
-                  date={review.createdAt}
+                  image={review.thumbnailImageUrl?.url ?? ''}
+                  author={review.companyName ?? ''}
+                  title={review.companyName ?? ''}
+                  date={review.createdAt ?? ''}
                 />
               ))}
             </Grid>

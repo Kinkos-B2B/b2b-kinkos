@@ -7,9 +7,12 @@ export const containerRecipe = defineRecipe({
     mx: 'auto',
     maxW: {
       base: '100%',
-      sm: '768px', // 태블릿
       lg: '1280px', // 대형 데스크톱
-      xl: '1280px', // 초대형 데스크톱
+    },
+    px: {
+      base: '20px',
+      sm: '40px',
+      lg: '0px',
     },
   },
   variants: {

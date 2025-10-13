@@ -37,6 +37,7 @@ export const ROUTES = {
   PROBLEM: '/problem-solve',
   PROBLEM_DETAIL: '/problem-solve/:id',
   EXPERT: '/expert',
+  EXPERT_DETAIL: '/expert/:id',
   SUPPORT: '/support',
   FAQ: '/faq',
 } as const

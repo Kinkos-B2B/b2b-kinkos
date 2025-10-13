@@ -25,11 +25,7 @@ export const StatCard = ({
 }: StatCardProps) => {
   return (
     <Flex direction="column" gap="8px" align="center" flex="1">
-      <Box
-        w={{ base: '80px', md: '120px' }}
-        h={{ base: '80px', md: '120px' }}
-        position="relative"
-      >
+      <Box w={'120px'} h={'120px'} position="relative">
         <ImageAsNext src={icon} alt={iconAlt} w="100%" h="100%" />
       </Box>
       <Flex direction="column" gap="2px" align="center" w="100%">
