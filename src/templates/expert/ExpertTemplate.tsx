@@ -3,19 +3,22 @@
 import { Box, Container, VStack } from '@chakra-ui/react'
 
 import PluuugCTA from '@/components/view/PluuugCTA'
+import { useGetExpertMainQuery } from '@/generated/apis/ExpertApi/ExpertApi.query'
 
 import { ExpertIntroBanner } from './components/ExpertIntroBanner'
 import { ExpertListContainer } from './components/ExpertListContainer'
 import { ExportReviewList } from './components/ExportReviewList'
 
 export const ExpertTemplate = () => {
+  const { data } = useGetExpertMainQuery()
+
   return (
     <VStack w="100%" pt={'20px'}>
       <Box w={'100%'} pb={'80px'}>
         <ExpertIntroBanner />
       </Box>
       <Box pt={'56px'} w={'100%'}>
-        <ExportReviewList />
+        <ExportReviewList reviews={data?.data?.customerReview ?? []} />
       </Box>
 
       <Box py={'120px'} w={'100%'}>

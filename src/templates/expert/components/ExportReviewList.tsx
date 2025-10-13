@@ -2,6 +2,7 @@ import { Box } from '@chakra-ui/react'
 
 import Marquee from 'react-fast-marquee'
 
+import { GetExpertMainCustomerReviewResponseType } from '@/generated/apis/@types/data-contracts'
 import { useGetExpertMainQuery } from '@/generated/apis/ExpertApi/ExpertApi.query'
 import { ExpertReviewCardItem } from '@/templates/expert/components/ExpertReviewCardItem'
 
@@ -18,15 +19,15 @@ const mockData = {
   ],
 }
 
-export const ExportReviewList = () => {
-  const { data } = useGetExpertMainQuery()
+interface Props {
+  reviews: GetExpertMainCustomerReviewResponseType[]
+}
 
-  const experts = data?.data?.customerReview || mockData.customerReview
-
+export const ExportReviewList = ({ reviews }: Props) => {
   return (
     <Box>
       <Marquee autoFill>
-        {experts?.map((expertReview, index) => (
+        {reviews?.map((expertReview, index) => (
           <Box key={`${expertReview.expert?.nickname}-${index}`} ml={'24px'}>
             <ExpertReviewCardItem expertReview={expertReview} />
           </Box>

@@ -22,7 +22,7 @@ export const ExpertReviewCardItem = ({ expertReview }: Props) => {
     >
       <VStack align="start" gap="16px" mb="24px">
         <Text textStyle="pre-heading-3" color="grey.9">
-          {expertReview.expert?.nickname}
+          {expertReview.title}
         </Text>
         <Text textStyle="pre-body-2" color="grey.8">
           {`"${expertReview.body}"`}

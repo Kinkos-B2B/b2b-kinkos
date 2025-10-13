@@ -51,12 +51,24 @@ export const ExpertFilterSection = React.forwardRef<
                 checked={filter.industryId.includes(
                   option.id?.toString() || '',
                 )}
-                onCheckedChange={() =>
-                  onFilterChange({
-                    industryId: [option.id?.toString() || ''],
-                    printId: filter.printId,
-                  })
-                }
+                onCheckedChange={({ checked }) => {
+                  if (checked) {
+                    onFilterChange({
+                      industryId: [
+                        option.id?.toString() || '',
+                        ...filter.industryId,
+                      ],
+                      printId: filter.printId,
+                    })
+                  } else {
+                    onFilterChange({
+                      industryId: filter.industryId.filter(
+                        (id) => id !== option.id?.toString(),
+                      ),
+                      printId: filter.printId,
+                    })
+                  }
+                }}
                 display="flex"
                 h={'40px'}
                 alignItems="center"
@@ -92,12 +104,24 @@ export const ExpertFilterSection = React.forwardRef<
                       checked={filter.printId.includes(
                         option.id?.toString() || '',
                       )}
-                      onCheckedChange={() =>
-                        onFilterChange({
-                          industryId: filter.industryId,
-                          printId: [option.id?.toString() || ''],
-                        })
-                      }
+                      onCheckedChange={({ checked }) => {
+                        if (checked) {
+                          onFilterChange({
+                            printId: [
+                              option.id?.toString() || '',
+                              ...filter.printId,
+                            ],
+                            industryId: filter.industryId,
+                          })
+                        } else {
+                          onFilterChange({
+                            printId: filter.printId.filter(
+                              (id) => id !== option.id?.toString(),
+                            ),
+                            industryId: filter.industryId,
+                          })
+                        }
+                      }}
                       display="flex"
                       gap="8px"
                     >

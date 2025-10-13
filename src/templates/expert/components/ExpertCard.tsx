@@ -10,48 +10,14 @@ import { GetAllExpertResponseType } from '@/generated/apis/@types/data-contracts
 
 export interface ExpertCardProps {
   expert: GetAllExpertResponseType
-
-  onClick?: (id: number) => void
 }
 
 export const ExpertCard = React.forwardRef<HTMLDivElement, ExpertCardProps>(
   function ExpertCard(props, ref) {
-    const { expert, onClick, ...rest } = props
-
-    const handleClick = React.useCallback(() => {
-      if (!expert.id) return
-      onClick?.(expert.id)
-    }, [expert.id, onClick])
+    const { expert, ...rest } = props
 
     return (
-      <VStack
-        ref={ref}
-        gap="16px"
-        align="stretch"
-        cursor={onClick ? 'pointer' : 'default'}
-        onClick={handleClick}
-        role={onClick ? 'button' : undefined}
-        tabIndex={onClick ? 0 : undefined}
-        _hover={
-          onClick ?
-            {
-              transform: 'translateY(-4px)',
-              transition: 'transform 0.2s ease-in-out',
-            }
-          : undefined
-        }
-        onKeyDown={
-          onClick ?
-            (e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault()
-                handleClick()
-              }
-            }
-          : undefined
-        }
-        {...rest}
-      >
+      <VStack ref={ref} gap="16px" align="stretch" {...rest}>
         {/* 이미지 */}
         <Box
           position="relative"
