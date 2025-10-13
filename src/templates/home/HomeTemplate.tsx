@@ -22,7 +22,6 @@ export const HomeTemplate = () => {
         <HomeSearchSection />
       </Container>
       <HomeIntroduceSolution />
-
       <Container
         css={{
           py: '160px',

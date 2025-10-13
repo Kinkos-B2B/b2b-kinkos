@@ -107,6 +107,7 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
               return (
                 <Button
                   size={'md'}
+                  colorPalette="black"
                   key={index}
                   onClick={() => {
                     sliderRef.current?.slickGoTo(index)
