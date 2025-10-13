@@ -8,6 +8,7 @@ import gsap from 'gsap'
 import { useInView } from 'react-intersection-observer'
 
 import { Button } from '@/components/ui/button'
+import { GetSolutionExpertListParamsTypeEnumType } from '@/helper/options'
 
 import { SolutionFeatureSection } from '../../common/SolutionFeatureSection'
 import { SolutionHeroSection } from '../../common/SolutionHeroSection'
@@ -90,7 +91,11 @@ export const SolutionCorporatePrintingTemplate = () => {
       </Box>
 
       <Box py={'160px 120px'} w={'100%'}>
-        <SolutionReleatedExportSection />
+        <SolutionReleatedExportSection
+          solutionId={
+            GetSolutionExpertListParamsTypeEnumType.MARKET_ANALYSIS_BASED
+          }
+        />
       </Box>
 
       <Box py="80px" w={'100%'} bg="primary.1">

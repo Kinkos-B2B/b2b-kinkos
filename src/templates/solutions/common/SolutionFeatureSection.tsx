@@ -53,7 +53,7 @@ export const SolutionFeatureSection = () => {
 
       const getEndValue = () => {
         if (isLastSection) {
-          const featureHeight = triggerEl.clientHeight
+          const featureHeight = triggerEl.getBoundingClientRect().height
           return `bottom top+=${featureHeight + PIN_OFFSET}px`
         }
 
@@ -74,14 +74,16 @@ export const SolutionFeatureSection = () => {
           shouldHide = progress === 1 || progress === 0
         }
 
-        gsap.set(section, {
+        gsap.to(section, {
+          trigger: triggerEl,
           opacity: shouldHide ? 0 : 1,
           duration: 0.1,
-          ease: 'power1.in',
+          ease: 'none',
         })
       }
 
       ScrollTrigger.create({
+        markers: true,
         trigger: triggerEl,
         pin: true,
         scrub: true,
@@ -89,6 +91,7 @@ export const SolutionFeatureSection = () => {
         end: getEndValue(),
         endTrigger: endTriggerEl,
         onUpdate: handleUpdate,
+        invalidateOnRefresh: true,
       })
     })
   })

@@ -4,19 +4,15 @@ import Image from 'next/image'
 
 import { Avatar, Box, Button, Text, VStack } from '@chakra-ui/react'
 
+import { GetSolutionExpertType } from '@/generated/apis/@types/data-contracts'
+
 interface RelatedExpertCardProps {
-  id: string
-  nickname: string
-  description: string
-  avatarImage?: string
-  onButtonClick?: (id: string) => void
+  solutionExpert: GetSolutionExpertType
+  onButtonClick?: () => void
 }
 
 export const SolutionReleatedExportCard = ({
-  id,
-  nickname,
-  description,
-  avatarImage,
+  solutionExpert,
   onButtonClick,
 }: RelatedExpertCardProps) => {
   return (
@@ -72,11 +68,10 @@ export const SolutionReleatedExportCard = ({
               md: '125px',
             }}
           >
-            {avatarImage && (
+            {solutionExpert.profileImage?.url && (
               <Avatar.Image
-                as={Image}
-                src={avatarImage}
-                alt={nickname}
+                src={solutionExpert.profileImage?.url}
+                alt={solutionExpert.nickname}
                 width={125}
                 height={125}
                 style={{
@@ -92,12 +87,12 @@ export const SolutionReleatedExportCard = ({
         <VStack gap="10px" align="stretch" w="100%">
           <Box w="100%">
             <Text textStyle="pre-heading-2" color="grey.10">
-              {nickname}
+              {solutionExpert.nickname}
             </Text>
           </Box>
           <Box w="100%">
             <Text textStyle="pre-body-4" color="grey.7" whiteSpace="pre-line">
-              {description}
+              {solutionExpert.description}
             </Text>
           </Box>
         </VStack>
@@ -108,7 +103,7 @@ export const SolutionReleatedExportCard = ({
             w={'100%'}
             variant="outline"
             size="sm"
-            onClick={() => onButtonClick?.(id)}
+            onClick={() => onButtonClick?.()}
           >
             무료 상담 받아보기
           </Button>

@@ -35,7 +35,7 @@ export const SoultionCardsSection = ({ title, cards }: Props) => {
         gap={'24px'}
       >
         {cards.map((card, index) => (
-          <GridItem key={card.title}>
+          <GridItem key={index}>
             <Card.Root
               variant="elevated"
               borderRadius="28px"
