@@ -80,7 +80,10 @@ export const PageLayout = ({
       pos={'relative'}
       gridAutoColumns={'1fr'}
       bg={'background.basic.1'}
-      gridTemplateRows={`${LAYOUT.HEADER.HEIGHT} 1fr auto`}
+      gridTemplateRows={{
+        base: `${LAYOUT.HEADER.HEIGHT_MOBILE} 1fr auto`,
+        md: `${LAYOUT.HEADER.HEIGHT} 1fr auto`,
+      }}
       templateAreas={`"header" "main" "footer"`}
     >
       <GridItem

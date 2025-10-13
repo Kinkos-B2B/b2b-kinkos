@@ -91,6 +91,7 @@ export const buttonRecipe = defineRecipe({
     },
     variant: {
       solid: {
+        border: 'none',
         bg: 'primary.4', // #013ffc
         color: 'grey.0', // #ffffff
         _hover: {
