@@ -4,7 +4,19 @@ import * as React from 'react'
 
 import { useRouter } from 'next/navigation'
 
-import { Box, Flex, Grid, GridItem, Link, VStack } from '@chakra-ui/react'
+import {
+  Box,
+  Button,
+  Flex,
+  Grid,
+  GridItem,
+  IconButton,
+  Link,
+  VStack,
+  chakra,
+  useMediaQuery,
+} from '@chakra-ui/react'
+import { FadersHorizontalIcon as FadersHorizontalIconPhosphor } from '@phosphor-icons/react/dist/ssr'
 import { keepPreviousData } from '@tanstack/react-query'
 
 import { Pagination } from '@/components/pagination'
@@ -17,6 +29,7 @@ import {
 
 import { ExpertCard } from './ExpertCard'
 import { ExpertFilterSection } from './ExpertFilterSection'
+import { ExpertMobileFilterDrawer } from './ExpertMobileFilterDrawer'
 
 export const ExpertListContainer = () => {
   const [filter, setFilter] = React.useState<{
@@ -33,6 +46,10 @@ export const ExpertListContainer = () => {
 
   const industryOptions = searchTypeData?.data?.industryTypeList || []
   const budgetOptions = searchTypeData?.data?.printCostBracketTypeList || []
+
+  const isMobile = useMediaQuery(['(max-width: 1280px)'], {
+    ssr: false,
+  })[0]
 
   // API 쿼리 - 필터와 페이지에 따라 데이터 요청
   const { data } = useGetAllExpertQuery({
@@ -56,23 +73,59 @@ export const ExpertListContainer = () => {
     : 1
 
   return (
-    <Flex gap="101px" align="flex-start">
-      <ExpertFilterSection
-        industryOptions={industryOptions}
-        printOptions={budgetOptions}
-        filter={filter}
-        onFilterChange={setFilter}
-      />
+    <Flex
+      justify="space-between"
+      align="flex-start"
+      flexDir={{ base: 'column', lg: 'row' }}
+    >
+      {isMobile ?
+        <Box display={{ base: 'block', lg: 'none' }} w={'100%'} mb={'32px'}>
+          <Flex w="100%" justify="space-between">
+            <ExpertMobileFilterDrawer
+              industryOptions={industryOptions}
+              printOptions={budgetOptions}
+              filter={filter}
+              onFilterChange={setFilter}
+            />
+            <Button variant={'outline'} size={'md'}>
+              전문가 추천 받기
+            </Button>
+          </Flex>
+        </Box>
+      : <Box
+          width="180px"
+          flexShrink={0}
+          display={{ base: 'none', lg: 'block' }}
+        >
+          <ExpertFilterSection
+            industryOptions={industryOptions}
+            printOptions={budgetOptions}
+            filter={filter}
+            onFilterChange={setFilter}
+          />
+        </Box>
+      }
+
       <EmptyViewWrapper
         isEmpty={data?.data?.content?.length === 0}
         description="관련 내용이 준비될 예정이에요!"
       >
-        <VStack gap="64px" align="center" flex="1" minW="0">
+        <VStack
+          gap={{ base: '48px', lg: '64px' }}
+          align="center"
+          minW="0"
+          w={'100%'}
+          maxW={{ base: '100%', lg: '1000px' }}
+        >
           <Grid
-            templateColumns="repeat(3, 1fr)"
-            gap="24px"
-            rowGap="48px"
             width="100%"
+            templateColumns={{
+              base: 'repeat(auto-fit, minmax(300px, 1fr))',
+              sm: 'repeat(auto-fill, minmax(300px, 1fr))',
+              lg: 'repeat(auto-fill, minmax(300px, 1fr))',
+            }}
+            gap={{ base: '20px', lg: '24px' }}
+            rowGap={{ base: '40px', lg: '48px' }}
           >
             {data?.data?.content?.map((expert) => (
               <GridItem key={expert.id} w="100%" cursor="pointer">
@@ -93,7 +146,6 @@ export const ExpertListContainer = () => {
             currentPage={currentPage}
             totalPages={totalPages}
             onPageChange={setCurrentPage}
-            size="lg"
           />
         </VStack>
       </EmptyViewWrapper>

@@ -16,11 +16,14 @@ export const ExpertReviewCardItem = ({ expertReview }: Props) => {
     <Box
       bg="background.basic.2"
       borderRadius="28px"
-      p="32px 36px"
+      p={{ base: '28px', sm: '24px 24px 20px 24px', lg: '32px 36px' }}
       w="full"
       maxW={'382px'}
+      gap={{ base: '16px', sm: '24px' }}
+      display="flex"
+      flexDirection="column"
     >
-      <VStack align="start" gap="16px" mb="24px">
+      <VStack align="start" gap={{ base: '8px', sm: '12px', lg: '16px' }}>
         <Text textStyle="pre-heading-3" color="grey.9">
           {expertReview.title}
         </Text>

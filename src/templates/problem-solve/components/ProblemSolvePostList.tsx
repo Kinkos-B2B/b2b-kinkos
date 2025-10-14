@@ -115,8 +115,9 @@ export const ProblemSolvePostList = () => {
           >
             <Grid
               templateColumns={{
-                base: 'repeat(auto-fill, minmax(330px, 1fr))',
-                lg: 'repeat(auto-fit, minmax(330px, 1fr))',
+                base: 'repeat(auto-fit, minmax(330px, 1fr))',
+                sm: 'repeat(auto-fill, minmax(330px, 1fr))',
+                lg: 'repeat(auto-fill, minmax(330px, 1fr))',
               }}
               gap={'24px'}
               rowGap={'48px'}

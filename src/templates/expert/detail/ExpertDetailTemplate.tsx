@@ -31,22 +31,34 @@ export const ExpertDetailTemplate = ({ id }: Props) => {
       id: Number(id),
     },
   })
-  data?.data?.header.title
+
+  console.log(data?.data)
 
   return (
-    <VStack w="100%" pt={'20px'} gap={'0px'}>
-      <ExpertDetailHeader header={data?.data?.header ?? {}} />
-      <Box py={'80px 160px'} position={'relative'}>
+    <VStack w="100%" gap={'0px'}>
+      <Box pt={{ base: '0px', lg: '20px' }} w={'100%'}>
+        <ExpertDetailHeader header={data?.data?.header ?? {}} />
+      </Box>
+
+      <Box
+        py={{ base: '40px 80px', sm: '48px 140px', lg: '64px 160px' }}
+        position={'relative'}
+        px={{ base: '20px', sm: '40px' }}
+      >
         <ExpertDetailArticleContent content={data?.data} />
       </Box>
 
-      <Box w={'100%'} bg={'background.basic.2'} py={'80px'}>
-        <Container maxW={'1280px'}>
+      <Box
+        w={'100%'}
+        bg={'background.basic.2'}
+        py={{ base: '64px', sm: '80px' }}
+        pb={{ base: '0px' }}
+      >
+        <Container px={{ base: 0, sm: '20px', lg: '40px' }}>
           <ExpertHelpArticleList articles={data?.data?.helpArticleList ?? []} />
         </Container>
       </Box>
-
-      <Container maxW={'1280px'} py={'120px'}>
+      <Container py={{ base: '80px', sm: '100px', lg: '120px' }}>
         <PluuugCTA
           text="이 전문가가 마음에 든다면?"
           buttons={[{ text: '무료 상담 받아보기', onClick: () => {} }]}

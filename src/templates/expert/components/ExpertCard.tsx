@@ -18,27 +18,21 @@ export const ExpertCard = React.forwardRef<HTMLDivElement, ExpertCardProps>(
 
     return (
       <VStack ref={ref} gap="16px" align="stretch" {...rest}>
-        {/* 이미지 */}
-        <Box
-          position="relative"
-          width="100%"
-          height="202px"
-          borderRadius="28px"
-          overflow="hidden"
-          bg="grey.2"
-        >
-          <Image
-            src={expert.thumbnailImage?.url || ''}
-            alt={`${expert.nickname}의 프로필 이미지`}
-            fill
-            style={{ objectFit: 'cover' }}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-        </Box>
+        <Image
+          src={expert.thumbnailImage?.url || ''}
+          alt={`${expert.nickname}의 프로필 이미지`}
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{
+            objectFit: 'cover',
+            width: '100%',
+            height: '100%',
+            aspectRatio: '317/202',
+          }}
+        />
 
-        {/* 콘텐츠 */}
         <VStack gap="16px" align="stretch" pr="24px">
-          {/* 닉네임 & 소개 */}
           <VStack gap="4px" align="stretch">
             <Text
               textStyle="pre-heading-3"
@@ -57,7 +51,6 @@ export const ExpertCard = React.forwardRef<HTMLDivElement, ExpertCardProps>(
             </Text>
           </VStack>
 
-          {/* 태그 */}
           <HStack gap="8px" flexWrap="wrap">
             {expert.industryList?.map((tag, index) => (
               <Badge

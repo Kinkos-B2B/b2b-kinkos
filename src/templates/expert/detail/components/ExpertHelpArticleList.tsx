@@ -2,6 +2,8 @@ import {
   Box,
   Card,
   Flex,
+  Grid,
+  GridItem,
   HStack,
   Image,
   Link,
@@ -20,50 +22,70 @@ interface Props {
 export const ExpertHelpArticleList = ({ articles }: Props) => {
   return (
     <Flex flexDirection={'column'} gap={'32px'}>
-      <Text textStyle={'pre-heading-1'}>
+      <Text
+        textStyle={'pre-heading-1'}
+        px={{ base: '20px', sm: '40px', lg: 0 }}
+      >
         관련 고민해결 사례를 확인해 보세요
       </Text>
-
-      <HStack gap={'24px'} flex={1}>
+      <Grid
+        px={{ base: '20px', sm: '40px', lg: 0 }}
+        pb={{ base: '60px', lg: 0 }}
+        gap={'24px'}
+        w={'100%'}
+        overflow={{ base: 'auto', lg: 'unset' }}
+        gridTemplateColumns={{
+          sm: 'repeat(3,minmax(380px,1fr))',
+          base: 'repeat(3,minmax(300px,1fr))',
+        }}
+        position={'relative'}
+      >
         {articles.map((article) => (
-          <Link
-            href={`/problem-solve/${article.id}`}
-            key={article.id}
-            display={'flex'}
-            flex={1}
-          >
-            <VStack
+          <GridItem key={article.id}>
+            <Link
+              href={`/problem-solve/${article.id}`}
+              display={'flex'}
+              bg={'background.basic.1'}
               borderRadius={'28px'}
-              gap={'0px'}
-              overflow={'hidden'}
-              w={'100%'}
-              boxShadow={'0 20px 48px 0 rgba(1, 45, 181, 0.12)'}
+              h={'100%'}
             >
-              <Image src={article.thumbnailImage?.url} h={'260px'} w={'100%'} />
               <VStack
-                gap={'30px'}
-                align={'start'}
-                px={'32px'}
-                py={'24px'}
+                h={'100%'}
+                gap={'0px'}
                 w={'100%'}
-                bg={'background.basic.1'}
+                borderRadius={'28px'}
+                overflow={'hidden'}
+                boxShadow={'0 20px 48px 0 rgba(1, 45, 181, 0.12)'}
               >
-                <VStack align={'start'}>
-                  <Text textStyle={'pre-body-3'} color={'grey.9'}>
-                    {article.title}
-                  </Text>
-                  <Text textStyle={'pre-body-3'} color={'grey.9'}>
-                    {article.createdAt}
+                <Image
+                  src={article.thumbnailImage?.url}
+                  h={{ base: '190px', sm: '240px', lg: '260px' }}
+                  w={'100%'}
+                />
+                <VStack
+                  gap={'30px'}
+                  align={'start'}
+                  px={{ base: '20px', sm: '32px' }}
+                  py={'24px'}
+                  w={'100%'}
+                >
+                  <VStack align={'start'}>
+                    <Text textStyle={'pre-body-3'} color={'grey.9'}>
+                      {article.typeDisplayName}
+                    </Text>
+                    <Text textStyle={'pre-heading-3'} color={'grey.9'}>
+                      {article.title}
+                    </Text>
+                  </VStack>
+                  <Text textStyle={'pre-body-6'} color={'grey.7'}>
+                    {dayjs(article.createdAt).format('YYYY.MM.DD')}
                   </Text>
                 </VStack>
-                <Text textStyle={'pre-body-6'} color={'grey.7'}>
-                  {dayjs(article.createdAt).format('YYYY.MM.DD')}
-                </Text>
               </VStack>
-            </VStack>
-          </Link>
+            </Link>
+          </GridItem>
         ))}
-      </HStack>
+      </Grid>
     </Flex>
   )
 }

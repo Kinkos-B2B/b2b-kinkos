@@ -1,39 +1,45 @@
-import {
-  Badge,
-  Box,
-  Container,
-  Flex,
-  Image,
-  Text,
-  VStack,
-} from '@chakra-ui/react'
+import { Badge, Box, Center, Flex, Image, Text, VStack } from '@chakra-ui/react'
 
 export const ExpertIntroBanner = () => {
   return (
-    <Box w={'100%'} px={'40px'}>
+    <Box w={'100%'} px={{ base: '0px', lg: '40px' }}>
       <Box
         w={'100%'}
         bgSize="cover"
-        borderRadius="28px"
+        borderRadius={{ base: '0px', lg: '28px' }}
         bgPos="center"
         bgRepeat="no-repeat"
         bgImage="url('/images/expert/expert-intro-banner-bg.png')"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        px={{ base: '20px', sm: '40px' }}
+        py={{ base: '60px', sm: '80px', lg: '0px' }}
       >
-        <Container maxW="1280px">
-          <Box
-            position="relative"
-            w="100%"
-            h={{ lg: '480px' }}
-            overflow="hidden"
-          >
+        <Box
+          maxW="1280px"
+          position="relative"
+          w="100%"
+          overflow="hidden"
+          h={{ base: 'auto', lg: '480px' }}
+          alignContent={'center'}
+        >
+          <Box position="relative" w="100%">
             <Flex
               position="relative"
+              w="100%"
               h="100%"
-              align="center"
               justify="space-between"
-              display={{ base: 'none', lg: 'flex' }}
+              align={{ base: 'start', lg: 'center' }}
+              flexDirection={{ base: 'column', lg: 'row' }}
+              gap={{ base: '56px', sm: '64px', lg: '0px' }}
             >
-              <VStack align="flex-start" gap="32px" maxW="755px" flex="1">
+              <VStack
+                align="flex-start"
+                gap={{ base: '28px', sm: '32px' }}
+                maxW="755px"
+                w={{ base: '100%', sm: 'auto' }}
+              >
                 <VStack gap="20px" alignItems="flex-start">
                   <Badge bg="accent.green1" color="accent.green2" size="lg">
                     전문가
@@ -52,13 +58,16 @@ export const ExpertIntroBanner = () => {
                   비즈니스를 지원합니다.
                 </Text>
               </VStack>
-              <Image
-                src="/images/expert/expert-intro-banner-icon.png"
-                h={'330px'}
-              />
+              <Center w={{ base: '100%', lg: 'auto' }}>
+                <Image
+                  src="/images/expert/expert-intro-banner-icon.png"
+                  w={{ base: '100%', sm: '668px', lg: 'auto' }}
+                  h={{ base: 'auto', lg: '330px' }}
+                />
+              </Center>
             </Flex>
           </Box>
-        </Container>
+        </Box>
       </Box>
     </Box>
   )

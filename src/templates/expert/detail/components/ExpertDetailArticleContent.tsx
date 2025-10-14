@@ -1,4 +1,4 @@
-import { Badge, Button, Flex, Image, Text, VStack } from '@chakra-ui/react'
+import { Badge, Box, Button, Flex, Image, Text, VStack } from '@chakra-ui/react'
 
 import { PostFeatureItem } from '@/components/view/PostDetail/PostFeatureItem'
 import { PostSectionWrapper } from '@/components/view/PostDetail/PostSectionWrapper'
@@ -109,13 +109,39 @@ export const ExpertDetailArticleContent = ({
   content?.profile.nickname
 
   return (
-    <Flex position={'relative'} gap={'80px'}>
+    <Flex
+      position={'relative'}
+      gap={{ base: '56px', lg: '80px' }}
+      flexDir={{ base: 'column', lg: 'row' }}
+    >
+      <VStack
+        display={{ base: 'flex', lg: 'none' }}
+        p={'28px'}
+        alignItems={'start'}
+        border={'1px solid'}
+        borderColor={'border.basic.1'}
+        borderRadius={'28px'}
+        gap={'16px'}
+      >
+        <Text textStyle={'pre-body-1'} color={'grey.10'}>
+          {content?.profile.nickname}
+        </Text>
+        <Flex gap={'8px'} flexWrap={'wrap'}>
+          {content?.profile.industryList?.map((item, index) => (
+            <Badge colorPalette="grey" variant="subtle" key={index}>
+              {item}
+            </Badge>
+          ))}
+        </Flex>
+      </VStack>
+
       <VStack align={'start'} gap={'64px'}>
         <ExpertIntroSection content={content?.intro ?? {}} />
         <ExpertCareerSection content={content?.career ?? {}} />
         <ExpertStrengthSection content={content?.strength ?? {}} />
       </VStack>
       <Flex
+        display={{ base: 'none', lg: 'flex' }}
         position={'sticky'}
         right={0}
         top={`calc(${LAYOUT.HEADER.HEIGHT} + 30px)`}
