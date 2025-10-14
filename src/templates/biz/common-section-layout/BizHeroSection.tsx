@@ -3,6 +3,7 @@ import { Box, Flex, Text, VStack } from '@chakra-ui/react'
 import Marquee from 'react-fast-marquee'
 
 import { Badge } from '@/components/ui/badge'
+import { LAYOUT } from '@/constants/layout'
 
 interface Props {
   badge: string
@@ -22,7 +23,7 @@ export const BizHeroSection = ({
       width="100%"
       backgroundColor="background.basic.1"
       gap={'0px'}
-      h={'calc(100vh - 90px)'}
+      h={`calc(100vh - ${LAYOUT.HEADER.HEIGHT})`}
       pt={'80px'}
     >
       <Flex

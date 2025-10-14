@@ -3,6 +3,7 @@ import { Button, Flex, Image, Text, VStack } from '@chakra-ui/react'
 import { PostFeatureItem } from '@/components/view/PostDetail/PostFeatureItem'
 import { PostSectionNavItem } from '@/components/view/PostDetail/PostSectionNavItem'
 import { PostSectionWrapper } from '@/components/view/PostDetail/PostSectionWrapper'
+import { LAYOUT } from '@/constants/layout'
 import {
   CustomerReviewBackgroundType,
   CustomerReviewInterviewType,
@@ -235,7 +236,7 @@ export const ReviewDetailContent = ({
         display={{ base: 'none', lg: 'flex' }}
         position={'sticky'}
         right={0}
-        top={'90px'}
+        top={`calc(${LAYOUT.HEADER.HEIGHT} + 30px)`}
         h={'fit-content'}
         flexDirection={'column'}
         gap={'24px'}

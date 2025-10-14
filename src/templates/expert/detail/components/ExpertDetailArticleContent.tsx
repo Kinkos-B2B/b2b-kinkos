@@ -2,6 +2,7 @@ import { Badge, Button, Flex, Image, Text, VStack } from '@chakra-ui/react'
 
 import { PostFeatureItem } from '@/components/view/PostDetail/PostFeatureItem'
 import { PostSectionWrapper } from '@/components/view/PostDetail/PostSectionWrapper'
+import { LAYOUT } from '@/constants/layout'
 import {
   ExpertCareerType,
   ExpertIntroType,
@@ -117,7 +118,7 @@ export const ExpertDetailArticleContent = ({
       <Flex
         position={'sticky'}
         right={0}
-        top={'90px'}
+        top={`calc(${LAYOUT.HEADER.HEIGHT} + 30px)`}
         w={'280px'}
         h={'fit-content'}
         flexDirection={'column'}

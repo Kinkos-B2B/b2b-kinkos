@@ -5,6 +5,7 @@ import { Box, Button, Flex, Text, VStack } from '@chakra-ui/react'
 import { PostFeatureItem } from '@/components/view/PostDetail/PostFeatureItem'
 import { PostSectionNavItem } from '@/components/view/PostDetail/PostSectionNavItem'
 import { PostSectionWrapper } from '@/components/view/PostDetail/PostSectionWrapper'
+import { LAYOUT } from '@/constants/layout'
 import {
   GetHelpArticleResponseType,
   HelpArticleAdvantageDetailType,
@@ -35,6 +36,7 @@ const ContentIntroSection = ({
             width={820}
             height={400}
             style={{
+              maxHeight: '400px',
               borderRadius: '28px',
               objectFit: 'cover',
             }}
@@ -67,6 +69,7 @@ const ContentDifficultSection = ({
             width={820}
             height={400}
             style={{
+              maxHeight: '400px',
               borderRadius: '28px',
               objectFit: 'cover',
             }}
@@ -141,6 +144,7 @@ const ContentFeasibleSection = ({
             width={820}
             height={400}
             style={{
+              maxHeight: '400px',
               borderRadius: '28px',
               objectFit: 'cover',
             }}
@@ -180,6 +184,7 @@ const ContentChangeSection = ({
             width={820}
             height={400}
             style={{
+              maxHeight: '400px',
               borderRadius: '28px',
               objectFit: 'cover',
             }}
@@ -212,6 +217,7 @@ const ContentAdvantageSection = ({
             width={820}
             height={400}
             style={{
+              maxHeight: '400px',
               borderRadius: '28px',
               objectFit: 'cover',
             }}
@@ -266,7 +272,7 @@ export const ProblemSolveArticleContent = ({
         display={{ base: 'none', lg: 'flex' }}
         position={'sticky'}
         right={0}
-        top={'90px'}
+        top={`calc(${LAYOUT.HEADER.HEIGHT} + 30px)`}
         h={'fit-content'}
         flexDirection={'column'}
         gap={'24px'}

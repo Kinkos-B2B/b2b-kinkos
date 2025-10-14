@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react'
 
 import { Box, Container, Text, VStack } from '@chakra-ui/react'
 
+import { LAYOUT } from '@/constants/layout'
+
 import { BizDescriptionWithBannerSection } from '../common-section-layout/BizDescriptionWithBannerSection'
 import { BizHeroSection } from '../common-section-layout/BizHeroSection'
 import { BizMoreInfoSection } from '../common-section-layout/BizMoreInfoSection'
@@ -99,11 +101,11 @@ export const BizProductionTemplate = () => {
 
   return (
     <VStack gap={'0px'} position={'relative'}>
-      <VStack w={'100%'} position={'sticky'} top={'90px'}>
+      <VStack w={'100%'} position={'sticky'} top={`${LAYOUT.HEADER.HEIGHT}`}>
         <BizHeroSection {...heroSectionMockData} />
         <Box
           position={'absolute'}
-          top={'-90px'}
+          top={`-${LAYOUT.HEADER.HEIGHT}`}
           left={'0'}
           right={'0'}
           bottom={'0'}
