@@ -42,7 +42,7 @@ const ReleatedCustomerReviewCard = ({
           <Text textStyle="pre-body-3">{author}</Text>
           <Text
             w={'100%'}
-            textStyle="pre-heading-3"
+            textStyle={{ base: 'pre-heading-5', sm: 'pre-heading-3' }}
             css={{
               display: '-webkit-box',
               WebkitLineClamp: 2,

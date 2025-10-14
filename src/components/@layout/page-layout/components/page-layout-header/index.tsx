@@ -6,7 +6,7 @@ import { DesktopHeader } from './components/desktop-header'
 import { MobileHeader } from './components/mobile-header'
 
 export const PageLayoutHeader = () => {
-  const isMobile = useMediaQuery(['(max-width: 1024px)'], {
+  const isMobile = useMediaQuery(['(max-width: 1280px)'], {
     ssr: false,
   })[0]
 

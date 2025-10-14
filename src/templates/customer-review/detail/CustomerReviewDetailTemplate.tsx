@@ -56,7 +56,7 @@ export const CustomerReviewDetailTemplate = ({
           />
         </Container>
       </Box>
-      <Container maxW={'1280px'} pt={{ base: '80px', lg: '120px' }}>
+      <Container pt={{ base: '80px', lg: '120px' }}>
         <PluuugCTA
           text={'비즈니스 고민,\n지금 바로 해결하세요!'}
           buttons={[{ text: '지금 전문가 연결하기', onClick: () => {} }]}

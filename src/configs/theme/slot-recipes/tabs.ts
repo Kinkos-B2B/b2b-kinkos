@@ -19,7 +19,7 @@ export const tabsSlotRecipe = defineSlotRecipe({
       position: 'relative',
       isolation: 'isolate',
       '--tabs-indicator-shadow': 'shadows.xs',
-      '--tabs-indicator-bg': 'colors.bg',
+      '--tabs-indicator-bg': 'bg',
       height: '56px',
       alignItems: 'center',
 
@@ -156,7 +156,7 @@ export const tabsSlotRecipe = defineSlotRecipe({
       line: {
         list: {
           display: 'flex',
-          borderColor: 'colors.grey.2',
+          borderColor: 'grey.2',
           _horizontal: {
             borderBottomWidth: '1px',
           },
@@ -165,14 +165,14 @@ export const tabsSlotRecipe = defineSlotRecipe({
           },
         },
         trigger: {
-          color: 'colors.grey.7',
+          color: 'grey.7',
           _disabled: {
             _active: {
               bg: 'initial',
             },
           },
           _selected: {
-            color: 'colors.grey.10',
+            color: 'grey.10',
             _horizontal: {
               _before: {
                 content: '""',
@@ -181,7 +181,7 @@ export const tabsSlotRecipe = defineSlotRecipe({
                 left: 0,
                 right: 0,
                 height: '1.5px',
-                backgroundColor: 'colors.grey.10',
+                backgroundColor: 'grey.10',
               },
             },
             _vertical: {
@@ -192,12 +192,12 @@ export const tabsSlotRecipe = defineSlotRecipe({
                 top: 0,
                 bottom: 0,
                 width: '1.5px',
-                backgroundColor: 'colors.grey.10',
+                backgroundColor: 'grey.10',
               },
             },
           },
           _hover: {
-            color: 'colors.grey.10',
+            color: 'grey.10',
             _horizontal: {
               _before: {
                 content: '""',
@@ -206,7 +206,7 @@ export const tabsSlotRecipe = defineSlotRecipe({
                 left: 0,
                 right: 0,
                 height: '1px',
-                backgroundColor: 'colors.grey.2',
+                backgroundColor: 'grey.2',
               },
             },
             _vertical: {
@@ -217,7 +217,7 @@ export const tabsSlotRecipe = defineSlotRecipe({
                 top: 0,
                 bottom: 0,
                 width: '1px',
-                backgroundColor: 'colors.grey.2',
+                backgroundColor: 'grey.2',
               },
             },
           },
@@ -239,22 +239,19 @@ export const tabsSlotRecipe = defineSlotRecipe({
       },
       enclosed: {
         list: {
-          bg: 'colors.grey.2',
-          padding: '4px',
-          borderRadius: '12px',
           minH: 'calc(var(--tabs-height) + 8px)',
         },
         trigger: {
           justifyContent: 'center',
-          color: 'colors.grey.7',
+          color: 'grey.7',
           borderRadius: 'var(--tabs-trigger-radius)',
           _selected: {
-            bg: 'colors.grey.10',
-            color: 'colors.grey.0',
+            bg: 'grey.10',
+            color: 'grey.0',
           },
           _hover: {
-            bg: 'colors.grey.transparent.1',
-            color: 'colors.grey.7',
+            bg: 'greytransparent.2',
+            color: 'grey.7',
           },
         },
       },

@@ -14,11 +14,15 @@ export const ProblemSolveTemplate = () => {
   const { data } = useGetHelpArticleMainConfigQuery()
 
   return (
-    <VStack w="100%" pt={'20px'}>
-      <Box w={'100%'} pb={'80px'}>
+    <VStack w="100%" gap={'0px'}>
+      <Box w={'100%'} pb={'80px'} pt={{ base: '0px', lg: '20px' }}>
         <ProblemSolveIntroBanner />
       </Box>
-      <Box w={'100%'} pb={'120px'}>
+      <Box
+        w={'100%'}
+        pb={{ base: '80px', sm: '100px', lg: '120px' }}
+        px={{ base: '20px', sm: '40px' }}
+      >
         <RecentPost
           title="최신 고민 해결 사례"
           article={{

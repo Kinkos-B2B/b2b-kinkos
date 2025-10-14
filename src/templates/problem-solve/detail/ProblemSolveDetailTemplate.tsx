@@ -28,13 +28,19 @@ export const ProblemSolveDetailTemplate = ({ id }: Props) => {
   })
 
   return (
-    <VStack w="100%" pt={'20px'}>
+    <VStack w="100%" pt={'20px'} gap={'0px'}>
       <PostHeader header={data?.data?.header ?? {}} />
-      <Box py={'80px 160px'} position={'relative'}>
+      <Box
+        py={{ base: '48px 100px', sm: '64px 140px', lg: '80px 160px' }}
+        w={{ base: '100%', lg: 'auto' }}
+        px={{ base: '20px', sm: '40px' }}
+        position={'relative'}
+      >
         <ProblemSolveArticleContent content={data?.data} />
       </Box>
-      <Box py={'80px'} bg={'primary.3'} w={'100%'}>
-        <Container maxW={'1280px'}>
+
+      <Box py={{ base: '64px', lg: '80px' }} bg={'primary.3'} w={'100%'}>
+        <Container>
           <Center flexDirection={'column'} gap={'28px'}>
             <VStack gap={'12px'}>
               <Text textStyle={'pre-display-4'} color={'grey.0'}>
@@ -49,7 +55,7 @@ export const ProblemSolveDetailTemplate = ({ id }: Props) => {
                 솔루션을 제안해 드립니다.
               </Text>
             </VStack>
-            <Box w={'820px'}>
+            <Box w={{ base: '100%', lg: '820px' }}>
               <ExpertProfileCard
                 nickname="닉네임"
                 quote="기업 브랜드 가치 상승에 기여하는 것이 저의 목표입니다."
@@ -61,7 +67,6 @@ export const ProblemSolveDetailTemplate = ({ id }: Props) => {
                 ]}
               />
             </Box>
-
             <HStack gap={'8px'}>
               <Button variant={'outline'} w={'180px'}>
                 무료 상담 받아보기

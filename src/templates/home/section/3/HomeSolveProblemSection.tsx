@@ -97,8 +97,6 @@ const ProblemCard = ({
 export const HomeSolveProblemSection = () => {
   const { data } = useGetHomeConfigHelpArticleQuery()
 
-  console.log(data)
-
   const orderedArticles = orderBy(data?.data, 'displayOrder', 'desc')
 
   return (

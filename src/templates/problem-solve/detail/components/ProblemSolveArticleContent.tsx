@@ -1,4 +1,6 @@
-import { Box, Button, Flex, Image, Text, VStack } from '@chakra-ui/react'
+import Image from 'next/image'
+
+import { Box, Button, Flex, Text, VStack } from '@chakra-ui/react'
 
 import { PostFeatureItem } from '@/components/view/PostDetail/PostFeatureItem'
 import { PostSectionNavItem } from '@/components/view/PostDetail/PostSectionNavItem'
@@ -29,10 +31,13 @@ const ContentIntroSection = ({
         {content.image?.url && (
           <Image
             src={content.image?.url}
-            borderRadius={'28px'}
-            w={'100%'}
-            h={'400px'}
-            objectFit={'cover'}
+            alt="intro"
+            width={820}
+            height={400}
+            style={{
+              borderRadius: '28px',
+              objectFit: 'cover',
+            }}
           />
         )}
         <Text textStyle={'pre-body-4'} color={'grey.9'}>
@@ -58,10 +63,13 @@ const ContentDifficultSection = ({
         {content.image?.url && (
           <Image
             src={content.image?.url}
-            borderRadius={'28px'}
-            w={'100%'}
-            h={'400px'}
-            objectFit={'cover'}
+            alt="difficult"
+            width={820}
+            height={400}
+            style={{
+              borderRadius: '28px',
+              objectFit: 'cover',
+            }}
           />
         )}
         <VStack gap={'10px'} alignItems={'start'} w={'100%'}>
@@ -129,10 +137,13 @@ const ContentFeasibleSection = ({
         {content.image?.url && (
           <Image
             src={content.image?.url}
-            borderRadius={'28px'}
-            w={'100%'}
-            h={'400px'}
-            objectFit={'cover'}
+            alt="change"
+            width={820}
+            height={400}
+            style={{
+              borderRadius: '28px',
+              objectFit: 'cover',
+            }}
           />
         )}
         <VStack gap={'10px'} alignItems={'start'} w={'100%'}>
@@ -165,10 +176,13 @@ const ContentChangeSection = ({
         {content.image?.url && (
           <Image
             src={content.image?.url}
-            borderRadius={'28px'}
-            w={'100%'}
-            h={'400px'}
-            objectFit={'cover'}
+            alt="change"
+            width={820}
+            height={400}
+            style={{
+              borderRadius: '28px',
+              objectFit: 'cover',
+            }}
           />
         )}
         <Text textStyle={'pre-body-4'} color={'grey.9'}>
@@ -194,10 +208,13 @@ const ContentAdvantageSection = ({
         {content.image?.url && (
           <Image
             src={content.image?.url}
-            borderRadius={'28px'}
-            w={'100%'}
-            h={'400px'}
-            objectFit={'cover'}
+            alt="advantage"
+            width={820}
+            height={400}
+            style={{
+              borderRadius: '28px',
+              objectFit: 'cover',
+            }}
           />
         )}
         <VStack gap={'10px'} alignItems={'start'} w={'100%'}>
@@ -246,6 +263,7 @@ export const ProblemSolveArticleContent = ({
         <ContentAdvantageSection content={content?.advantage ?? {}} />
       </VStack>
       <Flex
+        display={{ base: 'none', lg: 'flex' }}
         position={'sticky'}
         right={0}
         top={'90px'}

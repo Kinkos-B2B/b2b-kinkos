@@ -30,12 +30,12 @@ export const PluuugCTA = ({ text, buttons }: PluuugCTAProps) => {
           {text}
         </Text>
       </VStack>
-      <HStack gap={'8px'}>
+      <HStack gap={'8px'} flexDir={{ base: 'column', sm: 'row' }}>
         {buttons.map((button, index) => (
           <Button
             variant={'outline'}
             onClick={button.onClick}
-            w={'180px'}
+            w={{ base: '240px', sm: '180px' }}
             key={index}
           >
             {button.text}

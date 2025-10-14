@@ -113,19 +113,6 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
 
     const visiblePages = getVisiblePages()
 
-    const getButtonSize = () => {
-      switch (size) {
-        case 'sm':
-          return { w: '40px', h: '40px', fontSize: '12px' }
-        case 'lg':
-          return { w: '48px', h: '48px', fontSize: '16px' }
-        default:
-          return { w: '48px', h: '48px', fontSize: '14px' }
-      }
-    }
-
-    const buttonSize = getButtonSize()
-
     return (
       <Flex ref={ref} gap="8px" align="center" {...rest}>
         {/* 이전 버튼 */}
@@ -139,9 +126,7 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
           }}
           color={'grey.8'}
           disabled={currentPage <= 1}
-          w={buttonSize.w}
-          h={buttonSize.h}
-          minW={buttonSize.w}
+          size={{ base: 'sm', sm: 'lg' }}
         >
           <CaretLeftIcon w="24px" h="24px" />
         </IconButton>
@@ -154,26 +139,17 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
                 <Button
                   key={`ellipsis-${index}`}
                   variant="ghost"
-                  size="sm"
-                  w={buttonSize.w}
-                  h={buttonSize.h}
-                  minW={buttonSize.w}
                   p="0"
                   display="flex"
                   alignItems="center"
                   justifyContent="center"
-                  borderRadius="10px"
                   cursor="default"
                   _hover={{
                     bg: 'transparent',
                   }}
+                  size={{ base: 'sm', sm: 'lg' }}
                 >
-                  <Text
-                    fontSize={buttonSize.fontSize}
-                    fontWeight="600"
-                    color="grey.8"
-                    letterSpacing="-0.24px"
-                  >
+                  <Text textStyle="pre-caption-1" color="grey.8">
                     ...
                   </Text>
                 </Button>
@@ -188,11 +164,8 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
                 key={pageNumber}
                 variant={isSelected ? 'solid' : 'ghost'}
                 colorPalette={isSelected ? 'primary' : 'grey'}
-                size="sm"
                 onClick={() => onPageChange(pageNumber)}
-                w={buttonSize.w}
-                h={buttonSize.h}
-                minW={buttonSize.w}
+                size={{ base: 'sm', sm: 'lg' }}
                 p="0"
                 display="flex"
                 textStyle="pre-body-3"
@@ -200,7 +173,6 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
                 color={isSelected ? 'grey.0' : 'grey.8'}
                 justifyContent="center"
                 borderRadius="10px"
-                fontSize={buttonSize.fontSize}
                 _hover={{
                   bg: isSelected ? 'primary.4' : 'grey.1',
                 }}
@@ -222,9 +194,7 @@ export const Pagination = React.forwardRef<HTMLDivElement, PaginationProps>(
           }}
           color={'grey.8'}
           disabled={currentPage >= totalPages}
-          w={buttonSize.w}
-          h={buttonSize.h}
-          minW={buttonSize.w}
+          size={{ base: 'sm', sm: 'md' }}
         >
           <CaretRightIcon w="24px" h="24px" />
         </IconButton>

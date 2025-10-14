@@ -70,11 +70,12 @@ export const ExpertProfileCard = ({
                 관련 솔루션
               </Text>
               <HStack
-                gap="8px"
+                gap={{ base: '4px', sm: '8px' }}
                 align="center"
                 justify="center"
                 w="100%"
                 wrap="wrap"
+                flexDir={{ base: 'column', sm: 'row' }}
               >
                 {relatedSolutions.map((solution, index) => (
                   <Badge
@@ -110,11 +111,12 @@ export const ExpertProfileCard = ({
                 관련 분야
               </Text>
               <HStack
-                gap="8px"
+                gap={{ base: '4px', sm: '8px' }}
                 align="center"
                 justify="center"
                 w="100%"
                 wrap="wrap"
+                flexDir={{ base: 'column', sm: 'row' }}
               >
                 {relatedFields.map((field, index) => (
                   <Badge

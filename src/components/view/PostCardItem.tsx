@@ -1,6 +1,7 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
-import { Box, Image, Text, VStack } from '@chakra-ui/react'
+import { Box, Text, VStack } from '@chakra-ui/react'
 
 import dayjs from 'dayjs'
 
@@ -36,14 +37,16 @@ export const PostCardItem = ({
         display="flex"
         flexDirection="column"
       >
-        <Image
-          src={image}
-          alt={title}
-          width="411px"
-          height={{ base: '211px', lg: '260px' }}
-          objectFit="cover"
-          borderRadius="28px"
-        />
+        <Box position="relative" w="100%" h="100%">
+          <Image
+            src={image}
+            alt={title}
+            objectFit="cover"
+            style={{ borderRadius: '28px' }}
+            width={441}
+            height={260}
+          />
+        </Box>
         <VStack align="start" gap="16px" width="100%">
           <VStack align="start" gap="8px" width="100%">
             <Text textStyle="pre-body-3">{author}</Text>
@@ -60,14 +63,7 @@ export const PostCardItem = ({
               {truncateTitle(title)}
             </Text>
           </VStack>
-          <Text
-            fontSize="14px"
-            fontWeight="400"
-            color="grey.600"
-            lineHeight="1.6"
-            letterSpacing="-0.28px"
-            fontFamily="Pretendard Variable"
-          >
+          <Text textStyle={'pre-body-6'} color="grey.600">
             {dayjs(date).format('YYYY.MM.DD')}
           </Text>
         </VStack>
