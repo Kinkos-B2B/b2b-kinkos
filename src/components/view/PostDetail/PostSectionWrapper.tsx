@@ -12,8 +12,13 @@ export const PostSectionWrapper = ({
   fragment: string
 }) => {
   return (
-    <VStack alignItems={'start'} w={'820px'} gap={'24px'} id={fragment}>
-      <VStack gap={'8px'} alignItems={'start'}>
+    <VStack
+      alignItems={'start'}
+      w={{ base: '100%', lg: '820px' }}
+      gap={'24px'}
+      id={fragment}
+    >
+      <VStack gap={'8px'} alignItems={'start'} w={'100%'}>
         <Text textStyle={'pre-body-5'} color={'grey.6'}>
           {title}
         </Text>

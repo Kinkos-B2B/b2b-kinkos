@@ -131,11 +131,11 @@ const IconBackground = ({
 }) => (
   <Box
     position="absolute"
-    bottom="19.5px"
-    right="20px"
-    width="100px"
-    height="100px"
-    borderRadius="28px"
+    bottom={{ sm: '20px', base: '30px' }}
+    right={{ sm: '20px', base: '24px' }}
+    width={{ lg: '100px', sm: '80px', base: '70px' }}
+    height={{ lg: '100px', sm: '80px', base: '70px' }}
+    borderRadius={{ sm: '28px', base: '24px' }}
     display="flex"
     alignItems="center"
     justifyContent="center"
@@ -147,7 +147,13 @@ const IconBackground = ({
 
 // 아이콘 컴포넌트
 const SolutionIcon = ({ src, alt }: { src: string; alt: string }) => (
-  <Image src={src} alt={alt} width="60px" height="60px" objectFit="contain" />
+  <Image
+    src={src}
+    alt={alt}
+    width={{ lg: '60px', sm: '50px', base: '40px' }}
+    height={{ lg: '60px', sm: '50px', base: '40px' }}
+    objectFit="contain"
+  />
 )
 
 // 개별 솔루션 카드
@@ -166,16 +172,18 @@ export const SolutionCardItem = ({ type }: SolutionCardItemProps) => {
         boxShadow="0px 20px 48px 0px rgba(1,45,181,0.12)"
         overflow="hidden"
         position="relative"
-        h={'220px'}
-        p="36px"
-        pb="48px"
+        h={{ sm: '200px', lg: '220px', base: '120px' }}
+        p={{ lg: '36px 36px 48px 36px', base: '28px 24px 40px 24px' }}
       >
-        <Flex direction="column" gap="24px" h="full">
-          <Box>
-            <Heading as="h3" textStyle={'pre-heading-1'}>
-              {solution.title}
-            </Heading>
-          </Box>
+        <Flex
+          direction="column"
+          gap="24px"
+          h="full"
+          justify={{ base: 'center', sm: 'start' }}
+        >
+          <Heading as="h3" textStyle={'pre-heading-1'}>
+            {solution.title}
+          </Heading>
         </Flex>
         <IconBackground bg={solution.iconBg}>
           <SolutionIcon src={solution.iconSrc} alt={solution.title} />

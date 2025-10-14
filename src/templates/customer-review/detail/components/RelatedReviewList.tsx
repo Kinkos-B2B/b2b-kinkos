@@ -1,11 +1,10 @@
-import { Flex, Image, Text, VStack } from '@chakra-ui/react'
+import Image from 'next/image'
+
+import { Box, Flex, Text, VStack } from '@chakra-ui/react'
 
 import dayjs from 'dayjs'
 
-import {
-  GetCustomerReviewDetailTypeEnumType,
-  GetCustomerReviewRelationParamsTypeEnumType,
-} from '@/generated/apis/@types/data-contracts'
+import { GetCustomerReviewDetailTypeEnumType } from '@/generated/apis/@types/data-contracts'
 import { useGetCustomerReviewRelationQuery } from '@/generated/apis/CustomerReviewApi/CustomerReviewApi.query'
 
 interface CustomerReviewCardProps {
@@ -30,16 +29,19 @@ const ReleatedCustomerReviewCard = ({
 
   return (
     <Flex
-      gap={'80px'}
+      gap={{ base: '20px', sm: '80px' }}
       alignItems={'center'}
       pb={'24px'}
       borderBottom={'1px solid'}
       borderColor={'border.basic.1'}
+      width="100%"
+      justifyContent={'space-between'}
     >
-      <VStack align="start" gap="16px" width="100%">
-        <VStack align="start" gap="8px" width="100%">
+      <VStack align="start" gap="16px">
+        <VStack align="start" gap="8px">
           <Text textStyle="pre-body-3">{author}</Text>
           <Text
+            w={'100%'}
             textStyle="pre-heading-3"
             css={{
               display: '-webkit-box',
@@ -52,19 +54,18 @@ const ReleatedCustomerReviewCard = ({
             {truncateTitle(title)}
           </Text>
         </VStack>
-        <Text
-          fontSize="14px"
-          fontWeight="400"
-          color="grey.600"
-          lineHeight="1.6"
-          letterSpacing="-0.28px"
-          fontFamily="Pretendard Variable"
-        >
+        <Text color="grey.600" textStyle="pre-body-4">
           {dayjs(date).format('YYYY.MM.DD')}
         </Text>
       </VStack>
 
-      <Image src={image} alt={title} width={198} height={120} />
+      <Box
+        position="relative"
+        w={{ base: '100px', sm: '190px' }}
+        h={{ base: '100px', sm: '120px' }}
+      >
+        <Image src={image} alt={title} fill style={{ objectFit: 'cover' }} />
+      </Box>
     </Flex>
   )
 }
@@ -94,7 +95,7 @@ export const RelatedReviewList = ({
     <VStack gap={'32px'} align="start" w="100%">
       <Text textStyle={'pre-heading-1'}>고객님을 위한 추가 스토리</Text>
       <VStack w={'100%'} align={'stretch'}>
-        {data?.data?.map((item) => (
+        {data.data?.map((item) => (
           <ReleatedCustomerReviewCard
             key={item.id}
             id={item.id}

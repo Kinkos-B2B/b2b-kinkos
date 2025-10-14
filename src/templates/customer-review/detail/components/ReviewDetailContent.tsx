@@ -223,8 +223,8 @@ export const ReviewDetailContent = ({
   })
 
   return (
-    <Flex position={'relative'} gap={'80px'}>
-      <VStack align={'start'} gap={'64px'}>
+    <Flex position={'relative'} gap={'80px'} w={'100%'}>
+      <VStack align={'start'} gap={'64px'} w={'100%'}>
         <ContentBackgroundSection content={content?.background ?? {}} />
         <ContentReasonSection content={content?.reason ?? {}} />
         <ContentOutcomeSection content={content?.outcome ?? {}} />
@@ -232,6 +232,7 @@ export const ReviewDetailContent = ({
         <ContentInterviewSection content={content?.interview ?? {}} />
       </VStack>
       <Flex
+        display={{ base: 'none', lg: 'flex' }}
         position={'sticky'}
         right={0}
         top={'90px'}

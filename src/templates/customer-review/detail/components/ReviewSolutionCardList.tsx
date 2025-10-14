@@ -14,7 +14,11 @@ export const ReviewSolutionCardList = ({
   return (
     <VStack gap={'24px'} align="start" w="100%">
       <Text textStyle={'pre-heading-1'}>관련 솔루션을 확인해 보세요</Text>
-      <Grid templateColumns={'repeat(3, 1fr)'} gap={'24px'} w="100%">
+      <Grid
+        templateColumns={{ base: '1fr', sm: 'repeat(3, 1fr)' }}
+        gap={'24px'}
+        w="100%"
+      >
         {solutionList?.map((solution) => (
           <GridItem key={solution.title}>
             <SolutionCardItem type={solution.solutionType as any} />
