@@ -19,13 +19,9 @@ export const heroSectionMockData = {
   description:
     '대량부터 소량까지, 킨코스의 첨단 인프라와 스마트한 생산 공정으로\n당신의 비즈니스를 최고 품질로 완성하세요.',
   images: [
-    '/images/home/biz/biz-card-1.png',
-    '/images/home/biz/biz-card-2.png',
-    '/images/home/biz/biz-card-3.png',
-    '/images/home/biz/biz-card-4.png',
-    '/images/home/biz/biz-card-1.png',
-    '/images/home/biz/biz-card-2.png',
-    '/images/home/biz/biz-card-3.png',
+    '/images/biz/hero/biz-hero-intro-1.jpg',
+    '/images/biz/hero/biz-hero-intro-2.jpg',
+    '/images/biz/hero/biz-hero-intro-3.jpg',
   ],
 }
 

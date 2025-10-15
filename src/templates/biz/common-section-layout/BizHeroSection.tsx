@@ -22,9 +22,9 @@ export const BizHeroSection = ({
     <VStack
       width="100%"
       backgroundColor="background.basic.1"
-      gap={'0px'}
+      gap={'60px'}
       h={`calc(100vh - ${LAYOUT.HEADER.HEIGHT})`}
-      pt={'80px'}
+      pt={{ base: '60px', sm: '70px', lg: '80px' }}
     >
       <Flex
         width="100%"
@@ -68,20 +68,23 @@ export const BizHeroSection = ({
         flex={1}
         flexDirection="column"
         justify={'end'}
+        mb={'40px'}
         align={'stretch'}
       >
-        <Marquee direction="right" speed={30} gradient={false}>
+        <Marquee direction="left" speed={30} gradient={false} autoFill>
           {images.map((image, index) => (
             <Box
-              aspectRatio="400 / 540"
               key={index}
+              display="flex"
+              w={'30vw'}
+              maxW={'740px'}
               borderRadius="28px"
-              w={'300px'}
+              aspectRatio="740 / 500"
               backgroundImage={`url(${image})`}
               backgroundSize="cover"
               backgroundPosition="center"
               backgroundRepeat="no-repeat"
-              marginRight="20px"
+              marginRight={{ base: '20px', lg: '32px' }}
               flexShrink={0}
             />
           ))}
