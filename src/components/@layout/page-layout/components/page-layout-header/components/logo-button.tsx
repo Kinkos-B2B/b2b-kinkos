@@ -1,16 +1,17 @@
 import Image from 'next/image'
 
-import { Box } from '@chakra-ui/react'
+import { Box, BoxProps } from '@chakra-ui/react'
 
 import { MY_IMAGES } from '@/generated/path/images'
 
-interface Props {
-  size?: { width: number; height: number }
-}
+interface Props extends BoxProps {}
 
-export const LogoButton = ({ size = { width: 180, height: 37 } }: Props) => {
+export const LogoButton = () => {
   return (
-    <Box width={size.width} height={size.height}>
+    <Box
+      width={{ lg: '187px', sm: '160px', base: '120px' }}
+      height={{ lg: '37px', sm: '33px', base: '25px' }}
+    >
       <Image src={MY_IMAGES.LOGO.src} alt="logo" width={180} height={37} />
     </Box>
   )

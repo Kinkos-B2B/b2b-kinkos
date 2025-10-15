@@ -39,7 +39,7 @@ export const DesktopHeader = () => {
     >
       {/* Logo */}
       <Link href={ROUTES.HOME} aria-label="홈페이지로 이동">
-        <LogoButton size={{ width: 180, height: 37 }} />
+        <LogoButton />
       </Link>
 
       <HStack
