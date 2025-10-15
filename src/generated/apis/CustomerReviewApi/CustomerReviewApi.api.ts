@@ -62,7 +62,7 @@ export class CustomerReviewApiApi<
    *
    * @tags [CustomerReview API]
    * @name GetCustomerReviewDetail
-   * @summary 고객후기 - 상세 조회
+   * @summary 고객후기 - 상세 조회(id로 조회)
    * @request GET:/api/v1/customer-review/{id}
    * @secure
    */
@@ -86,6 +86,40 @@ export class CustomerReviewApiApi<
           `/api/v1`,
           `/api/v1/customer-review`,
           `/api/v1/customer-review/${variables.id}`,
+        ],
+      },
+    }) /**
+   * No description
+   *
+   * @tags [CustomerReview API]
+   * @name GetCustomerReviewDetailBySlug
+   * @summary 고객후기 - 상세 조회 (slug로 조회)
+   * @request GET:/api/v1/customer-review/slug
+   * @secure
+   */
+
+  getCustomerReviewDetailBySlug = (variables: {
+    query: {
+      slug: string
+    }
+    params?: RequestParams
+  }) =>
+    this.request<
+      ResponseDTOGetCustomerReviewDetailType,
+      ErrorResponseDTOCommonType
+    >({
+      path: `/api/v1/customer-review/slug`,
+      method: 'GET',
+      query: variables.query,
+      secure: true,
+      ...variables.params,
+      next: {
+        ...variables.params?.next,
+        tags: [
+          `/api`,
+          `/api/v1`,
+          `/api/v1/customer-review`,
+          `/api/v1/customer-review/slug`,
         ],
       },
     }) /**

@@ -38,6 +38,9 @@ export const QUERY_KEY_HELP_ARTICLE_API_API = {
   GET_HELP_ARTICLE_DETAIL: (
     variables?: Parameter<typeof helpArticleApiApi.getHelpArticleDetail>,
   ) => ['GET_HELP_ARTICLE_DETAIL', variables].filter(isDefined),
+  GET_HELP_ARTICLE_DETAIL_BY_SLUG: (
+    variables?: Parameter<typeof helpArticleApiApi.getHelpArticleDetailBySlug>,
+  ) => ['GET_HELP_ARTICLE_DETAIL_BY_SLUG', variables].filter(isDefined),
   GET_HELP_ARTICLE_MAIN_CONFIG: (
     variables?: Parameter<typeof helpArticleApiApi.getHelpArticleMainConfig>,
   ) => ['GET_HELP_ARTICLE_MAIN_CONFIG', variables].filter(isDefined),
@@ -76,7 +79,7 @@ export const useGetAllHelpArticleQuery = <
  *
  * @tags [HelpArticle API]
  * @name GetHelpArticleDetail
- * @summary 고민해결 - 상세 조회
+ * @summary 고민해결 - 상세 조회 (아이디)
  * @request GET:/api/v1/help-article/{id}
  * @secure    */
 
@@ -95,6 +98,36 @@ export const useGetHelpArticleDetailQuery = <
   return useQuery({
     queryKey,
     queryFn: () => helpArticleApiApi.getHelpArticleDetail(params.variables),
+    ...params?.options,
+  })
+}
+
+/**
+ * No description
+ *
+ * @tags [HelpArticle API]
+ * @name GetHelpArticleDetailBySlug
+ * @summary 고민해결 - 상세 조회 (slug)
+ * @request GET:/api/v1/help-article/slug
+ * @secure    */
+
+export const useGetHelpArticleDetailBySlugQuery = <
+  TData = RequestFnReturn<typeof helpArticleApiApi.getHelpArticleDetailBySlug>,
+>(
+  params: QueryHookParams<
+    typeof helpArticleApiApi.getHelpArticleDetailBySlug,
+    { error: ErrorResponseDTOCommonType },
+    TData
+  >,
+) => {
+  const queryKey =
+    QUERY_KEY_HELP_ARTICLE_API_API.GET_HELP_ARTICLE_DETAIL_BY_SLUG(
+      params.variables,
+    )
+  return useQuery({
+    queryKey,
+    queryFn: () =>
+      helpArticleApiApi.getHelpArticleDetailBySlug(params.variables),
     ...params?.options,
   })
 }

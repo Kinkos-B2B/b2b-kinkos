@@ -61,7 +61,7 @@ export class HelpArticleApiApi<
    *
    * @tags [HelpArticle API]
    * @name GetHelpArticleDetail
-   * @summary 고민해결 - 상세 조회
+   * @summary 고민해결 - 상세 조회 (아이디)
    * @request GET:/api/v1/help-article/{id}
    * @secure
    */
@@ -82,6 +82,40 @@ export class HelpArticleApiApi<
           `/api/v1`,
           `/api/v1/help-article`,
           `/api/v1/help-article/${variables.id}`,
+        ],
+      },
+    }) /**
+   * No description
+   *
+   * @tags [HelpArticle API]
+   * @name GetHelpArticleDetailBySlug
+   * @summary 고민해결 - 상세 조회 (slug)
+   * @request GET:/api/v1/help-article/slug
+   * @secure
+   */
+
+  getHelpArticleDetailBySlug = (variables: {
+    query: {
+      slug: string
+    }
+    params?: RequestParams
+  }) =>
+    this.request<
+      ResponseDTOGetHelpArticleResponseType,
+      ErrorResponseDTOCommonType
+    >({
+      path: `/api/v1/help-article/slug`,
+      method: 'GET',
+      query: variables.query,
+      secure: true,
+      ...variables.params,
+      next: {
+        ...variables.params?.next,
+        tags: [
+          `/api`,
+          `/api/v1`,
+          `/api/v1/help-article`,
+          `/api/v1/help-article/slug`,
         ],
       },
     }) /**

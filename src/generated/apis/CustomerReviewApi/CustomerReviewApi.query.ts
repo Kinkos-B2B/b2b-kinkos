@@ -38,6 +38,11 @@ export const QUERY_KEY_CUSTOMER_REVIEW_API_API = {
   GET_CUSTOMER_REVIEW_DETAIL: (
     variables?: Parameter<typeof customerReviewApiApi.getCustomerReviewDetail>,
   ) => ['GET_CUSTOMER_REVIEW_DETAIL', variables].filter(isDefined),
+  GET_CUSTOMER_REVIEW_DETAIL_BY_SLUG: (
+    variables?: Parameter<
+      typeof customerReviewApiApi.getCustomerReviewDetailBySlug
+    >,
+  ) => ['GET_CUSTOMER_REVIEW_DETAIL_BY_SLUG', variables].filter(isDefined),
   GET_CUSTOMER_REVIEW_RELATION: (
     variables?: Parameter<
       typeof customerReviewApiApi.getCustomerReviewRelation
@@ -83,7 +88,7 @@ export const useGetAllCustomerReviewQuery = <
  *
  * @tags [CustomerReview API]
  * @name GetCustomerReviewDetail
- * @summary 고객후기 - 상세 조회
+ * @summary 고객후기 - 상세 조회(id로 조회)
  * @request GET:/api/v1/customer-review/{id}
  * @secure    */
 
@@ -103,6 +108,38 @@ export const useGetCustomerReviewDetailQuery = <
     queryKey,
     queryFn: () =>
       customerReviewApiApi.getCustomerReviewDetail(params.variables),
+    ...params?.options,
+  })
+}
+
+/**
+ * No description
+ *
+ * @tags [CustomerReview API]
+ * @name GetCustomerReviewDetailBySlug
+ * @summary 고객후기 - 상세 조회 (slug로 조회)
+ * @request GET:/api/v1/customer-review/slug
+ * @secure    */
+
+export const useGetCustomerReviewDetailBySlugQuery = <
+  TData = RequestFnReturn<
+    typeof customerReviewApiApi.getCustomerReviewDetailBySlug
+  >,
+>(
+  params: QueryHookParams<
+    typeof customerReviewApiApi.getCustomerReviewDetailBySlug,
+    { error: ErrorResponseDTOCommonType },
+    TData
+  >,
+) => {
+  const queryKey =
+    QUERY_KEY_CUSTOMER_REVIEW_API_API.GET_CUSTOMER_REVIEW_DETAIL_BY_SLUG(
+      params.variables,
+    )
+  return useQuery({
+    queryKey,
+    queryFn: () =>
+      customerReviewApiApi.getCustomerReviewDetailBySlug(params.variables),
     ...params?.options,
   })
 }

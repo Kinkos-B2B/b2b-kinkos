@@ -225,6 +225,7 @@ export interface ResponseDTOListGetHomeExpertResponseType {
 export interface GetAllHelpArticleResponseType {
   /** @format int64 */
   id?: number
+  slug?: string
   type?: GetAllHelpArticleResponseTypeEnumType
   typeDisplayName?: string
   thumbnailImage?: ImageInfoType
@@ -266,6 +267,8 @@ export interface ResponseDTOPageResponseDTOGetAllHelpArticleResponseType {
  * 데이터
  */
 export interface GetHelpArticleResponseType {
+  /** SEO 관련 정보 */
+  seoInfo: SeoInfoType
   /** 헤더 정보 */
   header: HelpArticleHeaderType
   /** [1] 인트로 */
@@ -391,6 +394,14 @@ export interface ResponseDTOGetHelpArticleResponseType {
 }
 
 /**
+ * SEO 관련 정보
+ */
+export interface SeoInfoType {
+  slug?: string
+  ogDescription?: string
+}
+
+/**
  * 데이터
  */
 export interface GetHelpArticleMainConfigType {
@@ -400,6 +411,7 @@ export interface GetHelpArticleMainConfigType {
 export interface GetMainConfigArticleDetailType {
   /** @format int64 */
   id?: number
+  slug?: string
   type?: GetMainConfigArticleDetailTypeEnumType
   typeDisplayName?: string
   thumbnailImageUrl?: ImageInfoType
@@ -674,6 +686,8 @@ export interface GetAllCustomerReviewResponseType {
    * @format int64
    */
   id: number
+  /** slug */
+  slug: string
   thumbnailImageUrl: ImageInfoType
   /** 기업명 */
   companyName: string
@@ -796,6 +810,8 @@ export interface CustomerReviewSolutionType {
  * 데이터
  */
 export interface GetCustomerReviewDetailType {
+  /** SEO 관련 정보 */
+  seoInfo: SeoInfoType
   /** 헤더 정보 */
   header: CustomerReviewHeaderType
   /** [1] 도입 배경 */
@@ -884,6 +900,13 @@ export interface GetCustomerReviewMainConfigType {
  * 메인 고객리뷰
  */
 export interface GetMainConfigReviewDetailType {
+  /**
+   * 아이디
+   * @format int64
+   */
+  id: number
+  /** slug */
+  slug: string
   /** 기업명 */
   companyName: string
   thumbnailImageUrl: ImageInfoType
