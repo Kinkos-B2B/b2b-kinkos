@@ -17,7 +17,6 @@ export const SolutionReleatedExportCard = ({
 }: RelatedExpertCardProps) => {
   return (
     <Box
-      bg="grey.0"
       borderRadius="28px"
       p={{
         base: '24px',
@@ -34,7 +33,9 @@ export const SolutionReleatedExportCard = ({
         sm: '32px',
         lg: '36px',
       }}
-      boxShadow="0px 20px 48px 0px rgba(1, 45, 181, 0.12)"
+      bg={'background.basic.2'}
+      border={'1px solid'}
+      borderColor={'border.basic.1'}
       w="100%"
       h="100%"
     >

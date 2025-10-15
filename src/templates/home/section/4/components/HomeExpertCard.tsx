@@ -11,9 +11,8 @@ export interface Props {
   onClick?: () => void
 }
 
-export const ExpertCard = React.forwardRef<HTMLDivElement, Props>(
-  function ExpertCard({ expert, onClick }, ref) {
-    console.log(expert)
+export const HomeExpertCard = React.forwardRef<HTMLDivElement, Props>(
+  function HomeExpertCard({ expert, onClick }, ref) {
     return (
       <Box
         ref={ref}

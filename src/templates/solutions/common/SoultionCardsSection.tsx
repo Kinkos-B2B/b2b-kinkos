@@ -22,11 +22,12 @@ interface Props {
 
 export const SoultionCardsSection = ({ title, cards }: Props) => {
   return (
-    <VStack gap={'48px'}>
+    <VStack gap={{ base: '32px', sm: '40px', lg: '48px' }}>
       <Text textStyle={'pre-display-4'} textAlign={'center'}>
         {title}
       </Text>
       <Grid
+        w={'100%'}
         templateColumns={{
           base: '1fr',
           sm: 'repeat(2, 1fr)',

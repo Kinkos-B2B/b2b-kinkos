@@ -1,6 +1,14 @@
 'use client'
 
-import { Box, Button, Container, Grid, Text, VStack } from '@chakra-ui/react'
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  GridItem,
+  Text,
+  VStack,
+} from '@chakra-ui/react'
 
 import { useGetSolutionExpertListQuery } from '@/generated/apis/SolutionApi/SolutionApi.query'
 import { GetSolutionExpertListParamsTypeEnumType } from '@/helper/options'
@@ -33,8 +41,8 @@ export const SolutionReleatedExportSection = ({
   const expertList = experts?.data || []
 
   return (
-    <Container w="100%">
-      <VStack gap={'56px'}>
+    <Container pr={{ base: '0px' }}>
+      <VStack gap={{ base: '40px', sm: '48px', lg: '56px' }}>
         <VStack gap="48px" align="stretch" w="100%">
           <Box w="100%">
             <Text textStyle="pre-display-4" color="grey.10" textAlign="center">
@@ -42,23 +50,23 @@ export const SolutionReleatedExportSection = ({
             </Text>
           </Box>
           <Grid
-            templateColumns={{
-              base: '1fr',
-              sm: 'repeat(2, 1fr)',
-              lg: 'repeat(3, 1fr)',
-            }}
+            overflowX={'auto'}
+            templateColumns={'repeat(3, 1fr)'}
             gap={{
               base: '16px',
               sm: '20px',
             }}
+            pr={{ base: '20px', sm: '40px' }}
             w="100%"
           >
             {expertList.map((expert, index) => (
-              <SolutionReleatedExportCard
-                key={index}
-                solutionExpert={expert}
-                onButtonClick={() => onExpertClick?.()}
-              />
+              <GridItem key={index} minW={'380px'}>
+                <SolutionReleatedExportCard
+                  key={index}
+                  solutionExpert={expert}
+                  onButtonClick={() => onExpertClick?.()}
+                />
+              </GridItem>
             ))}
           </Grid>
         </VStack>

@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { Box, HStack, Text, VStack } from '@chakra-ui/react'
 
 import { Button } from '@/components/ui/button'
+import { ROUTES } from '@/constants/routes'
 import {
   MoreInfoCardCustomerReviewIcon,
   MoreInfoCardExpertIcon,
@@ -29,6 +30,7 @@ const PAGE_LINK_CARD_MAP = {
       '킨코스가 제공하는 솔루션이 궁금한가요?\n원하는 솔루션을 찾아보세요.',
     icon: <MoreInfoCardSolutionIcon />,
     iconBgColor: 'accent.blue1',
+    href: ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING,
   },
   REVIEW: {
     title: '관련 고객후기',
@@ -36,6 +38,7 @@ const PAGE_LINK_CARD_MAP = {
       '실제 작업 사례와 고객의 만족도가 궁금한가요?\n고객후기를 확인해 보세요.',
     icon: <MoreInfoCardCustomerReviewIcon />,
     iconBgColor: 'accent.violet1',
+    href: ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING,
   },
   PROBLEM: {
     title: '관련 고민해결',
@@ -43,6 +46,7 @@ const PAGE_LINK_CARD_MAP = {
       '지금 겪는 고민을 해결하고 싶으신가요?\n고민 해결 방법을 확인해 보세요.',
     icon: <MoreInfoCardProblemSolveIcon />,
     iconBgColor: 'accent.pink1',
+    href: ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING,
   },
   EXPERT: {
     title: '관련 전문가',
@@ -50,6 +54,7 @@ const PAGE_LINK_CARD_MAP = {
       '믿고 맡길 수 있는 전문가가 필요하신가요?\n우리 기업에 맞는 전문가를 만나보세요.',
     icon: <MoreInfoCardExpertIcon />,
     iconBgColor: 'accent.yellow1',
+    href: ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING,
   },
   SYSTEM: {
     title: '관련 시스템',
@@ -57,31 +62,40 @@ const PAGE_LINK_CARD_MAP = {
       '킨코스가 제공하는 시스템이 궁금한가요?\n원하는 시스템을 찾아보세요.',
     icon: <MoreInfoCardSystemIcon />,
     iconBgColor: 'accent.blue1',
+    href: ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING,
   },
 }
 
+export type PageLinkKey = keyof typeof PAGE_LINK_CARD_MAP
+
 export const PageLinkCard = ({
   type,
-  href,
   boxSize = '100px',
 }: {
-  type: keyof typeof PAGE_LINK_CARD_MAP
-  href: string
+  type: PageLinkKey
   boxSize?: string
 }) => {
   const router = useRouter()
-  const { title, description, icon, iconBgColor } = PAGE_LINK_CARD_MAP[type]
+  const { title, description, icon, iconBgColor, href } =
+    PAGE_LINK_CARD_MAP[type]
 
   return (
     <Box
       bg="grey.0"
       borderRadius="28px"
       boxShadow="0px 20px 48px 0px rgba(1, 45, 181, 0.12)"
-      p="36px"
+      p={{ base: '28px 32px 28px 32px', lg: '36px' }}
+      h="100%"
       position="relative"
     >
       <HStack align="end" justify="space-between" h="full">
-        <VStack align="start" gap="24px" flex="1">
+        <VStack
+          align="start"
+          justify="space-between"
+          gap={'24px'}
+          flex="1"
+          h="100%"
+        >
           <VStack align="start" gap="12px">
             <Text textStyle="pre-heading-2" color="grey.9">
               {title}
@@ -90,6 +104,7 @@ export const PageLinkCard = ({
               {description}
             </Text>
           </VStack>
+
           <Button
             size="md"
             variant="outline"

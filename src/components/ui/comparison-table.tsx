@@ -8,6 +8,7 @@ export interface ComparisonTableColumn {
   key: string
   title: string
   width?: string
+  flex?: number
 }
 
 export interface ComparisonTableRow {
@@ -26,35 +27,40 @@ const columns: ComparisonTableColumn[] = [
     key: 'category',
     title: '구분',
     width: '215px',
+    flex: 215,
   },
   {
     key: 'kinkos',
     title: '킨코스',
     width: '115px',
+    flex: 115,
   },
   {
     key: 'competitorA',
     title: '경쟁사 A',
     width: '115px',
+    flex: 115,
   },
   {
     key: 'competitorB',
     title: '경쟁사 B',
     width: '115px',
+    flex: 115,
   },
 ]
 
 export const ComparisonTable = forwardRef<HTMLDivElement, ComparisonTableProps>(
   ({ data, size = 'md', className }, ref) => {
     return (
-      <Box ref={ref} className={className}>
+      <Box ref={ref} className={className} w={'100%'}>
         <Table.Root size={size} variant="outline" showColumnBorder>
           <Table.Header>
             <Table.Row>
               {columns.map((column, index) => (
                 <Table.ColumnHeader
                   key={column.key}
-                  width={column.width}
+                  minWidth={column.width}
+                  flex={column.flex}
                   textStyle={'pre-body-3'}
                   color={'grey.0'}
                   bg={'grey.7'}
@@ -77,8 +83,13 @@ export const ComparisonTable = forwardRef<HTMLDivElement, ComparisonTableProps>(
                 {columns.map((column, colIndex) => (
                   <Table.Cell
                     key={column.key}
-                    width={column.width}
-                    bg={colIndex === 0 || colIndex === 1 ? 'grey.0' : 'grey.1'}
+                    minWidth={column.width}
+                    flex={column.flex}
+                    bg={
+                      colIndex === 0 || colIndex === 1 ?
+                        'grey.0'
+                      : 'whitetrnsparent.5'
+                    }
                     textAlign="center"
                     py="15px"
                     px="20px"

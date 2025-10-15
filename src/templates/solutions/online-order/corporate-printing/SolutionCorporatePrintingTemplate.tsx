@@ -8,6 +8,7 @@ import gsap from 'gsap'
 import { useInView } from 'react-intersection-observer'
 
 import { Button } from '@/components/ui/button'
+import { ROUTES } from '@/constants/routes'
 import { GetSolutionExpertListParamsTypeEnumType } from '@/helper/options'
 
 import { SolutionFeatureSection } from '../../common/SolutionFeatureSection'
@@ -21,7 +22,7 @@ const mockData = {
   title: (
     <VStack textAlign={'center'} textStyle={'pre-display-3'} gap={'0px'}>
       <Text color={'primary.4'}>기업 전용 인쇄몰</Text>
-      <Text>아직도 복잡하게 주문하세요?</Text>
+      <Text whiteSpace="nowrap">아직도 복잡하게 주문하세요?</Text>
     </VStack>
   ),
   buttonContent: '지금 전문가 연결하기',
@@ -79,8 +80,11 @@ export const SolutionCorporatePrintingTemplate = () => {
       <Box w={'100%'}>
         <SolutionHeroSection introBlockData={mockData} />
       </Box>
-
-      <Box py={'160px'} ref={ref}>
+      <Box
+        py={{ base: '100px', sm: '140px', lg: '160px' }}
+        ref={ref}
+        w={'100%'}
+      >
         <Container>
           <SoultionCardsSection {...cardsMockData} />
         </Container>
@@ -90,7 +94,10 @@ export const SolutionCorporatePrintingTemplate = () => {
         <SolutionFeatureSection />
       </Box>
 
-      <Box py={'160px 120px'} w={'100%'}>
+      <Box
+        py={{ base: '100px 80px', sm: '140px 100px', lg: '160px 120px' }}
+        w={'100%'}
+      >
         <SolutionReleatedExportSection
           solutionId={
             GetSolutionExpertListParamsTypeEnumType.MARKET_ANALYSIS_BASED
@@ -99,9 +106,8 @@ export const SolutionCorporatePrintingTemplate = () => {
       </Box>
 
       <Box py="80px" w={'100%'} bg="primary.1">
-        <SolutionMoreInfoSection />
+        <SolutionMoreInfoSection linkCard={['SOLUTION', 'REVIEW', 'PROBLEM']} />
       </Box>
-
       <Box
         position={'fixed'}
         bottom={'20px'}

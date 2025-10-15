@@ -2,7 +2,14 @@
 
 import { ReactElement, useEffect, useRef } from 'react'
 
-import { Center, Image, Text } from '@chakra-ui/react'
+import {
+  Center,
+  Container,
+  Image,
+  Text,
+  useBreakpoint,
+  useBreakpointValue,
+} from '@chakra-ui/react'
 import { Box, VStack } from '@chakra-ui/react'
 import { useGSAP } from '@gsap/react'
 
@@ -45,6 +52,12 @@ export const SolutionHeroSection = ({
 }: {
   introBlockData: Props
 }) => {
+  const startPointY = useBreakpointValue({
+    base: 64 + 80,
+    sm: 80 + 80,
+    lg: 160 + 90,
+  })
+
   const sectionRef = useRef<HTMLDivElement>(null)
   const imageRef = useRef<HTMLImageElement>(null) // 절대 위치 이미지 박스
   const imageBoxRef = useRef<HTMLDivElement>(null) // 절대 위치 이미지 박스
@@ -69,7 +82,7 @@ export const SolutionHeroSection = ({
     // 섹션 pin 애니메이션
     ScrollTrigger.create({
       trigger: introBlockRef.current,
-      start: 'top top+=240px',
+      start: `top top+=${startPointY}px`,
       end: '+=100%',
       pin: true,
       invalidateOnRefresh: true,
@@ -95,6 +108,7 @@ export const SolutionHeroSection = ({
         start: 'top top',
         end: '+=500', // 총 500px 구간만 진행(핀은 위에서 더 길게 유지 가능)
         scrub: true,
+        invalidateOnRefresh: true,
       },
     })
 
@@ -104,12 +118,14 @@ export const SolutionHeroSection = ({
       height: '100dvh',
       borderRadius: 0,
       duration: 3, // 비율값(3:1:1) → 300px에 해당
+      invalidateOnRefresh: true,
     })
 
     // 300~400px: dimOverlay 0→1
     tl.to(dimOverlayRef.current, {
       opacity: 1,
       duration: 1, // 100px 구간
+      invalidateOnRefresh: true,
     })
 
     // 400~500px: dimOverlayText 등장
@@ -117,13 +133,14 @@ export const SolutionHeroSection = ({
       y: 0,
       opacity: 1,
       duration: 1, // 100px 구간
+      invalidateOnRefresh: true,
     })
   })
 
   return (
     <VStack
       w="100%"
-      pt={'150px'}
+      pt={{ base: '64px', sm: '80px', lg: '160px' }}
       overflow={'hidden'}
       gap={'0px'}
       h={'300dvh'}
@@ -176,12 +193,15 @@ export const SolutionHeroSection = ({
             </Text>
           </VStack>
         </Center>
-
         <Image
           ref={imageRef}
           src={'/images/solutions/solutions-hero-section.jpg'}
           alt="solution hero section"
-          w={'1280px'}
+          w={{
+            base: 'calc(100vw - 40px)',
+            sm: 'calc(100vw - 80px)',
+            lg: '1280px',
+          }}
           h={'calc(100dvh - 170px)'}
           borderRadius={'28px'}
           objectFit="cover"

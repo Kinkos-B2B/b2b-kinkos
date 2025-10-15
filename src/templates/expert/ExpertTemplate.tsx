@@ -7,7 +7,7 @@ import { useGetExpertMainQuery } from '@/generated/apis/ExpertApi/ExpertApi.quer
 
 import { ExpertIntroBanner } from './components/ExpertIntroBanner'
 import { ExpertListContainer } from './components/ExpertListContainer'
-import { ExportReviewList } from './components/ExportReviewList'
+import { ExpertReviewList } from './components/ExpertReviewList'
 
 export const ExpertTemplate = () => {
   const { data } = useGetExpertMainQuery()
@@ -18,7 +18,7 @@ export const ExpertTemplate = () => {
         <ExpertIntroBanner />
       </Box>
       <Box pt={'56px'} w={'100%'}>
-        <ExportReviewList reviews={data?.data?.customerReview ?? []} />
+        <ExpertReviewList reviews={data?.data?.customerReview ?? []} />
       </Box>
 
       <Box pt={{ base: '56px', sm: '80px', lg: '120px' }} w={'100%'}>

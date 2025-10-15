@@ -7,44 +7,8 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { useGetHomeExpertQuery } from '@/generated/apis/HomeApi/HomeApi.query'
 
-import { ExpertCard } from './components/ExportCard'
+import { HomeExpertCard } from './components/HomeExpertCard'
 import './vertical-marquee.css'
-
-// 전문가 데이터
-const expertData = [
-  {
-    id: 1,
-    imageUrl: '/images/home/expert/expert-1.png',
-    title: '프란차이즈 전문가 그룹',
-    description:
-      '간략한 소개가 들어갑니다. 텍스트는 띄어쓰기 포함 45자로 제한됩니다.',
-    tags: ['VOD', 'POSM(POP)', '판촉물', '홍보물 제작', '홍보물 제작'],
-  },
-  {
-    id: 2,
-    imageUrl: '/images/home/expert/expert-2.png',
-    title: '프란차이즈 전문가 그룹',
-    description:
-      '간략한 소개가 들어갑니다. 텍스트는 띄어쓰기 포함 45자로 제한됩니다.',
-    tags: ['VOD', 'POSM(POP)', '판촉물', '홍보물 제작', '홍보물 제작'],
-  },
-  {
-    id: 3,
-    imageUrl: '/images/home/expert/expert-3.png',
-    title: '프란차이즈 전문가 그룹',
-    description:
-      '간략한 소개가 들어갑니다. 텍스트는 띄어쓰기 포함 45자로 제한됩니다.',
-    tags: ['VOD', 'POSM(POP)', '판촉물', '홍보물 제작', '홍보물 제작'],
-  },
-  {
-    id: 4,
-    imageUrl: '/images/home/expert/expert-4.png',
-    title: '프란차이즈 전문가 그룹',
-    description:
-      '간략한 소개가 들어갑니다. 텍스트는 띄어쓰기 포함 45자로 제한됩니다.',
-    tags: ['VOD', 'POSM(POP)', '판촉물', '홍보물 제작', '홍보물 제작'],
-  },
-]
 
 export const HomeIntroduceExpertSection = () => {
   const { data } = useGetHomeExpertQuery()
@@ -112,14 +76,14 @@ export const HomeIntroduceExpertSection = () => {
             <Marquee direction="up" style={{ width: 'fit-content' }}>
               <VStack gap="24px" mb={'24px'}>
                 {experts.map((expert, index) => (
-                  <ExpertCard key={index} expert={expert} />
+                  <HomeExpertCard key={index} expert={expert} />
                 ))}
               </VStack>
             </Marquee>
             <Marquee direction="up" reverse>
               <VStack gap="24px" mb={'24px'}>
                 {experts.map((expert, index) => (
-                  <ExpertCard key={index} expert={expert} />
+                  <HomeExpertCard key={index} expert={expert} />
                 ))}
               </VStack>
             </Marquee>

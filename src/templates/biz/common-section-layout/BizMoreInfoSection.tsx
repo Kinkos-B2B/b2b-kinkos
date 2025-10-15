@@ -43,13 +43,10 @@ export const BizMoreInfoSection = React.forwardRef<
               templateRows={'1fr 1fr'}
               gap="24px"
             >
-              <PageLinkCard
-                type="SOLUTION"
-                href={ROUTES.SOLUTIONS.DESIGN.BRANDING}
-              />
-              <PageLinkCard type="REVIEW" href={ROUTES.CUSTOMER_REVIEW} />
-              <PageLinkCard type="PROBLEM" href={ROUTES.PROBLEM} />
-              <PageLinkCard type="EXPERT" href={ROUTES.EXPERT} />
+              <PageLinkCard type="SOLUTION" />
+              <PageLinkCard type="REVIEW" />
+              <PageLinkCard type="PROBLEM" />
+              <PageLinkCard type="EXPERT" />
             </Grid>
           </VStack>
         </VStack>
