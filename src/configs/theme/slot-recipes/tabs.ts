@@ -250,7 +250,7 @@ export const tabsSlotRecipe = defineSlotRecipe({
             color: 'grey.0',
           },
           _hover: {
-            bg: 'greytransparent.2',
+            bg: 'greytransparent.1',
             color: 'grey.7',
           },
         },

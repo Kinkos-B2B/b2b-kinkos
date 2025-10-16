@@ -62,19 +62,19 @@ export function CompanyMarquee() {
     <chakra.div
       display="flex"
       flexDirection="column"
-      gap="56px"
+      gap={{ base: '48px', sm: '56px' }}
       alignItems="center"
       justifyContent="flex-start"
-      py="32px"
+      py={{ base: '20px', sm: '28px', lg: '32px' }}
       w="100%"
     >
       <FastMarquee direction="right" style={{ width: '100%', height: '60px' }}>
         <chakra.div
           display="flex"
-          gap="96px"
+          gap={{ sm: '96px', base: '60px' }}
           alignItems="center"
           justifyContent="flex-start"
-          mr="96px"
+          mr={{ sm: '96px', base: '60px' }}
         >
           {companyImages.map((image, index) => (
             <chakra.div

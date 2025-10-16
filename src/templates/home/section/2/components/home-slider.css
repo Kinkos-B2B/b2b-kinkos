@@ -1,19 +1,24 @@
-.center .slick-slide {
+/* Embla Carousel 스타일 */
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.embla__slide .slide {
   opacity: 0.56;
-  transform: scale(0.8);
+  transform: scale(0.85);
   transition: all 300ms ease;
 }
-.center .slick-center {
+
+.embla__slide .slide.active {
   opacity: 1;
   transform: scale(1);
-}
-
-.slick-list {
-  overflow: visible;
-}
-
-.slick-slider {
-  .slick-arrow {
-    display: none !important;
-  }
 }

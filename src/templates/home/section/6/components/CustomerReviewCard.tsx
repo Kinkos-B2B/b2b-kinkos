@@ -21,7 +21,7 @@ export function CustomerReviewCard({
     <chakra.div
       bg="background.basic.2"
       borderRadius="28px"
-      p="36px"
+      p={{ lg: '36px', base: '24px 36px' }}
       display="flex"
       flexDirection="column"
       gap="20px"

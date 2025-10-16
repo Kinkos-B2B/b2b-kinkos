@@ -79,11 +79,9 @@ export const HomeMoreQuestionSection = () => {
       w={'100%'}
       ref={ref}
       bg="primary.1"
-      css={{
-        py: '160px',
-      }}
+      py={{ base: '100px', sm: '140px', lg: '160px' }}
     >
-      <Container maxW={'1280px'}>
+      <Container>
         <VStack gap="48px" align="stretch">
           {/* 헤더 섹션 */}
           <VStack gap="16px" align="center">
@@ -122,10 +120,13 @@ export const HomeMoreQuestionSection = () => {
                 maxW={{ base: '100%', lg: '400px' }}
                 bg="grey.0"
                 borderRadius="28px"
-                p={{ base: '24px', lg: '36px' }}
+                p={{ base: '24px', sm: '36px' }}
                 pt={{ base: '24px', lg: '36px' }}
-                pb={{ base: '32px', lg: '48px' }}
+                pb={{ base: '24px', lg: '48px' }}
                 position="relative"
+                display={'flex'}
+                flexDir={{ base: 'column', sm: 'row', lg: 'column' }}
+                gap={{ base: '20px', sm: '30px' }}
                 boxShadow="0px 20px 48px 0px rgba(1, 63, 252, 0.12)"
                 _hover={{
                   transform: 'translateY(-4px)',
@@ -134,12 +135,11 @@ export const HomeMoreQuestionSection = () => {
               >
                 {/* 아이콘 영역 */}
                 <Box
-                  w={{ base: '80px', lg: '100px' }}
-                  h={{ base: '80px', lg: '100px' }}
+                  w={{ base: '80px', sm: '100px' }}
+                  h={{ base: '80px', sm: '100px' }}
                   bg={card.bgColor}
                   borderRadius="20px"
                   position="relative"
-                  mb={{ base: '20px', lg: '30px' }}
                   overflow="hidden"
                   display="flex"
                   alignItems="center"
@@ -174,23 +174,18 @@ export const HomeMoreQuestionSection = () => {
                   </Text>
                 </VStack>
 
-                {/* 화살표 버튼 */}
                 <Box
                   position="absolute"
                   top={{ base: '16px', lg: '20px' }}
                   right={{ base: '16px', lg: '20px' }}
-                  w={{ base: '40px', lg: '48px' }}
-                  h={{ base: '40px', lg: '48px' }}
+                  w={'48px'}
+                  h={'48px'}
                   bg="primary.4"
                   borderRadius="full"
                   display="flex"
                   alignItems="center"
                   justifyContent="center"
                   cursor="pointer"
-                  // _hover={{
-                  //   bg: 'primary.5',
-                  //   transition: 'background-color 0.2s ease-in-out',
-                  // }}
                 >
                   <CaretRightIcon size={24} color="white" />
                 </Box>

@@ -1,3 +1,5 @@
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+
 import {
   Box,
   Button,
@@ -13,42 +15,56 @@ import {
 import { MagnifyingGlassIcon } from '@phosphor-icons/react/dist/ssr'
 
 import { InputGroup } from '@/components/ui/input-group'
+import {
+  useGetRandomSearchKeywordQuery,
+  useGetSearchKeywordAutoCompleteQuery,
+} from '@/generated/apis/HomeApi/HomeApi.query'
 
 const imgChat = '/images/home/search/chat.png'
 
 export const HomeSearchSection = () => {
-  return (
-    <Container>
-      <VStack gap={'80px'} w={'100%'}>
-        <VStack gap={'48px'} position={'relative'}>
-          <Box position={'absolute'} left={'187px'} top={'-40px'}>
-            <Image src={'/images/home/search/arrow2.png'} w={'70px'} />
-          </Box>
-          <Box position={'absolute'} right={'200px'} top={'32px'}>
-            <Image src={'/images/home/search/arrow1.png'} w={'70px'} />
-          </Box>
+  const { data: randomSearchKeyword } = useGetRandomSearchKeywordQuery()
 
-          <Text textStyle="pre-display-2" color="grey.10" textAlign="center">
-            B2B 기업 인쇄,{'\n'}딱 맞는 솔루션과 전문가를 찾아보세요!
-          </Text>
-          <VStack w={'100%'} gap={'20px'}>
-            <SearchInput />
-            <HStack gap={'10px'}>
-              <SerachKeyword title="행사∙이벤트 지원" />
-              <SerachKeyword title="행사∙이벤트 지원" />
-              <SerachKeyword title="행사∙이벤트 지원" />
-              <SerachKeyword title="행사∙이벤트 지원" />
-              <SerachKeyword title="행사∙이벤트 지원" />
-              <SerachKeyword title="행사∙이벤트 지원" />
-            </HStack>
-          </VStack>
-        </VStack>
-        <VStack></VStack>
-        <Box w={'100%'}>
-          <SearchBanner />
+  return (
+    <VStack gap={{ base: '56px', sm: '80px' }} w={'100%'}>
+      <VStack gap={{ base: '40px', sm: '48px' }} position={'relative'}>
+        <Box
+          position={'absolute'}
+          left={{ base: '70px', sm: '17%', lg: '20%' }}
+          top={{ base: '-50px', sm: '-45px', lg: '-40px' }}
+        >
+          <Image src={'/images/home/search/arrow2.png'} w={'70px'} />
         </Box>
+        <Box
+          position={'absolute'}
+          right={{ base: '10px', sm: '19%', lg: '21%' }}
+          top={{ base: '93px', sm: '15px', lg: '32px' }}
+        >
+          <Image src={'/images/home/search/arrow1.png'} w={'70px'} />
+        </Box>
+
+        <Text textStyle="pre-display-2" color="grey.10" textAlign="center">
+          B2B 기업 인쇄,{'\n'}딱 맞는 솔루션과 전문가를 찾아보세요!
+        </Text>
+        <VStack w={'100%'} gap={'20px'}>
+          <SearchInput />
+          <HStack
+            gap={'10px'}
+            flexWrap={'wrap'}
+            alignItems={'center'}
+            justifyContent={'center'}
+          >
+            {randomSearchKeyword?.data?.map((keyword) => (
+              <SerachKeyword title={keyword.keyword} key={keyword.keyword} />
+            ))}
+          </HStack>
+        </VStack>
       </VStack>
-    </Container>
+      <VStack></VStack>
+      <Box w={'100%'}>
+        <SearchBanner />
+      </Box>
+    </VStack>
   )
 }
 
@@ -70,72 +86,253 @@ const SerachKeyword = ({ title }: { title: string }) => {
         bg: 'grey.1',
       }}
     >
-      <Text textStyle={'pre-body-5'}>{title}</Text>
+      <Text textStyle={'pre-body-5'} whiteSpace={'nowrap'}>
+        {title}
+      </Text>
     </Box>
   )
 }
 
 const SearchInput = () => {
+  const [searchValue, setSearchValue] = useState('')
+  const [debouncedValue, setDebouncedValue] = useState('')
+  const [isOpen, setIsOpen] = useState(false)
+  const [selectedIndex, setSelectedIndex] = useState(-1)
+  const inputRef = useRef<HTMLInputElement>(null)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // 디바운싱 로직
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedValue(searchValue)
+    }, 300) // 300ms 디바운스
+
+    return () => clearTimeout(timer)
+  }, [searchValue])
+
+  const { data: autoCompleteData, isLoading } =
+    useGetSearchKeywordAutoCompleteQuery({
+      variables: {
+        query: {
+          keyword: debouncedValue,
+        },
+      },
+      options: {
+        enabled: debouncedValue.length > 0,
+      },
+    })
+
+  const autoCompleteOptions = autoCompleteData?.data || []
+
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value
+      setSearchValue(value)
+      setIsOpen(value.length > 0)
+      setSelectedIndex(-1)
+    },
+    [],
+  )
+
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLInputElement>) => {
+      if (!isOpen || autoCompleteOptions.length === 0) return
+
+      switch (e.key) {
+        case 'ArrowDown':
+          e.preventDefault()
+          setSelectedIndex((prev) =>
+            prev < autoCompleteOptions.length - 1 ? prev + 1 : 0,
+          )
+          break
+        case 'ArrowUp':
+          e.preventDefault()
+          setSelectedIndex((prev) =>
+            prev > 0 ? prev - 1 : autoCompleteOptions.length - 1,
+          )
+          break
+        case 'Enter':
+          e.preventDefault()
+          if (
+            selectedIndex >= 0 &&
+            selectedIndex < autoCompleteOptions.length
+          ) {
+            const selectedOption = autoCompleteOptions[selectedIndex]
+            setSearchValue(selectedOption.keyword)
+            setIsOpen(false)
+            setSelectedIndex(-1)
+          }
+          break
+        case 'Escape':
+          setIsOpen(false)
+          setSelectedIndex(-1)
+          inputRef.current?.blur()
+          break
+      }
+    },
+    [isOpen, autoCompleteOptions, selectedIndex],
+  )
+
+  const handleOptionClick = useCallback((keyword: string) => {
+    setSearchValue(keyword)
+    setIsOpen(false)
+    setSelectedIndex(-1)
+    inputRef.current?.focus()
+  }, [])
+
+  const handleInputFocus = useCallback(() => {
+    if (searchValue.length > 0) {
+      setIsOpen(true)
+    }
+  }, [searchValue])
+
+  const handleInputBlur = useCallback((e: React.FocusEvent) => {
+    // 드롭다운을 클릭하는 경우에는 닫지 않음
+    if (dropdownRef.current?.contains(e.relatedTarget as Node)) {
+      return
+    }
+    setIsOpen(false)
+    setSelectedIndex(-1)
+  }, [])
+
   return (
-    <Box
-      position="relative"
-      w="100%"
-      borderRadius="9999px"
-      border="1px solid"
-      borderColor="grey.900"
-      transition="all 0.2s"
-    >
-      <InputGroup
+    <Box position="relative" w="100%">
+      <Box
+        position="relative"
         w="100%"
-        endElement={
-          <Button
-            size="sm"
-            bg="grey.900"
-            color="white"
-            borderRadius="9999px"
-            w="40px"
-            h="40px"
-            p="0"
-            minW="40px"
-            _hover={{
-              bg: 'grey.800',
-            }}
-            _active={{
-              bg: 'grey.700',
-            }}
-            aria-label="검색"
-          >
-            <MagnifyingGlassIcon />
-          </Button>
-        }
+        borderRadius="9999px"
+        border="1px solid"
+        borderColor="grey.3"
+        transition="all 0.2s"
       >
-        <Input
-          placeholder="필요한 서비스나 상황을 입력해보세요"
-          border="none"
-          borderRadius="9999px"
-          px="20px"
-          h="60px"
-          w={'100%'}
-          py="16px"
-          fontSize="16px"
-          lineHeight="1.6"
-          letterSpacing="-0.32px"
-          color="grey.900"
-          _placeholder={{
-            color: 'grey.400',
-            fontSize: '16px',
-            lineHeight: '1.6',
-            letterSpacing: '-0.32px',
-          }}
-          _focus={{
-            boxShadow: 'none',
-            border: 'none',
-          }}
-          _hover={{
-            border: 'none',
-          }}
-        />
-      </InputGroup>
+        <InputGroup
+          w="100%"
+          endElement={
+            <Button
+              size="sm"
+              bg="grey.900"
+              color="white"
+              borderRadius="9999px"
+              w="40px"
+              h="40px"
+              p="0"
+              minW="40px"
+              _hover={{
+                bg: 'grey.800',
+              }}
+              _active={{
+                bg: 'grey.700',
+              }}
+              aria-label="검색"
+            >
+              <MagnifyingGlassIcon />
+            </Button>
+          }
+        >
+          <Input
+            ref={inputRef}
+            value={searchValue}
+            onChange={handleInputChange}
+            onKeyDown={handleKeyDown}
+            onFocus={handleInputFocus}
+            onBlur={handleInputBlur}
+            placeholder="필요한 서비스나 상황을 입력해보세요"
+            border="none"
+            borderRadius="9999px"
+            px="20px"
+            h="60px"
+            w={'100%'}
+            focusRingColor={'grey.10'}
+            py="16px"
+            fontSize="16px"
+            lineHeight="1.6"
+            letterSpacing="-0.32px"
+            color="grey.900"
+            _placeholder={{
+              color: 'grey.400',
+              fontSize: '16px',
+              lineHeight: '1.6',
+              letterSpacing: '-0.32px',
+            }}
+            _focus={{
+              boxShadow: 'none',
+              border: 'none',
+            }}
+            _hover={{
+              border: 'none',
+            }}
+            aria-expanded={isOpen}
+            aria-haspopup="listbox"
+            role="combobox"
+            aria-autocomplete="list"
+          />
+        </InputGroup>
+      </Box>
+
+      {/* 자동완성 드롭다운 */}
+      {isOpen && (
+        <Box
+          ref={dropdownRef}
+          position="absolute"
+          top="100%"
+          left="0"
+          right="0"
+          zIndex={1000}
+          mt="4px"
+          bg="white"
+          border="1px solid"
+          borderColor="grey.2"
+          borderRadius="10px"
+          boxShadow="0 4px 12px rgba(0, 0, 0, 0.1)"
+          maxH="200px"
+          overflowY="auto"
+          role="listbox"
+          aria-label="검색 자동완성 옵션"
+        >
+          {isLoading ?
+            <Box p="12px" textAlign="center" color="grey.6">
+              <Text fontSize="16px">검색 중...</Text>
+            </Box>
+          : autoCompleteOptions.length > 0 ?
+            <VStack gap="0" align="stretch">
+              {autoCompleteOptions.map((option, index) => (
+                <Box
+                  key={option.keyword}
+                  p="12px"
+                  cursor="pointer"
+                  bg={selectedIndex === index ? 'grey.1' : 'transparent'}
+                  _hover={{
+                    bg: 'grey.1',
+                  }}
+                  onClick={() => handleOptionClick(option.keyword)}
+                  role="option"
+                  aria-selected={selectedIndex === index}
+                  data-node-id="15664:25449"
+                >
+                  <HStack gap="8px" align="center">
+                    <Box w="18px" h="18px" flexShrink={0}>
+                      <MagnifyingGlassIcon size={18} color="#6a6d71" />
+                    </Box>
+                    <Text
+                      fontSize="16px"
+                      lineHeight="1.6"
+                      letterSpacing="-0.32px"
+                      color="grey.8"
+                      data-node-id="15664:25450"
+                    >
+                      {option.keyword}
+                    </Text>
+                  </HStack>
+                </Box>
+              ))}
+            </VStack>
+          : searchValue.length > 0 ?
+            <Box p="12px" textAlign="center" color="grey.6">
+              <Text fontSize="16px">검색 결과가 없습니다</Text>
+            </Box>
+          : null}
+        </Box>
+      )}
     </Box>
   )
 }
@@ -145,8 +342,8 @@ const SearchBanner = () => {
     <Flex
       bgGradient="linear-gradient(90deg, #013FFC 0%, #835CF7 80%, #AA2DFE 100%)"
       borderRadius="28px"
-      px={{ base: '24px', lg: '64px' }}
-      py={{ base: '24px', lg: '40px' }}
+      px={{ sm: '40px', lg: '64px' }}
+      py={{ base: '26px', sm: '40px', lg: '40px' }}
       position="relative"
       overflow="hidden"
       data-node-id="14279:2568"
@@ -155,15 +352,15 @@ const SearchBanner = () => {
     >
       <HStack
         gap={{ base: '12px', lg: '18px' }}
-        align="end"
+        align={{ base: 'center', sm: 'end' }}
         flex="1"
-        direction={{ base: 'column', lg: 'row' }}
+        flexDirection={{ base: 'column', sm: 'row' }}
       >
         <Text
           textStyle="pre-heading-2"
           color="white"
           whiteSpace="pre"
-          textAlign={{ base: 'center', lg: 'left' }}
+          textAlign={{ base: 'center', sm: 'left' }}
         >
           고민 중이세요?{'\n'}바로 상담해 드릴게요.
         </Text>
@@ -174,13 +371,13 @@ const SearchBanner = () => {
       </HStack>
       <Box
         position="absolute"
-        right={{ base: '20px', lg: '60px' }}
+        right={{ base: '30px', lg: '60px' }}
         top="50%"
         transform="translateY(-50%)"
-        w={{ base: '60px', lg: '100px' }}
-        h={{ base: '60px', lg: '100px' }}
+        w={'100px'}
+        h={'100px'}
         data-node-id="14279:2572"
-        display={{ base: 'none', lg: 'block' }}
+        display={{ base: 'none', sm: 'block' }}
         aria-hidden="true"
       >
         <Image

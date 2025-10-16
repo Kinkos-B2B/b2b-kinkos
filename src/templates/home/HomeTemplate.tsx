@@ -14,21 +14,13 @@ export const HomeTemplate = () => {
   return (
     <VStack w={'100%'} gap={'0px'}>
       <Container
-        css={{
-          pt: '120px',
-          pb: '160px',
-        }}
+        py={{ base: '48px 80px', sm: '80px 120px ', lg: '120px 160px' }}
       >
         <HomeSearchSection />
       </Container>
+
       <HomeIntroduceSolution />
-      <Container
-        css={{
-          py: '160px',
-        }}
-      >
-        <HomeSolveProblemSection />
-      </Container>
+      <HomeSolveProblemSection />
       <HomeIntroduceExpertSection />
       <HomeIntroduceBizSection />
       <HomeCustomerReviewSection />

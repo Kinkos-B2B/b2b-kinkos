@@ -4,7 +4,15 @@ import { useEffect, useRef } from 'react'
 
 import Image from 'next/image'
 
-import { Box, HStack, Text, VStack } from '@chakra-ui/react'
+import {
+  Box,
+  Grid,
+  GridItem,
+  HStack,
+  Text,
+  VStack,
+  useMediaQuery,
+} from '@chakra-ui/react'
 
 import { gsap } from 'gsap'
 import { useInView } from 'react-intersection-observer'
@@ -26,6 +34,7 @@ interface BizCardProps {
   imageSize: number
   finalPosition: string
   delay: number
+  isInView: boolean
 }
 
 const BizCard = ({
@@ -36,7 +45,7 @@ const BizCard = ({
   imageSize,
   finalPosition,
   isInView,
-}: BizCardProps & { isInView: boolean }) => {
+}: BizCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -120,6 +129,10 @@ const BizCard = ({
 }
 
 export const HomeIntroduceBizSection = () => {
+  const isNoneDesktop = useMediaQuery(['(max-width: 1280px)'], {
+    ssr: false,
+  })[0]
+
   const { ref, inView } = useInView({
     threshold: 0.3, // 30% 보일 때 트리거
     triggerOnce: true, // 한 번만 실행
@@ -172,20 +185,22 @@ export const HomeIntroduceBizSection = () => {
       ref={ref}
       position="relative"
       w="100%"
-      h="909px"
-      py="160px"
-      gap={'40px'}
-      alignItems="center"
-      justifyContent="center"
+      minH={'100vh'}
+      py={{ base: '100px', sm: '140px', lg: '160px' }}
+      gap={{ base: '32px', sm: '40px' }}
+      display="flex"
+      flexDirection="column"
       bg="primary.2" // #cad7ff
       overflow="hidden"
     >
-      {/* 배경 원형 요소 */}
       <Box
         position="absolute"
-        top="0"
+        h={'1519px'}
+        w={'1518px'}
+        borderRadius="full"
+        bottom="-709px"
         left="50%"
-        transform="translateX(-50%)"
+        transform="translateX(-50%) translateY(0%)"
         backgroundImage={`url('${imgEllipse192}')`}
         backgroundSize="cover"
         backgroundPosition="center"
@@ -207,26 +222,96 @@ export const HomeIntroduceBizSection = () => {
         </Text>
       </VStack>
 
-      <HStack
-        justify="center"
-        gap="24px"
-        bg={'red'}
-        w={'100%'}
-        position={'relative'}
-      >
-        {cards.map((card, index) => (
-          <BizCard
-            key={index}
-            title={card.title}
-            description={card.description}
-            image={card.image}
-            rotation={card.rotation}
-            finalPosition={card.finalPosition}
-            delay={card.delay}
-            isInView={inView}
-            imageSize={card.imageSize}
-          />
-        ))}
+      <HStack justify="center" gap="24px" w={'100%'} position={'relative'}>
+        {isNoneDesktop ?
+          <Grid
+            templateColumns={{ base: '1fr', sm: 'repeat(2, 1fr)' }}
+            gap="20px"
+            w="100%"
+            px={{ base: '20px', sm: '40px' }}
+          >
+            {cards.map((card, index) => {
+              return (
+                <GridItem key={index}>
+                  <Box
+                    backdropFilter="blur(35px)"
+                    borderRadius="32px"
+                    p="20px"
+                    pt="16px"
+                    pb="48px"
+                    position="relative"
+                    bg="linear-gradient(152deg, rgba(255, 255, 255, 0.85) 17.51%, rgba(255, 255, 255, 0.60) 89.55%)"
+                    boxShadow="0px 20px 48px 0px rgba(1,45,181,0.12)"
+                    _before={{
+                      content: '""',
+                      position: 'absolute',
+                      inset: 0,
+                      borderRadius: '32px',
+                      border: '1.5px solid rgba(255,255,255,0.9)',
+                      pointerEvents: 'none',
+                    }}
+                  >
+                    <Box
+                      borderRadius="16px"
+                      position="relative"
+                      mb="12px"
+                      h={'180px'}
+                      overflow="hidden"
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      {/* 메인 이미지 */}
+                      <Image
+                        src={card.image}
+                        alt={card.title}
+                        width={card.imageSize}
+                        height={card.imageSize}
+                      />
+                    </Box>
+
+                    {/* 텍스트 영역 */}
+                    <VStack
+                      gap="10px"
+                      align="stretch"
+                      h="116px"
+                      justify="center"
+                    >
+                      <Text
+                        textStyle="pre-heading-3"
+                        color="grey.10"
+                        textAlign="center"
+                      >
+                        {card.title}
+                      </Text>
+                      <Text
+                        textStyle="pre-body-4"
+                        color="grey.10"
+                        textAlign="center"
+                        h="52px"
+                      >
+                        {card.description}
+                      </Text>
+                    </VStack>
+                  </Box>
+                </GridItem>
+              )
+            })}
+          </Grid>
+        : cards.map((card, index) => (
+            <BizCard
+              key={index}
+              title={card.title}
+              description={card.description}
+              image={card.image}
+              rotation={card.rotation}
+              finalPosition={card.finalPosition}
+              delay={card.delay}
+              isInView={inView}
+              imageSize={card.imageSize}
+            />
+          ))
+        }
       </HStack>
     </Box>
   )

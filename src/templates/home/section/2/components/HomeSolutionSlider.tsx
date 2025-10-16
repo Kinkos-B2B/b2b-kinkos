@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useMemo, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 
 import {
   Box,
@@ -14,9 +14,7 @@ import {
 } from '@chakra-ui/react'
 import { CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react/dist/ssr'
 
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick-theme.css'
-import 'slick-carousel/slick/slick.css'
+import useEmblaCarousel from 'embla-carousel-react'
 
 import { Badge } from '@/components/ui/badge'
 
@@ -32,37 +30,71 @@ interface SolutionSliderProps {
 export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
   slides,
 }) => {
-  const sliderRef = useRef<Slider>(null)
+  const ref = useRef<HTMLDivElement>(null)
 
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const tabButtonsRef = useRef<HTMLButtonElement[]>([])
 
-  const handleSlideChange = (index: number) => {
-    setCurrentSlide(index)
-  }
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: 'center',
+    containScroll: 'trimSnaps',
+  })
 
-  const goToPrev = () => {
-    sliderRef.current?.slickPrev()
-  }
+  const [selectedIndex, setSelectedIndex] = useState(0)
 
-  const goToNext = () => {
-    sliderRef.current?.slickNext()
-  }
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev()
+  }, [emblaApi])
 
-  const sliderSettings = {
-    centerMode: true,
-    focusOnSelect: true,
-    infinite: true,
-    slidesToShow: 1,
-    centerPadding: '460px',
-    speed: 500,
-  }
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext()
+  }, [emblaApi])
+
+  const scrollTo = useCallback(
+    (index: number) => {
+      if (emblaApi) emblaApi.scrollTo(index)
+    },
+    [emblaApi],
+  )
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return
+    setSelectedIndex(emblaApi.selectedScrollSnap())
+  }, [emblaApi])
+
+  useEffect(() => {
+    if (!emblaApi) return
+
+    onSelect()
+    emblaApi.on('select', onSelect)
+    emblaApi.on('reInit', onSelect)
+
+    return () => {
+      emblaApi.off('select', onSelect)
+      emblaApi.off('reInit', onSelect)
+    }
+  }, [emblaApi, onSelect])
+
+  useEffect(() => {
+    if (tabButtonsRef.current[selectedIndex]) {
+      tabButtonsRef.current[selectedIndex].scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'start',
+      })
+    }
+  }, [selectedIndex])
 
   return (
     <VStack gap="24px" align="stretch" width="100%" mx="auto" maxW="1280px">
       {/* 헤더 섹션 */}
       <VStack gap="16px" align="stretch">
         <Box>
-          <Badge size="xl" colorPalette="secondary" variant="subtle">
+          <Badge
+            size={{ base: 'lg', sm: 'xl', lg: 'xl' }}
+            colorPalette="secondary"
+            variant="subtle"
+          >
             솔루션
           </Badge>
         </Box>
@@ -84,7 +116,7 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
               variant={'capsule'}
               size={'md'}
               bg={'grey.10'}
-              onClick={goToPrev}
+              onClick={scrollPrev}
             >
               <CaretLeftIcon />
             </IconButton>
@@ -92,7 +124,7 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
               variant={'capsule'}
               size={'md'}
               bg={'grey.10'}
-              onClick={goToNext}
+              onClick={scrollNext}
             >
               <CaretRightIcon />
             </IconButton>
@@ -100,19 +132,52 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
         </Flex>
       </VStack>
 
-      <VStack gap={'64px'}>
+      <VStack gap={{ lg: '64px', sm: '48px', base: '40px' }}>
         <Box position="relative" width="100%">
-          <HStack gap="8px" overflowX="auto" pb="4px" scrollBehavior="smooth">
+          {/* <Box
+            position="absolute"
+            top="0px"
+            bottom="0px"
+            left="0"
+            w="30px"
+            height={'48px'}
+            zIndex={1}
+            bgGradient={
+              'linear-gradient(270deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%)'
+            }
+          /> */}
+
+          <HStack
+            gap="8px"
+            overflowX="auto"
+            pb="4px"
+            scrollBehavior="smooth"
+            ref={ref}
+            position="relative"
+            css={{
+              scrollbar: 'hidden',
+            }}
+          >
             {slides?.map((tab, index) => {
               return (
                 <Button
-                  size={'md'}
+                  size={{ base: 'md', lg: 'lg' }}
                   colorPalette="black"
                   key={index}
-                  onClick={() => {
-                    sliderRef.current?.slickGoTo(index)
+                  ref={(el) => {
+                    if (el) {
+                      tabButtonsRef.current[index] = el
+                    }
                   }}
-                  variant={currentSlide === index ? 'solid' : 'outline'}
+                  onClick={(e) => {
+                    e.currentTarget.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'nearest',
+                      inline: 'start',
+                    })
+                    scrollTo(index)
+                  }}
+                  variant={selectedIndex === index ? 'solid' : 'outline'}
                 >
                   {tab.title}
                 </Button>
@@ -120,50 +185,40 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
             })}
           </HStack>
         </Box>
-        <Box w={'100vw'}>
-          <Slider
-            ref={sliderRef}
-            {...sliderSettings}
-            className="center"
-            afterChange={(e) => {
-              handleSlideChange(e)
-            }}
-          >
-            {slides.map((slide, index) => (
-              <Box
-                key={index}
-                borderRadius={'20px'}
-                overflow={'hidden'}
-                bg={'white'}
-                position={'relative'}
-                cursor={'pointer'}
-                css={{
-                  '&:before': {
-                    content: '""',
-                    borderRadius: '20px',
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    inset: 0,
-                    height: '100%',
-                    zIndex: 1,
-                  },
-                }}
-                tabIndex={-1}
-                aspectRatio={'500 / 281'}
-                w={'100%'}
-                boxShadow={'0 30px 80px 0 rgba(1, 45, 181, 0.1)'}
-              >
-                <Image
-                  w={'100%'}
-                  h={'100%'}
-                  src={slide.image}
-                  alt={slide.title}
-                />
-              </Box>
-            ))}
-          </Slider>
+        <Box w={'100vw'} overflow={'hidden'}>
+          <div className="embla" ref={emblaRef}>
+            <div className="embla__container">
+              {slides.map((slide, index) => (
+                <div key={index} className="embla__slide">
+                  <Box
+                    borderRadius={'20px'}
+                    overflow={'hidden'}
+                    bg={'white'}
+                    position={'relative'}
+                    cursor={'pointer'}
+                    tabIndex={-1}
+                    boxShadow={'0 30px 80px 0 rgba(1, 45, 181, 0.1)'}
+                    maxW={{
+                      base: 'calc(100vw - 40px)',
+                      sm: '70vw',
+                      lg: '1000px',
+                    }}
+                    maxH={'563px'}
+                    aspectRatio={'16/9'}
+                    className={`slide ${selectedIndex === index ? 'active' : ''}`}
+                  >
+                    <Image
+                      w={'100%'}
+                      h={'100%'}
+                      src={slide.image}
+                      alt={slide.title}
+                      objectFit="cover"
+                    />
+                  </Box>
+                </div>
+              ))}
+            </div>
+          </div>
         </Box>
       </VStack>
     </VStack>

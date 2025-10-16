@@ -250,7 +250,6 @@ export const buttonRecipe = defineRecipe({
         border: 'none',
         _hover: {
           bg: 'greytransparent.1',
-          color: 'grey.7',
           border: 'none',
         },
         _active: {
@@ -267,11 +266,11 @@ export const buttonRecipe = defineRecipe({
         color: 'grey.7',
         border: 'none',
         _hover: {
-          bg: 'greytransparent.1',
+          bg: 'greytransparent.2',
           color: 'grey.7',
         },
         _active: {
-          bg: 'greytransparent.1',
+          bg: 'greytransparent.2',
           color: 'grey.7',
         },
       },

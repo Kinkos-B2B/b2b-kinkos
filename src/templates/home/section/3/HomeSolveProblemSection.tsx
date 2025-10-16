@@ -4,6 +4,7 @@ import {
   Box,
   Button,
   Container,
+  Grid,
   GridItem,
   HStack,
   Heading,
@@ -58,9 +59,10 @@ const ProblemCard = ({
   createdAt,
 }: GetHomeConfigHelpArticleResponseType) => {
   return (
-    <VStack align="stretch" gap="16px" w="100%">
+    <VStack align="stretch" gap="16px" w="100%" h="100%">
       {/* 이미지 카드 */}
       <VStack
+        gap={'0px'}
         position="relative"
         w="100%"
         h="100%"
@@ -71,12 +73,18 @@ const ProblemCard = ({
         <Image
           src={thumbnailImageUrl?.url || ''}
           alt={title}
-          fill
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{
+            objectFit: 'cover',
+            width: '100%',
+            height: '100%',
+          }}
           objectFit="cover"
         />
       </VStack>
 
-      {/* 카드 정보 */}
       <VStack align="stretch" gap="16px">
         <VStack align="stretch" gap="8px">
           <Text textStyle={'pre-body-3'}>똑똑한 개발자</Text>
@@ -84,8 +92,6 @@ const ProblemCard = ({
             {title}
           </Heading>
         </VStack>
-
-        {/* 날짜 */}
         <Text textStyle="pre-body-6" color="grey.7">
           {dayjs(createdAt).format('YYYY. MM. DD')}
         </Text>
@@ -96,18 +102,17 @@ const ProblemCard = ({
 
 export const HomeSolveProblemSection = () => {
   const { data } = useGetHomeConfigHelpArticleQuery()
-
   const orderedArticles = orderBy(data?.data, 'displayOrder', 'desc')
 
   return (
-    <Container maxW="container.xl">
-      <VStack align="stretch" gap="48px">
+    <Container py={{ lg: '160px', sm: '140px', base: '100px' }}>
+      <VStack align="stretch" gap={{ base: '32px', sm: '40px', lg: '48px' }}>
         {/* 헤더 */}
         <VStack align="center" gap="16px">
           <Badge
             variant="subtle"
             colorPalette="secondary"
-            size="xl"
+            size={{ base: 'lg', sm: 'xl', lg: 'xl' }}
             showLeftIcon={false}
             showRightIcon={false}
           >
@@ -119,7 +124,6 @@ export const HomeSolveProblemSection = () => {
             textStyle="pre-display-3"
             color="grey.10"
             textAlign="center"
-            lineHeight="1.4"
           >
             성공적인 제작을 위한 팁과 인사이트
           </Heading>
@@ -127,25 +131,49 @@ export const HomeSolveProblemSection = () => {
 
         {/* 카드 그리드 */}
         <VStack align="stretch" gap="56px">
-          <SimpleGrid
-            columns={{ base: 1, lg: 2 }}
+          <Grid
+            templateAreas={{
+              lg: `"a b c"
+                   "a d e"`,
+              sm: `"a a"
+                   "b c"
+                   "d e"`,
+              base: `"a"
+                   "b"
+                   "c"
+                   "d"
+                   "e"`,
+            }}
+            w={'100%'}
+            h={'100%'}
             gap="24px"
-            w="100%"
-            h={'852px'}
-            templateColumns={'1fr 2fr'}
           >
-            <SimpleGrid gap="24px" w="100%">
+            {/* 첫 번째 카드 - lg에서 2행 차지 */}
+            <GridItem area="a">
               <ProblemCard {...orderedArticles[0]} />
-            </SimpleGrid>
+            </GridItem>
 
-            <SimpleGrid columns={{ base: 1, lg: 2 }} gap="24px" w="100%">
-              {orderedArticles.slice(1).map((card, index) => (
-                <ProblemCard {...card} key={index} />
-              ))}
-            </SimpleGrid>
-          </SimpleGrid>
+            {/* 두 번째 카드 */}
+            <GridItem area="b">
+              <ProblemCard {...orderedArticles[1]} />
+            </GridItem>
 
-          {/* 전체보기 버튼 */}
+            {/* 세 번째 카드 */}
+            <GridItem area="c">
+              <ProblemCard {...orderedArticles[2]} />
+            </GridItem>
+
+            {/* 네 번째 카드 */}
+            <GridItem area="d">
+              <ProblemCard {...orderedArticles[3]} />
+            </GridItem>
+
+            {/* 다섯 번째 카드 */}
+            <GridItem area="e">
+              <ProblemCard {...orderedArticles[4]} />
+            </GridItem>
+          </Grid>
+
           <HStack justify="center">
             <Button size="lg" variant="solid" px="24px" h="48px">
               고민해결 전체보기

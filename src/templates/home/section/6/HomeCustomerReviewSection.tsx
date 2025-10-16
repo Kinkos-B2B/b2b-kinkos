@@ -1,6 +1,6 @@
 'use client'
 
-import { chakra } from '@chakra-ui/react'
+import { Grid, GridItem, chakra } from '@chakra-ui/react'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -41,11 +41,15 @@ const customerReviews = [
 
 export const HomeCustomerReviewSection = () => {
   return (
-    <chakra.section bg="background.basic.1" py="160px" w="100%">
+    <chakra.section
+      bg="background.basic.1"
+      py={{ base: '100px', sm: '140px', lg: '160px' }}
+      w="100%"
+    >
       <chakra.div
         display="flex"
         flexDirection="column"
-        gap="56px"
+        gap={{ base: '40px', sm: '56px' }}
         alignItems="center"
         justifyContent="flex-start"
         w="100%"
@@ -61,7 +65,7 @@ export const HomeCustomerReviewSection = () => {
           <chakra.div
             display="flex"
             flexDirection="column"
-            gap="40px"
+            gap="56px"
             alignItems="center"
             justifyContent="flex-start"
             w="100%"
@@ -103,17 +107,27 @@ export const HomeCustomerReviewSection = () => {
             justifyContent="flex-start"
             w="100%"
             overflowX="auto"
-            px="20px"
+            px={{ base: '20px', sm: '40px', lg: '0px' }}
           >
-            {customerReviews.map((review, index) => (
-              <CustomerReviewCard
-                key={index}
-                review={review.review}
-                avatar={review.avatar}
-                company={review.company}
-                name={review.name}
-              />
-            ))}
+            <Grid
+              templateColumns={{
+                base: '1fr',
+                sm: 'repeat(2, 1fr)',
+                lg: 'repeat(4, 1fr)',
+              }}
+              gap={{ sm: '24px', base: '20px' }}
+            >
+              {customerReviews.map((review, index) => (
+                <GridItem key={index}>
+                  <CustomerReviewCard
+                    review={review.review}
+                    avatar={review.avatar}
+                    company={review.company}
+                    name={review.name}
+                  />
+                </GridItem>
+              ))}
+            </Grid>
           </chakra.div>
         </chakra.div>
 
