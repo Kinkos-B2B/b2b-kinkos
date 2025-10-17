@@ -178,7 +178,6 @@ export const FaqTemplate = (props: FaqTemplateProps) => {
               />
             </Box>
           </VStack>
-
           <VStack gap="64px" align="center">
             <VStack
               gap="0"

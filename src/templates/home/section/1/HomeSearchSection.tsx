@@ -1,12 +1,12 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
+
+import { useRouter } from 'next/navigation'
 
 import {
   Box,
   Button,
-  Container,
   Flex,
   HStack,
-  Icon,
   Image,
   Input,
   Text,
@@ -24,6 +24,7 @@ const imgChat = '/images/home/search/chat.png'
 
 export const HomeSearchSection = () => {
   const { data: randomSearchKeyword } = useGetRandomSearchKeywordQuery()
+  const router = useRouter()
 
   return (
     <VStack gap={{ base: '56px', sm: '80px' }} w={'100%'}>
@@ -55,7 +56,15 @@ export const HomeSearchSection = () => {
             justifyContent={'center'}
           >
             {randomSearchKeyword?.data?.map((keyword) => (
-              <SerachKeyword title={keyword.keyword} key={keyword.keyword} />
+              <SerachKeyword
+                title={keyword.keyword}
+                key={keyword.keyword}
+                onClick={() =>
+                  router.push(
+                    `/search?q=${encodeURIComponent(keyword.keyword)}`,
+                  )
+                }
+              />
             ))}
           </HStack>
         </VStack>
@@ -68,23 +77,44 @@ export const HomeSearchSection = () => {
   )
 }
 
-const SerachKeyword = ({ title }: { title: string }) => {
+export const SerachKeyword = ({
+  title,
+  size = 'md',
+  onClick,
+}: {
+  title: string
+  size?: 'md' | 'sm'
+  onClick?: () => void
+}) => {
+  const sizeStyle = {
+    md: {
+      h: '40px',
+      p: '4px 16px',
+    },
+    sm: {
+      h: '28px',
+      p: '4px 8px',
+    },
+  }
+
   return (
     <Box
-      p={'4px 16px'}
+      p={sizeStyle[size].p}
       borderRadius={'full'}
       bg={'grey.0'}
-      h={'40px'}
+      h={sizeStyle[size].h}
       display={'flex'}
       alignItems={'center'}
       justifyContent={'center'}
       cursor={'pointer'}
       border={'1px solid'}
+      lineHeight={'1'}
       borderColor={'grey.3'}
       color={'grey.8'}
       _hover={{
         bg: 'grey.1',
       }}
+      onClick={onClick}
     >
       <Text textStyle={'pre-body-5'} whiteSpace={'nowrap'}>
         {title}
@@ -94,6 +124,7 @@ const SerachKeyword = ({ title }: { title: string }) => {
 }
 
 const SearchInput = () => {
+  const router = useRouter()
   const [searchValue, setSearchValue] = useState('')
   const [debouncedValue, setDebouncedValue] = useState('')
   const [isOpen, setIsOpen] = useState(false)
@@ -161,6 +192,8 @@ const SearchInput = () => {
             setSearchValue(selectedOption.keyword)
             setIsOpen(false)
             setSelectedIndex(-1)
+          } else {
+            handleSearch()
           }
           break
         case 'Escape':
@@ -195,6 +228,12 @@ const SearchInput = () => {
     setSelectedIndex(-1)
   }, [])
 
+  const handleSearch = useCallback(() => {
+    if (searchValue.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchValue.trim())}`)
+    }
+  }, [searchValue, router])
+
   return (
     <Box position="relative" w="100%">
       <Box
@@ -224,6 +263,7 @@ const SearchInput = () => {
                 bg: 'grey.700',
               }}
               aria-label="검색"
+              onClick={handleSearch}
             >
               <MagnifyingGlassIcon />
             </Button>

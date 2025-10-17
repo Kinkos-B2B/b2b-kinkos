@@ -3,6 +3,7 @@ import { defineRecipe } from '@chakra-ui/react'
 export const skeletonRecipe = defineRecipe({
   className: 'chakra-skeleton',
   base: {},
+
   variants: {
     loading: {
       true: {
@@ -25,15 +26,15 @@ export const skeletonRecipe = defineRecipe({
     },
     variant: {
       pulse: {
-        background: 'bg.emphasized',
+        background: 'background.basic.3',
         animation: 'pulse',
         animationDuration: 'var(--duration, 1.2s)',
       },
       shine: {
         '--animate-from': '200%',
         '--animate-to': '-200%',
-        '--start-color': 'colors.bg.muted',
-        '--end-color': 'colors.bg.emphasized',
+        '--start-color': 'background.basic.3',
+        '--end-color': 'background.basic.1',
         backgroundImage:
           'linear-gradient(270deg,var(--start-color),var(--end-color),var(--end-color),var(--start-color))',
         backgroundSize: '400% 100%',
@@ -44,6 +45,7 @@ export const skeletonRecipe = defineRecipe({
       },
     },
   },
+
   defaultVariants: {
     variant: 'pulse',
     loading: true,
