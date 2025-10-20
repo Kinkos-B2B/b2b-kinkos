@@ -1,6 +1,8 @@
 'use client'
 
-import { Container, VStack } from '@chakra-ui/react'
+import { Container, Portal, VStack } from '@chakra-ui/react'
+
+import { createPortal } from 'react-dom'
 
 import { HomeSearchSection } from './section/1/HomeSearchSection'
 import { HomeIntroduceSolution } from './section/2/HomeIntroduceSolution'
@@ -9,22 +11,25 @@ import { HomeIntroduceExpertSection } from './section/4/HomeIntroduceExpertSecti
 import { HomeIntroduceBizSection } from './section/5/HomeIntroduceBizSection'
 import { HomeCustomerReviewSection } from './section/6/HomeCustomerReviewSection'
 import { HomeMoreQuestionSection } from './section/7/HomeMoreQuestionSection'
+import { HomeIntroSection } from './section/HomeIntroSection'
 
 export const HomeTemplate = () => {
   return (
-    <VStack w={'100%'} gap={'0px'}>
-      <Container
-        py={{ base: '48px 80px', sm: '80px 120px ', lg: '120px 160px' }}
-      >
-        <HomeSearchSection />
-      </Container>
-
-      <HomeIntroduceSolution />
-      <HomeSolveProblemSection />
-      <HomeIntroduceExpertSection />
-      <HomeIntroduceBizSection />
-      <HomeCustomerReviewSection />
-      <HomeMoreQuestionSection />
-    </VStack>
+    <>
+      {createPortal(<HomeIntroSection />, document.body)}
+      <VStack w={'100%'} gap={'0px'} position="relative" zIndex="1">
+        <Container
+          py={{ base: '48px 80px', sm: '80px 120px ', lg: '120px 160px' }}
+        >
+          <HomeSearchSection />
+        </Container>
+        <HomeIntroduceSolution />
+        <HomeSolveProblemSection />
+        <HomeIntroduceExpertSection />
+        <HomeIntroduceBizSection />
+        <HomeCustomerReviewSection />
+        <HomeMoreQuestionSection />
+      </VStack>
+    </>
   )
 }
