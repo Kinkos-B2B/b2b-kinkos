@@ -35,7 +35,7 @@ const config: RootConfig<{
       textStyles: {
         base: 'mobile',
         sm: 'tablet',
-        md: 'desktop',
+        lg: 'desktop',
       },
     },
     version: 'v3',
