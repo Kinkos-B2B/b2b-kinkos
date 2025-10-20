@@ -43,16 +43,37 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
   const [selectedIndex, setSelectedIndex] = useState(0)
 
   const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev()
+    if (emblaApi) {
+      emblaApi.scrollPrev()
+      tabButtonsRef.current[emblaApi.selectedScrollSnap()].scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'start',
+      })
+    }
   }, [emblaApi])
 
   const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext()
+    if (emblaApi) {
+      emblaApi.scrollNext()
+      tabButtonsRef.current[emblaApi.selectedScrollSnap()].scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'start',
+      })
+    }
   }, [emblaApi])
 
   const scrollTo = useCallback(
     (index: number) => {
-      if (emblaApi) emblaApi.scrollTo(index)
+      if (emblaApi) {
+        emblaApi.scrollTo(index)
+        tabButtonsRef.current[emblaApi.selectedScrollSnap()].scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'start',
+        })
+      }
     },
     [emblaApi],
   )
@@ -60,12 +81,16 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
   const onSelect = useCallback(() => {
     if (!emblaApi) return
     setSelectedIndex(emblaApi.selectedScrollSnap())
+    tabButtonsRef.current[emblaApi.selectedScrollSnap()].scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'start',
+    })
   }, [emblaApi])
 
   useEffect(() => {
     if (!emblaApi) return
 
-    onSelect()
     emblaApi.on('select', onSelect)
     emblaApi.on('reInit', onSelect)
 
@@ -74,16 +99,6 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
       emblaApi.off('reInit', onSelect)
     }
   }, [emblaApi, onSelect])
-
-  useEffect(() => {
-    if (tabButtonsRef.current[selectedIndex]) {
-      tabButtonsRef.current[selectedIndex].scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-        inline: 'start',
-      })
-    }
-  }, [selectedIndex])
 
   return (
     <VStack gap="24px" align="stretch" width="100%" mx="auto" maxW="1280px">

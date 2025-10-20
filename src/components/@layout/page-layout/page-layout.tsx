@@ -19,6 +19,8 @@ import { LAYOUT } from '@/constants/layout'
 import { PageLayoutFooter } from './components/page-layout-footer'
 import { PageLayoutHeader } from './components/page-layout-header'
 
+gsap.registerPlugin(ScrollTrigger)
+
 interface PageLayoutProps {
   header?: React.ReactNode
   footer?: React.ReactNode
@@ -46,8 +48,6 @@ export const PageLayout = ({
 
   useGSAP(() => {
     if (headerRef.current) {
-      gsap.registerPlugin(ScrollTrigger)
-
       ScrollTrigger.create({
         start: 'top+=91px top+=91px',
         end: 'max',
@@ -70,7 +70,7 @@ export const PageLayout = ({
         },
       })
     }
-  }, [])
+  })
 
   return (
     <Grid

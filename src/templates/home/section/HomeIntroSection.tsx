@@ -45,8 +45,10 @@ const textContents = [
   },
 ]
 
-export const HomeIntroSection = () => {
-  const [isIntroComplete, setIsIntroComplete] = useState(false)
+interface Props {
+  onCompleted: () => void
+}
+export const HomeIntroSection = ({ onCompleted }: Props) => {
   const [isAnimating, setIsAnimating] = useState(false)
   const introRef = useRef<HTMLDivElement>(null)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
@@ -116,7 +118,6 @@ export const HomeIntroSection = () => {
             onComplete: () => {
               // 첫 번째 텍스트 애니메이션 완료 후 이미지 바운스 애니메이션 실행
               startImageBounceAnimation()
-
               // 그 다음 스크롤 트리거 설정
               const cleanup = setupScrollTriggers()
               // 정리 함수를 저장해두고 언마운트 시 호출
@@ -281,11 +282,8 @@ export const HomeIntroSection = () => {
             duration: 1.2,
             ease: 'power2.inOut',
             onComplete: () => {
-              setIsIntroComplete(true)
-              // body 스크롤 복원
+              onCompleted()
               document.body.style.overflow = ''
-              // ScrollTrigger 정리
-              ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
             },
           })
         }
@@ -324,22 +322,13 @@ export const HomeIntroSection = () => {
       }
     }
 
-    // 컴포넌트 언마운트 시 정리
     return () => {
-      document.body.style.overflow = ''
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
-      // 스크롤 이벤트 리스너 정리
       if (window.__introCleanup) {
         window.__introCleanup()
         delete window.__introCleanup
       }
     }
   }, [])
-
-  // intro가 완료되면 렌더링하지 않음
-  if (isIntroComplete) {
-    return null
-  }
 
   return (
     <Box
