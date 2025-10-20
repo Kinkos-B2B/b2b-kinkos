@@ -2,21 +2,15 @@
 
 import * as React from 'react'
 
-import { useRouter } from 'next/navigation'
-
 import {
   Box,
   Button,
   Flex,
   Grid,
   GridItem,
-  IconButton,
   Link,
   VStack,
-  chakra,
-  useMediaQuery,
 } from '@chakra-ui/react'
-import { FadersHorizontalIcon as FadersHorizontalIconPhosphor } from '@phosphor-icons/react/dist/ssr'
 import { keepPreviousData } from '@tanstack/react-query'
 
 import { Pagination } from '@/components/pagination'
@@ -26,6 +20,7 @@ import {
   useGetAllExpertQuery,
   useGetAllExpertSearchTypeQuery,
 } from '@/generated/apis/ExpertApi/ExpertApi.query'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 import { ExpertCard } from './ExpertCard'
 import { ExpertFilterSection } from './ExpertFilterSection'
@@ -48,7 +43,7 @@ export const ExpertListContainer = () => {
   const budgetOptions = searchTypeData?.data?.printCostBracketTypeList || []
 
   const isMobile = useMediaQuery(['(max-width: 1280px)'], {
-    ssr: false,
+    ssr: true,
   })[0]
 
   // API 쿼리 - 필터와 페이지에 따라 데이터 요청

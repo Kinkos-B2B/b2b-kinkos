@@ -1,11 +1,13 @@
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 
 import { Box, Container, Flex } from '@chakra-ui/react'
-import { chakra, useMediaQuery } from '@chakra-ui/react'
+import { chakra } from '@chakra-ui/react'
 
 import Marquee from 'react-fast-marquee'
 
 import { ComparisonTableRow } from '@/components/ui/comparison-table'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 import { SolutionFeatureItem } from './SolutionFeatureItem'
 import './feature-section-marquee.css'
@@ -14,7 +16,7 @@ const ChakraMarquee = chakra(Marquee)
 
 export const SolutionFeatureMobileSection = () => {
   const isBase = useMediaQuery(['(max-width: 768px)'], {
-    ssr: false,
+    ssr: true,
   })[0]
 
   const featureData: ComparisonTableRow[] = [

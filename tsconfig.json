@@ -1,6 +1,7 @@
 {
   "extends": "@toktokhan-dev/ts-config/nextjs.json",
   "compilerOptions": {
+    "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "skipLibCheck": true,

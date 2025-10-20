@@ -1,4 +1,4 @@
-import { defineRecipe } from '@chakra-ui/react'
+import { ColorPalette, defineRecipe } from '@chakra-ui/react'
 
 export const badgeRecipe = defineRecipe({
   className: 'chakra-badge',

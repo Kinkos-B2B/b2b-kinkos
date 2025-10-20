@@ -16,7 +16,8 @@ import { HomeIntroSection } from './section/HomeIntroSection'
 export const HomeTemplate = () => {
   return (
     <>
-      {createPortal(<HomeIntroSection />, document.body)}
+      {typeof window !== 'undefined' &&
+        createPortal(<HomeIntroSection />, document.body)}
       <VStack w={'100%'} gap={'0px'} position="relative" zIndex="1">
         <Container
           py={{ base: '48px 80px', sm: '80px 120px ', lg: '120px 160px' }}

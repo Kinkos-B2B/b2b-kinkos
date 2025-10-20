@@ -1,27 +1,19 @@
 import * as React from 'react'
 
-import {
-  Box,
-  Container,
-  Flex,
-  Heading,
-  Image,
-  VStack,
-  chakra,
-  useMediaQuery,
-} from '@chakra-ui/react'
+import { Box, Container, Flex, Heading, Image, VStack } from '@chakra-ui/react'
 import { Marquee } from '@devnomic/marquee'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { useGetHomeExpertQuery } from '@/generated/apis/HomeApi/HomeApi.query'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 import { HomeExpertCard } from './components/HomeExpertCard'
 import './vertical-marquee.css'
 
 export const HomeIntroduceExpertSection = () => {
   const isMobile = useMediaQuery(['(max-width: 1280px)'], {
-    ssr: false,
+    ssr: true,
   })[0]
 
   const { data } = useGetHomeExpertQuery()

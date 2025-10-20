@@ -1,13 +1,13 @@
 'use client'
 
-import { useBreakpointValue, useMediaQuery } from '@chakra-ui/react'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 import { DesktopHeader } from './components/desktop-header'
 import { MobileHeader } from './components/mobile-header'
 
 export const PageLayoutHeader = () => {
   const isMobile = useMediaQuery(['(max-width: 1280px)'], {
-    ssr: false,
+    ssr: true,
   })[0]
 
   if (isMobile) {

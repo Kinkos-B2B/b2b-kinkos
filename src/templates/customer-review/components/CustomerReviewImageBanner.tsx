@@ -1,6 +1,6 @@
-import { Box, Image, useBreakpointValue, useMediaQuery } from '@chakra-ui/react'
+import { Box, Image } from '@chakra-ui/react'
 
-import { breakpoints } from '@/configs/theme/breakpoints'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 const mock = {
   image:
@@ -15,7 +15,7 @@ interface Props {
 
 export const CustomerReviewImageBanner = ({ data = mock }: Props) => {
   const isMobile = useMediaQuery(['(max-width: 1280px)'], {
-    ssr: false,
+    ssr: true,
   })[0]
 
   const image = isMobile ? mock.mobileImage : mock.image

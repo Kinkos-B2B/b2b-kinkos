@@ -243,7 +243,7 @@ export const buttonRecipe = defineRecipe({
     },
     {
       variant: 'solid',
-      colorPalette: 'black',
+      colorPalette: 'black' as any,
       css: {
         bg: 'grey.10',
         color: 'grey.0',
@@ -260,7 +260,7 @@ export const buttonRecipe = defineRecipe({
     },
     {
       variant: 'outline',
-      colorPalette: 'black',
+      colorPalette: 'black' as any,
       css: {
         bg: 'grey.0',
         color: 'grey.7',
@@ -278,7 +278,7 @@ export const buttonRecipe = defineRecipe({
 
     {
       variant: 'solid',
-      colorPalette: 'secondary',
+      colorPalette: 'secondary' as any,
       css: {
         border: 'none',
         bg: 'secondary.4',

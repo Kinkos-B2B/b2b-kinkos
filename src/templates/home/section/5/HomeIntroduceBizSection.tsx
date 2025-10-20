@@ -4,20 +4,13 @@ import { useEffect, useRef } from 'react'
 
 import Image from 'next/image'
 
-import {
-  Box,
-  Grid,
-  GridItem,
-  HStack,
-  Text,
-  VStack,
-  useMediaQuery,
-} from '@chakra-ui/react'
+import { Box, Grid, GridItem, HStack, Text, VStack } from '@chakra-ui/react'
 
 import { gsap } from 'gsap'
 import { useInView } from 'react-intersection-observer'
 
 import { Badge } from '@/components/ui/badge'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 // 이미지 에셋들 (Figma에서 다운로드한 실제 이미지들)
 const imgBriefcase = '/images/home/biz/biz-card-1.png'
@@ -130,7 +123,7 @@ const BizCard = ({
 
 export const HomeIntroduceBizSection = () => {
   const isNoneDesktop = useMediaQuery(['(max-width: 1280px)'], {
-    ssr: false,
+    ssr: true,
   })[0]
 
   const { ref, inView } = useInView({
