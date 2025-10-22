@@ -22,28 +22,24 @@ import { SolutionReleatedExportSection } from '../../common/SolutionReleatedExpo
 import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 
 const heroMockData = {
-  badge: '기업 전용 인쇄물',
+  badge: '브랜딩 디자인',
   title: (
     <VStack textAlign={'center'} textStyle={'pre-display-3'} gap={'0px'}>
-      <Text color={'primary.4'}>기업 전용 인쇄몰</Text>
-      <Text whiteSpace="nowrap">아직도 복잡하게 주문하세요?</Text>
+      <Text color={'primary.4'}>브랜드 디자인, </Text>
+      <Text whiteSpace="nowrap">아직도 시안 파일만 받고 계신가요?</Text>
     </VStack>
   ),
   heroContent: (
     <>
       <Text textStyle={'pre-display-3'} color={'grey.0'}>
-        기업 인쇄물 관리, 이제 스마트하게 해결하세요!
+        {
+          '디자인 따로, 제작 따로?\n시간 낭비는 줄이고 결과의 완성도를 높이세요.'
+        }
       </Text>
       <Text textStyle={'pre-heading-3'} color={'grey.0'} as={'span'}>
         {
-          "지점마다 다른 디자인, 복잡한 주문 절차, 불투명한 예산 관리..혹시 이런 고민을 하고 계신가요?\n기업 인쇄물 주문, 이제 '"
+          '반복되는 설명, 아쉬운 시안, 분리된 기획과 제작의 시간 낭비는 이제 그만.\n브랜드에 대한 깊은 이해를 바탕으로 기획부터 제작까지, 완성도 높은 결과물을 만듭니다.\n단순한 협업 그 이상의 파트너십을 경험하세요.'
         }
-        <Text textStyle={'pre-heading-3'} color={'secondary.3'} as={'span'}>
-          기업전용인쇄몰
-        </Text>
-        <Text textStyle={'pre-heading-3'} color={'grey.0'} as={'span'}>
-          {"'로 쉽고 빠르게 해결하세요."}
-        </Text>
       </Text>
     </>
   ),
@@ -57,7 +53,7 @@ const cardsMockData = {
       <Text>고민은 끝!</Text>
       <Text as={'span'}>
         <Text textStyle={'pre-display-4'} color={'primary.4'} as={'span'}>
-          기업 전용 인쇄몰 솔루션이
+          브랜딩 디자인 솔루션
         </Text>
         <Text as={'span'}>이 필요한 이유</Text>
       </Text>
@@ -65,74 +61,80 @@ const cardsMockData = {
   ),
   cards: [
     {
-      title: '브랜드 이미지 통일',
+      title: '한 번의 설명, 일관된 결과',
       description:
-        '우리 회사 전용 디자인 템플릿으로 어디서든 일관된 브랜드 이미지를 유지하세요.',
+        '한 번의 설명으로 충분합니다. 브랜드 스타일을 기억하여 모든 작업에 일관되게 적용합니다.',
     },
     {
-      title: '클릭 한 번으로 주문 끝',
+      title: '아이디어, 바로 눈앞에',
       description:
-        '복잡한 텍스트 입력 없이 클릭만으로 주문이 완료되는 자동화 시스템을 경험하세요.',
+        '초기 아이디어를 구체적인 디자인으로 시각화하여 보여드립니다.',
     },
     {
-      title: '비용 절감 효과',
+      title: '알아서, 더 좋게',
       description:
-        '부서별 예산 한도 설정과 자동 차단 기능으로 불필요한 지출을 막아줍니다.',
+        '"더 좋은 방법은 없을까?" 항상 먼저 고민하고, 수준 높은 디자인을 먼저 제안합니다',
     },
     {
-      title: '실수 없는 결과물',
+      title: '제작까지, 한번에',
       description:
-        '전문가가 검증한 데이터로 오타나 인쇄 사고 걱정 없이 안심하고 주문하세요.',
+        '기획부터 최종 제작까지 전 과정을 책임집니다. 번거로운 과정 없이 핵심 업무에만 집중하세요.',
     },
   ],
 }
 
 const featureData: FeatureItem[] = [
   {
-    title: '우리 회사만을 위한 맞춤형 전용몰',
+    title: '1:1 브랜드 전담 매니저',
     description:
-      '기업의 브랜드 아이덴티티에 맞춰 자주 사용하는 인쇄물을 구성하고, 사이트 디자인까지 맞춤 제작해 드립니다.',
+      '고객사별 전담 매니저가 배정되어 일관된 소통을 지원합니다. 브랜드에 대한 이해를 바탕으로 원활한 프로젝트 관리가 가능합니다.',
     type: 'table',
     tableData: [
       {
-        category: '맞춤 디자인 템플릿',
+        category: '브랜드 담당\n매니저 배정',
         kinkos: 'O',
         competitorA: 'X',
         competitorB: 'X',
       },
       {
-        category: '사이트 디자인 맞춤 제작',
+        category: '10년 이상의\n프로젝트 경력자 지정 ',
+        kinkos: 'O',
+        competitorA: 'X',
+        competitorB: 'X',
+      },
+    ],
+
+    imageData: [
+      {
+        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+      },
+      {
+        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+      },
+    ],
+  },
+  {
+    title: '3만+ 기업의 경험, 리스크 없는 선택.',
+    description:
+      '30년간 3만여 고객사의 인쇄물을 제작하며 쌓아온 독보적인\n노하우로 인쇄 사고 등의 리스크를 사전에 방지합니다. 검증된\n파트너와 함께 안정적으로 결과물을 받아보세요.',
+    type: 'table',
+    tableData: [
+      {
+        category: '데이터 검수시스템 보유',
+        kinkos: 'O',
+        competitorA: 'X',
+        competitorB: 'X',
+      },
+      {
+        category: '단계별 품질관리(QC)\n시스템 관리 ',
+        kinkos: 'O',
+        competitorA: 'X',
+        competitorB: 'X',
+      },
+      {
+        category: '인쇄사고 리스크 관리',
         kinkos: 'O',
         competitorA: 'O',
-        competitorB: 'O',
-      },
-    ],
-
-    imageData: [
-      {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-    ],
-  },
-  {
-    title: '똑똑한 자동화 주문 시스템',
-    description:
-      '텍스트 입력 없이 클릭만으로 주문이 가능해져\n업무 효율을 극대화하고, 불필요한 시간 낭비를 줄여줍니다.',
-    type: 'table',
-    tableData: [
-      {
-        category: '간편성 및 자동화 수준',
-        kinkos: 'O',
-        competitorA: 'O',
-        competitorB: 'O',
-      },
-      {
-        category: '내부DB 연동 개발 여부',
-        kinkos: 'O',
-        competitorA: 'X',
         competitorB: 'X',
       },
     ],
@@ -146,49 +148,19 @@ const featureData: FeatureItem[] = [
     ],
   },
   {
-    title: '강력한 관리 기능으로 통제권 UP!',
+    title: '디자인부터 납품까지, 한 번에 해결.',
     description:
-      '매장별, 지점별 예산 한도를 설정하고 주문 권한을 세밀하게 제어할 수 있습니다. 또한, 간소화된 승인 절차와 실시간 주문 내역 확인으로 관리의 투명성을 높여줍니다.',
+      '디자인부터 인쇄, 후가공, 포장, 배송까지 전 과정을 통합하여 관리합니다. 단일화된 채널을 통해 담당자의 업무 효율을 높여 드립니다.',
     type: 'table',
     tableData: [
       {
-        category: '예산 한도 설정 기능',
-        kinkos: 'O',
-        competitorA: 'X',
-        competitorB: 'O',
-      },
-      {
-        category: '역할별 주문 권한 설정 기능',
-        kinkos: 'O',
-        competitorA: 'X',
-        competitorB: 'X',
-      },
-    ],
-
-    imageData: [
-      {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-    ],
-  },
-  {
-    title: '누구나 쉽게! 최고의 편의성',
-    description:
-      '처음 사용하는 직원도 쉽게 따라 할 수 있는 이용 가이드와 온라인 교육을 지원합니다. 또한, 고객사의 보안 정책에 맞춰 안전하게 운영되며, 직접 체험해 볼 수 있는 데모몰을 제공합니다.',
-
-    type: 'table',
-    tableData: [
-      {
-        category: '맞춤 디자인 템플릿',
+        category: '전 공정 100% 자체\n제작 시스템',
         kinkos: 'O',
         competitorA: 'X',
         competitorB: 'X',
       },
       {
-        category: '데모몰 지원',
+        category: '1:1 전담 신속 대응\n채널',
         kinkos: 'O',
         competitorA: 'X',
         competitorB: 'X',
@@ -206,7 +178,7 @@ const featureData: FeatureItem[] = [
   },
 ]
 
-export const SolutionCorporatePrintingTemplate = () => {
+export const SolutionBrandingTemplate = () => {
   const { ref, inView } = useInView()
   const stickyRef = useRef<HTMLDivElement>(null)
 

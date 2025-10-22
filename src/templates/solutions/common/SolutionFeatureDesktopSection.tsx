@@ -9,10 +9,13 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import { SolutionFeatureItem } from './SolutionFeatureItem'
+import { FeatureItem } from './SolutionFeatureSection'
 
-//@TODO 코드 정리 필요
+interface Props {
+  featureItems: FeatureItem[]
+}
 
-export const SolutionFeatureDesktopSection = () => {
+export const SolutionFeatureDesktopSection = ({ featureItems }: Props) => {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger)
 
@@ -43,7 +46,6 @@ export const SolutionFeatureDesktopSection = () => {
       const PIN_OFFSET = 160
 
       ScrollTrigger.create({
-        markers: isLastSection,
         trigger: imageSection,
         start: `top top+=${PIN_OFFSET}px`,
         end: `bottom top+=${PIN_OFFSET}px`,
@@ -108,38 +110,7 @@ export const SolutionFeatureDesktopSection = () => {
     })
   })
 
-  const data = {
-    highlightData: [
-      {
-        category: '간편성 및 자동화 수준',
-        kinkos: 'O',
-        competitorA: 'O',
-        competitorB: 'O',
-      },
-      {
-        category: '내부DB 연동 개발 여부',
-        kinkos: 'O',
-        competitorA: 'X',
-        competitorB: 'X',
-      },
-    ],
-    images: [
-      {
-        image: '/images/solutions/solutions-hero-section.jpg',
-        alt: 'feature',
-      },
-      {
-        image: '/images/solutions/solutions-feature-mock-img.jpg',
-        alt: 'feature',
-      },
-      {
-        image: '/images/solutions/solutions-feature-mock-img.jpg',
-        alt: 'feature',
-      },
-    ],
-  }
-
-  const datas = [data, data, data, data]
+  const datas = featureItems
 
   return (
     <Container
@@ -167,32 +138,40 @@ export const SolutionFeatureDesktopSection = () => {
             position={'absolute'}
             top={'0px'}
           >
-            <SolutionFeatureItem.Table
-              title={`${index + 1}번째 기능`}
-              description={Array.from({ length: index + 1 })
-                .map(
-                  (_, i) =>
-                    `킨코스는 간편성 및 자동화 수준을 최적화하여 사용자의 편의성을 극대화합니다. ${i + 1}`,
-                )
-                .join('\n')}
-              highlightData={data.highlightData}
-            />
+            {data.type === 'table' && (
+              <SolutionFeatureItem.Table
+                title={data.title}
+                description={data.description}
+                highlightData={data.tableData ?? []}
+              />
+            )}
+            {data.type === 'description' && (
+              <SolutionFeatureItem.Description
+                title={data.title}
+                description={data.description}
+                descriptionData={data.descriptionData ?? []}
+              />
+            )}
           </Box>
         ))}
 
         {/* {높이 맞춤용 더미 박스} */}
         {datas.at(-1) && (
           <Box opacity={0}>
-            <SolutionFeatureItem.Table
-              title={`${datas.length}번째 기능`}
-              description={Array.from({ length: datas.length })
-                .map(
-                  (_, i) =>
-                    `킨코스는 간편성 및 자동화 수준을 최적화하여 사용자의 편의성을 극대화합니다. ${i + 1}`,
-                )
-                .join('\n')}
-              highlightData={data.highlightData}
-            />
+            {datas.at(-1)?.type === 'table' && (
+              <SolutionFeatureItem.Table
+                title={datas.at(-1)?.title ?? ''}
+                description={datas.at(-1)?.description ?? ''}
+                highlightData={datas.at(-1)?.tableData ?? []}
+              />
+            )}
+            {datas.at(-1)?.type === 'description' && (
+              <SolutionFeatureItem.Description
+                title={datas.at(-1)?.title ?? ''}
+                description={datas.at(-1)?.description ?? ''}
+                descriptionData={datas.at(-1)?.descriptionData ?? []}
+              />
+            )}
           </Box>
         )}
       </Box>
@@ -204,14 +183,14 @@ export const SolutionFeatureDesktopSection = () => {
             className={`feature-image-section-${index}`}
             minHeight={'100vh'}
           >
-            {data.images.map((image, index) => (
+            {data.imageData.map((image, index) => (
               <Image
                 key={index}
                 style={{
                   height: 'auto',
                   borderRadius: '28px',
                 }}
-                src={image.image}
+                src={image.imageUrl}
                 alt="feature"
                 width={600}
                 height={600}

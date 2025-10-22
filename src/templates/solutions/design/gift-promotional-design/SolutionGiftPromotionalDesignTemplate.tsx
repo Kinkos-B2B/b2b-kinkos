@@ -22,28 +22,22 @@ import { SolutionReleatedExportSection } from '../../common/SolutionReleatedExpo
 import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 
 const heroMockData = {
-  badge: '기업 전용 인쇄물',
+  badge: '굿즈&판촉물 디자인',
   title: (
     <VStack textAlign={'center'} textStyle={'pre-display-3'} gap={'0px'}>
-      <Text color={'primary.4'}>기업 전용 인쇄몰</Text>
-      <Text whiteSpace="nowrap">아직도 복잡하게 주문하세요?</Text>
+      <Text color={'primary.4'}>잘 팔리는 굿즈, 기억에 남는 판촉물</Text>
+      <Text whiteSpace="nowrap">혹시 고민하고 계신가요?</Text>
     </VStack>
   ),
   heroContent: (
     <>
       <Text textStyle={'pre-display-3'} color={'grey.0'}>
-        기업 인쇄물 관리, 이제 스마트하게 해결하세요!
+        {'쉽게 버려지고 잊히는 굿즈와 판촉물,\n이제 고객이 기억하게 만드세요!'}
       </Text>
       <Text textStyle={'pre-heading-3'} color={'grey.0'} as={'span'}>
         {
-          "지점마다 다른 디자인, 복잡한 주문 절차, 불투명한 예산 관리..혹시 이런 고민을 하고 계신가요?\n기업 인쇄물 주문, 이제 '"
+          '행사 때만 반짝 쓰이고 잊히는 기념품 대신,\n고객의 취향과 사용성을 반영한 굿즈로 색다른 브랜드 경험을 제공해 보세요.'
         }
-        <Text textStyle={'pre-heading-3'} color={'secondary.3'} as={'span'}>
-          기업전용인쇄몰
-        </Text>
-        <Text textStyle={'pre-heading-3'} color={'grey.0'} as={'span'}>
-          {"'로 쉽고 빠르게 해결하세요."}
-        </Text>
       </Text>
     </>
   ),
@@ -57,7 +51,7 @@ const cardsMockData = {
       <Text>고민은 끝!</Text>
       <Text as={'span'}>
         <Text textStyle={'pre-display-4'} color={'primary.4'} as={'span'}>
-          기업 전용 인쇄몰 솔루션이
+          굿즈&판촉물 디자인 솔루션
         </Text>
         <Text as={'span'}>이 필요한 이유</Text>
       </Text>
@@ -65,130 +59,100 @@ const cardsMockData = {
   ),
   cards: [
     {
-      title: '브랜드 이미지 통일',
+      title: '브랜드 각인 효과',
       description:
-        '우리 회사 전용 디자인 템플릿으로 어디서든 일관된 브랜드 이미지를 유지하세요.',
+        '일상에서 자주 쓰이는 굿즈와 판촉물로 고객에게 브랜드를 가장 자연스럽게 알릴 수 있습니다.',
     },
     {
-      title: '클릭 한 번으로 주문 끝',
+      title: '차별화된 고객 경험',
       description:
-        '복잡한 텍스트 입력 없이 클릭만으로 주문이 완료되는 자동화 시스템을 경험하세요.',
+        '기업의 특성을 살린 감각적인 굿즈와 판촉물로 고객에게 특별한 브랜드 경험을 제공합니다.',
     },
     {
-      title: '비용 절감 효과',
+      title: '효율적 예산 활용',
       description:
-        '부서별 예산 한도 설정과 자동 차단 기능으로 불필요한 지출을 막아줍니다.',
+        '소량 제작부터 단가 비교 제안까지, 주어진 예산을 가장 효율적으로 사용할 수 있도록 지원합니다.',
     },
     {
-      title: '실수 없는 결과물',
+      title: '제작 리스크 최소화',
       description:
-        '전문가가 검증한 데이터로 오타나 인쇄 사고 걱정 없이 안심하고 주문하세요.',
+        '3D 시안과 샘플링 과정으로 재작업의 위험과 불필요한 시간 낭비를 확실하게 줄여드립니다.',
     },
   ],
 }
 
 const featureData: FeatureItem[] = [
   {
-    title: '우리 회사만을 위한 맞춤형 전용몰',
+    title: '맞춤형 기획, 디자인, 제작 원스톱 제작',
     description:
-      '기업의 브랜드 아이덴티티에 맞춰 자주 사용하는 인쇄물을 구성하고, 사이트 디자인까지 맞춤 제작해 드립니다.',
+      '콘셉트 기획부터 디자인, 제작, 패키징·납품까지 모든 과정을 한 번에 제공해 드립니다.',
     type: 'table',
     tableData: [
       {
-        category: '맞춤 디자인 템플릿',
+        category: '서비스 통합 여부',
         kinkos: 'O',
         competitorA: 'X',
         competitorB: 'X',
       },
       {
-        category: '사이트 디자인 맞춤 제작',
+        category: '전담 매니저 관리 여부',
+        kinkos: 'O',
+        competitorA: 'X',
+        competitorB: 'X',
+      },
+    ],
+
+    imageData: [
+      {
+        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+      },
+      {
+        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+      },
+    ],
+  },
+  {
+    title: '합리적인 제작단가',
+    description:
+      '체계적인 생산 시스템과 파트너사 비교 견적을 통해 품질은 지키고 단가는 합리적으로 제공합니다.',
+    type: 'table',
+    tableData: [
+      {
+        category: '견적 내역 상세 공개',
+        kinkos: 'O',
+        competitorA: 'X',
+        competitorB: 'X',
+      },
+      {
+        category: '직접 생산상식',
+        kinkos: 'O',
+        competitorA: 'X',
+        competitorB: 'X',
+      },
+    ],
+    imageData: [
+      {
+        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+      },
+      {
+        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+      },
+    ],
+  },
+  {
+    title: '3D 시안, 샘플링 제안',
+    description:
+      '실제 제작 전에 3D 시안과 실물 샘플을 제안하여, 결과물을 사전에 검증할 수 있도록 합니다.',
+    type: 'table',
+    tableData: [
+      {
+        category: '3D 시안 제공',
         kinkos: 'O',
         competitorA: 'O',
-        competitorB: 'O',
-      },
-    ],
-
-    imageData: [
-      {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-    ],
-  },
-  {
-    title: '똑똑한 자동화 주문 시스템',
-    description:
-      '텍스트 입력 없이 클릭만으로 주문이 가능해져\n업무 효율을 극대화하고, 불필요한 시간 낭비를 줄여줍니다.',
-    type: 'table',
-    tableData: [
-      {
-        category: '간편성 및 자동화 수준',
-        kinkos: 'O',
-        competitorA: 'O',
-        competitorB: 'O',
-      },
-      {
-        category: '내부DB 연동 개발 여부',
-        kinkos: 'O',
-        competitorA: 'X',
-        competitorB: 'X',
-      },
-    ],
-    imageData: [
-      {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-    ],
-  },
-  {
-    title: '강력한 관리 기능으로 통제권 UP!',
-    description:
-      '매장별, 지점별 예산 한도를 설정하고 주문 권한을 세밀하게 제어할 수 있습니다. 또한, 간소화된 승인 절차와 실시간 주문 내역 확인으로 관리의 투명성을 높여줍니다.',
-    type: 'table',
-    tableData: [
-      {
-        category: '예산 한도 설정 기능',
-        kinkos: 'O',
-        competitorA: 'X',
-        competitorB: 'O',
-      },
-      {
-        category: '역할별 주문 권한 설정 기능',
-        kinkos: 'O',
-        competitorA: 'X',
-        competitorB: 'X',
-      },
-    ],
-
-    imageData: [
-      {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-    ],
-  },
-  {
-    title: '누구나 쉽게! 최고의 편의성',
-    description:
-      '처음 사용하는 직원도 쉽게 따라 할 수 있는 이용 가이드와 온라인 교육을 지원합니다. 또한, 고객사의 보안 정책에 맞춰 안전하게 운영되며, 직접 체험해 볼 수 있는 데모몰을 제공합니다.',
-
-    type: 'table',
-    tableData: [
-      {
-        category: '맞춤 디자인 템플릿',
-        kinkos: 'O',
-        competitorA: 'X',
         competitorB: 'X',
       },
       {
-        category: '데모몰 지원',
+        category: '제작 샘플 제공',
         kinkos: 'O',
         competitorA: 'X',
         competitorB: 'X',
@@ -205,8 +169,7 @@ const featureData: FeatureItem[] = [
     ],
   },
 ]
-
-export const SolutionCorporatePrintingTemplate = () => {
+export const SolutionGiftPromotionalDesignTemplate = () => {
   const { ref, inView } = useInView()
   const stickyRef = useRef<HTMLDivElement>(null)
 

@@ -22,6 +22,7 @@ import { Button } from '@/components/ui/button'
 interface Props {
   badge: string
   title: ReactElement
+  heroContent: ReactElement
   buttonContent: string
   link: string
 }
@@ -170,27 +171,11 @@ export const SolutionHeroSection = ({
           bg={'rgba(0, 0, 0, 0.5)'}
           w="100%"
           h="100%"
+          opacity={0}
           zIndex="1"
         >
           <VStack gap={'28px'} textAlign={'center'} ref={dimOverlayTextRef}>
-            <Text textStyle={'pre-display-3'} color={'grey.0'}>
-              기업 인쇄물 관리, 이제 스마트하게 해결하세요!
-            </Text>
-            <Text textStyle={'pre-heading-3'} color={'grey.0'} as={'span'}>
-              {
-                "지점마다 다른 디자인, 복잡한 주문 절차, 불투명한 예산 관리..혹시 이런 고민을 하고 계신가요?\n기업 인쇄물 주문, 이제 '"
-              }
-              <Text
-                textStyle={'pre-heading-3'}
-                color={'secondary.3'}
-                as={'span'}
-              >
-                기업전용인쇄몰
-              </Text>
-              <Text textStyle={'pre-heading-3'} color={'grey.0'} as={'span'}>
-                {"'로 쉽고 빠르게 해결하세요."}
-              </Text>
-            </Text>
+            {introBlockData.heroContent}
           </VStack>
         </Center>
         <Image

@@ -1,3 +1,5 @@
+import { ReactElement } from 'react'
+
 import {
   Box,
   Card,
@@ -13,7 +15,7 @@ import { Text } from '@chakra-ui/react'
 import { SquareHalfIcon } from '@phosphor-icons/react/dist/ssr'
 
 interface Props {
-  title: string
+  title: ReactElement
   cards: {
     title: string
     description: string
@@ -23,9 +25,7 @@ interface Props {
 export const SoultionCardsSection = ({ title, cards }: Props) => {
   return (
     <VStack gap={{ base: '32px', sm: '40px', lg: '48px' }}>
-      <Text textStyle={'pre-display-4'} textAlign={'center'}>
-        {title}
-      </Text>
+      {title}
       <Grid
         w={'100%'}
         templateColumns={{

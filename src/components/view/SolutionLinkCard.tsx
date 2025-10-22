@@ -18,9 +18,9 @@ const SOLUTION_CARD_MAP = {
   },
   [CustomerReviewSolutionSolutionTypeEnumType.MARKET_ANALYSIS_BASED]: {
     id: 'market-analysis',
-    title: '시장분석 기반 제작',
+    title: '굿즈&판촉물 디자인',
     iconBg: '#d5f8f5',
-    href: ROUTES.SOLUTIONS.DESIGN.MARKET_ANALYSIS,
+    href: ROUTES.SOLUTIONS.DESIGN.GIFT_PROMOTIONAL_DESIGN,
     iconSrc:
       '/images/solutions/solution-link-card/a2faa5ce816a3b9b3b43726d263ac142dd690837.svg',
   },
@@ -34,7 +34,7 @@ const SOLUTION_CARD_MAP = {
   },
   [CustomerReviewSolutionSolutionTypeEnumType.VMD_3D]: {
     id: 'vmd-3d',
-    title: 'VMD(3D) 제작',
+    title: 'VMD(3D) 디자인',
     iconBg: '#e9ebff',
     href: ROUTES.SOLUTIONS.DESIGN.VMD_3D,
     iconSrc:
@@ -114,7 +114,7 @@ const SOLUTION_CARD_MAP = {
   },
   [CustomerReviewSolutionSolutionTypeEnumType.SAFETY_SIGNAGE]: {
     id: 'safety-signage',
-    title: '안전사인물 제작관리',
+    title: '안전 사인물 제작관리',
     iconBg: '#e9e9e9',
     href: ROUTES.SOLUTIONS.PRODUCTION.SAFETY_SIGN,
     iconSrc:

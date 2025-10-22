@@ -10,44 +10,40 @@ import { ComparisonTableRow } from '@/components/ui/comparison-table'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 import { SolutionFeatureItem } from './SolutionFeatureItem'
+import { FeatureItem } from './SolutionFeatureSection'
 import './feature-section-marquee.css'
 
 const ChakraMarquee = chakra(Marquee)
 
-export const SolutionFeatureMobileSection = () => {
+export const SolutionFeatureMobileSection = ({
+  featureItems,
+}: {
+  featureItems: FeatureItem[]
+}) => {
   const isBase = useMediaQuery(['(max-width: 768px)'], {
     ssr: true,
   })[0]
 
-  const featureData: ComparisonTableRow[] = [
-    {
-      category: '간편성 및 자동화 수준',
-      kinkos: 'O',
-      competitorA: 'O',
-      competitorB: 'O',
-    },
-    {
-      category: '내부DB 연동 개발 여부',
-      kinkos: 'O',
-      competitorA: 'X',
-      competitorB: 'X',
-    },
-  ]
+  const tableData: {
+    type: 'table' | 'description'
+    data: FeatureItem['tableData'] | string[]
+  }[] = featureItems.map((item) => {
+    if (item.type === 'table') {
+      return {
+        type: 'table',
+        data: item.tableData,
+      }
+    } else {
+      return {
+        type: 'description',
+        data: item.descriptionData,
+      }
+    }
+  })
 
-  const featureImageData = [
-    {
-      image: '/images/solutions/solutions-hero-section.jpg',
-      alt: 'feature',
-    },
-    {
-      image: '/images/solutions/solutions-feature-mock-img.jpg',
-      alt: 'feature',
-    },
-    {
-      image: '/images/solutions/solutions-feature-mock-img.jpg',
-      alt: 'feature',
-    },
-  ]
+  const imageData: FeatureItem['imageData'][] = featureItems.map(
+    (item) => item.imageData,
+  )
 
   return (
     <Container
@@ -57,54 +53,59 @@ export const SolutionFeatureMobileSection = () => {
       flexDirection={'column'}
       position={'relative'}
     >
-      {[featureData, featureData, featureData, featureData].map(
-        (feature, index) => {
-          return (
-            <Flex
-              key={index}
-              align={'start'}
-              gap={{ base: '56px', sm: '80px' }}
-              flexDirection={'column'}
-            >
-              <Box w={'100%'}>
+      {tableData.map((feature, index) => {
+        const featureItem = featureItems[index]
+        return (
+          <Flex
+            key={index}
+            align={'start'}
+            gap={{ base: '56px', sm: '80px' }}
+            flexDirection={'column'}
+          >
+            <Box w={'100%'}>
+              {featureItem.type === 'table' && (
                 <SolutionFeatureItem.Table
-                  title={`${index + 1}번째 기능`}
-                  description={
-                    '킨코스는 간편성 및 자동화 수준을 최적화하여 사용자의 편의성을 극대화합니다'
+                  title={featureItem.title}
+                  description={featureItem.description}
+                  highlightData={
+                    (feature.data as FeatureItem['tableData']) || []
                   }
-                  highlightData={feature}
                 />
-              </Box>
-              <Box>
-                <ChakraMarquee direction="left" loop={0} autoFill={false}>
-                  {featureImageData.map((image, index) => (
-                    <Flex
-                      key={index}
-                      p={'20px'}
-                      pt={'0px'}
-                      alignItems={'start'}
-                    >
-                      <Image
-                        src={image.image}
-                        alt={image.alt}
-                        width={isBase ? 240 : 360}
-                        height={0}
-                        sizes="100vw"
-                        style={{
-                          borderRadius: '28px',
-                          height: '100%',
-                          objectFit: 'cover',
-                          boxShadow: '0 10px 24px 0 rgba(0, 27, 110, 0.10)',
-                        }}
-                      />
-                    </Flex>
-                  ))}
-                </ChakraMarquee>
-              </Box>
-            </Flex>
-          )
-        },
-      )}
+              )}
+              {feature.type === 'description' && (
+                <SolutionFeatureItem.Description
+                  title={featureItem.title}
+                  description={featureItem.description}
+                  descriptionData={
+                    (featureItem.descriptionData as string[]) || []
+                  }
+                />
+              )}
+            </Box>
+            <Box>
+              <ChakraMarquee direction="left" loop={0} autoFill={false}>
+                {imageData[index].map((image, index) => (
+                  <Flex key={index} p={'20px'} pt={'0px'} alignItems={'start'}>
+                    <Image
+                      src={image.imageUrl || ''}
+                      alt="feature"
+                      width={isBase ? 240 : 360}
+                      height={0}
+                      sizes="100vw"
+                      style={{
+                        borderRadius: '28px',
+                        height: '100%',
+                        objectFit: 'cover',
+                        boxShadow: '0 10px 24px 0 rgba(0, 27, 110, 0.10)',
+                      }}
+                    />
+                  </Flex>
+                ))}
+              </ChakraMarquee>
+            </Box>
+          </Flex>
+        )
+      })}
     </Container>
   )
 }

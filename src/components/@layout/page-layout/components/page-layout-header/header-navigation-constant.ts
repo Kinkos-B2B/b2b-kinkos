@@ -58,21 +58,21 @@ export const SOLUTION_NAVIGATION_ITEMS: NavigationItem = {
           href: ROUTES.SOLUTIONS.DESIGN.BRANDING,
         },
         {
-          label: '시장분석 기반제작',
-          href: ROUTES.SOLUTIONS.DESIGN.MARKET_ANALYSIS,
+          label: '굿즈&판촉물 디자인',
+          href: ROUTES.SOLUTIONS.DESIGN.GIFT_PROMOTIONAL_DESIGN,
         },
         {
           label: '매장 POP 디자인',
           href: ROUTES.SOLUTIONS.DESIGN.POP_DESIGN,
         },
-        { label: 'VMD(3D) 제작', href: ROUTES.SOLUTIONS.DESIGN.VMD_3D },
+        { label: 'VMD(3D) 디자인', href: ROUTES.SOLUTIONS.DESIGN.VMD_3D },
       ],
     },
     {
       title: '인쇄 제작 솔루션',
       items: [
         {
-          label: '안전사인물 제작관리',
+          label: '안전 사인물 제작관리',
           href: ROUTES.SOLUTIONS.PRODUCTION.SAFETY_SIGN,
         },
         {
@@ -80,12 +80,12 @@ export const SOLUTION_NAVIGATION_ITEMS: NavigationItem = {
           href: ROUTES.SOLUTIONS.PRODUCTION.SEASONAL_PRINTING,
         },
         {
-          label: '통합제작 All-in-One',
-          href: ROUTES.SOLUTIONS.PRODUCTION.ALL_IN_ONE,
-        },
-        {
           label: '통합제작 물류관리',
           href: ROUTES.SOLUTIONS.PRODUCTION.LOGISTICS,
+        },
+        {
+          label: '통합제작 All-in-One',
+          href: ROUTES.SOLUTIONS.PRODUCTION.ALL_IN_ONE,
         },
       ],
     },
@@ -114,8 +114,12 @@ export const SOLUTION_NAVIGATION_ITEMS: NavigationItem = {
           href: ROUTES.SOLUTIONS.ONLINE_ORDER.BUSINESS_CARD,
         },
         {
-          label: '기업 인쇄몰',
+          label: '기업 전용 인쇄몰',
           href: ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING,
+        },
+        {
+          label: '프렌차이즈 전용 인쇄물',
+          href: ROUTES.SOLUTIONS.ONLINE_ORDER.FRANCHISE_PRINTING,
         },
       ],
     },

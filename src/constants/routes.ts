@@ -11,7 +11,7 @@ export const ROUTES = {
   SOLUTIONS: {
     DESIGN: {
       BRANDING: '/solutions/design/branding',
-      MARKET_ANALYSIS: '/solutions/design/market-analysis',
+      GIFT_PROMOTIONAL_DESIGN: '/solutions/design/gift-promotional-design',
       POP_DESIGN: '/solutions/design/pop-design',
       VMD_3D: '/solutions/design/vmd-3d',
     },
@@ -29,6 +29,7 @@ export const ROUTES = {
     ONLINE_ORDER: {
       BUSINESS_CARD: '/solutions/online-order/business-card',
       CORPORATE_PRINTING: '/solutions/online-order/corporate-printing',
+      FRANCHISE_PRINTING: '/solutions/online-order/franchise-printing',
     },
   },
   CUSTOMER_REVIEW: '/customer-review',

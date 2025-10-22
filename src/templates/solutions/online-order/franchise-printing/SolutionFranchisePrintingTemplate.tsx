@@ -22,27 +22,27 @@ import { SolutionReleatedExportSection } from '../../common/SolutionReleatedExpo
 import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 
 const heroMockData = {
-  badge: '기업 전용 인쇄물',
+  badge: '프랜차이즈 전용 인쇄몰',
   title: (
     <VStack textAlign={'center'} textStyle={'pre-display-3'} gap={'0px'}>
-      <Text color={'primary.4'}>기업 전용 인쇄몰</Text>
-      <Text whiteSpace="nowrap">아직도 복잡하게 주문하세요?</Text>
+      <Text color={'primary.4'}>프랜차이즈 인쇄물 관리, </Text>
+      <Text whiteSpace="nowrap">하나의 시스템으로 통합하세요! </Text>
     </VStack>
   ),
   heroContent: (
     <>
       <Text textStyle={'pre-display-3'} color={'grey.0'}>
-        기업 인쇄물 관리, 이제 스마트하게 해결하세요!
+        {'본사는 브랜드 관리 때문에…\n가맹점은 복잡한 주문 때문에... '}
       </Text>
       <Text textStyle={'pre-heading-3'} color={'grey.0'} as={'span'}>
-        {
-          "지점마다 다른 디자인, 복잡한 주문 절차, 불투명한 예산 관리..혹시 이런 고민을 하고 계신가요?\n기업 인쇄물 주문, 이제 '"
-        }
+        지점마다 제각각인 홍보물, 본사와의 소통 지연, 불투명한 비용 문제까지
+        <br />
+        이제 프랜차이즈의 모든 인쇄물 관리를
         <Text textStyle={'pre-heading-3'} color={'secondary.3'} as={'span'}>
-          기업전용인쇄몰
+          {" '프랜차이즈 전용 인쇄몰'"}
         </Text>
         <Text textStyle={'pre-heading-3'} color={'grey.0'} as={'span'}>
-          {"'로 쉽고 빠르게 해결하세요."}
+          로 스마트하게 해결하세요!
         </Text>
       </Text>
     </>
@@ -54,12 +54,9 @@ const heroMockData = {
 const cardsMockData = {
   title: (
     <Text textStyle={'pre-display-4'} textAlign={'center'}>
-      <Text>고민은 끝!</Text>
-      <Text as={'span'}>
-        <Text textStyle={'pre-display-4'} color={'primary.4'} as={'span'}>
-          기업 전용 인쇄몰 솔루션이
-        </Text>
-        <Text as={'span'}>이 필요한 이유</Text>
+      <Text as={'span'}>프랜차이즈 솔루션으로 </Text>
+      <Text textStyle={'pre-display-4'} color={'primary.4'} as={'span'}>
+        본사와 가맹점 모두가 만족하는 이유
       </Text>
     </Text>
   ),
@@ -67,98 +64,97 @@ const cardsMockData = {
     {
       title: '브랜드 이미지 통일',
       description:
-        '우리 회사 전용 디자인 템플릿으로 어디서든 일관된 브랜드 이미지를 유지하세요.',
+        '정해진 디자인 템플릿으로 브랜드의 일관성을 유지하고, 점주님은 디자인 걱정 없이, 클릭 몇 번으로 간편하게 주문합니다.',
     },
     {
-      title: '클릭 한 번으로 주문 끝',
+      title: '업무는 간단히, 효율은 최고로',
       description:
-        '복잡한 텍스트 입력 없이 클릭만으로 주문이 완료되는 자동화 시스템을 경험하세요.',
+        '본사는 전국 주문을 한눈에 파악하고, 점주님은 24시간 언제든 필요할 때 주문하며 매장 운영에만 집중할 수 있습니다.',
     },
     {
-      title: '비용 절감 효과',
+      title: '투명한 비용 관리',
       description:
-        '부서별 예산 한도 설정과 자동 차단 기능으로 불필요한 지출을 막아줍니다.',
+        '주문 가능한 항목과 금액이 투명하게 보여 과지출을 막아주고, 본사와 가맹점 모두의 비용을 아낄 수 있습니다.',
     },
     {
-      title: '실수 없는 결과물',
+      title: '제작부터 배송까지',
       description:
-        '전문가가 검증한 데이터로 오타나 인쇄 사고 걱정 없이 안심하고 주문하세요.',
+        '주문하신 홍보물을 매장별로 꼼꼼하게 포장하여 전국 어디든 배송해 드립니다. 점주님은 신경 쓸 필요 없이 매장에서 편하게 받으시면 됩니다.',
     },
   ],
 }
 
 const featureData: FeatureItem[] = [
   {
-    title: '우리 회사만을 위한 맞춤형 전용몰',
+    title: '본사/가맹점 맞춤 주문 시스템',
     description:
-      '기업의 브랜드 아이덴티티에 맞춰 자주 사용하는 인쇄물을 구성하고, 사이트 디자인까지 맞춤 제작해 드립니다.',
+      '하나의 몰 안에서 본사 지원 품목과 가맹점 자부담 품목의 신청 및 결제 과정을 완벽하게 분리하여, 목적에 따라 명확하고 편리하게 운영할 수 있습니다.',
     type: 'table',
     tableData: [
       {
-        category: '맞춤 디자인 템플릿',
+        category: '품목별 결제방식 분리 기능',
         kinkos: 'O',
         competitorA: 'X',
         competitorB: 'X',
       },
       {
-        category: '사이트 디자인 맞춤 제작',
+        category: '주문채널의 통합기능',
+        kinkos: 'O',
+        competitorA: 'O',
+        competitorB: 'X',
+      },
+    ],
+    imageData: [
+      {
+        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+      },
+      {
+        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+      },
+    ],
+  },
+  {
+    title: '가맹점별 예산 및 권한 관리',
+    description:
+      '각 가맹점의 예산 한도를 설정하고 주문 가능한 품목을 제어하는 등 세밀한 권한 관리가 가능하여, 본사의 체계적인 비용 통제를 돕습니다.',
+    type: 'table',
+    tableData: [
+      {
+        category: '가맹점별 예산 설정기능',
+        kinkos: 'O',
+        competitorA: 'X',
+        competitorB: 'X',
+      },
+      {
+        category: '품목별 주문 권한 제어기능',
+        kinkos: 'O',
+        competitorA: 'X',
+        competitorB: 'X',
+      },
+    ],
+    imageData: [
+      {
+        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+      },
+      {
+        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+      },
+    ],
+  },
+  {
+    title: '한눈에 보는 주문 관리 시스템',
+    description:
+      '전국 가맹점의 주문 현황을 실시간으로 파악하고, 간소화된 승인 절차를 통해 관리 업무의 효율성과 투명성을 동시에 높여줍니다.',
+    type: 'table',
+    tableData: [
+      {
+        category: '실시간 주문 대시보드 기능',
         kinkos: 'O',
         competitorA: 'O',
         competitorB: 'O',
       },
-    ],
-
-    imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-    ],
-  },
-  {
-    title: '똑똑한 자동화 주문 시스템',
-    description:
-      '텍스트 입력 없이 클릭만으로 주문이 가능해져\n업무 효율을 극대화하고, 불필요한 시간 낭비를 줄여줍니다.',
-    type: 'table',
-    tableData: [
-      {
-        category: '간편성 및 자동화 수준',
-        kinkos: 'O',
-        competitorA: 'O',
-        competitorB: 'O',
-      },
-      {
-        category: '내부DB 연동 개발 여부',
-        kinkos: 'O',
-        competitorA: 'X',
-        competitorB: 'X',
-      },
-    ],
-    imageData: [
-      {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-    ],
-  },
-  {
-    title: '강력한 관리 기능으로 통제권 UP!',
-    description:
-      '매장별, 지점별 예산 한도를 설정하고 주문 권한을 세밀하게 제어할 수 있습니다. 또한, 간소화된 승인 절차와 실시간 주문 내역 확인으로 관리의 투명성을 높여줍니다.',
-    type: 'table',
-    tableData: [
-      {
-        category: '예산 한도 설정 기능',
-        kinkos: 'O',
-        competitorA: 'X',
-        competitorB: 'O',
-      },
-      {
-        category: '역할별 주문 권한 설정 기능',
+        category: '원클릭 주문 승인 및 반려 기능',
         kinkos: 'O',
         competitorA: 'X',
         competitorB: 'X',
@@ -175,20 +171,20 @@ const featureData: FeatureItem[] = [
     ],
   },
   {
-    title: '누구나 쉽게! 최고의 편의성',
+    title: '누구나 쉬운 사용 환경',
     description:
-      '처음 사용하는 직원도 쉽게 따라 할 수 있는 이용 가이드와 온라인 교육을 지원합니다. 또한, 고객사의 보안 정책에 맞춰 안전하게 운영되며, 직접 체험해 볼 수 있는 데모몰을 제공합니다.',
+      '처음 사용하는 점주님도 바로 적응할 수 있도록 온라인 가이드와 맞춤형 데모몰 체험을 지원하여, 쉽고 빠른 도입이 가능합니다.',
 
     type: 'table',
     tableData: [
       {
-        category: '맞춤 디자인 템플릿',
+        category: '이용 가이드 제공',
         kinkos: 'O',
         competitorA: 'X',
         competitorB: 'X',
       },
       {
-        category: '데모몰 지원',
+        category: '데모몰 체험 지원',
         kinkos: 'O',
         competitorA: 'X',
         competitorB: 'X',
@@ -206,7 +202,7 @@ const featureData: FeatureItem[] = [
   },
 ]
 
-export const SolutionCorporatePrintingTemplate = () => {
+export const SolutionFranchisePrintingTemplate = () => {
   const { ref, inView } = useInView()
   const stickyRef = useRef<HTMLDivElement>(null)
 

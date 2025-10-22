@@ -15,8 +15,6 @@ import { HomeCustomerReviewSection } from './section/6/HomeCustomerReviewSection
 import { HomeMoreQuestionSection } from './section/7/HomeMoreQuestionSection'
 import { HomeIntroSection } from './section/HomeIntroSection'
 
-const imgBg = '/images/home/intro/intro-bg.svg'
-
 export const HomeTemplate = () => {
   const { isIntroCompleted, setIntroCompleted } = useGlobalStore()
 
