@@ -149,19 +149,6 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
 
       <VStack gap={{ lg: '64px', sm: '48px', base: '40px' }}>
         <Box position="relative" width="100%">
-          {/* <Box
-            position="absolute"
-            top="0px"
-            bottom="0px"
-            left="0"
-            w="30px"
-            height={'48px'}
-            zIndex={1}
-            bgGradient={
-              'linear-gradient(270deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%)'
-            }
-          /> */}
-
           <HStack
             gap="8px"
             overflowX="auto"
@@ -200,7 +187,7 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
             })}
           </HStack>
         </Box>
-        <Box w={'100vw'} overflow={'hidden'}>
+        <Box w={'100vw'} overflow={'hidden'} className="home-solution-slider">
           <div className="embla" ref={emblaRef}>
             <div className="embla__container">
               {slides.map((slide, index) => (

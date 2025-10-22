@@ -1,24 +1,24 @@
 /* Embla Carousel 스타일 */
-.embla {
+.home-solution-slider .embla {
   overflow: hidden;
 }
 
-.embla__container {
+.home-solution-slider .embla__container {
   display: flex;
 }
 
-.embla__slide {
+.home-solution-slider .embla__slide {
   flex: 0 0 auto;
   min-width: 0;
 }
 
-.embla__slide .slide {
+.home-solution-slider .embla__slide .slide {
   opacity: 0.56;
   transform: scale(0.85);
   transition: all 300ms ease;
 }
 
-.embla__slide .slide.active {
+.home-solution-slider .embla__slide .slide.active {
   opacity: 1;
   transform: scale(1);
 }

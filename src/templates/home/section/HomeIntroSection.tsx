@@ -415,7 +415,7 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
         w="190px"
         h="230px"
         transform="rotate(342deg)"
-        opacity="0.8"
+        opacity="0"
         scale="1"
       >
         <Image
@@ -433,7 +433,7 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
         left="1221px"
         bottom="0px"
         w="446px"
-        opacity="0.8"
+        opacity="0"
         scale="1"
       >
         <Image
@@ -453,7 +453,7 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
         transform="translateY(-50%) rotate(12deg)"
         w="350px"
         h="350px"
-        opacity="0.8"
+        opacity="0"
         scale="1"
       >
         <Image
@@ -473,7 +473,7 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
         top="45px"
         w="240px"
         h="240px"
-        opacity="0.8"
+        opacity="0"
         scale="1"
       >
         <Image
@@ -494,7 +494,7 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
         w="320px"
         h="250px"
         transform="rotate(344deg)"
-        opacity="0.8"
+        opacity="0"
         scale="1"
       >
         <Image src={imgBox} alt="box" w="100%" h="100%" objectFit="contain" />
@@ -509,7 +509,7 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
         w="295px"
         h="310px"
         transform="rotate(18deg)"
-        opacity="0.8"
+        opacity="0"
         scale="1"
       >
         <Image
@@ -530,7 +530,7 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
         w="410px"
         h="520px"
         transform="rotate(21.794deg)"
-        opacity="0.8"
+        opacity="0"
         scale="1"
       >
         <Image
