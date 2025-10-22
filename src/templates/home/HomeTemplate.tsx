@@ -21,6 +21,7 @@ export const HomeTemplate = () => {
   return (
     <>
       {!isIntroComplete &&
+        typeof window !== 'undefined' &&
         createPortal(
           <HomeIntroSection
             onCompleted={() => {
