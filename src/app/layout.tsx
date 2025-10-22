@@ -85,7 +85,7 @@ export default function RootLayout({
     >
       <body>
         <AppProvider>
-          <ThemeProvider>
+          <ThemeProvider forcedTheme="light">
             <PageLayout>{children}</PageLayout>
           </ThemeProvider>
         </AppProvider>
