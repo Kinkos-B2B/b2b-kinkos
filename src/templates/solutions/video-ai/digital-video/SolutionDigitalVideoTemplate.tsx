@@ -50,7 +50,9 @@ const heroMockData = {
 const cardsMockData = {
   title: (
     <Text textStyle={'pre-display-4'} textAlign={'center'}>
-      <Text>고민은 끝!</Text>
+      <Text as={'span'}>고민은 끝!</Text>
+      <br />
+
       <Text as={'span'}>
         <Text textStyle={'pre-display-4'} color={'primary.4'} as={'span'}>
           킨코스 디지털 영상 제작 솔루션

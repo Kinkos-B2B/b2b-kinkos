@@ -28,11 +28,10 @@ interface Props {
 }
 
 export const SolutionFeatureSection = ({ featureItems }: Props) => {
-  console.log(featureItems)
-
-  const isDesktop = useMediaQuery(['(min-width: 1280px)'], {
-    ssr: true,
-  })[0]
+  const isDesktop =
+    useMediaQuery(['(min-width: 1280px)'], {
+      ssr: true,
+    })[0] || true
 
   if (isDesktop) {
     return <SolutionFeatureDesktopSection featureItems={featureItems} />

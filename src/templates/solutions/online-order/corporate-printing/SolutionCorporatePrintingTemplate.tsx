@@ -7,8 +7,6 @@ import { Box, Container, HStack, Text, VStack } from '@chakra-ui/react'
 import gsap from 'gsap'
 import { useInView } from 'react-intersection-observer'
 
-import { Button } from '@/components/ui/button'
-import { ROUTES } from '@/constants/routes'
 import { GetSolutionExpertListParamsTypeEnumType } from '@/helper/options'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
@@ -54,7 +52,9 @@ const heroMockData = {
 const cardsMockData = {
   title: (
     <Text textStyle={'pre-display-4'} textAlign={'center'}>
-      <Text>고민은 끝!</Text>
+      <Text as={'span'}>고민은 끝!</Text>
+      <br />
+
       <Text as={'span'}>
         <Text textStyle={'pre-display-4'} color={'primary.4'} as={'span'}>
           기업 전용 인쇄몰 솔루션이

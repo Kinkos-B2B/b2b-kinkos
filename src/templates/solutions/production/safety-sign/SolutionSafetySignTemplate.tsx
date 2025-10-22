@@ -32,11 +32,11 @@ const heroMockData = {
   heroContent: (
     <>
       <Text textStyle={'pre-display-3'} color={'grey.0'}>
-        {'""어떤 소재가 가장 효과적일까?“"\n "전국 현장 시공은 어떻게 하지?"'}
+        {'“어떤 소재가 가장 효과적일까?“\n "전국 현장 시공은 어떻게 하지?"'}
       </Text>
       <Text textStyle={'pre-heading-3'} color={'grey.0'} as={'span'}>
         {
-          '킨코스는 물류/건설 현장을 직접 분석하여, 법규 준수는 물론 작업자의 안전 의식을 높이는 최적의 사인물 솔루션을 기획부터 시공까지 한번에 제안합니다. 이제 현장에서 완성된 안전 시스템을 확인하세요!'
+          '킨코스는 물류/건설 현장을 직접 분석하여, 법규 준수는 물론 작업자의 안전 의식을 높이는 최적의 사인물 솔루션을 기획부터 시공까지 한번에 제안합니다.\n이제 현장에서 완성된 안전 시스템을 확인하세요!'
         }
       </Text>
     </>
@@ -48,7 +48,8 @@ const heroMockData = {
 const cardsMockData = {
   title: (
     <Text textStyle={'pre-display-4'} textAlign={'center'}>
-      <Text>안전 관리 담당자의 고민 끝!</Text>
+      <Text as={'span'}>안전 관리 담당자의 고민 끝!</Text>
+      <br />
       <Text as={'span'}>
         <Text textStyle={'pre-display-4'} color={'primary.4'} as={'span'}>
           킨코스 안전 사인물 제작관리 솔루션

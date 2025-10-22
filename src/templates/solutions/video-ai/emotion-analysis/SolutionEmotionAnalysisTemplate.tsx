@@ -36,7 +36,6 @@ const heroMockData = {
           '“이번 신제품은 제품명이 핵심인데, 잘 보일려나?“\n “경쟁사와는 확실한 차별점이 있어야 할텐데…”'
         }
       </Text>
-
       <Text textStyle={'pre-heading-3'} color={'grey.0'} as={'span'}>
         <Text as={'span'}>킨코스 </Text>
         <Text as={'span'} color={'secondary.3'}>
@@ -59,7 +58,8 @@ const heroMockData = {
 const cardsMockData = {
   title: (
     <Text textStyle={'pre-display-4'} textAlign={'center'}>
-      <Text>더 이상 정답 없는 디자인 고민은 끝! </Text>
+      <Text as={'span'}>더 이상 정답 없는 디자인 고민은 끝! </Text>
+      <br />
       <Text as={'span'}>
         <Text textStyle={'pre-display-4'} color={'primary.4'} as={'span'}>
           킨코스 EX감성 분석 솔루션

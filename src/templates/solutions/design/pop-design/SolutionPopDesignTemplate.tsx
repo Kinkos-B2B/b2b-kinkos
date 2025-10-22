@@ -47,12 +47,12 @@ const heroMockData = {
 
 const cardsMockData = {
   title: (
-    <Text textStyle={'pre-display-4'} textAlign={'center'}>
-      <Text>담당자의 고민, 매장 POP 디자인</Text>
+    <VStack gap={'0px'}>
+      <Text textStyle={'pre-display-4'}>담당자의 고민, 매장 POP 디자인</Text>
       <Text textStyle={'pre-display-4'} color={'primary.4'}>
         킨코스가 해결해드립니다.
       </Text>
-    </Text>
+    </VStack>
   ),
   cards: [
     {

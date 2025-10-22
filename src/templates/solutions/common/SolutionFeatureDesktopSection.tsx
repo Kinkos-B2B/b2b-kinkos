@@ -1,8 +1,6 @@
 import { Fragment, useRef } from 'react'
 
-import Image from 'next/image'
-
-import { Box, Container, Flex, VStack } from '@chakra-ui/react'
+import { Box, Container, Flex, Image, VStack } from '@chakra-ui/react'
 import { useGSAP } from '@gsap/react'
 
 import { gsap } from 'gsap'
@@ -33,6 +31,7 @@ export const SolutionFeatureDesktopSection = ({ featureItems }: Props) => {
         left: '0',
         zIndex: 100 - index,
         opacity: index === 0 ? 1 : 0,
+        invalidateOnRefresh: true,
       })
     })
 
@@ -49,6 +48,7 @@ export const SolutionFeatureDesktopSection = ({ featureItems }: Props) => {
         trigger: imageSection,
         start: `top top+=${PIN_OFFSET}px`,
         end: `bottom top+=${PIN_OFFSET}px`,
+        invalidateOnRefresh: true,
         onEnter: () => {
           gsap.to(featureSection, {
             opacity: 1,
@@ -136,6 +136,7 @@ export const SolutionFeatureDesktopSection = ({ featureItems }: Props) => {
             key={`feature-table-${index}`}
             className={`feature-table-section-${index}`}
             position={'absolute'}
+            opacity={0}
             top={'0px'}
           >
             {data.type === 'table' && (
@@ -155,7 +156,6 @@ export const SolutionFeatureDesktopSection = ({ featureItems }: Props) => {
           </Box>
         ))}
 
-        {/* {높이 맞춤용 더미 박스} */}
         {datas.at(-1) && (
           <Box opacity={0}>
             {datas.at(-1)?.type === 'table' && (
@@ -181,19 +181,16 @@ export const SolutionFeatureDesktopSection = ({ featureItems }: Props) => {
             key={`image-${index}`}
             gap={'40px'}
             className={`feature-image-section-${index}`}
-            minHeight={'100vh'}
           >
             {data.imageData.map((image, index) => (
               <Image
                 key={index}
-                style={{
-                  height: 'auto',
-                  borderRadius: '28px',
-                }}
                 src={image.imageUrl}
                 alt="feature"
-                width={600}
-                height={600}
+                style={{
+                  borderRadius: '28px',
+                  width: '600px',
+                }}
                 objectFit={'cover'}
               />
             ))}

@@ -154,7 +154,7 @@ const featureData: FeatureItem[] = [
         competitorB: 'O',
       },
       {
-        category: '원클릭 주문 승인 및 반려 기능',
+        category: '원클릭 주문 승인\n및 반려 기능',
         kinkos: 'O',
         competitorA: 'X',
         competitorB: 'X',
