@@ -100,12 +100,12 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
       y: 50,
     })
 
+    scrollContainer.style.overflow = 'hidden'
+
     // Timeline 생성 - 모든 이미지 애니메이션이 끝난 후 첫 번째 텍스트 애니메이션 실행
     const tl = gsap.timeline({
       onComplete: () => {
-        // 첫 번째 텍스트 섹션 표시
         gsap.set('[data-index="0"]', { opacity: 1 })
-        // 모든 이미지 애니메이션이 완료된 후 첫 번째 텍스트 애니메이션 실행
         gsap.fromTo(
           '[data-index="0"] .intro-text',
           { opacity: 0, y: 50 },
@@ -116,6 +116,7 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
             stagger: 0.2,
             ease: 'power2.out',
             onComplete: () => {
+              scrollContainer.style.overflow = 'auto'
               // 첫 번째 텍스트 애니메이션 완료 후 이미지 바운스 애니메이션 실행
               startImageBounceAnimation()
               // 그 다음 스크롤 트리거 설정
