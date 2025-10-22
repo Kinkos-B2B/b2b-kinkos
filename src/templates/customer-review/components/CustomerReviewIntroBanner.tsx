@@ -45,7 +45,7 @@ export const CustomerReviewIntroBanner = ({ data }: Props) => {
           maxW="1280px"
           position="relative"
           w="100%"
-          py={{ base: '60px 100px', sm: '80px 70px', lg: '0px' }}
+          py={{ base: '60px', sm: '80px', lg: '0px' }}
           overflow="hidden"
           h={{ base: 'auto', lg: '480px' }}
           alignContent={'center'}
@@ -127,31 +127,6 @@ export const CustomerReviewIntroBanner = ({ data }: Props) => {
               >
                 <PlayIcon weight="fill" color={'#9FA4A9'} size={24} />
               </IconButton>
-              <Box
-                w="100%"
-                position="absolute"
-                bottom="0px"
-                bg="grey.0"
-                px="32px"
-                py="24px"
-                transform={{
-                  lg: 'translateY(50%)',
-                  sm: 'translateY(50%)',
-                  base: 'translateY(66%)',
-                }}
-                borderRadius="28px"
-                boxShadow="0px 12px 20px 0px rgba(1, 45, 181, 0.05)"
-                display="flex"
-                flexDirection="column"
-                alignItems="flex-start"
-                maxW="400px"
-                gap="12px"
-              >
-                <Text>OB맥주</Text>
-                <Text textStyle="pre-heading-5" color="grey.10">
-                  {data?.description}
-                </Text>
-              </Box>
             </Box>
           </Flex>
         </Box>
