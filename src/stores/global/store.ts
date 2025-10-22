@@ -3,12 +3,9 @@ import { createStoreContext, withSetter } from '@toktokhan-dev/zustand-react'
 import { immer } from 'zustand/middleware/immer'
 
 export type GlobalStore = {
-  isClient: boolean
-  count: number
-  nested: {
-    count: number
-  }
-  updateCount: (num: number) => void
+  // Intro 관련 상태
+  isIntroCompleted: boolean
+  setIntroCompleted: (completed: boolean) => void
 }
 
 /**
@@ -27,16 +24,11 @@ export const {
 } = createStoreContext(
   withSetter(
     immer<GlobalStore>((set, get, store) => ({
-      isClient: false,
-      count: 0,
-      nested: {
-        count: 0,
-      },
-      // 간단한 상태 수정은 따로 함수를 정의할 필요가 없지만,
-      // 복잡한 상태 업데이트 함수정의를 위해서는 아래와 같이 할 수 있습니다.
-      updateCount: (count: number) =>
+      // Intro 관련 상태 초기화
+      isIntroCompleted: false,
+      setIntroCompleted: (completed: boolean) =>
         set((state) => {
-          state.count = +((state.count / count) * 3 + 1).toFixed(2)
+          state.isIntroCompleted = completed
         }),
     })),
   ),
