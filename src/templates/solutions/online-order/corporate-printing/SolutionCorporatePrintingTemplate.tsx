@@ -30,14 +30,15 @@ const heroMockData = {
   heroContent: (
     <>
       <Text textStyle={'pre-display-3'} color={'grey.0'}>
-        기업 인쇄물 관리, 이제 스마트하게 해결하세요!
+        기업 인쇄물 관리, <br />
+        이제 스마트하게 해결하세요!
       </Text>
       <Text textStyle={'pre-heading-3'} color={'grey.0'} as={'span'}>
         {
           "지점마다 다른 디자인, 복잡한 주문 절차, 불투명한 예산 관리..혹시 이런 고민을 하고 계신가요?\n기업 인쇄물 주문, 이제 '"
         }
         <Text textStyle={'pre-heading-3'} color={'secondary.3'} as={'span'}>
-          기업전용인쇄몰
+          기업 전용 인쇄몰
         </Text>
         <Text textStyle={'pre-heading-3'} color={'grey.0'} as={'span'}>
           {"'로 쉽고 빠르게 해결하세요."}
@@ -57,7 +58,7 @@ const cardsMockData = {
 
       <Text as={'span'}>
         <Text textStyle={'pre-display-4'} color={'primary.4'} as={'span'}>
-          기업 전용 인쇄몰 솔루션이
+          기업 전용 인쇄몰 솔루션
         </Text>
         <Text as={'span'}>이 필요한 이유</Text>
       </Text>
@@ -182,7 +183,7 @@ const featureData: FeatureItem[] = [
     type: 'table',
     tableData: [
       {
-        category: '맞춤 디자인 템플릿',
+        category: '온보딩 교육 지원',
         kinkos: 'O',
         competitorA: 'X',
         competitorB: 'X',
