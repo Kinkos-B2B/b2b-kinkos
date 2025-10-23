@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 import {
   Box,
   Button,
@@ -12,6 +14,7 @@ import {
 
 import { ExpertProfileCard } from '@/components/view/ExpertProfileCard'
 import { PostHeader } from '@/components/view/PostDetail/PostHeader'
+import { ROUTES } from '@/constants/routes'
 import { useGetHelpArticleDetailQuery } from '@/generated/apis/HelpArticleApi/HelpArticleApi.query'
 
 import { ProblemSolveArticleContent } from './components/ProblemSolveArticleContent'
@@ -57,23 +60,27 @@ export const ProblemSolveDetailTemplate = ({ id }: Props) => {
             </VStack>
             <Box w={{ base: '100%', lg: '820px' }}>
               <ExpertProfileCard
-                nickname="닉네임"
-                quote="기업 브랜드 가치 상승에 기여하는 것이 저의 목표입니다."
-                relatedSolutions={['브랜딩 디자인', '통합제작 All-in-One']}
-                relatedFields={[
-                  'POSM(POP)',
-                  '디자인 기획/구독',
-                  '부스/전시회/시공',
-                ]}
+                nickname={data?.data?.expert?.nickname ?? ''}
+                quote={data?.data?.expert?.description ?? ''}
+                relatedSolutions={data?.data?.expert?.solutionList ?? []}
+                relatedFields={data?.data?.expert?.industryList ?? []}
               />
             </Box>
             <HStack gap={'8px'}>
-              <Button variant={'outline'} w={'180px'}>
-                무료 상담 받아보기
-              </Button>
-              <Button variant={'outline'} w={'180px'}>
-                무료 상담 받아보기
-              </Button>
+              {/* @TODO : Pluug Form*/}
+              <Link
+                href={data?.data?.expert?.customFormUrl ?? ''}
+                target="_blank"
+              >
+                <Button variant={'outline'} w={'180px'}>
+                  무료 상담 받아보기
+                </Button>
+              </Link>
+              <Link href={ROUTES.PROBLEM}>
+                <Button variant={'outline'} w={'180px'}>
+                  고민해결 사례 더 보기
+                </Button>
+              </Link>
             </HStack>
           </Center>
         </Container>
