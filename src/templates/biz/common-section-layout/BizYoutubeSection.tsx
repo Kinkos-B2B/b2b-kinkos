@@ -68,7 +68,7 @@ export const BizViedoSection = ({ data }: Props) => {
                 target={data.moreInfoLink ? '_self' : '_blank'}
               >
                 <Button variant={'outline'} size="md">
-                  {data.moreInfoButtonText || '유튜브 보러가기'}
+                  {data.moreInfoButtonText || '영상으로 미리보기'}
                 </Button>
               </Link>
             </HStack>

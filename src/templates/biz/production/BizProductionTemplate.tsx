@@ -90,7 +90,7 @@ const descriptionItemMockData3: BizDescriptionItem = {
   ],
   infos: [
     {
-      name: ['프랜차이즈 센터', '바이오 센터'],
+      name: ['프랜차이즈 센터', '바이오 서포트 센터'],
     },
   ],
 }
@@ -105,7 +105,7 @@ export const bizVideoSectionMockData: BizVideoSectionData = {
   title: '킨코스 생산 & 제작 센터를\n직접 방문해 보고 싶으신가요?',
   description:
     '고객 관람을 요청하시면 전체 제작 과정을 투명하게 보여 드립니다.',
-  buttonText: '평촌 생산 공장 관람',
+  buttonText: '생산 공장 관람 요청',
   buttonLink: 'https://www.pluuug.com/form/gmD1ac03mB',
 }
 
