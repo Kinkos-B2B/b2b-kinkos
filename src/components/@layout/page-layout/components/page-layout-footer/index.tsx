@@ -76,11 +76,7 @@ export const PageLayoutFooter = () => {
                       as={Link}
                       href={item.href}
                       tabIndex={0}
-                      _focus={{
-                        outline: '2px solid',
-                        outlineColor: 'primary.4',
-                        outlineOffset: '2px',
-                      }}
+                      focusRing={'none'}
                     >
                       <Text
                         fontSize="15px"
@@ -151,12 +147,8 @@ export const PageLayoutFooter = () => {
                           <ChakraLink
                             as={Link}
                             href={item.href}
-                            tabIndex={0}
-                            _focus={{
-                              outline: '2px solid',
-                              outlineColor: 'primary.4',
-                              outlineOffset: '2px',
-                            }}
+                            tabIndex={-1}
+                            focusRing={'none'}
                           >
                             <Text
                               color="grey.6"
@@ -183,12 +175,8 @@ export const PageLayoutFooter = () => {
                     (item) => item.label === '고객후기',
                   )?.href
                 }
+                focusRing={'none'}
                 tabIndex={0}
-                _focus={{
-                  outline: '2px solid',
-                  outlineColor: 'primary.4',
-                  outlineOffset: '2px',
-                }}
               >
                 <Text
                   fontSize="15px"
@@ -210,13 +198,9 @@ export const PageLayoutFooter = () => {
             <Box role="listitem">
               <ChakraLink
                 as={Link}
+                focusRing={'none'}
                 href={PROBLEM_SOLVE_NAVIGATION_ITEM.href}
                 tabIndex={0}
-                _focus={{
-                  outline: '2px solid',
-                  outlineColor: 'primary.4',
-                  outlineOffset: '2px',
-                }}
               >
                 <Text
                   fontSize="15px"
@@ -233,14 +217,10 @@ export const PageLayoutFooter = () => {
             </Box>
             <Box role="listitem">
               <ChakraLink
+                focusRing={'none'}
                 as={Link}
                 href={EXPERT_NAVIGATION_ITEM.href}
-                tabIndex={0}
-                _focus={{
-                  outline: '2px solid',
-                  outlineColor: 'primary.4',
-                  outlineOffset: '2px',
-                }}
+                tabIndex={-1}
               >
                 <Text
                   fontSize="15px"
@@ -258,13 +238,9 @@ export const PageLayoutFooter = () => {
             <Box role="listitem">
               <ChakraLink
                 as={Link}
+                focusRing={'none'}
                 href={FAQ_NAVIGATION_ITEM.href}
                 tabIndex={0}
-                _focus={{
-                  outline: '2px solid',
-                  outlineColor: 'primary.4',
-                  outlineOffset: '2px',
-                }}
               >
                 <Text
                   fontSize="15px"
@@ -295,12 +271,8 @@ export const PageLayoutFooter = () => {
                   <ChakraLink
                     as={Link}
                     href={item.href}
-                    tabIndex={0}
-                    _focus={{
-                      outline: '2px solid',
-                      outlineColor: 'primary.4',
-                      outlineOffset: '2px',
-                    }}
+                    tabIndex={-1}
+                    focusRing={'none'}
                   >
                     <Text
                       fontSize="15px"
@@ -348,13 +320,7 @@ export const PageLayoutFooter = () => {
               aria-label="회사 정보"
             >
               <HStack gap="8px" wrap="wrap">
-                <Text
-                  fontSize="13px"
-                  fontWeight="400"
-                  color="grey.5"
-                  letterSpacing="-0.26px"
-                  lineHeight="1.6"
-                >
+                <Text color="grey.5" textStyle="pre-body-6">
                   {FOOTER_COMPANY_INFO.company}
                 </Text>
                 <Box
@@ -373,25 +339,13 @@ export const PageLayoutFooter = () => {
                     transform="rotate(90deg)"
                   />
                 </Box>
-                <Text
-                  fontSize="13px"
-                  fontWeight="400"
-                  color="grey.5"
-                  letterSpacing="-0.26px"
-                  lineHeight="1.6"
-                >
+                <Text textStyle="pre-body-6" color="grey.5">
                   {FOOTER_COMPANY_INFO.address}
                 </Text>
               </HStack>
 
               <HStack gap="8px" wrap="wrap">
-                <Text
-                  fontSize="13px"
-                  fontWeight="400"
-                  color="grey.5"
-                  letterSpacing="-0.26px"
-                  lineHeight="1.6"
-                >
+                <Text color="grey.5" textStyle="pre-body-6">
                   {FOOTER_COMPANY_INFO.ceo}
                 </Text>
                 <Box
@@ -410,13 +364,7 @@ export const PageLayoutFooter = () => {
                     transform="rotate(90deg)"
                   />
                 </Box>
-                <Text
-                  fontSize="13px"
-                  fontWeight="400"
-                  color="grey.5"
-                  letterSpacing="-0.26px"
-                  lineHeight="1.6"
-                >
+                <Text textStyle="pre-body-6" color="grey.5">
                   {FOOTER_COMPANY_INFO.phone}
                 </Text>
                 <Box
@@ -435,25 +383,13 @@ export const PageLayoutFooter = () => {
                     transform="rotate(90deg)"
                   />
                 </Box>
-                <Text
-                  fontSize="13px"
-                  fontWeight="400"
-                  color="grey.5"
-                  letterSpacing="-0.26px"
-                  lineHeight="1.6"
-                >
+                <Text textStyle="pre-body-6" color="grey.5">
                   {FOOTER_COMPANY_INFO.businessNumber}
                 </Text>
               </HStack>
 
               <HStack gap="8px" wrap="wrap">
-                <Text
-                  fontSize="13px"
-                  fontWeight="400"
-                  color="grey.5"
-                  letterSpacing="-0.26px"
-                  lineHeight="1.6"
-                >
+                <Text color="grey.5" textStyle="pre-body-6">
                   {FOOTER_COMPANY_INFO.privacyManager}
                 </Text>
                 <Box
@@ -472,13 +408,7 @@ export const PageLayoutFooter = () => {
                     transform="rotate(90deg)"
                   />
                 </Box>
-                <Text
-                  fontSize="13px"
-                  fontWeight="400"
-                  color="grey.5"
-                  letterSpacing="-0.26px"
-                  lineHeight="1.6"
-                >
+                <Text color="grey.5" textStyle="pre-body-6">
                   {FOOTER_COMPANY_INFO.businessRegistration}
                 </Text>
               </HStack>
