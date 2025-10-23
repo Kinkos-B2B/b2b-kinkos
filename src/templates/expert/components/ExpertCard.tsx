@@ -25,6 +25,7 @@ export const ExpertCard = React.forwardRef<HTMLDivElement, ExpertCardProps>(
           height={0}
           sizes="100vw"
           style={{
+            borderRadius: '28px',
             objectFit: 'cover',
             width: '100%',
             height: '100%',
