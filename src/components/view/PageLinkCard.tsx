@@ -35,7 +35,7 @@ const PAGE_LINK_CARD_MAP = {
   REVIEW: {
     title: '관련 고객후기',
     description:
-      '실제 작업 사례와 고객의 만족도가 궁금한가요? 고객후기를 확인해 보세요.',
+      '실제 작업 사례와 고객의 만족도가 궁금한가요?\n고객후기를 확인해 보세요.',
     icon: <MoreInfoCardCustomerReviewIcon />,
     iconBgColor: 'accent.violet1',
     href: ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING,
