@@ -115,6 +115,7 @@ export const ComparisonTable = forwardRef<HTMLDivElement, ComparisonTableProps>(
                           'pre-body-3'
                         : 'pre-body-4'
                       }
+                      lineHeight={colIndex > 1 ? '1' : 'auto'}
                     >
                       {row[column.key]}
                     </Text>

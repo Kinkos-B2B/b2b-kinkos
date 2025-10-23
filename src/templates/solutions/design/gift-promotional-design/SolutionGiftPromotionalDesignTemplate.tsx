@@ -113,6 +113,37 @@ const featureData: FeatureItem[] = [
       },
     ],
   },
+
+  {
+    title: '부담 없는 소량 제작',
+    description:
+      '필요할 때 필요한 만큼만 주문 제작하여, 재고 부담 없이 빠르게 받아보고 바로 사용할 수 있습니다.',
+    type: 'table',
+    tableData: [
+      {
+        category: '최소 주문 수량',
+        kinkos: '소량 가능',
+        competitorA: '일부 소량 가능',
+        competitorB: '대량 가능',
+      },
+      {
+        category: '재고관리/물류창고',
+        kinkos: '보유',
+        competitorA: '미보유',
+        competitorB: '미보유',
+      },
+    ],
+
+    imageData: [
+      {
+        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+      },
+      {
+        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+      },
+    ],
+  },
+
   {
     title: '합리적인 제작단가',
     description:
