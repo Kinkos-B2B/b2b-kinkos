@@ -40,7 +40,12 @@ export const CustomerReviewTemplate = () => {
         />
       </Box>
       <Box w={'100%'} pb={{ base: '80px', sm: '100px', lg: '120px' }}>
-        <CustomerReviewImageBanner />
+        <CustomerReviewImageBanner
+          data={{
+            desktopImageUrl: data?.bannerImageUrl?.url ?? '',
+            mobileImageUrl: data?.mobileBannerImageUrl?.url ?? '',
+          }}
+        />
       </Box>
       <Box w={'100%'} pb={{ base: '80px', sm: '160px' }}>
         <CustomerReviewPostList />

@@ -5,9 +5,6 @@ import { Box, Text, VStack } from '@chakra-ui/react'
 
 import dayjs from 'dayjs'
 
-import { ROUTES } from '@/constants/routes'
-import { ZoomImageWrapper } from '@/templates/expert/components/ExpertCard'
-
 interface CustomerReviewCardProps {
   image: string
   author?: string
@@ -37,23 +34,29 @@ export const PostCardItem = ({
         display="flex"
         flexDirection="column"
         w="100%"
+        _hover={{
+          '& img': {
+            transform: 'scale(1.05)',
+            transition: 'transform 0.3s ease',
+          },
+        }}
       >
-        <ZoomImageWrapper>
-          <Box
-            position="relative"
-            w="100%"
-            h={{ lg: '260px' }}
-            aspectRatio={441 / 260}
-          >
-            <Image
-              src={image}
-              alt={title}
-              fill
-              objectFit="cover"
-              style={{ borderRadius: '28px' }}
-            />
-          </Box>
-        </ZoomImageWrapper>
+        <Box
+          position="relative"
+          w="100%"
+          h={{ lg: '260px' }}
+          aspectRatio={441 / 260}
+          overflow="hidden"
+          borderRadius="28px"
+        >
+          <Image
+            src={image}
+            alt={title}
+            fill
+            objectFit="cover"
+            style={{ borderRadius: '28px' }}
+          />
+        </Box>
 
         <VStack align="start" gap="16px" width="100%">
           <VStack align="start" gap="8px" width="100%">

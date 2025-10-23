@@ -2,15 +2,9 @@
 
 import * as React from 'react'
 
-import {
-  Box,
-  Button,
-  Flex,
-  Grid,
-  GridItem,
-  Link,
-  VStack,
-} from '@chakra-ui/react'
+import Link from 'next/link'
+
+import { Box, Button, Flex, Grid, GridItem, VStack } from '@chakra-ui/react'
 import { keepPreviousData } from '@tanstack/react-query'
 
 import { Pagination } from '@/components/pagination'
@@ -125,8 +119,6 @@ export const ExpertListContainer = () => {
             {data?.data?.content?.map((expert) => (
               <GridItem key={expert.id} w="100%" cursor="pointer">
                 <Link
-                  w="100%"
-                  display="block"
                   href={ROUTES.EXPERT_DETAIL.replace(
                     ':id',
                     expert.id?.toString() ?? '',

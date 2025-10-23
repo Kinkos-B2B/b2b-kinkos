@@ -12,35 +12,24 @@ export interface ExpertCardProps {
   expert: GetAllExpertResponseType
 }
 
-export const ZoomImageWrapper = ({
-  children,
-}: {
-  children: React.ReactNode
-}) => {
-  return (
-    <Box
-      position="relative"
-      overflow="hidden"
-      borderRadius="28px"
-      _hover={{
-        '& img': {
-          transform: 'scale(1.05)',
-          transition: 'transform 0.3s ease',
-        },
-      }}
-    >
-      {children}
-    </Box>
-  )
-}
-
 export const ExpertCard = React.forwardRef<HTMLDivElement, ExpertCardProps>(
   function ExpertCard(props, ref) {
     const { expert, ...rest } = props
 
     return (
-      <VStack ref={ref} gap="16px" align="stretch" {...rest}>
-        <ZoomImageWrapper>
+      <VStack
+        ref={ref}
+        gap="16px"
+        align="stretch"
+        {...rest}
+        _hover={{
+          '& img': {
+            transform: 'scale(1.05)',
+            transition: 'transform 0.3s ease',
+          },
+        }}
+      >
+        <Box position="relative" overflow="hidden" borderRadius="28px">
           <Image
             src={expert.thumbnailImage?.url || ''}
             alt={`${expert.nickname}의 프로필 이미지`}
@@ -55,7 +44,8 @@ export const ExpertCard = React.forwardRef<HTMLDivElement, ExpertCardProps>(
               aspectRatio: '317/202',
             }}
           />
-        </ZoomImageWrapper>
+        </Box>
+
         <VStack gap="16px" align="stretch" pr="24px">
           <VStack gap="4px" align="stretch">
             <Text
