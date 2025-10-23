@@ -35,7 +35,7 @@ export const heroSectionMockData: BizHeroSectionData = {
 
 export const bizDescriptionBannerMockData: BizDescriptionBannerData = {
   title: '본사와 지점이 동시에\n킨코스를 이용할 수 있을까요?',
-  badgeText: '20여 개 센터, 기업 전용 네트워크 지원',
+  badgeText: '전국 20여 개 센터, 기업 전용 네트워크 지원',
   description:
     '본사와 지점이 동시에 동일한 서비스 품질을 누릴 수 있도록,\n기업 전용 네트워크 체계를 통해 대규모 프로젝트도 안정적으로 지원합니다.',
 }
@@ -105,10 +105,15 @@ export const bizDescriptionMockData = [
 
 export const bizVideoSectionMockData: BizVideoSectionData = {
   title:
-    '주말에 발생한 긴급 행사 물품,\n빠르게 제작해드리는 생산 공장 관람을\n희망하시나요?',
-  description: '사전 예약을 통해 전체 제작 과정을 투명하게 보여드립니다.',
-  buttonText: '가산 생산 공장 관람',
+    '전국 배포 프로젝트 지원이 가능한​\n킨코스 생산 & 제작 센터를 방문해 보고 싶으신가요?',
+  description:
+    '상담 신청 시 공장 관람을 요청하시면 전체 제작 과정을 투명하게 보여 드립니다.​',
+  buttonText: '생산 공장 관람 요청​',
   buttonLink: 'https://www.pluuug.com/form/gmD1ac03mB',
+  moreInfoLink: {
+    url: 'https://youtu.be/9_cNmJAsfME?si=065afGog8MR944L2',
+    target: '_blank',
+  },
 }
 
 export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =

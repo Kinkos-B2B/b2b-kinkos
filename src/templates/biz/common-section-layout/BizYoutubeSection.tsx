@@ -63,9 +63,10 @@ export const BizViedoSection = ({ data }: Props) => {
               <Button size={'md'}>{data.buttonText}</Button>
               <Link
                 href={
-                  data.moreInfoLink || 'https://www.youtube.com/@kinkoskorea'
+                  data.moreInfoLink?.url ||
+                  'https://www.youtube.com/@kinkoskorea'
                 }
-                target={data.moreInfoLink ? '_self' : '_blank'}
+                target={data.moreInfoLink?.target || '_blank'}
               >
                 <Button variant={'outline'} size="md">
                   {data.moreInfoButtonText || '영상으로 미리보기'}

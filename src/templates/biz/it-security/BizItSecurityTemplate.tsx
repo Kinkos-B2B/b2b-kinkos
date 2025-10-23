@@ -102,6 +102,10 @@ export const bizVideoSectionMockData: BizVideoSectionData = {
   description: '킨코스 담당자와의 사전 일정 예약을 통해 관람할 수 있습니다.',
   buttonText: '센터 관람 요청',
   buttonLink: 'https://www.pluuug.com/form/gmD1ac03mB',
+  moreInfoLink: {
+    url: 'https://youtu.be/s_VC4H4LNZo?si=3qUMCajvAxGokHET',
+    target: '_blank',
+  },
 }
 
 export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =

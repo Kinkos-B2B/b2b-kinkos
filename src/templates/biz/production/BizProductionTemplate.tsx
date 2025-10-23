@@ -104,9 +104,13 @@ export const bizDescriptionMockData = [
 export const bizVideoSectionMockData: BizVideoSectionData = {
   title: '킨코스 생산 & 제작 센터를\n직접 방문해 보고 싶으신가요?',
   description:
-    '고객 관람을 요청하시면 전체 제작 과정을 투명하게 보여 드립니다.',
+    '상담 신청 시 공장 관람을 요청하시면 전체 제작 과정을 투명하게 보여 드립니다.',
   buttonText: '생산 공장 관람 요청',
   buttonLink: 'https://www.pluuug.com/form/gmD1ac03mB',
+  moreInfoLink: {
+    url: 'https://youtu.be/9_cNmJAsfME?si=065afGog8MR944L2',
+    target: '_blank',
+  },
 }
 
 export const bizDescriptionWithBannerMockData = [

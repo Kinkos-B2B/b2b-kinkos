@@ -105,7 +105,10 @@ export const bizVideoSectionMockData: BizVideoSectionData = {
   buttonText: '센터 관람 요청',
   buttonLink: 'https://www.pluuug.com/form/gmD1ac03mB',
   moreInfoButtonText: '관련 콘텐츠 보러가기',
-  moreInfoLink: ROUTES.SOLUTIONS.PRODUCTION.LOGISTICS,
+  moreInfoLink: {
+    url: ROUTES.SOLUTIONS.PRODUCTION.LOGISTICS,
+    target: '_self',
+  },
 }
 
 export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =

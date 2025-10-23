@@ -109,8 +109,11 @@ export const bizVideoSectionMockData: BizVideoSectionData = {
     '전문가 리스트를 확인하고 상담 신청을 통해 상세 솔루션을 받아보실 수 있습니다.',
   buttonText: '전문가 연결하기',
   buttonLink: ROUTES.EXPERT,
-  moreInfoButtonText: '관련 솔루션 확인하기',
-  moreInfoLink: ROUTES.EXPERT,
+  moreInfoButtonText: '관련 콘텐츠 보러가기',
+  moreInfoLink: {
+    url: ROUTES.SOLUTIONS.DESIGN.BRANDING,
+    target: '_self',
+  },
 }
 
 export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =

@@ -32,7 +32,10 @@ export type BizVideoSectionData = {
   buttonText: string
   buttonLink: string
   moreInfoButtonText?: string
-  moreInfoLink?: string
+  moreInfoLink?: {
+    url: string
+    target: '_self' | '_blank'
+  }
 }
 
 export type BizDescriptionWithBannerProps = {
