@@ -21,7 +21,7 @@ export const BizDescriptionWithBannerSection = ({
       w={'100%'}
       display={'flex'}
       flexDirection={'column'}
-      gap={'160px'}
+      gap={{ lg: '160px', sm: '140px', base: '100px' }}
     >
       <BizDescriptionBanner
         title={banner.title}

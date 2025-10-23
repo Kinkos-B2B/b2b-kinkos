@@ -12,8 +12,8 @@ export const BizOrderedDescriptionSection = ({
   data: BizDescriptionItem[]
 }) => {
   return (
-    <Container maxW="1280px" py={'160px'}>
-      <VStack gap={'120px'}>
+    <Container maxW="1280px" py={{ base: '100px', sm: '140px', lg: '160px' }}>
+      <VStack gap={{ base: '64px', sm: '100px', lg: '120px' }}>
         {data.map((item, index) => (
           <BizDescriptionSectionItem
             key={index}

@@ -39,7 +39,7 @@ export const BizMoreInfoSection = React.forwardRef<
 
           <VStack gap="24px" align="stretch">
             <Grid
-              templateColumns={'1fr 1fr'}
+              templateColumns={{ base: '1fr', sm: '1fr 1fr' }}
               templateRows={'1fr 1fr'}
               gap="24px"
             >

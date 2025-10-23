@@ -15,6 +15,7 @@ import {
 
 import { ImageAsNext } from '@/components/image-as-next'
 import { Badge } from '@/components/ui/badge'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 import { BizDescriptionItem } from '../../types'
 import { BizImageDescriptionBox } from './BizImageDescriptionBox'
@@ -26,7 +27,7 @@ import {
 
 const PdfLinkButton = ({ text, link }: { text: string; link: string }) => {
   return (
-    <HStack gap={'20px'}>
+    <HStack gap={{ base: '12px', lg: '20px' }} flexWrap={'wrap'}>
       <Text textStyle={'pre-heading-4'} color={'grey.8'}>
         {text}
       </Text>
@@ -44,9 +45,15 @@ export const BizDescriptionSectionItem = React.forwardRef<
   BizDescriptionItem
 >(function BizDescriptionSection(props, ref) {
   const { badge, title, description, images, infos, pdfLinkButton } = props
+  const isMobile = useMediaQuery(['(max-width: 768px)'], { ssr: true })[0]
 
   return (
-    <VStack ref={ref} gap="48px" align="stretch" w="full">
+    <VStack
+      ref={ref}
+      gap={{ lg: '48px', sm: '40px', base: '32px' }}
+      align="stretch"
+      w="full"
+    >
       {/* 상단: 배지, 제목, 설명 */}
       <VStack gap="16px" align="stretch">
         {badge && (
@@ -72,17 +79,23 @@ export const BizDescriptionSectionItem = React.forwardRef<
         </VStack>
       </VStack>
       {/* 중간: 이미지 그리드 */}
-      <VStack gap="36px" align="stretch">
+      <VStack gap={{ lg: '36px', sm: '36px', base: '28px' }} align="stretch">
         <BizImageDescriptionBox images={images} />
         <VStack align={'stretch'} gap={'24px'}>
           <DescriptionBox>
-            {infos.map((info, index) => (
-              <DescriptionRowTextBlock
-                key={index}
-                name={info.name}
-                description={info.description}
-              />
-            ))}
+            {infos.map((info, index) =>
+              isMobile ?
+                <DescriptionColumnTextBlock
+                  key={index}
+                  name={info.name}
+                  description={info.description}
+                />
+              : <DescriptionRowTextBlock
+                  key={index}
+                  name={info.name}
+                  description={info.description}
+                />,
+            )}
           </DescriptionBox>
           {pdfLinkButton && (
             <PdfLinkButton

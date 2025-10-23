@@ -7,6 +7,7 @@ import { Box, VStack } from '@chakra-ui/react'
 import { LAYOUT } from '@/constants/layout'
 import { ROUTES } from '@/constants/routes'
 
+import { BizDescriptionWithBannerListSection } from '../common-section-layout/BizDescriptionWithBannerListSection'
 import { BizDescriptionWithBannerSection } from '../common-section-layout/BizDescriptionWithBannerSection'
 import { BizHeroSection } from '../common-section-layout/BizHeroSection'
 import { BizMoreInfoSection } from '../common-section-layout/BizMoreInfoSection'
@@ -212,7 +213,7 @@ export const BizItSecurityTemplate = () => {
         zIndex={'sticky'}
         bg={'white'}
         w={'100%'}
-        pt={'160px'}
+        pt={{ lg: '160px', sm: '140px', base: '100px' }}
       >
         <BizDescriptionBanner
           title={bizDescriptionBannerMockData.title}
@@ -221,15 +222,9 @@ export const BizItSecurityTemplate = () => {
         />
         <BizOrderedDescriptionSection data={bizDescriptionMockData} />
         <BizViedoSection data={bizVideoSectionMockData} />
-        <VStack py={'160px'} gap={'160px'} w={'100%'}>
-          {bizDescriptionWithBannerMockData.map((item, index) => (
-            <BizDescriptionWithBannerSection
-              key={index}
-              banner={item.banner}
-              descriptionItem={item.descriptionItem}
-            />
-          ))}
-        </VStack>
+        <BizDescriptionWithBannerListSection
+          data={bizDescriptionWithBannerMockData}
+        />
 
         <BizMoreInfoSection
           onSolutionClick={() => console.log('솔루션 클릭')}

@@ -66,8 +66,8 @@ export const BizHeroSection = ({
             <Box
               key={index}
               display="flex"
-              w={'30vw'}
-              maxW={'740px'}
+              w={{ base: '100vw', sm: '562px', lg: '30vw' }}
+              maxW={{ sm: '562px', lg: '740px' }}
               borderRadius="28px"
               aspectRatio="740 / 500"
               backgroundImage={`url(${image})`}

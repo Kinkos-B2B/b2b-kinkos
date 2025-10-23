@@ -11,7 +11,7 @@ export const DescriptionBox = ({
     <Box
       bg="background.basic.2"
       borderRadius="28px"
-      p="20px 32px"
+      p={{ lg: '20px 32px', sm: '20px 28px', base: '20px' }}
       w="full"
       gap={'10px'}
       maxW="1280px"
@@ -28,8 +28,8 @@ export const DescriptionColumnTextBlock = ({
   name,
   description,
 }: {
-  name: string
-  description: string
+  name: [string, string] | string
+  description?: string
 }) => {
   return (
     <VStack gap="2px" align="stretch">

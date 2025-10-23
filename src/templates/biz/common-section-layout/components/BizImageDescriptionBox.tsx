@@ -7,12 +7,20 @@ export const BizImageDescriptionBox = ({ images }: { images: string[] }) => {
     return null
   }
   return (
-    <Grid templateColumns="repeat(3, 1fr)" gap="24px" w="full">
+    <Grid
+      templateColumns={{
+        lg: 'repeat(3, 1fr)',
+        base: 'repeat(2, 1fr)',
+      }}
+      gap={{ lg: '24px', sm: '20px', base: '12px' }}
+      w="full"
+    >
       {images.map((image, index) => (
         <GridItem key={index}>
           <Box
             w="100%"
-            h="274px"
+            h={{ lg: '274px' }}
+            aspectRatio={'334 / 223'}
             borderRadius="28px"
             overflow="hidden"
             position="relative"

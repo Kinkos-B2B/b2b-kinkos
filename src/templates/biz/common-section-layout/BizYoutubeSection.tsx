@@ -45,17 +45,32 @@ export const BizViedoSection = ({ data }: Props) => {
   return (
     <Box
       w={'100%'}
-      py={'100px 200px'}
+      py={{ lg: '100px 200px', sm: '80px 120px', base: '64px 100px' }}
       bg={'linear-gradient(180deg, #FFF 0%, #CAD7FF 141.55%)'}
     >
       <Container maxW={'1280px'}>
-        <HStack justify={'space-between'}>
-          <VStack gap={'40px'} align={'stretch'}>
-            <VStack gap={'10px'} align={'stretch'}>
-              <Text textStyle={'pre-display-4'} color={'grey.10'}>
+        <HStack
+          justify={'space-between'}
+          gap={{ lg: 'auto', sm: '64px', base: '56px' }}
+          flexDirection={{ lg: 'row', sm: 'column', base: 'column' }}
+        >
+          <VStack
+            gap={{ base: '32px', sm: '40px' }}
+            align={{ base: 'center', lg: 'stretch' }}
+          >
+            <VStack gap={'10px'} align={{ base: 'center', lg: 'stretch' }}>
+              <Text
+                textStyle={'pre-display-4'}
+                color={'grey.10'}
+                textAlign={{ base: 'center', lg: 'left' }}
+              >
                 {data.title}
               </Text>
-              <Text textStyle={'pre-body-4'} color={'grey.7'}>
+              <Text
+                textStyle={'pre-body-4'}
+                color={'grey.7'}
+                textAlign={{ base: 'center', lg: 'left' }}
+              >
                 {data.description}
               </Text>
             </VStack>
@@ -75,17 +90,26 @@ export const BizViedoSection = ({ data }: Props) => {
             </HStack>
           </VStack>
 
-          <VStack gap={'16px'} align={'stretch'}>
-            <Box borderRadius={'28px'} overflow={'hidden'}>
+          <VStack
+            gap={'16px'}
+            marginX={'auto'}
+            w={{ base: '100%', sm: 'auto' }}
+          >
+            <Box
+              borderRadius={'28px'}
+              overflow={'hidden'}
+              w={{ base: '100%', sm: '640px', lg: '640px' }}
+              h={{ base: 'auto', sm: '360px', lg: '360px' }}
+              aspectRatio={'640 / 360'}
+            >
               <iframe
                 src={`https://www.youtube.com/embed/${youtubeVideos[videoIndex].id}`}
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                height={'360px'}
-                width={'640px'}
+                style={{ width: '100%', height: '100%' }}
               />
             </Box>
-            <HStack justify={'end'}>
+            <HStack justify={'end'} w={'full'}>
               <IconButton
                 size={'md'}
                 variant={'grey-capsule'}

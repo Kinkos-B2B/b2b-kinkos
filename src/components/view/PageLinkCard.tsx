@@ -70,7 +70,7 @@ export type PageLinkKey = keyof typeof PAGE_LINK_CARD_MAP
 
 export const PageLinkCard = ({
   type,
-  boxSize = '100px',
+  boxSize,
 }: {
   type: PageLinkKey
   boxSize?: string
@@ -118,10 +118,13 @@ export const PageLinkCard = ({
         </VStack>
         {icon && (
           <Box
+            position={'absolute'}
             bg={iconBgColor}
             borderRadius="20%"
-            h={boxSize}
-            w={boxSize}
+            h={boxSize ? boxSize : { base: '70px', lg: '100px' }}
+            w={boxSize ? boxSize : { base: '70px', lg: '100px' }}
+            right={{ base: '20px', lg: '36px' }}
+            bottom={{ base: '20px', lg: '36px' }}
             display="flex"
             alignItems="center"
             justifyContent="center"

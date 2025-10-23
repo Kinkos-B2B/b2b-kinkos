@@ -7,7 +7,7 @@ import { Box, VStack } from '@chakra-ui/react'
 import { LAYOUT } from '@/constants/layout'
 import { ROUTES } from '@/constants/routes'
 
-import { BizDescriptionWithBannerSection } from '../common-section-layout/BizDescriptionWithBannerSection'
+import { BizDescriptionWithBannerListSection } from '../common-section-layout/BizDescriptionWithBannerListSection'
 import { BizHeroSection } from '../common-section-layout/BizHeroSection'
 import { BizMoreInfoSection } from '../common-section-layout/BizMoreInfoSection'
 import { BizOrderedDescriptionSection } from '../common-section-layout/BizOrderedDescriptionSection'
@@ -194,7 +194,6 @@ export const BizSupportTemplate = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY
-      console.log('Scroll position:', scrollTop) // 디버깅용
       setIsScrolled(scrollTop > 0)
     }
 
@@ -225,7 +224,7 @@ export const BizSupportTemplate = () => {
         zIndex={'sticky'}
         bg={'white'}
         w={'100%'}
-        pt={'160px'}
+        pt={{ lg: '160px', sm: '140px', base: '100px' }}
       >
         <BizDescriptionBanner
           title={bizDescriptionBannerMockData.title}
@@ -234,15 +233,9 @@ export const BizSupportTemplate = () => {
         />
         <BizOrderedDescriptionSection data={bizDescriptionMockData} />
         <BizViedoSection data={bizVideoSectionMockData} />
-        <VStack py={'160px'} gap={'160px'} w={'100%'}>
-          {bizDescriptionWithBannerMockData.map((item, index) => (
-            <BizDescriptionWithBannerSection
-              key={index}
-              banner={item.banner}
-              descriptionItem={item.descriptionItem}
-            />
-          ))}
-        </VStack>
+        <BizDescriptionWithBannerListSection
+          data={bizDescriptionWithBannerMockData}
+        />
 
         <BizMoreInfoSection
           onSolutionClick={() => console.log('솔루션 클릭')}

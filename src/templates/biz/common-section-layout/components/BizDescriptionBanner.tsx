@@ -13,7 +13,13 @@ export const BizDescriptionBanner = React.forwardRef<
   return (
     <Container maxW="1280px">
       <Center>
-        <VStack ref={ref} gap="40px" align="center" w="full" maxW={'1000px'}>
+        <VStack
+          ref={ref}
+          gap={{ base: '32px', sm: '40px' }}
+          align="center"
+          w="full"
+          maxW={'1000px'}
+        >
           {/* 제목 섹션 */}
           <Text textStyle="pre-display-3" color="grey.10" textAlign={'center'}>
             {title}
@@ -22,7 +28,7 @@ export const BizDescriptionBanner = React.forwardRef<
           <Box
             bg="primary.1"
             borderRadius="28px"
-            p="36px 0 40px 0"
+            p={{ lg: '36px 0 40px 0', base: '36px 40px 40px 40px' }}
             w="full"
             display="flex"
             flexDirection="column"
