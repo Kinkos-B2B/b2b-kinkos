@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 import {
   Box,
@@ -24,9 +25,13 @@ import { GetAllHelpArticleParamsTypeEnumType } from '@/helper/options'
 
 const problemSolveOptions = getProblemSolveOptions()
 
-export const ProblemSolvePostList = () => {
+export const ProblemSolvePostList = ({ activeTab }: { activeTab: string }) => {
+  const router = useRouter()
   const [selectedTab, setSelectedTab] =
-    useState<GetAllHelpArticleParamsTypeEnumType>(problemSolveOptions[0].value)
+    useState<GetAllHelpArticleParamsTypeEnumType>(
+      (activeTab as GetAllHelpArticleParamsTypeEnumType) ||
+        GetAllHelpArticleParamsTypeEnumType.CONTRACT,
+    )
 
   const [currentPage, setCurrentPage] = useState<number>(1)
 
@@ -58,9 +63,12 @@ export const ProblemSolvePostList = () => {
           mt={'32px'}
           width={'100%'}
           value={selectedTab}
-          onValueChange={(e) =>
+          onValueChange={(e) => {
             setSelectedTab(e.value as GetAllHelpArticleParamsTypeEnumType)
-          }
+            router.push(`/problem-solve?tab=${e.value}`, {
+              scroll: false,
+            })
+          }}
           variant="enclosed"
         >
           <Flex position="relative">

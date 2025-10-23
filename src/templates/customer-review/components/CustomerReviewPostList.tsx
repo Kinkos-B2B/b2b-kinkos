@@ -8,6 +8,7 @@ import {
   Center,
   Container,
   Grid,
+  GridItem,
   HStack,
   Image,
   Text,
@@ -66,6 +67,7 @@ export const CustomerReviewPostList = () => {
             description="관련 내용이 준비될 예정이에요!"
           >
             <Grid
+              w="100%"
               templateColumns={{
                 lg: 'repeat(3, 1fr)',
                 sm: 'repeat(2, 1fr)',
@@ -75,17 +77,18 @@ export const CustomerReviewPostList = () => {
               rowGap={{ base: '40px', lg: '48px' }}
             >
               {data?.content?.map((review, index) => (
-                <PostCardItem
-                  key={index}
-                  href={ROUTES.CUSTOMER_REVIEW_DETAIL.replace(
-                    ':id',
-                    review.id?.toString() ?? '',
-                  )}
-                  image={review.thumbnailImageUrl?.url ?? ''}
-                  author={review.companyName ?? ''}
-                  title={review.companyName ?? ''}
-                  date={review.createdAt ?? ''}
-                />
+                <GridItem key={index} w="100%" h="100%">
+                  <PostCardItem
+                    href={ROUTES.CUSTOMER_REVIEW_DETAIL.replace(
+                      ':id',
+                      review.id?.toString() ?? '',
+                    )}
+                    image={review.thumbnailImageUrl?.url ?? ''}
+                    author={review.companyName ?? ''}
+                    title={review.companyName ?? ''}
+                    date={review.createdAt ?? ''}
+                  />
+                </GridItem>
               ))}
             </Grid>
             <Pagination

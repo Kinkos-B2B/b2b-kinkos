@@ -32,8 +32,6 @@ export const ExpertDetailTemplate = ({ id }: Props) => {
     },
   })
 
-  console.log(data?.data)
-
   return (
     <VStack w="100%" gap={'0px'}>
       <Box pt={{ base: '0px', lg: '20px' }} w={'100%'}>

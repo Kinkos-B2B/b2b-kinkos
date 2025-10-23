@@ -6,11 +6,16 @@ import { PluuugCTA } from '@/components/view/PluuugCTA'
 import { RecentPost } from '@/components/view/RecentPost'
 import { useGetHelpArticleMainConfigQuery } from '@/generated/apis/HelpArticleApi/HelpArticleApi.query'
 import { useGetHomeConfigHelpArticleQuery } from '@/generated/apis/HomeApi/HomeApi.query'
+import { GetAllHelpArticleParamsTypeEnumType } from '@/helper/options'
 
 import { ProblemSolveIntroBanner } from './components/ProblemSolveIntroBanner'
 import { ProblemSolvePostList } from './components/ProblemSolvePostList'
 
-export const ProblemSolveTemplate = () => {
+export const ProblemSolveTemplate = ({
+  activeTab,
+}: {
+  activeTab: GetAllHelpArticleParamsTypeEnumType
+}) => {
   const { data } = useGetHelpArticleMainConfigQuery()
 
   return (
@@ -34,8 +39,8 @@ export const ProblemSolveTemplate = () => {
           }}
         />
       </Box>
-      <Box w={'100%'} pb={'120px'}>
-        <ProblemSolvePostList />
+      <Box w={'100%'} pb={'120px'} id="post-list">
+        <ProblemSolvePostList activeTab={activeTab} />
       </Box>
       <Container pb={'120px'}>
         <PluuugCTA

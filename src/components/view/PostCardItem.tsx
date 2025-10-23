@@ -29,22 +29,26 @@ export const PostCardItem = ({
   }
 
   return (
-    <Link href={href}>
+    <Link href={href} style={{ width: '100%', height: '100%' }}>
       <Box
         height="auto"
-        bg="white"
         gap={'16px'}
         display="flex"
         flexDirection="column"
+        w="100%"
       >
-        <Box position="relative" w="100%" h="100%">
+        <Box
+          position="relative"
+          w="100%"
+          h={{ lg: '260px' }}
+          aspectRatio={441 / 260}
+        >
           <Image
             src={image}
             alt={title}
+            fill
             objectFit="cover"
             style={{ borderRadius: '28px' }}
-            width={441}
-            height={260}
           />
         </Box>
         <VStack align="start" gap="16px" width="100%">
