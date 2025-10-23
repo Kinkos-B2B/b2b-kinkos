@@ -1,8 +1,9 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 import { Box, Button, Flex, HStack, Text, VStack } from '@chakra-ui/react'
 
@@ -19,6 +20,8 @@ export const DesktopHeader = () => {
   const [activeSubMenu, setActiveSubMenu] = useState<NavigationItem | null>(
     null,
   )
+
+  const pathname = usePathname()
 
   const handleMenuHover = (menuLabel: NavigationItem) => {
     setActiveSubMenu(menuLabel)
@@ -136,11 +139,12 @@ export const DesktopHeader = () => {
                               display="flex"
                               alignItems="center"
                               textStyle="pre-body-5"
-                              color="grey.6"
+                              color={
+                                pathname == subItem.href ? 'grey.10' : 'grey.6'
+                              }
                               cursor="pointer"
                               _hover={{
-                                bg: 'background.basic.2',
-                                color: 'grey.10',
+                                color: 'primary.4',
                               }}
                               borderRadius="4px"
                               transition="all 0.2s"
@@ -159,15 +163,14 @@ export const DesktopHeader = () => {
                   <Link href={category.href!} key={categoryIndex}>
                     <Text
                       textStyle="pre-body-3"
-                      color="grey.10"
                       px="8px"
                       py="0"
                       display="flex"
                       alignItems="center"
                       cursor="pointer"
+                      color={'grey.10'}
                       _hover={{
-                        bg: 'background.basic.2',
-                        color: 'grey.10',
+                        color: 'primary.4',
                       }}
                       borderRadius="4px"
                       transition="all 0.2s"
