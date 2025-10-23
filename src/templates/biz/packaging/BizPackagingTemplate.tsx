@@ -101,7 +101,7 @@ export const bizDescriptionMockData = [
 export const bizVideoSectionMockData: BizVideoSectionData = {
   title: '킨코스 포장 & 배송 센터를\n직접 방문해 보고 싶으신가요?',
   description:
-    '센터 관람을 요청하시면 전체 포장 & 배송 과정을 투명하게 보여 드립니다.',
+    '상담 신청 시 센터 관람을 요청하시면 전체 포장 & 배송 과정을 투명하게 보여 드립니다.',
   buttonText: '센터 관람 요청',
   buttonLink: 'https://www.pluuug.com/form/gmD1ac03mB',
   moreInfoButtonText: '관련 콘텐츠 보러가기',
