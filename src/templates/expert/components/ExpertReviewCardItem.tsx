@@ -17,8 +17,10 @@ export const ExpertReviewCardItem = ({ expertReview }: Props) => {
       bg="background.basic.2"
       borderRadius="28px"
       p={{ base: '28px', sm: '24px 24px 20px 24px', lg: '32px 36px' }}
-      w="full"
+      w="382px"
+      h={{ base: '225px', sm: '250px' }}
       maxW={'382px'}
+      justifyContent="space-between"
       gap={{ base: '16px', sm: '24px' }}
       display="flex"
       flexDirection="column"
@@ -46,7 +48,14 @@ export const ExpertReviewCardItem = ({ expertReview }: Props) => {
           <Avatar.Image src={expertReview.expert?.profileImageUrl?.url} />
         </Avatar.Root>
 
-        <VStack align="start" gap="0" flex="1" minW="0">
+        <VStack
+          align="start"
+          gap="0"
+          flex="1"
+          minW="0"
+          justify={'start'}
+          h={'100%'}
+        >
           <Text
             textStyle="pre-body-5"
             color="grey.7"
