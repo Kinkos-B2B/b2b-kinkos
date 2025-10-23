@@ -64,13 +64,13 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
 
     // 이미지 순차 등장 애니메이션
     const imageSequence = [
-      { selector: '.img-banner', delay: 0.5 },
-      { selector: '.img-gift-box', delay: 0.8 },
-      { selector: '.img-box', delay: 1.1 },
-      { selector: '.img-folder', delay: 1.4 },
-      { selector: '.img-checklist', delay: 1.7 },
-      { selector: '.img-paper', delay: 2.0 },
-      { selector: '.img-money', delay: 2.3 },
+      { selector: '.img-banner', delay: 0.3 },
+      { selector: '.img-gift-box', delay: 0.6 },
+      { selector: '.img-box', delay: 0.9 },
+      { selector: '.img-folder', delay: 1.1 },
+      { selector: '.img-checklist', delay: 1.2 },
+      { selector: '.img-paper', delay: 1.5 },
+      { selector: '.img-money', delay: 1.8 },
     ]
 
     // 이미지들과 텍스트들 초기 상태 설정
@@ -137,9 +137,9 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
       tl.to(
         selector,
         {
-          opacity: 0.8,
+          opacity: 1,
           scale: 1,
-          duration: 0.8,
+          duration: 0.5,
           ease: 'back.out(1.7)',
         },
         delay,
@@ -407,14 +407,14 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
         </Box>
       </Box>
 
-      {/* 이미지들은 고정 위치 유지 */}
+      {/* 이미지들은 반응형 위치 */}
       <Box
         className="img-money"
         position="absolute"
-        left="1084px"
-        bottom="119px"
-        w="190px"
-        h="230px"
+        left={{ base: '60%', md: '70%', lg: '1084px' }}
+        bottom={{ base: '10%', md: '15%', lg: '119px' }}
+        w={{ base: '120px', md: '150px', lg: '190px' }}
+        h={{ base: '150px', md: '190px', lg: '230px' }}
         transform="rotate(342deg)"
         opacity="0"
         scale="1"
@@ -431,9 +431,9 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
       <Box
         className="img-paper"
         position="absolute"
-        left="1221px"
+        left={{ base: '70%', md: '80%', lg: '1221px' }}
         bottom="0px"
-        w="446px"
+        w={{ base: '280px', md: '360px', lg: '446px' }}
         opacity="0"
         scale="1"
       >
@@ -449,11 +449,11 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
       <Box
         className="img-folder"
         position="absolute"
-        right="-30px"
+        right={{ base: '-10%', md: '-5%', lg: '-30px' }}
         top="calc(50% - 60px)"
         transform="translateY(-50%) rotate(12deg)"
-        w="350px"
-        h="350px"
+        w={{ base: '200px', md: '280px', lg: '350px' }}
+        h={{ base: '200px', md: '280px', lg: '350px' }}
         opacity="0"
         scale="1"
       >
@@ -466,14 +466,14 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
         />
       </Box>
 
-      {/* 체크리스트 이미지 - 정확한 위치 */}
+      {/* 체크리스트 이미지 - 반응형 위치 */}
       <Box
         className="img-checklist"
         position="absolute"
-        left="31px"
-        top="45px"
-        w="240px"
-        h="240px"
+        left={{ base: '5%', md: '3%', lg: '31px' }}
+        top={{ base: '8%', md: '6%', lg: '45px' }}
+        w={{ base: '150px', md: '190px', lg: '240px' }}
+        h={{ base: '150px', md: '190px', lg: '240px' }}
         opacity="0"
         scale="1"
       >
@@ -486,30 +486,28 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
         />
       </Box>
 
-      {/* 박스 이미지 - 정확한 위치 */}
+      {/* 박스 이미지 - 반응형 위치 */}
       <Box
         className="img-box"
         position="absolute"
-        left="1170px"
-        top="73px"
-        w="320px"
-        h="250px"
-        transform="rotate(344deg)"
+        left={{ base: '65%', md: '75%', lg: '1170px' }}
+        top={{ base: '12%', md: '10%', lg: '73px' }}
+        w={{ base: '200px', md: '260px', lg: '320px' }}
+        h={{ base: '160px', md: '200px', lg: '250px' }}
         opacity="0"
         scale="1"
       >
         <Image src={imgBox} alt="box" w="100%" h="100%" objectFit="contain" />
       </Box>
 
-      {/* 선물상자 이미지 - 정확한 위치 */}
+      {/* 선물상자 이미지 - 반응형 위치 */}
       <Box
         className="img-gift-box"
         position="absolute"
-        left="227px"
-        bottom="64px"
-        w="295px"
-        h="310px"
-        transform="rotate(18deg)"
+        left={{ base: '15%', md: '18%', lg: '227px' }}
+        bottom={{ base: '8%', md: '10%', lg: '64px' }}
+        w={{ base: '180px', md: '240px', lg: '295px' }}
+        h={{ base: '190px', md: '250px', lg: '310px' }}
         opacity="0"
         scale="1"
       >
@@ -522,15 +520,14 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
         />
       </Box>
 
-      {/* 배너 이미지 - 정확한 위치 */}
+      {/* 배너 이미지 - 반응형 위치 */}
       <Box
         className="img-banner"
         position="absolute"
-        left="124px"
-        top="-39px"
-        w="410px"
-        h="520px"
-        transform="rotate(21.794deg)"
+        left={{ base: '8%', md: '10%', lg: '124px' }}
+        top={{ base: '-5%', md: '-4%', lg: '-39px' }}
+        w={{ base: '250px', md: '330px', lg: '410px' }}
+        h={{ base: '320px', md: '420px', lg: '520px' }}
         opacity="0"
         scale="1"
       >
