@@ -94,7 +94,7 @@ export const RelatedReviewList = ({
   return (
     <VStack gap={'32px'} align="start" w="100%">
       <Text textStyle={'pre-heading-1'}>고객님을 위한 추가 스토리</Text>
-      <VStack w={'100%'} align={'stretch'}>
+      <VStack w={'100%'} align={'stretch'} gap={'28px'}>
         {data.data?.map((item) => (
           <ReleatedCustomerReviewCard
             key={item.id}
