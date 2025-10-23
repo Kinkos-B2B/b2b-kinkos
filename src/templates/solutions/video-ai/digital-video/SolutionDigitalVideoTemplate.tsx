@@ -33,7 +33,7 @@ const heroMockData = {
     <>
       <Text textStyle={'pre-display-3'} color={'grey.0'}>
         {
-          '"오래된 메뉴판, 어떻게 바꿔야 할까…?“\n "신메뉴 출시는 어떻게 알려야 효과적일까…?"'
+          '“오래된 메뉴판, 어떻게 바꿔야 할까…?“\n “신메뉴 출시는 어떻게 알려야 효과적일까…?“'
         }
       </Text>
       <Text textStyle={'pre-heading-3'} color={'grey.0'} as={'span'}>
