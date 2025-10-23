@@ -142,7 +142,7 @@ export const EXPERT_NAVIGATION_ITEM: NavigationItem = {
 }
 
 export const FAQ_NAVIGATION_ITEM: NavigationItem = {
-  label: '주요질문',
+  label: '주요 질문',
   href: ROUTES.FAQ,
 }
 

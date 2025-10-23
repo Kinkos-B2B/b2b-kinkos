@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 import {
   Box,
   Button,
@@ -10,6 +12,7 @@ import {
   VStack,
 } from '@chakra-ui/react'
 
+import { ROUTES } from '@/constants/routes'
 import { useGetSolutionExpertListQuery } from '@/generated/apis/SolutionApi/SolutionApi.query'
 import { GetSolutionExpertListParamsTypeEnumType } from '@/helper/options'
 import { SolutionReleatedExportCard } from '@/templates/solutions/common/SolutionReleatedExportCard'
@@ -70,7 +73,9 @@ export const SolutionReleatedExportSection = ({
             ))}
           </Grid>
         </VStack>
-        <Button>더 많은 전문가 보기</Button>
+        <Link href={ROUTES.EXPERT}>
+          <Button>더 많은 전문가 보기</Button>
+        </Link>
       </VStack>
     </Container>
   )

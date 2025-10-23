@@ -103,7 +103,7 @@ export const SolutionReleatedExportCard = ({
           <Button
             w={'100%'}
             variant="outline"
-            size="sm"
+            size="md"
             onClick={() => onButtonClick?.()}
           >
             무료 상담 받아보기

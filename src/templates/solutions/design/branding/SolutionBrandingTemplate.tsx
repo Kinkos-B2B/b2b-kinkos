@@ -88,6 +88,35 @@ const cardsMockData = {
 
 const featureData: FeatureItem[] = [
   {
+    title: '100+ 분야별 브랜드 전문가',
+    description:
+      '100명 이상의 디자인 전문가가 일반 인쇄물부터 패키지, 특수 가공인쇄물까지 각 분야에 맞춰 최적의 결과물을 제공합니다.',
+    type: 'table',
+    tableData: [
+      {
+        category: '산업별\n담당 디자이너 배정',
+        kinkos: 'O',
+        competitorA: 'O',
+        competitorB: 'X',
+      },
+      {
+        category: '백업 디자이너 배정',
+        kinkos: 'O',
+        competitorA: 'X',
+        competitorB: 'X',
+      },
+    ],
+
+    imageData: [
+      {
+        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+      },
+      {
+        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+      },
+    ],
+  },
+  {
     title: '1:1 브랜드 전담 매니저',
     description:
       '고객사별 전담 매니저가 배정되어 일관된 소통을 지원합니다. 브랜드에 대한 이해를 바탕으로 원활한 프로젝트 관리가 가능합니다.',

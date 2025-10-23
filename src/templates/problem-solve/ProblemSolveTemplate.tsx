@@ -24,7 +24,7 @@ export const ProblemSolveTemplate = () => {
         px={{ base: '20px', sm: '40px' }}
       >
         <RecentPost
-          title="최신 고민 해결 사례"
+          title="최신 고민해결 사례"
           article={{
             author: data?.data?.helpArticle?.typeDisplayName ?? '',
             thumbnailImageUrl:

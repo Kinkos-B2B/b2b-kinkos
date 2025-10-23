@@ -22,7 +22,7 @@ export const SolutionConnectExportBottomBar = ({
         <Text color={'grey.0'} textStyle={'pre-body-2'}>
           브랜딩 전문가와 바로 연결되고 싶다면?
         </Text>
-        <Button colorPalette="secondary" variant={'solid'} w={'240px'}>
+        <Button colorPalette="primary" variant={'solid'} w={'240px'}>
           지금 전문가 연결하기
         </Button>
       </HStack>
