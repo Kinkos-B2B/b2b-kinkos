@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import Link from 'next/link'
+
 import {
   Box,
   Button,
@@ -11,6 +13,8 @@ import {
   VStack,
 } from '@chakra-ui/react'
 import { CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react/dist/ssr'
+
+import { BizVideoSectionData } from '../types'
 
 const youtubeVideos = [
   {
@@ -31,7 +35,11 @@ const youtubeVideos = [
   },
 ]
 
-export const BizViedoSection = () => {
+interface Props {
+  data: BizVideoSectionData
+}
+
+export const BizViedoSection = ({ data }: Props) => {
   const [videoIndex, setVideoIndex] = useState(0)
 
   return (
@@ -45,17 +53,24 @@ export const BizViedoSection = () => {
           <VStack gap={'40px'} align={'stretch'}>
             <VStack gap={'10px'} align={'stretch'}>
               <Text textStyle={'pre-display-4'} color={'grey.10'}>
-                {'킨코스 생산 & 제작 센터를\n직접 방문해 보고 싶으신가요?'}
+                {data.title}
               </Text>
               <Text textStyle={'pre-body-4'} color={'grey.7'}>
-                고객 관람을 요청하시면 전체 제작 과정을 투명하게 보여 드립니다.
+                {data.description}
               </Text>
             </VStack>
             <HStack gap={'8px'}>
-              <Button size={'md'}>생산공장 관람요청</Button>
-              <Button variant={'outline'} size="md">
-                유튜브 보러가기
-              </Button>
+              <Button size={'md'}>{data.buttonText}</Button>
+              <Link
+                href={
+                  data.moreInfoLink || 'https://www.youtube.com/@kinkoskorea'
+                }
+                target={data.moreInfoLink ? '_self' : '_blank'}
+              >
+                <Button variant={'outline'} size="md">
+                  {data.moreInfoButtonText || '유튜브 보러가기'}
+                </Button>
+              </Link>
             </HStack>
           </VStack>
 

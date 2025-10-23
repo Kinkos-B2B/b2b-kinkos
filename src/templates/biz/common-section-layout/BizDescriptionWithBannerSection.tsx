@@ -2,16 +2,13 @@ import * as React from 'react'
 
 import { Box, Container, Grid, Text, VStack } from '@chakra-ui/react'
 
+import { BizDescriptionBannerData, BizDescriptionItem } from '../types'
 import { BizDescriptionBanner } from './components/BizDescriptionBanner'
-import { BizDescriptionBannerProps } from './components/BizDescriptionBanner'
-import {
-  BizDescriptionItemProps,
-  BizDescriptionSectionItem,
-} from './components/BizDescriptionItem'
+import { BizDescriptionSectionItem } from './components/BizDescriptionItem'
 
 interface Props {
-  banner: BizDescriptionBannerProps
-  descriptionItem: BizDescriptionItemProps
+  banner: BizDescriptionBannerData
+  descriptionItem: BizDescriptionItem
 }
 
 export const BizDescriptionWithBannerSection = ({
@@ -19,7 +16,13 @@ export const BizDescriptionWithBannerSection = ({
   descriptionItem,
 }: Props) => {
   return (
-    <Container maxW={'1280px'} py={'160px'}>
+    <Container
+      maxW={'1280px'}
+      w={'100%'}
+      display={'flex'}
+      flexDirection={'column'}
+      gap={'160px'}
+    >
       <BizDescriptionBanner
         title={banner.title}
         badgeText={banner.badgeText}
@@ -29,7 +32,8 @@ export const BizDescriptionWithBannerSection = ({
         title={descriptionItem.title}
         description={descriptionItem.description}
         images={descriptionItem.images}
-        factoryInfo={descriptionItem.factoryInfo}
+        infos={descriptionItem.infos}
+        pdfLinkButton={descriptionItem.pdfLinkButton}
       />
     </Container>
   )

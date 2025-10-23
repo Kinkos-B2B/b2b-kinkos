@@ -2,20 +2,16 @@ import * as React from 'react'
 
 import { Box, Center, Container, Text, VStack } from '@chakra-ui/react'
 
-export interface BizDescriptionBannerProps {
-  title: string
-  badgeText: string
-  description: string
-}
+import { BizDescriptionBannerData } from '../../types'
 
 export const BizDescriptionBanner = React.forwardRef<
   HTMLDivElement,
-  BizDescriptionBannerProps
+  BizDescriptionBannerData
 >(function BizDescriptionBanner(props, ref) {
   const { title, badgeText, description } = props
 
   return (
-    <Container maxW="1280px" py="120px">
+    <Container maxW="1280px">
       <Center>
         <VStack ref={ref} gap="40px" align="center" w="full" maxW={'1000px'}>
           {/* 제목 섹션 */}

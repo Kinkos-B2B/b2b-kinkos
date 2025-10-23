@@ -1,0 +1,253 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+
+import { Box, VStack } from '@chakra-ui/react'
+
+import { LAYOUT } from '@/constants/layout'
+import { ROUTES } from '@/constants/routes'
+
+import { BizDescriptionWithBannerSection } from '../common-section-layout/BizDescriptionWithBannerSection'
+import { BizHeroSection } from '../common-section-layout/BizHeroSection'
+import { BizMoreInfoSection } from '../common-section-layout/BizMoreInfoSection'
+import { BizOrderedDescriptionSection } from '../common-section-layout/BizOrderedDescriptionSection'
+import { BizViedoSection } from '../common-section-layout/BizYoutubeSection'
+import { BizDescriptionBanner } from '../common-section-layout/components/BizDescriptionBanner'
+import {
+  BizDescriptionBannerData,
+  BizDescriptionItem,
+  BizDescriptionWithBannerProps,
+  BizHeroSectionData,
+  BizVideoSectionData,
+} from '../types'
+
+export const heroSectionMockData: BizHeroSectionData = {
+  badge: '인력&지원',
+  title: '전문가의 역량으로,\n끝까지 책임을 다합니다.',
+  description:
+    '기획부터 디자인, 제작, 사후관리까지 전문 인력이 전담하여\n기업 고객의 비즈니스를 안정적으로 지원합니다.',
+  images: [
+    '/images/biz/hero/biz-hero-intro-1.jpg',
+    '/images/biz/hero/biz-hero-intro-2.jpg',
+    '/images/biz/hero/biz-hero-intro-3.jpg',
+  ],
+}
+
+export const bizDescriptionBannerMockData: BizDescriptionBannerData = {
+  title: '단순 제작이 아니라\n기획부터 디자인까지 함께할 수 있을까요?',
+  badgeText: '전담 기획·디자인 전문가 지원',
+  description:
+    '킨코스는 단순 인쇄 대행이 아닌 기획 단계부터 참여해,\n맞춤형 디자인을 제공하며 업종과 브랜드에 최적화된 솔루션을 제안합니다.',
+}
+
+const descriptionItemMockData1: BizDescriptionItem = {
+  title: '전담 인력 배정',
+  description:
+    '고객사 전담 전문가(영업대표) 및 디자이너가 기획부터 디자인을 전담합니다.',
+  images: [
+    '/images/biz/it-security/it-security-1.png',
+    '/images/biz/it-security/it-security-2.png',
+    '/images/biz/it-security/it-security-3.png',
+  ],
+  infos: [
+    {
+      name: '전담 인력 매칭',
+      description:
+        '고객의 문제에 다양한 해결 경험과 노하우를 보유한 전담 전문가를 매칭합니다.',
+    },
+    {
+      name: '원스톱 지원',
+      description:
+        '기획부터 디자인까지 원스톱으로 지원하여 고객의 니즈를 심도 있게 파악하여 해결합니다.',
+    },
+  ],
+}
+
+const descriptionItemMockData2: BizDescriptionItem = {
+  title: '빠른 시안 제안',
+  description: '다수의 시안을 빠르게 제시하고 선택의 폭을 넓힙니다.',
+  images: [
+    '/images/biz/it-security/it-security-1.png',
+    '/images/biz/it-security/it-security-2.png',
+    '/images/biz/it-security/it-security-3.png',
+  ],
+  infos: [
+    {
+      name: '크리에이티브 역량',
+      description:
+        '고객이 요청한 디자인 시안 뿐 아니라, 다양한 시안을 추가적으로 제안하여 더 나은 선택을 돕습니다.',
+    },
+  ],
+}
+
+const descriptionItemMockData3: BizDescriptionItem = {
+  title: '브랜드 최적화 디자인',
+  description: '업종 특성과 브랜드 아이덴티티에 맞춘 전문 디자인을 제공합니다.',
+  images: [
+    '/images/biz/it-security/it-security-1.png',
+    '/images/biz/it-security/it-security-2.png',
+    '/images/biz/it-security/it-security-3.png',
+  ],
+  infos: [
+    {
+      name: '완성도 높은 결과물',
+      description:
+        '브랜드 아이덴티티에 대한 깊은 이해를 바탕으로 완성도 높은 디자인 결과물을 만듭니다.',
+    },
+  ],
+}
+
+export const bizDescriptionMockData = [
+  descriptionItemMockData1,
+  descriptionItemMockData2,
+  descriptionItemMockData3,
+]
+
+export const bizVideoSectionMockData: BizVideoSectionData = {
+  title: '킨코스의 전문 인력과\n지원되고 있는 솔루션이 궁금하신가요?',
+  description:
+    '전문가 리스트를 확인하고 상담 신청을 통해 상세 솔루션을 받아보실 수 있습니다.',
+  buttonText: '전문가 연결하기',
+  buttonLink: ROUTES.EXPERT,
+  moreInfoButtonText: '관련 솔루션 확인하기',
+  moreInfoLink: ROUTES.EXPERT,
+}
+
+export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =
+  [
+    {
+      banner: {
+        title: '문제나 클레임이 발생하면\n바로 해결해줄 수 있을까요?',
+        badgeText: '1:1 맞춤 케어 및 신속 대응',
+        description:
+          '킨코스는 고객사마다 전담 영업대표(전문가)와 CS팀을 배치하여,\n문제 발생 시 신속하게 대응하는 체계를 운영합니다.',
+      },
+      descriptionItem: {
+        title: '끝까지 책임지는 전담팀',
+        images: [
+          '/images/biz/it-security/it-security-1.png',
+          '/images/biz/it-security/it-security-2.png',
+          '/images/biz/it-security/it-security-3.png',
+        ],
+        infos: [
+          {
+            name: '1:1 전담 케어',
+            description: '영업대표가 실시간 소통으로 고객을 밀착 관리합니다.',
+          },
+          {
+            name: '신속한 클레임 처리',
+            description: '오류 발생 시 즉시 재제작 및 문제 해결을 진행합니다.',
+          },
+          {
+            name: '실시간 소통 채널',
+            description:
+              '카카오톡, 메신저, 전화 등 다양한 채널을 통한 즉각 대응을 지원합니다.',
+          },
+        ],
+        pdfLinkButton: {
+          text: '킨코스 전문가의 문제 해결 방법과 노하우가 궁금하시다면 오른쪽 버튼을 클릭해주세요.',
+          link: ROUTES.PROBLEM,
+        },
+      },
+    },
+    {
+      banner: {
+        title: '작업 후에도 지속적인\n관리와 개선이 가능할까요?',
+        badgeText: '사후관리 & 개선 제안까지 책임',
+        description:
+          '킨코스는 납품 이후에도 제작 이력과 피드백을 분석해 개선안을 제안하며,\n장기적인 파트너십을 통해 지속적인 성과를 창출합니다.',
+      },
+      descriptionItem: {
+        title: '지속 관리 서비스',
+        images: [
+          '/images/biz/it-security/it-security-1.png',
+          '/images/biz/it-security/it-security-2.png',
+          '/images/biz/it-security/it-security-3.png',
+        ],
+        infos: [
+          {
+            name: '전담 히스토리 관리',
+            description:
+              '업무 히스토리를 관리하며 지속적으로 품질을 유지하고 개선합니다.',
+          },
+          {
+            name: '사후 피드백 반영',
+            description:
+              '고객 의견을 수집해 디자인·제작 프로세스를 개선합니다.',
+          },
+          {
+            name: '지속 제안 서비스',
+            description:
+              '업종별 성공 사례와 최신 트렌드를 기반으로 새로운 대안을 제안합니다.',
+          },
+        ],
+      },
+    },
+  ]
+
+export const BizSupportTemplate = () => {
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      console.log('Scroll position:', scrollTop) // 디버깅용
+      setIsScrolled(scrollTop > 0)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  return (
+    <VStack gap={'0px'} position={'relative'}>
+      <VStack w={'100%'} position={'sticky'} top={`${LAYOUT.HEADER.HEIGHT}`}>
+        <BizHeroSection {...heroSectionMockData} />
+        <Box
+          position={'absolute'}
+          top={`-${LAYOUT.HEADER.HEIGHT}`}
+          left={'0'}
+          right={'0'}
+          bottom={'0'}
+          bg={'greytransparent.4'}
+          zIndex={'1'}
+          opacity={isScrolled ? 1 : 0}
+          transition={'opacity 0.3s ease-in-out'}
+          pointerEvents={isScrolled ? 'auto' : 'none'}
+        ></Box>
+      </VStack>
+
+      <VStack
+        gap={'0px'}
+        zIndex={'sticky'}
+        bg={'white'}
+        w={'100%'}
+        pt={'160px'}
+      >
+        <BizDescriptionBanner
+          title={bizDescriptionBannerMockData.title}
+          badgeText={bizDescriptionBannerMockData.badgeText}
+          description={bizDescriptionBannerMockData.description}
+        />
+        <BizOrderedDescriptionSection data={bizDescriptionMockData} />
+        <BizViedoSection data={bizVideoSectionMockData} />
+        <VStack py={'160px'} gap={'160px'} w={'100%'}>
+          {bizDescriptionWithBannerMockData.map((item, index) => (
+            <BizDescriptionWithBannerSection
+              key={index}
+              banner={item.banner}
+              descriptionItem={item.descriptionItem}
+            />
+          ))}
+        </VStack>
+
+        <BizMoreInfoSection
+          onSolutionClick={() => console.log('솔루션 클릭')}
+          onReviewClick={() => console.log('고객후기 클릭')}
+          onProblemClick={() => console.log('고민해결 클릭')}
+          onExpertClick={() => console.log('전문가 클릭')}
+        />
+      </VStack>
+    </VStack>
+  )
+}

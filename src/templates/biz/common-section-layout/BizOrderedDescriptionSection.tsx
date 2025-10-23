@@ -2,16 +2,14 @@ import * as React from 'react'
 
 import { Container, VStack } from '@chakra-ui/react'
 
-import {
-  BizDescriptionItemProps,
-  BizDescriptionSectionItem,
-} from './components/BizDescriptionItem'
+import { BizDescriptionItem } from '../types'
+import { BizDescriptionSectionItem } from './components/BizDescriptionItem'
 import { orderToKorean } from './utils'
 
 export const BizOrderedDescriptionSection = ({
   data,
 }: {
-  data: BizDescriptionItemProps[]
+  data: BizDescriptionItem[]
 }) => {
   return (
     <Container maxW="1280px" py={'160px'}>
@@ -20,7 +18,7 @@ export const BizOrderedDescriptionSection = ({
           <BizDescriptionSectionItem
             key={index}
             {...item}
-            badge={`#${orderToKorean(index + 1)}`}
+            badge={`#${orderToKorean(index)}`}
           />
         ))}
       </VStack>

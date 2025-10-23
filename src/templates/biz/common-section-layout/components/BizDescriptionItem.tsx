@@ -1,5 +1,7 @@
 import * as React from 'react'
 
+import Link from 'next/link'
+
 import {
   Box,
   Button,
@@ -14,44 +16,34 @@ import {
 import { ImageAsNext } from '@/components/image-as-next'
 import { Badge } from '@/components/ui/badge'
 
+import { BizDescriptionItem } from '../../types'
 import { BizImageDescriptionBox } from './BizImageDescriptionBox'
-import { DescriptionBox, DescriptionColumnTextBlock } from './DescriptionBox'
+import {
+  DescriptionBox,
+  DescriptionColumnTextBlock,
+  DescriptionRowTextBlock,
+} from './DescriptionBox'
 
-export interface FactoryInfo {
-  name: string
-  description: string
-}
-
-export interface BizDescriptionItemProps {
-  badge?: string
-  title: string
-  description: string
-  images: string[]
-  factoryInfo: FactoryInfo[]
-}
-
-const PdfLinkButton = () => {
+const PdfLinkButton = ({ text, link }: { text: string; link: string }) => {
   return (
     <HStack gap={'20px'}>
       <Text textStyle={'pre-heading-4'} color={'grey.8'}>
-        킨코스가 보유한 모든 제작 장비의 이미지와 상세 리스트를 확인하시려면
-        왼쪽 버튼을 클릭해주세요.
+        {text}
       </Text>
-      <Button variant={'outline'} size={'md'}>
-        더 자세히 알아보기
-      </Button>
+      <Link href={link}>
+        <Button variant={'outline'} size={'md'}>
+          더 자세히 알아보기
+        </Button>
+      </Link>
     </HStack>
   )
 }
 
 export const BizDescriptionSectionItem = React.forwardRef<
   HTMLDivElement,
-  BizDescriptionItemProps & {
-    pdfLinkButton?: boolean
-  }
+  BizDescriptionItem
 >(function BizDescriptionSection(props, ref) {
-  const { badge, title, description, images, factoryInfo, pdfLinkButton } =
-    props
+  const { badge, title, description, images, infos, pdfLinkButton } = props
 
   return (
     <VStack ref={ref} gap="48px" align="stretch" w="full">
@@ -71,21 +63,10 @@ export const BizDescriptionSectionItem = React.forwardRef<
           </Box>
         )}
         <VStack gap="10px" align="stretch">
-          <Text
-            textStyle="pre-display-4"
-            color="grey.10"
-            fontWeight="700"
-            lineHeight="1.4"
-            letterSpacing="-0.4px"
-          >
+          <Text textStyle="pre-display-4" color="grey.10" fontWeight="700">
             {title}
           </Text>
-          <Text
-            textStyle="pre-body-4"
-            color="grey.7"
-            lineHeight="1.6"
-            letterSpacing="-0.32px"
-          >
+          <Text textStyle="pre-body-4" color="grey.7">
             {description}
           </Text>
         </VStack>
@@ -95,15 +76,20 @@ export const BizDescriptionSectionItem = React.forwardRef<
         <BizImageDescriptionBox images={images} />
         <VStack align={'stretch'} gap={'24px'}>
           <DescriptionBox>
-            {factoryInfo.map((info, index) => (
-              <DescriptionColumnTextBlock
+            {infos.map((info, index) => (
+              <DescriptionRowTextBlock
                 key={index}
                 name={info.name}
                 description={info.description}
               />
             ))}
           </DescriptionBox>
-          {pdfLinkButton && <PdfLinkButton />}
+          {pdfLinkButton && (
+            <PdfLinkButton
+              text={pdfLinkButton.text}
+              link={pdfLinkButton.link}
+            />
+          )}
         </VStack>
       </VStack>
     </VStack>

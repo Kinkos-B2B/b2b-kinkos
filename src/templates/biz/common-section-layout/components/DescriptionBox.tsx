@@ -47,32 +47,33 @@ export const DescriptionRowTextBlock = ({
   name,
   description,
 }: {
-  name: string
-  description: string
+  name: [string, string] | string
+  description?: string
 }) => {
   return (
-    <HStack gap="9px" align="center" w="360px">
+    <HStack gap="9px" align="center">
       <Text textStyle="pre-body-5" color="grey.7">
-        {name}
+        {Array.isArray(name) ? name[0] : name}
       </Text>
       <Box
-        w="12px"
+        w="1px"
         h="12px"
         display="flex"
         alignItems="center"
         justifyContent="center"
       >
-        <Box
-          w="12px"
-          h="0px"
-          borderTop="1px solid"
-          borderColor="border.basic.2"
-          transform="rotate(90deg)"
-        />
+        <Box w="1px" h="12px" bg="border.basic.2" />
       </Box>
-      <Text textStyle="pre-body-6" color="grey.7" flex="1">
-        {description}
-      </Text>
+      {Array.isArray(name) && name.length > 1 && (
+        <Text textStyle="pre-body-5" color="grey.7">
+          {name[1]}
+        </Text>
+      )}
+      {description && (
+        <Text textStyle="pre-body-6" color="grey.7" flex="1">
+          {description}
+        </Text>
+      )}
     </HStack>
   )
 }

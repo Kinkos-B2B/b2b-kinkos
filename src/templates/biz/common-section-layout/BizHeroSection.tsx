@@ -34,21 +34,11 @@ export const BizHeroSection = ({
         alignItems="center"
         justifyContent="center"
       >
-        <VStack
-          gap="10px"
-          alignItems="center"
-          width={{ base: '100%', lg: '515px' }}
-          maxWidth="515px"
-        >
+        <VStack gap="10px" alignItems="center">
           <Badge size="lg" colorPalette="secondary">
             {badge}
           </Badge>
-          <Text
-            textStyle="pre-display-3"
-            color="grey.10"
-            textAlign="center"
-            whiteSpace="pre-line"
-          >
+          <Text textStyle="pre-display-3" color="grey.10" textAlign="center">
             {title}
           </Text>
         </VStack>
@@ -57,7 +47,6 @@ export const BizHeroSection = ({
           color="grey.9"
           textAlign="center"
           whiteSpace="pre-line"
-          maxWidth="515px"
         >
           {description}
         </Text>
