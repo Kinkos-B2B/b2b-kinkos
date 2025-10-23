@@ -369,7 +369,7 @@ const SearchInput = () => {
             </VStack>
           : searchValue.length > 0 ?
             <Box p="12px" textAlign="center" color="grey.6">
-              <Text fontSize="16px">검색 결과가 없습니다</Text>
+              <Text fontSize="16px">검색 결과가 없습니다.</Text>
             </Box>
           : null}
         </Box>
