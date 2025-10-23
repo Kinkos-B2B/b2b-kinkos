@@ -55,7 +55,7 @@ const ReleatedCustomerReviewCard = ({
           </Text>
         </VStack>
         <Text color="grey.600" textStyle="pre-body-4">
-          {dayjs(date).format('YYYY.MM.DD')}
+          {dayjs(date).format('YYYY. MM. DD')}
         </Text>
       </VStack>
 

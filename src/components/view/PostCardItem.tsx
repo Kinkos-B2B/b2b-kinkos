@@ -68,7 +68,7 @@ export const PostCardItem = ({
             </Text>
           </VStack>
           <Text textStyle={'pre-body-6'} color="grey.600">
-            {dayjs(date).format('YYYY.MM.DD')}
+            {dayjs(date).format('YYYY. MM. DD')}
           </Text>
         </VStack>
       </Box>

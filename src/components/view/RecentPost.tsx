@@ -117,7 +117,7 @@ export const RecentPost = ({ article, title }: Props) => {
 
                 {/* 날짜 */}
                 <Text as="time" textStyle="pre-body-4" color="grey.7" w="full">
-                  {dayjs(article?.createdAt).format('YYYY.MM.DD')}
+                  {dayjs(article?.createdAt).format('YYYY. MM. DD')}
                 </Text>
               </VStack>
             </VStack>

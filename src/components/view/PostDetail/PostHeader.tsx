@@ -32,7 +32,7 @@ export const PostHeader = ({ header }: PostHeaderProps) => {
           color={'grey.2'}
           textStyle={{ base: 'pre-body-6', sm: 'pre-body-6' }}
         >
-          {dayjs(header.createdAt).format('YYYY.MM.DD')}
+          {dayjs(header.createdAt).format('YYYY. MM. DD')}
         </Text>
         <Text
           mt={{ base: '14px' }}

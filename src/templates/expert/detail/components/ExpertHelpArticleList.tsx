@@ -78,7 +78,7 @@ export const ExpertHelpArticleList = ({ articles }: Props) => {
                     </Text>
                   </VStack>
                   <Text textStyle={'pre-body-6'} color={'grey.7'}>
-                    {dayjs(article.createdAt).format('YYYY.MM.DD')}
+                    {dayjs(article.createdAt).format('YYYY. MM. DD')}
                   </Text>
                 </VStack>
               </VStack>
