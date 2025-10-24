@@ -96,13 +96,7 @@ export const HomeIntroduceExpertSection = () => {
             gap={'24px'}
             display={{ base: 'none', sm: 'flex' }}
           >
-            <Marquee
-              direction="up"
-              style={{
-                width: 'fit-content',
-                display: isMobile ? 'none' : 'block',
-              }}
-            >
+            <Marquee direction="up">
               <VStack gap="24px" mb={'24px'}>
                 {experts.map((expert, index) => (
                   <HomeExpertCard key={index} expert={expert} />
@@ -110,7 +104,14 @@ export const HomeIntroduceExpertSection = () => {
               </VStack>
             </Marquee>
 
-            <Marquee direction="up" reverse>
+            <Marquee
+              direction="up"
+              reverse
+              style={{
+                width: 'fit-content',
+                display: isMobile ? 'none' : 'block',
+              }}
+            >
               <VStack gap="24px" mb={'24px'}>
                 {experts.map((expert, index) => (
                   <HomeExpertCard key={index} expert={expert} />

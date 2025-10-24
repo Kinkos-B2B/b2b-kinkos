@@ -29,13 +29,13 @@ export const PageLayoutFooter = () => {
     <Box
       as="footer"
       bg="background.inverse.1"
-      py={{ base: '32px', lg: '48px' }}
-      px={{ base: '20px', lg: '40px' }}
+      py={{ base: '48px', lg: '48px' }}
+      px={{ base: '20px', sm: '40px' }}
       w="100%"
       role="contentinfo"
       aria-label="사이트 푸터"
     >
-      <Container maxW="1280px" px={0}>
+      <Container maxW="1280px" px={'0px'}>
         <VStack gap={{ base: '24px', lg: '40px' }} align="stretch">
           {/* 메인 네비게이션 */}
           <Flex
@@ -43,7 +43,7 @@ export const PageLayoutFooter = () => {
             justify="space-between"
             align="flex-start"
             wrap="wrap"
-            gap={{ base: '24px', lg: '32px' }}
+            gap={{ base: '28px', sm: '36px', lg: '32px' }}
             direction={{ base: 'column', lg: 'row' }}
             role="navigation"
             aria-label="주요 네비게이션"
@@ -66,8 +66,11 @@ export const PageLayoutFooter = () => {
               </Text>
               <VStack
                 align="flex-start"
-                gap="6px"
+                flexWrap={'wrap'}
+                gap={{ base: '16px', lg: '6px' }}
+                rowGap={'4px'}
                 role="list"
+                flexDir={{ base: 'row', lg: 'column' }}
                 aria-labelledby="footer-biz-heading"
               >
                 {BIZ_NAVIGATION_ITEMS.subItems?.map((item) => (
@@ -112,10 +115,12 @@ export const PageLayoutFooter = () => {
                 {SOLUTION_NAVIGATION_ITEMS.label}
               </Text>
               <Flex
-                gap={{ base: '16px', lg: '32px' }}
+                gap={{ base: '40px', lg: '32px' }}
+                rowGap={'28px'}
                 wrap="wrap"
-                direction={{ base: 'column', sm: 'row' }}
+                direction={{ base: 'row', sm: 'row' }}
                 role="list"
+                width={{ base: '100%', lg: 'auto' }}
                 aria-labelledby="footer-solutions-heading"
               >
                 {SOLUTION_NAVIGATION_ITEMS.subItems?.map((category) => (
@@ -270,6 +275,7 @@ export const PageLayoutFooter = () => {
                 <HStack key={item.href} gap="10px" role="listitem">
                   <ChakraLink
                     as={Link}
+                    target="_blank"
                     href={item.href}
                     tabIndex={-1}
                     focusRing={'none'}
@@ -292,20 +298,14 @@ export const PageLayoutFooter = () => {
                   </ChakraLink>
                   {index < FOOTER_LEGAL.items.length - 1 && (
                     <Box
-                      w="0px"
+                      w="1px"
                       h="12px"
                       display="flex"
                       alignItems="center"
                       justifyContent="center"
                       aria-hidden="true"
                     >
-                      <Box
-                        w="12px"
-                        h="0px"
-                        borderTop="1px solid"
-                        borderColor="border.inverse.1"
-                        transform="rotate(90deg)"
-                      />
+                      <Box w="1px" h="12px" bg={'grey.9'} />
                     </Box>
                   )}
                 </HStack>
@@ -324,20 +324,14 @@ export const PageLayoutFooter = () => {
                   {FOOTER_COMPANY_INFO.company}
                 </Text>
                 <Box
-                  w="0px"
+                  w="1px"
                   h="12px"
                   display="flex"
                   alignItems="center"
                   justifyContent="center"
                   aria-hidden="true"
                 >
-                  <Box
-                    w="12px"
-                    h="0px"
-                    borderTop="1px solid"
-                    borderColor="border.inverse.1"
-                    transform="rotate(90deg)"
-                  />
+                  <Box w="1px" h="12px" bg={'grey.9'} />
                 </Box>
                 <Text textStyle="pre-body-6" color="grey.5">
                   {FOOTER_COMPANY_INFO.address}
@@ -349,39 +343,27 @@ export const PageLayoutFooter = () => {
                   {FOOTER_COMPANY_INFO.ceo}
                 </Text>
                 <Box
-                  w="0px"
+                  w="1px"
                   h="12px"
                   display="flex"
                   alignItems="center"
                   justifyContent="center"
                   aria-hidden="true"
                 >
-                  <Box
-                    w="12px"
-                    h="0px"
-                    borderTop="1px solid"
-                    borderColor="border.inverse.1"
-                    transform="rotate(90deg)"
-                  />
+                  <Box w="1px" h="12px" bg={'grey.9'} />
                 </Box>
                 <Text textStyle="pre-body-6" color="grey.5">
                   {FOOTER_COMPANY_INFO.phone}
                 </Text>
                 <Box
-                  w="0px"
+                  w="1px"
                   h="12px"
                   display="flex"
                   alignItems="center"
                   justifyContent="center"
                   aria-hidden="true"
                 >
-                  <Box
-                    w="12px"
-                    h="0px"
-                    borderTop="1px solid"
-                    borderColor="border.inverse.1"
-                    transform="rotate(90deg)"
-                  />
+                  <Box w="1px" h="12px" bg={'grey.9'} />
                 </Box>
                 <Text textStyle="pre-body-6" color="grey.5">
                   {FOOTER_COMPANY_INFO.businessNumber}
@@ -393,20 +375,14 @@ export const PageLayoutFooter = () => {
                   {FOOTER_COMPANY_INFO.privacyManager}
                 </Text>
                 <Box
-                  w="0px"
+                  w="1px"
                   h="12px"
                   display="flex"
                   alignItems="center"
                   justifyContent="center"
                   aria-hidden="true"
                 >
-                  <Box
-                    w="12px"
-                    h="0px"
-                    borderTop="1px solid"
-                    borderColor="border.inverse.1"
-                    transform="rotate(90deg)"
-                  />
+                  <Box w="1px" h="12px" bg={'grey.9'} />
                 </Box>
                 <Text color="grey.5" textStyle="pre-body-6">
                   {FOOTER_COMPANY_INFO.businessRegistration}

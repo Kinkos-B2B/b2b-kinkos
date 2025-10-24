@@ -1,12 +1,34 @@
 export const FOOTER_LEGAL = {
   items: [
-    { label: '이용약관', href: '/terms' },
-    { label: '개인정보처리방침', href: '/privacy', isActive: true },
-    { label: '저작권권정책', href: '/copyright' },
-    { label: '영상정정보처리기기운영방침', href: '/cctv-policy' },
-    { label: '정보보호인증', href: '/security-certification' },
-    { label: '채용안내', href: '/careers' },
-    { label: '고객센터', href: '/support' },
+    {
+      label: '이용약관',
+      href: 'https://www.kinkos.co.kr/front/footer/footer.do?flag=cf_stipulation&title=%EC%9D%B4%EC%9A%A9%EC%95%BD%EA%B4%80',
+    },
+    {
+      label: '개인정보처리방침',
+      href: 'https://www.kinkos.co.kr/front/footer/footer.do?flag=cf_privacy&title=%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EB%B0%A9%EC%B9%A8',
+      isActive: true,
+    },
+    {
+      label: '저작권정책',
+      href: 'https://www.kinkos.co.kr/front/footer/footer.do?flag=cf_copyright_law&title=%EC%A0%80%EC%9E%91%EA%B6%8C%EC%A0%95%EC%B1%85',
+    },
+    {
+      label: '영상정보처리기기운영방침',
+      href: 'https://www.kinkos.co.kr/front/footer/footer.do?flag=cf_com_stipulation&title=%EC%98%81%EC%83%81%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EA%B8%B0%EC%9A%B4%EC%98%81%EB%B0%A9%EC%B9%A8',
+    },
+    {
+      label: '정보보호인증',
+      href: 'https://www.kinkos.co.kr/front/footer/footer.do?flag=cf_info_protect_cert&title=%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EC%9D%B8%EC%A6%9D',
+    },
+    {
+      label: '채용안내',
+      href: 'https://www.kinkos.co.kr/home/company/person.do',
+    },
+    {
+      label: '고객센터',
+      href: 'https://www.kinkos.co.kr/home/customer/faq.do',
+    },
   ],
 } as const
 

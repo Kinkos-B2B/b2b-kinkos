@@ -83,19 +83,24 @@ export const BizDescriptionSectionItem = React.forwardRef<
         <BizImageDescriptionBox images={images} />
         <VStack align={'stretch'} gap={'24px'}>
           <DescriptionBox>
-            {infos.map((info, index) =>
-              isMobile ?
-                <DescriptionColumnTextBlock
+            {infos.map((info, index) => {
+              if (isMobile && !Array.isArray(info.name)) {
+                return (
+                  <DescriptionColumnTextBlock
+                    key={index}
+                    name={info.name}
+                    description={info.description}
+                  />
+                )
+              }
+              return (
+                <DescriptionRowTextBlock
                   key={index}
                   name={info.name}
                   description={info.description}
                 />
-              : <DescriptionRowTextBlock
-                  key={index}
-                  name={info.name}
-                  description={info.description}
-                />,
-            )}
+              )
+            })}
           </DescriptionBox>
           {pdfLinkButton && (
             <PdfLinkButton

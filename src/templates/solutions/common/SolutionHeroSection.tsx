@@ -181,6 +181,7 @@ export const SolutionHeroSection = ({
           h="100%"
           opacity={0}
           zIndex="1"
+          px={'20px'}
         >
           <VStack gap={'28px'} textAlign={'center'} ref={dimOverlayTextRef}>
             {introBlockData.heroContent}

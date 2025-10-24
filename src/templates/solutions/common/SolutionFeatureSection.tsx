@@ -1,6 +1,4 @@
-import { Fragment, useRef } from 'react'
-
-import Image from 'next/image'
+'use client'
 
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 
@@ -28,10 +26,9 @@ interface Props {
 }
 
 export const SolutionFeatureSection = ({ featureItems }: Props) => {
-  const isDesktop =
-    useMediaQuery(['(min-width: 1280px)'], {
-      ssr: true,
-    })[0] || true
+  const isDesktop = useMediaQuery(['(min-width: 1280px)'], {
+    ssr: true,
+  })[0]
 
   if (isDesktop) {
     return <SolutionFeatureDesktopSection featureItems={featureItems} />

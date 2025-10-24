@@ -28,7 +28,7 @@ export const HomeExpertCard = React.forwardRef<HTMLDivElement, Props>(
             <Image
               alt={expert.nickname}
               fill
-              objectFit="contain"
+              objectFit="cover"
               src={expert.profileImage?.url || ''}
             />
           )}

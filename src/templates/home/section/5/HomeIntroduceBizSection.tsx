@@ -205,13 +205,12 @@ export const HomeIntroduceBizSection = () => {
         <Badge size="xl" colorPalette="white">
           킨코스 비즈
         </Badge>
-
         <Text
           textStyle="pre-display-3"
           color="grey.10" // #1b1c1d
           textAlign="center"
         >
-          킨코스, 기업을 위한 인쇄 솔루션
+          {'킨코스,\n기업을 위한 인쇄 솔루션'}
         </Text>
       </VStack>
 
