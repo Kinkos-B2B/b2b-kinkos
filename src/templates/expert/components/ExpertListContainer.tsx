@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { Box, Button, Flex, Grid, GridItem, VStack } from '@chakra-ui/react'
 import { keepPreviousData } from '@tanstack/react-query'
 
+import { usePannelContext } from '@/components/PannelContext'
 import { Pagination } from '@/components/pagination'
 import { EmptyViewWrapper } from '@/components/view/EmptyViewWrapper'
 import { ROUTES } from '@/constants/routes'
@@ -21,6 +22,7 @@ import { ExpertFilterSection } from './ExpertFilterSection'
 import { ExpertMobileFilterDrawer } from './ExpertMobileFilterDrawer'
 
 export const ExpertListContainer = () => {
+  const { openPannel } = usePannelContext()
   const [filter, setFilter] = React.useState<{
     industryId: string[]
     printId: string[]
@@ -76,7 +78,13 @@ export const ExpertListContainer = () => {
               filter={filter}
               onFilterChange={setFilter}
             />
-            <Button variant={'outline'} size={'md'}>
+            <Button
+              variant={'outline'}
+              size={'md'}
+              onClick={() => {
+                openPannel()
+              }}
+            >
               전문가 추천 받기
             </Button>
           </Flex>

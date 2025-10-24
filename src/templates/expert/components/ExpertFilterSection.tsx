@@ -4,6 +4,8 @@ import * as React from 'react'
 
 import { Box, Button, Text, VStack } from '@chakra-ui/react'
 
+import { usePannelContext } from '@/components/PannelContext'
+
 import {
   CategoryBadge,
   FilterOption,
@@ -18,7 +20,7 @@ export const ExpertFilterSection = React.forwardRef<
   ExpertFilterSectionProps
 >(function ExpertFilterSection(props, ref) {
   const { industryOptions, printOptions, filter, onFilterChange } = props
-
+  const { openPannel } = usePannelContext()
   const { printGroupedOptions, handleIndustryToggle, handlePrintToggle } =
     useExpertFilter({
       industryOptions,
@@ -90,7 +92,7 @@ export const ExpertFilterSection = React.forwardRef<
             variant="outline"
             colorPalette="primary"
             size="sm"
-            onClick={() => {}}
+            onClick={() => openPannel()}
           >
             전문가 추천받기
           </Button>

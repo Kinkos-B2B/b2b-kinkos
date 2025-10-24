@@ -14,10 +14,12 @@ import {
   Flex,
   Grid,
   GridItem,
+  IconButton,
   Portal,
   useDisclosure,
 } from '@chakra-ui/react'
 import { useGSAP } from '@gsap/react'
+import { XIcon } from '@phosphor-icons/react/dist/ssr'
 
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -132,10 +134,23 @@ export const PageLayout = ({
               <Drawer.CloseTrigger
                 pos={'absolute'}
                 top={'12px'}
-                zIndex={1000000}
+                zIndex={1000000000000}
                 right={'12px'}
+                display={'flex'}
+                alignItems={'center'}
+                justifyContent={'center'}
                 boxSize={'50px'}
-              />
+              >
+                <IconButton
+                  variant="ghost"
+                  bg={'transparent'}
+                  border="none"
+                  colorPalette="grey"
+                  borderRadius="8px"
+                >
+                  <XIcon size={30} color="grey.8" />
+                </IconButton>
+              </Drawer.CloseTrigger>
               <Drawer.Body p={'0px'}>
                 <Flex
                   bg={'white'}

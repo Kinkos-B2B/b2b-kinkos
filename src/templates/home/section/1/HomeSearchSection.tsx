@@ -14,6 +14,7 @@ import {
 } from '@chakra-ui/react'
 import { MagnifyingGlassIcon } from '@phosphor-icons/react/dist/ssr'
 
+import { usePannelContext } from '@/components/PannelContext'
 import { InputGroup } from '@/components/ui/input-group'
 import {
   useGetRandomSearchKeywordQuery,
@@ -386,6 +387,7 @@ const SearchInput = () => {
 }
 
 const SearchBanner = () => {
+  const { openPannel } = usePannelContext()
   return (
     <Flex
       bgGradient="linear-gradient(90deg, #013FFC 0%, #835CF7 80%, #AA2DFE 100%)"
@@ -413,7 +415,7 @@ const SearchBanner = () => {
           고민 중이세요?{'\n'}바로 상담해 드릴게요.
         </Text>
 
-        <Button size="md" variant="outline">
+        <Button size="md" variant="outline" onClick={() => openPannel()}>
           전문가 상담 바로가기
         </Button>
       </HStack>
