@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 import {
   Box,
@@ -13,6 +14,8 @@ import {
   VStack,
 } from '@chakra-ui/react'
 import { CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react/dist/ssr'
+
+import { usePannelContext } from '@/components/PannelContext'
 
 import { BizVideoSectionData } from '../types'
 
@@ -41,6 +44,10 @@ interface Props {
 
 export const BizViedoSection = ({ data }: Props) => {
   const [videoIndex, setVideoIndex] = useState(0)
+  const { openPannel, isOpen } = usePannelContext()
+  const router = useRouter()
+
+  console.log(isOpen)
 
   return (
     <Box
@@ -75,7 +82,18 @@ export const BizViedoSection = ({ data }: Props) => {
               </Text>
             </VStack>
             <HStack gap={'8px'}>
-              <Button size={'md'}>{data.buttonText}</Button>
+              <Button
+                size={'md'}
+                onClick={() => {
+                  if (data.buttonLink) {
+                    router.push(data.buttonLink)
+                  } else {
+                    openPannel()
+                  }
+                }}
+              >
+                {data.buttonText}
+              </Button>
               <Link
                 href={
                   data.moreInfoLink?.url ||

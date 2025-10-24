@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'
 
 import { Box, Button, Flex, HStack, Text, VStack } from '@chakra-ui/react'
 
+import { usePannelContext } from '@/components/PannelContext'
 import { LAYOUT } from '@/constants/layout'
 import { ROUTES } from '@/constants/routes'
 
@@ -20,7 +21,7 @@ export const DesktopHeader = () => {
   const [activeSubMenu, setActiveSubMenu] = useState<NavigationItem | null>(
     null,
   )
-
+  const { openPannel } = usePannelContext()
   const pathname = usePathname()
 
   const handleMenuHover = (menuLabel: NavigationItem) => {
@@ -185,7 +186,12 @@ export const DesktopHeader = () => {
           </Box>
         )}
       </HStack>
-      <Button variant="solid" size="lg" aria-label="상담 신청하기">
+      <Button
+        variant="solid"
+        size="lg"
+        aria-label="상담 신청하기"
+        onClick={openPannel}
+      >
         상담 신청
       </Button>
     </Flex>

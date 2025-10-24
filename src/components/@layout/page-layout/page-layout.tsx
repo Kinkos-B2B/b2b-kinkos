@@ -8,12 +8,21 @@ import {
   useState,
 } from 'react'
 
-import { ContainerProps, Grid, GridItem } from '@chakra-ui/react'
+import {
+  ContainerProps,
+  Drawer,
+  Flex,
+  Grid,
+  GridItem,
+  Portal,
+  useDisclosure,
+} from '@chakra-ui/react'
 import { useGSAP } from '@gsap/react'
 
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
+import { PannelProvider } from '@/components/PannelContext'
 import { LAYOUT } from '@/constants/layout'
 
 import { PageLayoutFooter } from './components/page-layout-footer'
@@ -28,23 +37,13 @@ interface PageLayoutProps {
 }
 
 export const PageLayout = ({
-  //
   header = <PageLayoutHeader />,
   footer = <PageLayoutFooter />,
   containerProps,
   children,
 }: PropsWithChildren<PageLayoutProps>) => {
+  const { open, onOpen, onClose, onToggle } = useDisclosure()
   const headerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 91) {
-        headerRef.current?.setAttribute('data-scrolled', 'true')
-      } else {
-        headerRef.current?.setAttribute('data-scrolled', 'false')
-      }
-    })
-  }, [])
 
   useGSAP(() => {
     if (headerRef.current) {
@@ -73,51 +72,92 @@ export const PageLayout = ({
   })
 
   return (
-    <Grid
-      w={'100%'}
-      minW={'100%'}
-      minH={'100vh'}
-      pos={'relative'}
-      gridAutoColumns={'1fr'}
-      bg={'background.basic.1'}
-      gridTemplateRows={{
-        base: `${LAYOUT.HEADER.HEIGHT_MOBILE} 1fr auto`,
-        lg: `${LAYOUT.HEADER.HEIGHT} 1fr auto`,
-      }}
-      templateAreas={`"header" "main" "footer"`}
-    >
-      <GridItem
-        area={'header'}
-        as={'header'}
-        ref={headerRef}
-        position="fixed"
-        zIndex="sticky"
-        w={'100%'}
-        display="flex"
-        className="page-layout-header"
-        justifyContent={'center'}
-        bg="background.basic.1"
-        top={'0px'}
-        css={{
-          '&[data-scrolled="true"]': {
-            boxShadow: '0px 8px 12px 0px rgba(0,0,0,0.08)',
-          },
-        }}
-      >
-        {header}
-      </GridItem>
-      <GridItem
-        as={'main'}
-        area={'main'}
+    <PannelProvider isOpen={open} onOpen={onOpen} onClose={onClose}>
+      <Grid
         w={'100%'}
         minW={'100%'}
-        {...containerProps}
+        minH={'100vh'}
+        pos={'relative'}
+        gridAutoColumns={'1fr'}
+        bg={'background.basic.1'}
+        gridTemplateRows={{
+          base: `${LAYOUT.HEADER.HEIGHT_MOBILE} 1fr auto`,
+          lg: `${LAYOUT.HEADER.HEIGHT} 1fr auto`,
+        }}
+        templateAreas={`"header" "main" "footer"`}
       >
-        {children}
-      </GridItem>
-      <GridItem area={'footer'} as={'footer'} h={'100%'} w={'100%'}>
-        {footer}
-      </GridItem>
-    </Grid>
+        <GridItem
+          area={'header'}
+          as={'header'}
+          ref={headerRef}
+          position="fixed"
+          zIndex="sticky"
+          w={'100%'}
+          display="flex"
+          className="page-layout-header"
+          justifyContent={'center'}
+          bg="background.basic.1"
+          top={'0px'}
+          css={{
+            '&[data-scrolled="true"]': {
+              boxShadow: '0px 8px 12px 0px rgba(0,0,0,0.08)',
+            },
+          }}
+        >
+          {header}
+        </GridItem>
+        <GridItem
+          as={'main'}
+          area={'main'}
+          w={'100%'}
+          minW={'100%'}
+          {...containerProps}
+        >
+          {children}
+        </GridItem>
+        <GridItem area={'footer'} as={'footer'} h={'100%'} w={'100%'}>
+          {footer}
+        </GridItem>
+      </Grid>
+      <Drawer.Root open={open} onOpenChange={onToggle}>
+        <Drawer.Backdrop bg={'greytransparent.4'} />
+
+        <Portal>
+          <Drawer.Positioner>
+            <Drawer.Content
+              w={{ base: '100%', sm: '50%' }}
+              maxW={{ base: '100%', sm: '720px' }}
+              boxShadow={'0px 4px 32px 0px rgba(184, 188, 200, 0.40)'}
+            >
+              <Drawer.CloseTrigger
+                pos={'absolute'}
+                top={'12px'}
+                zIndex={1000000}
+                right={'12px'}
+                boxSize={'50px'}
+              />
+              <Drawer.Body p={'0px'}>
+                <Flex
+                  bg={'white'}
+                  h={'100%'}
+                  w={'100%'}
+                  direction={'column'}
+                  zIndex={10000}
+                >
+                  <iframe
+                    src={'https://www.pluuug.com/form/gmD1ac03mB'}
+                    style={{
+                      display: 'flex',
+                      maxHeight: '100dvh',
+                      height: '100%',
+                    }}
+                  />
+                </Flex>
+              </Drawer.Body>
+            </Drawer.Content>
+          </Drawer.Positioner>
+        </Portal>
+      </Drawer.Root>
+    </PannelProvider>
   )
 }

@@ -30,7 +30,7 @@ export type BizVideoSectionData = {
   title: string
   description: string
   buttonText: string
-  buttonLink: string
+  buttonLink?: string
   moreInfoButtonText?: string
   moreInfoLink?: {
     url: string

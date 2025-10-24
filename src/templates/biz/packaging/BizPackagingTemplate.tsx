@@ -104,7 +104,6 @@ export const bizVideoSectionMockData: BizVideoSectionData = {
   description:
     '상담 신청 시 센터 관람을 요청하시면 전체 포장 & 배송 과정을 투명하게 보여 드립니다.',
   buttonText: '센터 관람 요청',
-  buttonLink: 'https://www.pluuug.com/form/gmD1ac03mB',
   moreInfoButtonText: '관련 콘텐츠 보러가기',
   moreInfoLink: {
     url: ROUTES.SOLUTIONS.PRODUCTION.LOGISTICS,

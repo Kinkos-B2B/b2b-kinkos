@@ -109,7 +109,6 @@ export const bizVideoSectionMockData: BizVideoSectionData = {
   description:
     '상담 신청 시 공장 관람을 요청하시면 전체 제작 과정을 투명하게 보여 드립니다.​',
   buttonText: '생산 공장 관람 요청​',
-  buttonLink: 'https://www.pluuug.com/form/gmD1ac03mB',
   moreInfoLink: {
     url: 'https://youtu.be/9_cNmJAsfME?si=065afGog8MR944L2',
     target: '_blank',
