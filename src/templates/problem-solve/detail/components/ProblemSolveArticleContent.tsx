@@ -2,6 +2,7 @@ import Image from 'next/image'
 
 import { Box, Button, Flex, Text, VStack } from '@chakra-ui/react'
 
+import { usePannelContext } from '@/components/PannelContext'
 import { PostFeatureItem } from '@/components/view/PostDetail/PostFeatureItem'
 import { PostSectionNavItem } from '@/components/view/PostDetail/PostSectionNavItem'
 import { PostSectionWrapper } from '@/components/view/PostDetail/PostSectionWrapper'
@@ -252,6 +253,8 @@ export const ProblemSolveArticleContent = ({
 }: {
   content?: GetHelpArticleResponseType
 }) => {
+  const { openPannel } = usePannelContext()
+
   const activeId = useScrollSpy({
     sectionIds: navItems.map((s) => s.fragment),
     headerOffset: 80, // 고정 헤더 높이로 조정
@@ -292,7 +295,7 @@ export const ProblemSolveArticleContent = ({
             />
           ))}
         </VStack>
-        <Button>전문가 연결하기</Button>
+        <Button onClick={openPannel}>전문가 연결하기</Button>
       </Flex>
     </Flex>
   )

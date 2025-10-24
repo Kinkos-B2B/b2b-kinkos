@@ -12,6 +12,7 @@ import {
   VStack,
 } from '@chakra-ui/react'
 
+import { usePannelContext } from '@/components/PannelContext'
 import PluuugCTA from '@/components/view/PluuugCTA'
 import { PostHeader } from '@/components/view/PostDetail/PostHeader'
 import { useGetCustomerReviewDetailQuery } from '@/generated/apis/CustomerReviewApi/CustomerReviewApi.query'
@@ -27,6 +28,7 @@ interface CustomerReviewDetailTemplateProps {
 export const CustomerReviewDetailTemplate = ({
   reviewId,
 }: CustomerReviewDetailTemplateProps) => {
+  const { openPannel } = usePannelContext()
   const { data } = useGetCustomerReviewDetailQuery({
     variables: {
       id: reviewId,
@@ -59,7 +61,9 @@ export const CustomerReviewDetailTemplate = ({
       <Container pt={{ base: '80px', lg: '120px' }}>
         <PluuugCTA
           text={'비즈니스 고민,\n지금 바로 해결하세요!'}
-          buttons={[{ text: '지금 전문가 연결하기', onClick: () => {} }]}
+          buttons={[
+            { text: '지금 전문가 연결하기', onClick: () => openPannel() },
+          ]}
         />
       </Container>
       <Container

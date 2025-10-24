@@ -2,6 +2,7 @@
 
 import { Box, Container, VStack } from '@chakra-ui/react'
 
+import { usePannelContext } from '@/components/PannelContext'
 import { PluuugCTA } from '@/components/view/PluuugCTA'
 import { RecentPost } from '@/components/view/RecentPost'
 import { useGetCustomerReviewMainConfigQuery } from '@/generated/apis/CustomerReviewApi/CustomerReviewApi.query'
@@ -17,6 +18,7 @@ export const CustomerReviewTemplate = () => {
       select: (data) => data.data,
     },
   })
+  const { openPannel } = usePannelContext()
 
   return (
     <VStack w="100%" pt={{ base: '0px', lg: '20px' }} gap={'0px'}>
@@ -56,7 +58,9 @@ export const CustomerReviewTemplate = () => {
       <Container py={{ base: '80px', sm: '100px', lg: '120px' }}>
         <PluuugCTA
           text={'비즈니스 고민,\n지금 바로 해결하세요!'}
-          buttons={[{ text: '지금 전문가 연결하기', onClick: () => {} }]}
+          buttons={[
+            { text: '지금 전문가 연결하기', onClick: () => openPannel() },
+          ]}
         />
       </Container>
     </VStack>

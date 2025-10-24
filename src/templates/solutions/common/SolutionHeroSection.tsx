@@ -16,6 +16,7 @@ import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
+import { usePannelContext } from '@/components/PannelContext'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
@@ -33,6 +34,8 @@ const SolutionHeroSectionIntroBlock = ({
   buttonContent,
   link,
 }: Props) => {
+  const { openPannel } = usePannelContext()
+
   return (
     <VStack gap={'40px'}>
       <VStack gap={'20px'}>
@@ -41,7 +44,12 @@ const SolutionHeroSectionIntroBlock = ({
         </Badge>
         {title}
       </VStack>
-      <Button variant="solid" colorPalette="primary" size={'lg'}>
+      <Button
+        variant="solid"
+        colorPalette="primary"
+        size={'lg'}
+        onClick={openPannel}
+      >
         {buttonContent}
       </Button>
     </VStack>

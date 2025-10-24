@@ -1,5 +1,6 @@
 import { Button, Flex, Image, Text, VStack } from '@chakra-ui/react'
 
+import { usePannelContext } from '@/components/PannelContext'
 import { PostFeatureItem } from '@/components/view/PostDetail/PostFeatureItem'
 import { PostSectionNavItem } from '@/components/view/PostDetail/PostSectionNavItem'
 import { PostSectionWrapper } from '@/components/view/PostDetail/PostSectionWrapper'
@@ -223,6 +224,8 @@ export const ReviewDetailContent = ({
     minVisibleRatio: 0.4,
   })
 
+  const { openPannel } = usePannelContext()
+
   return (
     <Flex position={'relative'} gap={'80px'} w={'100%'}>
       <VStack align={'start'} gap={'64px'} w={'100%'}>
@@ -256,7 +259,7 @@ export const ReviewDetailContent = ({
             />
           ))}
         </VStack>
-        <Button>전문가 연결하기</Button>
+        <Button onClick={openPannel}>전문가 연결하기</Button>
       </Flex>
     </Flex>
   )

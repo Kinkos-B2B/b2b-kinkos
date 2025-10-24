@@ -1,11 +1,14 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
+
 import { Box, Container, VStack } from '@chakra-ui/react'
 
+import { usePannelContext } from '@/components/PannelContext'
 import { PluuugCTA } from '@/components/view/PluuugCTA'
 import { RecentPost } from '@/components/view/RecentPost'
+import { ROUTES } from '@/constants/routes'
 import { useGetHelpArticleMainConfigQuery } from '@/generated/apis/HelpArticleApi/HelpArticleApi.query'
-import { useGetHomeConfigHelpArticleQuery } from '@/generated/apis/HomeApi/HomeApi.query'
 import { GetAllHelpArticleParamsTypeEnumType } from '@/helper/options'
 
 import { ProblemSolveIntroBanner } from './components/ProblemSolveIntroBanner'
@@ -16,8 +19,10 @@ export const ProblemSolveTemplate = ({
 }: {
   activeTab: GetAllHelpArticleParamsTypeEnumType
 }) => {
-  const { data } = useGetHelpArticleMainConfigQuery()
+  const router = useRouter()
+  const { openPannel } = usePannelContext()
 
+  const { data } = useGetHelpArticleMainConfigQuery()
   return (
     <VStack w="100%" gap={'0px'}>
       <Box w={'100%'} pb={'80px'} pt={{ base: '0px', lg: '20px' }}>
@@ -46,8 +51,18 @@ export const ProblemSolveTemplate = ({
         <PluuugCTA
           text={'혼자 고민하지 마시고,\n킨코스와 해결하세요!'}
           buttons={[
-            { text: '전문가 선택하기', onClick: () => {} },
-            { text: '고객 후기 알아보기', onClick: () => {} },
+            {
+              text: '전문가 선택하기',
+              onClick: () => {
+                openPannel()
+              },
+            },
+            {
+              text: '고객 후기 알아보기',
+              onClick: () => {
+                router.push(ROUTES.CUSTOMER_REVIEW)
+              },
+            },
           ]}
         />
       </Container>

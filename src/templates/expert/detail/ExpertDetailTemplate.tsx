@@ -12,6 +12,7 @@ import {
   VStack,
 } from '@chakra-ui/react'
 
+import { usePannelContext } from '@/components/PannelContext'
 import { ExpertProfileCard } from '@/components/view/ExpertProfileCard'
 import PluuugCTA from '@/components/view/PluuugCTA'
 import { PostHeader } from '@/components/view/PostDetail/PostHeader'
@@ -26,6 +27,8 @@ interface Props {
 }
 
 export const ExpertDetailTemplate = ({ id }: Props) => {
+  const { openPannel } = usePannelContext()
+
   const { data } = useGetExpertDetailQuery({
     variables: {
       id: Number(id),
@@ -59,7 +62,9 @@ export const ExpertDetailTemplate = ({ id }: Props) => {
       <Container py={{ base: '80px', sm: '100px', lg: '120px' }}>
         <PluuugCTA
           text="이 전문가가 마음에 든다면?"
-          buttons={[{ text: '무료 상담 받아보기', onClick: () => {} }]}
+          buttons={[
+            { text: '무료 상담 받아보기', onClick: () => openPannel() },
+          ]}
         />
       </Container>
     </VStack>

@@ -2,6 +2,7 @@
 
 import { Box, Container, VStack } from '@chakra-ui/react'
 
+import { usePannelContext } from '@/components/PannelContext'
 import PluuugCTA from '@/components/view/PluuugCTA'
 import { useGetExpertMainQuery } from '@/generated/apis/ExpertApi/ExpertApi.query'
 
@@ -11,7 +12,7 @@ import { ExpertReviewList } from './components/ExpertReviewList'
 
 export const ExpertTemplate = () => {
   const { data } = useGetExpertMainQuery()
-
+  const { openPannel } = usePannelContext()
   return (
     <VStack w="100%" gap={'0px'}>
       <Box w={'100%'} pt={{ base: '0px', lg: '20px' }}>
@@ -36,7 +37,7 @@ export const ExpertTemplate = () => {
             buttons={[
               {
                 text: '무료 상담 받아보기',
-                onClick: () => {},
+                onClick: () => openPannel(),
               },
               {
                 text: '궁금한 사항 알아보기',
