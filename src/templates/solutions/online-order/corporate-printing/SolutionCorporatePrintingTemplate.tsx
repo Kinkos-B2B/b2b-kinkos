@@ -22,9 +22,14 @@ import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 const heroMockData = {
   badge: '기업 전용 인쇄물',
   title: (
-    <VStack textAlign={'center'} textStyle={'pre-display-3'} gap={'0px'}>
+    <VStack
+      textAlign={'center'}
+      textStyle={'pre-display-3'}
+      gap={'0px'}
+      px={'20px'}
+    >
       <Text color={'primary.4'}>기업 전용 인쇄몰</Text>
-      <Text whiteSpace="nowrap">아직도 복잡하게 주문하세요?</Text>
+      <Text>아직도 복잡하게 주문하세요?</Text>
     </VStack>
   ),
   heroContent: (

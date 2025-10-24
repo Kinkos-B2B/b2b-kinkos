@@ -24,9 +24,14 @@ import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 const heroMockData = {
   badge: '굿즈&판촉물 디자인',
   title: (
-    <VStack textAlign={'center'} textStyle={'pre-display-3'} gap={'0px'}>
+    <VStack
+      textAlign={'center'}
+      textStyle={'pre-display-3'}
+      gap={'0px'}
+      px={'20px'}
+    >
       <Text color={'primary.4'}>잘 팔리는 굿즈, 기억에 남는 판촉물</Text>
-      <Text whiteSpace="nowrap">혹시 고민하고 계신가요?</Text>
+      <Text>혹시 고민하고 계신가요?</Text>
     </VStack>
   ),
   heroContent: (

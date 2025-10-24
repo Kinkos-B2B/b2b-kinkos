@@ -24,9 +24,14 @@ import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 const heroMockData = {
   badge: 'AR 인쇄물 제작',
   title: (
-    <VStack textAlign={'center'} textStyle={'pre-display-3'} gap={'0px'}>
+    <VStack
+      textAlign={'center'}
+      textStyle={'pre-display-3'}
+      gap={'0px'}
+      px={'20px'}
+    >
       <Text color={'primary.4'}>보는 인쇄에서 참여하는 인쇄로 </Text>
-      <Text whiteSpace="nowrap">새로운 인터랙티브 경험을 만들어보세요! </Text>
+      <Text>새로운 인터랙티브 경험을 만들어보세요! </Text>
     </VStack>
   ),
   heroContent: (

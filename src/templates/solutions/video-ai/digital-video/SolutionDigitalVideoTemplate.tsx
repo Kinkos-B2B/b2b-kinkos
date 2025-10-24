@@ -24,9 +24,14 @@ import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 const heroMockData = {
   badge: '디지털 영상 제작',
   title: (
-    <VStack textAlign={'center'} textStyle={'pre-display-3'} gap={'0px'}>
+    <VStack
+      textAlign={'center'}
+      textStyle={'pre-display-3'}
+      gap={'0px'}
+      px={'20px'}
+    >
       <Text color={'primary.4'}>매장 DID 영상, </Text>
-      <Text whiteSpace="nowrap">어떻게 바꿀지 고민되세요? </Text>
+      <Text>어떻게 바꿀지 고민되세요? </Text>
     </VStack>
   ),
   heroContent: (

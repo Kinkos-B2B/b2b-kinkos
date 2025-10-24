@@ -24,9 +24,14 @@ import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 const heroMockData = {
   badge: '프랜차이즈 전용 인쇄몰',
   title: (
-    <VStack textAlign={'center'} textStyle={'pre-display-3'} gap={'0px'}>
+    <VStack
+      textAlign={'center'}
+      textStyle={'pre-display-3'}
+      gap={'0px'}
+      px={'20px'}
+    >
       <Text color={'primary.4'}>프랜차이즈 인쇄물 관리, </Text>
-      <Text whiteSpace="nowrap">하나의 시스템으로 통합하세요! </Text>
+      <Text>하나의 시스템으로 통합하세요! </Text>
     </VStack>
   ),
   heroContent: (

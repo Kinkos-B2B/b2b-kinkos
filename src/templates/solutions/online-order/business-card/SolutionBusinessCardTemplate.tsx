@@ -24,9 +24,14 @@ import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 const heroMockData = {
   badge: '온라인 명함 주문 관리',
   title: (
-    <VStack textAlign={'center'} textStyle={'pre-display-3'} gap={'0px'}>
+    <VStack
+      textAlign={'center'}
+      textStyle={'pre-display-3'}
+      gap={'0px'}
+      px={'20px'}
+    >
       <Text color={'primary.4'}>신입사원 명함신청, </Text>
-      <Text whiteSpace="nowrap">아직도 이메일로 받으세요?</Text>
+      <Text>아직도 이메일로 받으세요?</Text>
     </VStack>
   ),
   heroContent: (

@@ -26,7 +26,7 @@ const heroMockData = {
   title: (
     <VStack textAlign={'center'} textStyle={'pre-display-3'} gap={'0px'}>
       <Text color={'primary.4'}>우리 회사 인쇄물 관리,</Text>
-      <Text whiteSpace="nowrap">아직도 제작 따로, 물류 따로 맡기시나요?</Text>
+      <Text>아직도 제작 따로, 물류 따로 맡기시나요?</Text>
     </VStack>
   ),
   heroContent: (

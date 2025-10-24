@@ -24,9 +24,14 @@ import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 const heroMockData = {
   badge: 'EX감성 분석',
   title: (
-    <VStack textAlign={'center'} textStyle={'pre-display-3'} gap={'0px'}>
+    <VStack
+      textAlign={'center'}
+      textStyle={'pre-display-3'}
+      gap={'0px'}
+      px={'20px'}
+    >
       <Text color={'primary.4'}>우리 디자인, 소비자가 진짜로 보고 있나요?</Text>
-      <Text whiteSpace="nowrap">예쁜 디자인이 전달력 높은 디자인일까요? </Text>
+      <Text>예쁜 디자인이 전달력 높은 디자인일까요? </Text>
     </VStack>
   ),
   heroContent: (

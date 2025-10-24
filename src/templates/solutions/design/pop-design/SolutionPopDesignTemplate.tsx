@@ -24,9 +24,14 @@ import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 const heroMockData = {
   badge: '매장 POP 디자인',
   title: (
-    <VStack textAlign={'center'} textStyle={'pre-display-3'} gap={'0px'}>
+    <VStack
+      textAlign={'center'}
+      textStyle={'pre-display-3'}
+      gap={'0px'}
+      px={'20px'}
+    >
       <Text color={'primary.4'}>우리 매장 환경에 꼭 맞는 POP,</Text>
-      <Text whiteSpace="nowrap">아직도 직접 고민하시나요?</Text>
+      <Text>아직도 직접 고민하시나요?</Text>
     </VStack>
   ),
   heroContent: (

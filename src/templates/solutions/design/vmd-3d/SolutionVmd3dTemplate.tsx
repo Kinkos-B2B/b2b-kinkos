@@ -24,9 +24,14 @@ import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 const heroMockData = {
   badge: 'VMD 3D 디자인',
   title: (
-    <VStack textAlign={'center'} textStyle={'pre-display-3'} gap={'0px'}>
+    <VStack
+      textAlign={'center'}
+      textStyle={'pre-display-3'}
+      gap={'0px'}
+      px={'20px'}
+    >
       <Text color={'primary.4'}>팝업스토어, VMD 기획,</Text>
-      <Text whiteSpace="nowrap">아직도 혼자 고민하세요?</Text>
+      <Text>아직도 혼자 고민하세요?</Text>
     </VStack>
   ),
   heroContent: (

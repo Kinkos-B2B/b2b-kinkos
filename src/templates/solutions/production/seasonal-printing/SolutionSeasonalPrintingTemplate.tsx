@@ -24,9 +24,14 @@ import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 const heroMockData = {
   badge: '시즌성 인쇄물 제작관리',
   title: (
-    <VStack textAlign={'center'} textStyle={'pre-display-3'} gap={'0px'}>
+    <VStack
+      textAlign={'center'}
+      textStyle={'pre-display-3'}
+      gap={'0px'}
+      px={'20px'}
+    >
       <Text color={'primary.4'}>매년 똑같은 다이어리,캘린더</Text>
-      <Text whiteSpace="nowrap">올해는 다르게 만들고 싶나요?</Text>
+      <Text>올해는 다르게 만들고 싶나요?</Text>
     </VStack>
   ),
   heroContent: (

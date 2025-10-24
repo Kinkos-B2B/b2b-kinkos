@@ -24,9 +24,14 @@ import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 const heroMockData = {
   badge: '통합제작 올인원',
   title: (
-    <VStack textAlign={'center'} textStyle={'pre-display-3'} gap={'0px'}>
+    <VStack
+      textAlign={'center'}
+      textStyle={'pre-display-3'}
+      gap={'0px'}
+      px={'20px'}
+    >
       <Text color={'primary.4'}>인쇄 디자인, 제작, 배송,</Text>
-      <Text whiteSpace="nowrap">아직도 따로 맡기세요? </Text>
+      <Text>아직도 따로 맡기세요? </Text>
     </VStack>
   ),
   heroContent: (

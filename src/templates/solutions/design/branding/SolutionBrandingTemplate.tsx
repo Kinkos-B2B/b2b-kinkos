@@ -7,8 +7,6 @@ import { Box, Container, HStack, Text, VStack } from '@chakra-ui/react'
 import gsap from 'gsap'
 import { useInView } from 'react-intersection-observer'
 
-import { Button } from '@/components/ui/button'
-import { ROUTES } from '@/constants/routes'
 import { GetSolutionExpertListParamsTypeEnumType } from '@/helper/options'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
@@ -24,11 +22,16 @@ import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 const heroMockData = {
   badge: '브랜딩 디자인',
   title: (
-    <VStack textAlign={'center'} textStyle={'pre-display-3'} gap={'0px'}>
+    <VStack
+      textAlign={'center'}
+      textStyle={'pre-display-3'}
+      gap={'0px'}
+      px={'20px'}
+    >
       <Text color={'primary.4'} as={'span'}>
         브랜드 디자인,
       </Text>
-      <Text whiteSpace="nowrap">아직도 시안 파일만 받고 계신가요?</Text>
+      <Text>아직도 시안 파일만 받고 계신가요?</Text>
     </VStack>
   ),
   heroContent: (
