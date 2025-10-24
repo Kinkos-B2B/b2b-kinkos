@@ -380,9 +380,6 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
                   textStyle="pre-display-1"
                   color="grey.0"
                   textAlign="center"
-                  fontSize={{ base: '32px', md: '48px', lg: '80px' }}
-                  lineHeight="1.3"
-                  letterSpacing="-0.8px"
                   wordBreak="keep-all"
                 >
                   {content.line1}
@@ -394,9 +391,6 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
                   textStyle="pre-display-1"
                   color="grey.0"
                   textAlign="center"
-                  fontSize={{ base: '32px', md: '48px', lg: '80px' }}
-                  lineHeight="1.3"
-                  letterSpacing="-0.8px"
                   wordBreak="keep-all"
                 >
                   {content.line2}

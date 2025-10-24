@@ -202,7 +202,8 @@ export const SearchResultSection = ({
                       border="none"
                       bg="transparent"
                       color="grey.9"
-                      _placeholder={{ color: 'grey.5', fontSize: '16px' }}
+                      textStyle={'pre-body-4'}
+                      _placeholder={{ color: 'grey.5' }}
                       _focus={{ boxShadow: 'none', border: 'none' }}
                       _hover={{ border: 'none' }}
                     />

@@ -108,9 +108,9 @@ export const FaqTemplate = (props: FaqTemplateProps) => {
       pb={{ base: '140px', lg: '160px' }}
     >
       <Box w="full">
-        <VStack gap="56px" align="stretch">
+        <VStack gap={{ lg: '56px', sm: '40px', base: '32px' }} align="stretch">
           {/* 헤더 섹션 */}
-          <VStack gap="40px" align="center">
+          <VStack gap={{ lg: '40px', sm: '32px', base: '24px' }} align="center">
             <Heading
               as="h1"
               color="grey.10"
@@ -132,22 +132,27 @@ export const FaqTemplate = (props: FaqTemplateProps) => {
               >
                 <Tabs.List
                   gap="8px"
-                  h="48px"
-                  overflow="hidden"
+                  overflow="auto"
                   position="relative"
                   w="full"
+                  h="48px"
                   display="flex"
-                  alignItems="center"
-                  justifyContent="center"
+                  alignItems={{ base: 'center', sm: 'center' }}
+                  justifyContent={{ base: 'flex-start', sm: 'center' }}
+                  css={{
+                    scrollbar: 'hidden',
+                  }}
                 >
                   {defaultTabs.map((tab) => (
                     <Tabs.Trigger
                       key={tab.id}
-                      value={tab.id}
                       h={{ base: '40px', sm: '48px' }}
+                      value={tab.id}
                       px="16px"
                       py="0"
                       borderRadius="10px"
+                      flexShrink={0}
+                      whiteSpace={'nowrap'}
                       textStyle={{ sm: 'pre-body-1', base: 'pre-body-3' }}
                       _selected={{ bg: 'grey.10', color: 'grey.0' }}
                       _hover={{ opacity: 0.8 }}
@@ -157,15 +162,14 @@ export const FaqTemplate = (props: FaqTemplateProps) => {
                   ))}
                 </Tabs.List>
               </Tabs.Root>
-
-              {/* 그라데이션 오버레이 */}
               <Box
                 position="absolute"
                 top="0"
+                display={{ base: 'block', sm: 'none' }}
                 right="0"
                 w="30px"
                 h="48px"
-                bgGradient="linear(to-l, grey.0, rgba(255, 255, 255, 0))"
+                bg="linear-gradient(270deg, #FFFFFF, #FFFFFF00)"
                 pointerEvents="none"
               />
             </Box>

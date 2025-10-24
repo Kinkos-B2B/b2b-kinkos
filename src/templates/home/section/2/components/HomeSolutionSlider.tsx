@@ -18,13 +18,12 @@ import useEmblaCarousel from 'embla-carousel-react'
 
 import { Badge } from '@/components/ui/badge'
 
+import { HomeSolutionSliderItem } from '../HomeIntroduceSolution'
+import { HomeSolutionSliderCard } from './HomeSolutionSliderCard'
 import './home-slider.css'
 
 interface SolutionSliderProps {
-  slides: {
-    title: string
-    image: string
-  }[]
+  slides: HomeSolutionSliderItem[]
 }
 
 export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
@@ -120,17 +119,14 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
 
         <Flex justify="space-between" align="center" width="100%">
           <Text
-            fontSize={{ base: '32px', sm: '40px', lg: '48px' }}
-            fontWeight="700"
             color="grey.10"
-            letterSpacing="-0.48px"
-            lineHeight="1.4"
-            whiteSpace="nowrap"
+            textStyle={'pre-display-3'}
+            whiteSpace={{ base: 'pre-line', sm: 'nowrap' }}
           >
-            킨코스가 제안하는 비즈니스 맞춤 솔루션
+            {'킨코스가 제안하는\n비즈니스 맞춤 솔루션'}
           </Text>
 
-          <HStack gap="10px">
+          <HStack gap="10px" display={{ base: 'none', lg: 'flex' }}>
             <IconButton
               variant={'capsule'}
               size={'md'}
@@ -167,7 +163,8 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
             {slides?.map((tab, index) => {
               return (
                 <Button
-                  size={{ base: 'md', lg: 'lg' }}
+                  size={{ base: 'sm', sm: 'md', lg: 'lg' }}
+                  lineHeight={'1'}
                   colorPalette="black"
                   key={index}
                   ref={(el) => {
@@ -185,7 +182,7 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
                   }}
                   variant={selectedIndex === index ? 'solid' : 'outline'}
                 >
-                  {tab.title}
+                  {tab.badge}
                 </Button>
               )
             })}
@@ -197,6 +194,18 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
               {slides.map((slide, index) => (
                 <div key={index} className="embla__slide">
                   <Box
+                    h={'100%'}
+                    className={`slide ${selectedIndex === index ? 'active' : ''}`}
+                  >
+                    <HomeSolutionSliderCard
+                      badge={slide.badge}
+                      title={slide.title || slide.badge}
+                      image={slide.image}
+                      features={slide.features || []}
+                      alt={slide.alt}
+                    />
+                  </Box>
+                  {/* <Box
                     borderRadius={'20px'}
                     overflow={'hidden'}
                     bg={'white'}
@@ -220,7 +229,7 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
                       alt={slide.title}
                       objectFit="cover"
                     />
-                  </Box>
+                  </Box> */}
                 </div>
               ))}
             </div>

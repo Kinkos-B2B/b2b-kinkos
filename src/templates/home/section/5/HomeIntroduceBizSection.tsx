@@ -209,6 +209,7 @@ export const HomeIntroduceBizSection = () => {
           textStyle="pre-display-3"
           color="grey.10" // #1b1c1d
           textAlign="center"
+          whiteSpace={{ base: 'pre-line', sm: 'nowrap' }}
         >
           {'킨코스,\n기업을 위한 인쇄 솔루션'}
         </Text>

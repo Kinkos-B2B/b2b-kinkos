@@ -299,15 +299,10 @@ const SearchInput = () => {
             w={'100%'}
             focusRingColor={'grey.10'}
             py="16px"
-            fontSize="16px"
-            lineHeight="1.6"
-            letterSpacing="-0.32px"
+            textStyle={'pre-body-4'}
             color="grey.900"
             _placeholder={{
               color: 'grey.400',
-              fontSize: '16px',
-              lineHeight: '1.6',
-              letterSpacing: '-0.32px',
             }}
             _focus={{
               boxShadow: 'none',
@@ -346,7 +341,7 @@ const SearchInput = () => {
         >
           {isLoading ?
             <Box p="12px" textAlign="center" color="grey.6">
-              <Text fontSize="16px">검색 중...</Text>
+              <Text textStyle={'pre-body-4'}>검색 중...</Text>
             </Box>
           : autoCompleteOptions.length > 0 ?
             <VStack gap="0" align="stretch">
@@ -369,9 +364,7 @@ const SearchInput = () => {
                       <MagnifyingGlassIcon size={18} color="#6a6d71" />
                     </Box>
                     <Text
-                      fontSize="16px"
-                      lineHeight="1.6"
-                      letterSpacing="-0.32px"
+                      textStyle={'pre-body-4'}
                       color="grey.8"
                       data-node-id="15664:25450"
                     >
@@ -383,7 +376,7 @@ const SearchInput = () => {
             </VStack>
           : searchValue.length > 0 ?
             <Box p="12px" textAlign="center" color="grey.6">
-              <Text fontSize="16px">검색 결과가 없습니다.</Text>
+              <Text textStyle={'pre-body-4'}>검색 결과가 없습니다.</Text>
             </Box>
           : null}
         </Box>
