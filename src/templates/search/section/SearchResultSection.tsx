@@ -121,8 +121,12 @@ export const SearchResultSection = ({
         alignItems="center"
         px="40px"
       >
-        <Container>
-          <Text textStyle="pre-body-1" color="grey.10">
+        <Container px={'0px'}>
+          <Text
+            textStyle="pre-body-1"
+            color="grey.10"
+            textAlign={{ base: 'center', lg: 'left' }}
+          >
             <Text as="span" fontWeight="600" textStyle="pre-body-1">
               {`'${currentQuery}'`}
             </Text>
@@ -140,12 +144,14 @@ export const SearchResultSection = ({
               value={activeTab}
               onValueChange={({ value }) => handleTabChange(value)}
               variant="enclosed"
+              size={{ lg: 'large', base: 'small' }}
               w="100%"
             >
               <HStack
                 py="16px"
                 borderBottom="1px solid"
                 borderColor="border.basic.1"
+                flexDirection={{ base: 'column-reverse', sm: 'row' }}
               >
                 <Tabs.List
                   gap="8px"
@@ -160,14 +166,11 @@ export const SearchResultSection = ({
                     <Tabs.Trigger
                       key={tab.value}
                       value={tab.value}
-                      h="48px"
+                      h={{ base: '40px', sm: '48px' }}
                       px="16px"
                       py="0"
                       borderRadius="10px"
-                      fontSize="18px"
-                      fontWeight="600"
-                      letterSpacing="-0.36px"
-                      lineHeight="1.6"
+                      textStyle={{ sm: 'pre-body-1', base: 'pre-body-3' }}
                       _selected={{ bg: 'grey.10', color: 'grey.0' }}
                       _hover={{ opacity: 0.8 }}
                     >
@@ -176,7 +179,10 @@ export const SearchResultSection = ({
                   ))}
                 </Tabs.List>
 
-                <Box ml="auto" w="320px">
+                <Box
+                  ml={{ base: '0px', sm: 'auto' }}
+                  w={{ base: '100%', sm: '320px' }}
+                >
                   <InputGroup
                     w="100%"
                     bg="grey.1"
@@ -195,7 +201,7 @@ export const SearchResultSection = ({
                       placeholder="검색"
                       border="none"
                       bg="transparent"
-                      color="grey.5"
+                      color="grey.9"
                       _placeholder={{ color: 'grey.5', fontSize: '16px' }}
                       _focus={{ boxShadow: 'none', border: 'none' }}
                       _hover={{ border: 'none' }}

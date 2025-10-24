@@ -144,21 +144,13 @@ export const FaqTemplate = (props: FaqTemplateProps) => {
                     <Tabs.Trigger
                       key={tab.id}
                       value={tab.id}
-                      h="48px"
+                      h={{ base: '40px', sm: '48px' }}
                       px="16px"
                       py="0"
                       borderRadius="10px"
-                      fontSize="18px"
-                      fontWeight="600"
-                      letterSpacing="-0.36px"
-                      lineHeight="1.6"
-                      _selected={{
-                        bg: 'grey.10',
-                        color: 'grey.0',
-                      }}
-                      _hover={{
-                        opacity: 0.8,
-                      }}
+                      textStyle={{ sm: 'pre-body-1', base: 'pre-body-3' }}
+                      _selected={{ bg: 'grey.10', color: 'grey.0' }}
+                      _hover={{ opacity: 0.8 }}
                     >
                       {tab.label}
                     </Tabs.Trigger>

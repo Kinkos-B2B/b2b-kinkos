@@ -92,10 +92,12 @@ export const SerachKeyword = ({
     md: {
       h: '40px',
       p: '4px 16px',
+      textStyle: 'pre-body-5',
     },
     sm: {
       h: '28px',
       p: '4px 8px',
+      textStyle: 'pre-caption-1',
     },
   }
 
@@ -118,7 +120,7 @@ export const SerachKeyword = ({
       }}
       onClick={onClick}
     >
-      <Text textStyle={'pre-body-5'} whiteSpace={'nowrap'}>
+      <Text textStyle={sizeStyle[size].textStyle} whiteSpace={'nowrap'}>
         {title}
       </Text>
     </Box>
@@ -169,24 +171,27 @@ const SearchInput = () => {
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLInputElement>) => {
-      if (!isOpen || autoCompleteOptions.length === 0) return
-
       switch (e.key) {
         case 'ArrowDown':
-          e.preventDefault()
-          setSelectedIndex((prev) =>
-            prev < autoCompleteOptions.length - 1 ? prev + 1 : 0,
-          )
+          if (isOpen && autoCompleteOptions.length > 0) {
+            e.preventDefault()
+            setSelectedIndex((prev) =>
+              prev < autoCompleteOptions.length - 1 ? prev + 1 : 0,
+            )
+          }
           break
         case 'ArrowUp':
-          e.preventDefault()
-          setSelectedIndex((prev) =>
-            prev > 0 ? prev - 1 : autoCompleteOptions.length - 1,
-          )
+          if (isOpen && autoCompleteOptions.length > 0) {
+            e.preventDefault()
+            setSelectedIndex((prev) =>
+              prev > 0 ? prev - 1 : autoCompleteOptions.length - 1,
+            )
+          }
           break
         case 'Enter':
           e.preventDefault()
           if (
+            isOpen &&
             selectedIndex >= 0 &&
             selectedIndex < autoCompleteOptions.length
           ) {
@@ -194,26 +199,34 @@ const SearchInput = () => {
             setSearchValue(selectedOption.keyword)
             setIsOpen(false)
             setSelectedIndex(-1)
+            router.push(
+              `/search?q=${encodeURIComponent(selectedOption.keyword)}`,
+            )
           } else {
             handleSearch()
           }
           break
         case 'Escape':
-          setIsOpen(false)
-          setSelectedIndex(-1)
-          inputRef.current?.blur()
+          if (isOpen) {
+            setIsOpen(false)
+            setSelectedIndex(-1)
+            inputRef.current?.blur()
+          }
           break
       }
     },
-    [isOpen, autoCompleteOptions, selectedIndex],
+    [isOpen, autoCompleteOptions, selectedIndex, router],
   )
 
-  const handleOptionClick = useCallback((keyword: string) => {
-    setSearchValue(keyword)
-    setIsOpen(false)
-    setSelectedIndex(-1)
-    inputRef.current?.focus()
-  }, [])
+  const handleOptionClick = useCallback(
+    (keyword: string) => {
+      setSearchValue(keyword)
+      setIsOpen(false)
+      setSelectedIndex(-1)
+      router.push(`/search?q=${encodeURIComponent(keyword)}`)
+    },
+    [router],
+  )
 
   const handleInputFocus = useCallback(() => {
     if (searchValue.length > 0) {
@@ -346,7 +359,7 @@ const SearchInput = () => {
                   _hover={{
                     bg: 'grey.1',
                   }}
-                  onClick={() => handleOptionClick(option.keyword)}
+                  onMouseDown={() => handleOptionClick(option.keyword)}
                   role="option"
                   aria-selected={selectedIndex === index}
                   data-node-id="15664:25449"

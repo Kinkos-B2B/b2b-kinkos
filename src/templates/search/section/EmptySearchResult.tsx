@@ -18,7 +18,7 @@ export const EmptySearchResult = ({
     <Box
       bg="background.basic.2"
       borderRadius="32px"
-      p="40px"
+      px={'20px'}
       display="flex"
       flexDirection="column"
       alignItems="center"
@@ -28,7 +28,10 @@ export const EmptySearchResult = ({
     >
       {/* 검색 아이콘과 메시지 */}
       <VStack gap="12px" align="center">
-        <Box w="100px" h="100px">
+        <Box
+          w={{ base: '80px', sm: '100px' }}
+          h={{ base: '80px', sm: '100px' }}
+        >
           <Image
             src={imgSearch}
             alt="검색 결과 없음"
@@ -45,10 +48,11 @@ export const EmptySearchResult = ({
       <Box
         bg={'greytransparent.1'}
         borderRadius="12px"
-        p="10px 12px"
+        p={{ base: '16px 10px', sm: '10px 12px' }}
         display="flex"
         alignItems="center"
         gap="10px"
+        flexDirection={{ base: 'column', sm: 'row' }}
       >
         <Text
           textStyle="pre-body-5"
@@ -58,8 +62,20 @@ export const EmptySearchResult = ({
         >
           자주 찾는 검색어
         </Text>
-        <Box h="14px" w="1px" bg="grey.3" flexShrink={0} />
-        <HStack gap="2px" flexWrap="wrap">
+        <Box
+          h="14px"
+          w="1px"
+          bg="grey.3"
+          flexShrink={0}
+          display={{ base: 'none', sm: 'block' }}
+        />
+        <HStack
+          flexWrap="wrap"
+          gap={'2px'}
+          rowGap={'6px'}
+          alignItems="center"
+          justifyContent="center"
+        >
           {recommendedKeywords?.map((keyword) => (
             <SerachKeyword
               onClick={() => onSearchKeywordClick?.(keyword.keyword)}
