@@ -1,5 +1,6 @@
 import { Badge, Box, Button, Flex, Image, Text, VStack } from '@chakra-ui/react'
 
+import { usePannelContext } from '@/components/PannelContext'
 import { PostFeatureItem } from '@/components/view/PostDetail/PostFeatureItem'
 import { PostSectionWrapper } from '@/components/view/PostDetail/PostSectionWrapper'
 import { LAYOUT } from '@/constants/layout'
@@ -106,7 +107,7 @@ export const ExpertDetailArticleContent = ({
 }: {
   content?: GetExpertResponseType
 }) => {
-  content?.profile.nickname
+  const { openPannel } = usePannelContext()
 
   return (
     <Flex
@@ -178,7 +179,9 @@ export const ExpertDetailArticleContent = ({
           <Text textStyle={'pre-caption-2'} color={'grey.7'}>
             이 전문가가 마음에 든다면?
           </Text>
-          <Button w={'100%'}>무료 상담 받아보기</Button>
+          <Button w={'100%'} onClick={() => openPannel()}>
+            무료 상담 받아보기
+          </Button>
         </VStack>
       </Flex>
     </Flex>

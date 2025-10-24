@@ -232,7 +232,7 @@ export const SolutionBusinessCardTemplate = () => {
       >
         <SolutionReleatedExportSection
           solutionId={
-            GetSolutionExpertListParamsTypeEnumType.MARKET_ANALYSIS_BASED
+            GetSolutionExpertListParamsTypeEnumType.BUSINESS_CARD_SITE
           }
         />
       </Box>

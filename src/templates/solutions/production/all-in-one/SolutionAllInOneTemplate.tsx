@@ -230,9 +230,7 @@ export const SolutionAllInOneTemplate = () => {
         w={'100%'}
       >
         <SolutionReleatedExportSection
-          solutionId={
-            GetSolutionExpertListParamsTypeEnumType.MARKET_ANALYSIS_BASED
-          }
+          solutionId={GetSolutionExpertListParamsTypeEnumType.ALL_IN_ONE}
         />
       </Box>
 

@@ -257,7 +257,7 @@ export const SolutionCorporatePrintingTemplate = () => {
       >
         <SolutionReleatedExportSection
           solutionId={
-            GetSolutionExpertListParamsTypeEnumType.MARKET_ANALYSIS_BASED
+            GetSolutionExpertListParamsTypeEnumType.CORPORATE_PRINT_MALL
           }
         />
       </Box>

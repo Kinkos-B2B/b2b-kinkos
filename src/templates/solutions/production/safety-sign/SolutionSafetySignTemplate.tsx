@@ -227,9 +227,7 @@ export const SolutionSafetySignTemplate = () => {
         w={'100%'}
       >
         <SolutionReleatedExportSection
-          solutionId={
-            GetSolutionExpertListParamsTypeEnumType.MARKET_ANALYSIS_BASED
-          }
+          solutionId={GetSolutionExpertListParamsTypeEnumType.SAFETY_SIGNAGE}
         />
       </Box>
 

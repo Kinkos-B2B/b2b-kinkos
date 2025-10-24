@@ -252,7 +252,7 @@ export const SolutionFranchisePrintingTemplate = () => {
       >
         <SolutionReleatedExportSection
           solutionId={
-            GetSolutionExpertListParamsTypeEnumType.MARKET_ANALYSIS_BASED
+            GetSolutionExpertListParamsTypeEnumType.FRANCHISE_PRINT_MALL
           }
         />
       </Box>

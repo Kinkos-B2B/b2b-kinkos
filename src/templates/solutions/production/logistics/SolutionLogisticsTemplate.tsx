@@ -223,7 +223,7 @@ export const SolutionLogisticsTemplate = () => {
       >
         <SolutionReleatedExportSection
           solutionId={
-            GetSolutionExpertListParamsTypeEnumType.MARKET_ANALYSIS_BASED
+            GetSolutionExpertListParamsTypeEnumType.LOGISTICS_MANAGEMENT
           }
         />
       </Box>

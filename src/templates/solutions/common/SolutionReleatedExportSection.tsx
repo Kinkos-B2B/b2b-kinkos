@@ -26,12 +26,10 @@ interface ExpertData {
 
 interface SolutionReleatedExportSectionProps {
   solutionId: GetSolutionExpertListParamsTypeEnumType
-  onExpertClick?: () => void
 }
 
 export const SolutionReleatedExportSection = ({
   solutionId,
-  onExpertClick,
 }: SolutionReleatedExportSectionProps) => {
   const { data: experts } = useGetSolutionExpertListQuery({
     variables: {
@@ -67,7 +65,6 @@ export const SolutionReleatedExportSection = ({
                 <SolutionReleatedExportCard
                   key={index}
                   solutionExpert={expert}
-                  onButtonClick={() => onExpertClick?.()}
                 />
               </GridItem>
             ))}

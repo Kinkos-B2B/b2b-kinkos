@@ -240,7 +240,7 @@ export const SolutionEmotionAnalysisTemplate = () => {
       >
         <SolutionReleatedExportSection
           solutionId={
-            GetSolutionExpertListParamsTypeEnumType.MARKET_ANALYSIS_BASED
+            GetSolutionExpertListParamsTypeEnumType.EX_SENSITIVITY_ANALYSIS
           }
         />
       </Box>

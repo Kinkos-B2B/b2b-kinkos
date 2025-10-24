@@ -231,9 +231,7 @@ export const SolutionArPrintingTemplate = () => {
         w={'100%'}
       >
         <SolutionReleatedExportSection
-          solutionId={
-            GetSolutionExpertListParamsTypeEnumType.MARKET_ANALYSIS_BASED
-          }
+          solutionId={GetSolutionExpertListParamsTypeEnumType.AR_PRINT}
         />
       </Box>
 

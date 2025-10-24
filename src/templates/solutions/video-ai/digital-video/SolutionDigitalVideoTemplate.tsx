@@ -230,9 +230,7 @@ export const SolutionDigitalVideoTemplate = () => {
         w={'100%'}
       >
         <SolutionReleatedExportSection
-          solutionId={
-            GetSolutionExpertListParamsTypeEnumType.MARKET_ANALYSIS_BASED
-          }
+          solutionId={GetSolutionExpertListParamsTypeEnumType.DIGITAL_VIDEO}
         />
       </Box>
 

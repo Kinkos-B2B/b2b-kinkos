@@ -4,6 +4,7 @@ import Image from 'next/image'
 
 import { Avatar, Box, Button, Text, VStack } from '@chakra-ui/react'
 
+import { usePannelContext } from '@/components/PannelContext'
 import { GetSolutionExpertType } from '@/generated/apis/@types/data-contracts'
 
 interface RelatedExpertCardProps {
@@ -13,8 +14,8 @@ interface RelatedExpertCardProps {
 
 export const SolutionReleatedExportCard = ({
   solutionExpert,
-  onButtonClick,
 }: RelatedExpertCardProps) => {
+  const { openPannel } = usePannelContext()
   return (
     <Box
       borderRadius="28px"
@@ -104,7 +105,7 @@ export const SolutionReleatedExportCard = ({
             w={'100%'}
             variant="outline"
             size="md"
-            onClick={() => onButtonClick?.()}
+            onClick={() => openPannel()}
           >
             무료 상담 받아보기
           </Button>

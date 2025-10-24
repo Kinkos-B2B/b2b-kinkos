@@ -231,9 +231,7 @@ export const SolutionSeasonalPrintingTemplate = () => {
         w={'100%'}
       >
         <SolutionReleatedExportSection
-          solutionId={
-            GetSolutionExpertListParamsTypeEnumType.MARKET_ANALYSIS_BASED
-          }
+          solutionId={GetSolutionExpertListParamsTypeEnumType.SEASONAL_PRINT}
         />
       </Box>
 

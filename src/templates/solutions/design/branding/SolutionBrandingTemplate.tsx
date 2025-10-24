@@ -257,9 +257,7 @@ export const SolutionBrandingTemplate = () => {
         w={'100%'}
       >
         <SolutionReleatedExportSection
-          solutionId={
-            GetSolutionExpertListParamsTypeEnumType.MARKET_ANALYSIS_BASED
-          }
+          solutionId={GetSolutionExpertListParamsTypeEnumType.BRANDING_DESIGN}
         />
       </Box>
 
