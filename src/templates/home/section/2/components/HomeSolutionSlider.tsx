@@ -78,15 +78,19 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
     [emblaApi],
   )
 
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return
-    setSelectedIndex(emblaApi.selectedScrollSnap())
-    // tabButtonsRef.current[emblaApi.selectedScrollSnap()].scrollIntoView({
-    //   behavior: 'smooth',
-    //   block: 'nearest',
-    //   inline: 'start',
-    // })
-  }, [emblaApi])
+  const onSelect = useCallback(
+    (e: any) => {
+      console.log(e)
+      if (!emblaApi) return
+      setSelectedIndex(emblaApi.selectedScrollSnap())
+      tabButtonsRef.current[emblaApi.selectedScrollSnap()].scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'start',
+      })
+    },
+    [emblaApi],
+  )
 
   useEffect(() => {
     if (!emblaApi) return

@@ -52,7 +52,7 @@ const columns: ComparisonTableColumn[] = [
 export const ComparisonTable = forwardRef<HTMLDivElement, ComparisonTableProps>(
   ({ data, size = 'md', className }, ref) => {
     return (
-      <Box ref={ref} className={className} w={'100%'}>
+      <Box ref={ref} className={className} w={'100%'} overflow={'auto'}>
         <Table.Root size={size} variant="outline" showColumnBorder>
           <Table.Header>
             <Table.Row>

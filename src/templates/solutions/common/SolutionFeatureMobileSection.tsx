@@ -62,7 +62,7 @@ export const SolutionFeatureMobileSection = ({
             gap={{ base: '56px', sm: '80px' }}
             flexDirection={'column'}
           >
-            <Box w={'100%'}>
+            <Box w={'100%'} overflow={'hidden'}>
               {featureItem.type === 'table' && (
                 <SolutionFeatureItem.Table
                   title={featureItem.title}
