@@ -105,7 +105,7 @@ export const HomeMoreQuestionSection = () => {
               textStyle="pre-display-3"
               color="grey.10"
               textAlign="center"
-              whiteSpace={{ base: 'wrap', sm: 'nowrap' }}
+              whiteSpace={{ base: 'pre-line', sm: 'nowrap' }}
             >
               {'킨코스,\nB2B를 더 잘 활용하는 방법'}
             </Heading>
