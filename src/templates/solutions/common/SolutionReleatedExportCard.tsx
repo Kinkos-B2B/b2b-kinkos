@@ -100,7 +100,7 @@ export const SolutionReleatedExportCard = ({
         </VStack>
 
         {/* 버튼 섹션 */}
-        <Box w="100%">
+        <Box w="100%" display={'flex'} alignItems={'end'} flex={1}>
           <Button
             w={'100%'}
             variant="outline"
