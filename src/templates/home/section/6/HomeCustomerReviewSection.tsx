@@ -1,9 +1,12 @@
 'use client'
 
+import Link from 'next/link'
+
 import { Grid, GridItem, chakra } from '@chakra-ui/react'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { ROUTES } from '@/constants/routes'
 
 import { CompanyMarquee } from './components/CompanyMarquee'
 import { CustomerReviewCard } from './components/CustomerReviewCard'
@@ -130,10 +133,11 @@ export const HomeCustomerReviewSection = () => {
             </Grid>
           </chakra.div>
         </chakra.div>
-
-        <Button size="lg" variant="solid" colorPalette="primary">
-          고객후기 전체보기
-        </Button>
+        <Link href={ROUTES.CUSTOMER_REVIEW}>
+          <Button size="lg" variant="solid" colorPalette="primary">
+            고객후기 전체보기
+          </Button>
+        </Link>
       </chakra.div>
     </chakra.section>
   )

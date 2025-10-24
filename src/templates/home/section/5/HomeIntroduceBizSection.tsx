@@ -202,7 +202,7 @@ export const HomeIntroduceBizSection = () => {
 
       {/* 헤더 섹션 */}
       <VStack gap="16px" align="center">
-        <Badge size="xl" colorPalette="white">
+        <Badge colorPalette="white" size={{ base: 'lg', sm: 'xl' }}>
           킨코스 비즈
         </Badge>
         <Text

@@ -47,10 +47,11 @@ export const HomeSearchSection = () => {
         <Text textStyle="pre-display-2" color="grey.10" textAlign="center">
           B2B 기업 인쇄,{'\n'}딱 맞는 솔루션과 전문가를 찾아보세요!
         </Text>
-        <VStack w={'100%'} gap={'20px'} tabIndex={-1}>
+        <VStack w={'100%'} gap={{ base: '24px', sm: '20px' }} tabIndex={-1}>
           <SearchInput />
           <HStack
-            gap={'10px'}
+            gap={{ base: '4px', sm: '10px' }}
+            rowGap={{ base: '8px', sm: '0px' }}
             flexWrap={'wrap'}
             alignItems={'center'}
             justifyContent={'center'}

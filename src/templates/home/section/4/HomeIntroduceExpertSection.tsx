@@ -1,10 +1,19 @@
 import * as React from 'react'
 
-import { Box, Container, Flex, Heading, Image, VStack } from '@chakra-ui/react'
+import {
+  Box,
+  Container,
+  Flex,
+  Heading,
+  Image,
+  Link,
+  VStack,
+} from '@chakra-ui/react'
 import { Marquee } from '@devnomic/marquee'
 
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { ROUTES } from '@/constants/routes'
 import { useGetHomeExpertQuery } from '@/generated/apis/HomeApi/HomeApi.query'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 
@@ -22,7 +31,8 @@ export const HomeIntroduceExpertSection = () => {
   return (
     <Box
       bg="secondary.1"
-      h={{ base: '46vh', sm: '780px' }}
+      h={{ base: 'auto', sm: '780px' }}
+      py={{ base: '104px', sm: '0px' }}
       w="100%"
       position="relative"
       overflow="hidden"
@@ -69,7 +79,11 @@ export const HomeIntroduceExpertSection = () => {
               gap="16px"
               flex="none"
             >
-              <Badge variant="solid" colorPalette="white" size={'xl'}>
+              <Badge
+                variant="solid"
+                colorPalette="white"
+                size={{ base: 'lg', sm: 'xl' }}
+              >
                 전문가
               </Badge>
               <Heading
@@ -84,9 +98,11 @@ export const HomeIntroduceExpertSection = () => {
               </Heading>
             </VStack>
 
-            <Button variant="solid" textStyle="pre-body-3" size={'lg'}>
-              전문가 전체보기
-            </Button>
+            <Link href={ROUTES.EXPERT}>
+              <Button variant="solid" textStyle="pre-body-3" size={'lg'}>
+                전문가 전체보기
+              </Button>
+            </Link>
           </VStack>
 
           <Flex
