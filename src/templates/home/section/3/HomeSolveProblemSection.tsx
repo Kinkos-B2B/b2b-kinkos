@@ -24,49 +24,58 @@ import { GetHomeConfigHelpArticleResponseType } from '@/generated/apis/@types/da
 import { useGetHomeConfigHelpArticleQuery } from '@/generated/apis/HomeApi/HomeApi.query'
 
 const ProblemCard = ({
+  id,
   thumbnailImageUrl,
   title,
   createdAt,
 }: GetHomeConfigHelpArticleResponseType) => {
   return (
-    <VStack align="stretch" gap="16px" w="100%" h="100%">
-      {/* 이미지 카드 */}
-      <VStack
-        gap={'0px'}
-        position="relative"
-        w="100%"
-        h="100%"
-        borderRadius="28px"
-        overflow="hidden"
-        bg="grey.100"
-      >
-        <Image
-          src={thumbnailImageUrl?.url || ''}
-          alt={title}
-          width={0}
-          height={0}
-          sizes="100vw"
-          style={{
-            objectFit: 'cover',
-            width: '100%',
-            height: '100%',
+    <Link href={`${ROUTES.PROBLEM}/${id}`}>
+      <VStack align="stretch" gap="16px" w="100%" h="100%">
+        {/* 이미지 카드 */}
+        <VStack
+          gap={'0px'}
+          position="relative"
+          w="100%"
+          h="100%"
+          borderRadius="28px"
+          overflow="hidden"
+          bg="grey.100"
+          _hover={{
+            '& img': {
+              transform: 'scale(1.05)',
+              transition: 'transform 0.3s ease',
+            },
           }}
-          objectFit="cover"
-        />
-      </VStack>
-
-      <VStack align="stretch" gap="16px">
-        <VStack align="stretch" gap="8px">
-          <Text textStyle={'pre-body-3'}>똑똑한 개발자</Text>
-          <Heading as="h3" textStyle="pre-heading-3" color="grey.9">
-            {title}
-          </Heading>
+        >
+          <Image
+            src={thumbnailImageUrl?.url || ''}
+            alt={title}
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{
+              objectFit: 'cover',
+              width: '100%',
+              height: '100%',
+            }}
+            objectFit="cover"
+          />
         </VStack>
-        <Text textStyle="pre-body-6" color="grey.7">
-          {dayjs(createdAt).format('YYYY. MM. DD')}
-        </Text>
+
+        <VStack align="stretch" gap="16px">
+          <VStack align="stretch" gap="8px">
+            <Text textStyle={'pre-body-3'}>똑똑한 개발자</Text>
+            <Heading as="h3" textStyle="pre-heading-3" color="grey.9">
+              {title}
+            </Heading>
+          </VStack>
+          <Text textStyle="pre-body-6" color="grey.7">
+            {dayjs(createdAt).format('YYYY. MM. DD')}
+          </Text>
+        </VStack>
       </VStack>
-    </VStack>
+    </Link>
   )
 }
 
