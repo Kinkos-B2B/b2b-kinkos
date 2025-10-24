@@ -85,7 +85,7 @@ export const HomeSolutionSliderCard: React.FC<HomeSolutionSliderCardProps> = ({
           <Text
             textStyle={'pre-heading-1'}
             color="grey.10"
-            whiteSpace="nowrap"
+            whiteSpace={{ base: 'wrap', sm: 'nowrap' }}
             textAlign="center"
           >
             {title}
