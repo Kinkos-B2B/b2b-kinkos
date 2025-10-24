@@ -337,7 +337,10 @@ export const MobileMenuDrawer = () => {
                 </Link>
 
                 {/* 주요 질문 */}
-                <Link href={FAQ_NAVIGATION_ITEM.href || '#'}>
+                <Link
+                  href={FAQ_NAVIGATION_ITEM.href || '#'}
+                  onClick={handleLinkClick}
+                >
                   <Box
                     w="100%"
                     h={'64px'}
