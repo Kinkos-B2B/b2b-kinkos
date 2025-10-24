@@ -1,5 +1,7 @@
 'use client'
 
+import { useState } from 'react'
+
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -13,6 +15,7 @@ import {
   Text,
   VStack,
   chakra,
+  useDisclosure,
 } from '@chakra-ui/react'
 import {
   CaretDownIcon as CaretDownIconPhosphor,
@@ -34,6 +37,7 @@ const CaretDownIcon = chakra(CaretDownIconPhosphor)
 
 export const MobileMenuDrawer = () => {
   const pathname = usePathname()
+  const { open, onToggle, onClose } = useDisclosure()
 
   // 현재 경로가 활성 상태인지 확인하는 함수
   const isActivePath = (href: string) => {
@@ -41,8 +45,17 @@ export const MobileMenuDrawer = () => {
     return pathname.startsWith(href)
   }
 
+  const handleLinkClick = () => {
+    onClose()
+  }
+
   return (
-    <Drawer.Root placement="end" size={'full'}>
+    <Drawer.Root
+      placement="end"
+      size={'full'}
+      open={open}
+      onOpenChange={onToggle}
+    >
       <Drawer.Trigger asChild>
         <IconButton
           variant="ghost"
@@ -93,11 +106,11 @@ export const MobileMenuDrawer = () => {
                       color="grey.10"
                       px="0"
                       py="12px"
-                      _hover={{ bg: 'transparent' }}
-                      bg="transparent"
+                      _hover={{ color: 'primary.4' }}
                       borderRadius="0"
+                      cursor="pointer"
                     >
-                      <Text textStyle="pre-heading-4" color="grey.10">
+                      <Text textStyle="pre-heading-4">
                         {BIZ_NAVIGATION_ITEMS.label}
                       </Text>
                       <Accordion.ItemIndicator>
@@ -122,14 +135,17 @@ export const MobileMenuDrawer = () => {
                             const isActive =
                               item.href ? isActivePath(item.href) : false
                             return (
-                              <Link key={index} href={item.href || '#'}>
+                              <Link
+                                key={index}
+                                href={item.href || '#'}
+                                onClick={handleLinkClick}
+                              >
                                 <Box
                                   px="16px"
                                   py="12px"
                                   cursor="pointer"
                                   _hover={{ bg: 'primary.1' }}
                                   borderRadius="8px"
-                                  bg={isActive ? 'primary.1' : 'transparent'}
                                 >
                                   <Text
                                     textStyle={
@@ -159,10 +175,11 @@ export const MobileMenuDrawer = () => {
                       color="grey.10"
                       px="0"
                       py="12px"
-                      _hover={{ bg: 'transparent' }}
+                      _hover={{ color: 'primary.4' }}
                       borderRadius="0"
+                      cursor="pointer"
                     >
-                      <Text textStyle="pre-heading-4" color="grey.10">
+                      <Text textStyle="pre-heading-4">
                         {SOLUTION_NAVIGATION_ITEMS.label}
                       </Text>
                       <Accordion.ItemIndicator>
@@ -201,6 +218,7 @@ export const MobileMenuDrawer = () => {
                                             <Link
                                               key={itemIndex}
                                               href={subItem.href}
+                                              onClick={handleLinkClick}
                                             >
                                               <Text
                                                 textStyle={
@@ -235,7 +253,10 @@ export const MobileMenuDrawer = () => {
                 </Accordion.Root>
 
                 {/* 고객후기 */}
-                <Link href={CUSTOMER_REVIEW_NAVIGATION_ITEM.href || '#'}>
+                <Link
+                  href={CUSTOMER_REVIEW_NAVIGATION_ITEM.href || '#'}
+                  onClick={handleLinkClick}
+                >
                   <Box
                     w="100%"
                     display="flex"
@@ -246,32 +267,24 @@ export const MobileMenuDrawer = () => {
                     h={'64px'}
                     py="12px"
                     cursor="pointer"
-                    _hover={{ bg: 'transparent' }}
-                    bg={
+                    _hover={{ bg: 'primary.1', color: 'primary.4' }}
+                    color={
                       isActivePath(CUSTOMER_REVIEW_NAVIGATION_ITEM.href || '') ?
-                        'primary.1'
-                      : 'transparent'
+                        'primary.4'
+                      : 'grey.10'
                     }
                   >
-                    <Text
-                      textStyle="pre-heading-4"
-                      color={
-                        (
-                          isActivePath(
-                            CUSTOMER_REVIEW_NAVIGATION_ITEM.href || '',
-                          )
-                        ) ?
-                          'primary.4'
-                        : 'grey.10'
-                      }
-                    >
+                    <Text textStyle="pre-heading-4">
                       {CUSTOMER_REVIEW_NAVIGATION_ITEM.label}
                     </Text>
                   </Box>
                 </Link>
 
                 {/* 고민해결 */}
-                <Link href={PROBLEM_SOLVE_NAVIGATION_ITEM.href || '#'}>
+                <Link
+                  href={PROBLEM_SOLVE_NAVIGATION_ITEM.href || '#'}
+                  onClick={handleLinkClick}
+                >
                   <Box
                     w="100%"
                     h={'64px'}
@@ -282,28 +295,24 @@ export const MobileMenuDrawer = () => {
                     px="0"
                     py="12px"
                     cursor="pointer"
-                    _hover={{ bg: 'transparent' }}
-                    bg={
+                    _hover={{ bg: 'primary.1', color: 'primary.4' }}
+                    color={
                       isActivePath(PROBLEM_SOLVE_NAVIGATION_ITEM.href || '') ?
-                        'primary.1'
-                      : 'transparent'
+                        'primary.4'
+                      : 'grey.10'
                     }
                   >
-                    <Text
-                      textStyle="pre-heading-4"
-                      color={
-                        isActivePath(PROBLEM_SOLVE_NAVIGATION_ITEM.href || '') ?
-                          'primary.4'
-                        : 'grey.10'
-                      }
-                    >
+                    <Text textStyle="pre-heading-4">
                       {PROBLEM_SOLVE_NAVIGATION_ITEM.label}
                     </Text>
                   </Box>
                 </Link>
 
                 {/* 전문가 */}
-                <Link href={EXPERT_NAVIGATION_ITEM.href || '#'}>
+                <Link
+                  href={EXPERT_NAVIGATION_ITEM.href || '#'}
+                  onClick={handleLinkClick}
+                >
                   <Box
                     w="100%"
                     h={'64px'}
@@ -314,21 +323,14 @@ export const MobileMenuDrawer = () => {
                     px="0"
                     py="12px"
                     cursor="pointer"
-                    _hover={{ bg: 'transparent' }}
-                    bg={
+                    _hover={{ bg: 'primary.1', color: 'primary.4' }}
+                    color={
                       isActivePath(EXPERT_NAVIGATION_ITEM.href || '') ?
-                        'primary.1'
-                      : 'transparent'
+                        'primary.4'
+                      : 'grey.10'
                     }
                   >
-                    <Text
-                      textStyle="pre-heading-4"
-                      color={
-                        isActivePath(EXPERT_NAVIGATION_ITEM.href || '') ?
-                          'primary.4'
-                        : 'grey.10'
-                      }
-                    >
+                    <Text textStyle="pre-heading-4">
                       {EXPERT_NAVIGATION_ITEM.label}
                     </Text>
                   </Box>
@@ -346,20 +348,13 @@ export const MobileMenuDrawer = () => {
                     px="0"
                     py="12px"
                     cursor="pointer"
-                    _hover={{ bg: 'transparent' }}
-                    bg={
-                      isActivePath(FAQ_NAVIGATION_ITEM.href || '') ? 'primary.1'
-                      : 'transparent'
+                    _hover={{ bg: 'primary.1', color: 'primary.4' }}
+                    color={
+                      isActivePath(FAQ_NAVIGATION_ITEM.href || '') ? 'primary.4'
+                      : 'grey.10'
                     }
                   >
-                    <Text
-                      textStyle="pre-heading-4"
-                      color={
-                        isActivePath(FAQ_NAVIGATION_ITEM.href || '') ?
-                          'primary.4'
-                        : 'grey.10'
-                      }
-                    >
+                    <Text textStyle="pre-heading-4">
                       {FAQ_NAVIGATION_ITEM.label}
                     </Text>
                   </Box>

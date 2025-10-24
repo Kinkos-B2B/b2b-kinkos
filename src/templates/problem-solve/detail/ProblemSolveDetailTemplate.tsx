@@ -12,6 +12,7 @@ import {
   VStack,
 } from '@chakra-ui/react'
 
+import { usePannelContext } from '@/components/PannelContext'
 import { ExpertProfileCard } from '@/components/view/ExpertProfileCard'
 import { PostHeader } from '@/components/view/PostDetail/PostHeader'
 import { ROUTES } from '@/constants/routes'
@@ -24,6 +25,7 @@ interface Props {
 }
 
 export const ProblemSolveDetailTemplate = ({ id }: Props) => {
+  const { openPannel } = usePannelContext()
   const { data } = useGetHelpArticleDetailQuery({
     variables: {
       id: Number(id),
@@ -68,14 +70,13 @@ export const ProblemSolveDetailTemplate = ({ id }: Props) => {
             </Box>
             <HStack gap={'8px'}>
               {/* @TODO : Pluug Form*/}
-              <Link
-                href={data?.data?.expert?.customFormUrl ?? ''}
-                target="_blank"
+              <Button
+                variant={'outline'}
+                w={'180px'}
+                onClick={() => openPannel()}
               >
-                <Button variant={'outline'} w={'180px'}>
-                  무료 상담 받아보기
-                </Button>
-              </Link>
+                무료 상담 받아보기
+              </Button>
               <Link href={ROUTES.PROBLEM}>
                 <Button variant={'outline'} w={'180px'}>
                   고민해결 사례 더 보기

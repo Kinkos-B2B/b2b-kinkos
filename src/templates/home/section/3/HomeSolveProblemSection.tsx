@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import {
   Box,
@@ -18,40 +19,9 @@ import { orderBy } from 'lodash'
 
 import { ImageAsNext } from '@/components/image-as-next'
 import { Badge } from '@/components/ui/badge'
+import { ROUTES } from '@/constants/routes'
 import { GetHomeConfigHelpArticleResponseType } from '@/generated/apis/@types/data-contracts'
 import { useGetHomeConfigHelpArticleQuery } from '@/generated/apis/HomeApi/HomeApi.query'
-
-// Figma에서 다운로드한 이미지 데이터
-const problemCards = [
-  {
-    id: 1,
-    image: '/images/home/solve-problem/card-1.svg',
-    logo: '/images/home/solve-problem/logo.svg',
-    title: '롯데건설, 현장에서 바로 주문하고 당일 배송으로 명함을 받습니다.',
-    date: '2025. 09. 10',
-  },
-  {
-    id: 2,
-    image: '/images/home/solve-problem/card-1.svg',
-    logo: '/images/home/solve-problem/logo.svg',
-    title: '롯데건설, 현장에서 바로 주문하고 당일 배송으로 명함을 받습니다.',
-    date: '2025. 09. 10',
-  },
-  {
-    id: 3,
-    image: '/images/home/solve-problem/card-1.svg',
-    logo: '/images/home/solve-problem/logo.svg',
-    title: '롯데건설, 현장에서 바로 주문하고 당일 배송으로 명함을 받습니다.',
-    date: '2025. 09. 10',
-  },
-  {
-    id: 4,
-    image: '/images/home/solve-problem/card-1.svg',
-    logo: '/images/home/solve-problem/logo.svg',
-    title: '롯데건설, 현장에서 바로 주문하고 당일 배송으로 명함을 받습니다.',
-    date: '2025. 09. 10',
-  },
-]
 
 const ProblemCard = ({
   thumbnailImageUrl,
@@ -175,9 +145,11 @@ export const HomeSolveProblemSection = () => {
           </Grid>
 
           <HStack justify="center">
-            <Button size="lg" variant="solid" px="24px" h="48px">
-              고민해결 전체보기
-            </Button>
+            <Link href={ROUTES.PROBLEM}>
+              <Button size="lg" variant="solid" px="24px" h="48px">
+                고민해결 전체보기
+              </Button>
+            </Link>
           </HStack>
         </VStack>
       </VStack>
