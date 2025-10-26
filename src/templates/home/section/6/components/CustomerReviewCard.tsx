@@ -3,22 +3,24 @@
 import Image from 'next/image'
 
 import { Separator, chakra } from '@chakra-ui/react'
+import { ChatCenteredDotsIcon } from '@phosphor-icons/react/dist/ssr'
 
 interface CustomerReviewCardProps {
   review: string
-  avatar: string
+  color: [string, string]
   company: string
   name: string
 }
 
 export function CustomerReviewCard({
   review,
-  avatar,
+  color,
   company,
   name,
 }: CustomerReviewCardProps) {
   return (
     <chakra.div
+      h={'100%'}
       bg="background.basic.2"
       borderRadius="28px"
       p={{ lg: '36px', base: '24px 36px' }}
@@ -26,7 +28,7 @@ export function CustomerReviewCard({
       flexDirection="column"
       gap="20px"
       alignItems="flex-start"
-      justifyContent="flex-start"
+      justifyContent="space-between"
       minW="0"
       flex="1"
     >
@@ -40,21 +42,22 @@ export function CustomerReviewCard({
         alignItems="center"
         justifyContent="flex-start"
       >
-        <chakra.div
-          position="relative"
-          w="44px"
-          h="44px"
-          borderRadius="50%"
-          overflow="hidden"
-          flexShrink="0"
-        >
-          <Image
-            src={avatar}
-            alt={`${name} 프로필`}
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-        </chakra.div>
+        <ChatCenteredDotsIcon
+          size={44}
+          weight="fill"
+          fill={`url(#gradient-${color[0].substring(1)})`}
+        />
+        <svg width="0" height="0">
+          <defs>
+            <linearGradient
+              id={`gradient-${color[0].substring(1)}`}
+              gradientTransform="rotate(136deg)"
+            >
+              <stop offset="-3.69%" stopColor={color[0]} />
+              <stop offset="100.23%" stopColor={color[1]} />
+            </linearGradient>
+          </defs>
+        </svg>
 
         <chakra.div
           bg="background.basic.1"

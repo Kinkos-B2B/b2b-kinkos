@@ -14,31 +14,35 @@ import { CustomerReviewCard } from './components/CustomerReviewCard'
 const customerReviews = [
   {
     review:
-      '문의하고 작업물을 받기까지 시간이 정말 단축되었어요. 킨코스라면 믿고 맡길 수 있기에 추천드려요',
+      '기업 전용 인쇄몰을 활용하여 업무 효율이 높아졌고, 전국 가맹점에 동일한 홍보물을 공급할 수 있어 관리가 수월해졌어요.​',
     avatar: '/images/home/customer-review/avatar-1.png',
-    company: '똑똑한개발자',
-    name: '이지은',
+    company: '크린토피아',
+    name: '황선경',
+    color: ['#8270DB', '#C1B7F5'],
   },
   {
     review:
-      '문의하고 작업물을 받기까지 시간이 정말 단축되었어요. 킨코스라면 믿고 맡길 수 있기에 추천드려요',
+      '여러 단계를 거치던 판매 과정을 킨코스에서 주문부터 제작, 배송까지 한 번에 처리할 수 있어 업무 효율이 높아졌어요. 홍보물 퀄리티도 기대 이상으로 만족스러워요!​',
     avatar: '/images/home/customer-review/avatar-2.png',
-    company: '똑똑한개발자',
-    name: '이지은',
+    company: '아소비교육',
+    name: '이현진',
+    color: ['#F4B240', '#F5D3B7'],
   },
   {
     review:
-      '문의하고 작업물을 받기까지 시간이 정말 단축되었어요. 킨코스라면 믿고 맡길 수 있기에 추천드려요',
+      '문의 후 빠른 대응과 높은 품질의 결과물을 받아 업무 진행에 큰 도움이 되었고, 전반적인 협업 과정이 매우 만족스러웠습니다.',
     avatar: '/images/home/customer-review/avatar-3.png',
-    company: '똑똑한개발자',
-    name: '이지은',
+    company: '텐퍼센트커피',
+    name: '강지현',
+    color: ['#61CFE0', '#B7DDF5'],
   },
   {
     review:
-      '문의하고 작업물을 받기까지 시간이 정말 단축되었어요. 킨코스라면 믿고 맡길 수 있기에 추천드려요',
+      '긴급한 요청에도 빠르게 대응해 주셔서 프로젝트 일정에 큰 도움이 되었어요. 꼼꼼한 확인은 물론, 인쇄 품질도 좋아서 믿고 맡길 수 있었습니다!​',
     avatar: '/images/home/customer-review/avatar-4.png',
-    company: '똑똑한개발자',
-    name: '이지은',
+    company: '현대드림투어',
+    name: '김효진',
+    color: ['#E85ABE', '#F4B7F5'],
   },
 ]
 
@@ -124,7 +128,7 @@ export const HomeCustomerReviewSection = () => {
                 <GridItem key={index}>
                   <CustomerReviewCard
                     review={review.review}
-                    avatar={review.avatar}
+                    color={review.color as [string, string]}
                     company={review.company}
                     name={review.name}
                   />
