@@ -51,7 +51,7 @@ export function CustomerReviewCard({
           <defs>
             <linearGradient
               id={`gradient-${color[0].substring(1)}`}
-              gradientTransform="rotate(136deg)"
+              gradientTransform="rotate(136)"
             >
               <stop offset="-3.69%" stopColor={color[0]} />
               <stop offset="100.23%" stopColor={color[1]} />
