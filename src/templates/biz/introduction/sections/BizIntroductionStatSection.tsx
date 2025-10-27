@@ -12,7 +12,7 @@ const imgHistory3 = '/images/biz/introduce/stat-icon-4.png'
 const imgHistory4 = '/images/biz/introduce/stat-icon-5.png'
 
 // 통계 카드 데이터
-const statCards = [
+export const BizIntroductionStatCards = [
   {
     id: 'since-1995',
     value: 1995,
@@ -101,8 +101,9 @@ const StatCardDesktop = ({
       <VStack align="start" gap="6px" mb="-20px" w="100%">
         <Text color="primary.3" textStyle="pre-display-3">
           <CountUp
-            end={Number(value)}
-            separator=","
+            decimals={value % 1 === 0 ? 0 : 1}
+            end={value}
+            separator={prefix ? '' : ','}
             duration={2}
             scrollSpyOnce
             enableScrollSpy
@@ -176,8 +177,9 @@ const StatCardHorizontal = ({
     <VStack align="start" gap="6px" flex="1" minW="1px" minH="1px">
       <Text textStyle="pre-display-3" color="primary.3" w="100%">
         <CountUp
-          end={Number(value)}
-          separator=","
+          decimals={value % 1 === 0 ? 0 : 1}
+          end={value}
+          separator={prefix ? '' : ','}
           duration={2}
           scrollSpyOnce
           enableScrollSpy
@@ -277,18 +279,18 @@ export const BizIntroductionStatSection = () => {
           {/* 첫 번째 행 (2개 카드) */}
           <Flex gap="20px" w="100%" alignItems="center">
             <StatCardDesktop
-              value={statCards[0].value}
-              prefix={statCards[0].prefix}
-              description={statCards[0].description}
-              image={statCards[0].image}
+              value={BizIntroductionStatCards[0].value}
+              prefix={BizIntroductionStatCards[0].prefix}
+              description={BizIntroductionStatCards[0].description}
+              image={BizIntroductionStatCards[0].image}
               imageSize="130px"
               px="40px"
             />
             <StatCardDesktop
-              value={statCards[1].value}
-              suffix={statCards[1].suffix}
-              description={statCards[1].description}
-              image={statCards[1].image}
+              value={BizIntroductionStatCards[1].value}
+              suffix={BizIntroductionStatCards[1].suffix}
+              description={BizIntroductionStatCards[1].description}
+              image={BizIntroductionStatCards[1].image}
               imageSize="130px"
               px="40px"
             />
@@ -297,28 +299,28 @@ export const BizIntroductionStatSection = () => {
           {/* 두 번째 행 (3개 카드) */}
           <Flex gap="20px" w="100%" alignItems="center">
             <StatCardDesktop
-              value={statCards[2].value}
-              suffix={statCards[2].suffix}
-              description={statCards[2].description}
-              image={statCards[2].image}
+              value={BizIntroductionStatCards[2].value}
+              suffix={BizIntroductionStatCards[2].suffix}
+              description={BizIntroductionStatCards[2].description}
+              image={BizIntroductionStatCards[2].image}
               imageSize="120px"
               pl="40px"
               pr="24px"
             />
             <StatCardDesktop
-              value={statCards[3].value}
-              suffix={statCards[3].suffix}
-              description={statCards[3].description}
-              image={statCards[3].image}
+              value={BizIntroductionStatCards[3].value}
+              suffix={BizIntroductionStatCards[3].suffix}
+              description={BizIntroductionStatCards[3].description}
+              image={BizIntroductionStatCards[3].image}
               imageSize="120px"
               pl="40px"
               pr="24px"
             />
             <StatCardDesktop
-              value={statCards[4].value}
-              suffix={statCards[4].suffix}
-              description={statCards[4].description}
-              image={statCards[4].image}
+              value={BizIntroductionStatCards[4].value}
+              suffix={BizIntroductionStatCards[4].suffix}
+              description={BizIntroductionStatCards[4].description}
+              image={BizIntroductionStatCards[4].image}
               imageSize="120px"
               pl="40px"
               pr="24px"
@@ -336,16 +338,16 @@ export const BizIntroductionStatSection = () => {
           {/* 첫 번째 행 (2개 카드) */}
           <Flex gap="20px" w="100%" alignItems="center">
             <StatCardDesktop
-              value={statCards[0].value}
-              description={statCards[0].description}
-              image={statCards[0].image}
+              value={BizIntroductionStatCards[0].value}
+              description={BizIntroductionStatCards[0].description}
+              image={BizIntroductionStatCards[0].image}
               imageSize="130px"
               px="40px"
             />
             <StatCardDesktop
-              value={statCards[1].value}
-              description={statCards[1].description}
-              image={statCards[1].image}
+              value={BizIntroductionStatCards[1].value}
+              description={BizIntroductionStatCards[1].description}
+              image={BizIntroductionStatCards[1].image}
               imageSize="130px"
               px="40px"
             />
@@ -354,27 +356,27 @@ export const BizIntroductionStatSection = () => {
           {/* 나머지 카드 (full width, 가로 레이아웃) */}
           <VStack gap="20px" w="100%" align="start">
             <StatCardHorizontal
-              value={statCards[2].value}
-              description={statCards[2].description}
-              image={statCards[2].image}
+              value={BizIntroductionStatCards[2].value}
+              description={BizIntroductionStatCards[2].description}
+              image={BizIntroductionStatCards[2].image}
               pl="40px"
               pr="44px"
               py="32px"
               imageSize="120px"
             />
             <StatCardHorizontal
-              value={statCards[3].value}
-              description={statCards[3].description}
-              image={statCards[3].image}
+              value={BizIntroductionStatCards[3].value}
+              description={BizIntroductionStatCards[3].description}
+              image={BizIntroductionStatCards[3].image}
               pl="40px"
               pr="44px"
               py="32px"
               imageSize="120px"
             />
             <StatCardHorizontal
-              value={statCards[4].value}
-              description={statCards[4].description}
-              image={statCards[4].image}
+              value={BizIntroductionStatCards[4].value}
+              description={BizIntroductionStatCards[4].description}
+              image={BizIntroductionStatCards[4].image}
               pl="40px"
               pr="44px"
               py="32px"
@@ -391,51 +393,51 @@ export const BizIntroductionStatSection = () => {
           display={{ base: 'flex', sm: 'none' }}
         >
           <StatCardHorizontal
-            value={statCards[0].value}
-            description={statCards[0].descriptionMobile}
-            image={statCards[0].image}
-            prefix={statCards[0].prefix}
-            suffix={statCards[0].suffix}
+            value={BizIntroductionStatCards[0].value}
+            description={BizIntroductionStatCards[0].descriptionMobile}
+            image={BizIntroductionStatCards[0].image}
+            prefix={BizIntroductionStatCards[0].prefix}
+            suffix={BizIntroductionStatCards[0].suffix}
             pl="32px"
             pr="16px"
             py="24px"
             imageSize="80px"
           />
           <StatCardHorizontal
-            value={statCards[1].value}
-            description={statCards[1].descriptionMobile}
-            image={statCards[1].image}
-            suffix={statCards[1].suffix}
+            value={BizIntroductionStatCards[1].value}
+            description={BizIntroductionStatCards[1].descriptionMobile}
+            image={BizIntroductionStatCards[1].image}
+            suffix={BizIntroductionStatCards[1].suffix}
             pl="32px"
             pr="16px"
             py="24px"
             imageSize="80px"
           />
           <StatCardHorizontal
-            value={statCards[2].value}
-            description={statCards[2].descriptionMobile}
-            image={statCards[2].image}
-            suffix={statCards[2].suffix}
+            value={BizIntroductionStatCards[2].value}
+            description={BizIntroductionStatCards[2].descriptionMobile}
+            image={BizIntroductionStatCards[2].image}
+            suffix={BizIntroductionStatCards[2].suffix}
             pl="32px"
             pr="16px"
             py="24px"
             imageSize="80px"
           />
           <StatCardHorizontal
-            value={statCards[3].value}
-            description={statCards[3].descriptionMobile}
-            image={statCards[3].image}
-            suffix={statCards[3].suffix}
+            value={BizIntroductionStatCards[3].value}
+            description={BizIntroductionStatCards[3].descriptionMobile}
+            image={BizIntroductionStatCards[3].image}
+            suffix={BizIntroductionStatCards[3].suffix}
             pl="32px"
             pr="16px"
             py="24px"
             imageSize="80px"
           />
           <StatCardHorizontal
-            value={statCards[4].value}
-            description={statCards[4].descriptionMobile}
-            image={statCards[4].image}
-            suffix={statCards[4].suffix}
+            value={BizIntroductionStatCards[4].value}
+            description={BizIntroductionStatCards[4].descriptionMobile}
+            image={BizIntroductionStatCards[4].image}
+            suffix={BizIntroductionStatCards[4].suffix}
             pl="32px"
             pr="16px"
             py="24px"
