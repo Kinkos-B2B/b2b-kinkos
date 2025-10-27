@@ -88,13 +88,16 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
       console.log(e)
       if (!emblaApi) return
       setSelectedIndex(emblaApi.selectedScrollSnap())
+      if (isMobile) {
+        return
+      }
       tabButtonsRef.current[emblaApi.selectedScrollSnap()].scrollIntoView({
         behavior: 'smooth',
         block: 'nearest',
         inline: 'start',
       })
     },
-    [emblaApi],
+    [emblaApi, isMobile],
   )
 
   useEffect(() => {

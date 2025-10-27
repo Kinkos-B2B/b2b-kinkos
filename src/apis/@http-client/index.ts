@@ -50,7 +50,6 @@ export enum ContentType {
   Text = 'text/plain',
 }
 
-console.log(ENV.API_BASE_URL)
 export class HttpClient<SecurityDataType = unknown> {
   public baseUrl: string = ENV.API_BASE_URL || ''
   private securityData: SecurityDataType | null = null
