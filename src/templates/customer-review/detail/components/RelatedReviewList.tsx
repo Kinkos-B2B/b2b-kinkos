@@ -81,7 +81,7 @@ export const RelatedReviewList = ({
     variables: {
       query: {
         type: type as any,
-        id: id!,
+        id: Number(id!),
       },
     },
     options: {

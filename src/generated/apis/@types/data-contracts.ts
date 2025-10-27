@@ -830,6 +830,11 @@ export interface GetCustomerReviewDetailType {
   solutionList: CustomerReviewSolutionType[]
   /** 관련 분야 */
   type?: GetCustomerReviewDetailTypeEnumType
+  /**
+   * 아이디
+   * @format int64
+   */
+  id?: number
 }
 
 export interface ResponseDTOGetCustomerReviewDetailType {
@@ -1015,7 +1020,13 @@ export type GetCustomerReviewDetailTypeEnumType =
   | 'GOODS_PRODUCTION'
   | 'PROMOTIONAL_MATERIAL'
   | 'SCAN_E_DOCUMENT'
-  | 'SAFETY_SIGNAGE' // X-enumName Values Missing
+  | 'SAFETY_SIGNAGE'
+  | 'LOGISTICS'
+  | 'STORAGE'
+  | 'VIDEO'
+  | 'DIGITAL_VIDEO'
+  | 'AR'
+  | 'DID' // X-enumName Values Missing
 
 export type GetSolutionExpertListParamsTypeEnumType =
   | 'BRANDING_DESIGN'
@@ -1065,7 +1076,13 @@ export type GetAllCustomerReviewParamsTypeEnumType =
   | 'GOODS_PRODUCTION'
   | 'PROMOTIONAL_MATERIAL'
   | 'SCAN_E_DOCUMENT'
-  | 'SAFETY_SIGNAGE' // X-enumName Values Missing
+  | 'SAFETY_SIGNAGE'
+  | 'LOGISTICS'
+  | 'STORAGE'
+  | 'VIDEO'
+  | 'DIGITAL_VIDEO'
+  | 'AR'
+  | 'DID' // X-enumName Values Missing
 
 export type GetCustomerReviewRelationParamsTypeEnumType =
   | 'VBD'
@@ -1078,4 +1095,10 @@ export type GetCustomerReviewRelationParamsTypeEnumType =
   | 'GOODS_PRODUCTION'
   | 'PROMOTIONAL_MATERIAL'
   | 'SCAN_E_DOCUMENT'
-  | 'SAFETY_SIGNAGE' // X-enumName Values Missing
+  | 'SAFETY_SIGNAGE'
+  | 'LOGISTICS'
+  | 'STORAGE'
+  | 'VIDEO'
+  | 'DIGITAL_VIDEO'
+  | 'AR'
+  | 'DID' // X-enumName Values Missing

@@ -75,7 +75,7 @@ export const CustomerReviewDetailTemplate = ({
         maxW={'1280px'}
         py={{ base: '80px', sm: '100px', lg: '120px' }}
       >
-        <RelatedReviewList type={data?.data?.type} id={reviewId} />
+        <RelatedReviewList type={data?.data?.type} id={data?.data?.id} />
       </Container>
     </VStack>
   )
