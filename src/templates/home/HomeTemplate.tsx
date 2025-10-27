@@ -20,13 +20,13 @@ export const HomeTemplate = () => {
 
   return (
     <>
-      {/* {!isIntroCompleted && (
+      {!isIntroCompleted && (
         <HomeIntroSection
           onCompleted={() => {
             setIntroCompleted(true)
           }}
         />
-      )} */}
+      )}
       <VStack w={'100%'} gap={'0px'} position="relative" zIndex="1">
         <Container
           py={{ base: '48px 80px', sm: '80px 120px ', lg: '120px 160px' }}
