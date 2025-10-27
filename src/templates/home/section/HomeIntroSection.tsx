@@ -365,7 +365,7 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
               key={index}
               data-index={index}
               data-text-section
-              gap={{ base: '16px', lg: '20px' }}
+              gap={{ base: '10px', lg: '20px' }}
               left="50%"
               top="50%"
               transform="translate(-50%, -50%)"
