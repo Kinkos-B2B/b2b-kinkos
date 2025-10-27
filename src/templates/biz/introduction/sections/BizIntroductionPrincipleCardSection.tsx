@@ -13,7 +13,7 @@ import { BizIntroductionPrincipleCard } from '../components/BizIntroductionPrinc
 // GSAP ScrollTrigger 플러그인 등록
 gsap.registerPlugin(ScrollTrigger)
 
-const principleCardsData = [
+export const principleCardsData = [
   {
     principle: '원칙1. 본질에 집중합니다',
     title: '품질과 속도',
@@ -28,7 +28,7 @@ const principleCardsData = [
     buttonColor: 'primary.4',
   },
   {
-    principle: '원칙2 끝까지 책임집니다.',
+    principle: '원칙2. 끝까지 책임집니다.',
     title: '원스톱 포장 & 배송',
     description: [
       "우리의 일은 '인쇄 완료'에서 끝나지 않습니다.",
@@ -42,7 +42,7 @@ const principleCardsData = [
     buttonColor: 'secondary.4',
   },
   {
-    principle: '원칙3 자산을 관리합니다.',
+    principle: '원칙3. 자산을 관리합니다.',
     title: '정보 보안 시스템',
     description: [
       "파트너십의 가장 기본은 고객의 자산을 지키는 '신뢰'입니다.",
@@ -56,7 +56,7 @@ const principleCardsData = [
     buttonColor: 'primary.4',
   },
   {
-    principle: '원칙4 전문가가 담당합니다.',
+    principle: '원칙4. 전문가가 담당합니다.',
     title: '1:1 전문가 지원',
     description: [
       "작업자는 주어진 '정답'을 수행하지만, 파트너는 '최적의 답'을 찾습니다.",
@@ -70,7 +70,7 @@ const principleCardsData = [
     buttonColor: 'secondary.4',
   },
   {
-    principle: '원칙5 가능성을 제공합니다.',
+    principle: '원칙5. 가능성을 제공합니다.',
     title: '센터 네트워크',
     description: [
       '전국 20여 개 센터의 네트워크가 당신의 비즈니스를 지원합니다.',

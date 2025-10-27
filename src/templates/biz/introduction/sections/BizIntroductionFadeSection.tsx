@@ -251,6 +251,7 @@ export const BizIntroductionFadeSection = () => {
           color={'grey.0'}
           textAlign={'center'}
           whiteSpace={'pre-wrap'}
+          w={'100%'}
         >
           고객의 비즈니스 가치를 높이는 모든 디자인과
           {'\n'}
