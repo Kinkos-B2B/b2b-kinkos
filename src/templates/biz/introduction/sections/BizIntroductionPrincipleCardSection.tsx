@@ -114,147 +114,155 @@ export const BizIntroductionPrincipleCardSection = () => {
         opacity: 1,
         scale: 1,
         y: 0,
-        zIndex: 10,
       })
 
-      // 나머지 카드들은 숨김 (아래쪽에서 대기)
+      // 나머지 카드들은 화면 아래로 대기(불투명도는 유지, 클리핑으로 보이지 않게)
       cards.slice(1).forEach((card, i) => {
         gsap.set(card, {
-          opacity: 0.3, // 살짝 보이도록
-          scale: 0.85,
-          y: 100,
-          zIndex: 9 - i,
+          opacity: 0,
+          scale: 0.9,
+          y: 160,
+          zIndex: 0,
         })
       })
 
-      // 스크롤 트리거 생성 - 화면 고정 및 카드 순차 교체 (Smart Animate 스타일)
+      gsap.set(cards, {
+        transformPerspective: 1000,
+        transformOrigin: '50% 50%',
+        willChange: 'transform, opacity',
+      })
+
+      const renderByProgress = (progress: number) => {
+        const total = cards.length
+        const steps = total - 1
+        if (steps <= 0) return
+
+        const exact = progress * steps
+        const current = Math.floor(exact)
+        const next = Math.min(current + 1, steps)
+        const local = exact - current // 0~1
+
+        // 세 단계: hold(현재 고정) -> swap(교체) -> holdNext(다음 고정)
+        const HOLD = 0.4
+        const TRANSITION = 0.2
+        const phase =
+          local < HOLD ? 'hold'
+          : local < HOLD + TRANSITION ? 'swap'
+          : 'holdNext'
+        const t = phase === 'swap' ? (local - HOLD) / TRANSITION : 0
+
+        const Y = 80
+        const SCALE = 0.15 // 현재 카드가 구겨져 보이지 않도록 축소 폭 최소화
+
+        const curCard = cards[current]
+        const nxtCard = cards[next]
+        if (!curCard || !nxtCard) return
+
+        const NEXT_START_Y = Math.max(
+          160,
+          Math.round((curCard.offsetHeight || 600) * 0.9),
+        )
+
+        // 먼 카드들 즉시 정리 (대상 두 장만 애니메이션)
+        cards.forEach((card, index) => {
+          if (index < current) {
+            gsap.set(card, {
+              opacity: 0,
+              scale: 0.85,
+              y: -Y,
+            })
+          } else if (index > next) {
+            gsap.set(card, {
+              opacity: 0, // 다음 이후 카드는 절대 노출되지 않도록 0으로 유지
+              scale: 0.9,
+              y: NEXT_START_Y,
+            })
+          }
+        })
+
+        gsap.killTweensOf([curCard, nxtCard])
+
+        if (phase === 'hold') {
+          gsap.to(curCard, {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            rotateX: 0,
+            duration: 0.3,
+            ease: 'power2.out',
+            overwrite: 'auto',
+          })
+          gsap.set(nxtCard, {
+            opacity: 0, // 홀드 구간에서는 절대 보이지 않도록
+            scale: 0.98,
+            y: NEXT_START_Y,
+          })
+          return
+        }
+
+        if (phase === 'swap') {
+          // opacity는 현재/다음 모두 1로 고정, 위치/스케일만 교차
+          gsap.to(curCard, {
+            opacity: 1 - t,
+            scale: 1 - SCALE * t,
+            y: -Y * t,
+            duration: 0.3,
+            ease: 'power2.out',
+            overwrite: 'auto',
+          })
+
+          gsap.to(nxtCard, {
+            opacity: 1,
+            scale: 0.98 + (1 - 0.98) * t,
+            y: NEXT_START_Y * (1 - t),
+            duration: 0.3,
+            ease: 'power2.out',
+            overwrite: 'auto',
+          })
+          return
+        }
+
+        gsap.set(curCard, {
+          opacity: 0,
+          scale: 0.98,
+          y: -Y,
+        })
+
+        gsap.to(nxtCard, {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 0.3,
+          ease: 'power2.out',
+          overwrite: 'auto',
+        })
+      }
+
+      // 초기 렌더링
+      renderByProgress(0)
+
       ScrollTrigger.create({
         trigger: section,
         start: 'top top',
-        end: `+=${cards.length * 150}%`, // 각 카드당 180%의 스크롤 공간 (더 느리게)
+        end: `+=${cards.length * 90}%`,
         pin: true,
         pinSpacing: true,
         scrub: 1,
         invalidateOnRefresh: true,
-
+        onUpdate: (self) => {
+          renderByProgress(self.progress)
+        },
         onLeave: () => {
-          // pin이 풀릴 때 마지막 카드를 완전히 보이도록 고정
           const lastCard = cards[cards.length - 1]
           if (lastCard) {
-            gsap.set(lastCard, {
-              opacity: 1,
-              scale: 1,
-              y: 0,
-              zIndex: 10,
-            })
+            gsap.set(lastCard, { opacity: 1, scale: 1, y: 0 })
           }
         },
         onEnterBack: () => {
-          // 다시 스크롤해서 돌아올 때도 마지막 카드 상태 유지
           const lastCard = cards[cards.length - 1]
           if (lastCard) {
-            gsap.set(lastCard, {
-              opacity: 1,
-              scale: 1,
-              y: 0,
-              zIndex: 10,
-            })
+            gsap.set(lastCard, { opacity: 1, scale: 1, y: 0 })
           }
-        },
-        onUpdate: (self) => {
-          const progress = self.progress
-          const totalCards = cards.length
-
-          // 각 카드의 표시 구간을 정의 (1단계 30% + 2단계 20% + 고정 50%)
-          const stage1Duration = 0.3 // 1단계: 크기 변화만 (opacity 유지)
-          const stage2Duration = 0.2 // 2단계: opacity 변화
-          const holdDuration = 0.5 // 고정 구간
-
-          // 전체 progress를 카드 개수로 나누어 현재 카드 인덱스 계산
-          const exactIndex = progress * totalCards
-          const currentIndex = Math.floor(exactIndex)
-          const nextIndex = currentIndex + 1
-
-          // 마지막 카드인지 확인
-          const isLastCard = currentIndex === totalCards - 1
-
-          // 현재 카드 구간 내에서의 진행도 (0~1)
-          const cardProgress = exactIndex - currentIndex
-
-          // Ease in and out 이징 함수
-          const easeInOut = (t: number) => {
-            return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t
-          }
-
-          // 1단계와 2단계 진행도 계산
-          let stage1Progress = 0 // 크기 변화 진행도
-          let stage2Progress = 0 // opacity 변화 진행도
-
-          if (cardProgress <= stage1Duration) {
-            // 1단계: 크기만 변화 (0~0.3)
-            stage1Progress = easeInOut(cardProgress / stage1Duration)
-            stage2Progress = 0
-          } else if (cardProgress <= stage1Duration + stage2Duration) {
-            // 2단계: opacity 변화 (0.3~0.5)
-            stage1Progress = 1
-            stage2Progress = easeInOut(
-              (cardProgress - stage1Duration) / stage2Duration,
-            )
-          } else {
-            // 고정 구간: 완전히 전환 완료 (0.5~1.0)
-            stage1Progress = 1
-            stage2Progress = 1
-          }
-
-          cards.forEach((card, index) => {
-            if (index === currentIndex && currentIndex < totalCards) {
-              if (isLastCard) {
-                // 마지막 카드: 사라지지 않고 그대로 유지
-                gsap.set(card, {
-                  opacity: 1,
-                  scale: 1,
-                  y: 0,
-                  zIndex: 10,
-                })
-              } else {
-                // 현재 카드
-                // 1단계: opacity 1 유지, 크기 축소 + 위로 이동
-                // 2단계: opacity 0으로 페이드 아웃
-                gsap.set(card, {
-                  opacity: 1 - stage2Progress, // 2단계에서만 opacity 변화
-                  scale: 1 - 0.15 * stage1Progress, // 1.0 → 0.85
-                  y: -80 * stage1Progress, // 위로 80px 이동
-                  zIndex: 9,
-                })
-              }
-            } else if (index === nextIndex && nextIndex < totalCards) {
-              // 다음 카드
-              // 1단계: opacity 0.3 → 1로 서서히 나타남, 크기 확대 + 아래에서 중앙으로
-              // 2단계: 최종 위치로 이동
-              gsap.set(card, {
-                opacity: 0.3 + 0.7 * stage1Progress, // 0.3 → 1.0으로 서서히
-                scale: 0.85 + 0.15 * stage1Progress, // 0.85 → 1.0
-                y: 80 - 80 * stage1Progress, // 아래 80px에서 중앙(0)으로
-                zIndex: 10,
-              })
-            } else if (index < currentIndex) {
-              // 이전 카드: 완전히 숨김
-              gsap.set(card, {
-                opacity: 0,
-                scale: 0.85,
-                y: -80,
-                zIndex: index,
-              })
-            } else if (index > nextIndex) {
-              // 아직 나오지 않은 카드: 살짝 보이는 상태로 대기
-              gsap.set(card, {
-                opacity: 0.3,
-                scale: 0.85,
-                y: 80,
-                zIndex: 9 - (index - currentIndex),
-              })
-            }
-          })
         },
       })
     },

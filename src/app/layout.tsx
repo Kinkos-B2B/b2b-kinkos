@@ -14,12 +14,12 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   ...(ENV.DOMAIN && { metadataBase: new URL(ENV.DOMAIN) }),
   title: {
-    default: '똑똑한개발자',
-    template: `%s | 똑똑한개발자`,
+    default: 'B2B 킨코스',
+    template: `%s | B2B 킨코스`,
   },
-  description: '디지털프로덕트의 TOKTOK한 경험',
-  applicationName: '똑똑한개발자',
-  keywords: ['똑똑한개발자', '디지털프로덕트의 TOKTOK한 경험', '...'],
+  description: 'B2B 킨코스',
+  applicationName: 'B2B 킨코스',
+  keywords: ['B2B 킨코스', '...'],
   icons: [
     { rel: 'apple-touch-icon', url: '/icons/120.png', sizes: '120x120' },
     { rel: 'apple-touch-icon', url: '/icons/152.png', sizes: '152x152' },
@@ -41,12 +41,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ko',
-    siteName: '똑똑한개발자',
+    siteName: 'B2B 킨코스',
     title: {
-      default: '똑똑한개발자',
-      template: `똑똑한개발자 | %s`,
+      default: 'B2B 킨코스',
+      template: `B2B 킨코스 | %s`,
     },
-    description: '디지털프로덕트의 TOKTOK한 경험',
+    description: 'B2B 킨코스',
     images: [
       {
         url: '/images/new_og.png',
@@ -61,8 +61,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     images: `/images/new_og.png`,
-    title: '똑똑한개발자',
-    description: '디지털프로덕트의 TOKTOK한 경험',
+    title: 'B2B 킨코스',
+    description: 'B2B 킨코스',
     site: '@site',
   },
   formatDetection: {

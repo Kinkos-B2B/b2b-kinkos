@@ -24,13 +24,14 @@ import { GetHomeConfigHelpArticleResponseType } from '@/generated/apis/@types/da
 import { useGetHomeConfigHelpArticleQuery } from '@/generated/apis/HomeApi/HomeApi.query'
 
 const ProblemCard = ({
-  id,
   thumbnailImageUrl,
+  typeDisplayName,
   title,
+  slug,
   createdAt,
 }: GetHomeConfigHelpArticleResponseType) => {
   return (
-    <Link href={`${ROUTES.PROBLEM}/${id}`}>
+    <Link href={`${ROUTES.PROBLEM}/${slug}`}>
       <VStack align="stretch" gap="16px" w="100%" h="100%">
         {/* 이미지 카드 */}
         <VStack
@@ -65,7 +66,7 @@ const ProblemCard = ({
 
         <VStack align="stretch" gap="16px">
           <VStack align="stretch" gap="8px">
-            <Text textStyle={'pre-body-3'}>똑똑한 개발자</Text>
+            <Text textStyle={'pre-body-3'}>{typeDisplayName}</Text>
             <Heading as="h3" textStyle="pre-heading-3" color="grey.9">
               {title}
             </Heading>

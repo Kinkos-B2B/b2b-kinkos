@@ -100,7 +100,7 @@ export const RelatedReviewList = ({
             key={item.id}
             id={item.id}
             image={item.thumbnailImageUrl.url ?? ''}
-            author={'똑똑한 개발자'}
+            author={item.companyName}
             title={item.title}
             date={item.createdAt}
           />

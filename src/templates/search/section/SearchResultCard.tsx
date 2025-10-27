@@ -35,7 +35,7 @@ export const SearchResultCard = ({ item, href }: SearchResultCardProps) => {
           <VStack gap="16px" align="stretch">
             <VStack gap="8px" align="stretch" pr="20px">
               <Text textStyle="pre-body-3" color="grey.9">
-                {item.title || '똑똑한개발자'}
+                {item.title}
               </Text>
               <Text
                 textStyle="pre-heading-3"
