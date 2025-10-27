@@ -377,7 +377,7 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
               <Box overflow={'hidden'}>
                 <Text
                   className="intro-text"
-                  textStyle="pre-display-1"
+                  textStyle="pre-display-2"
                   color="grey.0"
                   textAlign="center"
                   wordBreak="keep-all"
@@ -388,7 +388,7 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
               <Box overflow={'hidden'}>
                 <Text
                   className="intro-text"
-                  textStyle="pre-display-1"
+                  textStyle="pre-display-2"
                   color="grey.0"
                   textAlign="center"
                   wordBreak="keep-all"
@@ -405,10 +405,10 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
       <Box
         className="img-money"
         position="absolute"
-        left={{ base: '60%', md: '70%', lg: '1084px' }}
-        bottom={{ base: '10%', md: '15%', lg: '119px' }}
-        w={{ base: '120px', md: '150px', lg: '190px' }}
-        h={{ base: '150px', md: '190px', lg: '230px' }}
+        left={{ base: '60%', sm: '70%', lg: '1084px' }}
+        bottom={{ base: '10%', sm: '10%', lg: '119px' }}
+        w={{ base: '120px', sm: '150px', lg: '160px' }}
+        h={{ base: '150px', sm: '190px', lg: '200px' }}
         transform="rotate(342deg)"
         opacity="0"
         scale="1"
@@ -425,9 +425,9 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
       <Box
         className="img-paper"
         position="absolute"
-        left={{ base: '70%', md: '80%', lg: '1221px' }}
+        left={{ base: '70%', sm: '80%', lg: '1221px' }}
         bottom="0px"
-        w={{ base: '280px', md: '360px', lg: '446px' }}
+        w={{ base: '280px', sm: '360px', lg: '446px' }}
         opacity="0"
         scale="1"
       >
@@ -443,11 +443,15 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
       <Box
         className="img-folder"
         position="absolute"
-        right={{ base: '-10%', md: '-5%', lg: '-30px' }}
-        top="calc(50% - 60px)"
+        right={{ base: '-10%', sm: '-10%', lg: '-30px' }}
+        top={{
+          base: '15%',
+          sm: '30%',
+          lg: 'calc(50% - 60px)',
+        }}
         transform="translateY(-50%) rotate(12deg)"
-        w={{ base: '200px', md: '280px', lg: '350px' }}
-        h={{ base: '200px', md: '280px', lg: '350px' }}
+        w={{ base: '200px', sm: '280px', lg: '350px' }}
+        h={{ base: '200px', sm: '280px', lg: '350px' }}
         opacity="0"
         scale="1"
       >
@@ -464,10 +468,11 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
       <Box
         className="img-checklist"
         position="absolute"
-        left={{ base: '5%', md: '3%', lg: '31px' }}
-        top={{ base: '8%', md: '6%', lg: '45px' }}
-        w={{ base: '150px', md: '190px', lg: '240px' }}
-        h={{ base: '150px', md: '190px', lg: '240px' }}
+        display={{ base: 'none', lg: 'block' }}
+        left={{ base: '5%', sm: '3%', lg: '31px' }}
+        top={{ base: '8%', sm: '6%', lg: '45px' }}
+        w={{ base: '150px', sm: '190px', lg: '240px' }}
+        h={{ base: '150px', sm: '190px', lg: '240px' }}
         opacity="0"
         scale="1"
       >
@@ -484,10 +489,11 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
       <Box
         className="img-box"
         position="absolute"
-        left={{ base: '65%', md: '75%', lg: '1170px' }}
-        top={{ base: '12%', md: '10%', lg: '73px' }}
-        w={{ base: '200px', md: '260px', lg: '320px' }}
-        h={{ base: '160px', md: '200px', lg: '250px' }}
+        display={{ base: 'none', lg: 'block' }}
+        left={{ base: '65%', sm: '75%', lg: '70%' }}
+        top={{ base: '12%', sm: '10%', lg: '5%' }}
+        w={{ base: '200px', sm: '260px', lg: '280px' }}
+        h={{ base: '160px', sm: '200px', lg: '200px' }}
         opacity="0"
         scale="1"
       >
@@ -498,10 +504,10 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
       <Box
         className="img-gift-box"
         position="absolute"
-        left={{ base: '15%', md: '18%', lg: '227px' }}
-        bottom={{ base: '8%', md: '10%', lg: '64px' }}
-        w={{ base: '180px', md: '240px', lg: '295px' }}
-        h={{ base: '190px', md: '250px', lg: '310px' }}
+        left={{ base: '0%', sm: '-30px', lg: '227px' }}
+        bottom={{ base: '8%', sm: '5%', lg: '64px' }}
+        w={{ base: '180px', sm: '240px', lg: '250px' }}
+        h={{ base: '190px', sm: '250px', lg: '260px' }}
         opacity="0"
         scale="1"
       >
@@ -518,10 +524,10 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
       <Box
         className="img-banner"
         position="absolute"
-        left={{ base: '8%', md: '10%', lg: '124px' }}
-        top={{ base: '-5%', md: '-4%', lg: '-39px' }}
-        w={{ base: '250px', md: '330px', lg: '410px' }}
-        h={{ base: '320px', md: '420px', lg: '520px' }}
+        left={{ base: '-10%', sm: '-10%', lg: '124px' }}
+        top={{ base: '-5%', sm: '-4%', lg: '-39px' }}
+        w={{ base: '250px', sm: '330px', lg: '370px' }}
+        h={{ base: '320px', sm: '420px', lg: '420px' }}
         opacity="0"
         scale="1"
       >
