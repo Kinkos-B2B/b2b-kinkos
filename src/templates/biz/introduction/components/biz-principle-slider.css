@@ -1,0 +1,32 @@
+/* Embla Carousel 스타일 */
+.biz-principle-slider .embla {
+  overflow: hidden;
+  padding-top: 24px;
+
+  @media (max-width: 1280px) {
+    padding-top: 0px;
+  }
+  padding-bottom: 100px;
+  margin-bottom: -100px;
+}
+
+.biz-principle-slider .embla__container {
+  display: flex;
+  gap: 48px;
+
+  @media (max-width: 1280px) {
+    gap: 40px;
+  }
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
+}
+
+.biz-principle-slider .embla__slide {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.biz-principle-slider .embla__slide .slide {
+  opacity: 1;
+}

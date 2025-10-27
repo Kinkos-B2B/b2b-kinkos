@@ -41,6 +41,7 @@
     "@types/react-slick": "^0.23.13",
     "chakra-react-select": "6.0.0",
     "dayjs": "^1.11.11",
+    "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "gsap": "^3.13.0",
     "immer": "^10.1.1",

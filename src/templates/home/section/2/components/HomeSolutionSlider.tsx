@@ -11,9 +11,11 @@ import {
   Image,
   Text,
   VStack,
+  useMediaQuery,
 } from '@chakra-ui/react'
 import { CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react/dist/ssr'
 
+import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
 
 import { Badge } from '@/components/ui/badge'
@@ -29,15 +31,20 @@ interface SolutionSliderProps {
 export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
   slides,
 }) => {
+  const isMobile = useMediaQuery(['(max-width: 1280px)'], { ssr: true })[0]
+
   const ref = useRef<HTMLDivElement>(null)
 
   const tabButtonsRef = useRef<HTMLButtonElement[]>([])
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
-    align: 'center',
-    containScroll: 'trimSnaps',
-  })
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      align: 'center',
+      containScroll: 'trimSnaps',
+    },
+    isMobile ? [Autoplay({ delay: 2500 })] : [],
+  )
 
   const [selectedIndex, setSelectedIndex] = useState(0)
 

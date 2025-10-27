@@ -14,9 +14,10 @@ export const MobileHeader = () => {
   return (
     <Box
       as="header"
-      position="fixed"
+      position="relative"
       top="0"
       left="0"
+      w={'100%'}
       right="0"
       zIndex="sticky"
       bg="white"

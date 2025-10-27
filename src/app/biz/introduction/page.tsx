@@ -1,5 +1,7 @@
 import { Metadata } from 'next'
 
+import { BizIntroductionTemplate } from '@/templates/biz/introduction/BizIntroductionTemplate'
+
 export const metadata: Metadata = {
   title: '킨코스 소개 | 30년 업력의 B2B 기업 인쇄 솔루션 파트너',
   description:
@@ -7,5 +9,5 @@ export const metadata: Metadata = {
 }
 
 export default function BizIntroductionPage() {
-  return <div></div>
+  return <BizIntroductionTemplate />
 }

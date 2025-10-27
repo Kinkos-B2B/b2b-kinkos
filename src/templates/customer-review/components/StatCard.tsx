@@ -11,6 +11,7 @@ interface StatCardProps {
   iconAlt: string
   value: number
   description: string
+  prefix?: string
   suffix?: string
   index?: number
 }
@@ -20,6 +21,7 @@ export const StatCard = ({
   iconAlt,
   value,
   description,
+  prefix,
   suffix,
   index = 0,
 }: StatCardProps) => {
@@ -36,6 +38,7 @@ export const StatCard = ({
             end={Number(value)}
             separator=","
             duration={2}
+            prefix={prefix}
             suffix={suffix}
           />
         </Text>
