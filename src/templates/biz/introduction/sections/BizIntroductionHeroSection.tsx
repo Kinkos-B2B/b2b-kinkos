@@ -126,8 +126,13 @@ export const BizIntroductionHeroSection = () => {
           </Text>
         </Box>
         <Box display={'flex'} justifyContent={'center'} overflow={'hidden'}>
-          <Text textStyle="pre-display-2" color="grey.10" as={'span'}>
-            비즈니스 가치를 실현하세요
+          <Text
+            textStyle="pre-display-2"
+            color="grey.10"
+            as={'span'}
+            whiteSpace={{ base: 'pre-line', sm: 'nowrap' }}
+          >
+            {'비즈니스 가치를\n실현하세요'}
           </Text>
         </Box>
       </Box>

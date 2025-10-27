@@ -17,94 +17,83 @@ import '../components/biz-introduction-slider.css'
 
 const cards: BizIntroductionSliderCardProps[] = [
   {
-    badgeText: '인쇄 제작 솔루션',
-    titleText: '복잡한 과정을 쉽게\n해결합니다.',
-    image: '/images/biz/introduce/introduction-slider-card-img.png',
+    badgeText: '디자인 기획 솔루션',
+    titleText: '비즈니스 가치를\n디자인합니다.',
+    image: '/images/biz/introduce/introduction-slider-card-img-1.jpg',
     buttons: [
       {
-        text: '안전 사인물 제작 관리',
-        href: ROUTES.BIZ.PRODUCTION,
+        text: '브랜딩 디자인',
+        href: ROUTES.SOLUTIONS.DESIGN.BRANDING,
       },
       {
-        text: '안전 사인물 제작 관리',
-        href: ROUTES.BIZ.PRODUCTION,
+        text: '굿즈&판촉물 디자인',
+        href: ROUTES.SOLUTIONS.DESIGN.GIFT_PROMOTIONAL_DESIGN,
       },
       {
-        text: '안전 사인물 제작 관리',
-        href: ROUTES.BIZ.PRODUCTION,
+        text: '매장 POP 디자인',
+        href: ROUTES.SOLUTIONS.DESIGN.POP_DESIGN,
       },
       {
-        text: '안전 사인물 제작 관리',
-        href: ROUTES.BIZ.PRODUCTION,
+        text: 'VMD(3D) 디자인',
+        href: ROUTES.SOLUTIONS.DESIGN.VMD_3D,
       },
     ],
   },
   {
     badgeText: '인쇄 제작 솔루션',
     titleText: '복잡한 과정을 쉽게\n해결합니다.',
-    image: '/images/biz/introduce/introduction-slider-card-img.png',
+    image: '/images/biz/introduce/introduction-slider-card-img-2.jpg',
     buttons: [
       {
         text: '안전 사인물 제작 관리',
-        href: ROUTES.BIZ.PRODUCTION,
+        href: ROUTES.SOLUTIONS.PRODUCTION.SAFETY_SIGN,
       },
       {
-        text: '안전 사인물 제작 관리',
-        href: ROUTES.BIZ.PRODUCTION,
+        text: '시즌성 인쇄물 제작관리',
+        href: ROUTES.SOLUTIONS.PRODUCTION.SEASONAL_PRINTING,
       },
       {
-        text: '안전 사인물 제작 관리',
-        href: ROUTES.BIZ.PRODUCTION,
+        text: '통합제작 All-in-One',
+        href: ROUTES.SOLUTIONS.PRODUCTION.ALL_IN_ONE,
       },
       {
-        text: '안전 사인물 제작 관리',
-        href: ROUTES.BIZ.PRODUCTION,
+        text: '통합제작 물류관리',
+        href: ROUTES.SOLUTIONS.PRODUCTION.LOGISTICS,
       },
     ],
   },
   {
-    badgeText: '인쇄 제작 솔루션',
-    titleText: '복잡한 과정을 쉽게\n해결합니다.',
-    image: '/images/biz/introduce/introduction-slider-card-img.png',
+    badgeText: '디지털 혁신 솔루션',
+    titleText: '더 스마트하게\n혁신합니다.',
+    image: '/images/biz/introduce/introduction-slider-card-img-3.jpg',
     buttons: [
+      [
+        {
+          text: '디지털 영상 제작',
+          href: ROUTES.SOLUTIONS.VIDEO_AI.DIGITAL_VIDEO || '',
+        },
+        {
+          text: 'AR 인쇄물 제작',
+          href: ROUTES.SOLUTIONS.VIDEO_AI.AR_PRINTING || '',
+        },
+      ],
+      [
+        {
+          text: 'EX감성 분석',
+          href: ROUTES.SOLUTIONS.VIDEO_AI.EMOTION_ANALYSIS || '',
+        },
+        {
+          text: '기업 전용 인쇄몰',
+          href: ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING || '',
+        },
+      ],
       {
-        text: '안전 사인물 제작 관리',
-        href: ROUTES.BIZ.PRODUCTION,
+        text: '온라인 명함 주문 관리',
+        href: ROUTES.SOLUTIONS.ONLINE_ORDER.BUSINESS_CARD,
       },
       {
-        text: '안전 사인물 제작 관리',
-        href: ROUTES.BIZ.PRODUCTION,
-      },
-      {
-        text: '안전 사인물 제작 관리',
-        href: ROUTES.BIZ.PRODUCTION,
-      },
-      {
-        text: '안전 사인물 제작 관리',
-        href: ROUTES.BIZ.PRODUCTION,
-      },
-    ],
-  },
-  {
-    badgeText: '인쇄 제작 솔루션',
-    titleText: '복잡한 과정을 쉽게\n해결합니다.',
-    image: '/images/biz/introduce/introduction-slider-card-img.png',
-    buttons: [
-      {
-        text: '안전 사인물 제작 관리',
-        href: ROUTES.BIZ.PRODUCTION,
-      },
-      {
-        text: '안전 사인물 제작 관리',
-        href: ROUTES.BIZ.PRODUCTION,
-      },
-      {
-        text: '안전 사인물 제작 관리',
-        href: ROUTES.BIZ.PRODUCTION,
-      },
-      {
-        text: '안전 사인물 제작 관리',
-        href: ROUTES.BIZ.PRODUCTION,
+        text: '기업 전용 인쇄몰',
+        href: ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING,
       },
     ],
   },

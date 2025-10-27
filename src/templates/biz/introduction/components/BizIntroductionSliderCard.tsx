@@ -18,11 +18,18 @@ export interface BizIntroductionSliderCardProps {
   image: string
   badgeText: string
   titleText: string
-  buttons: Array<{
-    text: string
-    href: string
-    icon?: React.ReactNode
-  }>
+  buttons: Array<
+    | {
+        text: string
+        href: string
+        icon?: React.ReactNode
+      }
+    | Array<{
+        text: string
+        href: string
+        icon?: React.ReactNode
+      }>
+  >
 }
 
 export const BizIntroductionSliderCard = React.forwardRef<
@@ -89,36 +96,82 @@ export const BizIntroductionSliderCard = React.forwardRef<
 
           {/* 버튼 영역 */}
           <VStack gap={{ lg: '8px', base: '6px' }} align="stretch">
-            {buttons.map((button, index) => (
-              <LinkBox
-                as="div"
-                key={index}
-                bg="rgba(202, 215, 255, 0.45)"
-                borderRadius="8px"
-              >
-                <HStack
-                  h={{ lg: '58px', base: '48px' }}
-                  px={{ lg: '28px', base: '20px' }}
-                  justify="space-between"
-                  align="center"
-                  borderRadius="10px"
+            {buttons.map((button, index) => {
+              if (Array.isArray(button)) {
+                return (
+                  <HStack w={'100%'} key={index}>
+                    {button.map((item, index) => (
+                      <LinkBox
+                        w={'100%'}
+                        as="div"
+                        key={index}
+                        bg="rgba(202, 215, 255, 0.45)"
+                        borderRadius="8px"
+                      >
+                        <HStack
+                          h={{ lg: '58px', base: '48px' }}
+                          px={{ lg: '28px', base: '20px' }}
+                          justify="space-between"
+                          align="center"
+                          borderRadius="10px"
+                        >
+                          <LinkOverlay
+                            lineHeight={1}
+                            href={item.href}
+                            _hover={{ textDecoration: 'none' }}
+                          >
+                            <Text
+                              as="span"
+                              textStyle={'pre-body-1'}
+                              color={'primary.4'}
+                            >
+                              {item.text}
+                            </Text>
+                          </LinkOverlay>
+                          <Box display={{ base: 'none', sm: 'block' }}>
+                            <ArrowUpRightIcon color={'#013FFC'} size={'24px'} />
+                          </Box>
+                        </HStack>
+                      </LinkBox>
+                    ))}
+                  </HStack>
+                )
+              }
+
+              return (
+                <LinkBox
+                  as="div"
+                  key={index}
+                  bg="rgba(202, 215, 255, 0.45)"
+                  borderRadius="8px"
                 >
-                  <LinkOverlay
-                    href={button.href}
-                    _hover={{ textDecoration: 'none' }}
+                  <HStack
+                    h={{ lg: '58px', base: '48px' }}
+                    px={{ lg: '28px', base: '20px' }}
+                    justify="space-between"
+                    align="center"
+                    borderRadius="10px"
                   >
-                    <Text
-                      as="span"
-                      textStyle={'pre-body-1'}
-                      color={'primary.4'}
+                    <LinkOverlay
+                      lineHeight={1}
+                      href={button.href}
+                      _hover={{ textDecoration: 'none' }}
                     >
-                      {button.text}
-                    </Text>
-                  </LinkOverlay>
-                  <ArrowUpRightIcon color={'#013FFC'} size={'24px'} />
-                </HStack>
-              </LinkBox>
-            ))}
+                      <Text
+                        as="span"
+                        textStyle={'pre-body-1'}
+                        color={'primary.4'}
+                      >
+                        {button.text}
+                      </Text>
+                    </LinkOverlay>
+                    <Box display={{ base: 'none', sm: 'block' }}>
+                      <ArrowUpRightIcon color={'#013FFC'} size={'24px'} />
+                    </Box>
+                  </HStack>
+                </LinkBox>
+              )
+            })}
           </VStack>
         </VStack>
       </HStack>

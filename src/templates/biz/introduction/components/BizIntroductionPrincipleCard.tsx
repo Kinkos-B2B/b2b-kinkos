@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { Badge, Box, Button, Card, Text, chakra } from '@chakra-ui/react'
 import { ArrowRightIcon, CaretRightIcon } from '@phosphor-icons/react/dist/ssr'
@@ -16,6 +17,7 @@ interface BizIntroductionFeatureCardProps {
   backgroundColor: string
   badgeColor: string
   buttonColor: string
+  href: string
 }
 
 export const BizIntroductionPrincipleCard = ({
@@ -24,6 +26,7 @@ export const BizIntroductionPrincipleCard = ({
   description,
   imageSrc,
   imageAlt,
+  href,
   backgroundColor,
   badgeColor,
   buttonColor,
@@ -109,10 +112,12 @@ export const BizIntroductionPrincipleCard = ({
           </Box>
         </Box>
 
-        <Button bg={buttonColor} color="grey.0" py="0">
-          더 알아보기
-          <CaretRightIcon size={24} />
-        </Button>
+        <Link href={href}>
+          <Button bg={buttonColor} color="grey.0" py="0">
+            더 알아보기
+            <CaretRightIcon size={24} />
+          </Button>
+        </Link>
       </Box>
 
       <Box

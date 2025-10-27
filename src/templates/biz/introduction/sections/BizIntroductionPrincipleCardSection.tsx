@@ -8,6 +8,8 @@ import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
+import { ROUTES } from '@/constants/routes'
+
 import { BizIntroductionPrincipleCard } from '../components/BizIntroductionPrincipleCard'
 
 // GSAP ScrollTrigger 플러그인 등록
@@ -26,6 +28,7 @@ export const principleCardsData = [
     backgroundColor: 'accent.violet1',
     badgeColor: 'primary.1',
     buttonColor: 'primary.4',
+    href: ROUTES.BIZ.PRODUCTION,
   },
   {
     principle: '원칙2. 끝까지 책임집니다.',
@@ -40,6 +43,7 @@ export const principleCardsData = [
     backgroundColor: 'accent.yellow1',
     badgeColor: 'grey.0',
     buttonColor: 'secondary.4',
+    href: ROUTES.BIZ.PACKAGING,
   },
   {
     principle: '원칙3. 자산을 관리합니다.',
@@ -54,6 +58,7 @@ export const principleCardsData = [
     backgroundColor: 'primary.2',
     badgeColor: 'primary.1',
     buttonColor: 'primary.4',
+    href: ROUTES.BIZ.IT_SECURITY,
   },
   {
     principle: '원칙4. 전문가가 담당합니다.',
@@ -68,6 +73,7 @@ export const principleCardsData = [
     backgroundColor: 'accent.red1',
     badgeColor: 'grey.0',
     buttonColor: 'secondary.4',
+    href: ROUTES.BIZ.SUPPORT,
   },
   {
     principle: '원칙5. 가능성을 제공합니다.',
@@ -82,6 +88,7 @@ export const principleCardsData = [
     backgroundColor: 'accent.blue1',
     badgeColor: 'primary.1',
     buttonColor: 'primary.4',
+    href: ROUTES.BIZ.NETWORK,
   },
 ]
 

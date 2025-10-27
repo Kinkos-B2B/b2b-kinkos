@@ -184,6 +184,8 @@ export const BizIntroductionFadeSection = () => {
         gap={'24px'}
         alignItems={'center'}
         zIndex={1}
+        w={'100%'}
+        px={'20px'}
       >
         <Box
           display={'flex'}
@@ -227,6 +229,8 @@ export const BizIntroductionFadeSection = () => {
         gap={'24px'}
         alignItems={'center'}
         zIndex={1}
+        w={'100%'}
+        px={'20px'}
       >
         <Box
           display={'flex'}
