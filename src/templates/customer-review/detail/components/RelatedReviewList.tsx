@@ -98,7 +98,11 @@ export const RelatedReviewList = ({
         <Text textStyle={'pre-heading-1'}>고객님을 위한 추가 스토리</Text>
         <VStack w={'100%'} align={'stretch'} gap={'28px'}>
           {data.data?.map((item) => (
-            <Link href={`/customer-review/${item.slug}`} key={item.id}>
+            <Link
+              href={`/customer-review/${item.slug}`}
+              key={item.id}
+              style={{ width: '100%' }}
+            >
               <ReleatedCustomerReviewCard
                 id={item.slug?.toString() ?? ''}
                 image={item.thumbnailImageUrl.url ?? ''}
