@@ -150,6 +150,8 @@ export interface GetHomeConfigHelpArticleResponseType {
    * @format int64
    */
   id: number
+  /** slug */
+  slug: string
   /** 고민타입 */
   type: GetHomeConfigHelpArticleResponseTypeEnumType
   /** 고민타입 화면 표시 */

@@ -8,10 +8,8 @@ import {
   Flex,
   HStack,
   IconButton,
-  Image,
   Text,
   VStack,
-  useMediaQuery,
 } from '@chakra-ui/react'
 import { CaretLeftIcon, CaretRightIcon } from '@phosphor-icons/react/dist/ssr'
 
@@ -19,6 +17,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
 
 import { Badge } from '@/components/ui/badge'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 import { HomeSolutionSliderItem } from '../HomeIntroduceSolution'
 import { HomeSolutionSliderCard } from './HomeSolutionSliderCard'

@@ -81,10 +81,10 @@ export const CustomerReviewPostList = () => {
                   <PostCardItem
                     href={ROUTES.CUSTOMER_REVIEW_DETAIL.replace(
                       ':id',
-                      review.id?.toString() ?? '',
+                      review.slug?.toString() ?? '',
                     )}
                     image={review.thumbnailImageUrl?.url ?? ''}
-                    author={review.companyName ?? ''}
+                    author={review.title ?? ''}
                     title={review.companyName ?? ''}
                     date={review.createdAt ?? ''}
                   />
