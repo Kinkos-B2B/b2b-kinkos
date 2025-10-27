@@ -324,8 +324,11 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
     }
 
     return () => {
+      document.body.style.overflow = ''
+
       if (window.__introCleanup) {
         window.__introCleanup()
+
         delete window.__introCleanup
       }
     }

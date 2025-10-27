@@ -63,7 +63,7 @@ export const CustomerReviewDetailTemplate = ({
           />
         </Container>
       </Box>
-      <Container pt={{ base: '80px', lg: '120px' }}>
+      <Container py={{ base: '80px', lg: '120px' }}>
         <PluuugCTA
           text={'비즈니스 고민,\n지금 바로 해결하세요!'}
           buttons={[
@@ -71,12 +71,7 @@ export const CustomerReviewDetailTemplate = ({
           ]}
         />
       </Container>
-      <Container
-        maxW={'1280px'}
-        py={{ base: '80px', sm: '100px', lg: '120px' }}
-      >
-        <RelatedReviewList type={data?.data?.type} id={data?.data?.id} />
-      </Container>
+      <RelatedReviewList type={data?.data?.type} id={data?.data?.id} />
     </VStack>
   )
 }

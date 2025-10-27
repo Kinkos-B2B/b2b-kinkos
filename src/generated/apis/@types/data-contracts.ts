@@ -862,6 +862,7 @@ export interface GetCustomerReviewRelationType {
    * @format int64
    */
   id: number
+  slug: string
   /** 기업명 */
   companyName: string
   thumbnailImageUrl: ImageInfoType

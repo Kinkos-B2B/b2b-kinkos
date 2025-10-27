@@ -1,6 +1,7 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
-import { Box, Flex, Text, VStack } from '@chakra-ui/react'
+import { Box, Container, Flex, Text, VStack } from '@chakra-ui/react'
 
 import dayjs from 'dayjs'
 
@@ -12,7 +13,7 @@ interface CustomerReviewCardProps {
   author?: string
   title: string
   date: string
-  id: number
+  id: string
 }
 
 const ReleatedCustomerReviewCard = ({
@@ -92,20 +93,23 @@ export const RelatedReviewList = ({
   if (!data?.data?.length) return null
 
   return (
-    <VStack gap={'32px'} align="start" w="100%">
-      <Text textStyle={'pre-heading-1'}>고객님을 위한 추가 스토리</Text>
-      <VStack w={'100%'} align={'stretch'} gap={'28px'}>
-        {data.data?.map((item) => (
-          <ReleatedCustomerReviewCard
-            key={item.id}
-            id={item.id}
-            image={item.thumbnailImageUrl.url ?? ''}
-            author={item.companyName}
-            title={item.title}
-            date={item.createdAt}
-          />
-        ))}
+    <Container maxW={'1280px'} py={{ base: '80px', sm: '100px', lg: '120px' }}>
+      <VStack gap={'32px'} align="start" w="100%">
+        <Text textStyle={'pre-heading-1'}>고객님을 위한 추가 스토리</Text>
+        <VStack w={'100%'} align={'stretch'} gap={'28px'}>
+          {data.data?.map((item) => (
+            <Link href={`/customer-review/${item.slug}`} key={item.id}>
+              <ReleatedCustomerReviewCard
+                id={item.slug?.toString() ?? ''}
+                image={item.thumbnailImageUrl.url ?? ''}
+                author={item.companyName}
+                title={item.title}
+                date={item.createdAt}
+              />
+            </Link>
+          ))}
+        </VStack>
       </VStack>
-    </VStack>
+    </Container>
   )
 }
