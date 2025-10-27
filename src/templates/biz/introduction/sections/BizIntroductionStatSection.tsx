@@ -341,6 +341,8 @@ export const BizIntroductionStatSection = () => {
               value={BizIntroductionStatCards[0].value}
               description={BizIntroductionStatCards[0].description}
               image={BizIntroductionStatCards[0].image}
+              prefix={BizIntroductionStatCards[0].prefix}
+              suffix={BizIntroductionStatCards[0].suffix}
               imageSize="130px"
               px="40px"
             />
@@ -348,6 +350,7 @@ export const BizIntroductionStatSection = () => {
               value={BizIntroductionStatCards[1].value}
               description={BizIntroductionStatCards[1].description}
               image={BizIntroductionStatCards[1].image}
+              suffix={BizIntroductionStatCards[1].suffix}
               imageSize="130px"
               px="40px"
             />
@@ -359,6 +362,7 @@ export const BizIntroductionStatSection = () => {
               value={BizIntroductionStatCards[2].value}
               description={BizIntroductionStatCards[2].description}
               image={BizIntroductionStatCards[2].image}
+              suffix={BizIntroductionStatCards[2].suffix}
               pl="40px"
               pr="44px"
               py="32px"
@@ -368,6 +372,7 @@ export const BizIntroductionStatSection = () => {
               value={BizIntroductionStatCards[3].value}
               description={BizIntroductionStatCards[3].description}
               image={BizIntroductionStatCards[3].image}
+              suffix={BizIntroductionStatCards[3].suffix}
               pl="40px"
               pr="44px"
               py="32px"
@@ -377,6 +382,7 @@ export const BizIntroductionStatSection = () => {
               value={BizIntroductionStatCards[4].value}
               description={BizIntroductionStatCards[4].description}
               image={BizIntroductionStatCards[4].image}
+              suffix={BizIntroductionStatCards[4].suffix}
               pl="40px"
               pr="44px"
               py="32px"

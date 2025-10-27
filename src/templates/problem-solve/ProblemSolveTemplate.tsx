@@ -34,6 +34,10 @@ export const ProblemSolveTemplate = ({
         px={{ base: '20px', sm: '40px' }}
       >
         <RecentPost
+          href={ROUTES.PROBLEM_DETAIL.replace(
+            ':id',
+            data?.data?.helpArticle?.slug?.toString() ?? '',
+          )}
           title="최신 고민해결 사례"
           article={{
             author: data?.data?.helpArticle?.typeDisplayName ?? '',

@@ -84,8 +84,8 @@ export const CustomerReviewPostList = () => {
                       review.slug?.toString() ?? '',
                     )}
                     image={review.thumbnailImageUrl?.url ?? ''}
-                    author={review.title ?? ''}
-                    title={review.companyName ?? ''}
+                    author={review.companyName ?? ''}
+                    title={review.title ?? ''}
                     date={review.createdAt ?? ''}
                   />
                 </GridItem>

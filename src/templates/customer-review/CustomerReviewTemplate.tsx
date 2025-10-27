@@ -5,6 +5,7 @@ import { Box, Container, VStack } from '@chakra-ui/react'
 import { usePannelContext } from '@/components/PannelContext'
 import { PluuugCTA } from '@/components/view/PluuugCTA'
 import { RecentPost } from '@/components/view/RecentPost'
+import { ROUTES } from '@/constants/routes'
 import { useGetCustomerReviewMainConfigQuery } from '@/generated/apis/CustomerReviewApi/CustomerReviewApi.query'
 
 import { CustomerReviewImageBanner } from './components/CustomerReviewImageBanner'
@@ -31,6 +32,10 @@ export const CustomerReviewTemplate = () => {
         px={{ base: '20px', sm: '40px' }}
       >
         <RecentPost
+          href={ROUTES.CUSTOMER_REVIEW_DETAIL.replace(
+            ':id',
+            data?.customerReview?.slug?.toString() ?? '',
+          )}
           title="가장 많이 본 후기"
           article={{
             author: data?.customerReview?.companyName ?? '',

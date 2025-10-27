@@ -92,8 +92,8 @@ const cards: BizIntroductionSliderCardProps[] = [
         href: ROUTES.SOLUTIONS.ONLINE_ORDER.BUSINESS_CARD,
       },
       {
-        text: '기업 전용 인쇄몰',
-        href: ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING,
+        text: '프랜차이즈 인쇄몰',
+        href: ROUTES.SOLUTIONS.ONLINE_ORDER.FRANCHISE_PRINTING,
       },
     ],
   },
