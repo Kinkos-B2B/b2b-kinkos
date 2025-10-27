@@ -4,10 +4,8 @@ export default function ProblemSolveDetailPage({
   params,
 }: {
   params: {
-    id: number
+    id: string
   }
 }) {
-  const { id } = params
-
-  return <ProblemSolveDetailTemplate id={id.toString()} />
+  return <ProblemSolveDetailTemplate id={params.id} />
 }

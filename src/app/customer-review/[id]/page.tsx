@@ -4,9 +4,8 @@ export default function CustomerReviewDetailPage({
   params,
 }: {
   params: {
-    id: number
+    id: string
   }
 }) {
-  const { id } = params
   return <CustomerReviewDetailTemplate reviewId={params.id} />
 }

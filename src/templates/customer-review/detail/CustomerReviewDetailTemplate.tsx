@@ -15,23 +15,28 @@ import {
 import { usePannelContext } from '@/components/PannelContext'
 import PluuugCTA from '@/components/view/PluuugCTA'
 import { PostHeader } from '@/components/view/PostDetail/PostHeader'
-import { useGetCustomerReviewDetailQuery } from '@/generated/apis/CustomerReviewApi/CustomerReviewApi.query'
+import {
+  useGetCustomerReviewDetailBySlugQuery,
+  useGetCustomerReviewDetailQuery,
+} from '@/generated/apis/CustomerReviewApi/CustomerReviewApi.query'
 
 import { RelatedReviewList } from './components/RelatedReviewList'
 import { ReviewDetailContent } from './components/ReviewDetailContent'
 import { ReviewSolutionCardList } from './components/ReviewSolutionCardList'
 
 interface CustomerReviewDetailTemplateProps {
-  reviewId: number
+  reviewId: string
 }
 
 export const CustomerReviewDetailTemplate = ({
   reviewId,
 }: CustomerReviewDetailTemplateProps) => {
   const { openPannel } = usePannelContext()
-  const { data } = useGetCustomerReviewDetailQuery({
+  const { data } = useGetCustomerReviewDetailBySlugQuery({
     variables: {
-      id: reviewId,
+      query: {
+        slug: reviewId.toString(),
+      },
     },
   })
 

@@ -16,7 +16,10 @@ import { usePannelContext } from '@/components/PannelContext'
 import { ExpertProfileCard } from '@/components/view/ExpertProfileCard'
 import { PostHeader } from '@/components/view/PostDetail/PostHeader'
 import { ROUTES } from '@/constants/routes'
-import { useGetHelpArticleDetailQuery } from '@/generated/apis/HelpArticleApi/HelpArticleApi.query'
+import {
+  useGetHelpArticleDetailBySlugQuery,
+  useGetHelpArticleDetailQuery,
+} from '@/generated/apis/HelpArticleApi/HelpArticleApi.query'
 
 import { ProblemSolveArticleContent } from './components/ProblemSolveArticleContent'
 
@@ -26,9 +29,11 @@ interface Props {
 
 export const ProblemSolveDetailTemplate = ({ id }: Props) => {
   const { openPannel } = usePannelContext()
-  const { data } = useGetHelpArticleDetailQuery({
+  const { data } = useGetHelpArticleDetailBySlugQuery({
     variables: {
-      id: Number(id),
+      query: {
+        slug: id,
+      },
     },
   })
 
