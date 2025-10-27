@@ -136,10 +136,10 @@ export const ProblemSolvePostList = ({ activeTab }: { activeTab: string }) => {
                   <PostCardItem
                     href={ROUTES.PROBLEM_DETAIL.replace(
                       ':id',
-                      article.id?.toString() ?? '',
+                      article.slug?.toString() ?? '',
                     )}
                     image={article.thumbnailImage?.url ?? ''}
-                    author={article.title ?? ''}
+                    author={article.typeDisplayName ?? ''}
                     title={article.title ?? ''}
                     date={article.createdAt ?? ''}
                   />
