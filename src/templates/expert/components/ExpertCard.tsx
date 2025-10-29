@@ -60,6 +60,9 @@ export const ExpertCard = React.forwardRef<HTMLDivElement, ExpertCardProps>(
               color="grey.8"
               letterSpacing="-0.36px"
               lineHeight="1.6"
+              lineClamp={3}
+              overflow="hidden"
+              textOverflow="ellipsis"
             >
               {expert.description}
             </Text>

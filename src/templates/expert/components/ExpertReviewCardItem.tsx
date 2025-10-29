@@ -29,7 +29,13 @@ export const ExpertReviewCardItem = ({ expertReview }: Props) => {
         <Text textStyle="pre-heading-3" color="grey.9">
           {expertReview.title}
         </Text>
-        <Text textStyle="pre-body-2" color="grey.8">
+        <Text
+          textStyle="pre-body-2"
+          color="grey.8"
+          lineClamp={2}
+          overflow="hidden"
+          textOverflow="ellipsis"
+        >
           {`"${expertReview.body}"`}
         </Text>
       </VStack>

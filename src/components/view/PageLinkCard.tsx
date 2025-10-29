@@ -30,7 +30,7 @@ const PAGE_LINK_CARD_MAP = {
       '킨코스가 제공하는 솔루션이 궁금한가요?\n원하는 솔루션을 찾아보세요.',
     icon: <MoreInfoCardSolutionIcon />,
     iconBgColor: 'accent.blue1',
-    href: ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING,
+    href: ROUTES.SOLUTIONS.DESIGN.BRANDING,
   },
   REVIEW: {
     title: '관련 고객후기',
@@ -38,7 +38,7 @@ const PAGE_LINK_CARD_MAP = {
       '실제 작업 사례와 고객의 만족도가 궁금한가요?\n고객후기를 확인해 보세요.',
     icon: <MoreInfoCardCustomerReviewIcon />,
     iconBgColor: 'accent.violet1',
-    href: ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING,
+    href: ROUTES.CUSTOMER_REVIEW,
   },
   PROBLEM: {
     title: '관련 고민해결',
@@ -46,7 +46,7 @@ const PAGE_LINK_CARD_MAP = {
       '지금 겪는 고민을 해결하고 싶으신가요?\n고민 해결 방법을 확인해 보세요.',
     icon: <MoreInfoCardProblemSolveIcon />,
     iconBgColor: 'accent.pink1',
-    href: ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING,
+    href: ROUTES.PROBLEM,
   },
   EXPERT: {
     title: '관련 전문가',
@@ -54,7 +54,7 @@ const PAGE_LINK_CARD_MAP = {
       '믿고 맡길 수 있는 전문가가 필요하신가요?\n우리 기업에 맞는 전문가를 만나보세요.',
     icon: <MoreInfoCardExpertIcon />,
     iconBgColor: 'accent.yellow1',
-    href: ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING,
+    href: ROUTES.EXPERT,
   },
   SYSTEM: {
     title: '관련 시스템',
@@ -62,7 +62,7 @@ const PAGE_LINK_CARD_MAP = {
       '킨코스가 제공하는 시스템이 궁금한가요?\n원하는 시스템을 찾아보세요.',
     icon: <MoreInfoCardSystemIcon />,
     iconBgColor: 'accent.blue1',
-    href: ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING,
+    href: ROUTES.SUPPORT,
   },
 }
 
