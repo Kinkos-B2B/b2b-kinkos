@@ -56,7 +56,7 @@ const companyImages = [
     height: 32,
   },
   {
-    src: '/images/home/customer-review/company-8.png',
+    src: '/images/home/customer-review/company-9.png',
     alt: '이삭',
     width: 156,
     height: 32,
