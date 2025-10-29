@@ -10,9 +10,14 @@ import { Badge } from '@/components/ui/badge'
 interface FeatureItemProps {
   title: string
   description: string
+  icon: React.ReactNode
 }
 
-const FeatureItem: React.FC<FeatureItemProps> = ({ title, description }) => {
+const FeatureItem: React.FC<FeatureItemProps> = ({
+  title,
+  description,
+  icon,
+}) => {
   return (
     <VStack gap="4px" align="stretch" width="100%">
       <HStack gap="10px" align="center">
@@ -25,7 +30,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ title, description }) => {
           alignItems="center"
           justifyContent="center"
         >
-          <SquareHalf size={16} color="white" />
+          {icon}
         </Box>
         <Text textStyle={'pre-heading-4'} color="grey.10" whiteSpace="nowrap">
           {title}
@@ -133,6 +138,7 @@ export const HomeSolutionSliderCard: React.FC<HomeSolutionSliderCardProps> = ({
                 key={index}
                 title={feature.title}
                 description={feature.description}
+                icon={feature.icon}
               />
             ))}
           </VStack>
