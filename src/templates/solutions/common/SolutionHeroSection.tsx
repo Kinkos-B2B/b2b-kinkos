@@ -7,6 +7,7 @@ import {
   Container,
   Image,
   Text,
+  chakra,
   useBreakpoint,
   useBreakpointValue,
 } from '@chakra-ui/react'
@@ -20,20 +21,23 @@ import { usePannelContext } from '@/components/PannelContext'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
-interface Props {
+export interface SolutionHeroSectionProps {
   badge: string
   title: ReactElement
   heroContent: ReactElement
   buttonContent: string
   link: string
+  image: {
+    url: string
+    alt: string
+  }
 }
 
 const SolutionHeroSectionIntroBlock = ({
   badge,
   title,
   buttonContent,
-  link,
-}: Props) => {
+}: SolutionHeroSectionProps) => {
   const { openPannel } = usePannelContext()
 
   return (
@@ -59,7 +63,7 @@ const SolutionHeroSectionIntroBlock = ({
 export const SolutionHeroSection = ({
   introBlockData,
 }: {
-  introBlockData: Props
+  introBlockData: SolutionHeroSectionProps
 }) => {
   const startPointY = useBreakpointValue({
     base: 64 + 80,
@@ -187,19 +191,37 @@ export const SolutionHeroSection = ({
             {introBlockData.heroContent}
           </VStack>
         </Center>
-        <Image
-          ref={imageRef}
-          src={'/images/solutions/solutions-hero-section.jpg'}
-          alt="solution hero section"
-          w={{
-            base: 'calc(100vw - 40px)',
-            sm: 'calc(100vw - 80px)',
-            lg: '1280px',
-          }}
-          h={'calc(100dvh - 170px)'}
-          borderRadius={'28px'}
-          objectFit="cover"
-        />
+        {introBlockData.image.url.includes('.mp4') ?
+          <chakra.video
+            ref={imageRef}
+            src={introBlockData.image.url}
+            autoPlay
+            loop
+            muted
+            playsInline
+            w={{
+              base: 'calc(100vw - 40px)',
+              sm: 'calc(100vw - 80px)',
+              lg: '1280px',
+            }}
+            h={'calc(100dvh - 170px)'}
+            borderRadius={'28px'}
+            objectFit="cover"
+          />
+        : <Image
+            ref={imageRef}
+            src={introBlockData.image.url}
+            alt={introBlockData.image.alt}
+            w={{
+              base: 'calc(100vw - 40px)',
+              sm: 'calc(100vw - 80px)',
+              lg: '1280px',
+            }}
+            h={'calc(100dvh - 170px)'}
+            borderRadius={'28px'}
+            objectFit="cover"
+          />
+        }
       </Box>
     </VStack>
   )

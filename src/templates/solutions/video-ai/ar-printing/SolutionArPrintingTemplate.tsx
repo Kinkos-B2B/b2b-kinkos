@@ -16,12 +16,15 @@ import {
   FeatureItem,
   SolutionFeatureSection,
 } from '../../common/SolutionFeatureSection'
-import { SolutionHeroSection } from '../../common/SolutionHeroSection'
+import {
+  SolutionHeroSection,
+  SolutionHeroSectionProps,
+} from '../../common/SolutionHeroSection'
 import { SolutionMoreInfoSection } from '../../common/SolutionMoreInfoSection'
 import { SolutionReleatedExportSection } from '../../common/SolutionReleatedExportSection'
 import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 
-const heroMockData = {
+const heroMockData: SolutionHeroSectionProps = {
   badge: 'AR 인쇄물 제작',
   title: (
     <VStack
@@ -50,6 +53,12 @@ const heroMockData = {
       </Text>
     </>
   ),
+
+  image: {
+    url: '/images/solutions/video-ai/ar-printing/solution-ar-printing-1.mp4',
+    alt: '10_AR인쇄물제작_1_영상_매장 앞 치맥데이 포스터를 스마트폰으로 촬영해 증강현실 이벤트를 실행하는 영상, 교차되며 훈제연어 샐러드 홍보 포스터를 스캔하는 프로모션용 AR 인쇄물 체험 예시',
+  },
+
   buttonContent: '지금 전문가 연결하기',
   link: '/solutions/online-order/corporate-printing',
 }
@@ -106,13 +115,12 @@ const featureData: FeatureItem[] = [
     ],
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/video-ai/ar-printing/solution-ar-printing-2.png',
+        alt: '10_AR인쇄물제작_2_매장 앞 치맥데이 포스터를 스마트폰으로 촬영해 증강현실 이벤트를 실행하는 장면, 맥주·치킨 프로모션용 AR 인쇄물 체험 예시',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/video-ai/ar-printing/solution-ar-printing-3.png',
+        alt: '10_AR인쇄물제작_3_전시 공간에서 스마트폰으로 포스터를 비춰 AR 콘텐츠를 실행하는 장면, 제품 홍보용 증강현실 인쇄물 체험 예시',
       },
     ],
   },
@@ -129,13 +137,12 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/video-ai/ar-printing/solution-ar-printing-4.png',
+        alt: '10_AR인쇄물제작_4_사무실에서 직원이 모니터로 AR 인쇄물 관리자 페이지를 확인하는 장면, 영상·3D·웹 링크를 실시간으로 수정 관리하는 시스템 화면 예시',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/video-ai/ar-printing/solution-ar-printing-5.png',
+        alt: '10_AR인쇄물제작_5_관리자 페이지에서 프로모션 쿠폰 콘텐츠를 업로드하는 그래픽 이미지, 재인쇄 없이 실시간 콘텐츠 교체 기능을 시각화한 화면',
       },
     ],
   },
@@ -151,13 +158,12 @@ const featureData: FeatureItem[] = [
     ],
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/video-ai/ar-printing/solution-ar-printing-6.png',
+        alt: '10_AR인쇄물제작_6_매장 앞 홍보 배너를 스마트폰으로 스캔하며 AR 프로모션을 체험하는 모습, 오프라인 공간과 연결된 증강현실 인쇄물 활용 예시',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/video-ai/ar-printing/solution-ar-printing-7.png',
+        alt: '10_AR인쇄물제작_7_AR 인쇄물 캠페인 성과 데이터를 분석하는 대시보드 화면, 실행 수·체류 시간·클릭률 등 마케팅 지표를 시각화한 그래프',
       },
     ],
   },
@@ -175,13 +181,12 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/video-ai/ar-printing/solution-ar-printing-8.png',
+        alt: '10_AR인쇄물제작_8_포스터에 스마트폰을 비춰 할인 쿠폰이 나타나 매장 방문을 유도하는 증강현실 인쇄물 사례, 브랜드 프로모션 연동형 AR 체험 예시',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/video-ai/ar-printing/solution-ar-printing-9.png',
+        alt: '10_AR인쇄물제작_9_포스터에 스마트폰을 비추면 50_ 할인 쿠폰이 나타나는 AR 인쇄물 사례, 브랜드 경험과 구매 유도를 결합한 인터랙티브 마케팅 예시',
       },
     ],
   },

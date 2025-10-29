@@ -17,7 +17,8 @@ export type FeatureItem = {
     competitorB: string
   }[]
   imageData: {
-    imageUrl: string
+    url: string
+    alt: string
   }[]
 }
 

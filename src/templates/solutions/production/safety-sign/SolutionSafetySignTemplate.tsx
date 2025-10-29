@@ -16,12 +16,15 @@ import {
   FeatureItem,
   SolutionFeatureSection,
 } from '../../common/SolutionFeatureSection'
-import { SolutionHeroSection } from '../../common/SolutionHeroSection'
+import {
+  SolutionHeroSection,
+  SolutionHeroSectionProps,
+} from '../../common/SolutionHeroSection'
 import { SolutionMoreInfoSection } from '../../common/SolutionMoreInfoSection'
 import { SolutionReleatedExportSection } from '../../common/SolutionReleatedExportSection'
 import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 
-const heroMockData = {
+const heroMockData: SolutionHeroSectionProps = {
   badge: '안전 사인물 제작관리',
   title: (
     <VStack
@@ -48,6 +51,10 @@ const heroMockData = {
   ),
   buttonContent: '지금 전문가 연결하기',
   link: '/solutions/online-order/corporate-printing',
+  image: {
+    url: '/images/solutions/production/safety-sign/solution-safety-sign-1.png',
+    alt: '5_안전물 사인 제작관리_1_건설 현장 외벽에 설치된 안전 캠페인 대형 현수막, 산업안전 강화를 주제로 한 안전 사인물 예시',
+  },
 }
 
 const cardsMockData = {
@@ -100,13 +107,12 @@ const featureData: FeatureItem[] = [
     ],
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/production/safety-sign/solution-safety-sign-2.png',
+        alt: '5_안전물 사인 제작관리_2_건설 현장 내부에서 안전모를 착용한 담당자가 구조물을 점검하며 설치 위치를 확인하는 모습',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/production/safety-sign/solution-safety-sign-3.png',
+        alt: '5_안전물 사인 제작관리_3_건설 현장 내부 천장에 걸린 폭염 안전 수칙 안내 배너, 근로자 대상 안전 캠페인용 사인물',
       },
     ],
   },
@@ -124,13 +130,12 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/production/safety-sign/solution-safety-sign-4.png',
+        alt: '5_안전물 사인 제작관리_4_물류창고 내부에 설치된 파란색 존 안내 사인물, 구역별 안전 구분을 위한 표시물 예시',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/production/safety-sign/solution-safety-sign-5.png',
+        alt: '5_안전물 사인 제작관리_5_출입구 기둥에 부착된 안전모 착용, 낙하 주의 등 안전 경고 표지판 세트',
       },
     ],
   },
@@ -146,13 +151,12 @@ const featureData: FeatureItem[] = [
     ],
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/production/safety-sign/solution-safety-sign-6.png',
+        alt: '5_안전물 사인 제작관리_6_방수 기능을 보여주는 푸른색 원단 표면에 맺힌 물방울, 습기 많은 환경에 적합한 사인물 소재 예시',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/production/safety-sign/solution-safety-sign-7.png',
+        alt: '5_안전물 사인 제작관리_7_어두운 공간에서 빛나는 반사형 안전 표지판, ‘위험 추락주의’ 문구가 적힌 축광 사인물 예시',
       },
     ],
   },
@@ -171,13 +175,12 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/production/safety-sign/solution-safety-sign-8.png',
+        alt: '5_안전물 사인 제작관리_8_물류센터 벽면에 ‘충돌주의’ 경고 표지판을 부착 중인 킨코스 시공 전문가의 작업 모습',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/production/safety-sign/solution-safety-sign-9.png',
+        alt: '5_안전물 사인 제작관리_9_완성된 ‘위험 추락주의’ 표지판을 에어캡으로 안전하게 포장하는 작업자의 손, 배송 전 포장 과정',
       },
     ],
   },

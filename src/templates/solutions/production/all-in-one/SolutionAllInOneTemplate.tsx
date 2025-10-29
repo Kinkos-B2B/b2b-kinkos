@@ -50,6 +50,10 @@ const heroMockData = {
   ),
   buttonContent: '지금 전문가 연결하기',
   link: '/solutions/online-order/corporate-printing',
+  image: {
+    url: '/images/solutions/production/all-in-one/solution-all-in-one-1.png',
+    alt: '8_통합제작 올인원_1_Cafe Kinkos 로고가 인쇄된 포장 박스와 스티커, 친환경 용기 세트 구성 예시, 브랜드 맞춤형 패키지 디자인 샘플',
+  },
 }
 
 const cardsMockData = {
@@ -102,13 +106,12 @@ const featureData: FeatureItem[] = [
     ],
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/production/all-in-one/solution-all-in-one-2.png',
+        alt: '8_통합제작 올인원_2_킨코스 전문 디자인 센터에서 제품 패키지 시안을 검토 중인 디자이너 팀, 브랜드 맞춤형 디자인 협업 과정',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/production/all-in-one/solution-all-in-one-3.png',
+        alt: '8_통합제작 올인원_3_인쇄 색상과 품질을 점검하는 소프트웨어 화면, 데이터 기반 공정 관리 시스템 예시',
       },
     ],
   },
@@ -127,13 +130,12 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/production/all-in-one/solution-all-in-one-4.png',
+        alt: '8_통합제작 올인원_4_킨코스 로고가 인쇄된 명함 샘플 클로즈업, 고품질 인쇄와 후가공을 적용한 인쇄물 예시',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/production/all-in-one/solution-all-in-one-5.png',
+        alt: '8_통합제작 올인원_5_질감과 색감이 다른 다양한 인쇄용 종이 샘플, 제작물 용도에 따른 소재 컨설팅 예시',
       },
     ],
   },
@@ -149,13 +151,12 @@ const featureData: FeatureItem[] = [
     ],
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/production/all-in-one/solution-all-in-one-6.png',
+        alt: '8_통합제작 올인원_6_둥근 종이 포스터 케이스가 대량 포장된 모습, 실사 출력물의 안전한 포장 및 보관 예시',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/production/all-in-one/solution-all-in-one-7.png',
+        alt: '8_통합제작 올인원_7_지역별로 분류된 배송용 박스가 운반 카트에 적재된 물류센터 현장, 지점별 맞춤 포장 및 출고 관리',
       },
     ],
   },
@@ -174,13 +175,12 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/production/all-in-one/solution-all-in-one-8.png',
+        alt: '8_통합제작 올인원_8_회의 테이블에서 패키지 디자인 기획안을 논의하는 킨코스 담당자와 고객, 1_1 전담 매니저 상담 장면',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/production/all-in-one/solution-all-in-one-9.png',
+        alt: '8_통합제작 올인원_9_비용 분석 차트와 그래프가 인쇄된 서류, 인쇄 제작 프로젝트의 예산 관리 및 효율 분석 자료 예시',
       },
     ],
   },

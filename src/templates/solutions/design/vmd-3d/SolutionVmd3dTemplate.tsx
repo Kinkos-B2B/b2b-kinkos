@@ -48,6 +48,10 @@ const heroMockData = {
   ),
   buttonContent: '지금 전문가 연결하기',
   link: '/solutions/online-order/corporate-printing',
+  image: {
+    url: '/images/solutions/design/vmd-3d/solution-vmd-3d-1.png',
+    alt: '4_VMD 디자인_1_킨코스의 캐릭터와 달 이미지를 활용한 전시 부스 디자인, 브랜드 콘셉트를 시각적으로 구현한 VMD 연출 예시',
+  },
 }
 
 const cardsMockData = {
@@ -98,13 +102,13 @@ const featureData: FeatureItem[] = [
     ],
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/design/vmd-3d/solution-vmd-3d-2.png',
+        alt: '4_VMD 디자인_2_화이트톤의 팝업 카페 부스 3D 시뮬레이션, 브랜드 색상을 반영한 공간 연출 디자인',
       },
+
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/design/vmd-3d/solution-vmd-3d-3.png',
+        alt: '4_VMD 디자인_3_식물 패턴 그래픽이 적용된 제품 진열대 3D 모델링, 전시용 매대 디자인 예시',
       },
     ],
   },
@@ -121,13 +125,13 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/design/vmd-3d/solution-vmd-3d-4.png',
+        alt: '4_VMD 디자인_4_킨코스 부스의 3D 시뮬레이션 뷰, 방문 동선을 분석한 행사장 공간 배치 예시',
       },
+
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/design/vmd-3d/solution-vmd-3d-5.png',
+        alt: '4_VMD 디자인_5_행사 담당자가 태블릿을 통해 전시 부스 배치를 설명하는 모습, 현장 설치 컨설팅 장면',
       },
     ],
   },
@@ -143,13 +147,12 @@ const featureData: FeatureItem[] = [
     ],
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/design/vmd-3d/solution-vmd-3d-6.png',
+        alt: '4_VMD 디자인_6_3D 프린터 장비로 전시용 샘플 부품을 출력하는 과정, 실물 제작 전 프로토타입 확인 예시',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/design/vmd-3d/solution-vmd-3d-7.png',
+        alt: '4_VMD 디자인_7_LED 조명 아래 킨코스 캐릭터 모양의 입체 사인물을 UV 인쇄로 출력 중인 장비 내부 모습',
       },
     ],
   },
@@ -168,13 +171,12 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/design/vmd-3d/solution-vmd-3d-8.png',
+        alt: '4_VMD 디자인_8_보라색 텐트와 배너로 구성된 행사 홍보 부스 전면 뷰, 통일된 색상으로 브랜딩된 VMD 공간 연출',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/design/vmd-3d/solution-vmd-3d-9.png',
+        alt: '4_VMD 디자인_9_전문 시공팀이 전시 부스를 설치 중인 모습, 배너 고정과 구조물 조립 과정',
       },
     ],
   },

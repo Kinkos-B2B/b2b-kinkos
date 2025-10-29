@@ -16,12 +16,15 @@ import {
   FeatureItem,
   SolutionFeatureSection,
 } from '../../common/SolutionFeatureSection'
-import { SolutionHeroSection } from '../../common/SolutionHeroSection'
+import {
+  SolutionHeroSection,
+  SolutionHeroSectionProps,
+} from '../../common/SolutionHeroSection'
 import { SolutionMoreInfoSection } from '../../common/SolutionMoreInfoSection'
 import { SolutionReleatedExportSection } from '../../common/SolutionReleatedExportSection'
 import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 
-const heroMockData = {
+const heroMockData: SolutionHeroSectionProps = {
   badge: '굿즈&판촉물 디자인',
   title: (
     <VStack
@@ -48,6 +51,10 @@ const heroMockData = {
   ),
   buttonContent: '지금 전문가 연결하기',
   link: '/solutions/online-order/corporate-printing',
+  image: {
+    url: '/images/solutions/design/gift-promotional-design/solution-gift-promotional-design-1.png',
+    alt: '2_굿즈&판촉물 디자인_1_브랜드 로고와 컬러가 적용된 문구류, 봉투, 노트 등 사무용 굿즈 세트를 정돈된 구성으로 연출한 이미지',
+  },
 }
 
 const cardsMockData = {
@@ -111,10 +118,12 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/design/gift-promotional-design/solution-gift-promotional-design-2.png',
+        alt: '2_굿즈&판촉물 디자인_2_킨코스 로고가 인쇄된 노트, 컵, 스티커 등 기업 브랜딩 굿즈 패키지를 세련된 블루 톤으로 구성한 이미지',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/design/gift-promotional-design/solution-gift-promotional-design-3.png',
+        alt: '2_굿즈&판촉물 디자인_3_킨코스에서 제작한 직원 웰컴 키트와 탕스킷 구성품 예시, 다이어리와 캘린더 등으로 구성된 브랜드 패키지',
       },
     ],
   },
@@ -141,10 +150,12 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/design/gift-promotional-design/solution-gift-promotional-design-4.png',
+        alt: '2_굿즈&2_굿즈&판촉물 디자인_4_킨코스코리아의 브랜드 해시태그가 인쇄된 머그컵과 박스 패키지 디자인 세트',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/design/gift-promotional-design/solution-gift-promotional-design-5.png',
+        alt: '2_굿즈&판촉물 디자인_5_킨코스 제작팀이 파란색 텀블러를 개별 포장 상자에 담으며 굿즈 출고를 준비하는 과정',
       },
     ],
   },
@@ -170,10 +181,12 @@ const featureData: FeatureItem[] = [
     ],
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/design/gift-promotional-design/solution-gift-promotional-design-6.png',
+        alt: '2_굿즈&판촉물 디자인_6_브랜딩 스티커와 로고 시안을 함께 검토하며 굿즈 디자인을 협의 중인 킨코스 디자이너들의 회의 장면',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/design/gift-promotional-design/solution-gift-promotional-design-7.png',
+        alt: '2_굿즈&판촉물 디자인_7_노트북 화면에 킨코스 전표 관리 화면이 표시된 사무실 책상, 굿즈 제작 및 주문 관리 업무 환경',
       },
     ],
   },
@@ -199,14 +212,17 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/design/gift-promotional-design/solution-gift-promotional-design-8.png',
+        alt: '2_굿즈&판촉물 디자인_8_빨간색과 흰색의 사과 과자 패키지 상자 디자인 예시, 제품 콘셉트에 맞춘 기획형 판촉물 박스',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/design/gift-promotional-design/solution-gift-promotional-design-9.png',
+        alt: '2_굿즈&판촉물 디자인_9_킨코스 전문가가 모니터에서 패키지 굿즈의 색상과 인쇄 시안을 3D로 확인하며 디자인을 수정하는 모습',
       },
     ],
   },
 ]
+
 export const SolutionGiftPromotionalDesignTemplate = () => {
   const { ref, inView } = useInView()
   const stickyRef = useRef<HTMLDivElement>(null)

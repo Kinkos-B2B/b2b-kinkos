@@ -59,6 +59,10 @@ const heroMockData = {
   ),
   buttonContent: '지금 전문가 연결하기',
   link: '/solutions/online-order/corporate-printing',
+  image: {
+    url: '/images/solutions/video-ai/emotion-analysis/solution-ex-1.png',
+    alt: '11_EX감성 분석_1_소비자가 진열대에서 가장 눈에 띄는 상품 패키지를 고르는 장면, EX감성 분석을 통한 패키지 디자인의 주목성 측정 예시',
+  },
 }
 
 const cardsMockData = {
@@ -112,13 +116,16 @@ const featureData: FeatureItem[] = [
     ],
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/video-ai/emotion-analysis/solution-ex-2.png',
+        alt: '11_EX감성 분석_2_EX감성으로 분석한 초코칩 패키지 디자인 A·B·C 시안별 시선 주목도 비교 결과, 제품명과 용량 표기의 주목 비율 시각화 예시',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/video-ai/emotion-analysis/solution-ex-3.png',
+        alt: '11_EX감성 분석_3_식음료 매장 포스터의 할인 이벤트 영역별 시선 주목도 분석 화면, 각 문구의 시각적 전달력을 수치화한 예시',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/video-ai/emotion-analysis/solution-ex-4.png',
+        alt: '11_EX감성 분석_4_도시락 프로모션 이미지의 시선 집중 지점 분석 결과, 제품 사진과 문구별 체류시간을 표시한 시선 이동 경로 예시',
       },
     ],
   },
@@ -136,13 +143,12 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/video-ai/emotion-analysis/solution-ex-5.png',
+        alt: '11_EX감성 분석_5_비타민 영양제 패키지 디자인 개선 전후 시선 주목도 비교 결과, 제품명과 설명 영역의 전달력 향상 효과를 시각화한 예시',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/video-ai/emotion-analysis/solution-ex-6.png',
+        alt: '11_EX감성 분석_6_경쟁 제품 대비 디자인 요소와 색상 포지셔닝을 분석한 그래프, EX감성을 활용한 브랜드 아이덴티티 일관성 분석 예시',
       },
     ],
   },
@@ -158,13 +164,12 @@ const featureData: FeatureItem[] = [
     ],
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/video-ai/emotion-analysis/solution-ex-7.png',
+        alt: '11_EX감성 분석_7_편의점 외부 매장 전면에 설치된 여러 프로모션 포스터, EX감성 분석을 통한 시선 유입 위치 확인 예시',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/video-ai/emotion-analysis/solution-ex-8.png',
+        alt: '11_EX감성 분석_8_EX감성 분석으로 제안된 X배너, 포스터 등 POSM 설치 위치 표시 화면, 시선 유도 효과가 높은 구좌 추천 예시',
       },
     ],
   },
@@ -183,13 +188,12 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/video-ai/emotion-analysis/solution-ex-9.png',
+        alt: '11_EX감성 분석_9_다양한 온라인 광고 이미지 중 시선 주목도가 가장 높은 소재를 식별한 결과 화면, 디지털 광고 효율 예측 예시',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/video-ai/emotion-analysis/solution-ex-10.png',
+        alt: '11_EX감성 분석_10_퍼포먼스 광고 소재 CTA 버튼 개선 전후의 시선 주목도 비교 결과, 클릭 유도 문구의 시각 전달력 향상 분석 예시',
       },
     ],
   },

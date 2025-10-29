@@ -185,8 +185,8 @@ export const SolutionFeatureDesktopSection = ({ featureItems }: Props) => {
             {data.imageData.map((image, index) => (
               <Image
                 key={index}
-                src={image.imageUrl}
-                alt="feature"
+                src={image.url}
+                alt={image.alt}
                 style={{
                   borderRadius: '28px',
                   width: '600px',

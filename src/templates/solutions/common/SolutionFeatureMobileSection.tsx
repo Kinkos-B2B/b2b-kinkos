@@ -87,8 +87,8 @@ export const SolutionFeatureMobileSection = ({
                 {imageData[index].map((image, index) => (
                   <Flex key={index} p={'20px'} pt={'0px'} alignItems={'start'}>
                     <Image
-                      src={image.imageUrl || ''}
-                      alt="feature"
+                      src={image.url || ''}
+                      alt={image.alt || ''}
                       width={isBase ? 240 : 360}
                       height={0}
                       sizes="100vw"

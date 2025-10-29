@@ -48,6 +48,10 @@ const heroMockData = {
   ),
   buttonContent: '지금 전문가 연결하기',
   link: '/solutions/online-order/corporate-printing',
+  image: {
+    url: '/images/solutions/design/pop-design/solution-pop-design-1.png',
+    alt: '3_매장 POP 디자인_1_유리창에 부착된 주스 프로모션 포스터, 매장 외부에서도 잘 보이는 투명형 POP 디자인 예시',
+  },
 }
 
 const cardsMockData = {
@@ -96,13 +100,16 @@ const featureData: FeatureItem[] = [
     ],
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/design/pop-design/solution-pop-design-2.png',
+        alt: '3_매장 POP 디자인_2_킨코스 시공 전문가가 매장 앞에 배너형 POP를 설치하며 사이즈와 위치를 점검하는 장면',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/design/pop-design/solution-pop-design-3.png',
+        alt: '3_매장 POP 디자인_3_분식 매장 벽면에 메뉴판과 포스터를 일관된 디자인으로 배치한 실내 POP 인테리어 예시',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/design/pop-design/solution-pop-design-4.png',
+        alt: '3_매장 POP 디자인_4_전문 시공팀이 사다리를 이용해 대형 메뉴 보드를 벽면에 설치하며 길이를 측정하는 모습',
       },
     ],
   },
@@ -120,13 +127,12 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/design/pop-design/solution-pop-design-5.png',
+        alt: '3_매장 POP 디자인_5_카페 테이블 위에 배치된 아크릴 거치형 안내 POP, 텀블러 할인과 주문 안내 문구가 인쇄된 홍보물',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/design/pop-design/solution-pop-design-6.png',
+        alt: '3_매장 POP 디자인_6_크기별로 제작된 아크릴 거치형 POP 세트, 다양한 매장 환경에 맞춘 사이즈 비교 예시',
       },
     ],
   },
@@ -142,13 +148,12 @@ const featureData: FeatureItem[] = [
     ],
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/design/pop-design/solution-pop-design-7.png',
+        alt: '3_매장 POP 디자인_7_분홍색 배경 위 여름 세일 30_ 할인 이벤트 포스터, 시즌성 프로모션 POP 디자인 예시',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/design/pop-design/solution-pop-design-8.png',
+        alt: '3_매장 POP 디자인_8_방수 처리된 소재로 제작된 공룡 캐릭터 POP 인쇄물, 습기 많은 환경에서도 사용할 수 있는 내수성 소재 예시',
       },
     ],
   },
@@ -167,13 +172,12 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/design/pop-design/solution-pop-design-9.png',
+        alt: '3_매장 POP 디자인_9_킨코스 로고가 부착된 흰색 배송 차량이 도심 도로를 달리며 POP 자재를 운송하는 모습',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/design/pop-design/solution-pop-design-10.png',
+        alt: '3_매장 POP 디자인_10_킨코스 시공팀이 행사장 내부에서 인물형 스탠딩 POP을 설치하는 장면, 이벤트 안내용 입간판 예시',
       },
     ],
   },

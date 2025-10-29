@@ -16,6 +16,7 @@ export const SolutionReleatedExportCard = ({
   solutionExpert,
 }: RelatedExpertCardProps) => {
   const { openPannel } = usePannelContext()
+
   return (
     <Box
       borderRadius="28px"

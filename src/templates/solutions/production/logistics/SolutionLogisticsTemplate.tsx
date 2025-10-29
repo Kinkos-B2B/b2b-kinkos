@@ -45,6 +45,10 @@ const heroMockData = {
   ),
   buttonContent: '지금 전문가 연결하기',
   link: '/solutions/online-order/corporate-printing',
+  image: {
+    url: '/images/solutions/production/logistics/solution-logistics-1.png',
+    alt: '7_통합제작 물류관리_1_킨코스 물류창고 전경, 인쇄물 포스터가 적재된 팔레트와 박스들이 정돈된 상태로 보관된 모습',
+  },
 }
 
 const cardsMockData = {
@@ -95,13 +99,12 @@ const featureData: FeatureItem[] = [
     ],
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/production/logistics/solution-logistics-2.png',
+        alt: '7_통합제작 물류관리_2_팔레트에 포장된 인쇄물 박스가 대량으로 보관된 킨코스 물류센터 내부 전경, 자동화 운반장비 배치',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/production/logistics/solution-logistics-3.png',
+        alt: '7_통합제작 물류관리_3_킨코스 작업자가 물류창고 내 인쇄물 포장 상태를 점검하는 모습, 품질 검수 과정 예시',
       },
     ],
   },
@@ -118,13 +121,12 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/production/logistics/solution-logistics-4.png',
+        alt: '7_통합제작 물류관리_4_사무실 내에서 재고 관리 시스템을 확인하는 킨코스 담당자, PC와 모바일을 통한 실시간 물류 관리 예시',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/production/logistics/solution-logistics-5.png',
+        alt: '7_통합제작 물류관리_5_모니터 화면에 인쇄물 색상·품질 검수용 소프트웨어가 실행된 장면, 색상 교정 및 인쇄 설정 관리 예시',
       },
     ],
   },
@@ -141,13 +143,12 @@ const featureData: FeatureItem[] = [
     ],
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/production/logistics/solution-logistics-6.png',
+        alt: '7_통합제작 물류관리_6_엘리베이터 앞에서 배송용 박스를 검수·정리 중인 킨코스 물류팀 직원들, 출고 전 점검 과정',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/production/logistics/solution-logistics-7.png',
+        alt: '7_통합제작 물류관리_7_킨코스 로고가 인쇄된 택배 박스를 고객에게 전달하는 배송 직원, 안전 포장 및 신속 배송 서비스 예시',
       },
     ],
   },
@@ -166,13 +167,12 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/production/logistics/solution-logistics-9.png',
+        alt: '7_통합제작 물류관리_8_서울, 경기, 부산 3개 거점을 표시한 킨코스 전국 물류 네트워크 지도, 전국 단위 신속 배송 시스템 안내 그래픽',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
-      },
-      {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/production/logistics/solution-logistics-9.png',
+        alt: '7_통합제작 물류관리_9_킨코스 배송 담당자가 고객에게 인쇄물 납품 확인서를 전달하는 장면, 납품 완료 단계 예시',
       },
     ],
   },

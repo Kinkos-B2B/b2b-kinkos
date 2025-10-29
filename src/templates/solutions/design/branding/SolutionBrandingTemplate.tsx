@@ -14,12 +14,15 @@ import {
   FeatureItem,
   SolutionFeatureSection,
 } from '../../common/SolutionFeatureSection'
-import { SolutionHeroSection } from '../../common/SolutionHeroSection'
+import {
+  SolutionHeroSection,
+  SolutionHeroSectionProps,
+} from '../../common/SolutionHeroSection'
 import { SolutionMoreInfoSection } from '../../common/SolutionMoreInfoSection'
 import { SolutionReleatedExportSection } from '../../common/SolutionReleatedExportSection'
 import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 
-const heroMockData = {
+const heroMockData: SolutionHeroSectionProps = {
   badge: '브랜딩 디자인',
   title: (
     <VStack
@@ -48,6 +51,10 @@ const heroMockData = {
       </Text>
     </>
   ),
+  image: {
+    url: '/images/solutions/design/branding/solution-branding-1.png',
+    alt: '1_브랜딩 디자인_1_브랜드 로고와 패키지, 스티커 등 통일된 디자인 요소로 구성된 베이커리 브랜드 브랜딩 예시',
+  },
   buttonContent: '지금 전문가 연결하기',
   link: '/solutions/online-order/corporate-printing',
 }
@@ -112,10 +119,12 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/design/branding/solution-branding-2.png',
+        alt: '1_브랜딩 디자인_2_킨코스 디자이너들이 커피 브랜드의 패키지 디자인 시안을 모니터로 검토하며 논의하는 모습',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/design/branding/solution-branding-3.png',
+        alt: '1_브랜딩 디자인_3_킨코스 디자인팀이 프랜차이즈 브랜드의 홍보물 시안을 회의실에서 공유하며 전략을 논의하는 장면',
       },
     ],
   },
@@ -141,10 +150,12 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/design/branding/solution-branding-4.png',
+        alt: '1_브랜딩 디자인_4_시안을 회의실에서 공유하며 전략을 논의하는 장면',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/design/branding/solution-branding-5.png',
+        alt: '1_브랜딩 디자인_5_팀원들이 노트북과 태블릿을 통해 로고와 스티커 디자인을 검토하며 브랜딩 아이디어를 논의하는 협업 회의',
       },
     ],
   },
@@ -175,10 +186,12 @@ const featureData: FeatureItem[] = [
     ],
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/design/branding/solution-branding-6.png',
+        alt: '1_브랜딩 디자인_6_킨코스 제작 전문가가 인쇄된 패키지 제품의 색상과 인쇄 품질을 확인하는 검수 과정',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/design/branding/solution-branding-7.png',
+        alt: '1_브랜딩 디자인_7_킨코스 고객지원 담당자가 전화 상담과 주문 관리 시스템을 통해 고객 프로젝트를 관리하는 모습',
       },
     ],
   },
@@ -204,10 +217,12 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        imageUrl: '/images/solutions/solutions-hero-section.jpg',
+        url: '/images/solutions/design/branding/solution-branding-8.png',
+        alt: '1_브랜딩 디자인_8_킨코스 제작팀이 대형 인쇄물을 작업대 위에서 정성스럽게 포장 준비하는 과정',
       },
       {
-        imageUrl: '/images/solutions/solutions-feature-mock-img.jpg',
+        url: '/images/solutions/design/branding/solution-branding-9.png',
+        alt: '1_브랜딩 디자인_9_킨코스 생산센터에서 전문가들이 대형 인쇄 장비로 브랜드 홍보물을 출력하고 품질을 점검하는 장면',
       },
     ],
   },
