@@ -145,11 +145,11 @@ const featureData: FeatureItem[] = [
     ],
     imageData: [
       {
-        url: '/images/solutions/online-order/franchise-printing/solution-franchise-printing-3.png',
+        url: '/images/solutions/online-order/franchise-printing/solution-franchise-printing-4.png',
         alt: '14_프랜차이즈 전용 인쇄몰_4_부서별 예산 사용 현황을 표시한 화면, 프랜차이즈 본사 차원의 인쇄 예산 관리 시스템 예시',
       },
       {
-        url: '/images/solutions/online-order/franchise-printing/solution-franchise-printing-3.png',
+        url: '/images/solutions/online-order/franchise-printing/solution-franchise-printing-5.png',
         alt: '14_프랜차이즈 전용 인쇄몰_5_관리자 권한으로 가맹점별 인쇄 예산을 설정하는 화면, 월별 배정 금액을 한눈에 확인할 수 있는 예시',
       },
     ],
@@ -176,11 +176,11 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        url: '/images/solutions/online-order/franchise-printing/solution-franchise-printing-3.png',
+        url: '/images/solutions/online-order/franchise-printing/solution-franchise-printing-6.png',
         alt: '14_프랜차이즈 전용 인쇄몰_6_가맹점 주문 승인 대기 및 취소 관리 화면, 본사 관리자가 주문 상태를 효율적으로 제어하는 예시',
       },
       {
-        url: '/images/solutions/online-order/franchise-printing/solution-franchise-printing-3.png',
+        url: '/images/solutions/online-order/franchise-printing/solution-franchise-printing-7.png',
         alt: '14_프랜차이즈 전용 인쇄몰_7_가맹점 주문 내역을 엑셀로 일괄 다운로드하는 관리자 화면, 전국 매장의 주문 데이터를 투명하게 관리하는 예시',
       },
     ],
@@ -208,11 +208,11 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        url: '/images/solutions/online-order/franchise-printing/solution-franchise-printing-3.png',
+        url: '/images/solutions/online-order/franchise-printing/solution-franchise-printing-8.png',
         alt: '14_프랜차이즈 전용 인쇄몰_8_게시판 형식으로 구성된 프랜차이즈 인쇄몰 이용 가이드 화면, 점주를 위한 안내 문서 제공 예시',
       },
       {
-        url: '/images/solutions/online-order/franchise-printing/solution-franchise-printing-3.png',
+        url: '/images/solutions/online-order/franchise-printing/solution-franchise-printing-9.png',
         alt: '14_프랜차이즈 전용 인쇄몰_9_직원이 노트북으로 프랜차이즈 전용 인쇄몰을 사용하는 모습, 가맹점에서 손쉽게 인쇄물을 주문하는 온라인 주문 환경 예시',
       },
     ],

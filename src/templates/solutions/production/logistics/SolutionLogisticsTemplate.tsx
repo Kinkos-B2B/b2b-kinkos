@@ -167,7 +167,7 @@ const featureData: FeatureItem[] = [
 
     imageData: [
       {
-        url: '/images/solutions/production/logistics/solution-logistics-9.png',
+        url: '/images/solutions/production/logistics/solution-logistics-8.png',
         alt: '7_통합제작 물류관리_8_서울, 경기, 부산 3개 거점을 표시한 킨코스 전국 물류 네트워크 지도, 전국 단위 신속 배송 시스템 안내 그래픽',
       },
       {
