@@ -82,7 +82,14 @@ export const CustomerReviewIntroBanner = ({ data }: Props) => {
                 <Text>솔루션 보러가기</Text>
               </Button>
             </VStack>
-            <Box
+            <Image
+              src={'/images/customer-review/banner-img.png'}
+              alt="customer-review-intro-banner-image"
+              width={586}
+              height={330}
+              borderRadius={'28px'}
+            />
+            {/* <Box
               position="relative"
               borderRadius="28px"
               bg="grey.8"
@@ -127,7 +134,7 @@ export const CustomerReviewIntroBanner = ({ data }: Props) => {
               >
                 <PlayIcon weight="fill" color={'#9FA4A9'} size={24} />
               </IconButton>
-            </Box>
+            </Box> */}
           </Flex>
         </Box>
       </Box>
