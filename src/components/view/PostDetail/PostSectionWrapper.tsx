@@ -21,6 +21,10 @@ export const PostSectionWrapper = ({
         '& i': {
           fontStyle: 'italic',
         },
+        '& a': {
+          color: 'revert',
+          textDecoration: 'revert',
+        },
       }}
     >
       <VStack gap={'8px'} alignItems={'start'} w={'100%'}>

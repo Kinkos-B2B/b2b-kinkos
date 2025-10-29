@@ -4,7 +4,7 @@ import { useRef } from 'react'
 
 import Image from 'next/image'
 
-import { Box, Text } from '@chakra-ui/react'
+import { Box, Text, chakra } from '@chakra-ui/react'
 import { useGSAP } from '@gsap/react'
 
 import { gsap } from 'gsap'
@@ -151,8 +151,24 @@ export const BizIntroductionHeroSection = () => {
         h={'calc(100dvh - 380px)'}
         overflow={'hidden'}
       >
-        <Image
-          src={'/images/biz/introduce/hero-bg.png'}
+        <chakra.video
+          src={`/images/biz/introduce/biz-introduction-1.mp4`}
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            objectFit: 'cover',
+            objectPosition: 'center',
+            width: '100%',
+            height: '100%',
+          }}
+        />
+        {/* <Image
           alt="hero bg"
           width={1920}
           height={1280}
@@ -167,7 +183,7 @@ export const BizIntroductionHeroSection = () => {
             width: '100%',
             height: '100%',
           }}
-        />
+        /> */}
 
         <Box
           bg={'rgba(0, 0, 0, 0.2)'}

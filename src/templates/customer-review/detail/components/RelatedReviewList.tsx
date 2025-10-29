@@ -93,7 +93,7 @@ export const RelatedReviewList = ({
   if (!data?.data?.length) return null
 
   return (
-    <Container maxW={'1280px'} py={{ base: '80px', sm: '100px', lg: '120px' }}>
+    <Container maxW={'1280px'} pb={{ base: '80px', sm: '100px', lg: '120px' }}>
       <VStack gap={'32px'} align="start" w="100%">
         <Text textStyle={'pre-heading-1'}>고객님을 위한 추가 스토리</Text>
         <VStack w={'100%'} align={'stretch'} gap={'28px'}>

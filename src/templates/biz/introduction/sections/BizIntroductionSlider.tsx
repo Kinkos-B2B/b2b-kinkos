@@ -19,7 +19,7 @@ const cards: BizIntroductionSliderCardProps[] = [
   {
     badgeText: '디자인 기획 솔루션',
     titleText: '비즈니스 가치를\n디자인합니다.',
-    image: '/images/biz/introduce/introduction-slider-card-img-1.jpg',
+    image: '/images/biz/introduce/introduction-slider-card-img-1.png',
     buttons: [
       {
         text: '브랜딩 디자인',
@@ -42,7 +42,7 @@ const cards: BizIntroductionSliderCardProps[] = [
   {
     badgeText: '인쇄 제작 솔루션',
     titleText: '복잡한 과정을 쉽게\n해결합니다.',
-    image: '/images/biz/introduce/introduction-slider-card-img-2.jpg',
+    image: '/images/biz/introduce/introduction-slider-card-img-2.png',
     buttons: [
       {
         text: '안전 사인물 제작 관리',
@@ -65,7 +65,7 @@ const cards: BizIntroductionSliderCardProps[] = [
   {
     badgeText: '디지털 혁신 솔루션',
     titleText: '더 스마트하게\n혁신합니다.',
-    image: '/images/biz/introduce/introduction-slider-card-img-3.jpg',
+    image: '/images/biz/introduce/introduction-slider-card-img-3.png',
     buttons: [
       [
         {

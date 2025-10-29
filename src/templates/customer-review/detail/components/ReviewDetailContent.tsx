@@ -20,6 +20,7 @@ const ContentBackgroundSection = ({
 }: {
   content: CustomerReviewBackgroundType
 }) => {
+  console.log(content.image?.url)
   return (
     <PostSectionWrapper
       title="도입 배경"

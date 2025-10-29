@@ -38,7 +38,7 @@ export const principleCardsData = [
       '고객의 결과물이 최종 목적지에 안전하게 도착할 때까지 끝까지 관리하고',
       '책임집니다.',
     ],
-    imageSrc: '/images/biz/introduce/kinkos-principle-1.png',
+    imageSrc: '/images/biz/introduce/kinkos-principle-2.png',
     imageAlt: '원스톱 포장 & 배송 이미지',
     backgroundColor: 'accent.yellow1',
     badgeColor: 'grey.0',
@@ -53,7 +53,7 @@ export const principleCardsData = [
       '국제 표준 보안 시스템으로 고객의 모든 디지털 자산을 안전하게 보호하고',
       '관리합니다.',
     ],
-    imageSrc: '/images/biz/introduce/kinkos-principle-1.png',
+    imageSrc: '/images/biz/introduce/kinkos-principle-3.png',
     imageAlt: '정보 보안 시스템 이미지',
     backgroundColor: 'primary.2',
     badgeColor: 'primary.1',
@@ -68,7 +68,7 @@ export const principleCardsData = [
       '킨코스의 전문가들이 더 나은 품질, 효율적인 공정, 합리적인 비용을 먼저',
       '제안해 드립니다.',
     ],
-    imageSrc: '/images/biz/introduce/kinkos-principle-1.png',
+    imageSrc: '/images/biz/introduce/kinkos-principle-4.png',
     imageAlt: '1:1 전문가 지원 이미지',
     backgroundColor: 'accent.red1',
     badgeColor: 'grey.0',
@@ -83,7 +83,7 @@ export const principleCardsData = [
       '강력한 네트워크로 전국 동시 프로모션부터 지사별 맞춤 제작까지',
       '비즈니스를 현실로 만듭니다.',
     ],
-    imageSrc: '/images/biz/introduce/kinkos-principle-1.png',
+    imageSrc: '/images/biz/introduce/kinkos-principle-5.png',
     imageAlt: '센터 네트워크 이미지',
     backgroundColor: 'accent.blue1',
     badgeColor: 'primary.1',
@@ -124,12 +124,6 @@ export const BizIntroductionPrincipleCardSection = () => {
           y: 160,
           zIndex: 0,
         })
-      })
-
-      gsap.set(cards, {
-        transformPerspective: 1000,
-        transformOrigin: '50% 50%',
-        willChange: 'transform, opacity',
       })
 
       const renderByProgress = (progress: number) => {
@@ -345,9 +339,8 @@ export const BizIntroductionPrincipleCardSection = () => {
                 }}
                 position={'absolute'}
                 h={'100%'}
-                top={'50%'}
                 left={'50%'}
-                transform={'translate(-50%, -50%)'}
+                transform={'translateX(-50%)'}
               >
                 <BizIntroductionPrincipleCard {...card} />
               </Box>
