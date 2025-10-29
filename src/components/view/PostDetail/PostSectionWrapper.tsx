@@ -17,6 +17,11 @@ export const PostSectionWrapper = ({
       w={{ base: '100%', lg: '820px' }}
       gap={'24px'}
       id={fragment}
+      css={{
+        '& i': {
+          fontStyle: 'italic',
+        },
+      }}
     >
       <VStack gap={'8px'} alignItems={'start'} w={'100%'}>
         <Text textStyle={'pre-body-5'} color={'grey.6'}>

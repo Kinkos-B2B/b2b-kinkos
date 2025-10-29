@@ -43,9 +43,11 @@ const ContentIntroSection = ({
             }}
           />
         )}
-        <Text textStyle={'pre-body-4'} color={'grey.9'}>
-          {content.body}
-        </Text>
+        <Text
+          textStyle={'pre-body-4'}
+          color={'grey.9'}
+          dangerouslySetInnerHTML={{ __html: content.body ?? '' }}
+        ></Text>
       </VStack>
     </PostSectionWrapper>
   )
@@ -118,9 +120,11 @@ const ContentSolutionSection = ({
         >
           <Text textStyle={'pre-heading-1'}>{`"${content.mainText}"`}</Text>
         </Box>
-        <Text textStyle={'pre-body-4'} color={'grey.9'}>
-          {content.secondBody}
-        </Text>
+        <Text
+          textStyle={'pre-body-4'}
+          color={'grey.9'}
+          dangerouslySetInnerHTML={{ __html: content.secondBody ?? '' }}
+        ></Text>
       </VStack>
     </PostSectionWrapper>
   )
@@ -191,9 +195,11 @@ const ContentChangeSection = ({
             }}
           />
         )}
-        <Text textStyle={'pre-body-4'} color={'grey.9'}>
-          {content.body}
-        </Text>
+        <Text
+          textStyle={'pre-body-4'}
+          color={'grey.9'}
+          dangerouslySetInnerHTML={{ __html: content.body ?? '' }}
+        ></Text>
       </VStack>
     </PostSectionWrapper>
   )

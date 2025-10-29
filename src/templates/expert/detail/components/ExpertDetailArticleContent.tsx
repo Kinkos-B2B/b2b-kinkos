@@ -29,9 +29,11 @@ const ExpertIntroSection = ({ content }: { content: ExpertIntroType }) => {
             objectFit={'cover'}
           />
         )}
-        <Text textStyle={'pre-body-4'} color={'grey.9'}>
-          {content.body}
-        </Text>
+        <Text
+          textStyle={'pre-body-4'}
+          color={'grey.9'}
+          dangerouslySetInnerHTML={{ __html: content.body ?? '' }}
+        ></Text>
       </VStack>
     </PostSectionWrapper>
   )
@@ -65,9 +67,11 @@ const ExpertCareerSection = ({ content }: { content: ExpertCareerType }) => {
             />
           )}
         </VStack>
-        <Text textStyle={'pre-body-4'} color={'grey.9'}>
-          {content.body}
-        </Text>
+        <Text
+          textStyle={'pre-body-4'}
+          color={'grey.9'}
+          dangerouslySetInnerHTML={{ __html: content.body ?? '' }}
+        ></Text>
       </VStack>
     </PostSectionWrapper>
   )
@@ -94,9 +98,11 @@ const ExpertStrengthSection = ({
             objectFit={'cover'}
           />
         )}
-        <Text textStyle={'pre-body-4'} color={'grey.9'}>
-          {content.body}
-        </Text>
+        <Text
+          textStyle={'pre-body-4'}
+          color={'grey.9'}
+          dangerouslySetInnerHTML={{ __html: content.body ?? '' }}
+        ></Text>
       </VStack>
     </PostSectionWrapper>
   )

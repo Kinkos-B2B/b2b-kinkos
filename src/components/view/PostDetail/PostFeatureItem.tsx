@@ -56,9 +56,8 @@ export const PostFeatureItem = ({
           fontSize="16px"
           lineHeight="1.6"
           letterSpacing="-0.32px"
-        >
-          {description}
-        </Text>
+          dangerouslySetInnerHTML={{ __html: description ?? '' }}
+        ></Text>
       </HStack>
     </VStack>
   )

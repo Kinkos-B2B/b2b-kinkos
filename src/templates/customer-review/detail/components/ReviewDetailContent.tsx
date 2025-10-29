@@ -36,9 +36,11 @@ const ContentBackgroundSection = ({
             objectFit={'cover'}
           />
         )}
-        <Text textStyle={'pre-body-4'} color={'grey.9'}>
-          {content.body}
-        </Text>
+        <Text
+          textStyle={'pre-body-4'}
+          color={'grey.9'}
+          dangerouslySetInnerHTML={{ __html: content.body ?? '' }}
+        ></Text>
       </VStack>
     </PostSectionWrapper>
   )
@@ -76,9 +78,11 @@ const ContentReasonSection = ({
             />
           )}
         </VStack>
-        <Text textStyle={'pre-body-4'} color={'grey.9'}>
-          {content.body}
-        </Text>
+        <Text
+          textStyle={'pre-body-4'}
+          color={'grey.9'}
+          dangerouslySetInnerHTML={{ __html: content.body ?? '' }}
+        ></Text>
       </VStack>
     </PostSectionWrapper>
   )
@@ -108,9 +112,11 @@ const ContentOutcomeSection = ({
               />
             )}
           </VStack>
-          <Text textStyle={'pre-body-4'} color={'grey.9'}>
-            {content.body}
-          </Text>
+          <Text
+            textStyle={'pre-body-4'}
+            color={'grey.9'}
+            dangerouslySetInnerHTML={{ __html: content.body ?? '' }}
+          ></Text>
         </VStack>
 
         <VStack gap={'10px'} alignItems={'start'} w={'100%'}>
@@ -149,9 +155,11 @@ const ContentRecommendationSection = ({
             objectFit={'cover'}
           />
         )}
-        <Text textStyle={'pre-body-4'} color={'grey.9'}>
-          {content.body}
-        </Text>
+        <Text
+          textStyle={'pre-body-4'}
+          color={'grey.9'}
+          dangerouslySetInnerHTML={{ __html: content.body ?? '' }}
+        ></Text>
       </VStack>
     </PostSectionWrapper>
   )
@@ -181,9 +189,11 @@ const ContentInterviewSection = ({
               />
             )}
           </VStack>
-          <Text textStyle={'pre-body-4'} color={'grey.9'}>
-            {content.body}
-          </Text>
+          <Text
+            textStyle={'pre-body-4'}
+            color={'grey.9'}
+            dangerouslySetInnerHTML={{ __html: content.body ?? '' }}
+          ></Text>
         </VStack>
         <VStack gap={'10px'} alignItems={'start'}>
           {[

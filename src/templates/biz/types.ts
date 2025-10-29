@@ -2,7 +2,10 @@ export type BizHeroSectionData = {
   badge: string
   title: string
   description: string
-  images: string[]
+  images: {
+    url: string
+    alt: string
+  }[]
 }
 
 export type BizDescriptionBannerData = {
@@ -15,7 +18,10 @@ export type BizDescriptionItem = {
   badge?: string
   title: string
   description?: string
-  images: string[]
+  images: {
+    url: string
+    alt: string
+  }[]
   infos: {
     name: [string, string] | string
     description?: string
@@ -27,6 +33,10 @@ export type BizDescriptionItem = {
 }
 
 export type BizVideoSectionData = {
+  thumbnailUrl: {
+    url: string
+    alt: string
+  }[]
   title: string
   description: string
   buttonText: string

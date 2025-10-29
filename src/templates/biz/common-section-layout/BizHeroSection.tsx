@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import { Box, Flex, Text, VStack } from '@chakra-ui/react'
 
 import Marquee from 'react-fast-marquee'
@@ -9,7 +11,10 @@ interface Props {
   badge: string
   title: string
   description: string
-  images: string[]
+  images: {
+    url: string
+    alt: string
+  }[]
 }
 
 export const BizHeroSection = ({
@@ -70,13 +75,26 @@ export const BizHeroSection = ({
               maxW={{ sm: '562px', lg: '740px' }}
               borderRadius="28px"
               aspectRatio="740 / 500"
-              backgroundImage={`url(${image})`}
               backgroundSize="cover"
               backgroundPosition="center"
               backgroundRepeat="no-repeat"
               marginRight={{ base: '20px', lg: '32px' }}
+              position="relative"
               flexShrink={0}
-            />
+            >
+              <Image
+                src={image.url}
+                alt={image.alt}
+                fill
+                style={{
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                  borderRadius: '28px',
+                  width: '100%',
+                  height: '100%',
+                }}
+              />
+            </Box>
           ))}
         </Marquee>
       </Flex>

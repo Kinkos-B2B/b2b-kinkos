@@ -28,9 +28,18 @@ export const heroSectionMockData: BizHeroSectionData = {
   description:
     '기업 전용 온라인 주문 관리부터 보안 제작 지원 센터까지,\n킨코스는 기술과 보안 역량을 결합해 신뢰할 수 있는 비즈니스 파트너가 됩니다.',
   images: [
-    '/images/biz/hero/biz-hero-intro-1.jpg',
-    '/images/biz/hero/biz-hero-intro-2.jpg',
-    '/images/biz/hero/biz-hero-intro-3.jpg',
+    {
+      url: '/images/biz/it-security/biz-it-security-1.png',
+      alt: '3_it보안_1_킨코스 보안제작지원센터 내부 전경, 기밀 인쇄물을 안전하게 제작하기 위한 전문 보안 환경',
+    },
+    {
+      url: '/images/biz/it-security/biz-it-security-2.png',
+      alt: '3_it보안_2_브랜드 전용 온라인 인쇄 주문 화면, 기업별 맞춤 보안 주문 관리 시스템 예시',
+    },
+    {
+      url: '/images/biz/it-security/biz-it-security-3.png',
+      alt: '3_it보안_3_모바일 기기로 명함 샘플을 선택해 주문하는 모습, 어디서나 안전하게 접속 가능한 온라인 주문 시스템',
+    },
   ],
 }
 
@@ -45,9 +54,14 @@ const descriptionItemMockData1: BizDescriptionItem = {
   title: '출입 제한 구역',
   description: '지정 인원 외 출입이 불가합니다.',
   images: [
-    '/images/biz/it-security/it-security-1.png',
-    '/images/biz/it-security/it-security-2.png',
-    '/images/biz/it-security/it-security-3.png',
+    {
+      url: '/images/biz/it-security/biz-it-security-4.png',
+      alt: '3_it보안_4_킨코스 방문객 관리 안내문과 방문증, 출입 기록 및 신원 확인을 통한 철저한 출입 통제 절차',
+    },
+    {
+      url: '/images/biz/it-security/biz-it-security-5.png',
+      alt: '3_it보안_5_킨코스 보안 구역 출입용 방문증, 외부 방문자 관리와 출입 이력 확인을 위한 보안 시스템 구성 요소',
+    },
   ],
   infos: [
     {
@@ -62,9 +76,15 @@ const descriptionItemMockData2: BizDescriptionItem = {
   title: '보안 감시 체계',
   description: 'CCTV 및 접근 기록을 철저히 관리합니다.',
   images: [
-    '/images/biz/it-security/it-security-1.png',
-    '/images/biz/it-security/it-security-2.png',
-    '/images/biz/it-security/it-security-3.png',
+    {
+      url: '/images/biz/it-security/biz-it-security-6.png',
+      alt: '3_it보안_6_킨코스 보안제작지원센터 내부 창고 구역, 보안 인쇄물과 자재를 안전하게 보관하는 관리 시스템',
+    },
+
+    {
+      url: '/images/biz/it-security/biz-it-security-7.png',
+      alt: '3_it보안_7_CCTV 모니터에 표시된 보안 제작 현장 영상, 전 구역 실시간 감시로 기밀 제작물의 안전성을 확보하는 시스템',
+    },
   ],
   infos: [
     {
@@ -79,9 +99,18 @@ const descriptionItemMockData3: BizDescriptionItem = {
   title: '고품질 대량 제작',
   description: '기밀을 유지하면서 대량 제작물의 일관된 품질을 보장합니다.',
   images: [
-    '/images/biz/it-security/it-security-1.png',
-    '/images/biz/it-security/it-security-2.png',
-    '/images/biz/it-security/it-security-3.png',
+    {
+      url: '/images/biz/it-security/biz-it-security-8.png',
+      alt: '3_it보안_8_다수의 보안 인쇄 장비가 배치된 킨코스 보안제작센터 내부, 철저한 관리하에 대량 인쇄를 수행하는 환경',
+    },
+    {
+      url: '/images/biz/it-security/biz-it-security-9.png',
+      alt: '3_it보안_9_킨코스 직원이 제본 작업을 진행하는 모습, 제작 전 과정에서 보안이 유지되는 기밀 인쇄물 관리',
+    },
+    {
+      url: '/images/biz/it-security/biz-it-security-10.png',
+      alt: '3_it보안_10_보안 인쇄센터 내 제본 및 후가공 장비가 정돈된 모습, 고품질 인쇄물을 안전하게 생산하는 시스템 환경',
+    },
   ],
   infos: [
     {
@@ -102,6 +131,16 @@ export const bizVideoSectionMockData: BizVideoSectionData = {
   title: '킨코스 보안 제작 지원 센터를\n직접 방문해 보고 싶으신가요?',
   description: '킨코스 담당자와의 사전 일정 예약을 통해 관람할 수 있습니다.',
   buttonText: '센터 관람 요청',
+  thumbnailUrl: [
+    {
+      url: '/images/biz/it-security/biz-it-security-11-1.png',
+      alt: '3_it보안_11_썸네일1_기밀 인쇄물을 안전하게 관리하는 킨코스 보안 환경을 영상으로 미리볼 수 있는 유튜브 영상 썸네일 이미지',
+    },
+    {
+      url: '/images/biz/it-security/biz-it-security-11-2.png',
+      alt: '3_it보안_11_썸네일2_기밀 인쇄물을 안전하게 관리하는 킨코스 보안 환경을 영상으로 미리볼 수 있는 유튜브 영상 썸네일 이미지',
+    },
+  ],
   moreInfoLink: {
     url: 'https://youtu.be/s_VC4H4LNZo?si=3qUMCajvAxGokHET',
     target: '_blank',
@@ -120,9 +159,18 @@ export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =
       descriptionItem: {
         title: '온라인 주문 관리 솔루션',
         images: [
-          '/images/biz/it-security/it-security-1.png',
-          '/images/biz/it-security/it-security-2.png',
-          '/images/biz/it-security/it-security-3.png',
+          {
+            url: '/images/biz/it-security/biz-it-security-12.png',
+            alt: '3_it보안_12_기업 전용 온라인 인쇄몰 관리 화면, 품목별 결제 방식과 색상 포인트를 설정할 수 있는 보안 주문 시스템',
+          },
+          {
+            url: '/images/biz/it-security/biz-it-security-13.png',
+            alt: '3_it보안_13_매장 앞 설치된 판촉용 배너 예시, 프랜차이즈 업종에 특화된 보안 주문 시스템을 활용하여 배너를 제작한 사례',
+          },
+          {
+            url: '/images/biz/it-security/biz-it-security-14.png',
+            alt: '3_it보안_14_온라인 명함 제작 페이지 예시, 기업 전용 보안 서버를 통한 명함 템플릿 관리 및 인쇄 주문 기능',
+          },
         ],
         infos: [
           {
@@ -157,9 +205,14 @@ export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =
       descriptionItem: {
         title: '철저한 보안 관리 역량',
         images: [
-          '/images/biz/it-security/it-security-1.png',
-          '/images/biz/it-security/it-security-2.png',
-          '/images/biz/it-security/it-security-3.png',
+          {
+            url: '/images/biz/it-security/biz-it-security-15.png',
+            alt: '3_it보안_15_ISO_IEC 27001 정보보호관리체계 인증 로고, 국제 기준에 따른 킨코스의 데이터 보안 인증 획득 표시',
+          },
+          {
+            url: '/images/biz/it-security/biz-it-security-16.png',
+            alt: '3_it보안_16_디지털 자물쇠 그래픽과 킨코스 로고, 데이터 암호화와 정보 보호 기술을 상징하는 보안 비주얼 이미지',
+          },
         ],
         infos: [
           {
@@ -181,7 +234,6 @@ export const BizItSecurityTemplate = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY
-      console.log('Scroll position:', scrollTop) // 디버깅용
       setIsScrolled(scrollTop > 0)
     }
 

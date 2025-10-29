@@ -27,9 +27,18 @@ export const heroSectionMockData: BizHeroSectionData = {
   description:
     '기획부터 디자인, 제작, 사후관리까지 전문 인력이 전담하여\n기업 고객의 비즈니스를 안정적으로 지원합니다.',
   images: [
-    '/images/biz/hero/biz-hero-intro-1.jpg',
-    '/images/biz/hero/biz-hero-intro-2.jpg',
-    '/images/biz/hero/biz-hero-intro-3.jpg',
+    {
+      url: '/images/biz/support/biz-support-1.png',
+      alt: '4_인력지원_1_디자이너들이 태블릿과 노트북을 활용해 로고와 스티커 디자인 시안을 검토하는 협업 회의 모습',
+    },
+    {
+      url: '/images/biz/support/biz-support-2.png',
+      alt: '4_인력지원_2_킨코스 직원이 제본 작업 중 품질을 확인하며 인쇄물을 정리하는 모습',
+    },
+    {
+      url: '/images/biz/support/biz-support-3.png',
+      alt: '4_인력지원_3_킨코스 디자이너가 모니터로 제품 패키지 디자인을 검수하고 수정하는 모습',
+    },
   ],
 }
 
@@ -45,9 +54,14 @@ const descriptionItemMockData1: BizDescriptionItem = {
   description:
     '고객사 전담 전문가(영업대표) 및 디자이너가 기획부터 디자인을 전담합니다.',
   images: [
-    '/images/biz/it-security/it-security-1.png',
-    '/images/biz/it-security/it-security-2.png',
-    '/images/biz/it-security/it-security-3.png',
+    {
+      url: '/images/biz/support/biz-support-4.png',
+      alt: '4_인력지원_4_회의실에서 노트북과 대형 화면을 통해 마케팅 영상을 공유하며 회의하는 킨코스 팀원들',
+    },
+    {
+      url: '/images/biz/support/biz-support-5.png',
+      alt: '4_인력지원_5_그래픽 디자이너가 모니터로 인쇄 디자인 파일을 작업 중인 모습, 정돈된 사무 공간과 전문 장비 환경',
+    },
   ],
   infos: [
     {
@@ -67,9 +81,14 @@ const descriptionItemMockData2: BizDescriptionItem = {
   title: '빠른 시안 제안',
   description: '다수의 시안을 빠르게 제시하고 선택의 폭을 넓힙니다.',
   images: [
-    '/images/biz/it-security/it-security-1.png',
-    '/images/biz/it-security/it-security-2.png',
-    '/images/biz/it-security/it-security-3.png',
+    {
+      url: '/images/biz/support/biz-support-6.png',
+      alt: '4_인력지원_6_디자인 시안과 인쇄물 샘플을 검토하며 브랜드 캠페인 기획을 논의하는 킨코스 미팅 장면',
+    },
+    {
+      url: '/images/biz/support/biz-support-7.png',
+      alt: '4_인력지원_7_태블릿과 종이 도면을 보며 제품 패키지 구조를 논의하는 기획자와 디자이너의 협업 장면',
+    },
   ],
   infos: [
     {
@@ -84,9 +103,19 @@ const descriptionItemMockData3: BizDescriptionItem = {
   title: '브랜드 최적화 디자인',
   description: '업종 특성과 브랜드 아이덴티티에 맞춘 전문 디자인을 제공합니다.',
   images: [
-    '/images/biz/it-security/it-security-1.png',
-    '/images/biz/it-security/it-security-2.png',
-    '/images/biz/it-security/it-security-3.png',
+    {
+      url: '/images/biz/support/biz-support-8.png',
+      alt: '4_인력지원_8_킨코스 로고가 새겨진 다이어리와 캘린더 세트, 기업용 오피스 디자인 키트 구성 이미지',
+    },
+
+    {
+      url: '/images/biz/support/biz-support-9.png',
+      alt: '4_인력지원_8_킨코스 로고가 새겨진 다이어리와 캘린더 세트, 기업용 오피스 디자인 키트 구성 이미지',
+    },
+    {
+      url: '/images/biz/support/biz-support-10.png',
+      alt: '4_인력지원_8_킨코스 로고가 새겨진 다이어리와 캘린더 세트, 기업용 오피스 디자인 키트 구성 이미지',
+    },
   ],
   infos: [
     {
@@ -110,6 +139,12 @@ export const bizVideoSectionMockData: BizVideoSectionData = {
   buttonText: '전문가 연결하기',
   buttonLink: ROUTES.EXPERT,
   moreInfoButtonText: '관련 콘텐츠 보러가기',
+  thumbnailUrl: [
+    {
+      url: '/images/biz/support/biz-support-11.png',
+      alt: '4_인력지원_11_킨코스 직원들이 브랜드 굿즈와 캘린더 키트를 활용해 협업 아이디어를 논의하는 회의 장면, 브랜딩 디자인 솔루션 예시',
+    },
+  ],
   moreInfoLink: {
     url: ROUTES.SOLUTIONS.DESIGN.BRANDING,
     target: '_self',
@@ -128,9 +163,18 @@ export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =
       descriptionItem: {
         title: '끝까지 책임지는 전담팀',
         images: [
-          '/images/biz/it-security/it-security-1.png',
-          '/images/biz/it-security/it-security-2.png',
-          '/images/biz/it-security/it-security-3.png',
+          {
+            url: '/images/biz/support/biz-support-12.png',
+            alt: '4_인력지원_12_킨코스 사무실 전경, 각 부서 직원들이 개별 모니터에서 업무를 수행하는 오피스 환경',
+          },
+          {
+            url: '/images/biz/support/biz-support-13.png',
+            alt: '4_인력지원_13_킨코스 QC ZONE 안내판, 품질 점검을 위한 전용 확인 구역 표시 이미지',
+          },
+          {
+            url: '/images/biz/support/biz-support-14.png',
+            alt: '4_인력지원_14_QC ZONE 점검 체크리스트, 인쇄물 출하 전 품질 검수 절차를 안내하는 문서 이미지',
+          },
         ],
         infos: [
           {
@@ -163,9 +207,14 @@ export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =
       descriptionItem: {
         title: '지속 관리 서비스',
         images: [
-          '/images/biz/it-security/it-security-1.png',
-          '/images/biz/it-security/it-security-2.png',
-          '/images/biz/it-security/it-security-3.png',
+          {
+            url: '/images/biz/support/biz-support-15.png',
+            alt: '4_인력지원_15_킨코스 디자이너가 듀얼 모니터로 디자인 시안을 검토하며 고객사의 피드백을 반영한 업무 중인 모습',
+          },
+          {
+            url: '/images/biz/support/biz-support-16.png',
+            alt: '4_인력지원_16_킨코스 디자인팀 사무실 내부, 협업 중인 디자이너들과 그래픽 디자인 작업 장면',
+          },
         ],
         infos: [
           {

@@ -16,6 +16,7 @@ import { BizDescriptionBanner } from '../common-section-layout/components/BizDes
 import {
   BizDescriptionBannerData,
   BizDescriptionItem,
+  BizDescriptionWithBannerProps,
   BizHeroSectionData,
   BizVideoSectionData,
 } from '../types'
@@ -26,9 +27,18 @@ export const heroSectionMockData: BizHeroSectionData = {
   description:
     '대량부터 소량까지, 킨코스의 첨단 인프라와 스마트한 생산 공정으로\n당신의 비즈니스를 최고 품질로 완성하세요.',
   images: [
-    '/images/biz/hero/biz-hero-intro-1.jpg',
-    '/images/biz/hero/biz-hero-intro-2.jpg',
-    '/images/biz/hero/biz-hero-intro-3.jpg',
+    {
+      url: '/images/biz/production/biz-production-1.png',
+      alt: '킨코스 생산센터 내 대형 실사 출력 장비가 가동 중인 모습, 고해상도 인쇄와 대형 그래픽 출력이 가능한 첨단 장비 환경',
+    },
+    {
+      url: '/images/biz/production/biz-production-2.png',
+      alt: 'SIGN & GRAPHICS 생산 센터에서 에서 직원이 커팅 장비를 조작하며, 실내외 사인물 및 그래픽 소재를 정밀 가공하고 있는 현장',
+    },
+    {
+      url: '/images/biz/production/biz-production-3.png',
+      alt: '킨코스 디지털 인쇄실 전경, 코니카미놀타 고속 디지털 인쇄기가 일렬로 배치된 대량 인쇄 대응 시스템',
+    },
   ],
 }
 
@@ -45,12 +55,18 @@ const descriptionItemMockData1: BizDescriptionItem = {
   description:
     '첨단 장비와 스마트 공정 관리 시스템(MES)으로 제작,\n생산 시스템을 갖추고 있어 어떤 규모의 인쇄도 흔들림 없는 품질을 유지합니다.',
   images: [
-    '/images/biz/production/production-1.png',
-    '/images/biz/production/production-2.png',
-    '/images/biz/production/production-3.png',
-    '/images/biz/production/production-4.png',
-    '/images/biz/production/production-5.png',
-    '/images/biz/production/production-6.png',
+    {
+      url: '/images/biz/production/biz-production-4.png',
+      alt: '킨코스 생산센터 내부의 디지털 인쇄 장비가 정렬된 모습, 효율적 공정과 품질 일관성을 위한 스마트 인쇄 라인',
+    },
+    {
+      url: '/images/biz/production/biz-production-5.png',
+      alt: '다양한 대형 실사 출력 장비가 설치된 킨코스 인쇄실, HP 장비를 통한 실사물 및 특수 소재 인쇄 작업 환경',
+    },
+    {
+      url: '/images/biz/production/biz-production-6.png',
+      alt: '킨코스 서포트 센터 공간 내부 전경, 출력 및 제본 장비가 정돈된 상태로 배치된 인하우스형 제작실',
+    },
   ],
   infos: [
     {
@@ -69,9 +85,14 @@ const descriptionItemMockData2: BizDescriptionItem = {
   description:
     '리테일 매장과 분리된 B2B 전용 센터에서 기업 인쇄물을 더욱 빠르고 신속하게 처리합니다.',
   images: [
-    '/images/biz/production/production-1.png',
-    '/images/biz/production/production-1.png',
-    '/images/biz/production/production-1.png',
+    {
+      url: '/images/biz/production/biz-production-7.png',
+      alt: '킨코스 직원이 제본된 인쇄물을 검수하고 정리하는 모습, 맞춤 제작물의 품질 확인 및 포장 전 공정 관리 장면',
+    },
+    {
+      url: '/images/biz/production/biz-production-8.png',
+      alt: '1_생산제작_8_킨코스 직원이 제본된 인쇄물을 검수하고 정리하는 모습, 맞춤 제작물의 품질 확인 및 포장 전 공정 관리 장면',
+    },
   ],
   infos: [
     {
@@ -85,9 +106,14 @@ const descriptionItemMockData3: BizDescriptionItem = {
   description:
     '바이오, 프랜차이즈 등 각 산업의 특성을 완벽하게 이해하고 전문적인 제작을 지원합니다.',
   images: [
-    '/images/biz/production/production-1.png',
-    '/images/biz/production/production-1.png',
-    '/images/biz/production/production-1.png',
+    {
+      url: '/images/biz/production/biz-production-9.png',
+      alt: '1_생산제작_9_킨코스에서 시제품 및 맞춤 제작에 활용되는 3D 프린터 장비, 정밀한 출력 테스트를 수행 중인 모습',
+    },
+    {
+      url: '/images/biz/production/biz-production-10.png',
+      alt: '1_생산제작_10_매장 내 메뉴판과 POP가 실제 매장 환경에 설치된 예시, 킨코스에서 제작된 프랜차이즈 맞춤형 출력물 적용 사례',
+    },
   ],
   infos: [
     {
@@ -107,75 +133,100 @@ export const bizVideoSectionMockData: BizVideoSectionData = {
   description:
     '상담 신청 시 공장 관람을 요청하시면 전체 제작 과정을 투명하게 보여 드립니다.',
   buttonText: '생산 공장 관람 요청',
+  thumbnailUrl: [
+    {
+      url: '/images/biz/production/biz-production-11.gif',
+      alt: '1_생산제작_11_킨코스 생산센터 내 출력장비들이 가동되는 모습, 대형 실사물과 그래픽 출력 작업이 진행 중인 현장 영상',
+    },
+  ],
   moreInfoLink: {
     url: 'https://youtu.be/9_cNmJAsfME?si=065afGog8MR944L2',
     target: '_blank',
   },
 }
 
-export const bizDescriptionWithBannerMockData = [
-  {
-    banner: {
-      title: '대량 생산은 물론,\n긴급한 소량 인쇄도 가능할까요?',
-      badgeText: '대량과 소량, 모두를 위한 제작 장비',
-      description:
-        '킨코스는 모기업 코니카미놀타의 최신식 장비를 비롯해 다양한 최고급 장비를 보유하고 있습니다.\n이 장비들은 대량 생산의 효율성뿐만 아니라, 소량 생산에 대한 유연한 대응을 가능하게 합니다.',
+export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =
+  [
+    {
+      banner: {
+        title: '대량 생산은 물론,\n긴급한 소량 인쇄도 가능할까요?',
+        badgeText: '대량과 소량, 모두를 위한 제작 장비',
+        description:
+          '킨코스는 모기업 코니카미놀타의 최신식 장비를 비롯해 다양한 최고급 장비를 보유하고 있습니다.\n이 장비들은 대량 생산의 효율성뿐만 아니라, 소량 생산에 대한 유연한 대응을 가능하게 합니다.',
+      },
+      descriptionItem: {
+        title: '다양한 제작 장비',
+        images: [
+          {
+            url: '/images/biz/production/biz-production-12.png',
+            alt: '1_생산제작_12_대형 실사 출력기와 라미네이팅 장비가 정렬된 킨코스 실사 인쇄 존, 출력 후 후가공 공정까지 이어지는 장비 배치 모습',
+          },
+          {
+            url: '/images/biz/production/biz-production-13.png',
+            alt: '1_생산제작_13_킨코스 Cutting Zone 내부, 대형 커팅 장비가 설치된 공간에서 인쇄물 절단 및 재단 작업이 이루어지는 장면',
+          },
+          {
+            url: '/images/biz/production/biz-production-14.png',
+            alt: '1_생산제작_14_킨코스 생산센터 내 최신 UV 잉크젯 프린터 장비가 가동 중인 모습, 대형 인쇄물 제작과 고품질 그래픽 출력에 활용되는 설비',
+          },
+        ],
+        infos: [
+          {
+            name: '고품질 인쇄 장비',
+            description:
+              '코니카미놀타의 최신 디지털 인쇄기로 선명한 컬러와 정교한 디테일을 구현합니다.',
+          },
+          {
+            name: '고급 후가공 장비',
+            description:
+              '멀티 컷팅기, 대형 접지기 등 전문 후가공 장비를 통해 인쇄물의 완성도를 한 차원 높여줍니다.',
+          },
+          {
+            name: '사인물 제작 장비',
+            description:
+              'HP 장비를 포함한 최고 품질의 장비로 대형 현수막, POP, 사인물 등 특수 인쇄물까지 완벽하게 제작합니다.',
+          },
+        ],
+      },
     },
-    descriptionItem: {
-      title: '다양한 제작 장비',
-      images: [
-        '/images/biz/production/production-1.png',
-        '/images/biz/production/production-1.png',
-        '/images/biz/production/production-1.png',
-      ],
-      infos: [
-        {
-          name: '고품질 인쇄 장비',
-          description:
-            '코니카미놀타의 최신 디지털 인쇄기로 선명한 컬러와 정교한 디테일을 구현합니다.',
-        },
-        {
-          name: '고급 후가공 장비',
-          description:
-            '멀티 컷팅기, 대형 접지기 등 전문 후가공 장비를 통해 인쇄물의 완성도를 한 차원 높여줍니다.',
-        },
-        {
-          name: '사인물 제작 장비',
-          description:
-            'HP 장비를 포함한 최고 품질의 장비로 대형 현수막, POP, 사인물 등 특수 인쇄물까지 완벽하게 제작합니다.',
-        },
-      ],
+    {
+      banner: {
+        title: '환경을 생각하는\n인쇄 솔루션도 제공하나요?',
+        badgeText: 'ESG 경영 파트너, 킨코스',
+        description:
+          '킨코스는 지속 가능한 성장을 추구하며, 당신의 비즈니스와 함께 더 나은 미래를 만들어 가고자 합니다.',
+      },
+      descriptionItem: {
+        title: '환경을 생각하는 솔루션',
+        images: [
+          {
+            url: '/images/biz/production/biz-production-15.png',
+            alt: '1_생산제작_16_킨코스 직원이 인쇄 공정 중 용지를 정렬하며 품질을 점검하는 장면, 인쇄물 접지 및 후가공 과정의 세밀한 관리 모습.png',
+          },
+          {
+            url: '/images/biz/production/biz-production-16.png',
+            alt: '1_생산제작_16_킨코스 직원이 인쇄 공정 중 용지를 정렬하며 품질을 점검하는 장면, 인쇄물 접지 및 후가공 과정의 세밀한 관리 모습.png',
+          },
+          {
+            url: '/images/biz/production/biz-production-17.png',
+            alt: '1_생산제작_17_킨코스 생산센터 내 부품 및 토너 보관 창고, 코니카미놀타 토너 박스와 장비 부품이 체계적으로 정리된 모습',
+          },
+        ],
+        infos: [
+          {
+            name: '친환경 인쇄 솔루션',
+            description:
+              'FSC® 인증 용지 사용, 식물성 잉크 사용 등 환경 보호를 위한 킨코스의 노력을 소개합니다.',
+          },
+          {
+            name: '지속 가능한 미래',
+            description:
+              '킨코스는 당신의 비즈니스 성공뿐만 아니라, 환경적 책임을 다하는 파트너로서 지속 가능한 미래를 함께 만들어가겠습니다.',
+          },
+        ],
+      },
     },
-  },
-  {
-    banner: {
-      title: '환경을 생각하는\n인쇄 솔루션도 제공하나요?',
-      badgeText: 'ESG 경영 파트너, 킨코스',
-      description:
-        '킨코스는 지속 가능한 성장을 추구하며, 당신의 비즈니스와 함께 더 나은 미래를 만들어 가고자 합니다.',
-    },
-    descriptionItem: {
-      title: '환경을 생각하는 솔루션',
-      images: [
-        '/images/biz/production/production-1.png',
-        '/images/biz/production/production-1.png',
-        '/images/biz/production/production-1.png',
-      ],
-      infos: [
-        {
-          name: '친환경 인쇄 솔루션',
-          description:
-            'FSC® 인증 용지 사용, 식물성 잉크 사용 등 환경 보호를 위한 킨코스의 노력을 소개합니다.',
-        },
-        {
-          name: '지속 가능한 미래',
-          description:
-            '킨코스는 당신의 비즈니스 성공뿐만 아니라, 환경적 책임을 다하는 파트너로서 지속 가능한 미래를 함께 만들어가겠습니다.',
-        },
-      ],
-    },
-  },
-]
+  ]
 
 export const BizProductionTemplate = () => {
   const [isScrolled, setIsScrolled] = useState(false)

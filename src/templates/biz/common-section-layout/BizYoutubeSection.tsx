@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
@@ -19,35 +20,14 @@ import { usePannelContext } from '@/components/PannelContext'
 
 import { BizVideoSectionData } from '../types'
 
-const youtubeVideos = [
-  {
-    id: 'dQw4w9WgXcQ',
-    title: 'YouTube video player',
-  },
-  {
-    id: 'dQw4w9WgXcQ',
-    title: 'YouTube video player',
-  },
-  {
-    id: 'dQw4w9WgXcQ',
-    title: 'YouTube video player',
-  },
-  {
-    id: 'dQw4w9WgXcQ',
-    title: 'YouTube video player',
-  },
-]
-
 interface Props {
   data: BizVideoSectionData
 }
 
 export const BizViedoSection = ({ data }: Props) => {
   const [videoIndex, setVideoIndex] = useState(0)
-  const { openPannel, isOpen } = usePannelContext()
+  const { openPannel } = usePannelContext()
   const router = useRouter()
-
-  console.log(isOpen)
 
   return (
     <Box
@@ -119,32 +99,35 @@ export const BizViedoSection = ({ data }: Props) => {
               w={{ base: '100%', sm: '640px', lg: '640px' }}
               h={{ base: 'auto', sm: '360px', lg: '360px' }}
               aspectRatio={'640 / 360'}
+              position="relative"
             >
-              <iframe
-                src={`https://www.youtube.com/embed/${youtubeVideos[videoIndex].id}`}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                style={{ width: '100%', height: '100%' }}
+              <Image
+                src={data.thumbnailUrl[videoIndex]?.url}
+                alt={data.thumbnailUrl[videoIndex]?.alt}
+                fill
               />
             </Box>
-            <HStack justify={'end'} w={'full'}>
-              <IconButton
-                size={'md'}
-                variant={'grey-capsule'}
-                onClick={() => setVideoIndex(videoIndex - 1)}
-                disabled={videoIndex === 0}
-              >
-                <CaretLeftIcon />
-              </IconButton>
-              <IconButton
-                variant={'grey-capsule'}
-                size={'md'}
-                onClick={() => setVideoIndex(videoIndex + 1)}
-                disabled={videoIndex === youtubeVideos.length - 1}
-              >
-                <CaretRightIcon />
-              </IconButton>
-            </HStack>
+            {Array.isArray(data.thumbnailUrl) &&
+              data.thumbnailUrl.length > 1 && (
+                <HStack justify={'end'} w={'full'}>
+                  <IconButton
+                    size={'md'}
+                    variant={'grey-capsule'}
+                    onClick={() => setVideoIndex(videoIndex - 1)}
+                    disabled={videoIndex === 0}
+                  >
+                    <CaretLeftIcon />
+                  </IconButton>
+                  <IconButton
+                    variant={'grey-capsule'}
+                    size={'md'}
+                    onClick={() => setVideoIndex(videoIndex + 1)}
+                    disabled={videoIndex === data.thumbnailUrl.length - 1}
+                  >
+                    <CaretRightIcon />
+                  </IconButton>
+                </HStack>
+              )}
           </VStack>
         </HStack>
       </Container>

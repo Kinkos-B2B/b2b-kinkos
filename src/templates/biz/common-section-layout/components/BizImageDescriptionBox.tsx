@@ -2,10 +2,15 @@ import { Box, Grid, GridItem } from '@chakra-ui/react'
 
 import { ImageAsNext } from '@/components/image-as-next'
 
-export const BizImageDescriptionBox = ({ images }: { images: string[] }) => {
+export const BizImageDescriptionBox = ({
+  images,
+}: {
+  images: { url: string; alt: string }[]
+}) => {
   if (images.length === 0) {
     return null
   }
+
   return (
     <Grid
       templateColumns={{
@@ -26,10 +31,10 @@ export const BizImageDescriptionBox = ({ images }: { images: string[] }) => {
             position="relative"
           >
             <ImageAsNext
-              src={image}
+              src={image.url}
+              alt={image.alt}
               w="100%"
               h="100%"
-              alt={`Factory image ${index + 1}`}
               objectFit="cover"
               objectPosition="center"
             />

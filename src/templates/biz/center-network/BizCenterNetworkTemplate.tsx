@@ -27,9 +27,18 @@ export const heroSectionMockData: BizHeroSectionData = {
   description:
     '서울과 부산을 비롯한 주요 거점 센터를 통해 고객사 가까이에서 서비스를 제공하며,\n고객이 언제 어디서든 편리하게 서비스를 이용할 수 있도록 지원합니다.',
   images: [
-    '/images/biz/hero/biz-hero-intro-1.jpg',
-    '/images/biz/hero/biz-hero-intro-2.jpg',
-    '/images/biz/hero/biz-hero-intro-3.jpg',
+    {
+      url: '/images/biz/network/biz-network-1.png',
+      alt: '5_센터네트워크_1_킨코스코리아 센터 외관 전경, 유리 건물 외벽에 킨코스 로고 간판이 설치된 모습',
+    },
+    {
+      url: '/images/biz/network/biz-network-2.png',
+      alt: '5_센터네트워크_2_킨코스 삼성센터 전면 전경, 주차장과 간판이 함께 보이는 매장 입구 모습',
+    },
+    {
+      url: '/images/biz/network/biz-network-3.png',
+      alt: '5_센터네트워크_3_킨코스코리아 전국 물류 네트워크 지도, 서울·경기·부산 거점을 중심으로 연결된 물류 동선 시각화 이미지',
+    },
   ],
 }
 
@@ -45,9 +54,18 @@ const descriptionItemMockData1: BizDescriptionItem = {
   description:
     '서울 및 수도권 주요 지역과 부산 센터를 포함한 20여 개 센터를 운영합니다.',
   images: [
-    '/images/biz/it-security/it-security-1.png',
-    '/images/biz/it-security/it-security-2.png',
-    '/images/biz/it-security/it-security-3.png',
+    {
+      url: '/images/biz/network/biz-network-4.png',
+      alt: '5_센터네트워크_4_킨코스 거점지 지원센터 외관, 파란색 간판이 부착된 인쇄 서비스 매장 모습',
+    },
+    {
+      url: '/images/biz/network/biz-network-5.png',
+      alt: '5_센터네트워크_5_킨코스 보안 제작 지원 센터 내부의 대형 디지털 인쇄 장비와 작업 공간 전경',
+    },
+    {
+      url: '/images/biz/network/biz-network-6.png',
+      alt: '5_센터네트워크_6_서울 도심 속 주요 오피스 밀집 구역에 위치한 킨코스 강남역센터 외관, 매장 입구 모습',
+    },
   ],
   infos: [
     {
@@ -67,9 +85,14 @@ const descriptionItemMockData2: BizDescriptionItem = {
   description:
     '24시간 운영되는 일부 센터를 통해 심야 및 주말 등 긴급 상황에도 신속 대응이 가능합니다.',
   images: [
-    '/images/biz/it-security/it-security-1.png',
-    '/images/biz/it-security/it-security-2.png',
-    '/images/biz/it-security/it-security-3.png',
+    {
+      url: '/images/biz/network/biz-network-7.png',
+      alt: '5_센터네트워크_7_킨코스 센터 매장 내부 전경, 직원들이 고객 주문을 처리하고 인쇄 장비를 운영하는 모습',
+    },
+    {
+      url: '/images/biz/network/biz-network-8.png',
+      alt: '5_센터네트워크_8_킨코스 보안 제작 지원 센터 내부 전경, 다수의 인쇄 장비가 정렬된 생산 라인 환경',
+    },
   ],
   infos: [
     {
@@ -84,9 +107,18 @@ const descriptionItemMockData3: BizDescriptionItem = {
   title: '대규모 프로젝트 대응',
   description: '대량 제작 및 전국 배포 프로젝트 지원이 가능합니다.',
   images: [
-    '/images/biz/it-security/it-security-1.png',
-    '/images/biz/it-security/it-security-2.png',
-    '/images/biz/it-security/it-security-3.png',
+    {
+      url: '/images/biz/network/biz-network-9.png',
+      alt: '5_센터네트워크_9_킨코스 대형 실사 출력 장비가 설치된 제작 공간, 직원들이 출력물을 점검 중인 모습',
+    },
+    {
+      url: '/images/biz/network/biz-network-10.png',
+      alt: '5_센터네트워크_10_출고를 기다리는 완성 인쇄물 더미, 투명 보호 필름으로 포장된 상태의 인쇄물 적재 모습',
+    },
+    {
+      url: '/images/biz/network/biz-network-11.png',
+      alt: '5_센터네트워크_11_킨코스 물류 창고 내부 전경, 전국 각지 배송을 위해 출고 대기 중인 포장 박스들이 정리된 모습',
+    },
   ],
   infos: [
     {
@@ -109,6 +141,12 @@ export const bizVideoSectionMockData: BizVideoSectionData = {
   description:
     '상담 신청 시 공장 관람을 요청하시면 전체 제작 과정을 투명하게 보여 드립니다.​',
   buttonText: '생산 공장 관람 요청​',
+  thumbnailUrl: [
+    {
+      url: '/images/biz/network/biz-network-12.gif',
+      alt: '5_센터네트워크_12_킨코스 생산센터 내 출력장비들이 가동되는 모습, 대형 실사물과 그래픽 출력 작업이 진행 중인 현장 영상',
+    },
+  ],
   moreInfoLink: {
     url: 'https://youtu.be/9_cNmJAsfME?si=065afGog8MR944L2',
     target: '_blank',
@@ -127,9 +165,18 @@ export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =
       descriptionItem: {
         title: '편리한 센터 이용',
         images: [
-          '/images/biz/it-security/it-security-1.png',
-          '/images/biz/it-security/it-security-2.png',
-          '/images/biz/it-security/it-security-3.png',
+          {
+            url: '/images/biz/network/biz-network-13.png',
+            alt: '5_센터네트워크_13_킨코스 매장 내부 전경, 직원들이 센터 방문 고객의 주문을 확인하고 신속하게 처리하는 모습',
+          },
+          {
+            url: '/images/biz/network/biz-network-14.png',
+            alt: '5_센터네트워크_14_직원이 포장된 인쇄물을 박스에 담아 출고를 준비하는 과정, 킨코스의 세심한 포장 작업 장면',
+          },
+          {
+            url: '/images/biz/network/biz-network-15.png',
+            alt: '5_센터네트워크_15_킨코스 매장 내 고객용 PC 존, 출력 및 파일 편집이 가능한 셀프 스테이션 공간',
+          },
         ],
         infos: [
           {
@@ -160,9 +207,18 @@ export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =
       descriptionItem: {
         title: '전국 동시 대응',
         images: [
-          '/images/biz/it-security/it-security-1.png',
-          '/images/biz/it-security/it-security-2.png',
-          '/images/biz/it-security/it-security-3.png',
+          {
+            url: '/images/biz/network/biz-network-16.png',
+            alt: '5_센터네트워크_16_킨코스 물류 담당자가 출고용 박스를 검수하고 체크리스트를 확인하는 장면',
+          },
+          {
+            url: '/images/biz/network/biz-network-17.png',
+            alt: '5_센터네트워크_17_킨코스 배송 차량이 물류 센터 앞에 대기 중인 모습, 전국 출고를 위한 전용 배송 차량',
+          },
+          {
+            url: '/images/biz/network/biz-network-18.png',
+            alt: '5_센터네트워크_18_직원들이 완충 포장된 인쇄물을 확인하고 출하 준비를 진행하는 킨코스 작업 현장',
+          },
         ],
         infos: [
           {

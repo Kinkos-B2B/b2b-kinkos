@@ -28,9 +28,18 @@ export const heroSectionMockData: BizHeroSectionData = {
   description:
     '인쇄물 제작에서 끝나지 않고,\n고객의 손에 닿는 마지막 순간까지 안전하게 전달되도록 책임집니다.',
   images: [
-    '/images/biz/hero/biz-hero-intro-1.jpg',
-    '/images/biz/hero/biz-hero-intro-2.jpg',
-    '/images/biz/hero/biz-hero-intro-3.jpg',
+    {
+      url: '/images/biz/packaging/biz-packaging-1.png',
+      alt: '2_포장배송_2_킨코스 직원이 로고가 새겨진 텀블러를 개별 박스에 포장하고 있는 장면, 맞춤형 패키징을 통한 안전한 납품 준비 과정',
+    },
+    {
+      url: '/images/biz/packaging/biz-packaging-2.png',
+      alt: '2_포장배송_1_킨코스 로고가 인쇄된 골판지 박스가 쌓여 있는 모습, 인쇄물 전용 포장 자재를 준비하는 킨코스 포장 공정 현장',
+    },
+    {
+      url: '/images/biz/packaging/biz-packaging-3.png',
+      alt: '2_포장배송_3_킨코스 로고가 부착된 배송 차량이 도심 도로를 주행 중인 모습, 전국 매장과 행사장으로 인쇄물을 직접 배송하는 장면',
+    },
   ],
 }
 
@@ -45,9 +54,18 @@ const descriptionItemMockData1: BizDescriptionItem = {
   title: '제품 특성에 따른 맞춤 포장',
   description: '포스터, 포맥스 등 제품 특성에 따른 맞춤 포장을 제공합니다.',
   images: [
-    '/images/biz/packaging/packaging-1.png',
-    '/images/biz/packaging/packaging-2.png',
-    '/images/biz/packaging/packaging-3.png',
+    {
+      url: '/images/biz/packaging/biz-packaging-4.png',
+      alt: '2_포장배송_4_버블랩으로 보호 포장된 POP와 인쇄물이 포장대 위에 놓여 있는 모습, 파손 방지를 위한 완충 포장 과정',
+    },
+    {
+      url: '/images/biz/packaging/biz-packaging-5.png',
+      alt: '2_포장배송_5_배너, 포스터 등 롤형 인쇄물이 개별 비닐 포장된 상태로 정리된 모습, 매장별 납품을 위한 분할 포장 과정',
+    },
+    {
+      url: '/images/biz/packaging/biz-packaging-6.png',
+      alt: '2_포장배송_6_킨코스 직원이 인쇄물을 분류하고 봉투에 담는 장면, 세트 단위 패키징 및 캠페인 물류 준비 과정',
+    },
   ],
   infos: [
     {
@@ -62,9 +80,18 @@ const descriptionItemMockData2: BizDescriptionItem = {
   title: '분할 배송 서비스',
   description: '전국 각 지점에 위치한 매장으로 개별 분할 배송을 드립니다.',
   images: [
-    '/images/biz/packaging/packaging-1.png',
-    '/images/biz/packaging/packaging-2.png',
-    '/images/biz/packaging/packaging-3.png',
+    {
+      url: '/images/biz/packaging/biz-packaging-7.png',
+      alt: '2_포장배송_7_엘리베이터 안에 세로로 세워진 대형 판넬 박스와 납품 박스들이 적재된 모습, 물류 출하 직전 단계의 배송 준비 장면',
+    },
+    {
+      url: '/images/biz/packaging/biz-packaging-8.png',
+      alt: '2_포장배송_8_킨코스 물류 구역 내 운반 카트와 적재된 박스 더미, 배송 전 분류 및 이동을 위한 준비 공간',
+    },
+    {
+      url: '/images/biz/packaging/biz-packaging-9.png',
+      alt: '2_포장배송_9_킨코스 직원이 로고가 인쇄된 박스를 들고 배송 차량 쪽으로 이동하는 장면, 고객사로 직접 납품하는 마지막 단계',
+    },
   ],
   infos: [
     {
@@ -80,9 +107,18 @@ const descriptionItemMockData3: BizDescriptionItem = {
   description:
     '파손·습기·이동 중 충격에 대비해 안전하게 포장하여 배송드립니다.',
   images: [
-    '/images/biz/packaging/packaging-1.png',
-    '/images/biz/packaging/packaging-2.png',
-    '/images/biz/packaging/packaging-3.png',
+    {
+      url: '/images/biz/packaging/biz-packaging-10.png',
+      alt: '2_포장배송_10_킨코스 포장 구역 내 버블랩과 스트레치 필름이 걸려 있는 포장 자재대, 보호 포장을 위한 자재 관리 시스템',
+    },
+    {
+      url: '/images/biz/packaging/biz-packaging-11.png',
+      alt: '2_포장배송_11_킨코스 직원들이 대형 간판 인쇄물을 버블랩으로 감싸며 테이핑 작업을 진행하는 모습, 파손 방지를 위한 보호 포장 과정',
+    },
+    {
+      url: '/images/biz/packaging/biz-packaging-12.png',
+      alt: '2_포장배송_12_주황색 완충 포장재가 정리된 박스, 소형 인쇄물과 굿즈 포장을 위한 맞춤형 보호 자재 준비 모습',
+    },
   ],
   infos: [
     {
@@ -105,6 +141,12 @@ export const bizVideoSectionMockData: BizVideoSectionData = {
     '상담 신청 시 센터 관람을 요청하시면 전체 포장 & 배송 과정을 투명하게 보여 드립니다.',
   buttonText: '센터 관람 요청',
   moreInfoButtonText: '관련 콘텐츠 보러가기',
+  thumbnailUrl: [
+    {
+      url: '/images/biz/packaging/biz-packaging-13.png',
+      alt: '2_포장배송_13_킨코스 물류 창고 내부, 팔레트 위에 포장된 납품 박스들이 정렬되어 있는 모습, 전국 배송을 위한 출고 대기 구역',
+    },
+  ],
   moreInfoLink: {
     url: ROUTES.SOLUTIONS.PRODUCTION.LOGISTICS,
     target: '_self',
@@ -123,9 +165,14 @@ export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =
       descriptionItem: {
         title: '효율적인 판촉물 패키징 관리',
         images: [
-          '/images/biz/packaging/packaging-1.png',
-          '/images/biz/packaging/packaging-2.png',
-          '/images/biz/packaging/packaging-3.png',
+          {
+            url: '/images/biz/packaging/biz-packaging-14.png',
+            alt: '2_포장배송_14_투명 비닐로 개별 포장된 소형 인쇄물 세트가 포장대 위에 놓여 있는 모습, 세트 단위 납품을 위한 세밀한 포장 과정',
+          },
+          {
+            url: '/images/biz/packaging/biz-packaging-15.png',
+            alt: '2_포장배송_15_킨코스 로고가 인쇄된 소형 진열대 POP 샘플, 완성된 제작물이 납품 전 품질 검수 중인 모습',
+          },
         ],
         infos: [
           {
@@ -159,9 +206,14 @@ export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =
       descriptionItem: {
         title: '맞춤형 배송 솔루션',
         images: [
-          '/images/biz/packaging/packaging-1.png',
-          '/images/biz/packaging/packaging-2.png',
-          '/images/biz/packaging/packaging-3.png',
+          {
+            url: '/images/biz/packaging/biz-packaging-16.png',
+            alt: '2_포장배송_16_킨코스에서 제작한 행사 안내 스탠드를 전시장 입구에 설치하고 있는 장면, 납품 후 현장 설치 지원 예시',
+          },
+          {
+            url: '/images/biz/packaging/biz-packaging-17.png',
+            alt: '2_포장배송_17_킨코스 직원들이 전시회 부스에 배너와 POP를 설치 중인 모습, 제작물 배송 후 현장 세팅까지 진행하는 모습',
+          },
         ],
         infos: [
           {

@@ -2,18 +2,8 @@ import * as React from 'react'
 
 import Link from 'next/link'
 
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  GridItem,
-  HStack,
-  Text,
-  VStack,
-} from '@chakra-ui/react'
+import { Box, Button, HStack, Text, VStack } from '@chakra-ui/react'
 
-import { ImageAsNext } from '@/components/image-as-next'
 import { Badge } from '@/components/ui/badge'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 
@@ -54,7 +44,6 @@ export const BizDescriptionSectionItem = React.forwardRef<
       align="stretch"
       w="full"
     >
-      {/* 상단: 배지, 제목, 설명 */}
       <VStack gap="16px" align="stretch">
         {badge && (
           <Box>
