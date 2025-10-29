@@ -93,6 +93,10 @@ const descriptionItemMockData2: BizDescriptionItem = {
       url: '/images/biz/production/biz-production-8.png',
       alt: '1_생산제작_8_킨코스 직원이 제본된 인쇄물을 검수하고 정리하는 모습, 맞춤 제작물의 품질 확인 및 포장 전 공정 관리 장면',
     },
+    {
+      url: '/images/biz/production/biz-production-8-2.png',
+      alt: '1_생산제작_8_킨코스 직원이 제본된 인쇄물을 검수하고 정리하는 모습, 맞춤 제작물의 품질 확인 및 포장 전 공정 관리 장면',
+    },
   ],
   infos: [
     {
@@ -113,6 +117,10 @@ const descriptionItemMockData3: BizDescriptionItem = {
     {
       url: '/images/biz/production/biz-production-10.png',
       alt: '1_생산제작_10_매장 내 메뉴판과 POP가 실제 매장 환경에 설치된 예시, 킨코스에서 제작된 프랜차이즈 맞춤형 출력물 적용 사례',
+    },
+    {
+      url: '/images/biz/production/biz-production-10-2.png',
+      alt: '1_생산제작_12_프랜차이즈 매장 내 프로모션 포스터가 부착된 예시, 눈에 가장 잘 띄는 효과적인 디자인으로 제작된 사례',
     },
   ],
   infos: [

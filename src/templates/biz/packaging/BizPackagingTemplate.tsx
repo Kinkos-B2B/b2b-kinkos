@@ -173,6 +173,10 @@ export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =
             url: '/images/biz/packaging/biz-packaging-15.png',
             alt: '2_포장배송_15_킨코스 로고가 인쇄된 소형 진열대 POP 샘플, 완성된 제작물이 납품 전 품질 검수 중인 모습',
           },
+          {
+            url: '/images/biz/packaging/biz-packaging-16.png',
+            alt: '2_포장배송_16_제작 완료된 명함 및 쇼카드를 개별 포장해 배송 준비 중인 모습',
+          },
         ],
         infos: [
           {
@@ -207,12 +211,16 @@ export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =
         title: '맞춤형 배송 솔루션',
         images: [
           {
-            url: '/images/biz/packaging/biz-packaging-16.png',
+            url: '/images/biz/packaging/biz-packaging-17.png',
             alt: '2_포장배송_16_킨코스에서 제작한 행사 안내 스탠드를 전시장 입구에 설치하고 있는 장면, 납품 후 현장 설치 지원 예시',
           },
           {
-            url: '/images/biz/packaging/biz-packaging-17.png',
+            url: '/images/biz/packaging/biz-packaging-18.png',
             alt: '2_포장배송_17_킨코스 직원들이 전시회 부스에 배너와 POP를 설치 중인 모습, 제작물 배송 후 현장 세팅까지 진행하는 모습',
+          },
+          {
+            url: '/images/biz/packaging/biz-packaging-19.png',
+            alt: '2_포장배송_19_도심 거점 물류망을 활용해 고객이 수령을 희망하는 곳으로 빠르게 배송 중인 킨코스 물류 배송 차량의 모습',
           },
         ],
         infos: [

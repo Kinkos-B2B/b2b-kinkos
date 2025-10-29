@@ -62,6 +62,10 @@ const descriptionItemMockData1: BizDescriptionItem = {
       url: '/images/biz/support/biz-support-5.png',
       alt: '4_인력지원_5_그래픽 디자이너가 모니터로 인쇄 디자인 파일을 작업 중인 모습, 정돈된 사무 공간과 전문 장비 환경',
     },
+    {
+      url: '/images/biz/support/biz-support-5-2.png',
+      alt: '4_인력지원_6_회의실에서 대형 스크린을 통해 고객의 요구사항을 공유하고 솔루션을 논의하는 장면',
+    },
   ],
   infos: [
     {
@@ -88,6 +92,10 @@ const descriptionItemMockData2: BizDescriptionItem = {
     {
       url: '/images/biz/support/biz-support-7.png',
       alt: '4_인력지원_7_태블릿과 종이 도면을 보며 제품 패키지 구조를 논의하는 기획자와 디자이너의 협업 장면',
+    },
+    {
+      url: '/images/biz/support/biz-support-7-2.png',
+      alt: '4_인력지원_9_킨코스 디자이너들이 다수의 인쇄물 샘플을 직접 보고 검토하며 논의하는 장면',
     },
   ],
   infos: [
@@ -214,6 +222,10 @@ export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =
           {
             url: '/images/biz/support/biz-support-16.png',
             alt: '4_인력지원_16_킨코스 디자인팀 사무실 내부, 협업 중인 디자이너들과 그래픽 디자인 작업 장면',
+          },
+          {
+            url: '/images/biz/support/biz-support-17.png',
+            alt: '4_인력지원_19_킨코스 전담 영업대표가 고객의 의견과 피드백을 PC 화면으로 확인하고 있는 장면',
           },
         ],
         infos: [

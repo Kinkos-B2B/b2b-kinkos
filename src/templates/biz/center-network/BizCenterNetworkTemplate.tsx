@@ -93,6 +93,10 @@ const descriptionItemMockData2: BizDescriptionItem = {
       url: '/images/biz/network/biz-network-8.png',
       alt: '5_센터네트워크_8_킨코스 보안 제작 지원 센터 내부 전경, 다수의 인쇄 장비가 정렬된 생산 라인 환경',
     },
+    {
+      url: '/images/biz/network/biz-network-8-2.png',
+      alt: '5_센터네트워크_9_킨코스 생산 센터 내부 전경, 24시간 주말에도 긴급 제작 요청건에 대응 가능한 생산 라인 환경',
+    },
   ],
   infos: [
     {
