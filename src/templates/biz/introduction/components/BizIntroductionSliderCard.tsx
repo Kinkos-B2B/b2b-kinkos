@@ -53,7 +53,7 @@ export const BizIntroductionSliderCard = React.forwardRef<
       <HStack
         gap={{ sm: '40px', base: '28px' }}
         w="100%"
-        align="stretch"
+        align="center"
         justify={'space-between'}
         flexDir={{ base: 'column', lg: 'row' }}
       >
