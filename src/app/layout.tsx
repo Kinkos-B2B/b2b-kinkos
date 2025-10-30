@@ -14,10 +14,12 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   ...(ENV.DOMAIN && { metadataBase: new URL(ENV.DOMAIN) }),
   title: {
-    default: 'B2B 킨코스',
-    template: `%s | B2B 킨코스`,
+    default:
+      'B2B 인쇄·패키지 디자인·홍보·사인물 인쇄·기업 인쇄몰·기업 홍보물 인쇄 전문 솔루션 | 킨코스코리아(주)',
+    template: `%s | 킨코스코리아(주)`,
   },
-  description: 'B2B 킨코스',
+  description:
+    '대량·소량·특수 인쇄부터 포장, 물류, 보안까지. 30년 노하우와 첨단 기술력으로 기업 홍보물 인쇄를 원스톱 지원. ESG 친환경 솔루션 제공',
   applicationName: 'B2B 킨코스',
   keywords: ['B2B 킨코스', '...'],
   icons: [
@@ -41,12 +43,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ko',
-    siteName: 'B2B 킨코스',
+    siteName:
+      '킨코스 B2B | 디자인·제작·품질·보안·물류 등의 통합 솔루션을 갖춘 기업 인쇄 전문 솔루션',
     title: {
-      default: 'B2B 킨코스',
-      template: `B2B 킨코스 | %s`,
+      default:
+        '킨코스 B2B | 디자인·제작·품질·보안·물류 등의 통합 솔루션을 갖춘 기업 인쇄 전문 솔루션',
+      template: `킨코스 B2B | %s`,
     },
-    description: 'B2B 킨코스',
+    description:
+      '30년 노하우와 첨단 기술력으로 기업 인쇄의 모든 과정을 한 번에. 대량·소량·특수 인쇄부터 포장, 물류, 보안까지 ESG 친환경 솔루션으로 비즈니스 가치를 높이세요.',
     images: [
       {
         url: '/images/new_og.png',
@@ -61,8 +66,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     images: `/images/new_og.png`,
-    title: 'B2B 킨코스',
-    description: 'B2B 킨코스',
+    title: '킨코스 B2B',
+    description: '킨코스 B2B',
     site: '@site',
   },
   formatDetection: {
