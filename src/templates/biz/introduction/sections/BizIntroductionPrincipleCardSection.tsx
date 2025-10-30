@@ -121,7 +121,7 @@ export const BizIntroductionPrincipleCardSection = () => {
         gsap.set(card, {
           opacity: 0,
           scale: 0.9,
-          y: 160,
+          y: 120,
           zIndex: 0,
         })
       })
@@ -268,7 +268,9 @@ export const BizIntroductionPrincipleCardSection = () => {
       ref={sectionRef}
       w="100%"
       h={'100dvh'}
-      py={{ base: '60px', lg: '140px' }}
+      pt={{ base: '60px', lg: '13vh' }}
+      overflow={'hidden'}
+      pb={{ base: '60px', lg: '80px' }}
       display={{ base: 'none', lg: 'block' }}
     >
       <Container maxW="none" px={{ base: '24px', lg: '0' }} h={'100%'}>
