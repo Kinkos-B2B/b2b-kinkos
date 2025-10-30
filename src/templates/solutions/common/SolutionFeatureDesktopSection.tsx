@@ -50,7 +50,6 @@ export const SolutionFeatureDesktopSection = ({ featureItems }: Props) => {
         const PIN_OFFSET = 160
 
         ScrollTrigger.create({
-          markers: true,
           trigger: imageSection,
           start: `top top+=${PIN_OFFSET}px`,
           end: `bottom top+=${PIN_OFFSET - 40}px`,
