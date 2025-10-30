@@ -1,9 +1,10 @@
-import { Fragment, useRef } from 'react'
+import { Fragment, useEffect, useRef } from 'react'
 
 import { Box, Container, Flex, Image, VStack } from '@chakra-ui/react'
 import { useGSAP } from '@gsap/react'
 
 import { gsap } from 'gsap'
+import { ScrollSmoother } from 'gsap/ScrollSmoother'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import { SolutionFeatureItem } from './SolutionFeatureItem'
@@ -14,101 +15,104 @@ interface Props {
 }
 
 export const SolutionFeatureDesktopSection = ({ featureItems }: Props) => {
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger)
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
-    const imageSections = document.querySelectorAll(
-      '[class*="feature-image-section"]',
-    )
-
-    const tableSections = document.querySelectorAll(
-      '[class^="feature-table-section"]',
-    )
-
-    tableSections.forEach((section, index) => {
-      gsap.set(section, {
-        top: '0px',
-        left: '0',
-        zIndex: 100 - index,
-        opacity: index === 0 ? 1 : 0,
-        invalidateOnRefresh: true,
-      })
-    })
-
-    imageSections.forEach((imageSection, index) => {
-      const featureSection = document.querySelector(
-        `.feature-table-section-${index}`,
+    setTimeout(() => {
+      const imageSections = document.querySelectorAll(
+        '[class*="feature-image-section"]',
       )
 
-      const isFirstSection = index === 0
-      const isLastSection = index === imageSections.length - 1
-      const PIN_OFFSET = 160
+      const tableSections = document.querySelectorAll(
+        '[class^="feature-table-section"]',
+      )
 
-      ScrollTrigger.create({
-        trigger: imageSection,
-        start: `top top+=${PIN_OFFSET}px`,
-        end: `bottom top+=${PIN_OFFSET}px`,
-        invalidateOnRefresh: true,
-        onEnter: () => {
-          gsap.to(featureSection, {
-            opacity: 1,
-            duration: 0.5,
-            ease: 'power2.out',
-          })
-        },
-        onLeave: () => {
-          gsap.to(featureSection, {
-            opacity: 0,
-            duration: 0.5,
-            ease: 'power2.out',
-          })
-
-          // 다음 섹션 페이드 인
-          if (!isLastSection) {
-            const nextFeatureSection = document.querySelector(
-              `.feature-table-section-${index + 1}`,
-            )
-            if (nextFeatureSection) {
-              gsap.to(nextFeatureSection, {
-                opacity: 1,
-                duration: 0.5,
-                ease: 'power2.out',
-              })
-            }
-          }
-        },
-        onEnterBack: () => {
-          // 뒤로 돌아올 때 현재 섹션 페이드 인
-          gsap.to(featureSection, {
-            opacity: 1,
-            duration: 0.5,
-            ease: 'power2.out',
-          })
-        },
-        onLeaveBack: () => {
-          if (isFirstSection) return
-          gsap.to(featureSection, {
-            opacity: 0,
-            duration: 0.5,
-            ease: 'power2.out',
-          })
-
-          if (index > 0) {
-            const prevFeatureSection = document.querySelector(
-              `.feature-table-section-${index - 1}`,
-            )
-            if (prevFeatureSection) {
-              gsap.to(prevFeatureSection, {
-                opacity: 1,
-                duration: 0.5,
-                ease: 'power2.out',
-              })
-            }
-          }
-        },
+      tableSections.forEach((section, index) => {
+        gsap.set(section, {
+          top: '0px',
+          left: '0',
+          zIndex: 100 - index,
+          opacity: index === 0 ? 1 : 0,
+          invalidateOnRefresh: true,
+        })
       })
-    })
-  })
+
+      imageSections.forEach((imageSection, index) => {
+        const featureSection = document.querySelector(
+          `.feature-table-section-${index}`,
+        )
+
+        const isFirstSection = index === 0
+        const isLastSection = index === imageSections.length - 1
+        const PIN_OFFSET = 160
+
+        ScrollTrigger.create({
+          trigger: imageSection,
+          start: `top top+=${PIN_OFFSET}px`,
+          end: `bottom top+=${PIN_OFFSET}px`,
+          invalidateOnRefresh: true,
+          immediateRender: true,
+          onEnter: () => {
+            gsap.to(featureSection, {
+              opacity: 1,
+              duration: 0.5,
+              ease: 'power2.out',
+            })
+          },
+          onLeave: () => {
+            gsap.to(featureSection, {
+              opacity: 0,
+              duration: 0.5,
+              ease: 'power2.out',
+            })
+
+            // 다음 섹션 페이드 인
+            if (!isLastSection) {
+              const nextFeatureSection = document.querySelector(
+                `.feature-table-section-${index + 1}`,
+              )
+              if (nextFeatureSection) {
+                gsap.to(nextFeatureSection, {
+                  opacity: 1,
+                  duration: 0.5,
+                  ease: 'power2.out',
+                })
+              }
+            }
+          },
+          onEnterBack: () => {
+            // 뒤로 돌아올 때 현재 섹션 페이드 인
+            gsap.to(featureSection, {
+              opacity: 1,
+              duration: 0.5,
+              ease: 'power2.out',
+            })
+          },
+          onLeaveBack: () => {
+            if (isFirstSection) return
+            gsap.to(featureSection, {
+              opacity: 0,
+              duration: 0.5,
+              ease: 'power2.out',
+            })
+
+            if (index > 0) {
+              const prevFeatureSection = document.querySelector(
+                `.feature-table-section-${index - 1}`,
+              )
+              if (prevFeatureSection) {
+                gsap.to(prevFeatureSection, {
+                  opacity: 1,
+                  duration: 0.5,
+                  ease: 'power2.out',
+                })
+              }
+            }
+          },
+        })
+      })
+    }, 500)
+  }, [])
 
   const datas = featureItems
 
