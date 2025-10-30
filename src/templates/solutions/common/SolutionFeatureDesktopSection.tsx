@@ -28,6 +28,9 @@ export const SolutionFeatureDesktopSection = ({ featureItems }: Props) => {
       )
 
       tableSections.forEach((section, index) => {
+        if (index === 0) {
+          console.log(section)
+        }
         gsap.set(section, {
           top: '0px',
           left: '0',
@@ -47,11 +50,10 @@ export const SolutionFeatureDesktopSection = ({ featureItems }: Props) => {
         const PIN_OFFSET = 160
 
         ScrollTrigger.create({
+          markers: true,
           trigger: imageSection,
           start: `top top+=${PIN_OFFSET}px`,
-          end: `bottom top+=${PIN_OFFSET}px`,
-          invalidateOnRefresh: true,
-          immediateRender: true,
+          end: `bottom top+=${PIN_OFFSET - 40}px`,
           onEnter: () => {
             gsap.to(featureSection, {
               opacity: 1,
@@ -111,7 +113,7 @@ export const SolutionFeatureDesktopSection = ({ featureItems }: Props) => {
           },
         })
       })
-    }, 500)
+    }, 1000)
   }, [])
 
   const datas = featureItems
