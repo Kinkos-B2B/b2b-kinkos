@@ -6,6 +6,7 @@
     "skipLibCheck": true,
     "baseUrl": "src",
     "paths": {
+      "@/public/*": ["../public/*"],
       "@/*": ["./*"],
       "@/theme/*": ["./configs/theme/*"],
       "@/swagger/*": ["./generated/swagger/*"],

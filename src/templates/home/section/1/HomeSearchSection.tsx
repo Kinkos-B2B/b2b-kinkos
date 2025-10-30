@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
+import dynamic from 'next/dynamic'
 import { useRouter } from 'next/navigation'
 
 import {
@@ -20,6 +21,12 @@ import {
   useGetRandomSearchKeywordQuery,
   useGetSearchKeywordAutoCompleteQuery,
 } from '@/generated/apis/HomeApi/HomeApi.query'
+import arrow1Json from '@/public/images/home/search/arrow1.json'
+import arrow2Json from '@/public/images/home/search/arrow2.json'
+
+const Lottie = dynamic(() => import('lottie-react'), {
+  ssr: false,
+})
 
 const imgChat = '/images/home/search/chat.png'
 
@@ -35,14 +42,16 @@ export const HomeSearchSection = () => {
           left={{ base: '70px', sm: '17%', lg: '20%' }}
           top={{ base: '-50px', sm: '-45px', lg: '-40px' }}
         >
-          <Image src={'/images/home/search/arrow2.png'} w={'70px'} />
+          <Lottie loop animationData={arrow2Json} width={'70px'} />
+
+          {/* <Image src={'/images/home/search/arrow2.png'} w={'70px'} /> */}
         </Box>
         <Box
           position={'absolute'}
           right={{ base: '10px', sm: '19%', lg: '21%' }}
           top={{ base: '93px', sm: '15px', lg: '32px' }}
         >
-          <Image src={'/images/home/search/arrow1.png'} w={'70px'} />
+          <Lottie loop animationData={arrow1Json} width={'70px'} />
         </Box>
 
         <Text textStyle="pre-display-2" color="grey.10" textAlign="center">
