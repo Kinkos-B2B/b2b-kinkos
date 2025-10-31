@@ -45,7 +45,7 @@ const cards: BizIntroductionSliderCardProps[] = [
     image: '/images/biz/introduce/introduction-slider-card-img-2.png',
     buttons: [
       {
-        text: '안전 사인물 제작 관리',
+        text: '안전 사인물 제작관리',
         href: ROUTES.SOLUTIONS.PRODUCTION.SAFETY_SIGN,
       },
       {
@@ -53,12 +53,12 @@ const cards: BizIntroductionSliderCardProps[] = [
         href: ROUTES.SOLUTIONS.PRODUCTION.SEASONAL_PRINTING,
       },
       {
-        text: '통합제작 All-in-One',
-        href: ROUTES.SOLUTIONS.PRODUCTION.ALL_IN_ONE,
-      },
-      {
         text: '통합제작 물류관리',
         href: ROUTES.SOLUTIONS.PRODUCTION.LOGISTICS,
+      },
+      {
+        text: '통합제작 All-in-One',
+        href: ROUTES.SOLUTIONS.PRODUCTION.ALL_IN_ONE,
       },
     ],
   },
@@ -92,7 +92,7 @@ const cards: BizIntroductionSliderCardProps[] = [
         href: ROUTES.SOLUTIONS.ONLINE_ORDER.BUSINESS_CARD,
       },
       {
-        text: '프랜차이즈 인쇄몰',
+        text: '프랜차이즈 전용 인쇄몰',
         href: ROUTES.SOLUTIONS.ONLINE_ORDER.FRANCHISE_PRINTING,
       },
     ],

@@ -110,7 +110,7 @@ export const SOLUTION_NAVIGATION_ITEMS: NavigationItem = {
       title: '온라인 주문 솔루션',
       items: [
         {
-          label: '온라인  명함 주문 관리',
+          label: '온라인 명함 주문 관리',
           href: ROUTES.SOLUTIONS.ONLINE_ORDER.BUSINESS_CARD,
         },
         {
