@@ -24,6 +24,27 @@ export const PostSectionWrapper = ({
         '& a': {
           color: 'revert',
           textDecoration: 'revert',
+          target: '_blank',
+        },
+        '& .text-huge': {
+          fontSize: '1.8em',
+        },
+        '& .text-big': {
+          fontSize: '1.4em',
+        },
+        '& .text-small': {
+          fontSize: '0.85em',
+        },
+        '& .text-tiny': {
+          fontSize: '0.7em',
+        },
+        '& ul': {
+          all: 'revert',
+          'list-style-type': 'disc',
+        },
+        '& ol': {
+          all: 'revert',
+          'list-style-type': 'decimal',
         },
       }}
     >
