@@ -31,9 +31,11 @@ export const PostSectionWrapper = ({
         <Text textStyle={'pre-body-5'} color={'grey.6'}>
           {title}
         </Text>
-        <Text textStyle={'pre-heading-2'} color={'grey.10'}>
-          {subTitle}
-        </Text>
+        {subTitle && (
+          <Text textStyle={'pre-heading-2'} color={'grey.10'}>
+            {subTitle}
+          </Text>
+        )}
       </VStack>
       {children}
     </VStack>
