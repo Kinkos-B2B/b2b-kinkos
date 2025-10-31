@@ -118,7 +118,7 @@ export const SOLUTION_NAVIGATION_ITEMS: NavigationItem = {
           href: ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING,
         },
         {
-          label: '프렌차이즈 전용 인쇄물',
+          label: '프랜차이즈 전용 인쇄몰',
           href: ROUTES.SOLUTIONS.ONLINE_ORDER.FRANCHISE_PRINTING,
         },
       ],
