@@ -22,7 +22,7 @@ import {
 } from '../types'
 
 export const heroSectionMockData: BizHeroSectionData = {
-  badge: '생산&제작',
+  badge: '생산 & 제작',
   title: '우리의 기술력,\n당신의 성공을 인쇄합니다.',
   description:
     '대량부터 소량까지, 킨코스의 첨단 인프라와 스마트한 생산 공정으로\n당신의 비즈니스를 최고 품질로 완성하세요.',

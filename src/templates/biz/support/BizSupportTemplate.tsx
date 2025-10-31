@@ -22,7 +22,7 @@ import {
 } from '../types'
 
 export const heroSectionMockData: BizHeroSectionData = {
-  badge: '인력&지원',
+  badge: '인력 & 지원',
   title: '전문가의 역량으로,\n끝까지 책임을 다합니다.',
   description:
     '기획부터 디자인, 제작, 사후관리까지 전문 인력이 전담하여\n기업 고객의 비즈니스를 안정적으로 지원합니다.',

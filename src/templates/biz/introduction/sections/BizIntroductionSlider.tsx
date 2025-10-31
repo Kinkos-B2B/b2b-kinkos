@@ -26,7 +26,7 @@ const cards: BizIntroductionSliderCardProps[] = [
         href: ROUTES.SOLUTIONS.DESIGN.BRANDING,
       },
       {
-        text: '굿즈&판촉물 디자인',
+        text: '굿즈 & 판촉물 디자인',
         href: ROUTES.SOLUTIONS.DESIGN.GIFT_PROMOTIONAL_DESIGN,
       },
       {

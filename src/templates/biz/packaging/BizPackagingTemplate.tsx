@@ -23,7 +23,7 @@ import {
 } from '../types'
 
 export const heroSectionMockData: BizHeroSectionData = {
-  badge: '포장&배송',
+  badge: '포장 & 배송',
   title: '맞춤형 포장으로,\n원하는 순간까지 완벽히 전달합니다.',
   description:
     '인쇄물 제작에서 끝나지 않고,\n고객의 손에 닿는 마지막 순간까지 안전하게 전달되도록 책임집니다.',

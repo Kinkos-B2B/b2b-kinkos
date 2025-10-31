@@ -23,7 +23,7 @@ import {
 } from '../types'
 
 export const heroSectionMockData: BizHeroSectionData = {
-  badge: 'IT&보안',
+  badge: 'IT & 보안',
   title: '스마트한 주문,\n철저한 보안으로 안심을 제공합니다.',
   description:
     '기업 전용 온라인 주문 관리부터 보안 제작 지원 센터까지,\n킨코스는 기술과 보안 역량을 결합해 신뢰할 수 있는 비즈니스 파트너가 됩니다.',
