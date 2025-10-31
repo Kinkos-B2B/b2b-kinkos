@@ -123,7 +123,10 @@ const ContentSolutionSection = ({
             alignItems={'center'}
             justifyContent={'center'}
           >
-            <Text textStyle={'pre-heading-1'}>{`"${content.mainText}"`}</Text>
+            <Text
+              textStyle={'pre-heading-1'}
+              textAlign={'center'}
+            >{`"${content.mainText}"`}</Text>
           </Box>
         )}
         {content.secondBody && (
