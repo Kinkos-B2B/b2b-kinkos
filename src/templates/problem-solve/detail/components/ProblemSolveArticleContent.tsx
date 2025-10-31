@@ -256,7 +256,7 @@ const ContentAdvantageSection = ({
 const navItems = [
   { title: '인트로', fragment: 'intro' },
   { title: '어려운 이유', fragment: 'difficult' },
-  { title: '문제해결 ,킨코스', fragment: 'solution' },
+  { title: '문제해결, 킨코스', fragment: 'solution' },
   { title: '가능한 이유', fragment: 'feasible' },
   { title: '도입 후 변화', fragment: 'change' },
   { title: '이 해결책의 장점', fragment: 'advantage' },
