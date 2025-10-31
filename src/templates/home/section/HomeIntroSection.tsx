@@ -39,10 +39,10 @@ const textContents = [
     line1: 'B2B 기업 인쇄',
     line2: '딱 맞는 솔루션과 전문가를 찾아보세요!',
   },
-  {
-    line1: 'For Your Business Success,',
-    line2: "KINKO'S B2B",
-  },
+  // {
+  //   line1: 'For Your Business Success,',
+  //   line2: "KINKO'S B2B",
+  // },
 ]
 
 interface Props {
