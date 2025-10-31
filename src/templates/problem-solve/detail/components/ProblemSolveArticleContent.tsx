@@ -100,31 +100,39 @@ const ContentSolutionSection = ({
 }) => {
   return (
     <PostSectionWrapper
-      title="문제해결 ,킨코스"
+      title="문제해결, 킨코스"
       subTitle={content.subTitle ?? ''}
       fragment="solution"
     >
       <VStack gap={'40px'} alignItems={'start'} w={'100%'}>
-        <Text textStyle={'pre-body-4'} color={'grey.9'}>
-          {content.firstBody}
-        </Text>
-        <Box
-          w={'100%'}
-          bg={'#FFEEE580'}
-          color={'secondary.4'}
-          p={'60px 45px'}
-          borderRadius={'28px'}
-          display={'flex'}
-          alignItems={'center'}
-          justifyContent={'center'}
-        >
-          <Text textStyle={'pre-heading-1'}>{`"${content.mainText}"`}</Text>
-        </Box>
-        <Text
-          textStyle={'pre-body-4'}
-          color={'grey.9'}
-          dangerouslySetInnerHTML={{ __html: content.secondBody ?? '' }}
-        ></Text>
+        {content.firstBody && (
+          <Text
+            textStyle={'pre-body-4'}
+            color={'grey.9'}
+            dangerouslySetInnerHTML={{ __html: content.firstBody ?? '' }}
+          ></Text>
+        )}
+        {content.mainText && (
+          <Box
+            w={'100%'}
+            bg={'#FFEEE580'}
+            color={'secondary.4'}
+            p={'60px 45px'}
+            borderRadius={'28px'}
+            display={'flex'}
+            alignItems={'center'}
+            justifyContent={'center'}
+          >
+            <Text textStyle={'pre-heading-1'}>{`"${content.mainText}"`}</Text>
+          </Box>
+        )}
+        {content.secondBody && (
+          <Text
+            textStyle={'pre-body-4'}
+            color={'grey.9'}
+            dangerouslySetInnerHTML={{ __html: content.secondBody ?? '' }}
+          ></Text>
+        )}
       </VStack>
     </PostSectionWrapper>
   )
