@@ -26,7 +26,7 @@ export const PostHeader = ({ header }: PostHeaderProps) => {
       <VStack
         gap={'0px'}
         px={{ base: '20px', sm: '40px' }}
-        maxW={{ base: '100%', sm: '688px' }}
+        maxW={{ base: '100%', lg: '1280px' }}
       >
         <Text
           color={'grey.2'}
