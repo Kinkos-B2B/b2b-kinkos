@@ -88,6 +88,7 @@ export interface SearchResponseType {
   /** 타이틀 */
   title: string
   description: string
+  slug: string
   /**
    * 작성날짜
    * @format date-time

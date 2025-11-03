@@ -23,8 +23,8 @@ export const SearchResultCard = ({ item, href }: SearchResultCardProps) => {
             bg="grey.1"
           >
             <Image
-              src={item.thumbnailImage.url || '/images/placeholder.jpg'}
-              alt={item.title || '이미지'}
+              src={item.thumbnailImage.url}
+              alt={item.thumbnailImage.alt}
               w="100%"
               h="100%"
               objectFit="cover"

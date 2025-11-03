@@ -88,7 +88,7 @@ export const SearchResultContent = ({
             <SearchResultCard
               key={index}
               item={item}
-              href={getSearchTypeLink(type, item.id.toString())}
+              href={getSearchTypeLink(type, item.slug.toString())}
             />
           ),
         )}

@@ -145,7 +145,7 @@ export const ExpertListContainer = () => {
                   <Link
                     href={ROUTES.EXPERT_DETAIL.replace(
                       ':id',
-                      expert.id?.toString() ?? '',
+                      expert.slug?.toString() ?? '',
                     )}
                   >
                     <ExpertCard expert={expert} />

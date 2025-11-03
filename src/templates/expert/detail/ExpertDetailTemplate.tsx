@@ -13,10 +13,8 @@ import {
 } from '@chakra-ui/react'
 
 import { usePannelContext } from '@/components/PannelContext'
-import { ExpertProfileCard } from '@/components/view/ExpertProfileCard'
 import PluuugCTA from '@/components/view/PluuugCTA'
-import { PostHeader } from '@/components/view/PostDetail/PostHeader'
-import { useGetExpertDetailQuery } from '@/generated/apis/ExpertApi/ExpertApi.query'
+import { useGetExpertDetailBySlugQuery } from '@/generated/apis/ExpertApi/ExpertApi.query'
 
 import { ExpertDetailArticleContent } from './components/ExpertDetailArticleContent'
 import { ExpertDetailHeader } from './components/ExpertDetailHeader'
@@ -29,9 +27,11 @@ interface Props {
 export const ExpertDetailTemplate = ({ id }: Props) => {
   const { openPannel } = usePannelContext()
 
-  const { data } = useGetExpertDetailQuery({
+  const { data } = useGetExpertDetailBySlugQuery({
     variables: {
-      id: Number(id),
+      query: {
+        slug: id,
+      },
     },
   })
 
