@@ -21,6 +21,10 @@ export const BIZ_NAVIGATION_ITEMS: NavigationItem = {
   label: '킨코스 비즈',
   subItems: [
     {
+      title: '킨코스 소개',
+      href: ROUTES.BIZ.INTRODUCTION,
+    },
+    {
       title: '생산 & 제작',
       href: ROUTES.BIZ.PRODUCTION,
     },
@@ -39,10 +43,6 @@ export const BIZ_NAVIGATION_ITEMS: NavigationItem = {
     {
       title: '센터 네트워크',
       href: ROUTES.BIZ.NETWORK,
-    },
-    {
-      title: '킨코스 소개',
-      href: ROUTES.BIZ.INTRODUCTION,
     },
   ],
 }
