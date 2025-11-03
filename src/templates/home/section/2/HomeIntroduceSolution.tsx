@@ -69,7 +69,7 @@ const sliders: HomeSolutionSliderItem[] = [
         icon: <ChatCircleIcon size={16} color="white" />,
         title: '한 번의 설명, 일관된 결과',
         description:
-          '한 번의 설명으로 충분합니다. 브랜드 스타일을 기억하여 모든 작업에 일관되게 적용합니다.',
+          '한 번의 설명으로 브랜드 스타일을 기억하고, 모든 작업에 일관되게 반영합니다.',
       },
       {
         icon: <LightbulbIcon size={16} color="white" />,
@@ -101,13 +101,13 @@ const sliders: HomeSolutionSliderItem[] = [
         icon: <CrownSimpleIcon size={16} color="white" />,
         title: '브랜드 각인 효과',
         description:
-          '일상에서 자주 쓰이는 굿즈와 판촉물로 고객에게 브랜드를 가장 자연스럽게 알릴 수 있습니다.',
+          '일상에서 자주 쓰이는 굿즈로 브랜드를 가장 자연스럽게 알립니다.',
       },
       {
         icon: <UserCircleIcon size={16} color="white" />,
         title: '차별화된 고객 경험',
         description:
-          '기업의 특성을 살린 감각적인 굿즈와 판촉물로 고객에게 특별한 브랜드 경험을 제공합니다.',
+          '기업의 특성을 살린 굿즈와 판촉물로 특별한 브랜드 경험을 제공합니다.',
       },
       {
         icon: <MathOperationsIcon size={16} color="white" />,
@@ -134,7 +134,7 @@ const sliders: HomeSolutionSliderItem[] = [
         icon: <ResizeIcon size={16} color="white" />,
         title: '사이즈 실패 걱정 끝',
         description:
-          '전문가가 직접 매장을 재서 딱 맞게 만드니, 잘못된 제작으로 인한 비용과 시간 낭비가 없습니다.',
+          '전문가가 실측 후 딱 맞게 제작하니, 오류로 인한 비용과 시간 낭비가 없습니다.',
       },
       {
         icon: <EyesIcon size={16} color="white" />,
@@ -212,7 +212,7 @@ const sliders: HomeSolutionSliderItem[] = [
 
         title: '최고의 안전 효과',
         description:
-          '현장 환경(저조도, 옥외 등)과 예산에 맞춰 가장 눈에 잘 띄는 축광·반사 소재 등을 추천합니다.',
+          '현장 환경(저조도, 옥외 등)에 맞춰 가장 잘 보이는 소재를 추천합니다.',
       },
       {
         icon: <SealCheckIcon size={16} color="white" />,
@@ -322,7 +322,7 @@ const sliders: HomeSolutionSliderItem[] = [
 
         title: '데이터 기반 공정 관리',
         description:
-          'MES(생산 공정 관리)를 통해 전 공정을 데이터로 제어하여 우수한 품질을 유지합니다.',
+          'MES(생산 공정 관리)로 전 공정을 데이터로 제어해, 우수한 품질을 유지합니다.',
       },
       {
         icon: <PackageIcon size={16} color="white" />,
@@ -352,7 +352,7 @@ const sliders: HomeSolutionSliderItem[] = [
 
         title: '경험 기반 기획',
         description:
-          '킨코스의 인쇄물 디자인 노하우를 바탕으로 고객의 시선을 끄는 가장 효과적인 영상 콘셉트를 제안합니다.',
+          '인쇄물 디자인 노하우를 바탕으로, 시선을 사로잡는 영상 콘셉트를 제안합니다.',
       },
       {
         icon: (
@@ -426,7 +426,7 @@ const sliders: HomeSolutionSliderItem[] = [
 
         title: '참여형 콘텐츠 제작',
         description:
-          '고객이 직접 참여하고 공유하는 인터랙티브 콘텐츠를 통해 강력한 바이럴 효과를 경험해 보세요.',
+          '고객이 직접 참여하는 인터랙티브 콘텐츠로 강력한 바이럴 효과를 만듭니다.',
       },
       {
         icon: <ArrowsLeftRightIcon size={16} color="white" />,
@@ -439,8 +439,7 @@ const sliders: HomeSolutionSliderItem[] = [
         icon: <SmileyIcon size={16} color="white" />,
 
         title: '경쟁사 차별화',
-        description:
-          '인쇄물에 AR 기술을 더하는 것만으로, 신선한 재미와 혁신적인 브랜드 이미지를 높일 수 있습니다.',
+        description: '신선한 재미로 혁신적인 브랜드 이미지를 높입니다.',
       },
     ],
     href: ROUTES.SOLUTIONS.VIDEO_AI.AR_PRINTING,
@@ -456,21 +455,21 @@ const sliders: HomeSolutionSliderItem[] = [
 
         title: '메시지 전달력 강화',
         description:
-          '메시지를 가장 효과적으로 전달할 수 있도록, 소비자의 시선을 데이터로 보여드립니다.',
+          '소비자의 시선을 데이터로 분석해, 메시지를 더 효과적으로 전달합니다.',
       },
       {
         icon: <PaletteIcon size={16} color="white" />,
 
         title: '이기는 디자인',
         description:
-          '경쟁 제품과의 객관적인 비교 분석으로, 효과적인 디자인 개선 방향을 안내해 드립니다.',
+          '경쟁 제품과의 객관적인 비교 분석으로 디자인 개선 방향을 제안합니다.',
       },
       {
         icon: <EyesIcon size={16} color="white" />,
 
         title: '소비자 시선 선점',
         description:
-          '시선 데이터를 기반으로 매대 POP, 포스터 등 가장 효과적인 홍보물 배치 방법을 제안합니다.',
+          '매대 POP, 포스터 등 홍보물의 최적 배치 방법을 찾아드립니다.',
       },
       {
         icon: <NewspaperIcon size={16} color="white" />,
@@ -493,14 +492,14 @@ const sliders: HomeSolutionSliderItem[] = [
 
         title: '체계적인 브랜드 관리',
         description:
-          '기업의 전 직원이 동일한 템플릿만 사용하여, 누가 주문하든 통일감 있는 명함 제작이 가능합니다.',
+          '임직원 전체가 동일한 템플릿을 사용해, 통일감 있는 명함을 제작합니다.',
       },
       {
         icon: <CalculatorIcon size={16} color="white" />,
 
         title: '투명한 예산 관리',
         description:
-          '부서별, 개인별 주문 내역과 비용을 시스템에서 한눈에 관리할 수 있어, 예산 계획과 집행이 투명합니다.',
+          '주문 내역과 비용을 시스템으로 관리해, 예산 계획과 집행이 효율적입니다.',
       },
       {
         icon: <SquaresFourIcon size={16} color="white" />,
@@ -567,14 +566,14 @@ const sliders: HomeSolutionSliderItem[] = [
 
         title: '브랜드 이미지 통일',
         description:
-          '정해진 디자인 템플릿으로 브랜드 일관성을 유지하고, 가맹점주는 클릭 몇 번으로 간편하게 주문합니다.',
+          '정해진 디자인 템플릿으로, 브랜드 가이드라인에 맞춘 홍보물 주문이 가능합니다.',
       },
       {
         icon: <SquaresFourIcon size={16} color="white" />,
 
         title: '업무는 간단히, 효율은 최고로',
         description:
-          '본사는 전국 주문 현황을 한눈에 파악하고, 가맹점주는 24시간 언제든 필요할 때 홍보물을 주문할 수 있습니다.',
+          '본사는 주문 현황을 한눈에 파악하고, 가맹점주는 필요할 때 언제든 주문합니다.',
       },
       {
         icon: <CoinsIcon size={16} color="white" />,
