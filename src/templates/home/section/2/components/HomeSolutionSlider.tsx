@@ -207,6 +207,7 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
                     className={`slide ${selectedIndex === index ? 'active' : ''}`}
                   >
                     <HomeSolutionSliderCard
+                      href={slide.href}
                       badge={slide.badge}
                       title={slide.title || slide.badge}
                       image={slide.image}
@@ -214,31 +215,6 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
                       alt={slide.alt}
                     />
                   </Box>
-                  {/* <Box
-                    borderRadius={'20px'}
-                    overflow={'hidden'}
-                    bg={'white'}
-                    position={'relative'}
-                    cursor={'pointer'}
-                    tabIndex={-1}
-                    boxShadow={'0 30px 80px 0 rgba(1, 45, 181, 0.1)'}
-                    maxW={{
-                      base: 'calc(100vw - 40px)',
-                      sm: '70vw',
-                      lg: '1000px',
-                    }}
-                    maxH={'563px'}
-                    aspectRatio={'16/9'}
-                    className={`slide ${selectedIndex === index ? 'active' : ''}`}
-                  >
-                    <Image
-                      w={'100%'}
-                      h={'100%'}
-                      src={slide.image}
-                      alt={slide.title}
-                      objectFit="cover"
-                    />
-                  </Box> */}
                 </div>
               ))}
             </div>

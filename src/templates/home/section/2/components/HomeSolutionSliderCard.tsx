@@ -6,6 +6,7 @@ import { Box, Card, Flex, HStack, Image, Text, VStack } from '@chakra-ui/react'
 import { SquareHalf } from '@phosphor-icons/react/dist/ssr'
 
 import { Badge } from '@/components/ui/badge'
+import { ROUTES } from '@/constants/routes'
 
 interface FeatureItemProps {
   title: string
@@ -46,6 +47,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({
 }
 
 interface HomeSolutionSliderCardProps {
+  href: string
   badge: string
   title: string
   image: string
@@ -54,6 +56,7 @@ interface HomeSolutionSliderCardProps {
 }
 
 export const HomeSolutionSliderCard: React.FC<HomeSolutionSliderCardProps> = ({
+  href,
   badge,
   title,
   image,
@@ -122,6 +125,11 @@ export const HomeSolutionSliderCard: React.FC<HomeSolutionSliderCardProps> = ({
               width="100%"
               height="100%"
               objectFit="cover"
+              objectPosition={
+                href === ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING ?
+                  'left'
+                : 'center'
+              }
               borderRadius="24px"
             />
           </Box>
