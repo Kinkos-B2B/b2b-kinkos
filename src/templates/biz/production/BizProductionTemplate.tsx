@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { Box, VStack } from '@chakra-ui/react'
 
 import { LAYOUT } from '@/constants/layout'
+import { GetRelatedBizParamsTypeEnumTypeOptions } from '@/helper/options'
 
 import { BizDescriptionWithBannerListSection } from '../common-section-layout/BizDescriptionWithBannerListSection'
 import { BizDescriptionWithBannerSection } from '../common-section-layout/BizDescriptionWithBannerSection'
@@ -288,10 +289,7 @@ export const BizProductionTemplate = () => {
         />
 
         <BizMoreInfoSection
-          onSolutionClick={() => console.log('솔루션 클릭')}
-          onReviewClick={() => console.log('고객후기 클릭')}
-          onProblemClick={() => console.log('고민해결 클릭')}
-          onExpertClick={() => console.log('전문가 클릭')}
+          type={GetRelatedBizParamsTypeEnumTypeOptions.PRODUCTION}
         />
       </VStack>
     </VStack>

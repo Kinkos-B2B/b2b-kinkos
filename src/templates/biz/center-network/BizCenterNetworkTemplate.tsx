@@ -6,6 +6,7 @@ import { Box, VStack } from '@chakra-ui/react'
 
 import { LAYOUT } from '@/constants/layout'
 import { ROUTES } from '@/constants/routes'
+import { GetRelatedBizParamsTypeEnumTypeOptions } from '@/helper/options'
 
 import { BizDescriptionWithBannerSection } from '../common-section-layout/BizDescriptionWithBannerSection'
 import { BizHeroSection } from '../common-section-layout/BizHeroSection'
@@ -302,10 +303,7 @@ export const BizCenterNetworkTemplate = () => {
         </VStack>
 
         <BizMoreInfoSection
-          onSolutionClick={() => console.log('솔루션 클릭')}
-          onReviewClick={() => console.log('고객후기 클릭')}
-          onProblemClick={() => console.log('고민해결 클릭')}
-          onExpertClick={() => console.log('전문가 클릭')}
+          type={GetRelatedBizParamsTypeEnumTypeOptions.NETWORK}
         />
       </VStack>
     </VStack>

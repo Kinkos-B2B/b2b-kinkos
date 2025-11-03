@@ -78,7 +78,6 @@ export const useGetAllExpertQuery = <
  * @name GetExpertDetail
  * @summary 전문가 - 프로필 상세 조회(id로 조회)
  * @request GET:/api/v1/expert/{id}
- * @deprecated
  * @secure    */
 
 export const useGetExpertDetailQuery = <

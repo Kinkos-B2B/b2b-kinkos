@@ -40,8 +40,8 @@ export const ExpertHelpArticleList = ({ articles }: Props) => {
         }}
         position={'relative'}
       >
-        {articles.map((article) => (
-          <GridItem key={article.id?.toString()}>
+        {articles.map((article, index) => (
+          <GridItem key={index}>
             <Link
               href={`/problem-solve/${article.id}`}
               display={'flex'}

@@ -63,7 +63,6 @@ export class HelpArticleApiApi<
    * @name GetHelpArticleDetail
    * @summary 고민해결 - 상세 조회 (아이디)
    * @request GET:/api/v1/help-article/{id}
-   * @deprecated
    * @secure
    */
 

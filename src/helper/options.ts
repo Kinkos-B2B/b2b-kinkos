@@ -1,4 +1,5 @@
 import { ROUTES } from '@/constants/routes'
+import { GetRelatedBizParamsTypeEnumType } from '@/generated/apis/@types/data-contracts'
 
 export const enum GetAllFaqResponseCategoryEnumType {
   SERVICE = 'SERVICE',
@@ -164,4 +165,12 @@ export const SOLUTION_HREF_MAP = {
     ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING,
   [GetRelatedSolutionParamsTypeEnumTypeOptions.FRANCHISE_PRINT_MALL]:
     ROUTES.SOLUTIONS.ONLINE_ORDER.FRANCHISE_PRINTING,
+}
+
+export const enum GetRelatedBizParamsTypeEnumTypeOptions {
+  PRODUCTION = 'PRODUCTION',
+  PACKAGING = 'PACKAGING',
+  IT_SECURITY = 'IT_SECURITY',
+  SUPPORT = 'SUPPORT',
+  NETWORK = 'NETWORK',
 }
