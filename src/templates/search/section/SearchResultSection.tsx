@@ -88,14 +88,14 @@ export const SearchResultSection = ({
   const handleTabChange = (value: string) => {
     const newTab = value as GetSearchResponseParamsTypeEnumType
     setActiveTab(newTab)
-    setCurrentPage(0)
+    setCurrentPage(1)
     updateUrlParams(newTab, currentQuery)
   }
 
   const handleRecommendedKeywordClick = (keyword: string) => {
     setSearchValue(keyword)
     setCurrentQuery(keyword)
-    setCurrentPage(0)
+    setCurrentPage(1)
     updateUrlParams(activeTab, keyword)
   }
 
@@ -111,6 +111,8 @@ export const SearchResultSection = ({
     onSearchKeywordClick: handleRecommendedKeywordClick,
     onPageChange: handlePageChange,
   }
+
+  console.log(searchData)
 
   return (
     <VStack gap="0" align="stretch" w="100%">
