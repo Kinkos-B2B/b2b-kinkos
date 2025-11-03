@@ -33,7 +33,7 @@ const ContentIntroSection = ({
         {content.image?.url && (
           <Image
             src={content.image?.url}
-            alt="intro"
+            alt={content.image?.alt ?? ''}
             width={820}
             height={400}
             style={{
@@ -68,7 +68,7 @@ const ContentDifficultSection = ({
         {content.image?.url && (
           <Image
             src={content.image?.url}
-            alt="difficult"
+            alt={content.image?.alt ?? ''}
             width={820}
             height={400}
             style={{
@@ -156,7 +156,7 @@ const ContentFeasibleSection = ({
         {content.image?.url && (
           <Image
             src={content.image?.url}
-            alt="change"
+            alt={content.image?.alt ?? ''}
             width={820}
             height={400}
             style={{
@@ -196,7 +196,7 @@ const ContentChangeSection = ({
         {content.image?.url && (
           <Image
             src={content.image?.url}
-            alt="change"
+            alt={content.image?.alt ?? ''}
             width={820}
             height={400}
             style={{
@@ -231,7 +231,7 @@ const ContentAdvantageSection = ({
         {content.image?.url && (
           <Image
             src={content.image?.url}
-            alt="advantage"
+            alt={content.image?.alt ?? ''}
             width={820}
             height={400}
             style={{

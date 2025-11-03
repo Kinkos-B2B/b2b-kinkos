@@ -29,6 +29,7 @@ const ContentBackgroundSection = ({
       <VStack gap={'20px'} alignItems={'start'} w={'100%'}>
         {content.image?.url && (
           <Image
+            alt={content.image?.alt ?? ''}
             src={content.image?.url}
             borderRadius={'28px'}
             w={'100%'}
@@ -61,6 +62,7 @@ const ContentReasonSection = ({
         <VStack gap={'12px'} w={'100%'}>
           {content.firstImage?.url && (
             <Image
+              alt={content.firstImage?.alt ?? ''}
               src={content.firstImage?.url}
               borderRadius={'28px'}
               w={'100%'}
@@ -71,6 +73,7 @@ const ContentReasonSection = ({
           {content.secondImage?.url && (
             <Image
               src={content.secondImage?.url}
+              alt={content.secondImage?.alt ?? ''}
               borderRadius={'28px'}
               w={'100%'}
               h={'400px'}
@@ -105,6 +108,7 @@ const ContentOutcomeSection = ({
             {content.image?.url && (
               <Image
                 src={content.image?.url}
+                alt={content.image?.alt ?? ''}
                 borderRadius={'28px'}
                 w={'100%'}
                 h={'400px'}
@@ -148,6 +152,7 @@ const ContentRecommendationSection = ({
       <VStack gap={'20px'} alignItems={'start'} w={'100%'}>
         {content.image?.url && (
           <Image
+            alt={content.image?.alt ?? ''}
             src={content.image?.url}
             borderRadius={'28px'}
             w={'100%'}
@@ -181,6 +186,7 @@ const ContentInterviewSection = ({
           <VStack gap={'12px'} w={'100%'}>
             {content.image?.url && (
               <Image
+                alt={content.image?.alt ?? ''}
                 src={content.image?.url}
                 borderRadius={'28px'}
                 w={'100%'}

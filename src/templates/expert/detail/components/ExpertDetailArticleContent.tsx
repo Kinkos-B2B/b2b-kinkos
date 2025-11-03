@@ -22,6 +22,7 @@ const ExpertIntroSection = ({ content }: { content: ExpertIntroType }) => {
       <VStack gap={'20px'} alignItems={'start'} w={'100%'}>
         {content.image?.url && (
           <Image
+            alt={content.image?.alt ?? ''}
             src={content.image?.url}
             borderRadius={'28px'}
             w={'100%'}
@@ -50,6 +51,7 @@ const ExpertCareerSection = ({ content }: { content: ExpertCareerType }) => {
         <VStack gap={'12px'} alignItems={'start'} w={'100%'}>
           {content.firstImage?.url && (
             <Image
+              alt={content.firstImage?.alt ?? ''}
               src={content.firstImage?.url}
               borderRadius={'28px'}
               w={'100%'}
@@ -59,6 +61,7 @@ const ExpertCareerSection = ({ content }: { content: ExpertCareerType }) => {
           )}
           {content.secondImage?.url && (
             <Image
+              alt={content.secondImage?.alt ?? ''}
               src={content.secondImage?.url}
               borderRadius={'28px'}
               w={'100%'}
@@ -91,6 +94,7 @@ const ExpertStrengthSection = ({
       <VStack gap={'20px'} alignItems={'start'} w={'100%'}>
         {content.image?.url && (
           <Image
+            alt={content.image?.alt ?? ''}
             src={content.image?.url}
             borderRadius={'28px'}
             w={'100%'}

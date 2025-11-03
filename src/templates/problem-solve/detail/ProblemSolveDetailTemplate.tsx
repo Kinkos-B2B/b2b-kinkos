@@ -37,6 +37,8 @@ export const ProblemSolveDetailTemplate = ({ id }: Props) => {
     },
   })
 
+  console.log(data)
+
   return (
     <VStack w="100%" pt={'20px'} gap={'0px'}>
       <PostHeader header={data?.data?.header ?? {}} />
