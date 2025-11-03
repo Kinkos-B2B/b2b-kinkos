@@ -214,7 +214,7 @@ export const BizIntroductionHeroSection = () => {
           gap={'20px'}
         >
           <Text textStyle={'pre-display-2'} color={'grey.0'}>
-            {'"We Print\nYour Business Success"'}
+            {'We Print\nYour Business Success'}
           </Text>
           <Text textStyle={'pre-heading-1'} color={'grey.0'}>
             킨코스는 단순 출력을 넘어, 통합된 시스템으로 비즈니스의 문제를
