@@ -30,6 +30,7 @@ export interface GetSolutionExpertType {
 export interface ImageInfoType {
   url?: string
   path?: string
+  alt?: string
 }
 
 export interface ResponseDTOListGetSolutionExpertType {
@@ -400,6 +401,9 @@ export interface ResponseDTOGetHelpArticleResponseType {
  */
 export interface SeoInfoType {
   slug?: string
+  seoTitle?: string
+  seoDescription?: string
+  ogTitle?: string
   ogDescription?: string
 }
 
@@ -478,6 +482,7 @@ export interface ResponseDTOPageResponseDTOGetAllFaqResponseType {
 export interface GetAllExpertResponseType {
   /** @format int64 */
   id?: number
+  slug?: string
   thumbnailImage?: ImageInfoType
   nickname?: string
   description?: string
@@ -576,6 +581,8 @@ export interface ExpertStrengthType {
  * 데이터
  */
 export interface GetExpertResponseType {
+  /** SEO 관련 정보 */
+  seoInfo: SeoInfoType
   /** 헤더 정보 */
   header: ExpertHeaderType
   /** 프로필 정보 */
@@ -643,20 +650,13 @@ export interface ResponseDTOGetAllExpertSearchResponseType {
   data?: GetAllExpertSearchResponseType
 }
 
-export interface GetExpertMainCustomerReviewExpertInfoType {
-  /** @format int64 */
-  id?: number
-  nickname?: string
-  profileImageUrl?: ImageInfoType
-  industryList?: string[]
-}
-
 export interface GetExpertMainCustomerReviewResponseType {
   /** @format int64 */
   id?: number
   title?: string
   body?: string
-  expert?: GetExpertMainCustomerReviewExpertInfoType
+  companyName?: string
+  customerName?: string
 }
 
 /**
@@ -862,6 +862,7 @@ export interface GetCustomerReviewRelationType {
    * @format int64
    */
   id: number
+  /** slug */
   slug: string
   /** 기업명 */
   companyName: string

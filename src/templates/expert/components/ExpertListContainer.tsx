@@ -4,7 +4,15 @@ import * as React from 'react'
 
 import Link from 'next/link'
 
-import { Box, Button, Flex, Grid, GridItem, VStack } from '@chakra-ui/react'
+import {
+  Box,
+  Button,
+  Flex,
+  Grid,
+  GridItem,
+  Skeleton,
+  VStack,
+} from '@chakra-ui/react'
 import { keepPreviousData } from '@tanstack/react-query'
 
 import { usePannelContext } from '@/components/PannelContext'
@@ -16,6 +24,7 @@ import {
   useGetAllExpertSearchTypeQuery,
 } from '@/generated/apis/ExpertApi/ExpertApi.query'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { SearchResultCardSkeleton } from '@/templates/search/section/SearchResultSkeleton'
 
 import { ExpertCard } from './ExpertCard'
 import { ExpertFilterSection } from './ExpertFilterSection'
@@ -33,7 +42,8 @@ export const ExpertListContainer = () => {
 
   const [currentPage, setCurrentPage] = React.useState(1)
 
-  const { data: searchTypeData } = useGetAllExpertSearchTypeQuery()
+  const { data: searchTypeData, isLoading: isLoadingExpertSearchType } =
+    useGetAllExpertSearchTypeQuery()
 
   const industryOptions = searchTypeData?.data?.industryTypeList || []
   const budgetOptions = searchTypeData?.data?.printCostBracketTypeList || []
@@ -43,7 +53,7 @@ export const ExpertListContainer = () => {
   })[0]
 
   // API 쿼리 - 필터와 페이지에 따라 데이터 요청
-  const { data } = useGetAllExpertQuery({
+  const { data, isLoading: isLoadingExpertList } = useGetAllExpertQuery({
     variables: {
       query: {
         industryId: filter.industryId.map(Number),
@@ -124,18 +134,25 @@ export const ExpertListContainer = () => {
             gap={{ base: '20px', lg: '24px' }}
             rowGap={{ base: '40px', lg: '48px' }}
           >
-            {data?.data?.content?.map((expert) => (
-              <GridItem key={expert.id} w="100%" cursor="pointer">
-                <Link
-                  href={ROUTES.EXPERT_DETAIL.replace(
-                    ':id',
-                    expert.id?.toString() ?? '',
-                  )}
-                >
-                  <ExpertCard expert={expert} />
-                </Link>
-              </GridItem>
-            ))}
+            {isLoadingExpertList ?
+              Array.from({ length: 9 }, (_, index) => (
+                <GridItem key={index} w="100%" cursor="pointer">
+                  <SearchResultCardSkeleton />
+                </GridItem>
+              ))
+            : data?.data?.content?.map((expert) => (
+                <GridItem key={expert.id} w="100%" cursor="pointer">
+                  <Link
+                    href={ROUTES.EXPERT_DETAIL.replace(
+                      ':id',
+                      expert.id?.toString() ?? '',
+                    )}
+                  >
+                    <ExpertCard expert={expert} />
+                  </Link>
+                </GridItem>
+              ))
+            }
           </Grid>
           <Pagination
             currentPage={currentPage}

@@ -35,6 +35,9 @@ export const QUERY_KEY_EXPERT_API_API = {
   GET_EXPERT_DETAIL: (
     variables?: Parameter<typeof expertApiApi.getExpertDetail>,
   ) => ['GET_EXPERT_DETAIL', variables].filter(isDefined),
+  GET_EXPERT_DETAIL_BY_SLUG: (
+    variables?: Parameter<typeof expertApiApi.getExpertDetailBySlug>,
+  ) => ['GET_EXPERT_DETAIL_BY_SLUG', variables].filter(isDefined),
   GET_ALL_EXPERT_SEARCH_TYPE: (
     variables?: Parameter<typeof expertApiApi.getAllExpertSearchType>,
   ) => ['GET_ALL_EXPERT_SEARCH_TYPE', variables].filter(isDefined),
@@ -73,8 +76,9 @@ export const useGetAllExpertQuery = <
  *
  * @tags [Expert API]
  * @name GetExpertDetail
- * @summary 전문가 - 프로필 상세 조회
+ * @summary 전문가 - 프로필 상세 조회(id로 조회)
  * @request GET:/api/v1/expert/{id}
+ * @deprecated
  * @secure    */
 
 export const useGetExpertDetailQuery = <
@@ -90,6 +94,34 @@ export const useGetExpertDetailQuery = <
   return useQuery({
     queryKey,
     queryFn: () => expertApiApi.getExpertDetail(params.variables),
+    ...params?.options,
+  })
+}
+
+/**
+ * No description
+ *
+ * @tags [Expert API]
+ * @name GetExpertDetailBySlug
+ * @summary 전문가 - 프로필 상세 조회(slug로 조회)
+ * @request GET:/api/v1/expert/slug
+ * @secure    */
+
+export const useGetExpertDetailBySlugQuery = <
+  TData = RequestFnReturn<typeof expertApiApi.getExpertDetailBySlug>,
+>(
+  params: QueryHookParams<
+    typeof expertApiApi.getExpertDetailBySlug,
+    { error: ErrorResponseDTOCommonType },
+    TData
+  >,
+) => {
+  const queryKey = QUERY_KEY_EXPERT_API_API.GET_EXPERT_DETAIL_BY_SLUG(
+    params.variables,
+  )
+  return useQuery({
+    queryKey,
+    queryFn: () => expertApiApi.getExpertDetailBySlug(params.variables),
     ...params?.options,
   })
 }

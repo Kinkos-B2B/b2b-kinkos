@@ -61,8 +61,9 @@ export class ExpertApiApi<
    *
    * @tags [Expert API]
    * @name GetExpertDetail
-   * @summary 전문가 - 프로필 상세 조회
+   * @summary 전문가 - 프로필 상세 조회(id로 조회)
    * @request GET:/api/v1/expert/{id}
+   * @deprecated
    * @secure
    */
 
@@ -80,6 +81,32 @@ export class ExpertApiApi<
           `/api/v1/expert`,
           `/api/v1/expert/${variables.id}`,
         ],
+      },
+    }) /**
+   * No description
+   *
+   * @tags [Expert API]
+   * @name GetExpertDetailBySlug
+   * @summary 전문가 - 프로필 상세 조회(slug로 조회)
+   * @request GET:/api/v1/expert/slug
+   * @secure
+   */
+
+  getExpertDetailBySlug = (variables: {
+    query: {
+      slug: string
+    }
+    params?: RequestParams
+  }) =>
+    this.request<ResponseDTOGetExpertResponseType, ErrorResponseDTOCommonType>({
+      path: `/api/v1/expert/slug`,
+      method: 'GET',
+      query: variables.query,
+      secure: true,
+      ...variables.params,
+      next: {
+        ...variables.params?.next,
+        tags: [`/api`, `/api/v1`, `/api/v1/expert`, `/api/v1/expert/slug`],
       },
     }) /**
    * No description

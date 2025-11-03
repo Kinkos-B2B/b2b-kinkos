@@ -23,7 +23,7 @@ export function CustomerReviewCard({
       h={'100%'}
       bg="background.basic.2"
       borderRadius="28px"
-      p={{ lg: '36px', base: '24px 36px' }}
+      p={{ base: '24px 36px' }}
       display="flex"
       flexDirection="column"
       gap="20px"

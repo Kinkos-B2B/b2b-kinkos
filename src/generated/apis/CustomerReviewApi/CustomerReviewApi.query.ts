@@ -90,6 +90,7 @@ export const useGetAllCustomerReviewQuery = <
  * @name GetCustomerReviewDetail
  * @summary 고객후기 - 상세 조회(id로 조회)
  * @request GET:/api/v1/customer-review/{id}
+ * @deprecated
  * @secure    */
 
 export const useGetCustomerReviewDetailQuery = <
