@@ -11,6 +11,7 @@ const removeConsole = (() => {
   if (isClient) return { exclude: ['error'] }
   if (isServer) return false
 })()
+
 module.exports = withBundleAnalyzer({
   // images: {
   //   domains: ['example.com'], // remote 이미지를 next image 로 랜더링하고싶다면 도메인을 설정해주세요
@@ -89,6 +90,14 @@ module.exports = withBundleAnalyzer({
             value: 'max-age=0, s-maxage=86400',
           },
         ],
+      },
+    ]
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap.xml',
+        destination: '/api/sitemap',
       },
     ]
   },
