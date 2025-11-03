@@ -9,7 +9,10 @@ import { useInView } from 'react-intersection-observer'
 
 import { Button } from '@/components/ui/button'
 import { ROUTES } from '@/constants/routes'
-import { GetSolutionExpertListParamsTypeEnumType } from '@/helper/options'
+import {
+  GetRelatedSolutionParamsTypeEnumTypeOptions,
+  GetSolutionExpertListParamsTypeEnumType,
+} from '@/helper/options'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
 import {
@@ -235,7 +238,9 @@ export const SolutionSafetySignTemplate = () => {
       </Box>
 
       <Box py="80px" w={'100%'} bg="primary.1">
-        <SolutionMoreInfoSection linkCard={['SOLUTION', 'REVIEW', 'PROBLEM']} />
+        <SolutionMoreInfoSection
+          type={GetRelatedSolutionParamsTypeEnumTypeOptions.SAFETY_SIGNAGE}
+        />
       </Box>
       <SolutionConnectExportBottomBar stickyRef={stickyRef} />
     </VStack>

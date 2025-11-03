@@ -4,13 +4,28 @@ import { Box, Container, Grid, GridItem, Text, VStack } from '@chakra-ui/react'
 
 import { PageLinkCard, PageLinkKey } from '@/components/view/PageLinkCard'
 import { ROUTES } from '@/constants/routes'
+import { GetRelatedSolutionParamsTypeEnumType } from '@/generated/apis/@types/data-contracts'
+import { useGetRelatedSolutionQuery } from '@/generated/apis/SolutionApi/SolutionApi.query'
+import { SOLUTION_HREF_MAP } from '@/helper/options'
 
 export interface Props {
-  linkCard: PageLinkKey[]
+  type: GetRelatedSolutionParamsTypeEnumType
 }
 
 export const SolutionMoreInfoSection = React.forwardRef<HTMLDivElement, Props>(
-  function BizMoreInfoSection({ linkCard }, ref) {
+  function BizMoreInfoSection({ type }, ref) {
+    const { data } = useGetRelatedSolutionQuery({
+      variables: {
+        query: {
+          type,
+        },
+      },
+    })
+
+    const solutionHref = data?.data?.relatedSolution
+    const reviewHref = data?.data?.relatedCustomerReviewSlug
+    const problemHref = data?.data?.relatedHelpArticleSlug
+
     return (
       <Box ref={ref} w={'100%'}>
         <Container>
@@ -29,13 +44,27 @@ export const SolutionMoreInfoSection = React.forwardRef<HTMLDivElement, Props>(
                 }}
               >
                 <GridItem colSpan={{ base: 1, sm: 1, lg: 1 }}>
-                  <PageLinkCard boxSize="74px" type={linkCard[0]} />
+                  <PageLinkCard
+                    boxSize="74px"
+                    type={'SOLUTION'}
+                    injectedHref={
+                      solutionHref ? SOLUTION_HREF_MAP[solutionHref] : ''
+                    }
+                  />
                 </GridItem>
                 <GridItem colSpan={{ base: 1, sm: 1, lg: 1 }}>
-                  <PageLinkCard boxSize="74px" type={linkCard[1]} />
+                  <PageLinkCard
+                    boxSize="74px"
+                    type={'REVIEW'}
+                    injectedHref={`${reviewHref ? `${ROUTES.CUSTOMER_REVIEW}/${reviewHref}` : ''}`}
+                  />
                 </GridItem>
                 <GridItem colSpan={{ base: 1, sm: 2, lg: 1 }}>
-                  <PageLinkCard boxSize="74px" type={linkCard[2]} />
+                  <PageLinkCard
+                    boxSize="74px"
+                    type={'PROBLEM'}
+                    injectedHref={`${problemHref ? `${ROUTES.PROBLEM}/${problemHref}` : ''}`}
+                  />
                 </GridItem>
               </Grid>
             </VStack>

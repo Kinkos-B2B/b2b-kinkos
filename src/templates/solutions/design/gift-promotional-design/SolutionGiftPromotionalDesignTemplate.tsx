@@ -9,7 +9,10 @@ import { useInView } from 'react-intersection-observer'
 
 import { Button } from '@/components/ui/button'
 import { ROUTES } from '@/constants/routes'
-import { GetSolutionExpertListParamsTypeEnumType } from '@/helper/options'
+import {
+  GetRelatedSolutionParamsTypeEnumTypeOptions,
+  GetSolutionExpertListParamsTypeEnumType,
+} from '@/helper/options'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
 import {
@@ -274,7 +277,11 @@ export const SolutionGiftPromotionalDesignTemplate = () => {
       </Box>
 
       <Box py="80px" w={'100%'} bg="primary.1">
-        <SolutionMoreInfoSection linkCard={['SOLUTION', 'REVIEW', 'PROBLEM']} />
+        <SolutionMoreInfoSection
+          type={
+            GetRelatedSolutionParamsTypeEnumTypeOptions.MARKET_ANALYSIS_BASED
+          }
+        />
       </Box>
       <SolutionConnectExportBottomBar stickyRef={stickyRef} />
     </VStack>

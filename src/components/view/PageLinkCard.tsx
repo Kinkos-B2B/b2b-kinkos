@@ -71,9 +71,11 @@ export type PageLinkKey = keyof typeof PAGE_LINK_CARD_MAP
 export const PageLinkCard = ({
   type,
   boxSize,
+  injectedHref,
 }: {
   type: PageLinkKey
   boxSize?: string
+  injectedHref?: string
 }) => {
   const router = useRouter()
   const { title, description, icon, iconBgColor, href } =
@@ -110,7 +112,7 @@ export const PageLinkCard = ({
             variant="outline"
             colorPalette="grey"
             onClick={() => {
-              router.push(href)
+              router.push(injectedHref || href)
             }}
           >
             더 자세히 알아보기

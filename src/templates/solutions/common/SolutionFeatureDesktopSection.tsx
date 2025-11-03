@@ -28,9 +28,6 @@ export const SolutionFeatureDesktopSection = ({ featureItems }: Props) => {
       )
 
       tableSections.forEach((section, index) => {
-        if (index === 0) {
-          console.log(section)
-        }
         gsap.set(section, {
           top: '0px',
           left: '0',

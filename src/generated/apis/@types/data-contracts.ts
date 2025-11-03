@@ -20,6 +20,31 @@ export interface ErrorResponseDTOCommonType {
 /**
  * 데이터
  */
+export interface GetRelatedSolutionType {
+  relatedSolution?: GetRelatedSolutionRelatedSolutionEnumType
+  relatedCustomerReviewSlug?: string
+  relatedHelpArticleSlug?: string
+}
+
+export interface ResponseDTOGetRelatedSolutionType {
+  /**
+   * HttpStatusCode
+   * @format int32
+   * @example 200
+   */
+  statusCode?: number
+  /**
+   * 응답 메시지
+   * @example "성공"
+   */
+  message?: string
+  /** 데이터 */
+  data?: GetRelatedSolutionType
+}
+
+/**
+ * 데이터
+ */
 export interface GetSolutionExpertType {
   profileImage?: ImageInfoType
   nickname?: string
@@ -84,11 +109,13 @@ export interface SearchResponseType {
    * @format int64
    */
   id: number
+  /** slug */
+  slug: string
   thumbnailImage: ImageInfoType
   /** 타이틀 */
   title: string
+  /** 상세정보 */
   description: string
-  slug: string
   /**
    * 작성날짜
    * @format date-time
@@ -946,6 +973,22 @@ export interface ResponseDTOGetCustomerReviewMainConfigType {
   data?: GetCustomerReviewMainConfigType
 }
 
+export type GetRelatedSolutionRelatedSolutionEnumType =
+  | 'BRANDING_DESIGN'
+  | 'MARKET_ANALYSIS_BASED'
+  | 'POP_DESIGN'
+  | 'VMD_3D'
+  | 'SAFETY_SIGNAGE'
+  | 'SEASONAL_PRINT'
+  | 'ALL_IN_ONE'
+  | 'LOGISTICS_MANAGEMENT'
+  | 'DIGITAL_VIDEO'
+  | 'AR_PRINT'
+  | 'EX_SENSITIVITY_ANALYSIS'
+  | 'BUSINESS_CARD_SITE'
+  | 'CORPORATE_PRINT_MALL'
+  | 'FRANCHISE_PRINT_MALL' // X-enumName Values Missing
+
 /**
  * 고민타입
  */
@@ -1031,6 +1074,22 @@ export type GetCustomerReviewDetailTypeEnumType =
   | 'DIGITAL_VIDEO'
   | 'AR'
   | 'DID' // X-enumName Values Missing
+
+export type GetRelatedSolutionParamsTypeEnumType =
+  | 'BRANDING_DESIGN'
+  | 'MARKET_ANALYSIS_BASED'
+  | 'POP_DESIGN'
+  | 'VMD_3D'
+  | 'SAFETY_SIGNAGE'
+  | 'SEASONAL_PRINT'
+  | 'ALL_IN_ONE'
+  | 'LOGISTICS_MANAGEMENT'
+  | 'DIGITAL_VIDEO'
+  | 'AR_PRINT'
+  | 'EX_SENSITIVITY_ANALYSIS'
+  | 'BUSINESS_CARD_SITE'
+  | 'CORPORATE_PRINT_MALL'
+  | 'FRANCHISE_PRINT_MALL' // X-enumName Values Missing
 
 export type GetSolutionExpertListParamsTypeEnumType =
   | 'BRANDING_DESIGN'

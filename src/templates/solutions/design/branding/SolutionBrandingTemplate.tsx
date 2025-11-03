@@ -7,7 +7,10 @@ import { Box, Container, HStack, Text, VStack } from '@chakra-ui/react'
 import gsap from 'gsap'
 import { useInView } from 'react-intersection-observer'
 
-import { GetSolutionExpertListParamsTypeEnumType } from '@/helper/options'
+import {
+  GetRelatedSolutionParamsTypeEnumTypeOptions,
+  GetSolutionExpertListParamsTypeEnumType,
+} from '@/helper/options'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
 import {
@@ -277,7 +280,9 @@ export const SolutionBrandingTemplate = () => {
       </Box>
 
       <Box py="80px" w={'100%'} bg="primary.1">
-        <SolutionMoreInfoSection linkCard={['SOLUTION', 'REVIEW', 'PROBLEM']} />
+        <SolutionMoreInfoSection
+          type={GetRelatedSolutionParamsTypeEnumTypeOptions.BRANDING_DESIGN}
+        />
       </Box>
       <SolutionConnectExportBottomBar stickyRef={stickyRef} />
     </VStack>

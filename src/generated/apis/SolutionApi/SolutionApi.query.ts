@@ -32,9 +32,40 @@ const isDefined = (v: unknown) => typeof v !== 'undefined'
  * query-keys
  */
 export const QUERY_KEY_SOLUTION_API_API = {
+  GET_RELATED_SOLUTION: (
+    variables?: Parameter<typeof solutionApiApi.getRelatedSolution>,
+  ) => ['GET_RELATED_SOLUTION', variables].filter(isDefined),
   GET_SOLUTION_EXPERT_LIST: (
     variables?: Parameter<typeof solutionApiApi.getSolutionExpertList>,
   ) => ['GET_SOLUTION_EXPERT_LIST', variables].filter(isDefined),
+}
+
+/**
+ * No description
+ *
+ * @tags [Solution API]
+ * @name GetRelatedSolution
+ * @summary 솔루션별 연관 콘텐츠 반환
+ * @request GET:/api/v1/solution/related
+ * @secure    */
+
+export const useGetRelatedSolutionQuery = <
+  TData = RequestFnReturn<typeof solutionApiApi.getRelatedSolution>,
+>(
+  params: QueryHookParams<
+    typeof solutionApiApi.getRelatedSolution,
+    { error: ErrorResponseDTOCommonType },
+    TData
+  >,
+) => {
+  const queryKey = QUERY_KEY_SOLUTION_API_API.GET_RELATED_SOLUTION(
+    params.variables,
+  )
+  return useQuery({
+    queryKey,
+    queryFn: () => solutionApiApi.getRelatedSolution(params.variables),
+    ...params?.options,
+  })
 }
 
 /**

@@ -1,7 +1,9 @@
 import { HttpClient, RequestParams } from '../@http-client'
 import {
   ErrorResponseDTOCommonType,
+  GetRelatedSolutionParamsTypeEnumType,
   GetSolutionExpertListParamsTypeEnumType,
+  ResponseDTOGetRelatedSolutionType,
   ResponseDTOListGetSolutionExpertType,
 } from '../@types/data-contracts'
 
@@ -15,6 +17,39 @@ export class SolutionApiApi<
   SecurityDataType = unknown,
 > extends HttpClient<SecurityDataType> {
   /**
+   * No description
+   *
+   * @tags [Solution API]
+   * @name GetRelatedSolution
+   * @summary 솔루션별 연관 콘텐츠 반환
+   * @request GET:/api/v1/solution/related
+   * @secure
+   */
+
+  getRelatedSolution = (variables: {
+    query: {
+      type: GetRelatedSolutionParamsTypeEnumType
+    }
+    params?: RequestParams
+  }) =>
+    this.request<ResponseDTOGetRelatedSolutionType, ErrorResponseDTOCommonType>(
+      {
+        path: `/api/v1/solution/related`,
+        method: 'GET',
+        query: variables.query,
+        secure: true,
+        ...variables.params,
+        next: {
+          ...variables.params?.next,
+          tags: [
+            `/api`,
+            `/api/v1`,
+            `/api/v1/solution`,
+            `/api/v1/solution/related`,
+          ],
+        },
+      },
+    ) /**
    * No description
    *
    * @tags [Solution API]
