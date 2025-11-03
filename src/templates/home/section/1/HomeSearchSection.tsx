@@ -39,8 +39,8 @@ export const HomeSearchSection = () => {
       <VStack gap={{ base: '40px', sm: '48px' }} position={'relative'}>
         <Box
           position={'absolute'}
-          left={{ base: '70px', sm: '17%', lg: '20%' }}
-          top={{ base: '-50px', sm: '-45px', lg: '-40px' }}
+          left={{ base: '5%', sm: '17%', lg: '20%' }}
+          top={{ base: '-60px', sm: '-45px', lg: '-40px' }}
         >
           <Lottie loop animationData={arrow2Json} width={'70px'} />
 
@@ -48,13 +48,18 @@ export const HomeSearchSection = () => {
         </Box>
         <Box
           position={'absolute'}
-          right={{ base: '10px', sm: '19%', lg: '21%' }}
-          top={{ base: '93px', sm: '15px', lg: '32px' }}
+          right={{ base: '-5%', sm: '19%', lg: '21%' }}
+          top={{ base: '27%', sm: '0px', lg: '32px' }}
         >
-          <Lottie loop animationData={arrow1Json} width={'70px'} />
+          <Lottie loop animationData={arrow1Json} />
         </Box>
 
-        <Text textStyle="pre-display-2" color="grey.10" textAlign="center">
+        <Text
+          textStyle={{ base: 'pre-display-3', lg: 'pre-display-2' }}
+          color="grey.10"
+          textAlign="center"
+          wordBreak={'break-all'}
+        >
           B2B 기업 인쇄{'\n'}딱 맞는 솔루션과 전문가를 찾아보세요!
         </Text>
         <VStack w={'100%'} gap={{ base: '24px', sm: '20px' }} tabIndex={-1}>
