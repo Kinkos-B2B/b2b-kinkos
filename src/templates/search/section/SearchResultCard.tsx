@@ -48,8 +48,7 @@ export const SearchResultCard = ({ item, href }: SearchResultCardProps) => {
                   WebkitBoxOrient: 'vertical',
                 }}
               >
-                {item.title ||
-                  '롯데건설, 현장에서 바로 주문하고 당일 배송으로 명함을 받습니다.'}
+                {item.description || ''}
               </Text>
             </VStack>
 

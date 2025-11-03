@@ -87,6 +87,7 @@ export interface SearchResponseType {
   thumbnailImage: ImageInfoType
   /** 타이틀 */
   title: string
+  description: string
   /**
    * 작성날짜
    * @format date-time
