@@ -48,6 +48,7 @@ export const metadata: Metadata = {
       url: '/favicon.ico',
     },
   ],
+  manifest: '/manifest.json',
   openGraph: {
     type: 'website',
     locale: 'ko',
