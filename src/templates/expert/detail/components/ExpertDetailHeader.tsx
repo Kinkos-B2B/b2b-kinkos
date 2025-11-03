@@ -49,7 +49,7 @@ export const ExpertDetailHeader = ({
           <Image
             fill
             src={header.headerImage?.url || ''}
-            alt="expert-image"
+            alt={header.headerImage?.alt || ''}
             style={{
               objectFit: 'cover',
               width: '100%',
