@@ -8,6 +8,7 @@ import {
   Button,
   Flex,
   HStack,
+  IconButton,
   Image,
   Input,
   Text,
@@ -62,7 +63,12 @@ export const HomeSearchSection = () => {
         >
           B2B 기업 인쇄{'\n'}딱 맞는 솔루션과 전문가를 찾아보세요!
         </Text>
-        <VStack w={'100%'} gap={{ base: '24px', sm: '20px' }} tabIndex={-1}>
+        <VStack
+          w={'100%'}
+          gap={{ base: '24px', sm: '20px' }}
+          tabIndex={-1}
+          maxW={'720px'}
+        >
           <SearchInput />
           <HStack
             gap={{ base: '4px', sm: '10px' }}
@@ -75,6 +81,9 @@ export const HomeSearchSection = () => {
             {randomSearchKeyword?.data?.map((keyword) => (
               <SerachKeyword
                 title={keyword.keyword}
+                bg={'#F3F3F4'}
+                borderColor="none"
+                color={'grey.7'}
                 key={keyword.keyword}
                 onClick={() =>
                   router.push(
@@ -97,10 +106,16 @@ export const HomeSearchSection = () => {
 export const SerachKeyword = ({
   title,
   size = 'md',
+  bg,
+  borderColor,
+  color,
   onClick,
 }: {
   title: string
   size?: 'md' | 'sm'
+  bg?: string
+  borderColor?: string
+  color?: string
   onClick?: () => void
 }) => {
   const sizeStyle = {
@@ -120,22 +135,26 @@ export const SerachKeyword = ({
     <Box
       p={sizeStyle[size].p}
       borderRadius={'full'}
-      bg={'grey.0'}
+      bg={bg || 'grey.0'}
       h={sizeStyle[size].h}
       display={'flex'}
       alignItems={'center'}
       justifyContent={'center'}
       cursor={'pointer'}
-      border={'1px solid'}
+      border={borderColor || '1px solid'}
       lineHeight={'1'}
       borderColor={'grey.3'}
-      color={'grey.8'}
+      color={color || 'grey.8'}
       _hover={{
         bg: 'grey.1',
       }}
       onClick={onClick}
     >
-      <Text textStyle={sizeStyle[size].textStyle} whiteSpace={'nowrap'}>
+      <Text
+        textStyle={sizeStyle[size].textStyle}
+        whiteSpace={'nowrap'}
+        lineHeight={'1'}
+      >
         {title}
       </Text>
     </Box>
@@ -270,33 +289,30 @@ const SearchInput = () => {
         position="relative"
         w="100%"
         borderRadius="9999px"
-        border="1px solid"
+        border="1.5px solid"
         borderColor="grey.3"
         transition="all 0.2s"
       >
         <InputGroup
           w="100%"
           endElement={
-            <Button
-              size="sm"
-              bg="grey.900"
+            <IconButton
               color="white"
+              variant={'ghost'}
+              mr={'4px'}
               borderRadius="9999px"
-              w="40px"
-              h="40px"
-              p="0"
-              minW="40px"
-              _hover={{
-                bg: 'grey.800',
-              }}
-              _active={{
-                bg: 'grey.700',
-              }}
               aria-label="검색"
               onClick={handleSearch}
             >
-              <MagnifyingGlassIcon />
-            </Button>
+              <MagnifyingGlassIcon
+                color={'black'}
+                weight="bold"
+                style={{
+                  width: '32px',
+                  height: '32px',
+                }}
+              />
+            </IconButton>
           }
         >
           <Input
@@ -309,12 +325,14 @@ const SearchInput = () => {
             placeholder="필요한 서비스나 상황을 입력해보세요"
             border="none"
             borderRadius="9999px"
-            px="20px"
+            px="24px"
             h="60px"
             w={'100%'}
             focusRingColor={'grey.10'}
             py="16px"
+            boxShadow={'0 0 23px -7px rgba(0, 0, 0, 0.15)'}
             textStyle={'pre-body-4'}
+            fontSize={'17px !important'}
             color="grey.900"
             _placeholder={{
               color: 'grey.400',
@@ -343,12 +361,12 @@ const SearchInput = () => {
           left="0"
           right="0"
           zIndex={1000}
-          mt="4px"
+          mt="6px"
           bg="white"
           border="1px solid"
           borderColor="grey.2"
           borderRadius="10px"
-          boxShadow="0 4px 12px rgba(0, 0, 0, 0.1)"
+          boxShadow="0 20px 80px 0 rgba(27, 28, 29, 0.04), 0 4px 10px 0 rgba(27, 28, 29, 0.04)"
           maxH="200px"
           overflowY="auto"
           role="listbox"
