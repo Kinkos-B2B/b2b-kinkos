@@ -13,6 +13,7 @@ import {
   GetRelatedSolutionParamsTypeEnumTypeOptions,
   GetSolutionExpertListParamsTypeEnumType,
 } from '@/helper/options'
+import { HOME_INTRODUCE_SOLUTION_SLIDERS } from '@/templates/home/section/2/HomeIntroduceSolution'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
 import {
@@ -73,21 +74,25 @@ const cardsMockData = {
       title: '확실한 행사 성공',
       description:
         '고객의 시선을 사로잡을 가장 효과적인 매대와 포토존을 3D로 미리 기획하여 성공적인 공간을 연출합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[3].features?.[0].icon,
     },
     {
       title: '맞춤형 예산 컨설팅',
       description:
         '단기 팝업은 가성비 좋게, VIP 행사는 품격있게. 행사 성격에 꼭 맞는 맞춤 예산을 제안합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[3].features?.[1].icon,
     },
     {
       title: '돌발 상황 신속 대응',
       description:
         '행사 당일 POP가 부족하거나 파손돼도 즉시 추가 제작하여 신속하게 해결합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[3].features?.[2].icon,
     },
     {
       title: '비용 절감과 친환경',
       description:
         '재사용이 가능한 모듈형 설계와 친환경 소재를 제안하여, 비용 절감과 ESG 경영을 동시에 지원합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[3].features?.[3].icon,
     },
   ],
 }

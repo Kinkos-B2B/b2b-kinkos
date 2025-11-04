@@ -13,6 +13,7 @@ import {
   GetRelatedSolutionParamsTypeEnumTypeOptions,
   GetSolutionExpertListParamsTypeEnumType,
 } from '@/helper/options'
+import { HOME_INTRODUCE_SOLUTION_SLIDERS } from '@/templates/home/section/2/HomeIntroduceSolution'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
 import {
@@ -70,21 +71,25 @@ const cardsMockData = {
       title: '통합 관리, 빠른 출고',
       description:
         '제작사, 물류사, 배송사를 따로 관리할 필요 없습니다. 제작 완료 후 바로 입고, 요청 즉시 출고되어 비즈니스 속도가 빨라집니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[6].features?.[0].icon,
     },
     {
       title: '파손 걱정 끝',
       description:
         '인쇄물을 가장 잘 아는 제작 전문가가 직접 보관하므로, 훼손 위험 없이 최상의 품질을 유지하고 문제 발생 시 즉시 재제작하여 대응합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[6].features?.[1].icon,
     },
     {
       title: '실시간 재고 관리',
       description:
         '실시간 재고 현황을 공유하고, 재고 소진 시점에 맞춰 선제적으로 생산을 준비하므로 재고 부족으로 인한 홍보·영업 활동 중단을 막을 수 있습니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[6].features?.[2].icon,
     },
     {
       title: '확인만 하면 끝',
       description:
         '제작, 입고, 보관, 재고 확인, 출고 요청 등 복잡한 과정은 킨코스가 알아서 합니다. 담당자님은 시스템에서 결과만 확인하세요.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[6].features?.[3].icon,
     },
   ],
 }

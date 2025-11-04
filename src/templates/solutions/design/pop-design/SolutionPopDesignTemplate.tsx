@@ -13,6 +13,7 @@ import {
   GetRelatedSolutionParamsTypeEnumTypeOptions,
   GetSolutionExpertListParamsTypeEnumType,
 } from '@/helper/options'
+import { HOME_INTRODUCE_SOLUTION_SLIDERS } from '@/templates/home/section/2/HomeIntroduceSolution'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
 import {
@@ -71,21 +72,25 @@ const cardsMockData = {
       title: '사이즈 실패 걱정 끝',
       description:
         '전문가가 직접 매장을 재서 딱 맞게 만드니, 잘못된 제작으로 인한 비용과 시간 낭비가 없습니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[2].features?.[0].icon,
     },
     {
       title: '최고의 광고 효과',
       description:
         '매장 환경과 예산에 맞춰 가장 눈에 잘 띄는 소재를 추천해 드리므로, 적은 비용으로도 큰 홍보 효과를 볼 수 있습니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[2].features?.[1].icon,
     },
     {
       title: '동일한 품질 유지',
       description:
         '전국 모든 매장에 통일된 디자인과 깔끔한 설치를 보장하여, 브랜드 이미지를 지킬 수 있습니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[2].features?.[2].icon,
     },
     {
       title: '확인만 하면 끝',
       description:
         '사이즈 측정, 소재 선택, 디자인 제작 등 복잡한 과정은 킨코스가 알아서 합니다. 더 중요한 기획 업무에 집중하세요.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[2].features?.[3].icon,
     },
   ],
 }

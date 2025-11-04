@@ -11,6 +11,7 @@ import {
   GetRelatedSolutionParamsTypeEnumTypeOptions,
   GetSolutionExpertListParamsTypeEnumType,
 } from '@/helper/options'
+import { HOME_INTRODUCE_SOLUTION_SLIDERS } from '@/templates/home/section/2/HomeIntroduceSolution'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
 import {
@@ -80,21 +81,25 @@ const cardsMockData = {
       title: '설명 한 번으로 일관되게',
       description:
         '한 번의 설명으로 충분합니다. 브랜드 스타일을 기억하여 모든 작업에 일관되게 적용합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[0].features?.[0].icon,
     },
     {
       title: '아이디어, 바로 눈앞에',
       description:
         '초기 아이디어를 구체적인 디자인으로 시각화하여 보여드립니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[0].features?.[1].icon,
     },
     {
       title: '알아서, 더 좋게',
       description:
         '"더 좋은 방법은 없을까?" 항상 먼저 고민하고, 수준 높은 디자인을 먼저 제안합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[0].features?.[2].icon,
     },
     {
       title: '제작까지, 한번에',
       description:
         '기획부터 최종 제작까지 전 과정을 책임집니다. 번거로운 과정 없이 핵심 업무에만 집중하세요.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[0].features?.[3].icon,
     },
   ],
 }

@@ -11,6 +11,7 @@ import {
   GetRelatedSolutionParamsTypeEnumTypeOptions,
   GetSolutionExpertListParamsTypeEnumType,
 } from '@/helper/options'
+import { HOME_INTRODUCE_SOLUTION_SLIDERS } from '@/templates/home/section/2/HomeIntroduceSolution'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
 import {
@@ -81,21 +82,25 @@ const cardsMockData = {
       title: '브랜드 이미지 통일',
       description:
         '우리 회사 전용 디자인 템플릿으로 어디서든 일관된 브랜드 이미지를 유지하세요.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[12].features?.[0].icon,
     },
     {
       title: '클릭 한 번으로 주문 끝',
       description:
         '복잡한 텍스트 입력 없이 클릭만으로 주문이 완료되는 자동화 시스템을 경험하세요.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[12].features?.[1].icon,
     },
     {
       title: '비용 절감 효과',
       description:
         '부서별 예산 한도 설정과 자동 차단 기능으로 불필요한 지출을 막아줍니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[12].features?.[2].icon,
     },
     {
       title: '실수 없는 결과물',
       description:
         '전문가가 검증한 데이터로 오타나 인쇄 사고 걱정 없이 안심하고 주문하세요.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[12].features?.[3].icon,
     },
   ],
 }

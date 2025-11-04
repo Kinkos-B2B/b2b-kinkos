@@ -13,6 +13,7 @@ import {
   GetRelatedSolutionParamsTypeEnumTypeOptions,
   GetSolutionExpertListParamsTypeEnumType,
 } from '@/helper/options'
+import { HOME_INTRODUCE_SOLUTION_SLIDERS } from '@/templates/home/section/2/HomeIntroduceSolution'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
 import {
@@ -78,21 +79,25 @@ const cardsMockData = {
       title: '아이디어 고민 끝',
       description:
         '국내외 성공 사례를 바탕으로 브랜드 가치를 높일 최적의 아이디어를 제안해 드립니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[5].features?.[0].icon,
     },
     {
       title: '최고의 브랜딩 효과',
       description:
         '기획부터 구성품 하나까지 브랜드 아이덴티티에 맞춰 고민하고 제작합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[5].features?.[1].icon,
     },
     {
       title: '수량, 예산 걱정 끝',
       description:
         '10권부터 대량제작까지 원하는 수량과 예산에 맞춰 최적의 솔루션을 제안해 드립니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[5].features?.[2].icon,
     },
     {
       title: '확인만 하면 끝',
       description:
         '아이디어 기획, 디자인, 제작 방식 선택 등 복잡한 과정은 킨코스가 해결합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[5].features?.[3].icon,
     },
   ],
 }

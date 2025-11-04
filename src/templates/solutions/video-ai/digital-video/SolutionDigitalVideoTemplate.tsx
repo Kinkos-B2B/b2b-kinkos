@@ -11,6 +11,7 @@ import {
   GetRelatedSolutionParamsTypeEnumTypeOptions,
   GetSolutionExpertListParamsTypeEnumType,
 } from '@/helper/options'
+import { HOME_INTRODUCE_SOLUTION_SLIDERS } from '@/templates/home/section/2/HomeIntroduceSolution'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
 import {
@@ -76,21 +77,42 @@ const cardsMockData = {
       title: '경험 기반 기획',
       description:
         '인쇄물 디자인 경험을 바탕으로 고객의 시선을 끄는 가장 효과적인 영상 콘셉트를 제안합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[8].features?.[0].icon,
     },
     {
       title: 'AI 기반의 빠른 제작',
       description:
         'AI 기술로 영상 시안을 빠르게 제작하고 데이터로 효과를 검증하여, 제작 기간을 단축하고 성공률을 높입니다.',
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 16 16"
+          fill="none"
+        >
+          <path
+            d="M13.2533 12.4881H11.8726V3.40039H13.2533V12.4881Z"
+            fill="white"
+          />
+          <path
+            d="M2.7002 12.4881L5.96375 3.40039H7.56415L10.834 12.4881H9.35911L6.79847 5.06355H6.72316L4.15624 12.4881H2.7002ZM9.12062 8.92961V10.0844H4.40101V8.92961H9.12062Z"
+            fill="white"
+          />
+        </svg>
+      ),
     },
     {
       title: '목적 중심 맞춤 제작',
       description:
         '신제품 홍보, 프로모션 등 비즈니스 목적과 전략에 정확히 맞는 영상 콘텐츠를 맞춤 제작합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[8].features?.[2].icon,
     },
     {
       title: '인쇄물까지 통합 관리',
       description:
         '영상 콘텐츠와 함께 메뉴판, 포스터 등 인쇄물까지 원스톱으로 관리하여 담당자의 업무 효율을 높여 드립니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[8].features?.[3].icon,
     },
   ],
 }

@@ -60,14 +60,14 @@ export interface HomeSolutionSliderItem {
   alt: string
 }
 
-const sliders: HomeSolutionSliderItem[] = [
+export const HOME_INTRODUCE_SOLUTION_SLIDERS: HomeSolutionSliderItem[] = [
   {
     badge: '브랜딩 디자인',
     title: '브랜드를 이해하는 기획, 제작까지 한번에',
     features: [
       {
         icon: <ChatCircleIcon size={16} color="white" />,
-        title: '한 번의 설명, 일관된 결과',
+        title: '설명 한 번으로 일관되게',
         description:
           '한 번의 설명으로 브랜드 스타일을 기억하고, 모든 작업에 일관되게 반영합니다.',
       },
@@ -165,7 +165,6 @@ const sliders: HomeSolutionSliderItem[] = [
     features: [
       {
         icon: <CubeIcon size={16} color="white" />,
-
         title: '확실한 행사 성공',
         description:
           '고객의 시선을 사로잡을 매대와 포토존을 3D 공간 연출로 미리 보여드립니다.',
@@ -604,7 +603,7 @@ export const HomeIntroduceSolution = () => {
       w={'100%'}
       px={{ sm: '40px', base: '20px' }}
     >
-      <HomeSolutionSlider slides={sliders} />
+      <HomeSolutionSlider slides={HOME_INTRODUCE_SOLUTION_SLIDERS} />
     </Box>
   )
 }

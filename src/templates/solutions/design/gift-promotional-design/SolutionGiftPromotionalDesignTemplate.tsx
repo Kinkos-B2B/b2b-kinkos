@@ -13,6 +13,7 @@ import {
   GetRelatedSolutionParamsTypeEnumTypeOptions,
   GetSolutionExpertListParamsTypeEnumType,
 } from '@/helper/options'
+import { HOME_INTRODUCE_SOLUTION_SLIDERS } from '@/templates/home/section/2/HomeIntroduceSolution'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
 import {
@@ -79,21 +80,25 @@ const cardsMockData = {
       title: '브랜드 각인 효과',
       description:
         '일상에서 자주 쓰이는 굿즈와 판촉물로 고객에게 브랜드를 가장 자연스럽게 알릴 수 있습니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[1].features?.[0].icon,
     },
     {
       title: '차별화된 고객 경험',
       description:
         '기업의 특성을 살린 감각적인 굿즈와 판촉물로 고객에게 특별한 브랜드 경험을 제공합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[1].features?.[1].icon,
     },
     {
       title: '효율적 예산 활용',
       description:
         '소량 제작부터 단가 비교 제안까지, 주어진 예산을 가장 효율적으로 사용할 수 있도록 지원합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[1].features?.[2].icon,
     },
     {
       title: '제작 리스크 최소화',
       description:
         '3D 시안과 샘플링 과정으로 재작업의 위험과 불필요한 시간 낭비를 확실하게 줄여드립니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[1].features?.[3].icon,
     },
   ],
 }

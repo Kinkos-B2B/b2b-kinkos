@@ -13,6 +13,7 @@ import {
   GetRelatedSolutionParamsTypeEnumTypeOptions,
   GetSolutionExpertListParamsTypeEnumType,
 } from '@/helper/options'
+import { HOME_INTRODUCE_SOLUTION_SLIDERS } from '@/templates/home/section/2/HomeIntroduceSolution'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
 import {
@@ -76,21 +77,25 @@ const cardsMockData = {
       title: '체계적인 브랜드 관리',
       description:
         '전 직원이 승인된 동일 템플릿만 사용하게 하여, 언제 누가 주문하든 통일성 있는 기업 브랜드 아이덴티티를 유지합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[11].features?.[0].icon,
     },
     {
       title: '투명한 예산관리',
       description:
         '부서별, 개인별 주문 내역과 비용을 시스템에서 한눈에 관리할 수 있어, 예산 계획과 집행이 투명하고 간편해집니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[11].features?.[1].icon,
     },
     {
       title: '불필요한 업무 제거',
       description:
         '담당자가 일일이 정보를 챙기는 대신, 직원들이 자동 입력된 정보로 직접 주문하여 업무 과정이 간소화됩니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[11].features?.[2].icon,
     },
     {
       title: '확인만 하면 주문 끝',
       description:
         '오타나 디자인 오류 걱정 없이, 자동 입력된 정보가 맞는지 확인만 하세요. 명함 시안이 즉시 완성됩니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[11].features?.[3].icon,
     },
   ],
 }

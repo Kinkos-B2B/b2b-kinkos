@@ -13,6 +13,7 @@ import {
   GetRelatedSolutionParamsTypeEnumTypeOptions,
   GetSolutionExpertListParamsTypeEnumType,
 } from '@/helper/options'
+import { HOME_INTRODUCE_SOLUTION_SLIDERS } from '@/templates/home/section/2/HomeIntroduceSolution'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
 import {
@@ -75,21 +76,25 @@ const cardsMockData = {
       title: '전략적인 디자인 기획',
       description:
         '이벤트나 홍보 목적에 맞춰 고객의 아이디어를 기획·디자인하여 가장 효과적인 인쇄물로 완성합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[7].features?.[0].icon,
     },
     {
       title: '데이터 기반 공정 관리',
       description:
         'MES(생산 공정 관리)를 통해 컬러부터 후가공까지 전 공정을 데이터로 제어하여, 모든 제작물의 품질을 동일하게 유지합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[7].features?.[1].icon,
     },
     {
       title: '원스톱 물류 솔루션',
       description:
         '제작물 분류부터 개별 포장, 전국 지점별 맞춤 배송까지. 킨코스가 복잡한 물류 과정을 한번에 해결해 드립니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[7].features?.[2].icon,
     },
     {
       title: '신속한 위기 대응',
       description:
         '킨코스는 자체 생산 전문센터를 통해, 긴급 추가 제작 등 어떤 돌발 상황에도 신속하게 대응합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[7].features?.[3].icon,
     },
   ],
 }

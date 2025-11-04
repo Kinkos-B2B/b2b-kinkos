@@ -13,6 +13,7 @@ import {
   GetRelatedSolutionParamsTypeEnumTypeOptions,
   GetSolutionExpertListParamsTypeEnumType,
 } from '@/helper/options'
+import { HOME_INTRODUCE_SOLUTION_SLIDERS } from '@/templates/home/section/2/HomeIntroduceSolution'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
 import {
@@ -78,21 +79,25 @@ const cardsMockData = {
       title: '규정·규격 실패 걱정 끝',
       description:
         '안전 전문가가 현장과 법규를 분석해 꼭 맞게 제작하니, 잘못된 제작으로 인한 과태료, 재작업 등의 비용과 시간 낭비가 없습니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[4].features?.[0].icon,
     },
     {
       title: '최고의 안전 효과',
       description:
         '현장 환경(저조도, 옥외 등)과 예산에 맞춰 가장 눈에 잘 띄는 축광·반사 소재 등을 추천하므로, 최소 비용으로 최대의 안전 효과를 볼 수 있습니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[4].features?.[1].icon,
     },
     {
       title: '전국 현장 품질 유지',
       description:
         '전국 모든 현장에 통일된 디자인과 검증된 품질의 사인물을 깔끔하게 설치하여, 전사적인 안전 관리 시스템의 퀄리티를 지킬 수 있습니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[4].features?.[2].icon,
     },
     {
       title: '확인만 하면 끝',
       description:
         '현장 실측, 소재 선택, 맞춤 디자인, 긴급 제작 등 복잡하고 번거로운 과정은 저희가 알아서 합니다. 더 중요한 안전 기획 및 관리 업무에 집중하세요.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[4].features?.[3].icon,
     },
   ],
 }

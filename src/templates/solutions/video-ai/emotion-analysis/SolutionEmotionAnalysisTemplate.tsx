@@ -13,6 +13,7 @@ import {
   GetRelatedSolutionParamsTypeEnumTypeOptions,
   GetSolutionExpertListParamsTypeEnumType,
 } from '@/helper/options'
+import { HOME_INTRODUCE_SOLUTION_SLIDERS } from '@/templates/home/section/2/HomeIntroduceSolution'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
 import {
@@ -86,21 +87,25 @@ const cardsMockData = {
       title: '메시지 전달력 강화',
       description:
         '상품과 프로모션을 가장 효과적으로 전달할 수 있도록, 소비자의 시선이 어디에 머무는지 정확한 데이터로 보여드립니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[10].features?.[0].icon,
     },
     {
       title: '이기는 디자인',
       description:
         '경쟁 제품과의 객관적인 비교 분석을 바탕으로, 효과적인 디자인 개선 방향을 안내해드립니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[10].features?.[1].icon,
     },
     {
       title: '소비자 시선 선점',
       description:
         '매대 POP나 포스터에 대한 시선 데이터를 기반으로, 가장 효과적인 홍보물 배치 방법을 제안합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[10].features?.[2].icon,
     },
     {
       title: '이해하기 쉬운 보고서',
       description:
         '광고 성과의 이유를 추측하지 마세요. 클릭을 유도한 시선 데이터를 분석하여 디자인 개선을 위한 핵심 인사이트를 제공합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[10].features?.[3].icon,
     },
   ],
 }

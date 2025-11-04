@@ -13,6 +13,7 @@ import {
   GetRelatedSolutionParamsTypeEnumTypeOptions,
   GetSolutionExpertListParamsTypeEnumType,
 } from '@/helper/options'
+import { HOME_INTRODUCE_SOLUTION_SLIDERS } from '@/templates/home/section/2/HomeIntroduceSolution'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
 import {
@@ -85,21 +86,39 @@ const cardsMockData = {
       title: '오래 기억되는 브랜드',
       description:
         '인쇄물에 적용된 AR 기술로 영상과 소리를 직접 체험하는 특별한 경험은 브랜드 인지도와 호감도를 효과적으로 높여줍니다.',
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          viewBox="0 0 16 16"
+          fill="none"
+        >
+          <path d="M6 3H4V14H6V3Z" fill="white" />
+          <path
+            d="M11.7906 13.382C11.248 11.7788 10.2644 10.4518 9.08726 9.43843C9.94394 8.46902 11.9683 6 11.9683 6H9.16341L6 9.66118L6.45056 9.95608C7.71655 10.778 8.57641 11.9012 9.3284 13.7082L9.44897 14H12L11.7906 13.3788V13.382Z"
+            fill="white"
+          />
+        </svg>
+      ),
     },
     {
       title: '참여형 콘텐츠 제작',
       description:
         '고객이 직접 참여하고 공유하는 인터랙티브 콘텐츠를 통해, 고객 스스로 브랜드 홍보대사가 되는 강력한 바이럴 효과를 경험해 보세요.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[9].features?.[1].icon,
     },
     {
       title: '다양한 비즈니스 연결',
       description:
         '영상, 3D 모델, 웹페이지 등 어떤 콘텐츠든 인쇄물에 연결하여 프로모션, 전시, 교육 등 다양한 비즈니스 목적에 맞춰 활용할 수 있습니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[9].features?.[2].icon,
     },
     {
       title: '경쟁사 차별화 방법',
       description:
         '인쇄물에 AR 기술을 더하는 것만으로, 고객에게는 신선한 재미를 주고 경쟁사와는 다른 혁신적인 브랜드 이미지를 제공합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[9].features?.[3].icon,
     },
   ],
 }

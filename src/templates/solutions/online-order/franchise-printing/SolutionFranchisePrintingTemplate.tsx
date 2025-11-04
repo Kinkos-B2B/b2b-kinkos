@@ -13,6 +13,7 @@ import {
   GetRelatedSolutionParamsTypeEnumTypeOptions,
   GetSolutionExpertListParamsTypeEnumType,
 } from '@/helper/options'
+import { HOME_INTRODUCE_SOLUTION_SLIDERS } from '@/templates/home/section/2/HomeIntroduceSolution'
 
 import { SolutionConnectExportBottomBar } from '../../common/SolutionConnectExportBottomBar'
 import {
@@ -78,21 +79,25 @@ const cardsMockData = {
       title: '브랜드 이미지 통일',
       description:
         '정해진 디자인 템플릿으로 브랜드의 일관성을 유지하고, 점주님은 디자인 걱정 없이, 클릭 몇 번으로 간편하게 주문합니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[13].features?.[0].icon,
     },
     {
       title: '간단한 업무, 최고의 효율',
       description:
         '본사는 전국 주문을 한눈에 파악하고, 점주님은 24시간 언제든 필요할 때 주문하며 매장 운영에만 집중할 수 있습니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[13].features?.[1].icon,
     },
     {
       title: '투명한 비용 관리',
       description:
         '주문 가능한 항목과 금액이 투명하게 보여 과지출을 막아주고, 본사와 가맹점 모두의 비용을 아낄 수 있습니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[13].features?.[2].icon,
     },
     {
       title: '제작부터 배송까지',
       description:
         '주문하신 홍보물을 매장별로 꼼꼼하게 포장하여 전국 어디든 배송해 드립니다. 점주님은 신경 쓸 필요 없이 매장에서 편하게 받으시면 됩니다.',
+      icon: HOME_INTRODUCE_SOLUTION_SLIDERS[13].features?.[3].icon,
     },
   ],
 }

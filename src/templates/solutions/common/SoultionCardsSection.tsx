@@ -1,27 +1,18 @@
 import { ReactElement } from 'react'
+import React from 'react'
 
-import {
-  Box,
-  Card,
-  Center,
-  Grid,
-  GridItem,
-  HStack,
-  Icon,
-  Square,
-  VStack,
-} from '@chakra-ui/react'
+import { Box, Card, Center, Grid, GridItem, VStack } from '@chakra-ui/react'
 import { Text } from '@chakra-ui/react'
-import { SquareHalfIcon } from '@phosphor-icons/react/dist/ssr'
+import { IconProps } from '@phosphor-icons/react/dist/lib/types'
 
 interface Props {
   title: ReactElement
   cards: {
     title: string
     description: string
+    icon: React.ReactNode
   }[]
 }
-
 export const SoultionCardsSection = ({ title, cards }: Props) => {
   return (
     <VStack gap={{ base: '32px', sm: '40px', lg: '48px' }}>
@@ -58,7 +49,13 @@ export const SoultionCardsSection = ({ title, cards }: Props) => {
                   borderRadius={'8px'}
                   as={Center}
                 >
-                  <SquareHalfIcon size={28} color={'white'} />
+                  {React.cloneElement(
+                    card.icon as React.ReactElement<IconProps>,
+                    {
+                      size: 28,
+                      color: 'white',
+                    },
+                  )}
                 </Box>
                 <VStack align="flex-start" gap="16px" flex="1">
                   <Text
