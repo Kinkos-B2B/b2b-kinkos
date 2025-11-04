@@ -41,4 +41,8 @@ export const ROUTES = {
   EXPERT_DETAIL: '/expert/:id',
   SUPPORT: '/support',
   FAQ: '/faq',
+  TERMS: '/terms',
+  PRIVACY: '/privacy',
+  COPYRIGHT: '/copyright',
+  CERTIFICATION: '/certification',
 } as const

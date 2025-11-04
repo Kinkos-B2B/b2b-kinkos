@@ -271,45 +271,50 @@ export const PageLayoutFooter = () => {
           <VStack align="stretch" gap="12px">
             {/* 법적 정보 링크들 */}
             <HStack gap="10px" wrap="wrap" role="list" aria-label="법적 정보">
-              {FOOTER_LEGAL.items.map((item, index) => (
-                <HStack key={item.href} gap="10px" role="listitem">
-                  <ChakraLink
-                    as={Link}
-                    target="_blank"
-                    href={item.href}
-                    tabIndex={-1}
-                    focusRing={'none'}
-                  >
-                    <Text
-                      fontSize="15px"
-                      fontWeight="400"
-                      color={
-                        'isActive' in item && item.isActive ?
-                          'grey.0'
-                        : 'grey.5'
-                      }
-                      letterSpacing="-0.3px"
-                      lineHeight="1.6"
-                      _hover={{ color: 'grey.3' }}
-                      transition="color 0.2s"
+              {FOOTER_LEGAL.items.map((item, index) => {
+                const isExternalLink =
+                  item.href.startsWith('http://') ||
+                  item.href.startsWith('https://')
+                return (
+                  <HStack key={item.href} gap="10px" role="listitem">
+                    <ChakraLink
+                      as={Link}
+                      {...(isExternalLink ? { target: '_blank' } : {})}
+                      href={item.href}
+                      tabIndex={-1}
+                      focusRing={'none'}
                     >
-                      {item.label}
-                    </Text>
-                  </ChakraLink>
-                  {index < FOOTER_LEGAL.items.length - 1 && (
-                    <Box
-                      w="1px"
-                      h="12px"
-                      display="flex"
-                      alignItems="center"
-                      justifyContent="center"
-                      aria-hidden="true"
-                    >
-                      <Box w="1px" h="12px" bg={'grey.9'} />
-                    </Box>
-                  )}
-                </HStack>
-              ))}
+                      <Text
+                        fontSize="15px"
+                        fontWeight="400"
+                        color={
+                          'isActive' in item && item.isActive ?
+                            'grey.0'
+                          : 'grey.5'
+                        }
+                        letterSpacing="-0.3px"
+                        lineHeight="1.6"
+                        _hover={{ color: 'grey.3' }}
+                        transition="color 0.2s"
+                      >
+                        {item.label}
+                      </Text>
+                    </ChakraLink>
+                    {index < FOOTER_LEGAL.items.length - 1 && (
+                      <Box
+                        w="1px"
+                        h="12px"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        aria-hidden="true"
+                      >
+                        <Box w="1px" h="12px" bg={'grey.9'} />
+                      </Box>
+                    )}
+                  </HStack>
+                )
+              })}
             </HStack>
 
             {/* 회사 정보 */}

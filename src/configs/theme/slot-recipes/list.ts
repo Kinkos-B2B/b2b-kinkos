@@ -5,6 +5,7 @@ export const listSlotRecipe = defineSlotRecipe({
   slots: ['root', 'item', 'indicator'],
   base: {
     root: {
+      '--list-gap': '16px',
       display: 'flex',
       flexDirection: 'column',
       gap: 'var(--list-gap)',
