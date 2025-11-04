@@ -46,4 +46,7 @@ export const globalCss = defineGlobalStyles({
     bg: 'colors.blue.200',
     color: 'colors.grey.900',
   },
+  img: {
+    userSelect: 'none',
+  },
 })

@@ -1,5 +1,6 @@
 import { Metadata, Viewport } from 'next'
 
+import { ImageProtection } from '@/components/@layout/image-protection'
 import { PageLayout } from '@/components/@layout/page-layout/page-layout'
 import { Provider as ThemeProvider } from '@/components/ui/provider'
 import { ENV } from '@/configs/env'
@@ -98,6 +99,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body>
+        <ImageProtection />
         <AppProvider>
           <ThemeProvider forcedTheme="light">
             <PageLayout>{children}</PageLayout>
