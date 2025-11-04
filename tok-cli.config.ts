@@ -22,7 +22,7 @@ const config: RootConfig<{
   },
   'gen:api': {
     swaggerSchemaUrl:
-      'http://kinkos-dev-alb-791024275.ap-northeast-2.elb.amazonaws.com/v3/api-docs/1.%20%EC%9D%BC%EB%B0%98%20API',
+      'https://b2bdevapi.kinkos.co.kr/v3/api-docs/1.%20%EC%9D%BC%EB%B0%98%20API',
     httpClientType: 'fetch',
     instancePath: '@/configs/fetch/fetch-extend',
   },
