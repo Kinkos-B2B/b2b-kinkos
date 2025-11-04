@@ -344,6 +344,7 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
       h="100dvh"
       w="100dvw"
       bgImage={`url(${imgBg})`}
+      bgColor={'grey.10'}
       bgSize="cover"
       bgRepeat="no-repeat"
     >
