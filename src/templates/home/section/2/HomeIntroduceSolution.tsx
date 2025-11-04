@@ -571,7 +571,7 @@ const sliders: HomeSolutionSliderItem[] = [
       {
         icon: <SquaresFourIcon size={16} color="white" />,
 
-        title: '업무는 간단히, 효율은 최고로',
+        title: '간단한 업무, 최고의 효율',
         description:
           '본사는 주문 현황을 한눈에 파악하고, 가맹점주는 필요할 때 언제든 주문합니다.',
       },

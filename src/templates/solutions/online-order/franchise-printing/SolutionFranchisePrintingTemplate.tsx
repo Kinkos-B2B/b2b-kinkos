@@ -66,7 +66,8 @@ const heroMockData = {
 const cardsMockData = {
   title: (
     <Text textStyle={'pre-display-4'} textAlign={'center'}>
-      <Text as={'span'}>프랜차이즈 솔루션으로 </Text>
+      <Text as={'span'}>프랜차이즈 전용 인쇄몰 솔루션으로</Text>
+      <br />
       <Text textStyle={'pre-display-4'} color={'primary.4'} as={'span'}>
         본사와 가맹점 모두가 만족하는 이유
       </Text>
@@ -79,7 +80,7 @@ const cardsMockData = {
         '정해진 디자인 템플릿으로 브랜드의 일관성을 유지하고, 점주님은 디자인 걱정 없이, 클릭 몇 번으로 간편하게 주문합니다.',
     },
     {
-      title: '업무는 간단히, 효율은 최고로',
+      title: '간단한 업무, 최고의 효율',
       description:
         '본사는 전국 주문을 한눈에 파악하고, 점주님은 24시간 언제든 필요할 때 주문하며 매장 운영에만 집중할 수 있습니다.',
     },
