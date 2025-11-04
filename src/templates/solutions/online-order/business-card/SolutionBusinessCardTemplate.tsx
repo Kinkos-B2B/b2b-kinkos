@@ -97,7 +97,7 @@ const cardsMockData = {
 
 const featureData: FeatureItem[] = [
   {
-    title: '자동 정보 연동으로 ‘오타와 디자인 오류’ 원천 방지',
+    title: '자동 데이터 연동으로 오타 없는 디자인',
     type: 'description',
     description:
       '사내 데이터와 연동된 임직원 정보가 명함 템플릿에 자동으로 적용됩니다. 담당자가 직접 입력하지 않아 오타나 디자인 가이드라인 위반 등의 담당자의 오류를 원천적으로 차단합니다.',
