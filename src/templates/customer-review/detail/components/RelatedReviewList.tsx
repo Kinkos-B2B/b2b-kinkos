@@ -65,7 +65,17 @@ const ReleatedCustomerReviewCard = ({
         w={{ base: '100px', sm: '190px' }}
         h={{ base: '100px', sm: '120px' }}
       >
-        <Image src={image} alt={title} fill style={{ objectFit: 'cover' }} />
+        <Image
+          src={image}
+          alt={title}
+          fill
+          style={{
+            objectFit: 'cover',
+            width: '100%',
+            height: '100%',
+            borderRadius: '28px',
+          }}
+        />
       </Box>
     </Flex>
   )
