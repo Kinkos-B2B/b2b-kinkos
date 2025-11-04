@@ -77,7 +77,7 @@ const cardsMockData = {
   ),
   cards: [
     {
-      title: '한 번의 설명, 일관된 결과',
+      title: '설명 한 번으로 일관되게',
       description:
         '한 번의 설명으로 충분합니다. 브랜드 스타일을 기억하여 모든 작업에 일관되게 적용합니다.',
     },

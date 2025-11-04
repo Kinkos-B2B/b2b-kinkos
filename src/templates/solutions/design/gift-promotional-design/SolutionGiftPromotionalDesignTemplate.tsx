@@ -176,7 +176,7 @@ const featureData: FeatureItem[] = [
         competitorB: 'X',
       },
       {
-        category: '직접 생산상식',
+        category: '직접 생산방식',
         kinkos: 'O',
         competitorA: 'X',
         competitorB: 'X',

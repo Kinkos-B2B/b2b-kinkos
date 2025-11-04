@@ -142,7 +142,7 @@ export const bizDescriptionMockData = [
 
 export const bizVideoSectionMockData: BizVideoSectionData = {
   title:
-    '전국 배포 프로젝트 지원이 가능한​\n킨코스 생산 & 제작 센터를 방문해 보고 싶으신가요?',
+    '전국 배포 프로젝트 지원이 가능한\n생산 공장을 방문해 보고 싶으신가요?',
   description:
     '상담 신청 시 공장 관람을 요청하시면 전체 제작 과정을 투명하게 보여 드립니다.​',
   buttonText: '생산 공장 관람 요청​',

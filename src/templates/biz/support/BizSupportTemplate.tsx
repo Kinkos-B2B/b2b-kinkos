@@ -142,7 +142,7 @@ export const bizDescriptionMockData = [
 ]
 
 export const bizVideoSectionMockData: BizVideoSectionData = {
-  title: '킨코스의 전문 인력과\n지원되고 있는 솔루션이 궁금하신가요?',
+  title: '킨코스 전문가들이\n지원하는 솔루션이 궁금하신가요?',
   description:
     '전문가 리스트를 확인하고 상담 신청을 통해 상세 솔루션을 받아보실 수 있습니다.',
   buttonText: '전문가 연결하기',
