@@ -7,8 +7,6 @@ import { Box, Container, HStack, Text, VStack } from '@chakra-ui/react'
 import gsap from 'gsap'
 import { useInView } from 'react-intersection-observer'
 
-import { Button } from '@/components/ui/button'
-import { ROUTES } from '@/constants/routes'
 import {
   GetRelatedSolutionParamsTypeEnumTypeOptions,
   GetSolutionExpertListParamsTypeEnumType,
@@ -115,10 +113,6 @@ const featureData: FeatureItem[] = [
         url: '/images/solutions/video-ai/digital-video/solution-digital-2.gif',
         alt: '9_디지털영상제작_2_가을 시즌 메뉴 ‘제주 유기농 말차라떼’ 홍보 영상, 제주산 유기농 말차를 활용한 카페 프로모션 콘텐츠 예시',
       },
-      {
-        url: '/images/solutions/video-ai/digital-video/solution-digital-3.gif',
-        alt: '9_디지털영상제작_3_가을 한정 음료 ‘토피넛 라떼’ 홍보 영상, 시즌 한정 프로모션용 카페 메뉴 광고 콘텐츠 예시',
-      },
     ],
   },
   {
@@ -155,7 +149,7 @@ const featureData: FeatureItem[] = [
     ],
     imageData: [
       {
-        url: '/images/solutions/video-ai/digital-video/solution-digital-6.gif',
+        url: '/images/solutions/video-ai/digital-video/solution-digital-6.mp4',
         alt: '9_디지털영상제작_6_한식, 일식, 양식 등 다양한 음식이 빠르게 전환되며 시선을 끄는 모션그래픽 광고 영상, 매장 프로모션용 메뉴 홍보 콘텐츠 예시',
       },
     ],
@@ -177,6 +171,7 @@ const featureData: FeatureItem[] = [
         url: '/images/solutions/video-ai/digital-video/solution-digital-7.png',
         alt: '9_디지털영상제작_7_매장 유리창에 부착된 햄버거 프로모션 포스터, 시즌 이벤트 홍보를 위한 인쇄용 POP 디지털 영상 제작 예시',
       },
+
       {
         url: '/images/solutions/video-ai/digital-video/solution-digital-8.gif',
         alt: '9_디지털영상제작_8_패스트푸드 매장 테이블 위 전자 디스플레이에 재생되는 햄버거 프로모션 영상, 매장 내 디지털 사이니지용 광고 콘텐츠 예시',

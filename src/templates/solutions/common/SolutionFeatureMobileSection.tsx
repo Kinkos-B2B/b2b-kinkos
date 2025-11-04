@@ -50,6 +50,7 @@ export const SolutionFeatureMobileSection = ({
       py={{ base: '100px', sm: '140px', lg: '160px' }}
       gap={{ base: '100px', sm: '140px' }}
       display={'flex'}
+      px={0}
       flexDirection={'column'}
       position={'relative'}
     >
@@ -62,7 +63,11 @@ export const SolutionFeatureMobileSection = ({
             gap={{ base: '56px', sm: '80px' }}
             flexDirection={'column'}
           >
-            <Box w={'100%'} overflow={'hidden'}>
+            <Box
+              w={'100%'}
+              overflow={'hidden'}
+              px={{ lg: '0px', sm: '40px', base: '20px' }}
+            >
               {featureItem.type === 'table' && (
                 <SolutionFeatureItem.Table
                   title={featureItem.title}
@@ -83,22 +88,38 @@ export const SolutionFeatureMobileSection = ({
               )}
             </Box>
             <Box>
-              <ChakraMarquee direction="left" loop={0} autoFill={false}>
+              <ChakraMarquee direction="left" loop={0} autoFill={true}>
                 {imageData[index].map((image, index) => (
                   <Flex key={index} p={'20px'} pt={'0px'} alignItems={'start'}>
-                    <Image
-                      src={image.url || ''}
-                      alt={image.alt || ''}
-                      width={isBase ? 240 : 360}
-                      height={0}
-                      sizes="100vw"
-                      style={{
-                        borderRadius: '28px',
-                        height: '100%',
-                        objectFit: 'cover',
-                        boxShadow: '0 10px 24px 0 rgba(0, 27, 110, 0.10)',
-                      }}
-                    />
+                    {image.url.includes('.mp4') ?
+                      <chakra.video
+                        src={image.url}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        style={{
+                          borderRadius: '28px',
+                          width: '100%',
+                          maxHeight: '500px',
+                          objectFit: 'cover',
+                          aspectRatio: '8/8',
+                        }}
+                      />
+                    : <Image
+                        src={image.url || ''}
+                        alt={image.alt || ''}
+                        width={isBase ? 240 : 360}
+                        height={0}
+                        sizes="100vw"
+                        style={{
+                          borderRadius: '28px',
+                          height: '100%',
+                          objectFit: 'cover',
+                          boxShadow: '0 10px 24px 0 rgba(0, 27, 110, 0.10)',
+                        }}
+                      />
+                    }
                   </Flex>
                 ))}
               </ChakraMarquee>

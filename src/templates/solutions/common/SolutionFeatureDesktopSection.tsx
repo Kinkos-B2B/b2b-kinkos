@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useRef } from 'react'
 
-import { Box, Container, Flex, Image, VStack } from '@chakra-ui/react'
+import { Box, Container, Flex, Image, VStack, chakra } from '@chakra-ui/react'
 import { useGSAP } from '@gsap/react'
 
 import { gsap } from 'gsap'
@@ -184,18 +184,38 @@ export const SolutionFeatureDesktopSection = ({ featureItems }: Props) => {
             gap={'40px'}
             className={`feature-image-section-${index}`}
           >
-            {data.imageData.map((image, index) => (
-              <Image
-                key={index}
-                src={image.url}
-                alt={image.alt}
-                style={{
-                  borderRadius: '28px',
-                  width: '600px',
-                }}
-                objectFit={'cover'}
-              />
-            ))}
+            {data.imageData.map((image, index) => {
+              if (image.url.includes('.mp4')) {
+                return (
+                  <chakra.video
+                    key={index}
+                    src={image.url}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    style={{
+                      borderRadius: '28px',
+                      width: '600px',
+                      height: '800px',
+                    }}
+                    objectFit={'cover'}
+                  />
+                )
+              }
+              return (
+                <Image
+                  key={index}
+                  src={image.url}
+                  alt={image.alt}
+                  style={{
+                    borderRadius: '28px',
+                    width: '600px',
+                  }}
+                  objectFit={'cover'}
+                />
+              )
+            })}
           </VStack>
         ))}
       </VStack>
