@@ -70,7 +70,7 @@ export const CustomerReviewIntroBanner = ({ data }: Props) => {
                   size="lg"
                   lineHeight={'1'}
                 >
-                  고객스토리
+                  고객 스토리
                 </Badge>
                 <Text
                   textStyle="pre-display-3"
