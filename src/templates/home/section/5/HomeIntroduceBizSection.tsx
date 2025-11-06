@@ -17,6 +17,7 @@ const imgBriefcase = '/images/home/biz/biz-card-1.png'
 const imgStartup = '/images/home/biz/biz-card-2.png'
 const imgManagementBusiness = '/images/home/biz/biz-card-3.png'
 const imgTargetMission = '/images/home/biz/biz-card-4.png'
+
 const imgEllipse192 = '/images/home/biz/biz-bg-ellipse.svg'
 
 interface BizCardProps {

@@ -134,7 +134,7 @@ export const PageLayout = ({
               <Drawer.CloseTrigger
                 pos={'absolute'}
                 top={'12px'}
-                zIndex={1000000000000}
+                zIndex={100000000}
                 right={'12px'}
                 display={'flex'}
                 alignItems={'center'}
@@ -143,12 +143,12 @@ export const PageLayout = ({
               >
                 <IconButton
                   variant="ghost"
-                  bg={'transparent'}
                   border="none"
                   colorPalette="grey"
                   borderRadius="8px"
+                  bg={'transparent'}
                 >
-                  <XIcon size={30} color="grey.8" />
+                  <XIcon size={30} color="white" />
                 </IconButton>
               </Drawer.CloseTrigger>
               <Drawer.Body p={'0px'}>
