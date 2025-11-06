@@ -28,7 +28,7 @@ export const STATISTICS_DATA: StatisticData[] = [
     icon: '/images/customer-review/customer-review-effect-2.svg',
     iconAlt: '연간 솔루션 계약 아이콘',
     value: 15000,
-    description: '연간 솔루션 계약수',
+    description: '연간 솔루션 계약 수',
   },
   {
     id: 'productivity',
