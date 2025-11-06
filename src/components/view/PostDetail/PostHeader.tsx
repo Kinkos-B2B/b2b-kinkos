@@ -72,8 +72,8 @@ export const PostHeader = ({ header }: PostHeaderProps) => {
               color={'grey.2'}
               textStyle={{ base: 'pre-body-6', sm: 'pre-body-6' }}
             >
-              {header.positionName + ' '}
-              {header.contactName}
+              {header.contactName + ' '}
+              {header.positionName}
             </Text>
           </Flex>
         )}

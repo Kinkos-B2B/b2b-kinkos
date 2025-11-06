@@ -1,9 +1,12 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
+
 import { Box, Container, VStack } from '@chakra-ui/react'
 
 import { usePannelContext } from '@/components/PannelContext'
 import PluuugCTA from '@/components/view/PluuugCTA'
+import { ROUTES } from '@/constants/routes'
 import { useGetExpertMainQuery } from '@/generated/apis/ExpertApi/ExpertApi.query'
 
 import { ExpertIntroBanner } from './components/ExpertIntroBanner'
@@ -13,6 +16,7 @@ import { ExpertReviewList } from './components/ExpertReviewList'
 export const ExpertTemplate = () => {
   const { data, isLoading } = useGetExpertMainQuery()
   const { openPannel } = usePannelContext()
+  const router = useRouter()
 
   return (
     <VStack w="100%" gap={'0px'}>
@@ -45,7 +49,9 @@ export const ExpertTemplate = () => {
               },
               {
                 text: '궁금한 사항 알아보기',
-                onClick: () => {},
+                onClick: () => {
+                  router.push(ROUTES.FAQ)
+                },
               },
             ]}
           />

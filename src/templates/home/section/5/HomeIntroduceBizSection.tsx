@@ -137,10 +137,10 @@ export const HomeIntroduceBizSection = () => {
       description:
         '업종별 니즈에 맞춰, 전국 인프라로\n대응하는 든든한 인쇄 파트너',
       image: imgBriefcase,
-      finalPosition: '16%',
+      finalPosition: '16.7%',
       rotation: -15,
       delay: 0.2,
-      imageSize: 184,
+      imageSize: 160,
     },
     {
       title: '비즈니스 효율을 높이는\n인쇄 솔루션',
@@ -149,27 +149,27 @@ export const HomeIntroduceBizSection = () => {
       finalPosition: '34%',
       rotation: 8,
       delay: 0.4,
-      imageSize: 166,
+      imageSize: 155,
     },
     {
       title: '업종별 전문가가\n제안하는 인쇄 전략',
       description:
         '30명 이상의 산업별 전문가가 고객의\n상황에 맞는 솔루션을 제안합니다.',
       image: imgManagementBusiness,
-      finalPosition: '52.5%',
+      finalPosition: '50.5%',
       rotation: -4,
       delay: 0.6,
-      imageSize: 164,
+      imageSize: 150,
     },
     {
       title: "Kinko's for Business",
       description: '전국 인프라와 전문 컨설팅으로 제공하는\nB2B 인쇄 솔루션',
 
       image: imgTargetMission,
-      finalPosition: '69.6%',
+      finalPosition: '68.5%',
       rotation: 10,
       delay: 0.8,
-      imageSize: 192,
+      imageSize: 167,
     },
   ]
 

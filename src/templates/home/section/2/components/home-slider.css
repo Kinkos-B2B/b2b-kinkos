@@ -14,11 +14,13 @@
 
 .home-solution-slider .embla__slide .slide {
   opacity: 0.56;
+  pointer-events: none;
   transform: scale(0.85);
   transition: all 300ms ease;
 }
 
 .home-solution-slider .embla__slide .slide.active {
   opacity: 1;
+  pointer-events: auto;
   transform: scale(1);
 }

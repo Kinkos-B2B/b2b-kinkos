@@ -430,7 +430,7 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
         className="img-paper"
         position="absolute"
         left={{ base: '70%', sm: '80%', lg: '1221px' }}
-        bottom="0px"
+        bottom="-10px"
         w={{ base: '280px', sm: '360px', lg: '446px' }}
         opacity="0"
         scale="1"

@@ -63,7 +63,12 @@ export const CustomerReviewIntroBanner = ({ data }: Props) => {
               gap={{ base: '28px', sm: '32px', lg: '40px' }}
             >
               <VStack gap="20px" alignItems="flex-start">
-                <Badge bg="secondary.1" color="secondary.4" size="lg">
+                <Badge
+                  bg="#FFF5EF"
+                  color="secondary.4"
+                  size="lg"
+                  lineHeight={'1'}
+                >
                   고객스토리
                 </Badge>
                 <Text

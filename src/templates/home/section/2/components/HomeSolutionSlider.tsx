@@ -2,6 +2,8 @@
 
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 
+import Link from 'next/link'
+
 import {
   Box,
   Button,
@@ -206,14 +208,16 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
                     h={'100%'}
                     className={`slide ${selectedIndex === index ? 'active' : ''}`}
                   >
-                    <HomeSolutionSliderCard
-                      href={slide.href}
-                      badge={slide.badge}
-                      title={slide.title || slide.badge}
-                      image={slide.image}
-                      features={slide.features || []}
-                      alt={slide.alt}
-                    />
+                    <Link href={slide.href}>
+                      <HomeSolutionSliderCard
+                        href={slide.href}
+                        badge={slide.badge}
+                        title={slide.title || slide.badge}
+                        image={slide.image}
+                        features={slide.features || []}
+                        alt={slide.alt}
+                      />
+                    </Link>
                   </Box>
                 </div>
               ))}
