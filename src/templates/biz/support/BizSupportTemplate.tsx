@@ -201,7 +201,7 @@ export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =
           },
         ],
         pdfLinkButton: {
-          text: '킨코스 전문가의 문제 해결 방법과 노하우가 궁금하시다면 오른쪽 버튼을 클릭해주세요.',
+          text: '킨코스 전문가의 문제 해결 방법과 노하우가 궁금하신가요?',
           link: ROUTES.PROBLEM,
         },
       },

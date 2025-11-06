@@ -196,7 +196,7 @@ export const bizDescriptionWithBannerMockData: BizDescriptionWithBannerProps[] =
           },
         ],
         pdfLinkButton: {
-          text: '킨코스가 제공하는 배송/설치 관련 고민 해결 방법을 확인하시려면 오른쪽 버튼을 클릭해주세요.',
+          text: '킨코스가 제공하는 배송/설치 관련 고민 해결 방법이 궁금하신가요?',
           link: ROUTES.PROBLEM + '?tab=DELIVERY_INSTALLATION#post-list',
         },
       },

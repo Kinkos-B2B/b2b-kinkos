@@ -40,7 +40,7 @@ export const ProblemSolveDetailTemplate = ({ id }: Props) => {
   console.log(data)
 
   return (
-    <VStack w="100%" pt={'20px'} gap={'0px'}>
+    <VStack w="100%" pt={'0px'} gap={'0px'}>
       <PostHeader header={data?.data?.header ?? {}} />
       <Box
         py={{ base: '48px 100px', sm: '64px 140px', lg: '80px 160px' }}

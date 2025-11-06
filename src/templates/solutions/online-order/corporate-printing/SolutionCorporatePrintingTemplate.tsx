@@ -24,7 +24,7 @@ import { SolutionReleatedExportSection } from '../../common/SolutionReleatedExpo
 import { SoultionCardsSection } from '../../common/SoultionCardsSection'
 
 const heroMockData = {
-  badge: '기업 전용 인쇄물',
+  badge: '기업 전용 인쇄몰',
   title: (
     <VStack
       textAlign={'center'}
@@ -32,7 +32,7 @@ const heroMockData = {
       gap={'0px'}
       px={'20px'}
     >
-      <Text color={'primary.4'}>기업 전용 인쇄몰</Text>
+      <Text color={'primary.4'}>기업 인쇄물</Text>
       <Text>아직도 복잡하게 주문하세요?</Text>
     </VStack>
   ),
