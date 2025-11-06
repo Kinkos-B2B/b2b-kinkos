@@ -199,7 +199,13 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
             })}
           </HStack>
         </Box>
-        <Box w={'100vw'} overflow={'hidden'} className="home-solution-slider">
+        <Box
+          w={'100vw'}
+          overflow={'hidden'}
+          className="home-solution-slider"
+          pb={'121px'}
+          mb={'-121px'}
+        >
           <div className="embla" ref={emblaRef}>
             <div className="embla__container">
               {slides.map((slide, index) => (
