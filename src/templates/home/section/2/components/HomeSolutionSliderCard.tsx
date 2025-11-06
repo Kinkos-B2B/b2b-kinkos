@@ -91,7 +91,6 @@ export const HomeSolutionSliderCard: React.FC<HomeSolutionSliderCardProps> = ({
             colorPalette="secondary"
             variant="subtle"
             textStyle={'pre-body-1'}
-            fontSize={'19px !important'}
           >
             {badge}
           </Badge>
