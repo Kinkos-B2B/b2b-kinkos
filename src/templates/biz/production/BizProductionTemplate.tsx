@@ -144,7 +144,7 @@ export const bizVideoSectionMockData: BizVideoSectionData = {
   buttonText: '생산 공장 관람 요청',
   thumbnailUrl: [
     {
-      url: '/images/biz/production/biz-production-11.gif',
+      url: '/images/biz/production/biz-production-11.png',
       alt: '1_생산제작_11_킨코스 생산센터 내 출력장비들이 가동되는 모습, 대형 실사물과 그래픽 출력 작업이 진행 중인 현장 영상',
     },
   ],
