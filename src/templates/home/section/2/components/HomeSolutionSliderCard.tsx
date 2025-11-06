@@ -87,7 +87,12 @@ export const HomeSolutionSliderCard: React.FC<HomeSolutionSliderCardProps> = ({
           borderBottom="1px solid"
           borderColor="border.basic.1"
         >
-          <Badge size="lg" colorPalette="secondary" variant="subtle">
+          <Badge
+            colorPalette="secondary"
+            variant="subtle"
+            textStyle={'pre-body-1'}
+            fontSize={'19px !important'}
+          >
             {badge}
           </Badge>
           <Text
@@ -111,7 +116,7 @@ export const HomeSolutionSliderCard: React.FC<HomeSolutionSliderCardProps> = ({
           {/* 이미지 영역 */}
           <Box
             width={{ base: '250px', sm: '400px', lg: '380px' }}
-            height={{ base: 'auto', sm: '240px', lg: '320px' }}
+            height={{ base: '150px', sm: '240px', lg: '320px' }}
             borderRadius="24px"
             bgGradient="linear(to-b, secondary.1, secondary.2)"
             position="relative"

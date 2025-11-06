@@ -15,7 +15,7 @@ export const getProblemSolveOptions = () => {
       value: GetAllHelpArticleParamsTypeEnumType.ORDER,
     },
     {
-      label: '배송/설치 고민',
+      label: '배송&설치 고민',
       value: GetAllHelpArticleParamsTypeEnumType.DELIVERY_INSTALLATION,
     },
     {

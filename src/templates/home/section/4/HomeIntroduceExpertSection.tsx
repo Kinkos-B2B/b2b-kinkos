@@ -79,11 +79,7 @@ export const HomeIntroduceExpertSection = () => {
               gap="16px"
               flex="none"
             >
-              <Badge
-                variant="solid"
-                colorPalette="white"
-                size={{ base: 'lg', sm: 'xl' }}
-              >
+              <Badge variant="solid" colorPalette="white" size={'xl'}>
                 전문가
               </Badge>
               <Heading
