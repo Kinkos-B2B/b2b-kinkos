@@ -27,7 +27,7 @@ export const BizIntroductionTemplate = () => {
       <BizIntroductionStatSection />
       <Container py={{ lg: '120px', sm: '100px', base: '80px' }}>
         <PluuugCTA
-          text={'비즈니스 고민,\n지금 바로 해결하세요!'}
+          text={'비즈니스 고민\n지금 바로 해결하세요!'}
           buttons={[
             {
               text: '무료 상담 받아보기',

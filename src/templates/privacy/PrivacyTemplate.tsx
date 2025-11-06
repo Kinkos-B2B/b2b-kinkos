@@ -46,11 +46,12 @@ export const PrivacyTemplate = () => {
                 lineHeight="1.8"
                 whiteSpace="pre-line"
               >
-                킨코스코리아㈜(이하 &quot;회사&quot;)는 「개인정보 보호법」 등
+                킨코스코리아㈜(이하 &quot;킨코스&quot;)는 「개인정보 보호법」 등
                 관련 법령을 준수하며, &apos;킨코스 B2B 사이트&apos;(상담 신청
-                중심의 기업 정보 제공 웹사이트) 이용 과정에서 처리되는
-                개인정보를 안전하게 보호하기 위해 다음과 같이 개인정보처리방침을
-                운영합니다. 본 방침은 웹사이트 하단에 상시 공개합니다.
+                중심의 킨코스 서비스 정보 제공 웹사이트, 이하
+                &quot;사이트&quot;) 이용 과정에서 처리되는 개인정보를 안전하게
+                보호하기 위해 다음과 같이 개인정보처리방침을 운영합니다. 본
+                방침은 웹사이트에 상시 공개합니다.
               </Text>
             </VStack>
 
@@ -71,8 +72,9 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  회사는 다음의 목적을 위하여 개인정보를 처리합니다. 처리 목적이
-                  변경되는 경우에는 법령에 따라 별도 고지·동의를 받습니다.
+                  킨코스는 다음의 목적을 위하여 개인정보를 처리합니다. 처리
+                  목적이 변경되는 경우에는 법령에 따라 별도 고지·동의를
+                  받습니다.
                 </Text>
                 <Text
                   textStyle="pre-body-2"
@@ -80,7 +82,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ① 상담/문의 접수 및 응대
+                  ①상담/문의 접수 및 응대
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -89,8 +91,8 @@ export const PrivacyTemplate = () => {
                     lineHeight="1.8"
                     whiteSpace="pre-line"
                   >
-                    - 기업 상담 요청 확인, 추가 질문 및 답변, 견적·제안서 제공,
-                    방문(공장/센터) 일정 협의
+                    - 기업 고객 상담 요청 확인, 추가 질문 및 답변, 견적·제안서
+                    제공, 방문(공장/센터) 일정 협의
                   </Text>
                 </Box>
                 <Text
@@ -99,7 +101,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ② 고객 관리
+                  ②고객 관리
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -118,7 +120,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ③ 마케팅·행사 안내
+                  ③마케팅 정보 제공
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -127,8 +129,8 @@ export const PrivacyTemplate = () => {
                     lineHeight="1.8"
                     whiteSpace="pre-line"
                   >
-                    - 뉴스레터, 세미나/웨비나 초청, 서비스 업데이트 소식
-                    안내(사전 동의자에 한함)
+                    - 뉴스레터, 세미나/행사 초청, 서비스 업데이트 소식 안내(사전
+                    동의자에 한함)
                   </Text>
                 </Box>
               </VStack>
@@ -151,7 +153,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  회사는 상담/문의 접수 및 응대를 위해 아래와 같은 개인 정보를
+                  킨코스는 상담/문의 접수 및 응대를 위해 아래와 같은 개인 정보를
                   수집하고 있습니다.
                 </Text>
                 <Text
@@ -160,7 +162,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ① 수집 항목
+                  ①수집 항목
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -170,7 +172,8 @@ export const PrivacyTemplate = () => {
                     whiteSpace="pre-line"
                   >
                     - 필수: 회사명, 성명, 직책, 연락처(휴대전화 또는 유선),
-                    이메일 주소
+                    이메일 주소, 의뢰 제목, 의뢰 서비스, 의뢰 내용(예산/기간 등
+                    추가 정보)
                   </Text>
                   <Text
                     textStyle="pre-body-2"
@@ -178,8 +181,7 @@ export const PrivacyTemplate = () => {
                     lineHeight="1.8"
                     whiteSpace="pre-line"
                   >
-                    - 선택: 의뢰 제목/내용, 센터 관람 희망 여부, 예산/기간 등
-                    추가 정보
+                    - 선택: 공장/센터 관람 희망 여부
                   </Text>
                 </Box>
                 <Text
@@ -188,7 +190,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ② 수집 방법
+                  ②수집 방법
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -198,7 +200,8 @@ export const PrivacyTemplate = () => {
                     whiteSpace="pre-line"
                   >
                     - 사이트의 상담 신청 폼 제출(예: 외부 양식 플랫폼 연결
-                    포함), 유선/이메일/메신저 문의, 이벤트·세미나 참가 등록 등
+                    포함), 유선/이메일/메신저 문의, 이벤트·세미나·행사 참가 등록
+                    등
                   </Text>
                 </Box>
                 <Text
@@ -207,7 +210,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ③ 온라인 맞춤형 광고
+                  ③온라인 맞춤형 광고
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -225,7 +228,7 @@ export const PrivacyTemplate = () => {
                     lineHeight="1.8"
                     whiteSpace="pre-line"
                   >
-                    1) 행태정보를 수집 및 처리하려는 광고 사업자 : 구글,
+                    1) 행태정보를 수집 및 처리하려는 광고 사업자: 구글,
                     페이스북, 네이버, 카카오
                   </Text>
                   <Text
@@ -234,7 +237,7 @@ export const PrivacyTemplate = () => {
                     lineHeight="1.8"
                     whiteSpace="pre-line"
                   >
-                    2) 행태정보 수집 방법 : 이용자가 당사 웹사이트를 방문하거나
+                    2) 행태정보 수집 방법: 이용자가 당사 웹사이트를 방문하거나
                     문의를 접수할 때 자동 수집 및 전송
                   </Text>
                 </Box>
@@ -258,11 +261,11 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  회사는 아래와 같이 귀하의 개인 정보를 외부 전문업체에 위탁하여
-                  운영하고 있으며, 관련 법령에 따라 위탁 계약 시 개인 정보가
-                  안전하게 관리될 수 있도록 필요한 사항을 규정하고 있습니다.
-                  또한 업무위탁에 필요한 정보는 당해 목적을 달성하기 위하여
-                  필요한 최소한의 정보에 국한됩니다.
+                  킨코스는 아래와 같이 귀하의 개인 정보를 외부 전문업체에
+                  위탁하여 운영하고 있으며, 관련 법령에 따라 위탁 계약 시 개인
+                  정보가 안전하게 관리될 수 있도록 필요한 사항을 규정하고
+                  있습니다. 또한 업무위탁에 필요한 정보는 당해 목적을 달성하기
+                  위하여 필요한 최소한의 정보에 국한됩니다.
                 </Text>
                 <Box
                   overflowX="auto"
@@ -334,7 +337,7 @@ export const PrivacyTemplate = () => {
                           textStyle="pre-body-2"
                           color="grey.9"
                         >
-                          홈페이지 유지보수
+                          사이트 유지보수
                         </Box>
                         <Box
                           as="td"
@@ -354,7 +357,7 @@ export const PrivacyTemplate = () => {
                           textStyle="pre-body-2"
                           color="grey.9"
                         >
-                          홈페이지 관리, 서버 유지보수
+                          사이트 관리, 서버 유지보수
                         </Box>
                         <Box
                           as="td"
@@ -364,7 +367,8 @@ export const PrivacyTemplate = () => {
                           textStyle="pre-body-2"
                           color="grey.9"
                         >
-                          홈페이지 이용 고객 정보
+                          사이트 이용 고객 정보(성명, 회사명, 직책, 연락처,
+                          이메일 등)
                         </Box>
                       </Box>
                       <Box as="tr">
@@ -376,7 +380,7 @@ export const PrivacyTemplate = () => {
                           textStyle="pre-body-2"
                           color="grey.9"
                         >
-                          CRM 운영(상담 신청 폼 관리, 고객관리 시스템)
+                          CRM 운영(상담 관리, 고객관리 시스템)
                         </Box>
                         <Box
                           as="td"
@@ -396,7 +400,7 @@ export const PrivacyTemplate = () => {
                           textStyle="pre-body-2"
                           color="grey.9"
                         >
-                          상담 폼 데이터 수집 및 관리, CRM 발송/이력 관리 등
+                          상담 데이터 및 이력 관리 등
                         </Box>
                         <Box
                           as="td"
@@ -433,7 +437,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  회사는 귀하의 개인 정보를 「제3조 수집한 개인 정보의
+                  킨코스는 귀하의 개인 정보를 「제3조 수집한 개인 정보의
                   처리위탁」에서 고지한 범위 내에서 사용하며, 동 범위를 초과하여
                   이용하거나 타인 또는 타기업, 기관에 제공하지 않습니다. 다만,
                   다음의 경우에는 예외로 합니다.
@@ -444,7 +448,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ① 이용자들이 사전에 동의한 경우
+                  ①이용자들이 사전에 동의한 경우
                 </Text>
                 <Text
                   textStyle="pre-body-2"
@@ -452,7 +456,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ② 법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와
+                  ②법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와
                   방법에 따라 수사기관의 요구가 있는 경우
                 </Text>
                 <Text
@@ -461,7 +465,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ③ 제휴 관계: 보다 나은 서비스 제공을 위하여 귀하의 개인 정보를
+                  ③제휴 관계: 보다 나은 서비스 제공을 위하여 귀하의 개인 정보를
                   제휴사에게 위탁하거나 또는 제휴사와 공유할 수 있습니다.
                 </Text>
                 <Text
@@ -470,13 +474,13 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ④ 개인 정보를 제공하거나 공유할 경우에는 사전에 귀하께
-                  제휴사가 누구인지, 제공 또는 공유되는 개인 정보항목이
-                  무엇인지, 왜 그러한 개인 정보가 제공되거나 공유되어야 하는지,
-                  그리고 언제까지 어떻게 보호ㆍ관리되는지에 대해 개별적으로
-                  전자우편 및 서면을 통해 고지하여 동의를 구하는 절차를 거치게
-                  되며, 귀하께서 동의하지 않는 경우에는 제휴사에게 제공하거나
-                  제휴사와 공유하지 않습니다.
+                  ④개인 정보를 제공하거나 공유할 경우에는 사전에 귀하께 제휴사가
+                  누구인지, 제공 또는 공유되는 개인 정보항목이 무엇인지, 왜
+                  그러한 개인 정보가 제공되거나 공유되어야 하는지, 그리고
+                  언제까지 어떻게 보호ㆍ관리되는지에 대해 개별적으로 전자우편 및
+                  서면을 통해 고지하여 동의를 구하는 절차를 거치게 되며,
+                  귀하께서 동의하지 않는 경우에는 제휴사에게 제공하거나 제휴사와
+                  공유하지 않습니다.
                 </Text>
                 <Text
                   textStyle="pre-body-2"
@@ -484,9 +488,9 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ⑤ 제휴관계에 변화가 있거나 제휴관계가 종결될 때에는
-                  킨코스코리아㈜ B2B 홈페이지를 통해 사실을 공지하고 전자메일을
-                  통해 통보하여 드리도록 하겠습니다.
+                  ⑤제휴관계에 변화가 있거나 제휴관계가 종결될 때에는 사이트를
+                  통해 사실을 공지하고 전자메일을 통해 통보하여 드리도록
+                  하겠습니다.
                 </Text>
               </VStack>
             </VStack>
@@ -508,14 +512,13 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ① 개인정보란 생존하는 개인에 관한 정보로서 당 해 정보에
-                  포함되어 있는 성명, 주민등록번호 등의 사항에 의하여 당해
-                  개인을 식별할 수 있는 정보(당해 정보만으로는 특정 개인을
-                  식별할 수 없더라도 다른 정보와 용이하게 결합하여 식별할 수
-                  있는 것을 포함합니다.)를 말합니다. 킨코스 코리아(주)는 귀하의
-                  개인정보보호를 매우 중요시하며, 『정보통신망 이용 촉진 및
-                  정보보호 등에 관한 법률』 및 『개인정보보호법』을 준수하고
-                  있습니다.
+                  ①개인정보란 생존하는 개인에 관한 정보로서 당해 정보에 포함되어
+                  있는 성명, 주민등록번호 등의 사항에 의하여 당해 개인을 식별할
+                  수 있는 정보(당해 정보만으로는 특정 개인을 식별할 수 없더라도
+                  다른 정보와 용이하게 결합하여 식별할 수 있는 것을
+                  포함합니다.)를 말합니다. 킨코스는 귀하의 개인정보보호를 매우
+                  중요시하며, 『정보통신망 이용 촉진 및 정보보호 등에 관한
+                  법률』 및 『개인정보보호법』을 준수하고 있습니다.
                 </Text>
                 <Text
                   textStyle="pre-body-2"
@@ -523,7 +526,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ② 회사는 개인 정보처리 방침을 통하여 귀하께서 제공하시는 개인
+                  ②킨코스는 개인정보처리방침을 통하여 귀하께서 제공하시는 개인
                   정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인 정보보호를
                   위해 어떠한 조치가 취해지고 있는지 알려드립니다.
                 </Text>
@@ -533,18 +536,8 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ③ 회사는 개인 정보처리 방침을 홈페이지 및 주문서 뒷면에
-                  공개함으로써 귀하께서 언제나 용이하게 보실 수 있도록 조치하고
-                  있습니다.
-                </Text>
-                <Text
-                  textStyle="pre-body-2"
-                  color="grey.9"
-                  lineHeight="1.8"
-                  whiteSpace="pre-line"
-                >
-                  ④ 회사는 개인 정보처리 방침의 지속적인 개선을 위하여 개인
-                  정보처리 방침을 개정하는데 필요한 절차를 정하고 있습니다.
+                  ③킨코스는 개인정보처리방침의 지속적인 개선을 위하여
+                  개인정보처리방침을 개정하는데 필요한 절차를 정하고 있습니다.
                 </Text>
               </VStack>
             </VStack>
@@ -566,11 +559,11 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  회사는 원칙적으로, 개인 정보 수집 및 이용목적이 달성된 후에는
-                  해당 정보를 지체 없이 파기합니다. 단, 상법 등 관련 법령의
-                  규정에 의하여 다음과 같이 거래 관련 권리 의무 관계의 확인 등을
-                  이유로 일정기간 보유하여야 할 필요가 있을 경우에는 일정기간
-                  보유합니다.
+                  킨코스는 원칙적으로 개인 정보 수집 및 이용 목적이 달성된
+                  후에는 해당 정보를 지체 없이 파기합니다. 단, 상법 등 관련
+                  법령의 규정에 의하여 다음과 같이 거래 관련 권리 의무 관계의
+                  확인 등을 이유로 일정기간 보유하여야 할 필요가 있을 경우에는
+                  일정기간 보유합니다.
                 </Text>
                 <Text
                   textStyle="pre-body-2"
@@ -578,7 +571,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ① 상담/문의 내역 기록 보관: 접수일로부터 1년
+                  ①상담/문의 내역 기록 보관: 접수일로부터 1년
                 </Text>
                 <Text
                   textStyle="pre-body-2"
@@ -586,7 +579,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ② 마케팅 수신 동의 이력: 철회 시까지(철회 즉시 삭제)
+                  ②마케팅 수신 동의 이력: 철회 시까지(철회 즉시 삭제)
                 </Text>
               </VStack>
             </VStack>
@@ -608,9 +601,9 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  회사는 원칙적으로 개인 정보 수집 및 이용목적이 달성된 후에는
-                  해당 정보를 지체 없이 파기합니다. 파기절차 및 방법은 다음과
-                  같습니다.
+                  킨코스는 원칙적으로 개인 정보 수집 및 이용 목적이 달성된
+                  후에는 해당 정보를 지체 없이 파기합니다. 파기절차 및 방법은
+                  다음과 같습니다.
                 </Text>
                 <Text
                   textStyle="pre-body-2"
@@ -618,7 +611,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ① 파기절차
+                  ①파기절차
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -638,7 +631,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ② 파기방법
+                  ②파기방법
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -678,7 +671,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ① 이용자는 언제든지 자신의 개인정보에 대한
+                  ①이용자는 언제든지 자신의 개인정보에 대한
                   열람·정정·삭제·처리정지 요구 및 수신동의 철회를 할 수
                   있습니다.
                 </Text>
@@ -688,8 +681,8 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ② 권리 행사는 서면, 이메일, 유선 등으로 요청할 수 있으며
-                  회사는 법령에 따라 지체 없이 조치합니다.
+                  ②권리 행사는 서면, 이메일, 유선 등으로 요청할 수 있으며
+                  킨코스는 법령에 따라 지체 없이 조치합니다.
                 </Text>
                 <Text
                   textStyle="pre-body-2"
@@ -697,9 +690,8 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ③ 대리인을 통하여 권리를 행사할 경우 &apos;개인정보 처리
-                  방법에 관한 고시&apos; 소정의 위임장 등 증빙을 제출하셔야
-                  합니다.
+                  ③대리인을 통하여 권리를 행사할 경우 &apos;개인정보 처리 방법에
+                  관한 고시&apos; 소정의 위임장 등 증빙을 제출하셔야 합니다.
                 </Text>
                 <Text
                   textStyle="pre-body-2"
@@ -707,7 +699,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ④ 회사는 만 14세 미만 아동의 개인정보를 고의로 수집하지
+                  ④킨코스는 만 14세 미만 아동의 개인정보를 고의로 수집하지
                   않으며, 아동이 상담을 요청하는 경우에는 법정대리인의 동의를
                   받습니다.
                 </Text>
@@ -732,8 +724,10 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  회사는 킨코스 B2B 사이트 내에서 별도의 쿠키를 직접
-                  수집·저장하지 않습니다.
+                  킨코스는 귀하의 정보를 수시로 저장하고 찾아내는 쿠키 등을
+                  운용합니다. 쿠키란 웹사이트를 운영하는데 이용되는 서버가
+                  귀하의 브라우저에 보내는 아주 작은 텍스트 파일로서 귀하의
+                  컴퓨터 하드디스크에 저장됩니다.
                 </Text>
                 <Text
                   textStyle="pre-body-2"
@@ -741,18 +735,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  단, 향후 광고 및 서비스 개선을 위한 외부 분석·광고 도구(Google
-                  Analytics, Google Ads, Meta Pixel 등)를 활용할 경우, 해당 외부
-                  사업자의 정책에 따라 이용자의 단말기(PC·모바일 등)에 쿠키가
-                  저장될 수 있습니다.
-                </Text>
-                <Text
-                  textStyle="pre-body-2"
-                  color="grey.9"
-                  lineHeight="1.8"
-                  whiteSpace="pre-line"
-                >
-                  ① 외부 분석·광고 도구의 사용 목적
+                  ①쿠키 등 사용 목적
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -786,7 +769,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ② 외부 도구의 예시 및 관련 정책
+                  ②쿠키 설정 거부 방법
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -795,35 +778,10 @@ export const PrivacyTemplate = () => {
                     lineHeight="1.8"
                     whiteSpace="pre-line"
                   >
-                    - Google Analytics / Google Ads :{' '}
-                    <Link
-                      href="https://policies.google.com/privacy"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      color="primary.9"
-                      textDecoration="underline"
-                      _hover={{ color: 'primary.10' }}
-                    >
-                      https://policies.google.com/privacy
-                    </Link>
-                  </Text>
-                  <Text
-                    textStyle="pre-body-2"
-                    color="grey.9"
-                    lineHeight="1.8"
-                    whiteSpace="pre-line"
-                  >
-                    - Meta Pixel (Facebook/Instagram) :{' '}
-                    <Link
-                      href="https://www.facebook.com/privacy/policy"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      color="primary.9"
-                      textDecoration="underline"
-                      _hover={{ color: 'primary.10' }}
-                    >
-                      https://www.facebook.com/privacy/policy
-                    </Link>
+                    - 쿠키 설정을 거부하는 방법으로는 회원님이 사용하시는 웹
+                    브라우저의 옵션을 선택함으로써 모든 쿠키를 허용하거나 쿠키를
+                    저장할 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수
+                    있습니다.
                   </Text>
                 </Box>
                 <Text
@@ -832,7 +790,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ③ 쿠키 차단 및 설정 방법
+                  ③Google Analytics
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -841,8 +799,12 @@ export const PrivacyTemplate = () => {
                     lineHeight="1.8"
                     whiteSpace="pre-line"
                   >
-                    - 이용자는 웹 브라우저 설정을 통해 쿠키 저장을 차단하거나
-                    삭제할 수 있습니다.
+                    - 킨코스는 고객에게 더 나은 서비스를 제공하기 위한 목적으로
+                    Google, Inc. (이하 &apos;Google&apos;)이 제공하는 웹 분석
+                    서비스인 Google Analytics를 사용하여 고객들이 킨코스의
+                    서비스를 어떻게 이용하는지 분석 및 평가하고 고객의 수요를
+                    파악하며, 서비스와 제품을 개선하고 맞춤화하여 효율적인
+                    서비스를 제공하는 것에 목적이 있습니다.
                   </Text>
                   <Text
                     textStyle="pre-body-2"
@@ -850,8 +812,9 @@ export const PrivacyTemplate = () => {
                     lineHeight="1.8"
                     whiteSpace="pre-line"
                   >
-                    - Chrome : 설정 &gt; 개인정보 및 보안 &gt; 쿠키 및 기타
-                    사이트 데이터
+                    - Google Analytics를 통해 수집되는 정보의 처리는 Google
+                    개인정보보호정책과 Google Analytics 이용약관을 적용
+                    받습니다.
                   </Text>
                   <Text
                     textStyle="pre-body-2"
@@ -859,7 +822,17 @@ export const PrivacyTemplate = () => {
                     lineHeight="1.8"
                     whiteSpace="pre-line"
                   >
-                    - Edge : 설정 &gt; 쿠키 및 사이트 권한
+                    - Google 개인정보보호정책:{' '}
+                    <Link
+                      href="https://www.google.com/intl/ko/policies/privacy/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      color="primary.9"
+                      textDecoration="underline"
+                      _hover={{ color: 'primary.10' }}
+                    >
+                      https://www.google.com/intl/ko/policies/privacy/
+                    </Link>
                   </Text>
                   <Text
                     textStyle="pre-body-2"
@@ -867,7 +840,17 @@ export const PrivacyTemplate = () => {
                     lineHeight="1.8"
                     whiteSpace="pre-line"
                   >
-                    - Safari : 설정 &gt; 개인정보 보호 &gt; 모든 쿠키 차단
+                    - Google Analytics 이용약관:{' '}
+                    <Link
+                      href="https://www.google.com/analytics/terms/kr.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      color="primary.9"
+                      textDecoration="underline"
+                      _hover={{ color: 'primary.10' }}
+                    >
+                      https://www.google.com/analytics/terms/kr.html
+                    </Link>
                   </Text>
                   <Text
                     textStyle="pre-body-2"
@@ -875,8 +858,18 @@ export const PrivacyTemplate = () => {
                     lineHeight="1.8"
                     whiteSpace="pre-line"
                   >
-                    ※ 쿠키를 차단할 경우 광고 리타게팅 등 일부 기능 이용이
-                    제한될 수 있습니다.
+                    킨코스는 Google Analytics를 통해 익명의
+                    쿠키정보(인구통계학적 데이터 등)를 수집합니다.
+                  </Text>
+                  <Text
+                    textStyle="pre-body-2"
+                    color="grey.9"
+                    lineHeight="1.8"
+                    whiteSpace="pre-line"
+                  >
+                    킨코스는 Google Analytics를 통해 개인을 식별할 수 있는
+                    정보는 수집하지 않으며, 수집한 정보를 다른 경로를 통해 얻은
+                    개인식별 정보와 결합하지 않습니다.
                   </Text>
                 </Box>
                 <Text
@@ -885,9 +878,20 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ④ 회사는 쿠키를 통해 개인을 직접 식별하거나, 다른 개인정보와
-                  결합하여 이용자를 식별하지 않습니다.
+                  ④ 설정 방법
                 </Text>
+                <Box pl="16px">
+                  <Text
+                    textStyle="pre-body-2"
+                    color="grey.9"
+                    lineHeight="1.8"
+                    whiteSpace="pre-line"
+                  >
+                    - 인터넷 익스플로어의 경우: 웹 브라우저 상단의 도구 &gt;
+                    인터넷 옵션 &gt; 개인정보 ※ 단, 귀하께서 쿠키 설치를
+                    거부하였을 경우 서비스 제공에 어려움이 있을 수 있습니다.
+                  </Text>
+                </Box>
               </VStack>
             </VStack>
 
@@ -908,8 +912,8 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  회사는 개인정보보호법 제29조에 따라 다음과 같이 안전성 확보에
-                  필요한 기술적/관리적 및 물리적 조치를 하고 있습니다.
+                  킨코스는 개인정보보호법 제29조에 따라 다음과 같이 안전성
+                  확보에 필요한 기술적/관리적 및 물리적 조치를 하고 있습니다.
                 </Text>
                 <Text
                   textStyle="pre-body-2"
@@ -917,7 +921,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ① 정기적인 자체 감사 실시
+                  ①정기적인 자체 감사 실시
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -936,7 +940,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ② 개인 정보 처리 직원의 최소화 및 교육
+                  ②개인 정보 처리 직원의 최소화 및 교육
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -955,7 +959,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ③ 내부관리 계획의 수립 및 시행
+                  ③내부관리 계획의 수립 및 시행
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -974,7 +978,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ④ 해킹 등에 대비한 기술적 대책
+                  ④해킹 등에 대비한 기술적 대책
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -983,10 +987,10 @@ export const PrivacyTemplate = () => {
                     lineHeight="1.8"
                     whiteSpace="pre-line"
                   >
-                    - 해킹이나 컴퓨터 바이러스 등에 의한 개인 정보 유출 및
-                    훼손을 막기 위하여 보안프로그램을 설치하고 주기적인
-                    갱신·점검을 하며 외부로부터 접근이 통제된 구역에 시스템을
-                    설치하고 기술적/물리적으로 감시 및 차단하고 있습니다.
+                    - 개인정보 접근 권한 관리, 접근통제시스템 운영, 개인정보
+                    암호화, 해킹 등에 대비한 보안 프로그램 설치 및 갱신,
+                    접속기록의 보관 및 위·변조 방지 등 기술적 보호조치를
+                    이행하고 있습니다.
                   </Text>
                 </Box>
                 <Text
@@ -995,7 +999,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ⑤ 개인 정보의 암호화
+                  ⑤개인 정보의 암호화
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -1016,7 +1020,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ⑥ 접속기록의 보관 및 위변조 방지
+                  ⑥접속기록의 보관 및 위변조 방지
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -1036,7 +1040,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ⑦ 개인 정보에 대한 접근 제한
+                  ⑦개인 정보에 대한 접근 제한
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -1057,7 +1061,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ⑧ 문서보안을 위한 잠금장치 사용
+                  ⑧문서보안을 위한 잠금장치 사용
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -1068,25 +1072,6 @@ export const PrivacyTemplate = () => {
                   >
                     - 개인 정보가 포함된 서류, 보조 저장매체 등을 잠금장치가
                     있는 안전한 장소에 보관하고 있습니다.
-                  </Text>
-                </Box>
-                <Text
-                  textStyle="pre-body-2"
-                  color="grey.9"
-                  lineHeight="1.8"
-                  whiteSpace="pre-line"
-                >
-                  ⑨비인가자에 대한 출입 통제
-                </Text>
-                <Box pl="16px">
-                  <Text
-                    textStyle="pre-body-2"
-                    color="grey.9"
-                    lineHeight="1.8"
-                    whiteSpace="pre-line"
-                  >
-                    - 개인 정보를 보관하고 있는 물리적 보관 장소를 별도로 두고
-                    이에 대해 출입통제 절차를 수립하여 운영하고 있습니다.
                   </Text>
                 </Box>
               </VStack>
@@ -1109,7 +1094,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  회사는 고객의 개인 정보를 보호하고 개인 정보와 관련한 불만을
+                  킨코스는 고객의 개인 정보를 보호하고 개인 정보와 관련한 불만을
                   처리하기 위하여 아래와 같이 관련 부서 및 개인 정보보호
                   책임자를 지정하고 있습니다.
                 </Text>
@@ -1119,7 +1104,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ① 개인정보보호 책임자
+                  ①개인정보보호 책임자
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -1145,7 +1130,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ② 개인정보보호 관리자
+                  ②개인정보보호 관리자
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -1171,7 +1156,7 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  ③ 고객서비스 관리자
+                  ③고객서비스 관리자
                 </Text>
                 <Box pl="16px">
                   <Text
@@ -1197,9 +1182,9 @@ export const PrivacyTemplate = () => {
                   lineHeight="1.8"
                   whiteSpace="pre-line"
                 >
-                  귀하께서는 회사의 서비스를 이용하시며 발생하는 모든 개인
-                  정보보호 관련 민원을 개인 정보보호 책임자 혹은 담당 부서로
-                  신고하실 수 있습니다. 회사는 이용자들의 신고사항에 대해
+                  귀하께서는 킨코스의 서비스를 이용하시며 발생하는 모든
+                  개인정보보호 관련 민원을 개인정보보호 책임자 혹은 담당 부서로
+                  신고하실 수 있습니다. 킨코스는 이용자들의 신고사항에 대해
                   신속하게 충분한 답변을 드릴 것입니다.
                 </Text>
                 <Text
@@ -1290,7 +1275,7 @@ export const PrivacyTemplate = () => {
                 whiteSpace="pre-line"
               >
                 현 개인정보처리방침은 2025년 12월 01일에 제정되었으며 정부의
-                정책 또는 회사의 필요에 의하여 변경될 수 있습니다.
+                정책 또는 킨코스의 필요에 의하여 변경될 수 있습니다.
               </Text>
               <Text
                 textStyle="pre-body-2"
@@ -1298,7 +1283,7 @@ export const PrivacyTemplate = () => {
                 lineHeight="1.8"
                 whiteSpace="pre-line"
               >
-                ① 개인 정보처리 방침 변경일자： 2025.12.01
+                ①개인정보처리방침 변경일자： 2025.12.01
               </Text>
             </VStack>
           </VStack>

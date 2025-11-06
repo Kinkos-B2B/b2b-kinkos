@@ -114,7 +114,7 @@ export const BizIntroductionHeroSection = () => {
           w={'100%'}
         >
           <Text textStyle="pre-display-2" color="primary.4" as={'span'}>
-            킨코스,
+            킨코스
           </Text>
           <Text
             textStyle="pre-display-2"
@@ -217,7 +217,7 @@ export const BizIntroductionHeroSection = () => {
             {'We Print\nYour Business Success'}
           </Text>
           <Text textStyle={'pre-heading-1'} color={'grey.0'}>
-            킨코스는 단순 출력을 넘어, 통합된 시스템으로 비즈니스의 문제를
+            킨코스는 단순 출력을 넘어 통합된 시스템으로 비즈니스의 문제를
             <br />
             해결하고 성장을 지원합니다.
           </Text>

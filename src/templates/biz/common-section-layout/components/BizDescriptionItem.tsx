@@ -50,7 +50,8 @@ export const BizDescriptionSectionItem = React.forwardRef<
             <Badge
               variant="subtle"
               colorPalette="primary"
-              size="md"
+              size="lg"
+              fontSize={'14px !important'}
               showLeftIcon={false}
               showRightIcon={false}
             >

@@ -96,7 +96,7 @@ export const HomeCustomerReviewSection = () => {
                 color="grey.10"
                 textAlign="center"
               >
-                탄탄한 신뢰로 함께한 여정
+                우리의 파트너, 그들의 이야기
               </chakra.h2>
             </chakra.div>
             <CompanyMarquee />
