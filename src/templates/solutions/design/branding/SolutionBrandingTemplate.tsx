@@ -96,7 +96,7 @@ const cardsMockData = {
       icon: HOME_INTRODUCE_SOLUTION_SLIDERS[0].features?.[2].icon,
     },
     {
-      title: '제작까지, 한번에',
+      title: '제작까지, 한 번에',
       description:
         '기획부터 최종 제작까지 전 과정을 책임집니다. 번거로운 과정 없이 핵심 업무에만 집중하세요.',
       icon: HOME_INTRODUCE_SOLUTION_SLIDERS[0].features?.[3].icon,

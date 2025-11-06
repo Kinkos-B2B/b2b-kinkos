@@ -170,7 +170,7 @@ const featureData: FeatureItem[] = [
   },
 
   {
-    title: '신청부터 배송까지, 복잡한 과정은 한번에',
+    title: '신청부터 배송까지, 복잡한 과정은 한 번에',
     type: 'description',
     description:
       '직원이 온라인으로 신청하고 관리자가 승인하면, 이후 제작부터 개별 포장, 지정 주소 배송까지 킨코스가 알아서 처리해 드립니다.',

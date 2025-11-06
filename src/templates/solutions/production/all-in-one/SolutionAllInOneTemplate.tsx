@@ -87,7 +87,7 @@ const cardsMockData = {
     {
       title: '원스톱 물류 솔루션',
       description:
-        '제작물 분류부터 개별 포장, 전국 지점별 맞춤 배송까지. 킨코스가 복잡한 물류 과정을 한번에 해결해 드립니다.',
+        '제작물 분류부터 개별 포장, 전국 지점별 맞춤 배송까지. 킨코스가 복잡한 물류 과정을 한 번에 해결해 드립니다.',
       icon: HOME_INTRODUCE_SOLUTION_SLIDERS[7].features?.[2].icon,
     },
     {

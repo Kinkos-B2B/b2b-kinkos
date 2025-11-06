@@ -48,7 +48,7 @@ const heroMockData: SolutionHeroSectionProps = {
       </Text>
       <Text textStyle={'pre-heading-3'} color={'grey.0'} as={'span'}>
         {
-          '킨코스는 물류/건설 현장을 직접 분석하여, 법규 준수는 물론 작업자의 안전 의식을 높이는 최적의 사인물 솔루션을 기획부터 시공까지 한번에 제안합니다.\n이제 현장에서 완성된 안전 시스템을 확인하세요!'
+          '킨코스는 물류/건설 현장을 직접 분석하여, 법규 준수는 물론 작업자의 안전 의식을 높이는 최적의 사인물 솔루션을 기획부터 시공까지 한 번에 제안합니다.\n이제 현장에서 완성된 안전 시스템을 확인하세요!'
         }
       </Text>
     </>
@@ -170,7 +170,7 @@ const featureData: FeatureItem[] = [
   },
 
   {
-    title: '제작, 배송, 시공까지 한번에',
+    title: '제작, 배송, 시공까지 한 번에',
     type: 'description',
     description:
       '디자인이 확정되면 그대로 제작하여 원하시는 곳으로 배송하거나, 전문가가 직접 방문하여 시공까지 마무리합니다.',

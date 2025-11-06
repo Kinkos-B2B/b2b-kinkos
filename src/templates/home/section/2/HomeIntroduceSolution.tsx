@@ -63,7 +63,7 @@ export interface HomeSolutionSliderItem {
 export const HOME_INTRODUCE_SOLUTION_SLIDERS: HomeSolutionSliderItem[] = [
   {
     badge: '브랜딩 디자인',
-    title: '브랜드를 이해하는 기획, 제작까지 한번에',
+    title: '브랜드를 이해하는 기획, 제작까지 한 번에',
     features: [
       {
         icon: <ChatCircleIcon size={16} color="white" />,
@@ -85,7 +85,7 @@ export const HOME_INTRODUCE_SOLUTION_SLIDERS: HomeSolutionSliderItem[] = [
       },
       {
         icon: <PaletteIcon size={16} color="white" />,
-        title: '제작까지, 한번에',
+        title: '제작까지, 한 번에',
         description: '디자인 기획부터 최종 제작까지 전 과정을 책임집니다.',
       },
     ],
@@ -307,7 +307,7 @@ export const HOME_INTRODUCE_SOLUTION_SLIDERS: HomeSolutionSliderItem[] = [
   },
   {
     badge: '통합제작 All-in-One',
-    title: '디자인 기획부터 제작, 포장과 배송까지 한번에',
+    title: '디자인 기획부터 제작, 포장과 배송까지 한 번에',
     features: [
       {
         icon: <ImagesIcon size={16} color="white" />,

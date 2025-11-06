@@ -45,7 +45,7 @@ const heroMockData = {
       </Text>
       <Text textStyle={'pre-heading-3'} color={'grey.0'} as={'span'}>
         {
-          '킨코스는 매장 현장을 직접 분석하여, 사이즈부터 소재, 설치 시공까지 가장 효과적인 POP 제작 솔루션을 한번에 제안합니다.\n이제 설치된 POP를 매장에서 확인하세요!'
+          '킨코스는 매장 현장을 직접 분석하여, 사이즈부터 소재, 설치 시공까지 가장 효과적인 POP 제작 솔루션을 한 번에 제안합니다.\n이제 설치된 POP를 매장에서 확인하세요!'
         }
       </Text>
     </>
@@ -167,7 +167,7 @@ const featureData: FeatureItem[] = [
   },
 
   {
-    title: '제작, 배송, 설치까지 한번에',
+    title: '제작, 배송, 설치까지 한 번에',
     type: 'description',
     description:
       '디자인이 확정되면 그대로 제작하여 원하시는 곳으로 배송하거나, 직접 방문하여 설치까지 마무리합니다.',

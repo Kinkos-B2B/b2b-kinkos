@@ -166,7 +166,7 @@ const featureData: FeatureItem[] = [
   },
 
   {
-    title: '아이디어부터 철거까지, 한번에',
+    title: '아이디어부터 철거까지, 한 번에',
     type: 'description',
     description:
       '기획, 디자인, 제작, 그리고 행사 당일 설치와 끝난 뒤 뒷정리(철거)까지. 신경 쓸 일 없도록 킨코스가 전부 알아서 해드립니다.',
