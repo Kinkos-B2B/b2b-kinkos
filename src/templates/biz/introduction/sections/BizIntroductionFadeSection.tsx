@@ -4,7 +4,7 @@ import { useRef } from 'react'
 
 import Image from 'next/image'
 
-import { Box, Text } from '@chakra-ui/react'
+import { Box, Image as ChakraImage, Text } from '@chakra-ui/react'
 import { useGSAP } from '@gsap/react'
 
 import { gsap } from 'gsap'
@@ -108,21 +108,20 @@ export const BizIntroductionFadeSection = () => {
         top={'50%'}
         left={'50%'}
         transform={'translate(-50%, -50%)'}
-        w={'1920px'}
-        h={'1280px'}
         overflow={'hidden'}
+        w={'100vw'}
+        h={'100vh'}
       >
         <Image
           src={'/images/biz/introduce/fade-bg-1.png'}
           alt="비즈니스 맞춤 솔루션"
-          width={1920}
-          height={1280}
+          width={0}
+          height={0}
+          sizes="100vw 100vh"
           priority
           style={{
-            width: '100%',
-            height: '100%',
             objectFit: 'cover',
-            objectPosition: '50% 50%',
+            width: '100%',
           }}
         />
         {/* 어두운 오버레이 */}
@@ -144,20 +143,19 @@ export const BizIntroductionFadeSection = () => {
         top={'50%'}
         left={'50%'}
         transform={'translate(-50%, -50%)'}
-        w={'1920px'}
-        h={'1282px'}
+        w={'100vw'}
+        h={'100vh'}
         overflow={'hidden'}
       >
         <Image
           src={'/images/biz/introduce/fade-bg-2.png'}
           alt="비즈니스 가치를 디자인하는 킨코스"
-          width={1920}
-          height={1282}
+          width={0}
+          height={0}
+          sizes="100vw 100vh"
           style={{
-            width: '100%',
-            height: '100%',
+            width: '100vw',
             objectFit: 'cover',
-            objectPosition: '50% 50%',
           }}
         />
         {/* 어두운 오버레이 */}
