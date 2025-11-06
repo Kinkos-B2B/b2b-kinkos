@@ -25,6 +25,7 @@ interface Props {
 }
 
 export const CustomerReviewIntroBanner = ({ data }: Props) => {
+  const router = useRouter()
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
 
   return (
@@ -81,7 +82,7 @@ export const CustomerReviewIntroBanner = ({ data }: Props) => {
               </VStack>
               <Button
                 onClick={() => {
-                  // router.push(ROUTES.SOLUTIONS.DESIGN.BRANDING)
+                  router.push(ROUTES.SOLUTIONS.DESIGN.BRANDING)
                 }}
               >
                 <Text>솔루션 보러가기</Text>
