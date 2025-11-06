@@ -243,7 +243,6 @@ export const BizProductionTemplate = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY
-      console.log('Scroll position:', scrollTop) // 디버깅용
       setIsScrolled(scrollTop > 0)
     }
 

@@ -50,7 +50,7 @@ export const PageLayout = ({
   useGSAP(() => {
     if (headerRef.current) {
       ScrollTrigger.create({
-        start: 'top+=91px top+=91px',
+        start: 'top+=76px top+=76px',
         end: 'max',
         onUpdate: (self) => {
           if (self.direction === -1) {
@@ -62,7 +62,7 @@ export const PageLayout = ({
             headerRef.current?.setAttribute('data-header-hidden', 'false')
           } else if (self.direction === 1) {
             gsap.to(headerRef.current, {
-              top: '-120px',
+              top: '-95px',
               duration: 0.3,
               overwrite: 'auto',
             })

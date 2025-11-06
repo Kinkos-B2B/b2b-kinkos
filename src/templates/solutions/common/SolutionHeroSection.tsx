@@ -66,9 +66,9 @@ export const SolutionHeroSection = ({
   introBlockData: SolutionHeroSectionProps
 }) => {
   const startPointY = useBreakpointValue({
-    base: 64 + 80,
-    sm: 80 + 80,
-    lg: 160 + 90,
+    base: 64 + 75,
+    sm: 80 + 75,
+    lg: 160 + 75,
   })
 
   const sectionRef = useRef<HTMLDivElement>(null)

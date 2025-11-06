@@ -1,6 +1,6 @@
 export const LAYOUT = {
   HEADER: {
-    HEIGHT: '90px',
-    HEIGHT_MOBILE: '80px',
+    HEIGHT: '75px',
+    HEIGHT_MOBILE: '75px',
   },
 }

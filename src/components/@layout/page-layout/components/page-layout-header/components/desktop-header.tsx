@@ -34,14 +34,13 @@ export const DesktopHeader = () => {
 
   return (
     <Flex
-      px="40px"
+      px={'calc((100vw - 1280px) / 2)'}
       alignItems="center"
       justifyContent="space-between"
       h={LAYOUT.HEADER.HEIGHT}
       position="relative"
       w={'100%'}
     >
-      {/* Logo */}
       <Link href={ROUTES.HOME} aria-label="홈페이지로 이동">
         <LogoButton />
       </Link>
@@ -60,7 +59,7 @@ export const DesktopHeader = () => {
           <Box key={item.label} h={'100%'} position="relative">
             <Link href={item.href || '#'}>
               <Box
-                px="16px"
+                px="14px"
                 py="0"
                 h="full"
                 display="flex"
@@ -79,6 +78,7 @@ export const DesktopHeader = () => {
               >
                 <Text
                   textStyle="pre-body-1"
+                  fontSize="16px !important"
                   color={activeSubMenu === item ? 'primary.4' : 'grey.10'}
                   transition="all 0.2s"
                 >
@@ -125,6 +125,7 @@ export const DesktopHeader = () => {
                       <Text
                         px="8px"
                         textStyle="pre-body-3"
+                        fontSize="16px !important"
                         color="grey.10"
                         mb="4px"
                       >
@@ -164,6 +165,7 @@ export const DesktopHeader = () => {
                   <Link href={category.href!} key={categoryIndex}>
                     <Text
                       textStyle="pre-body-3"
+                      fontSize="16px !important"
                       px="8px"
                       py="0"
                       display="flex"
@@ -188,6 +190,8 @@ export const DesktopHeader = () => {
       </HStack>
       <Button
         variant="solid"
+        h={'46px'}
+        w={'97px'}
         size="lg"
         aria-label="상담 신청하기"
         onClick={openPannel}
