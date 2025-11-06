@@ -36,19 +36,34 @@ const SOLUTION_CARD_MAP = {
     href: ROUTES.SOLUTIONS.DESIGN.VMD_3D,
     iconSrc: '/images/solutions/solution-link-card/vmd-3d.svg',
   },
-  [CustomerReviewSolutionSolutionTypeEnumType.ALL_IN_ONE]: {
-    id: 'all-in-one',
-    title: '통합제작 All-in-One',
-    iconBg: '#ffeddb',
-    href: ROUTES.SOLUTIONS.PRODUCTION.ALL_IN_ONE,
-    iconSrc: '/images/solutions/solution-link-card/all-in-one.svg',
+  [CustomerReviewSolutionSolutionTypeEnumType.SAFETY_SIGNAGE]: {
+    id: 'safety-signage',
+    title: '안전 사인물 제작관리',
+    iconBg: '#E6DBFF',
+    href: ROUTES.SOLUTIONS.PRODUCTION.SAFETY_SIGN,
+    iconSrc: '/images/solutions/solution-link-card/safety-sign.svg',
   },
+  [CustomerReviewSolutionSolutionTypeEnumType.SEASONAL_PRINT]: {
+    id: 'seasonal-print',
+    title: '시즌성 인쇄물 제작관리',
+    iconBg: '#FCDEFF',
+    href: ROUTES.SOLUTIONS.PRODUCTION.SEASONAL_PRINTING,
+    iconSrc: '/images/solutions/solution-link-card/seasonal-printing.svg',
+  },
+
   [CustomerReviewSolutionSolutionTypeEnumType.LOGISTICS_MANAGEMENT]: {
     id: 'logistics',
     title: '통합제작 물류관리',
     iconBg: '#d9f7fd',
     href: ROUTES.SOLUTIONS.PRODUCTION.LOGISTICS,
     iconSrc: '/images/solutions/solution-link-card/logistics.svg',
+  },
+  [CustomerReviewSolutionSolutionTypeEnumType.ALL_IN_ONE]: {
+    id: 'all-in-one',
+    title: '통합제작 All-in-One',
+    iconBg: '#ffeddb',
+    href: ROUTES.SOLUTIONS.PRODUCTION.ALL_IN_ONE,
+    iconSrc: '/images/solutions/solution-link-card/all-in-one.svg',
   },
   [CustomerReviewSolutionSolutionTypeEnumType.DIGITAL_VIDEO]: {
     id: 'digital-video',
@@ -79,32 +94,18 @@ const SOLUTION_CARD_MAP = {
     iconSrc: '/images/solutions/solution-link-card/online-business-card.svg',
   },
   [CustomerReviewSolutionSolutionTypeEnumType.CORPORATE_PRINT_MALL]: {
-    id: 'enterprise-print-mall',
+    id: 'corporate-printing',
     title: '기업 전용 인쇄몰',
     iconBg: '#e9e9e9',
     href: ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING,
     iconSrc: '/images/solutions/solution-link-card/enterprise-print-mall.svg',
   },
   [CustomerReviewSolutionSolutionTypeEnumType.FRANCHISE_PRINT_MALL]: {
-    id: 'franchise-print-mall',
+    id: 'franchise-printing',
     title: '프랜차이즈 전용 인쇄몰',
-    iconBg: '#e9e9e9',
+    iconBg: '#F8F6C1',
     href: ROUTES.SOLUTIONS.ONLINE_ORDER.CORPORATE_PRINTING,
-    iconSrc: '/images/solutions/solution-link-card/enterprise-print-mall.svg',
-  },
-  [CustomerReviewSolutionSolutionTypeEnumType.SEASONAL_PRINT]: {
-    id: 'seasonal-print',
-    title: '시즌성 인쇄물 제작관리',
-    iconBg: '#e9e9e9',
-    href: ROUTES.SOLUTIONS.PRODUCTION.SEASONAL_PRINTING,
-    iconSrc: '/images/solutions/solution-link-card/enterprise-print-mall.svg',
-  },
-  [CustomerReviewSolutionSolutionTypeEnumType.SAFETY_SIGNAGE]: {
-    id: 'safety-signage',
-    title: '안전 사인물 제작관리',
-    iconBg: '#e9e9e9',
-    href: ROUTES.SOLUTIONS.PRODUCTION.SAFETY_SIGN,
-    iconSrc: '/images/solutions/solution-link-card/enterprise-print-mall.svg',
+    iconSrc: '/images/solutions/solution-link-card/franchise-printing.svg',
   },
 }
 
