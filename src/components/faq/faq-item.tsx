@@ -142,10 +142,48 @@ export const FaqItem = React.forwardRef<HTMLDivElement, FaqItemProps>(
 
         <Collapsible.Root open={isOpen}>
           <Collapsible.Content>
-            <Box pl="20px" pr="0" py="0" pt={{ base: '20px', sm: '30px' }}>
-              <Text color="grey.7" textStyle="pre-body-2" fontWeight="normal">
-                {body}
-              </Text>
+            <Box
+              pl="20px"
+              pr="0"
+              py="0"
+              pt={{ base: '20px', sm: '30px' }}
+              css={{
+                '& i': {
+                  fontStyle: 'italic',
+                },
+                '& a': {
+                  color: 'revert',
+                  textDecoration: 'revert',
+                  target: '_blank',
+                },
+                '& .text-huge': {
+                  fontSize: '1.8em',
+                },
+                '& .text-big': {
+                  fontSize: '1.4em',
+                },
+                '& .text-small': {
+                  fontSize: '0.85em',
+                },
+                '& .text-tiny': {
+                  fontSize: '0.7em',
+                },
+                '& ul': {
+                  all: 'revert',
+                  'list-style-type': 'disc',
+                },
+                '& ol': {
+                  all: 'revert',
+                  'list-style-type': 'decimal',
+                },
+              }}
+            >
+              <Text
+                color="grey.7"
+                textStyle="pre-body-2"
+                fontWeight="normal"
+                dangerouslySetInnerHTML={{ __html: body ?? '' }}
+              />
             </Box>
           </Collapsible.Content>
         </Collapsible.Root>
