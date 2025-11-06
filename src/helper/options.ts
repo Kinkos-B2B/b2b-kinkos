@@ -83,12 +83,12 @@ export const enum GetAllHelpArticleParamsTypeEnumType {
 }
 
 export enum GetAllFaqParamsCategoryEnumType {
-  SERVICE = 'SERVICE',
-  MEMBER = 'MEMBER',
-  PRICE = 'PRICE',
-  SOLUTION = 'SOLUTION',
-  ETC = 'ETC',
-  INCIDENT = 'INCIDENT',
+  GUIDE = 'GUIDE',
+  PRODUCTION = 'PRODUCTION',
+  SOLUTIONS = 'SOLUTIONS',
+  EXPERTS = 'EXPERTS',
+  BILLING = 'BILLING',
+  OTHERS = 'OTHERS',
 }
 
 export const enum GetAllCustomerReviewParamsTypeEnumType {

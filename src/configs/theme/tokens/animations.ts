@@ -13,4 +13,7 @@ export const animations = defineTokens.animations({
   bounce: {
     value: 'bounce 1s infinite',
   },
+  'mouse-up-down': {
+    value: 'mouse-up-down 1.4s ease-in-out infinite',
+  },
 })

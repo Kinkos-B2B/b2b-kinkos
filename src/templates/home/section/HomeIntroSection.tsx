@@ -1,9 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 
 import { Box, Image, Text, VStack } from '@chakra-ui/react'
+import { MouseSimpleIcon } from '@phosphor-icons/react/dist/ssr'
 
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Lottie from 'lottie-react'
+
+import down from '@/public/images/home/intro/down.json'
 
 // window 객체에 cleanup 함수 타입 추가
 declare global {
@@ -53,6 +57,8 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
   const introRef = useRef<HTMLDivElement>(null)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const currentTextIndex = useRef(0)
+
+  const mouseDownInfoRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     // body 스크롤 막기
@@ -106,6 +112,13 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
     const tl = gsap.timeline({
       onComplete: () => {
         gsap.set('[data-index="0"]', { opacity: 1 })
+
+        gsap.to(mouseDownInfoRef.current, {
+          opacity: 1,
+          duration: 1,
+          ease: 'power2.out',
+        })
+
         gsap.fromTo(
           '[data-index="0"] .intro-text',
           { opacity: 0, y: 50 },
@@ -542,6 +555,30 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
           h="100%"
           objectFit="contain"
         />
+      </Box>
+      <Box
+        opacity={0}
+        ref={mouseDownInfoRef}
+        position={'fixed'}
+        bottom={'1.25rem'}
+        w={'100%'}
+        display={'flex'}
+        justifyContent={'center'}
+        alignItems={'center'}
+        gap={'20px'}
+        flexDirection={'column'}
+      >
+        <Text color={'#ffffffc0'} textStyle={'pre-body-4'} fontWeight={'500'}>
+          아래로 내려보세요
+        </Text>
+        <Box w="50px" h="50px" color={'red'}>
+          <Lottie
+            loop
+            animationData={down}
+            color="red"
+            style={{ color: 'red', fill: 'red' }}
+          />
+        </Box>
       </Box>
     </Box>
   )

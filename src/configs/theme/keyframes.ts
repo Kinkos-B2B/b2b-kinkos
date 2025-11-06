@@ -252,4 +252,12 @@ export const keyframes = {
       scale: '0.95',
     },
   },
+  'mouse-up-down': {
+    '0%, 100%': {
+      transform: 'translateY(0)',
+    },
+    '50%': {
+      transform: 'translateY(4px)',
+    },
+  },
 }

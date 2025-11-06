@@ -53,22 +53,22 @@ export interface FaqTemplateProps {
 
 export const CATEGORY_LABELS: Record<GetAllFaqParamsCategoryEnumType, string> =
   {
-    [GetAllFaqParamsCategoryEnumType.SERVICE]: '서비스',
-    [GetAllFaqParamsCategoryEnumType.MEMBER]: '회원',
-    [GetAllFaqParamsCategoryEnumType.PRICE]: '요금',
-    [GetAllFaqParamsCategoryEnumType.SOLUTION]: '솔루션',
-    [GetAllFaqParamsCategoryEnumType.ETC]: '기타',
-    [GetAllFaqParamsCategoryEnumType.INCIDENT]: '장애',
+    [GetAllFaqParamsCategoryEnumType.GUIDE]: '이용 안내',
+    [GetAllFaqParamsCategoryEnumType.PRODUCTION]: '제작 지원',
+    [GetAllFaqParamsCategoryEnumType.SOLUTIONS]: '솔루션',
+    [GetAllFaqParamsCategoryEnumType.EXPERTS]: '전문가',
+    [GetAllFaqParamsCategoryEnumType.BILLING]: '정산',
+    [GetAllFaqParamsCategoryEnumType.OTHERS]: '기타',
   }
 
 const defaultTabs = [
   { id: 'TOP', label: 'TOP / FAQ' },
-  { id: GetAllFaqParamsCategoryEnumType.SERVICE, label: '서비스' },
-  { id: GetAllFaqParamsCategoryEnumType.MEMBER, label: '회원' },
-  { id: GetAllFaqParamsCategoryEnumType.PRICE, label: '요금' },
-  { id: GetAllFaqParamsCategoryEnumType.SOLUTION, label: '솔루션' },
-  { id: GetAllFaqParamsCategoryEnumType.ETC, label: '기타' },
-  { id: GetAllFaqParamsCategoryEnumType.INCIDENT, label: '장애' },
+  { id: GetAllFaqParamsCategoryEnumType.GUIDE, label: '이용 안내' },
+  { id: GetAllFaqParamsCategoryEnumType.PRODUCTION, label: '제작 지원' },
+  { id: GetAllFaqParamsCategoryEnumType.SOLUTIONS, label: '솔루션' },
+  { id: GetAllFaqParamsCategoryEnumType.EXPERTS, label: '전문가' },
+  { id: GetAllFaqParamsCategoryEnumType.BILLING, label: '정산' },
+  { id: GetAllFaqParamsCategoryEnumType.OTHERS, label: '기타' },
 ]
 
 export const FaqTemplate = (props: FaqTemplateProps) => {

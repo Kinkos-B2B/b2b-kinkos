@@ -77,6 +77,32 @@ export interface ResponseDTOListGetSolutionExpertType {
 /**
  * 데이터
  */
+export interface GetSiteSeoInfoType {
+  seoTitle?: string
+  seoDescription?: string
+  ogTitle?: string
+  ogDescription?: string
+}
+
+export interface ResponseDTOGetSiteSeoInfoType {
+  /**
+   * HttpStatusCode
+   * @format int32
+   * @example 200
+   */
+  statusCode?: number
+  /**
+   * 응답 메시지
+   * @example "성공"
+   */
+  message?: string
+  /** 데이터 */
+  data?: GetSiteSeoInfoType
+}
+
+/**
+ * 데이터
+ */
 export interface PageResponseDTOSearchResponseType {
   content?: SearchResponseType[]
   /** @format int32 */
@@ -1043,12 +1069,12 @@ export type GetMainConfigArticleDetailTypeEnumType =
   | 'ETC' // X-enumName Values Missing
 
 export type GetAllFaqResponseCategoryEnumType =
-  | 'SERVICE'
-  | 'MEMBER'
-  | 'PRICE'
-  | 'SOLUTION'
-  | 'ETC'
-  | 'INCIDENT' // X-enumName Values Missing
+  | 'GUIDE'
+  | 'PRODUCTION'
+  | 'SOLUTIONS'
+  | 'EXPERTS'
+  | 'BILLING'
+  | 'OTHERS' // X-enumName Values Missing
 
 export type ExpertRelationHelpArticleTypeEnumType =
   | 'CONTRACT'
@@ -1083,7 +1109,7 @@ export type CustomerReviewSolutionSolutionTypeEnumType =
  * 관련 분야
  */
 export type GetCustomerReviewDetailTypeEnumType =
-  | 'VBD'
+  | 'VMD'
   | 'POSM_POP'
   | 'DIARY_CALENDAR'
   | 'SHOW_CARD'
@@ -1163,15 +1189,15 @@ export type GetAllHelpArticleParamsTypeEnumType =
   | 'ETC' // X-enumName Values Missing
 
 export type GetAllFaqParamsCategoryEnumType =
-  | 'SERVICE'
-  | 'MEMBER'
-  | 'PRICE'
-  | 'SOLUTION'
-  | 'ETC'
-  | 'INCIDENT' // X-enumName Values Missing
+  | 'GUIDE'
+  | 'PRODUCTION'
+  | 'SOLUTIONS'
+  | 'EXPERTS'
+  | 'BILLING'
+  | 'OTHERS' // X-enumName Values Missing
 
 export type GetAllCustomerReviewParamsTypeEnumType =
-  | 'VBD'
+  | 'VMD'
   | 'POSM_POP'
   | 'DIARY_CALENDAR'
   | 'SHOW_CARD'
@@ -1190,7 +1216,7 @@ export type GetAllCustomerReviewParamsTypeEnumType =
   | 'DID' // X-enumName Values Missing
 
 export type GetCustomerReviewRelationParamsTypeEnumType =
-  | 'VBD'
+  | 'VMD'
   | 'POSM_POP'
   | 'DIARY_CALENDAR'
   | 'SHOW_CARD'
