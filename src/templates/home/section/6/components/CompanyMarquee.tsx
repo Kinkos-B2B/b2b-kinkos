@@ -22,8 +22,8 @@ const companyImages = [
   {
     src: '/images/home/customer-review/company-3.png',
     alt: '텐퍼센트커피',
-    width: 127,
-    height: 50,
+    width: 140,
+    height: 55,
   },
   {
     src: '/images/home/customer-review/company-4.png',
@@ -64,8 +64,68 @@ const companyImages = [
   {
     src: '/images/home/customer-review/company-10.png',
     alt: '똑똑한 개발자',
+    width: 100,
+    height: 55,
+  },
+  {
+    src: '/images/home/customer-review/company-11.jpg',
+    alt: '네슬레',
+    width: 80,
+    height: 40,
+  },
+  {
+    src: '/images/home/customer-review/company-12.png',
+    alt: 'FlowOS',
     width: 156,
     height: 32,
+  },
+  {
+    src: '/images/home/customer-review/company-13.png',
+    alt: 'WeAR',
+    width: 156,
+    height: 32,
+  },
+  {
+    src: '/images/home/customer-review/company-14.png',
+    alt: '이랜드이츠',
+    width: 156,
+    height: 32,
+  },
+  {
+    src: '/images/home/customer-review/company-15.jpg',
+    alt: '현대드림투어',
+    width: 156,
+    height: 32,
+  },
+  {
+    src: '/images/home/customer-review/company-16.png',
+    alt: '바이서치코리아',
+    width: 120,
+    height: 30,
+  },
+  {
+    src: '/images/home/customer-review/company-17.png',
+    alt: '건설엔지니어링공제조합',
+    width: 156,
+    height: 32,
+  },
+  {
+    src: '/images/home/customer-review/company-18.png',
+    alt: '에버라인',
+    width: 156,
+    height: 32,
+  },
+  {
+    src: '/images/home/customer-review/company-19.png',
+    alt: '우리들파트너스',
+    width: 156,
+    height: 32,
+  },
+  {
+    src: '/images/home/customer-review/company-20.png',
+    alt: '우리들HRD',
+    width: 70,
+    height: 50,
   },
 ]
 
@@ -80,7 +140,7 @@ export function CompanyMarquee() {
       py={{ base: '20px', sm: '28px', lg: '32px' }}
       w="100%"
     >
-      <FastMarquee direction="right" style={{ width: '100%', height: '60px' }}>
+      <FastMarquee direction="right" style={{ width: '100%', height: '66px' }}>
         <chakra.div
           display="flex"
           gap={{ sm: '96px', base: '60px' }}
@@ -88,13 +148,13 @@ export function CompanyMarquee() {
           justifyContent="flex-start"
           mr={{ sm: '96px', base: '60px' }}
         >
-          {companyImages.map((image, index) => (
+          {companyImages.slice(0, 10).map((image, index) => (
             <chakra.div
               key={index}
               display="flex"
               flexDirection="column"
               gap="10px"
-              h="60px"
+              h="66px"
               alignItems="flex-start"
               justifyContent="center"
               py="9px"
@@ -102,6 +162,7 @@ export function CompanyMarquee() {
               <Image
                 src={image.src}
                 alt={image.alt}
+                unoptimized
                 width={image.width}
                 height={image.height}
                 style={{ objectFit: 'contain' }}
@@ -111,7 +172,7 @@ export function CompanyMarquee() {
         </chakra.div>
       </FastMarquee>
 
-      <FastMarquee direction="left" style={{ width: '100%', height: '60px' }}>
+      <FastMarquee direction="left" style={{ width: '100%', height: '66px' }}>
         <chakra.div
           display="flex"
           gap="96px"
@@ -119,13 +180,13 @@ export function CompanyMarquee() {
           justifyContent="flex-start"
           mr="96px"
         >
-          {companyImages.map((image, index) => (
+          {companyImages.slice(10).map((image, index) => (
             <chakra.div
               key={`second-${index}`}
               display="flex"
               flexDirection="column"
               gap="10px"
-              h="60px"
+              h="66px"
               alignItems="flex-start"
               justifyContent="center"
               py="9px"
