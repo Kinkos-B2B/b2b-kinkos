@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation'
 import {
   Accordion,
   Box,
+  Button,
   Drawer,
   Flex,
   IconButton,
@@ -22,6 +23,8 @@ import {
   ListIcon,
   XIcon,
 } from '@phosphor-icons/react/dist/ssr'
+
+import { usePannelContext } from '@/components/PannelContext'
 
 import {
   BIZ_NAVIGATION_ITEMS,
@@ -38,6 +41,8 @@ const CaretDownIcon = chakra(CaretDownIconPhosphor)
 export const MobileMenuDrawer = () => {
   const pathname = usePathname()
   const { open, onToggle, onClose } = useDisclosure()
+
+  const { openPannel } = usePannelContext()
 
   // 현재 경로가 활성 상태인지 확인하는 함수
   const isActivePath = (href: string) => {
@@ -363,6 +368,16 @@ export const MobileMenuDrawer = () => {
                   </Box>
                 </Link>
               </VStack>
+              <Button
+                onClick={openPannel}
+                size={'md'}
+                w={'100%'}
+                variant={'solid'}
+                lineHeight={'1'}
+                my={'24px'}
+              >
+                상담 신청
+              </Button>
             </Drawer.Body>
           </Drawer.Content>
         </Drawer.Positioner>

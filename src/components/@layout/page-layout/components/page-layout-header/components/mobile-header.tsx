@@ -2,8 +2,9 @@
 
 import Link from 'next/link'
 
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Button, Flex, HStack } from '@chakra-ui/react'
 
+import { usePannelContext } from '@/components/PannelContext'
 import { LAYOUT } from '@/constants/layout'
 import { ROUTES } from '@/constants/routes'
 
@@ -11,6 +12,8 @@ import { LogoButton } from './logo-button'
 import { MobileMenuDrawer } from './mobile-menu-drawer'
 
 export const MobileHeader = () => {
+  const { openPannel } = usePannelContext()
+
   return (
     <Box
       as="header"
@@ -33,8 +36,17 @@ export const MobileHeader = () => {
         <Link href={ROUTES.HOME}>
           <LogoButton />
         </Link>
-
-        <MobileMenuDrawer />
+        <HStack>
+          <Button
+            size={'md'}
+            variant={'solid'}
+            lineHeight={'1'}
+            onClick={openPannel}
+          >
+            상담 신청
+          </Button>
+          <MobileMenuDrawer />
+        </HStack>
       </Flex>
     </Box>
   )
