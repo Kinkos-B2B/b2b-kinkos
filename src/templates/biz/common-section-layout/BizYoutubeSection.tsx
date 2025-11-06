@@ -105,6 +105,9 @@ export const BizViedoSection = ({ data }: Props) => {
                 src={data.thumbnailUrl[videoIndex]?.url}
                 alt={data.thumbnailUrl[videoIndex]?.alt}
                 fill
+                style={{
+                  objectFit: 'cover',
+                }}
               />
             </Box>
             {Array.isArray(data.thumbnailUrl) &&
