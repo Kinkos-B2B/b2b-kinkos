@@ -29,7 +29,7 @@ const companyImages = [
     src: '/images/home/customer-review/company-4.png',
     alt: '코카콜라코리아',
     width: 145,
-    height: 30,
+    height: 50,
   },
   {
     src: '/images/home/customer-review/company-5.png',
@@ -40,8 +40,8 @@ const companyImages = [
   {
     src: '/images/home/customer-review/company-6.png',
     alt: '한국알콘',
-    width: 140,
-    height: 50,
+    width: 100,
+    height: 30,
   },
   {
     src: '/images/home/customer-review/company-7.png',
@@ -58,6 +58,12 @@ const companyImages = [
   {
     src: '/images/home/customer-review/company-9.png',
     alt: '이삭',
+    width: 156,
+    height: 32,
+  },
+  {
+    src: '/images/home/customer-review/company-10.png',
+    alt: '똑똑한 개발자',
     width: 156,
     height: 32,
   },
