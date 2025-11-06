@@ -203,8 +203,8 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
           w={'100vw'}
           overflow={'hidden'}
           className="home-solution-slider"
-          pb={'121px'}
-          mb={'-121px'}
+          pb={{ base: '70px', sm: '121px' }}
+          mb={{ base: '-70px', sm: '-121px' }}
         >
           <div className="embla" ref={emblaRef}>
             <div className="embla__container">

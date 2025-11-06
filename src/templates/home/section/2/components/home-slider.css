@@ -1,6 +1,8 @@
 /* Embla Carousel 스타일 */
 .home-solution-slider .embla {
   overflow: hidden;
+  padding-bottom: 120px;
+  margin-bottom: -120px;
 }
 
 .home-solution-slider .embla__container {
