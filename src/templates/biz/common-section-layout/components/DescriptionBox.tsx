@@ -50,9 +50,14 @@ export const DescriptionRowTextBlock = ({
   name: [string, string] | string
   description?: string
 }) => {
+  const isDoubleName = Array.isArray(name) && name.length > 1 && !description
+
   return (
     <HStack gap="9px" align="center">
-      <Text textStyle="pre-body-3" color="grey.7">
+      <Text
+        textStyle={isDoubleName ? 'pre-body-4' : 'pre-body-3'}
+        color="grey.7"
+      >
         {Array.isArray(name) ? name[0] : name}
       </Text>
       <Box
@@ -65,7 +70,10 @@ export const DescriptionRowTextBlock = ({
         <Box w="1px" h="12px" bg="border.basic.2" />
       </Box>
       {Array.isArray(name) && name.length > 1 && (
-        <Text textStyle="pre-body-3" color="grey.7">
+        <Text
+          textStyle={isDoubleName ? 'pre-body-4' : 'pre-body-3'}
+          color="grey.7"
+        >
           {name[1]}
         </Text>
       )}
