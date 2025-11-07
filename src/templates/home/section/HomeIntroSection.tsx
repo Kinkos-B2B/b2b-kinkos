@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
 import { Box, Image, Text, VStack } from '@chakra-ui/react'
-import { MouseSimpleIcon } from '@phosphor-icons/react/dist/ssr'
 
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -132,6 +131,11 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
               scrollContainer.style.overflow = 'auto'
               // 첫 번째 텍스트 애니메이션 완료 후 이미지 바운스 애니메이션 실행
               startImageBounceAnimation()
+              // 기존 cleanup 함수가 있으면 먼저 실행 (Strict Mode 대응)
+              if (window.__introCleanup) {
+                window.__introCleanup()
+                delete window.__introCleanup
+              }
               // 그 다음 스크롤 트리거 설정
               const cleanup = setupScrollTriggers()
               // 정리 함수를 저장해두고 언마운트 시 호출
@@ -187,26 +191,131 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
       })
     }
 
+    // 섹션 전환 애니메이션 함수 (공통 로직)
+    const animateToSection = (
+      targetIndex: number,
+      direction: 'down' | 'up',
+      isScrollBlockedRef: { current: boolean },
+      lastScrollTopRef?: { current: number },
+    ) => {
+      // 애니메이션 중이면 무시
+      if (isAnimating || isScrollBlockedRef.current) {
+        return false
+      }
+
+      // 유효한 인덱스인지 확인
+      if (
+        targetIndex < 0 ||
+        targetIndex >= textContents.length ||
+        targetIndex === currentTextIndex.current
+      ) {
+        return false
+      }
+
+      // 스크롤 차단 시작
+      isScrollBlockedRef.current = true
+      setIsAnimating(true)
+      const previousIndex = currentTextIndex.current
+      currentTextIndex.current = targetIndex
+      const viewportHeight = window.innerHeight
+      const targetScrollTop = targetIndex * viewportHeight
+
+      // 스크롤 위치를 즉시 업데이트 (스크롤 이벤트가 잘못된 인덱스를 계산하지 않도록)
+      scrollContainer.scrollTop = targetScrollTop
+      if (lastScrollTopRef) {
+        lastScrollTopRef.current = targetScrollTop
+      }
+
+      if (direction === 'down') {
+        // 아래로 이동: 이전 텍스트 페이드아웃 → 현재 텍스트 페이드인
+        if (previousIndex >= 0) {
+          gsap.to(`[data-index="${previousIndex}"]`, {
+            opacity: 0,
+            duration: 0.5,
+          })
+        }
+
+        // 현재 텍스트 페이드인
+        gsap.set(`[data-index="${targetIndex}"]`, { opacity: 1 })
+        gsap.fromTo(
+          `[data-index="${targetIndex}"] .intro-text`,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: 'power2.out',
+            onComplete: () => {
+              setIsAnimating(false)
+              isScrollBlockedRef.current = false
+            },
+          },
+        )
+      } else {
+        // 위로 이동: 현재 텍스트 페이드아웃 → 이전 텍스트 페이드인
+        if (previousIndex >= 0) {
+          gsap.to(`[data-index="${previousIndex}"]`, {
+            opacity: 0,
+            duration: 0.5,
+          })
+        }
+
+        // 이전 텍스트 페이드인
+        gsap.set(`[data-index="${targetIndex}"]`, { opacity: 1 })
+        gsap.fromTo(
+          `[data-index="${targetIndex}"] .intro-text`,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            stagger: 0.2,
+            ease: 'power2.out',
+            onComplete: () => {
+              setIsAnimating(false)
+              isScrollBlockedRef.current = false
+            },
+          },
+        )
+      }
+
+      return true
+    }
+
     // 스크롤 트리거 설정 함수
     const setupScrollTriggers = () => {
-      let lastScrollTop = 0
-      let isScrollBlocked = false
+      const lastScrollTopRef = { current: 0 }
+      const isScrollBlockedRef = { current: false }
+      const isClickTriggeredRef = { current: false }
+      const isExitingRef = { current: false } // 인트로 종료 애니메이션 중인지 추적
+      const abortController = new AbortController()
 
       // 스크롤 이벤트 리스너 추가
       const handleScroll = (e: Event) => {
         // 애니메이션 중이면 스크롤 무시
-        if (isAnimating || isScrollBlocked) {
+        if (isAnimating || isScrollBlockedRef.current) {
           e.preventDefault()
           e.stopPropagation()
           // 스크롤 위치를 이전 위치로 되돌리기
-          scrollContainer.scrollTop = lastScrollTop
+          scrollContainer.scrollTop = lastScrollTopRef.current
           return false
+        }
+
+        // 클릭으로 인한 스크롤 변경은 무시
+        if (isClickTriggeredRef.current) {
+          // 다음 이벤트 루프에서 플래그 리셋
+          setTimeout(() => {
+            isClickTriggeredRef.current = false
+          }, 0)
+          return
         }
 
         const scrollTop = scrollContainer.scrollTop
         const viewportHeight = window.innerHeight
         const currentIndex = Math.round(scrollTop / viewportHeight)
-        const scrollDirection = scrollTop > lastScrollTop ? 'down' : 'up'
+        const scrollDirection =
+          scrollTop > lastScrollTopRef.current ? 'down' : 'up'
 
         // 현재 인덱스가 유효하고 이전과 다를 때만 애니메이션 실행
         if (
@@ -214,85 +323,23 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
           currentIndex < textContents.length &&
           currentIndex !== currentTextIndex.current
         ) {
-          // 스크롤 차단 시작
-          isScrollBlocked = true
-          setIsAnimating(true)
-          const previousIndex = currentTextIndex.current
-          currentTextIndex.current = currentIndex
-          lastScrollTop = scrollTop
-
-          if (scrollDirection === 'down') {
-            // 아래로 스크롤: 이전 텍스트 페이드아웃 → 현재 텍스트 페이드인
-            if (previousIndex >= 0) {
-              gsap.to(`[data-index="${previousIndex}"]`, {
-                opacity: 0,
-                duration: 0.5,
-              })
-            }
-
-            // 현재 텍스트 페이드인
-            gsap.set(`[data-index="${currentIndex}"]`, { opacity: 1 })
-            gsap.fromTo(
-              `[data-index="${currentIndex}"] .intro-text`,
-              { opacity: 0, y: 50 },
-              {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                stagger: 0.2,
-                ease: 'power2.out',
-                onComplete: () => {
-                  setIsAnimating(false)
-                  isScrollBlocked = false
-                  // 애니메이션 완료 후 스크롤 위치를 정확한 섹션으로 스냅
-                  const targetScrollTop = currentIndex * viewportHeight
-                  scrollContainer.scrollTo({
-                    top: targetScrollTop,
-                    behavior: 'smooth',
-                  })
-                },
-              },
-            )
-          } else {
-            // 위로 스크롤: 현재 텍스트 페이드아웃 → 이전 텍스트 페이드인
-            if (previousIndex >= 0) {
-              gsap.to(`[data-index="${previousIndex}"]`, {
-                opacity: 0,
-                duration: 0.5,
-              })
-            }
-
-            // 이전 텍스트 페이드인
-            gsap.set(`[data-index="${currentIndex}"]`, { opacity: 1 })
-            gsap.fromTo(
-              `[data-index="${currentIndex}"] .intro-text`,
-              { opacity: 0, y: 50 },
-              {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                stagger: 0.2,
-                ease: 'power2.out',
-                onComplete: () => {
-                  setIsAnimating(false)
-                  isScrollBlocked = false
-                  // 애니메이션 완료 후 스크롤 위치를 정확한 섹션으로 스냅
-                  const targetScrollTop = currentIndex * viewportHeight
-                  scrollContainer.scrollTo({
-                    top: targetScrollTop,
-                    behavior: 'smooth',
-                  })
-                },
-              },
-            )
-          }
+          lastScrollTopRef.current = scrollTop
+          animateToSection(
+            currentIndex,
+            scrollDirection,
+            isScrollBlockedRef,
+            lastScrollTopRef,
+          )
         }
 
         // 마지막 섹션 완료 시 인트로 종료
         if (currentIndex >= textContents.length) {
           // 위로 사라지는 애니메이션
+          setIsAnimating(true)
+          isExitingRef.current = true // 종료 애니메이션 시작
+
           gsap.to(introElement, {
-            y: '-100vh',
+            y: '-120vh',
             duration: 1.2,
             ease: 'power2.inOut',
             onComplete: () => {
@@ -303,9 +350,60 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
         }
       }
 
+      // 클릭 이벤트 리스너 추가
+      const handleClick = (e: MouseEvent) => {
+        // 종료 애니메이션 중이면 클릭 무시
+        if (isExitingRef.current) {
+          e.preventDefault()
+          e.stopPropagation()
+          return
+        }
+
+        // 애니메이션 중이면 클릭 무시
+        if (isAnimating || isScrollBlockedRef.current) {
+          e.preventDefault()
+          e.stopPropagation()
+          return
+        }
+
+        // 이벤트 버블링 방지
+        e.preventDefault()
+        e.stopPropagation()
+
+        // 클릭으로 인한 스크롤 변경임을 표시
+        isClickTriggeredRef.current = true
+
+        // 현재 텍스트 인덱스를 직접 사용 (스크롤 위치 기반 계산 대신)
+        const currentIndex = currentTextIndex.current
+        const targetIndex = currentIndex + 1
+
+        // 마지막 섹션을 넘어가면 인트로 종료
+        if (targetIndex >= textContents.length) {
+          isExitingRef.current = true // 종료 애니메이션 시작
+          gsap.to(introElement, {
+            y: '-120vh',
+            duration: 1.2,
+            ease: 'power2.inOut',
+            onComplete: () => {
+              onCompleted()
+              document.body.style.overflow = ''
+            },
+          })
+          return
+        }
+
+        // 다음 섹션으로 이동
+        animateToSection(
+          targetIndex,
+          'down',
+          isScrollBlockedRef,
+          lastScrollTopRef,
+        )
+      }
+
       // wheel 이벤트도 차단 (마우스 휠)
       const handleWheel = (e: WheelEvent) => {
-        if (isAnimating || isScrollBlocked) {
+        if (isAnimating || isScrollBlockedRef.current) {
           e.preventDefault()
           e.stopPropagation()
           return false
@@ -314,7 +412,7 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
 
       // touch 이벤트도 차단 (터치 스크롤)
       const handleTouchMove = (e: TouchEvent) => {
-        if (isAnimating || isScrollBlocked) {
+        if (isAnimating || isScrollBlockedRef.current) {
           e.preventDefault()
           e.stopPropagation()
           return false
@@ -323,25 +421,32 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
 
       scrollContainer.addEventListener('scroll', handleScroll, {
         passive: false,
+        signal: abortController.signal,
       })
-      scrollContainer.addEventListener('wheel', handleWheel, { passive: false })
+
+      scrollContainer.addEventListener('wheel', handleWheel, {
+        passive: false,
+        signal: abortController.signal,
+      })
       scrollContainer.addEventListener('touchmove', handleTouchMove, {
         passive: false,
+        signal: abortController.signal,
+      })
+
+      window.addEventListener('click', handleClick, {
+        signal: abortController.signal,
       })
 
       return () => {
-        scrollContainer.removeEventListener('scroll', handleScroll)
-        scrollContainer.removeEventListener('wheel', handleWheel)
-        scrollContainer.removeEventListener('touchmove', handleTouchMove)
+        // AbortController를 사용하여 모든 이벤트 리스너를 한 번에 제거
+        abortController.abort()
       }
     }
 
     return () => {
       document.body.style.overflow = ''
-
       if (window.__introCleanup) {
         window.__introCleanup()
-
         delete window.__introCleanup
       }
     }
@@ -366,6 +471,7 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
         ref={scrollContainerRef}
         position="absolute"
         top="0"
+        cursor="pointer"
         left="0"
         w="100%"
         h="100%"
