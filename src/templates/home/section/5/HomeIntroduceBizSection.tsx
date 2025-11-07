@@ -141,7 +141,7 @@ export const HomeIntroduceBizSection = () => {
       finalPosition: '16.7%',
       rotation: -15,
       delay: 0.2,
-      imageSize: 160,
+      imageSize: 170,
     },
     {
       title: '비즈니스 효율을 높이는\n인쇄 솔루션',
