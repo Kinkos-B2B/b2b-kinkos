@@ -125,7 +125,7 @@ const companyImages = [
     src: '/images/home/customer-review/company-20.png',
     alt: '우리들HRD',
     width: 70,
-    height: 50,
+    height: 40,
   },
 ]
 
@@ -187,6 +187,7 @@ export function CompanyMarquee() {
               flexDirection="column"
               gap="10px"
               h="66px"
+              overflow="hidden"
               alignItems="flex-start"
               justifyContent="center"
               py="9px"
@@ -202,6 +203,7 @@ export function CompanyMarquee() {
                   alt={image.alt}
                   width={image.width}
                   height={image.height}
+                  unoptimized
                   style={{ objectFit: 'contain' }}
                 />
               </chakra.div>
