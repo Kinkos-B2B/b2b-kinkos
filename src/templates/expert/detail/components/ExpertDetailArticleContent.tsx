@@ -14,29 +14,52 @@ import {
 
 const ExpertIntroSection = ({ content }: { content: ExpertIntroType }) => {
   return (
-    <PostSectionWrapper
-      title="전문가 소개"
-      subTitle={content.subTitle ?? ''}
-      fragment="intro"
-    >
-      <VStack gap={'20px'} alignItems={'start'} w={'100%'}>
-        {content.image?.url && (
-          <Image
-            alt={content.image?.alt ?? ''}
-            src={content.image?.url}
-            borderRadius={'28px'}
-            w={'100%'}
-            h={'400px'}
-            objectFit={'cover'}
-          />
-        )}
-        <Text
-          textStyle={'pre-body-4'}
-          color={'grey.9'}
-          dangerouslySetInnerHTML={{ __html: content.body ?? '' }}
-        ></Text>
-      </VStack>
-    </PostSectionWrapper>
+    <VStack w={{ base: '100%', lg: '820px' }} gap={'24px'} alignItems={'start'}>
+      <Text textStyle={'pre-heading-1'} textAlign={'left'}>
+        {content.subTitle}
+      </Text>
+      <Text
+        w={'100%'}
+        textAlign={'center'}
+        css={{
+          '& i': {
+            fontStyle: 'italic',
+          },
+          '& a': {
+            color: 'revert',
+            textDecoration: 'revert',
+            target: '_blank',
+          },
+          '& .text-huge': {
+            fontSize: '1.8em',
+          },
+          '& .text-big': {
+            fontSize: '1.4em',
+          },
+          '& .text-small': {
+            fontSize: '0.85em',
+          },
+          '& .text-tiny': {
+            fontSize: '0.7em',
+          },
+          '& ul': {
+            all: 'revert',
+            'list-style-type': 'disc',
+          },
+          '& ol': {
+            all: 'revert',
+            'list-style-type': 'decimal',
+          },
+        }}
+        borderRadius={'28px'}
+        py={'30px'}
+        px={'36px'}
+        bg={'#F9F9FA'}
+        textStyle={'pre-body-4'}
+        color={'grey.9'}
+        dangerouslySetInnerHTML={{ __html: content.body ?? '' }}
+      ></Text>
+    </VStack>
   )
 }
 

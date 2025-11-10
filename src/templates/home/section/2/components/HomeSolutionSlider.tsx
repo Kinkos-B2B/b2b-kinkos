@@ -128,7 +128,11 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
           </Badge>
         </Box>
 
-        <Flex justify="space-between" align="center" width="100%">
+        <Flex
+          justify="space-between"
+          align={{ base: 'center', sm: 'center' }}
+          width="100%"
+        >
           <Text
             color="grey.10"
             textStyle={'pre-display-3'}
@@ -137,10 +141,11 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
             {'킨코스가 제안하는\n비즈니스 맞춤 솔루션'}
           </Text>
 
-          <HStack gap="10px" display={{ base: 'none', lg: 'flex' }}>
+          <HStack gap="10px">
             <IconButton
               variant={'capsule'}
-              size={'md'}
+              borderRadius={'full'}
+              size={{ base: 'sm', sm: 'md' }}
               bg={'grey.10'}
               onClick={scrollPrev}
             >
@@ -148,7 +153,8 @@ export const HomeSolutionSlider: React.FC<SolutionSliderProps> = ({
             </IconButton>
             <IconButton
               variant={'capsule'}
-              size={'md'}
+              borderRadius={'full'}
+              size={{ base: 'sm', sm: 'md' }}
               bg={'grey.10'}
               onClick={scrollNext}
             >

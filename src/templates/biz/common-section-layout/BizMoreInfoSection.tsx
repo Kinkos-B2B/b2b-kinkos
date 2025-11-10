@@ -45,8 +45,6 @@ export const BizMoreInfoSection = React.forwardRef<
   const problemHref = data?.data?.relatedHelpArticleSlug
   const expertHref = data?.data?.relatedExpertSlug
 
-  console.log(solutionHref, reviewHref, problemHref, expertHref)
-
   return (
     <Box ref={ref} bg="primary.1" py="80px" {...rest} w={'100%'}>
       <Container maxW={'1280px'}>

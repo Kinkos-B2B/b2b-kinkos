@@ -51,7 +51,6 @@ export const BizIntroductionPrincipleCard = ({
       justifyContent="space-between"
       px={{ base: '20px', sm: '40px', lg: '80px' }}
       py={{ base: '40px 20px', sm: '48px 40px', lg: '76px' }}
-      cursor="pointer"
       gap={{ base: '40px', lg: '0' }}
       transition="all 0.3s ease"
     >

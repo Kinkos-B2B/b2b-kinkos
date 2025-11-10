@@ -14,7 +14,7 @@ export const getCustomerReviewOptions = (): {
       value: 'VMD',
     },
     {
-      label: 'POSM_POP',
+      label: 'POSM(POP)',
       value: 'POSM_POP',
     },
     {

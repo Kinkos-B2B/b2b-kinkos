@@ -25,6 +25,7 @@ import {
 import { SolutionMoreInfoSection } from '../../common/SolutionMoreInfoSection'
 import { SolutionReleatedExportSection } from '../../common/SolutionReleatedExportSection'
 import { SoultionCardsSection } from '../../common/SoultionCardsSection'
+import { useSolutionBottomBar } from '../../hooks/useSolutionBottomBar'
 
 const heroMockData: SolutionHeroSectionProps = {
   badge: '브랜딩 디자인',
@@ -237,35 +238,14 @@ const featureData: FeatureItem[] = [
 ]
 
 export const SolutionBrandingTemplate = () => {
-  const { ref, inView } = useInView()
-  const stickyRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (inView) {
-      gsap.to(stickyRef.current, {
-        bottom: '20px',
-        duration: 0.3,
-        ease: 'ease-in-out',
-      })
-    } else {
-      gsap.to(stickyRef.current, {
-        bottom: '-100px',
-        duration: 0.3,
-        ease: 'ease-in-out',
-      })
-    }
-  }, [inView])
+  const { ref, stickyRef } = useSolutionBottomBar()
 
   return (
     <VStack position={'relative'} gap={'0px'}>
-      <Box w={'100%'}>
+      <Box w={'100%'} ref={ref}>
         <SolutionHeroSection introBlockData={heroMockData} />
       </Box>
-      <Box
-        py={{ base: '100px', sm: '140px', lg: '160px' }}
-        ref={ref}
-        w={'100%'}
-      >
+      <Box py={{ base: '100px', sm: '140px', lg: '160px' }} w={'100%'}>
         <Container>
           <SoultionCardsSection {...cardsMockData} />
         </Container>

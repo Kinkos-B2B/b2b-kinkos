@@ -4,7 +4,15 @@ import { useEffect, useRef } from 'react'
 
 import Image from 'next/image'
 
-import { Box, Grid, GridItem, HStack, Text, VStack } from '@chakra-ui/react'
+import {
+  Box,
+  Image as ChakraImage,
+  Grid,
+  GridItem,
+  HStack,
+  Text,
+  VStack,
+} from '@chakra-ui/react'
 
 import { gsap } from 'gsap'
 import { useInView } from 'react-intersection-observer'
@@ -96,6 +104,7 @@ const BizCard = ({
             {/* 메인 이미지 */}
             <Image
               src={image}
+              unoptimized
               alt={title}
               width={imageSize}
               height={imageSize}

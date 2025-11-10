@@ -37,7 +37,7 @@ export const ExpertDetailTemplate = ({ id }: Props) => {
 
   return (
     <VStack w="100%" gap={'0px'}>
-      <Box pt={{ base: '0px', lg: '20px' }} w={'100%'}>
+      <Box pt={{ base: '0px', lg: '0px' }} w={'100%'}>
         <ExpertDetailHeader header={data?.data?.header ?? {}} />
       </Box>
 

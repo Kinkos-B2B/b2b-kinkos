@@ -1,8 +1,41 @@
 'use client'
 
-import { Box, Container, Heading, Link, Text, VStack } from '@chakra-ui/react'
+import { useState } from 'react'
+
+import {
+  Box,
+  Container,
+  HStack,
+  Heading,
+  Link,
+  Select,
+  Text,
+  VStack,
+} from '@chakra-ui/react'
+
+import dayjs from 'dayjs'
+
+import { CustomSelect } from '@/components/CustomSelect'
+import {
+  useGetPrivacyPolicyByIdQuery,
+  useGetPrivacyPolicyListQuery,
+  useGetPrivacyPolicyQuery,
+} from '@/generated/apis/PrivacyPolicyApi/PrivacyPolicyApi.query'
 
 export const PrivacyTemplate = () => {
+  const [privacyPolicyId, setPrivacyPolicyId] = useState<number | null>(null)
+
+  const { data } = useGetPrivacyPolicyQuery({})
+  const { data: listData } = useGetPrivacyPolicyListQuery({})
+  const { data: privacyPolicyData } = useGetPrivacyPolicyByIdQuery({
+    variables: {
+      id: privacyPolicyId!,
+    },
+    options: {
+      enabled: !!privacyPolicyId,
+    },
+  })
+
   return (
     <Container
       maxW="1280px"
@@ -11,7 +44,6 @@ export const PrivacyTemplate = () => {
       px={{ base: '20px', sm: '40px' }}
     >
       <VStack gap={{ base: '40px', lg: '56px' }} align="stretch">
-        {/* 헤더 */}
         <VStack gap={{ base: '16px', lg: '24px' }} align="center">
           <Heading
             as="h1"
@@ -23,14 +55,84 @@ export const PrivacyTemplate = () => {
           </Heading>
         </VStack>
 
-        {/* 약관 내용 */}
+        <HStack w={'100%'} justify={'flex-end'}>
+          <CustomSelect
+            size={'lg'}
+            maxW={'300px'}
+            value={
+              privacyPolicyId ? [String(privacyPolicyId)]
+              : listData?.data?.at(-1)?.id ?
+                [String(listData?.data?.at(-1)?.id)]
+              : []
+            }
+            onValueChange={({ value }) => {
+              setPrivacyPolicyId(Number(value[0]))
+            }}
+            options={
+              listData?.data
+                ?.map((item) => {
+                  return {
+                    label: `${dayjs(item.effectiveStartDate).format('YYYY.MM.DD')} ~ ${item.effectiveEndDate ? dayjs(item.effectiveEndDate).format('YYYY.MM.DD') : '현재'}`,
+                    value: String(item.id),
+                  }
+                })
+                .reverse() || []
+            }
+            placeholder="개인정보처리방침 변경일자"
+          />
+        </HStack>
+
+        {(data?.data?.content ||
+          (privacyPolicyData?.data?.content && privacyPolicyId)) && (
+          <Box
+            css={{
+              '& *': {
+                all: 'revert',
+              },
+
+              '& i': {
+                fontStyle: 'italic',
+              },
+              '& a': {
+                color: 'revert',
+                textDecoration: 'revert',
+                target: '_blank',
+              },
+              '& .text-huge': {
+                fontSize: '1.8em',
+              },
+              '& .text-big': {
+                fontSize: '1.4em',
+              },
+              '& .text-small': {
+                fontSize: '0.85em',
+              },
+              '& .text-tiny': {
+                fontSize: '0.7em',
+              },
+              '& ul': {
+                all: 'revert',
+                'list-style-type': 'disc',
+              },
+              '& ol': {
+                all: 'revert',
+                'list-style-type': 'decimal',
+              },
+            }}
+            dangerouslySetInnerHTML={{
+              __html:
+                privacyPolicyData?.data?.content ?? data?.data?.content ?? '',
+            }}
+          />
+        )}
+
+        {/* 
         <Box
           bg="background.basic.1"
           borderRadius="16px"
           p={{ base: '24px', lg: '40px' }}
         >
           <VStack gap={{ base: '32px', lg: '40px' }} align="stretch">
-            {/* 총칙 */}
             <VStack gap="16px" align="stretch">
               <Heading
                 as="h2"
@@ -55,7 +157,6 @@ export const PrivacyTemplate = () => {
               </Text>
             </VStack>
 
-            {/* 제1조 */}
             <VStack gap="16px" align="stretch">
               <Heading
                 as="h2"
@@ -136,7 +237,6 @@ export const PrivacyTemplate = () => {
               </VStack>
             </VStack>
 
-            {/* 제2조 */}
             <VStack gap="16px" align="stretch">
               <Heading
                 as="h2"
@@ -244,7 +344,6 @@ export const PrivacyTemplate = () => {
               </VStack>
             </VStack>
 
-            {/* 제3조 */}
             <VStack gap="16px" align="stretch">
               <Heading
                 as="h2"
@@ -420,7 +519,6 @@ export const PrivacyTemplate = () => {
               </VStack>
             </VStack>
 
-            {/* 제4조 */}
             <VStack gap="16px" align="stretch">
               <Heading
                 as="h2"
@@ -495,7 +593,6 @@ export const PrivacyTemplate = () => {
               </VStack>
             </VStack>
 
-            {/* 제5조 */}
             <VStack gap="16px" align="stretch">
               <Heading
                 as="h2"
@@ -542,7 +639,6 @@ export const PrivacyTemplate = () => {
               </VStack>
             </VStack>
 
-            {/* 제6조 */}
             <VStack gap="16px" align="stretch">
               <Heading
                 as="h2"
@@ -584,7 +680,6 @@ export const PrivacyTemplate = () => {
               </VStack>
             </VStack>
 
-            {/* 제7조 */}
             <VStack gap="16px" align="stretch">
               <Heading
                 as="h2"
@@ -654,7 +749,6 @@ export const PrivacyTemplate = () => {
               </VStack>
             </VStack>
 
-            {/* 제8조 */}
             <VStack gap="16px" align="stretch">
               <Heading
                 as="h2"
@@ -706,7 +800,6 @@ export const PrivacyTemplate = () => {
               </VStack>
             </VStack>
 
-            {/* 제9조 */}
             <VStack gap="16px" align="stretch">
               <Heading
                 as="h2"
@@ -895,7 +988,6 @@ export const PrivacyTemplate = () => {
               </VStack>
             </VStack>
 
-            {/* 제10조 */}
             <VStack gap="16px" align="stretch">
               <Heading
                 as="h2"
@@ -1077,7 +1169,6 @@ export const PrivacyTemplate = () => {
               </VStack>
             </VStack>
 
-            {/* 제11조 */}
             <VStack gap="16px" align="stretch">
               <Heading
                 as="h2"
@@ -1258,7 +1349,6 @@ export const PrivacyTemplate = () => {
               </VStack>
             </VStack>
 
-            {/* 개인정보처리방침 변경일자 */}
             <VStack gap="16px" align="stretch" pt="16px">
               <Heading
                 as="h2"
@@ -1287,7 +1377,7 @@ export const PrivacyTemplate = () => {
               </Text>
             </VStack>
           </VStack>
-        </Box>
+        </Box> */}
       </VStack>
     </Container>
   )

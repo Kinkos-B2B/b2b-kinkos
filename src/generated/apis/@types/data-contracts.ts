@@ -103,6 +103,61 @@ export interface ResponseDTOGetSiteSeoInfoType {
 /**
  * 데이터
  */
+export interface GetPrivacyPolicyType {
+  content?: string
+  /** @format date */
+  effectiveStartDate?: string
+  /** @format date */
+  effectiveEndDate?: string
+}
+
+export interface ResponseDTOGetPrivacyPolicyType {
+  /**
+   * HttpStatusCode
+   * @format int32
+   * @example 200
+   */
+  statusCode?: number
+  /**
+   * 응답 메시지
+   * @example "성공"
+   */
+  message?: string
+  /** 데이터 */
+  data?: GetPrivacyPolicyType
+}
+
+/**
+ * 데이터
+ */
+export interface GetPrivacyPolicyListType {
+  /** @format int64 */
+  id?: number
+  /** @format date */
+  effectiveStartDate?: string
+  /** @format date */
+  effectiveEndDate?: string
+}
+
+export interface ResponseDTOListGetPrivacyPolicyListType {
+  /**
+   * HttpStatusCode
+   * @format int32
+   * @example 200
+   */
+  statusCode?: number
+  /**
+   * 응답 메시지
+   * @example "성공"
+   */
+  message?: string
+  /** 데이터 */
+  data?: GetPrivacyPolicyListType[]
+}
+
+/**
+ * 데이터
+ */
 export interface PageResponseDTOSearchResponseType {
   content?: SearchResponseType[]
   /** @format int32 */
@@ -343,6 +398,7 @@ export interface GetHelpArticleResponseType {
   advantage: HelpArticleAdvantageDetailType
   /** 전문가 정보 */
   expert: HelpArticleExpertDetailType
+  relationArticleList?: RelationHelpArticleType[]
 }
 
 /**
@@ -386,6 +442,7 @@ export interface HelpArticleDifficultListType {
  * 전문가 정보
  */
 export interface HelpArticleExpertDetailType {
+  profileImage?: ImageInfoType
   nickname?: string
   description?: string
   solutionList?: string[]
@@ -433,6 +490,18 @@ export interface HelpArticleSolutionDetailType {
   firstBody?: string
   mainText?: string
   secondBody?: string
+}
+
+export interface RelationHelpArticleType {
+  /** @format int64 */
+  id?: number
+  slug?: string
+  type?: RelationHelpArticleTypeEnumType
+  typeDisplayName?: string
+  thumbnailImage?: ImageInfoType
+  title?: string
+  /** @format date-time */
+  createdAt?: string
 }
 
 export interface ResponseDTOGetHelpArticleResponseType {
@@ -598,7 +667,6 @@ export interface ExpertHeaderType {
 export interface ExpertIntroType {
   subTitle?: string
   body?: string
-  image?: ImageInfoType
 }
 
 /**
@@ -615,6 +683,7 @@ export interface ExpertProfileType {
 export interface ExpertRelationHelpArticleType {
   /** @format int64 */
   id?: number
+  slug?: string
   type?: ExpertRelationHelpArticleTypeEnumType
   typeDisplayName?: string
   thumbnailImage?: ImageInfoType
@@ -1053,6 +1122,14 @@ export type GetHomeConfigHelpArticleResponseTypeEnumType =
   | 'ETC' // X-enumName Values Missing
 
 export type GetAllHelpArticleResponseTypeEnumType =
+  | 'CONTRACT'
+  | 'PRODUCTION'
+  | 'ORDER'
+  | 'DELIVERY_INSTALLATION'
+  | 'COST'
+  | 'ETC' // X-enumName Values Missing
+
+export type RelationHelpArticleTypeEnumType =
   | 'CONTRACT'
   | 'PRODUCTION'
   | 'ORDER'
