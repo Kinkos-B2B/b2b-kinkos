@@ -11,8 +11,11 @@ import {
   LinkOverlay,
   Text,
   VStack,
+  chakra,
 } from '@chakra-ui/react'
-import { ArrowUpRightIcon } from '@phosphor-icons/react/dist/ssr'
+import { ArrowUpRightIcon as ArrowUpRightIconPhosphor } from '@phosphor-icons/react/dist/ssr'
+
+const ArrowUpRightIcon = chakra(ArrowUpRightIconPhosphor)
 
 export interface BizIntroductionSliderCardProps {
   image: string
@@ -122,14 +125,20 @@ export const BizIntroductionSliderCard = React.forwardRef<
                           >
                             <Text
                               as="span"
-                              textStyle={'pre-body-1'}
+                              textStyle={{
+                                base: 'pre-caption-1',
+                                sm: 'pre-body-1',
+                              }}
                               color={'primary.4'}
                             >
                               {item.text}
                             </Text>
                           </LinkOverlay>
                           <Box>
-                            <ArrowUpRightIcon color={'#013FFC'} size={'24px'} />
+                            <ArrowUpRightIcon
+                              color={'#013FFC'}
+                              boxSize={{ sm: '24px', base: '14px' }}
+                            />
                           </Box>
                         </HStack>
                       </LinkBox>
@@ -159,14 +168,20 @@ export const BizIntroductionSliderCard = React.forwardRef<
                     >
                       <Text
                         as="span"
-                        textStyle={'pre-body-1'}
+                        textStyle={{
+                          base: 'pre-body-5',
+                          sm: 'pre-body-1',
+                        }}
                         color={'primary.4'}
                       >
                         {button.text}
                       </Text>
                     </LinkOverlay>
                     <Box>
-                      <ArrowUpRightIcon color={'#013FFC'} size={'24px'} />
+                      <ArrowUpRightIcon
+                        color={'#013FFC'}
+                        boxSize={{ sm: '24px', base: '14px' }}
+                      />
                     </Box>
                   </HStack>
                 </LinkBox>
