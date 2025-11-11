@@ -78,8 +78,6 @@ const ExpertCareerSection = ({ content }: { content: ExpertCareerType }) => {
               src={content.firstImage?.url}
               borderRadius={'28px'}
               w={'100%'}
-              h={'400px'}
-              objectFit={'cover'}
             />
           )}
           {content.secondImage?.url && (
@@ -88,8 +86,6 @@ const ExpertCareerSection = ({ content }: { content: ExpertCareerType }) => {
               src={content.secondImage?.url}
               borderRadius={'28px'}
               w={'100%'}
-              h={'400px'}
-              objectFit={'cover'}
             />
           )}
         </VStack>
@@ -121,8 +117,6 @@ const ExpertStrengthSection = ({
             src={content.image?.url}
             borderRadius={'28px'}
             w={'100%'}
-            h={'400px'}
-            objectFit={'cover'}
           />
         )}
         <Text

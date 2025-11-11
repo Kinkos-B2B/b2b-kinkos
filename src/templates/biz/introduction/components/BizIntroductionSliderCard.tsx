@@ -128,7 +128,7 @@ export const BizIntroductionSliderCard = React.forwardRef<
                               {item.text}
                             </Text>
                           </LinkOverlay>
-                          <Box display={{ base: 'none', sm: 'block' }}>
+                          <Box>
                             <ArrowUpRightIcon color={'#013FFC'} size={'24px'} />
                           </Box>
                         </HStack>
@@ -165,7 +165,7 @@ export const BizIntroductionSliderCard = React.forwardRef<
                         {button.text}
                       </Text>
                     </LinkOverlay>
-                    <Box display={{ base: 'none', sm: 'block' }}>
+                    <Box>
                       <ArrowUpRightIcon color={'#013FFC'} size={'24px'} />
                     </Box>
                   </HStack>

@@ -122,6 +122,7 @@ export const BizIntroductionFadeSection = () => {
           style={{
             objectFit: 'cover',
             width: '100%',
+            height: '100vh',
           }}
         />
         {/* 어두운 오버레이 */}
@@ -155,6 +156,7 @@ export const BizIntroductionFadeSection = () => {
           sizes="100vw 100vh"
           style={{
             width: '100vw',
+            height: '100vh',
             objectFit: 'cover',
           }}
         />

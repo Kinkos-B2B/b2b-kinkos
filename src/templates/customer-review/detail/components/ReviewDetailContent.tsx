@@ -33,8 +33,6 @@ const ContentBackgroundSection = ({
             src={content.image?.url}
             borderRadius={'28px'}
             w={'100%'}
-            h={'400px'}
-            objectFit={'cover'}
           />
         )}
         <Text
@@ -66,8 +64,6 @@ const ContentReasonSection = ({
               src={content.firstImage?.url}
               borderRadius={'28px'}
               w={'100%'}
-              h={'400px'}
-              objectFit={'cover'}
             />
           )}
           {content.secondImage?.url && (
@@ -76,8 +72,6 @@ const ContentReasonSection = ({
               alt={content.secondImage?.alt ?? ''}
               borderRadius={'28px'}
               w={'100%'}
-              h={'400px'}
-              objectFit={'cover'}
             />
           )}
         </VStack>
@@ -111,8 +105,6 @@ const ContentOutcomeSection = ({
                 alt={content.image?.alt ?? ''}
                 borderRadius={'28px'}
                 w={'100%'}
-                h={'400px'}
-                objectFit={'cover'}
               />
             )}
           </VStack>
@@ -156,8 +148,6 @@ const ContentRecommendationSection = ({
             src={content.image?.url}
             borderRadius={'28px'}
             w={'100%'}
-            h={'400px'}
-            objectFit={'cover'}
           />
         )}
         <Text
@@ -190,8 +180,6 @@ const ContentInterviewSection = ({
                 src={content.image?.url}
                 borderRadius={'28px'}
                 w={'100%'}
-                h={'400px'}
-                objectFit={'cover'}
               />
             )}
           </VStack>

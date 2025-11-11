@@ -1,6 +1,4 @@
-import Image from 'next/image'
-
-import { Box, Button, Flex, Text, VStack } from '@chakra-ui/react'
+import { Box, Button, Flex, Image, Text, VStack } from '@chakra-ui/react'
 
 import { usePannelContext } from '@/components/PannelContext'
 import { PostFeatureItem } from '@/components/view/PostDetail/PostFeatureItem'
@@ -34,12 +32,9 @@ const ContentIntroSection = ({
           <Image
             src={content.image?.url}
             alt={content.image?.alt ?? ''}
-            width={820}
-            height={400}
             style={{
-              maxHeight: '400px',
+              width: '100%',
               borderRadius: '28px',
-              objectFit: 'cover',
             }}
           />
         )}
@@ -69,12 +64,9 @@ const ContentDifficultSection = ({
           <Image
             src={content.image?.url}
             alt={content.image?.alt ?? ''}
-            width={820}
-            height={400}
             style={{
-              maxHeight: '400px',
+              width: '100%',
               borderRadius: '28px',
-              objectFit: 'cover',
             }}
           />
         )}
@@ -157,12 +149,9 @@ const ContentFeasibleSection = ({
           <Image
             src={content.image?.url}
             alt={content.image?.alt ?? ''}
-            width={820}
-            height={400}
             style={{
-              maxHeight: '400px',
+              width: '100%',
               borderRadius: '28px',
-              objectFit: 'cover',
             }}
           />
         )}
@@ -197,12 +186,9 @@ const ContentChangeSection = ({
           <Image
             src={content.image?.url}
             alt={content.image?.alt ?? ''}
-            width={820}
-            height={400}
             style={{
-              maxHeight: '400px',
+              width: '100%',
               borderRadius: '28px',
-              objectFit: 'cover',
             }}
           />
         )}
@@ -232,12 +218,9 @@ const ContentAdvantageSection = ({
           <Image
             src={content.image?.url}
             alt={content.image?.alt ?? ''}
-            width={820}
-            height={400}
             style={{
-              maxHeight: '400px',
               borderRadius: '28px',
-              objectFit: 'cover',
+              width: '100%',
             }}
           />
         )}
