@@ -30,12 +30,12 @@ export const SolutionConnectExportBottomBar = ({
       zIndex={1000}
     >
       <HStack justifyContent={'space-between'}>
-        <HStack gap={'25px'} alignItems={'center'}>
+        <HStack gap={'26px'} alignItems={'center'}>
           <Image
             src={LogoIcon.src}
             alt="logo"
-            width={'135px'}
-            height={'28px'}
+            width={'113px'}
+            height={'23px'}
             display={{ lg: 'block', sm: 'none', base: 'none' }}
           />
           <Text
