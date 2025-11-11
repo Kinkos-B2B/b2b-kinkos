@@ -1,15 +1,6 @@
-import {
-  Box,
-  Card,
-  Flex,
-  Grid,
-  GridItem,
-  HStack,
-  Image,
-  Link,
-  Text,
-  VStack,
-} from '@chakra-ui/react'
+import Link from 'next/link'
+
+import { Flex, Grid, GridItem, Image, Text, VStack } from '@chakra-ui/react'
 
 import dayjs from 'dayjs'
 
@@ -41,14 +32,13 @@ export const ExpertHelpArticleList = ({ articles }: Props) => {
         position={'relative'}
       >
         {articles.map((article, index) => (
-          <GridItem key={index}>
-            <Link
-              href={`/problem-solve/${article.id}`}
-              display={'flex'}
-              bg={'background.basic.1'}
-              borderRadius={'28px'}
-              h={'100%'}
-            >
+          <GridItem
+            key={index}
+            bg={'background.basic.1'}
+            borderRadius={'28px'}
+            h={'100%'}
+          >
+            <Link href={`/problem-solve/${article.slug}`}>
               <VStack
                 h={'100%'}
                 gap={'0px'}

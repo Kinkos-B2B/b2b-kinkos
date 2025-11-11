@@ -20,7 +20,7 @@ const ExpertIntroSection = ({ content }: { content: ExpertIntroType }) => {
       </Text>
       <Text
         w={'100%'}
-        textAlign={'center'}
+        textAlign={'left'}
         css={{
           '& i': {
             fontStyle: 'italic',
