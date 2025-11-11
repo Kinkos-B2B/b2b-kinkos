@@ -133,6 +133,7 @@ export const BizIntroductionPrincipleCard = ({
         <Image
           src={imageSrc}
           alt={imageAlt}
+          sizes="800px"
           fill
           style={{
             objectFit: 'cover',

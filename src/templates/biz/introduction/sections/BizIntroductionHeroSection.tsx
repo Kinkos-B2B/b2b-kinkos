@@ -8,10 +8,6 @@ import { Box, Text, chakra } from '@chakra-ui/react'
 import { useGSAP } from '@gsap/react'
 
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-// GSAP ScrollTrigger 플러그인 등록
-gsap.registerPlugin(ScrollTrigger)
 
 export const BizIntroductionHeroSection = () => {
   const heroContainerRef = useRef<HTMLDivElement>(null)
@@ -31,7 +27,6 @@ export const BizIntroductionHeroSection = () => {
       gsap.set(introTextBox, {
         opacity: 1,
         y: 0,
-        invalidateOnRefresh: true,
       })
 
       // ScrollTrigger 타임라인 생성
@@ -54,7 +49,6 @@ export const BizIntroductionHeroSection = () => {
         opacity: 0,
         ease: 'power2.inOut',
         duration: 1,
-        invalidateOnRefresh: true,
       })
         // 2. 배경 박스 확장 - 전체 화면으로 확장
         .to(
@@ -68,7 +62,6 @@ export const BizIntroductionHeroSection = () => {
             borderRadius: '0px',
             ease: 'power2.out',
             duration: 1.5,
-            invalidateOnRefresh: true,
           },
           '<0.5',
         )
@@ -77,7 +70,6 @@ export const BizIntroductionHeroSection = () => {
           {
             opacity: 1,
             duration: 0.1,
-            invalidateOnRefresh: true,
           },
           '>-0.3',
         )
