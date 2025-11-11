@@ -56,7 +56,7 @@ const cardData = [
 
 export const HomeMoreQuestionSection = () => {
   const { ref, inView } = useInView({
-    threshold: 0.6,
+    threshold: 0.3,
     triggerOnce: true,
   })
 

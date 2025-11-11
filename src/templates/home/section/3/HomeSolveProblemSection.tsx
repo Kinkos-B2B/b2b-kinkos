@@ -55,7 +55,8 @@ const ProblemCard = ({
               alt={title}
               w="100%"
               h="100%"
-              objectFit={{ base: 'fill', sm: 'cover' }}
+              aspectRatio={{ base: '441 / 260', lg: 'auto' }}
+              objectFit="cover"
             />
           )}{' '}
         </VStack>
