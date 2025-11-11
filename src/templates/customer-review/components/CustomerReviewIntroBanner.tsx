@@ -55,12 +55,13 @@ export const CustomerReviewIntroBanner = ({ data }: Props) => {
             position="relative"
             h="100%"
             justify="space-between"
-            align={{ base: 'start', lg: 'center' }}
+            align={{ base: 'center', lg: 'center' }}
             flexDirection={{ base: 'column', lg: 'row' }}
             gap={{ base: '40px', sm: '64px', lg: '0px' }}
           >
             <VStack
               align="flex-start"
+              w={'100%'}
               gap={{ base: '28px', sm: '32px', lg: '40px' }}
             >
               <VStack gap="20px" alignItems="flex-start">
@@ -91,8 +92,8 @@ export const CustomerReviewIntroBanner = ({ data }: Props) => {
             <Image
               src={'/images/customer-review/banner-img.png'}
               alt="customer-review-intro-banner-image"
-              width={586}
-              height={330}
+              w={{ base: '100%', sm: '668px', lg: 'auto' }}
+              h={{ base: 'auto', lg: '330px' }}
               borderRadius={'28px'}
             />
             {/* <Box
