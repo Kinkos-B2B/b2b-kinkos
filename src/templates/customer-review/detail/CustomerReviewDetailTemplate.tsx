@@ -44,7 +44,7 @@ export const CustomerReviewDetailTemplate = ({
 
   return (
     <VStack gap={'0px'} w={'100%'}>
-      <PostHeader header={data?.data?.header ?? {}} />
+      <PostHeader header={data?.data?.header} />
       <Box
         py={{ base: '48px 80px', sm: '64px 100px', lg: '80px 120px' }}
         position={'relative'}

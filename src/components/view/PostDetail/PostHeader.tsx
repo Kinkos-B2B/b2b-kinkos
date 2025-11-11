@@ -7,7 +7,7 @@ import { CustomerReviewHeaderType } from '@/generated/apis/@types/data-contracts
 const HeaderImage = '/images/customer-review/custom-review-detail-hedaer-bg.jpg'
 
 interface PostHeaderProps {
-  header: CustomerReviewHeaderType
+  header?: CustomerReviewHeaderType
 }
 
 export const PostHeader = ({ header }: PostHeaderProps) => {
@@ -15,24 +15,48 @@ export const PostHeader = ({ header }: PostHeaderProps) => {
     <Box
       h={{ base: '300px', sm: '400px' }}
       w={'100%'}
-      bg={`linear-gradient(270deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.70) 70%), url('${HeaderImage}') lightgray 50% / cover no-repeat`}
-      bgSize={'cover'}
-      bgPos={'center'}
       position={'relative'}
       display={'flex'}
       alignItems={'center'}
       justifyContent={'center'}
+      overflow={'hidden'}
     >
+      {/* 배경 이미지 */}
+      {header && (
+        <Image
+          src={header?.thumbnailImageUrl?.url || HeaderImage}
+          alt=""
+          position={'absolute'}
+          top={0}
+          left={0}
+          w={'100%'}
+          h={'100%'}
+          objectFit={'cover'}
+          objectPosition={'center'}
+          zIndex={0}
+        />
+      )}
+      <Box
+        position={'absolute'}
+        top={0}
+        left={0}
+        w={'100%'}
+        h={'100%'}
+        bg={`linear-gradient(270deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.70) 70%)`}
+        zIndex={1}
+      />
       <VStack
         gap={'0px'}
         px={{ base: '20px', sm: '40px' }}
         maxW={{ base: '100%', lg: '1280px' }}
+        position={'relative'}
+        zIndex={2}
       >
         <Text
           color={'grey.2'}
           textStyle={{ base: 'pre-body-6', sm: 'pre-body-6' }}
         >
-          {dayjs(header.createdAt).format('YYYY. MM. DD')}
+          {dayjs(header?.createdAt).format('YYYY. MM. DD')}
         </Text>
         <Text
           mt={{ base: '14px' }}
@@ -40,9 +64,9 @@ export const PostHeader = ({ header }: PostHeaderProps) => {
           textStyle={{ base: 'pre-heading-1', sm: 'pre-display-3' }}
           textAlign={'center'}
         >
-          {header.title}
+          {header?.title}
         </Text>
-        {header.companyName && (
+        {header?.companyName && (
           <Flex
             mt={{ base: '24px' }}
             p={{ base: '4px 12px', sm: '6px 16px' }}
@@ -59,7 +83,7 @@ export const PostHeader = ({ header }: PostHeaderProps) => {
               color={'grey.2'}
               textStyle={{ base: 'pre-body-6', sm: 'pre-body-6' }}
             >
-              {header.companyName} {header.departmentName}
+              {header?.companyName} {header?.departmentName}
             </Text>
             <Separator
               display={{ base: 'none', sm: 'block' }}
@@ -72,8 +96,8 @@ export const PostHeader = ({ header }: PostHeaderProps) => {
               color={'grey.2'}
               textStyle={{ base: 'pre-body-6', sm: 'pre-body-6' }}
             >
-              {header.contactName + ' '}
-              {header.positionName}
+              {header?.contactName + ' '}
+              {header?.positionName}
             </Text>
           </Flex>
         )}

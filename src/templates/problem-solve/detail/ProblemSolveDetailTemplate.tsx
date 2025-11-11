@@ -18,7 +18,6 @@ interface Props {
 }
 
 export const ProblemSolveDetailTemplate = ({ id }: Props) => {
-  const { openPannel } = usePannelContext()
   const { data } = useGetHelpArticleDetailBySlugQuery({
     variables: {
       query: {
@@ -27,11 +26,9 @@ export const ProblemSolveDetailTemplate = ({ id }: Props) => {
     },
   })
 
-  console.log(data?.data?.expert.profileImage)
-
   return (
     <VStack w="100%" pt={'0px'} gap={'0px'}>
-      <PostHeader header={data?.data?.header ?? {}} />
+      <PostHeader header={data?.data?.header} />
       <Box
         py={{ base: '48px 100px', sm: '64px 140px', lg: '80px 160px' }}
         w={{ base: '100%', lg: 'auto' }}

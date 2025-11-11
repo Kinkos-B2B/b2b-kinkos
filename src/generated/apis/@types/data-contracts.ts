@@ -469,6 +469,7 @@ export interface HelpArticleFeasibleListType {
  */
 export interface HelpArticleHeaderType {
   title?: string
+  thumbnailImageUrl?: ImageInfoType
   /** @format date-time */
   createdAt?: string
 }
@@ -871,6 +872,7 @@ export interface CustomerReviewHeaderType {
   /** @format date-time */
   createdAt?: string
   title?: string
+  thumbnailImageUrl?: ImageInfoType
   companyName?: string
   departmentName?: string
   positionName?: string
