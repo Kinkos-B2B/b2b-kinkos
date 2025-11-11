@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 import {
@@ -9,6 +8,7 @@ import {
   GridItem,
   HStack,
   Heading,
+  Image,
   SimpleGrid,
   Text,
   VStack,
@@ -53,14 +53,9 @@ const ProblemCard = ({
             <Image
               src={thumbnailImageUrl?.url || ''}
               alt={title}
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{
-                objectFit: 'cover',
-                width: '100%',
-                height: '100%',
-              }}
+              w="100%"
+              h="100%"
+              objectFit={{ base: 'fill', sm: 'cover' }}
             />
           )}{' '}
         </VStack>
