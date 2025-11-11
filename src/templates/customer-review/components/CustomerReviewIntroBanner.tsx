@@ -6,6 +6,7 @@ import {
   Badge,
   Box,
   Button,
+  Center,
   Container,
   Flex,
   HStack,
@@ -43,25 +44,27 @@ export const CustomerReviewIntroBanner = ({ data }: Props) => {
         px={{ base: '20px', sm: '40px' }}
       >
         <Box
+          display={'flex'}
           maxW="1280px"
           position="relative"
           w="100%"
           py={{ base: '60px', sm: '80px', lg: '0px' }}
           overflow="hidden"
           h={{ base: 'auto', lg: '480px' }}
-          alignContent={'center'}
+          alignItems={'center'}
+          justifyContent={'space-between'}
         >
           <Flex
             position="relative"
             h="100%"
+            w={'100%'}
             justify="space-between"
-            align={{ base: 'center', lg: 'center' }}
+            align={{ base: 'start', lg: 'center' }}
             flexDirection={{ base: 'column', lg: 'row' }}
             gap={{ base: '40px', sm: '64px', lg: '0px' }}
           >
             <VStack
               align="flex-start"
-              w={'100%'}
               gap={{ base: '28px', sm: '32px', lg: '40px' }}
             >
               <VStack gap="20px" alignItems="flex-start">
@@ -89,13 +92,31 @@ export const CustomerReviewIntroBanner = ({ data }: Props) => {
                 <Text>솔루션 보러가기</Text>
               </Button>
             </VStack>
-            <Image
+            <Center w={{ base: '100%', lg: 'auto' }}>
+              <Image
+                src={'/images/customer-review/banner-img.png'}
+                alt="customer-review-intro-banner-image"
+                w={{ base: '100%', sm: '668px', lg: '586px' }}
+                h={{ base: 'auto', sm: '376.17px', lg: '330px' }}
+                borderRadius={'28px'}
+                position="relative"
+                bg={'rgba(255, 255, 255, 0.4)'}
+                backdropFilter={'blur(10px)'}
+                border={'1px solid rgba(255, 255, 255, 0.3)'}
+              />
+            </Center>
+
+            {/* <Image
               src={'/images/customer-review/banner-img.png'}
               alt="customer-review-intro-banner-image"
               w={{ base: '100%', sm: '668px', lg: 'auto' }}
               h={{ base: 'auto', lg: '330px' }}
               borderRadius={'28px'}
-            />
+              position="relative"
+              bg={'rgba(255, 255, 255, 0.4)'}
+              backdropFilter={'blur(10px)'}
+              border={'1px solid rgba(255, 255, 255, 0.3)'}
+            /> */}
             {/* <Box
               position="relative"
               borderRadius="28px"
