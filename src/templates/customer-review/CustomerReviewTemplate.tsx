@@ -22,7 +22,7 @@ export const CustomerReviewTemplate = () => {
   const { openPannel } = usePannelContext()
 
   return (
-    <VStack w="100%" pt={{ base: '0px', lg: '0px' }} gap={'0px'}>
+    <VStack w="100%" pt={{ base: '0px', lg: '20px' }} gap={'0px'}>
       <Box w={'100%'} pb={{ base: '64px', sm: '80px' }}>
         <CustomerReviewIntroBanner data={data} />
       </Box>
