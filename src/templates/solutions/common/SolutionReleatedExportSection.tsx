@@ -57,6 +57,7 @@ export const SolutionReleatedExportSection = ({
               base: '16px',
               sm: '20px',
             }}
+            pr={{ base: '20px', sm: '40px', lg: '0px' }}
             w="100%"
           >
             {expertList.map((expert, index) => (
