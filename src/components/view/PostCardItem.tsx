@@ -45,7 +45,7 @@ export const PostCardItem = ({
           position="relative"
           w="100%"
           h={{ lg: '260px' }}
-          aspectRatio={441 / 260}
+          aspectRatio={{ base: '441 / 260', lg: 'auto' }}
           overflow="hidden"
           borderRadius="28px"
         >
