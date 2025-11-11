@@ -1,0 +1,17 @@
+/* Embla Carousel 스타일 */
+.biz-image-description-box .embla {
+  overflow: hidden;
+  width: 100%;
+}
+
+.biz-image-description-box .embla__container {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.biz-image-description-box .embla__slide {
+  flex: 0 0 auto;
+  min-width: 0;
+  width: 100%;
+}

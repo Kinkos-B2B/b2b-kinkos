@@ -187,6 +187,23 @@ export const BizIntroductionSlider = () => {
           </div>
         </div>
       </Box>
+      {isMobile && (
+        <HStack gap={'8px'} mt={'20px'}>
+          {cards.map((_, index) => (
+            <Box
+              key={index}
+              w={'8px'}
+              h={'8px'}
+              borderRadius={'4px'}
+              bg={selectedIndex === index ? 'grey.10' : 'grey.2'}
+              transition={'all 0.3s ease'}
+              cursor={'pointer'}
+              onClick={() => emblaApi?.scrollTo(index)}
+              aria-label={`슬라이드 ${index + 1}로 이동`}
+            />
+          ))}
+        </HStack>
+      )}
     </VStack>
   )
 }

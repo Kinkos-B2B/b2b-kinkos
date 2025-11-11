@@ -128,6 +128,7 @@ export const BizIntroductionSliderCard = React.forwardRef<
                               textStyle={{
                                 base: 'pre-caption-1',
                                 sm: 'pre-body-1',
+                                lg: 'pre-body-1',
                               }}
                               color={'primary.4'}
                             >
@@ -171,6 +172,7 @@ export const BizIntroductionSliderCard = React.forwardRef<
                         textStyle={{
                           base: 'pre-body-5',
                           sm: 'pre-body-1',
+                          lg: 'pre-body-1',
                         }}
                         color={'primary.4'}
                       >
