@@ -98,7 +98,8 @@ export const CustomerReviewIntroBanner = ({ data }: Props) => {
                 alt="customer-review-intro-banner-image"
                 w={{ base: '100%', sm: '668px', lg: '586px' }}
                 h={{ base: 'auto', sm: '376.17px', lg: '330px' }}
-                borderRadius={'28px'}
+                aspectRatio={{ base: 472 / 265 }}
+                borderRadius={'23px'}
                 position="relative"
                 bg={'rgba(255, 255, 255, 0.4)'}
                 backdropFilter={'blur(10px)'}
