@@ -284,11 +284,13 @@ export const BizCenterNetworkTemplate = () => {
         w={'100%'}
         pt={'160px'}
       >
-        <BizDescriptionBanner
-          title={bizDescriptionBannerMockData.title}
-          badgeText={bizDescriptionBannerMockData.badgeText}
-          description={bizDescriptionBannerMockData.description}
-        />
+        <Box px={{ sm: '40px', base: '20px', lg: '0px' }}>
+          <BizDescriptionBanner
+            title={bizDescriptionBannerMockData.title}
+            badgeText={bizDescriptionBannerMockData.badgeText}
+            description={bizDescriptionBannerMockData.description}
+          />
+        </Box>
         <BizOrderedDescriptionSection data={bizDescriptionMockData} />
         <BizViedoSection data={bizVideoSectionMockData} />
         <VStack py={'160px'} gap={'160px'} w={'100%'}>

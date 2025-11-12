@@ -16,7 +16,7 @@ export const SolutionConnectExportBottomBar = ({
       bottom={'-100px'}
       left={'50%'}
       transform={'translateX(-50%)'}
-      bg={'rgba(243, 243, 243, 0.77)'}
+      bg={'rgba(243, 243, 243, 0.60)'}
       w={{
         lg: '950px',
         sm: 'calc(100vw - 80px)',

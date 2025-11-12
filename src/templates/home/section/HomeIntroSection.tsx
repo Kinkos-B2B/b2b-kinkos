@@ -484,6 +484,7 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
           {textContents.map((content, index) => (
             <VStack
               position="fixed"
+              px={{ base: '20px', sm: '40px', lg: '0px' }}
               w="100%"
               key={index}
               data-index={index}
