@@ -42,7 +42,7 @@ export const PostHeader = ({ header }: PostHeaderProps) => {
         left={0}
         w={'100%'}
         h={'100%'}
-        bg={`linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.55) 70%)`}
+        bg={`linear-gradient(180deg, rgba(35,35,35, 0.07) 0%, rgba(35,35,35, 0.75) 100%)`}
         zIndex={1}
       />
       <VStack
