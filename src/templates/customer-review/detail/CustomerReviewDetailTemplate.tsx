@@ -40,8 +40,6 @@ export const CustomerReviewDetailTemplate = ({
     },
   })
 
-  console.log(data)
-
   return (
     <VStack gap={'0px'} w={'100%'}>
       <PostHeader header={data?.data?.header} />
