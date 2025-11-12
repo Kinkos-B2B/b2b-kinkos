@@ -33,7 +33,6 @@ export const SolutionFeatureDesktopSection = ({ featureItems }: Props) => {
           left: '0',
           zIndex: 100 - index,
           opacity: index === 0 ? 1 : 0,
-          invalidateOnRefresh: true,
         })
       })
 

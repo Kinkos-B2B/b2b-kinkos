@@ -28,7 +28,7 @@ export const BizHeroSection = ({
       width="100%"
       backgroundColor="background.basic.1"
       gap={'60px'}
-      h={`calc(100dvh - ${LAYOUT.HEADER.HEIGHT})`}
+      h={`calc(100svh - ${LAYOUT.HEADER.HEIGHT})`}
       overflow={'hidden'}
       pt={{ base: '60px', sm: '70px', lg: '80px' }}
     >

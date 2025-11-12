@@ -98,7 +98,6 @@ export const SolutionHeroSection = ({
       start: `top top+=${startPointY}px`,
       end: '+=100%',
       pin: true,
-      invalidateOnRefresh: true,
     })
 
     // 1) 마스터 핀: 섹션 범위 안에서만 고정
@@ -110,7 +109,6 @@ export const SolutionHeroSection = ({
       pin: true,
       anticipatePin: 1,
       pinSpacing: true,
-      invalidateOnRefresh: true,
     })
 
     // 2) 단계 시퀀스: 300px(이미지) → 100px(dim) → 100px(text)
@@ -121,24 +119,21 @@ export const SolutionHeroSection = ({
         start: 'top top',
         end: '+=500', // 총 500px 구간만 진행(핀은 위에서 더 길게 유지 가능)
         scrub: true,
-        invalidateOnRefresh: true,
       },
     })
 
     // 0~300px: 이미지 풀사이즈
     tl.to(imageRef.current, {
       width: '100dvw',
-      height: '100dvh',
+      height: '100vh',
       borderRadius: 0,
       duration: 3, // 비율값(3:1:1) → 300px에 해당
-      invalidateOnRefresh: true,
     })
 
     // 300~400px: dimOverlay 0→1
     tl.to(dimOverlayRef.current, {
       opacity: 1,
       duration: 1, // 100px 구간
-      invalidateOnRefresh: true,
     })
 
     // 400~500px: dimOverlayText 등장
@@ -146,7 +141,6 @@ export const SolutionHeroSection = ({
       y: 0,
       opacity: 1,
       duration: 1, // 100px 구간
-      invalidateOnRefresh: true,
     })
   })
 
@@ -156,7 +150,7 @@ export const SolutionHeroSection = ({
       pt={{ base: '64px', sm: '80px', lg: '160px' }}
       overflow={'hidden'}
       gap={'0px'}
-      h={'300dvh'}
+      h={'300vh'}
       ref={sectionRef}
     >
       <Box ref={introBlockRef}>
@@ -165,7 +159,7 @@ export const SolutionHeroSection = ({
       <Box
         ref={imageBoxRef}
         w="100%"
-        h={'100dvh'}
+        h={'100vh'}
         display="flex"
         py={'100px'}
         justifyContent="center"
@@ -204,7 +198,7 @@ export const SolutionHeroSection = ({
               sm: 'calc(100vw - 80px)',
               lg: '1280px',
             }}
-            h={'calc(100dvh - 170px)'}
+            h={'calc(100vh - 170px)'}
             borderRadius={'28px'}
             objectFit="cover"
           />
@@ -217,7 +211,7 @@ export const SolutionHeroSection = ({
               sm: 'calc(100vw - 80px)',
               lg: '1280px',
             }}
-            h={'calc(100dvh - 170px)'}
+            h={'calc(100vh - 170px)'}
             borderRadius={'28px'}
             objectFit="cover"
           />

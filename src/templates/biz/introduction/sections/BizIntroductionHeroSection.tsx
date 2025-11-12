@@ -140,7 +140,7 @@ export const BizIntroductionHeroSection = () => {
           sm: 'calc(100vw - 80px)',
           base: 'calc(100vw - 40px)',
         }}
-        h={'calc(100dvh - 380px)'}
+        h={'calc(100vh - 380px)'}
         overflow={'hidden'}
       >
         <chakra.video

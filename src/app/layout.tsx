@@ -10,6 +10,10 @@ import { AppProvider } from '@/providers/app-provider'
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1.0,
+  maximumScale: 1.0,
+  userScalable: false,
+  viewportFit: 'cover',
+  minimumScale: 1.0,
 }
 
 export const metadata: Metadata = {

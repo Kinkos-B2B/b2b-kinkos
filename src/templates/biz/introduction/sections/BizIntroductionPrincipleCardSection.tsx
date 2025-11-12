@@ -267,7 +267,7 @@ export const BizIntroductionPrincipleCardSection = () => {
     <Box
       ref={sectionRef}
       w="100%"
-      h={'100dvh'}
+      h={'100vh'}
       pt={{ base: '60px', lg: '13vh' }}
       overflow={'hidden'}
       pb={{ base: '60px', lg: '80px' }}

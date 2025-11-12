@@ -51,6 +51,7 @@ const textContents = [
 interface Props {
   onCompleted: () => void
 }
+
 export const HomeIntroSection = ({ onCompleted }: Props) => {
   const [isAnimating, setIsAnimating] = useState(false)
   const introRef = useRef<HTMLDivElement>(null)
@@ -459,7 +460,7 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
       top="0"
       left="0"
       zIndex={'100000000'}
-      h="100dvh"
+      h="100vh"
       w="100dvw"
       bgImage={`url(${imgBg})`}
       bgColor={'grey.10'}
@@ -479,7 +480,7 @@ export const HomeIntroSection = ({ onCompleted }: Props) => {
         overflowX="hidden"
       >
         {/* 스크롤을 위한 더미 높이: (텍스트 섹션 수 + 1) * 100vh */}
-        <Box h={`${(textContents.length + 1) * 100}vh`} position="relative">
+        <Box h={`${(textContents.length + 1) * 100}svh`} position="relative">
           {/* 텍스트 섹션들 - 각각 고정 위치 */}
           {textContents.map((content, index) => (
             <VStack
