@@ -1,6 +1,7 @@
 import { Box, Flex, SimpleGrid, Text } from '@chakra-ui/react'
 
 import { Pagination } from '@/components/pagination'
+import { ROUTES } from '@/constants/routes'
 import {
   GetHomeSearchKeywordResponseType,
   GetSearchResponseParamsTypeEnumType,
@@ -37,11 +38,11 @@ const getSearchTypeLink = (
 ) => {
   switch (type) {
     case 'CUSTOMER_REVIEW':
-      return `/customer-review/${id}`
+      return `${ROUTES.CUSTOMER_REVIEW}/${id}`
     case 'HELP_ARTICLE':
-      return `/help-article/${id}`
+      return `${ROUTES.PROBLEM}/${id}`
     case 'EXPERT':
-      return `/expert/${id}`
+      return `${ROUTES.EXPERT}/${id}`
   }
 }
 
