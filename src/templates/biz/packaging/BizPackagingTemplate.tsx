@@ -283,7 +283,7 @@ export const BizPackagingTemplate = () => {
         w={'100%'}
         pt={{ lg: '160px', sm: '140px', base: '100px' }}
       >
-        <Box px={{ sm: '40px', base: '20px', lg: '0px' }}>
+        <Box px={{ sm: '40px', base: '20px', lg: '0px' }} w={'100%'}>
           <BizDescriptionBanner
             title={bizDescriptionBannerMockData.title}
             badgeText={bizDescriptionBannerMockData.badgeText}
