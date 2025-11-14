@@ -66,8 +66,8 @@ export const MobileMenuDrawer = () => {
           variant="ghost"
           size="sm"
           p="0"
-          minW="40px"
-          h="40px"
+          minW="50px"
+          h="50px"
           colorPalette={'grey'}
           borderRadius="8px"
           aria-label="메뉴 열기"

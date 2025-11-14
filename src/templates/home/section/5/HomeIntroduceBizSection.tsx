@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 import {
   Box,
@@ -18,6 +19,7 @@ import { gsap } from 'gsap'
 import { useInView } from 'react-intersection-observer'
 
 import { Badge } from '@/components/ui/badge'
+import { ROUTES } from '@/constants/routes'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 // 이미지 에셋들 (Figma에서 다운로드한 실제 이미지들)
@@ -48,6 +50,8 @@ const BizCard = ({
   finalPosition,
   isInView,
 }: BizCardProps) => {
+  const router = useRouter()
+
   const cardRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -62,7 +66,11 @@ const BizCard = ({
 
   return (
     <Box
+      onClick={() => {
+        router.push(ROUTES.BIZ.INTRODUCTION)
+      }}
       ref={cardRef}
+      cursor={'pointer'}
       display="flex"
       position="absolute"
       transform={`translateY(calc(50% + 50px)) rotate(${rotation}deg)`}
@@ -135,6 +143,8 @@ export const HomeIntroduceBizSection = () => {
   const isNoneDesktop = useMediaQuery(['(max-width: 1280px)'], {
     ssr: true,
   })[0]
+
+  const router = useRouter()
 
   const { ref, inView } = useInView({
     threshold: 0.3, // 30% 보일 때 트리거
@@ -235,7 +245,13 @@ export const HomeIntroduceBizSection = () => {
           >
             {cards.map((card, index) => {
               return (
-                <GridItem key={index}>
+                <GridItem
+                  key={index}
+                  cursor={'pointer'}
+                  onClick={() => {
+                    router.push(ROUTES.BIZ.INTRODUCTION)
+                  }}
+                >
                   <Box
                     backdropFilter="blur(35px)"
                     borderRadius="32px"
