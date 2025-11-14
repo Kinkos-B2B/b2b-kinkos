@@ -2,11 +2,17 @@
 
 import * as React from 'react'
 
-import Image from 'next/image'
+import {
+  Box,
+  Button,
+  Flex,
+  HStack,
+  Image,
+  Text,
+  VStack,
+} from '@chakra-ui/react'
 
-import { Button, Flex, HStack, Text, VStack } from '@chakra-ui/react'
-
-const imgImage = '/images/CTA-chat.png'
+const imgImage = '/images/CTA-CHAT.png'
 
 interface PluuugCTAProps {
   text: string
@@ -25,7 +31,7 @@ export const PluuugCTA = ({ text, buttons }: PluuugCTAProps) => {
       gap={'28px'}
     >
       <VStack gap={'12px'}>
-        <Image src={imgImage} alt="CTA" width={50} height={50} />
+        <Image src={imgImage} alt="CTA" boxSize={'50px'} />
         <Text textStyle={'pre-display-4'} color={'grey.0'} textAlign={'center'}>
           {text}
         </Text>
