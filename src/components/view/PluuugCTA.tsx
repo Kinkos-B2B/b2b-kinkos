@@ -12,7 +12,7 @@ import {
   VStack,
 } from '@chakra-ui/react'
 
-const imgImage = '/images/CTA-CHAT.png'
+const imgImage = '/images/CTA-chat.png'
 
 interface PluuugCTAProps {
   text: string
